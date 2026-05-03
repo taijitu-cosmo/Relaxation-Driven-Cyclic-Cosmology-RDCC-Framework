@@ -4,28 +4,26 @@
 
 RDCC is a complete, open-source theoretical and numerical framework with only one free parameter α ≈ 0.0176 ± 0.0021 (from MCMC fits). It is based on global CPT symmetry in a bipartite Hilbert space and offers an elegant approach to several cosmological tensions (S₈, early galaxies, black-hole information paradox).
 
-### Repository Contents
+### Repository Structure
 
-- **Flagship Paper** – Core theoretical foundation
-- **Summary Paper** – Overview of the entire ecosystem
-- **Numerical Fits** – MCMC results (α = 0.0176 ± 0.0021) and χ² scans
-- **RDCC & Euclid Interface Paper** – Survey-ready analysis pipeline
-- **100+ Technical Companions** – Detailed papers on weak-lensing topology, persistent homology, neural transport maps, Fisher geometry, Diffusion-OT unification, Bayes factors, end-to-end inference and more
+- `/Core/` → Central papers (Flagship, Summary, Numerical Fits, Euclid Interface)
+- `/Companions/` → All 100+ technical Companions (I–CI including merges)
+- `/code/` → (will be added later: MCMC scripts, CLASS modules, etc.)
 
-### Folder Structure
+### Quick Start – Core Papers
 
-- `/core/` → Central papers (Flagship, Summary, Numerical Fits, Euclid Interface)
-- `/companions/` → All 100+ Companions (I–CI including merges)
-- `/code/` → (will contain MCMC scripts, CLASS modules, etc.)
+- [Flagship Paper](/Core/Relaxation-Driven%20Cyclic%20Cosmology%20RDCC%20Flagship%20Paper.pdf)
+- [Numerical Fits & MCMC](/Core/RDCC%20Numerical%20Fits%20and%20Observational%20Constraints%20(Living%20Document).pdf)
+- [Summary Paper](/Core/SUMMARY%20PAPER.pdf)
+- [RDCC & Euclid Interface Paper](/Core/RDCC_Euclid_Interface_Paper.pdf)
 
-### Quick Start
+### Archival Version on Zenodo
 
-- [Flagship Paper](core/RDCC_Flagship_Paper.pdf)
-- [Numerical Fits & MCMC](core/RDCC_Numerical_Fits_and_Observational_Constraints.pdf)
-- [Summary Paper](core/SUMMARY_PAPER.pdf)
-- [Euclid Interface Paper](core/RDCC_Euclid_Interface_Paper.pdf)
+The complete RDCC ecosystem (Flagship, Summary, all Companions and Numerical Fits) is permanently archived on Zenodo:
 
-**All PDFs are stored directly in this repository** and can be fully read by any researcher.
+- [RDCC Full Framework on Zenodo](https://zenodo.org/records/19880564)
+
+Zenodo provides stable DOIs for citation and long-term preservation.
 
 ### License
 This entire repository is licensed under **CC0 1.0 Universal** (Public Domain). Everyone is free to use, cite, modify and share the material.
