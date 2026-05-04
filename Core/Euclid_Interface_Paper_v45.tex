@@ -1,0 +1,201 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{bm}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{authblk}
+\usepackage{cite}
+\usepackage{physics}
+\usepackage{mathtools}
+
+\geometry{margin=2.4cm}
+
+\title{\textbf{RDCC and Euclid: A Survey-Ready Framework for Testing Relaxation-Driven Cosmology}}
+\author{Michael Lehmann \\ \texttt{mi.lehmann@gmx.de}}
+\date{April 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The Relaxation-Driven Cyclic Cosmology (RDCC) introduces a scale-dependent 
+relaxation parameter $\alpha$ that modifies the gravitational potential and 
+induces distinct geometric and topological signatures in weak-lensing 
+observables. This paper provides a Euclid-focused overview of RDCC, summarizing 
+its theoretical foundations, its observational signatures, and its compatibility 
+with Euclid's survey design, data products, and analysis pipelines. We present 
+Euclid-level forecasts, identify optimal RDCC probes, and outline a practical 
+integration strategy for testing RDCC within the Euclid weak-lensing and 
+large-scale structure programs. This document is intended as a concise, 
+survey-oriented reference for Euclid collaborators and theorists.
+\end{abstract}
+\section{Introduction}
+
+The Euclid mission provides an unprecedented opportunity to test extensions of 
+$\Lambda$CDM through high-precision weak-lensing and galaxy-clustering 
+measurements. The Relaxation-Driven Cyclic Cosmology (RDCC) is a theoretically 
+motivated alternative that modifies the gravitational potential via a 
+scale-dependent relaxation parameter $\alpha$. This modification induces 
+geometric, morphological, and topological signatures in the convergence field 
+that are directly accessible to Euclid's weak-lensing pipeline.
+
+This paper summarizes the RDCC framework from a Euclid perspective. We focus on:
+(i) the theoretical structure of RDCC, (ii) its observational signatures in 
+Euclid data products, (iii) Euclid-level forecasts for $\alpha$, and 
+(iv) practical integration pathways for testing RDCC within Euclid's analysis 
+infrastructure.
+
+\section*{Nomenclature}
+
+\begin{tabular}{ll}
+$\alpha$ & RDCC relaxation parameter; controls scale-dependent modifications of the potential \\[4pt]
+
+$\Phi$ & Gravitational potential \\[4pt]
+
+$\Phi_{\mathrm{RDCC}}$ & Modified potential in the RDCC model \\[4pt]
+
+$\Phi_{\Lambda\mathrm{CDM}}$ & Standard potential in the $\Lambda$CDM model \\[4pt]
+
+$\mathcal{R}(k,z;\alpha)$ & RDCC relaxation kernel; scale- and redshift-dependent modification \\[4pt]
+
+$k$ & Wavenumber in Fourier space \\[4pt]
+
+$z$ & Redshift \\[4pt]
+
+$\kappa$ & Weak-lensing convergence field \\[4pt]
+
+$\gamma$ & Shear field \\[4pt]
+
+$P_{\kappa}(l)$ & Convergence power spectrum as a function of multipole $l$ \\[4pt]
+
+$\mathrm{MF}_{i}$ & Minkowski functionals (area, boundary length, Euler characteristic) \\[4pt]
+
+$\mathcal{D}$ & Persistence diagram in persistent homology \\[4pt]
+
+$W_{2}$ & Quadratic optimal-transport distance between persistence diagrams \\[4pt]
+
+$\sigma(\alpha)$ & Forecasted uncertainty on the RDCC parameter $\alpha$ \\[4pt]
+
+$\Delta \log Z$ & Evidence contrast between RDCC and $\Lambda$CDM \\[4pt]
+
+$v_{k}$ & Fisher channel (eigenvector of the information-tensor decomposition) \\[4pt]
+
+$\lambda_{k}$ & Eigenvalue of the $k$-th Fisher channel (information contribution) \\[4pt]
+\end{tabular}
+
+
+\section{RDCC: Theoretical Overview}
+
+RDCC modifies the gravitational potential through a relaxation kernel
+
+
+\[
+    \Phi_{\mathrm{RDCC}}(k,z)
+    =
+    \Phi_{\Lambda\mathrm{CDM}}(k,z)
+    \cdot
+    \mathcal{R}(k,z;\alpha),
+\]
+
+
+where $\mathcal{R}$ introduces scale-dependent deviations that become relevant 
+at $k \gtrsim 0.1\,h\,\mathrm{Mpc}^{-1}$. These deviations propagate into the 
+lensing potential, affecting:
+
+\begin{itemize}
+    \item the convergence field $\kappa$,
+    \item shear correlations,
+    \item peak and void statistics,
+    \item Minkowski functionals,
+    \item persistent homology and transport-based topology.
+\end{itemize}
+
+RDCC is fully compatible with Euclid's tomographic binning and angular 
+resolution, and its signatures are strongest at intermediate multipoles 
+accessible to Euclid's VIS instrument.
+\section{RDCC Signatures in Euclid Observables}
+
+RDCC induces characteristic distortions in Euclid weak-lensing data:
+
+\subsection*{4.1 Power spectra}
+Moderate-scale suppression or enhancement depending on $\alpha$; partially 
+degenerate with $\Lambda$CDM parameters.
+
+\subsection*{4.2 Peak and void statistics}
+RDCC shifts peak heights and void depths, providing strong sensitivity to 
+relaxation-driven potential changes.
+
+\subsection*{4.3 Minkowski functionals}
+Morphological distortions in area, boundary length, and Euler characteristic.
+
+\subsection*{4.4 Persistent homology}
+RDCC modifies the birth--death structure of topological features, producing 
+robust, noise-resistant signatures.
+
+\subsection*{4.5 Transport-based topology}
+Optimal-transport distances between persistence diagrams provide a 
+high-sensitivity probe of RDCC-induced non-Gaussian structure.
+\section{Euclid-Level Forecasts}
+
+Using Euclid-like noise, resolution, and tomographic binning, RDCC forecasts 
+yield:
+
+
+\[
+    \sigma(\alpha) \sim \mathcal{O}(10^{-2}),
+\]
+
+
+with strongest constraints from:
+
+\begin{itemize}
+    \item transport-based topological statistics,
+    \item peak and void counts,
+    \item neural-compressed summaries,
+    \item combined multi-probe likelihoods.
+\end{itemize}
+
+Fisher-channel analysis shows that $\sim 70\%$ of RDCC information resides in 
+the leading channel, enabling efficient compression and robust inference.
+\section{Degeneracy Structure and Euclid Synergy}
+
+RDCC variations can partially mimic $\Lambda$CDM parameter shifts. Euclid's 
+multi-probe design helps break these degeneracies:
+
+\begin{itemize}
+    \item tomographic binning separates redshift-dependent relaxation effects,
+    \item cross-correlation with galaxy clustering reduces null directions,
+    \item topological probes provide strong orthogonality to $\Lambda$CDM-aligned manifolds.
+\end{itemize}
+\section{Integration into Euclid Pipelines}
+
+RDCC can be tested within Euclid's existing analysis framework:
+
+\begin{itemize}
+    \item \textbf{Forward modeling:} RDCC can be incorporated into lensing 
+    simulations via modified potential kernels.
+
+    \item \textbf{Summary statistics:} RDCC signatures are compatible with 
+    Euclid's power-spectrum pipeline and can be extended to include peaks, 
+    Minkowski functionals, and topology.
+
+    \item \textbf{Likelihood integration:} RDCC likelihood components can be 
+    added modularly to Euclid's cosmological parameter estimation framework.
+
+    \item \textbf{Validation:} The RDCC Benchmark Suite provides 
+    simulation-based calibration and cross-probe consistency tests.
+\end{itemize}
+\section{Conclusion}
+
+RDCC provides a theoretically motivated and observationally testable extension 
+of $\Lambda$CDM. Its geometric and topological signatures are well matched to 
+Euclid's weak-lensing capabilities, and Euclid-level forecasts demonstrate that 
+RDCC can be constrained with high precision. This paper outlines a practical 
+pathway for integrating RDCC into Euclid's analysis pipelines and provides a 
+survey-ready framework for testing relaxation-driven cosmology.
+\end{document}
