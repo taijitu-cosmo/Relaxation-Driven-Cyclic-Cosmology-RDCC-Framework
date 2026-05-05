@@ -1,0 +1,162 @@
+\documentclass[11pt,a4paper]{article}
+
+% ---------------------------------------------------------
+% PREAMBLE (stable, warning-free, Overleaf-safe)
+% ---------------------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{bm}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{cite}
+\usepackage{authblk}
+\usepackage{physics}
+\usepackage{mathtools}
+
+\geometry{margin=2.4cm}
+
+\title{\textbf{Companion LXXXVII: Simulation-Based Calibration of Neural RDCC Likelihoods Using Flow-Matching and Score-Transport Diagnostics}}
+\author{Michael Lehmann \\ \texttt{mi.lehmann@gmx.de}}
+\date{April 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Neural likelihoods provide a flexible and differentiable framework for combining 
+topological transport statistics, Minkowski functionals, and shear power spectra 
+in RDCC parameter inference. However, such likelihoods require careful 
+calibration to ensure statistical correctness, unbiased parameter recovery, and 
+robust uncertainty quantification. In this work, we introduce a simulation-based 
+calibration pipeline for neural RDCC likelihoods using flow-matching, 
+posterior-predictive checks, and score-transport diagnostics. Flow-matching 
+aligns the learned likelihood with the true simulation manifold, while 
+score-based diagnostics quantify discrepancies between the learned and true 
+summary-statistic distributions. This Companion establishes the statistical 
+foundations necessary for applying neural RDCC likelihoods to Euclid-like data.
+\end{abstract}
+% ---------------------------------------------------------
+\section{Introduction}
+
+Neural likelihoods offer a powerful way to model complex, non-Gaussian summary 
+statistics. Companion LXXXVI introduced a unified flow-based likelihood combining 
+topological transport statistics, Minkowski functionals, and the shear power 
+spectrum. However, neural likelihoods must be calibrated to ensure:
+
+\begin{itemize}
+    \item unbiased parameter inference,
+    \item correct posterior coverage,
+    \item robustness to simulation noise,
+    \item stability across the RDCC parameter space.
+\end{itemize}
+
+This Companion introduces simulation-based calibration tools tailored to RDCC.
+% ---------------------------------------------------------
+\section{Flow-Matching for Likelihood Correction}
+
+Flow-matching aligns the learned likelihood $\mathcal{L}_{\theta}$ with the true 
+simulation distribution by minimizing
+
+
+
+\[
+    \mathcal{L}_{\mathrm{FM}}
+    =
+    \mathbb{E}_{\alpha, \mathbf{s}}
+    \left[
+        \left\|
+            f_{\theta}(\mathbf{s}) - f_{\mathrm{sim}}(\mathbf{s})
+        \right\|^{2}
+    \right],
+\]
+
+
+
+where $f_{\theta}$ is the learned flow and $f_{\mathrm{sim}}$ is the flow 
+estimated directly from simulations.
+
+This ensures that the learned likelihood reproduces the true simulation manifold.
+% ---------------------------------------------------------
+\section{Score-Transport Diagnostics}
+
+We define the score discrepancy
+
+
+
+\[
+    \Delta s(\mathbf{s})
+    =
+    s_{\theta}(\mathbf{s})
+    -
+    s_{\mathrm{sim}}(\mathbf{s}),
+\]
+
+
+
+where $s_{\theta}$ is the score of the learned likelihood and $s_{\mathrm{sim}}$ 
+is the score estimated from simulations via denoising score matching.
+
+The norm $\|\Delta s\|$ quantifies how well the learned likelihood captures the 
+geometry of the summary-statistic distribution.
+% ---------------------------------------------------------
+\section{Posterior-Predictive Checks}
+
+Given observed summary statistics $\mathbf{s}_{\mathrm{obs}}$, we generate 
+posterior-predictive samples
+
+
+
+\[
+    \mathbf{s}^{(i)} \sim p(\mathbf{s} \mid \mathbf{s}_{\mathrm{obs}}).
+\]
+
+
+
+We compare:
+
+\begin{itemize}
+    \item transport distances,
+    \item Minkowski functional curves,
+    \item shear power spectra,
+\end{itemize}
+
+between predictions and observations.
+
+Discrepancies indicate model misspecification or insufficient training.
+% ---------------------------------------------------------
+\section{Coverage Tests for \texorpdfstring{$\alpha$}{alpha}}
+
+We draw $\alpha$ from a prior, simulate summary statistics, and infer 
+$\hat{\alpha}$ using the neural likelihood. Coverage is correct if
+
+
+
+\[
+    \mathbb{P}\!\left(
+        \alpha \in \mathrm{CI}_{68\%}
+    \right)
+    \approx 0.68.
+\]
+
+
+
+This ensures that the neural likelihood yields statistically valid uncertainties.
+% ---------------------------------------------------------
+\section{Conclusion}
+
+Neural likelihoods provide a powerful and flexible framework for RDCC parameter 
+inference, but require careful calibration. Flow-matching aligns the learned 
+likelihood with the true simulation manifold, score-transport diagnostics quantify 
+geometric discrepancies, and posterior-predictive checks ensure robustness. These 
+tools establish the statistical foundations necessary for applying neural RDCC 
+likelihoods to Euclid-like data.
+
+\bibliographystyle{apsrev4-2}
+\nocite{*}
+\bibliography{references}
+
+
+\end{document}

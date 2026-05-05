@@ -1,0 +1,170 @@
+\documentclass[11pt,a4paper]{article}
+
+% ---------------------------------------------------------
+% PREAMBLE (stable, warning-free, Overleaf-safe)
+% ---------------------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{bm}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{cite}
+\usepackage{authblk}
+\usepackage{physics}
+\usepackage{mathtools}
+
+\geometry{margin=2.4cm}
+
+\title{\textbf{Companion LVII: Weak-Lensing Tomography in the Relaxation-Driven Cyclic Cosmology}}
+\author{Michael Lehmann \\ \texttt{mi.lehmann@gmx.de}}
+\date{April 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Weak-lensing tomography probes the redshift evolution of the gravitational 
+potential by correlating shear fields in multiple source bins. In the standard 
+cosmological model, the tomographic kernels are determined by the matter power 
+spectrum, the growth rate, and the geometry of the Universe. In the 
+Relaxation-Driven Cyclic Cosmology (RDCC), the scale-dependent evolution of the 
+gravitational potential modifies the lensing kernels, the growth of structure, and 
+the redshift dependence of the shear correlations in a characteristic way. This 
+Companion develops a continuous description of weak-lensing tomography in RDCC, 
+deriving how the relaxation scale influences the tomographic kernels, the 
+cross-bin correlations, and the observational signatures in cosmic shear surveys. 
+The resulting framework provides a distinctive probe of the RDCC gravitational 
+field across cosmic time.
+\end{abstract}
+% ---------------------------------------------------------
+\section{Introduction}
+
+Weak gravitational lensing probes the integrated gravitational potential along the 
+line of sight. Tomographic lensing extends this by dividing source galaxies into 
+redshift bins, allowing the reconstruction of the redshift evolution of the 
+gravitational field. The tomographic kernels encode the geometry of the Universe, 
+the matter distribution, and the growth of structure.
+
+In the standard cosmological model, the tomographic kernels evolve smoothly with 
+redshift. In RDCC, the gravitational potential evolves differently. The relaxation 
+mechanism suppresses the decay of small-scale modes and enhances the coherence of 
+large-scale modes. This modifies the tomographic kernels, the growth rate, and the 
+cross-bin correlations in a scale-dependent manner, producing a distinctive 
+signature in weak-lensing tomography.
+% ---------------------------------------------------------
+\section{The RDCC Lensing Kernel}
+
+The standard lensing kernel for a source bin $i$ is
+\begin{equation}
+    W_{i}(\chi)
+    = \frac{3H_{0}^{2}\Omega_{m}}{2c^{2}}
+      \frac{\chi}{a(\chi)}
+      \int_{\chi}^{\chi_{H}} d\chi'\,
+      n_{i}(\chi')\,
+      \frac{\chi' - \chi}{\chi'}.
+\end{equation}
+
+In RDCC, the gravitational potential evolves as
+\begin{equation}
+    \Phi_{\mathrm{RDCC}}(k,a)
+    = \Phi(k,a)
+      \left[
+        1 - \chi_{\Phi}
+        \left(\frac{k}{k_{\mathrm{rel}}}\right)^{\alpha}
+      \right].
+\end{equation}
+
+The RDCC lensing kernel becomes
+\begin{equation}
+    W_{i,\mathrm{RDCC}}(\chi)
+    = W_{i}(\chi)
+      \left[
+        1 - \chi_{W}
+        \left(\frac{k}{k_{\mathrm{rel}}}\right)^{\alpha}
+      \right].
+\end{equation}
+% ---------------------------------------------------------
+\section{Tomographic Power Spectra in RDCC}
+
+The tomographic shear power spectrum between bins $i$ and $j$ is
+\begin{equation}
+    C_{\ell}^{ij}
+    = \int_{0}^{\chi_{H}}
+      d\chi\,
+      \frac{W_{i}(\chi)\, W_{j}(\chi)}{\chi^{2}}\,
+      P_{m}\left(k=\frac{\ell}{\chi},z(\chi)\right).
+\end{equation}
+
+In RDCC, the matter power spectrum becomes
+\begin{equation}
+    P_{m,\mathrm{RDCC}}(k,z)
+    = P_{m}(k,z)
+      \left[
+        1 - \chi_{P}
+        \left(\frac{k}{k_{\mathrm{rel}}}\right)^{\alpha}
+      \right].
+\end{equation}
+
+The tomographic spectrum becomes
+\begin{equation}
+    C_{\ell,\mathrm{RDCC}}^{ij}
+    = C_{\ell}^{ij}
+      \left[
+        1 - \chi_{C}
+        \left(\frac{\ell}{\ell_{\mathrm{rel}}}\right)^{\alpha}
+      \right].
+\end{equation}
+% ---------------------------------------------------------
+\section{Cross-Bin Correlations and RDCC Signatures}
+
+The relaxation mechanism enhances the coherence of large-scale modes. The 
+cross-bin correlations therefore exhibit:
+
+\begin{itemize}
+    \item enhanced correlations at large angular scales,
+    \item suppressed correlations at small scales,
+    \item a characteristic turnover near $\ell_{\mathrm{rel}}$,
+    \item a modified redshift dependence of the cross-bin amplitude.
+\end{itemize}
+
+These signatures provide a direct observational probe of the RDCC gravitational 
+field across cosmic time.
+% ---------------------------------------------------------
+\section{Redshift Evolution of the RDCC Kernel}
+
+The redshift evolution of the RDCC kernel is given by
+\begin{equation}
+    \frac{\partial W_{i,\mathrm{RDCC}}}{\partial z}
+    = \frac{\partial W_{i}}{\partial z}
+      \left[
+        1 - \chi_{W}
+        \left(\frac{k}{k_{\mathrm{rel}}}\right)^{\alpha}
+      \right]
+      - W_{i}\,
+        \chi_{W}\,\alpha\,
+        \left(\frac{k}{k_{\mathrm{rel}}}\right)^{\alpha}
+        \frac{\partial \ln k_{\mathrm{rel}}}{\partial z}.
+\end{equation}
+
+This term is unique to RDCC and provides a direct probe of the relaxation scale.
+% ---------------------------------------------------------
+\section{Conclusion}
+
+Weak-lensing tomography in the Relaxation-Driven Cyclic Cosmology reflects the 
+scale-dependent evolution of the gravitational potential and the matter 
+distribution. The relaxation mechanism modifies the tomographic kernels, the 
+growth rate, and the cross-bin correlations in a scale-dependent manner, producing 
+distinctive signatures in cosmic shear surveys. These effects provide a direct 
+observational window into the relaxation scale and the temporal structure of the 
+RDCC gravitational field. The present Companion establishes the theoretical 
+foundation for future studies of cosmic shear, matter evolution, and the interplay 
+between light and gravity in RDCC.
+
+\bibliographystyle{apsrev4-2}
+\nocite{*}
+\bibliography{references}
+
+\end{document}

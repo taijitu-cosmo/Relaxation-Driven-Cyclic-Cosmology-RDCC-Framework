@@ -1,0 +1,177 @@
+\documentclass[11pt,a4paper]{article}
+
+% ---------------------------------------------------------
+% PREAMBLE (stable, warning-free, Overleaf-safe)
+% ---------------------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{bm}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{cite}
+\usepackage{authblk}
+\usepackage{physics}
+\usepackage{mathtools}
+
+\geometry{margin=2.4cm}
+
+\title{\textbf{Companion XLVIII: Minkowski Functionals in the Relaxation-Driven Cyclic Cosmology}}
+\author{Michael Lehmann \\ \texttt{mi.lehmann@gmx.de}}
+\date{April 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Minkowski functionals provide a complete morphological and topological description 
+of random fields and have become a powerful tool for analyzing the large-scale 
+structure of the Universe. In the standard cosmological model, the topology of the 
+density field is determined by Gaussian initial conditions and non-linear 
+gravitational evolution. In the Relaxation-Driven Cyclic Cosmology (RDCC), the 
+scale-dependent evolution of the gravitational potential modifies the morphology, 
+connectivity, and topology of the cosmic web. This Companion develops a continuous 
+description of Minkowski functionals in RDCC, deriving how the relaxation scale 
+influences the volume fraction, surface area, mean curvature, and Euler 
+characteristic of the density field. The resulting framework provides a 
+distinctive topological signature of the RDCC gravitational field.
+\end{abstract}
+% ---------------------------------------------------------
+\section{Introduction}
+
+The large-scale structure of the Universe is not only characterized by its power 
+spectrum or bispectrum but also by its topology and morphology. Minkowski 
+functionals provide a complete set of geometric descriptors that quantify the 
+shape, connectivity, and curvature of isodensity surfaces. They capture 
+information beyond correlation functions and are sensitive to non-Gaussianity, 
+mode coupling, and the global structure of the cosmic web.
+
+In RDCC, the gravitational potential evolves differently. The relaxation mechanism 
+suppresses the decay of small-scale modes and enhances the coherence of large-scale 
+modes. This modifies the topology of the density field in a scale-dependent manner, 
+producing distinctive signatures in the Minkowski functionals. These signatures 
+provide a direct probe of the relaxation scale $k_{\mathrm{rel}}$.
+% ---------------------------------------------------------
+\section{Minkowski Functionals of the Density Field}
+
+For a three-dimensional field, the Minkowski functionals are defined as:
+
+\begin{align}
+    V_{0}(\nu) &= \text{Volume fraction}, \\
+    V_{1}(\nu) &= \text{Surface area}, \\
+    V_{2}(\nu) &= \text{Integrated mean curvature}, \\
+    V_{3}(\nu) &= \text{Euler characteristic}.
+\end{align}
+
+Here $\nu$ is the density threshold in units of the standard deviation.
+
+In the standard cosmological model, these functionals follow analytic expressions 
+for Gaussian random fields, with deviations arising from non-linear evolution.
+
+In RDCC, the scale-dependent evolution of the gravitational potential modifies the 
+density field in a way that alters all four functionals.
+% ---------------------------------------------------------
+\section{RDCC Modifications to the Density Field}
+
+The density contrast evolves according to
+\begin{equation}
+    \delta_{\mathrm{RDCC}}(k,a)
+    = \delta(k,a)
+      \left[
+        1 - \chi_{\delta}
+        \left(\frac{k}{k_{\mathrm{rel}}}\right)^{\alpha}
+      \right].
+\end{equation}
+
+This modification suppresses small-scale fluctuations and enhances large-scale 
+coherence. The resulting density field is smoother, with fewer small-scale peaks 
+and a more coherent filamentary structure.
+
+These changes propagate directly into the Minkowski functionals.
+% ---------------------------------------------------------
+\section{RDCC Minkowski Functionals}
+
+The Minkowski functionals of a weakly non-Gaussian field can be written as
+\begin{equation}
+    V_{i}(\nu)
+    = V_{i}^{(G)}(\nu)
+      + \Delta V_{i}(\nu),
+\end{equation}
+where $V_{i}^{(G)}$ is the Gaussian prediction and $\Delta V_{i}$ encodes 
+non-Gaussian corrections.
+
+In RDCC, the corrections become
+\begin{equation}
+    \Delta V_{i,\mathrm{RDCC}}(\nu)
+    = \Delta V_{i}(\nu)
+      \left[
+        1 - \chi_{V_{i}}
+        \left(\frac{k}{k_{\mathrm{rel}}}\right)^{\alpha}
+      \right].
+\end{equation}
+
+This modification produces:
+
+- a smoother volume fraction curve,  
+- reduced surface area at high thresholds,  
+- enhanced mean curvature at intermediate thresholds,  
+- and a distinctive shift in the Euler characteristic.
+
+The Euler characteristic, in particular, becomes a sensitive probe of the 
+relaxation scale.
+% ---------------------------------------------------------
+\section{Topology of the Cosmic Web in RDCC}
+
+The Euler characteristic counts the number of connected components minus the number 
+of tunnels plus the number of cavities. In RDCC, the suppression of small-scale 
+modes reduces the number of isolated peaks and tunnels, while the enhanced 
+coherence of large-scale modes increases the size and connectivity of filaments.
+
+The topology of the cosmic web becomes smoother and more coherent, with fewer 
+small-scale structures and more prominent large-scale features.
+
+This topological signature provides a direct observational probe of the RDCC 
+gravitational field.
+% ---------------------------------------------------------
+\section{Conclusion}
+
+Minkowski functionals in the Relaxation-Driven Cyclic Cosmology reflect the 
+scale-dependent evolution of the gravitational potential. The relaxation mechanism 
+modifies the morphology, connectivity, and topology of the cosmic density field, 
+producing distinctive signatures in the volume fraction, surface area, mean 
+curvature, and Euler characteristic. These effects provide a powerful topological 
+probe of the relaxation scale and the temporal structure of the RDCC gravitational 
+field. The present Companion establishes the theoretical foundation for future 
+studies of cosmic topology, non-Gaussianity, and the geometry of large-scale 
+structure in RDCC.
+
+% ========================
+% References
+% ========================
+
+\begin{thebibliography}{10}
+
+\bibitem{Flagship} Lehmann, M. (2026). Relaxation-Driven Cyclic Cosmology (RDCC): A Minimal CPT-Symmetric Framework with a Single Parameter. Flagship Paper. Zenodo: \url{https://zenodo.org/records/19744958} (v43.0 or later).
+
+\bibitem{Zenodo} The complete RDCC companion series (I--LVII) is available at the same Zenodo record above.
+
+% Thematisch relevante Companions
+\bibitem{CompXVI} Companion XVI: Boltzmann Code and Modified Hierarchy.
+\bibitem{CompXXXI} Companion XXXI: RDCC Halo Model and Non-Linear Structure.
+\bibitem{CompXXXII} Companion XXXII--XXXIX: Galaxy--Halo Connection, Cosmic Web, Lensing, RSD, ISW, tSZ, Rotation Curves, CGM.
+
+% Wichtige externe Referenzen
+\bibitem{Planck2020} Planck Collaboration (2020), Astron. Astrophys. 641, A6.
+\bibitem{DESI2024} DESI Collaboration (2024/2025), arXiv: [aktuelle $f\sigma_8$/BAO-Paper].
+\bibitem{JWST2024} Maiolino et al. (2024), Nature (JWST high-$z$ galaxies/quasars).
+\bibitem{Kaiser1987} Kaiser, N. (1987), Mon. Not. R. Astron. Soc. 227, 1 (RSD).
+\bibitem{Bartelmann2001} Bartelmann, M. \& Schneider, P. (2001), Phys. Rep. 340, 291 (Weak Lensing Review).
+\bibitem{HuOkamoto2002} Hu, W. \& Okamoto, T. (2002), Astrophys. J. 574, 566 (CMB Lensing).
+\bibitem{LewisChallinor2006} Lewis, A. \& Challinor, A. (2006), Phys. Rep. 429, 1 (CMB Lensing Review).
+\bibitem{NFW1997} Navarro, J. F., Frenk, C. S. \& White, S. D. M. (1997), Astrophys. J. 490, 493 (Halo Profiles).
+
+\end{thebibliography}
+
+\end{document}

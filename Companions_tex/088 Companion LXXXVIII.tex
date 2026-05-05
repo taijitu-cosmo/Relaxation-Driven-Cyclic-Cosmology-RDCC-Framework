@@ -1,0 +1,177 @@
+\documentclass[11pt,a4paper]{article}
+
+% ---------------------------------------------------------
+% PREAMBLE (stable, warning-free, Overleaf-safe)
+% ---------------------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{bm}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{cite}
+\usepackage{authblk}
+\usepackage{physics}
+\usepackage{mathtools}
+
+\geometry{margin=2.4cm}
+
+\title{\textbf{Companion LXXXVIII: Emulator-Accelerated RDCC Inference Using Neural Transport Surrogates and Multi-Fidelity Simulation Flows}}
+\author{Michael Lehmann \\ \texttt{mi.lehmann@gmx.de}}
+\date{April 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Inference in the Relaxation-Driven Cyclic Cosmology (RDCC) requires repeated 
+evaluation of summary statistics across a range of $\alpha$ values. Full 
+weak-lensing simulations are computationally expensive, making direct likelihood 
+evaluation impractical. In this work, we introduce emulator-accelerated RDCC 
+inference using neural transport surrogates and multi-fidelity simulation flows. 
+Neural transport surrogates emulate the distribution of persistence diagrams, 
+Minkowski functionals, and shear power spectra as a function of $\alpha$, while 
+multi-fidelity flows combine low- and high-resolution simulations into a unified 
+generative model. This framework reduces simulation cost by orders of magnitude 
+and enables fast, accurate, and scalable RDCC inference for Euclid-like surveys.
+\end{abstract}
+% ---------------------------------------------------------
+\section{Introduction}
+
+Inference in RDCC requires evaluating summary statistics for many values of the 
+relaxation parameter $\alpha$. Full weak-lensing simulations are expensive, and 
+the summary statistics used in previous Companions—transport distances, Minkowski 
+functionals, and shear power spectra—are sensitive to non-linear structure 
+formation.
+
+To make RDCC inference scalable, we introduce:
+
+\begin{itemize}
+    \item neural transport surrogates for topological statistics,
+    \item multi-fidelity simulation flows combining low- and high-resolution data,
+    \item emulator-based likelihood acceleration.
+\end{itemize}
+
+This reduces computational cost while preserving accuracy.
+% ---------------------------------------------------------
+\section{Neural Transport Surrogates}
+
+We construct a surrogate model $S_{\theta}$ that emulates the distribution of 
+persistence diagrams as a function of $\alpha$:
+
+
+
+\[
+    D \sim S_{\theta}(\alpha).
+\]
+
+
+
+The surrogate is trained using:
+
+\begin{itemize}
+    \item neural Schrödinger flows (Companion LXXX),
+    \item unified diffusion--OT geometry (LXXXI),
+    \item transport-based sensitivity maps (LXXXII).
+\end{itemize}
+
+The surrogate predicts:
+
+\begin{itemize}
+    \item persistence-diagram distributions,
+    \item transport distances $\mathcal{T}_{\ell}(\alpha)$,
+    \item their derivatives $\partial \mathcal{T}_{\ell}/\partial \alpha$.
+\end{itemize}
+% ---------------------------------------------------------
+\section{Multi-Fidelity Simulation Flows}
+
+We combine:
+
+\begin{itemize}
+    \item low-resolution simulations (cheap, noisy),
+    \item high-resolution simulations (expensive, accurate),
+\end{itemize}
+
+into a single flow-based generative model:
+
+
+
+\[
+    f_{\mathrm{MF}} = \lambda f_{\mathrm{low}} + (1-\lambda) f_{\mathrm{high}}.
+\]
+
+
+
+Flow-matching ensures consistency across fidelities:
+
+
+
+\[
+    \mathcal{L}_{\mathrm{FM}}
+    =
+    \mathbb{E}
+    \left[
+        \| f_{\mathrm{MF}}(x) - f_{\mathrm{high}}(x) \|^{2}
+    \right].
+\]
+
+
+
+This yields high-resolution accuracy at low-resolution cost.
+% ---------------------------------------------------------
+\section{Emulator-Accelerated Likelihood Evaluation}
+
+Given the neural joint likelihood $\mathcal{L}_{\theta}$ from Companion LXXXVI, 
+we replace expensive simulation calls with surrogate predictions:
+
+
+
+\[
+    \mathcal{L}_{\mathrm{emul}}(\mathbf{s} \mid \alpha)
+    =
+    \mathcal{L}_{\theta}\!\left(
+        \mathbf{s} \mid S_{\theta}(\alpha)
+    \right).
+\]
+
+
+
+This accelerates:
+
+\begin{itemize}
+    \item posterior sampling,
+    \item Fisher forecasts,
+    \item sensitivity analyses,
+    \item calibration loops (Companion LXXXVII).
+\end{itemize}
+% ---------------------------------------------------------
+\section{Accuracy Diagnostics}
+
+We evaluate emulator accuracy using:
+
+\begin{itemize}
+    \item score discrepancies $\Delta s$,
+    \item transport-based distances between surrogate and true diagrams,
+    \item posterior-predictive checks,
+    \item coverage tests for $\alpha$.
+\end{itemize}
+
+These diagnostics ensure that the emulator preserves RDCC signatures.
+% ---------------------------------------------------------
+\section{Conclusion}
+
+Emulator-accelerated inference is essential for applying RDCC to Euclid-like 
+surveys. Neural transport surrogates emulate topological statistics, 
+multi-fidelity flows combine simulations of different resolutions, and 
+emulator-based likelihood evaluation accelerates inference by orders of 
+magnitude. This Companion establishes the computational backbone for scalable, 
+accurate RDCC parameter estimation.
+
+\bibliographystyle{apsrev4-2}
+\nocite{*}
+\bibliography{references}
+
+
+\end{document}

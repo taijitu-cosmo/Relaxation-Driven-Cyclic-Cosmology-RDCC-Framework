@@ -1,0 +1,203 @@
+\documentclass[11pt,a4paper]{article}
+
+% ---------------------------------------------------------
+% PREAMBLE (stable, warning-free, Overleaf-safe)
+% ---------------------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{bm}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{cite}
+\usepackage{authblk}
+\usepackage{physics}
+\usepackage{mathtools}
+
+\geometry{margin=2.4cm}
+
+\title{\textbf{Companion XLII: The Kinematic Sunyaev--Zel'dovich Effect in the Relaxation-Driven Cyclic Cosmology}}
+\author{Michael Lehmann \\ \texttt{mi.lehmann@gmx.de}}
+\date{April 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The kinematic Sunyaev--Zel'dovich (kSZ) effect provides a direct probe of cosmic 
+velocity fields and the dynamical evolution of large-scale structure. In the 
+standard cosmological model, the kSZ signal arises from the Doppler shift of CMB 
+photons scattered by free electrons moving with bulk velocities. In the 
+Relaxation-Driven Cyclic Cosmology (RDCC), the scale-dependent evolution of the 
+gravitational potential modifies the growth of velocity fields, the coherence of 
+bulk flows, and the coupling between baryons and dark matter. This Companion 
+develops a continuous description of the kSZ effect in RDCC, deriving how the 
+relaxation scale influences the velocity divergence, the pairwise momentum field, 
+and the angular power spectrum of the kSZ signal. The resulting framework provides 
+a new observational window into the dynamical structure of the RDCC Universe.
+\end{abstract}
+% ---------------------------------------------------------
+\section{Introduction}
+
+The kinematic Sunyaev--Zel'dovich effect is a Doppler shift imprinted on the cosmic 
+microwave background by free electrons moving with bulk velocities. Unlike the 
+thermal SZ effect, which probes the thermal energy of the intracluster medium, the 
+kSZ effect is sensitive to the momentum field of baryons and thus to the dynamical 
+evolution of large-scale structure.
+
+In the standard cosmological model, the velocity field is governed by the linear 
+growth rate and the continuity equation. In RDCC, the gravitational potential 
+evolves differently. The relaxation mechanism suppresses the decay of small-scale 
+modes and enhances the coherence of large-scale modes. This modifies the velocity 
+divergence, the amplitude of bulk flows, and the coupling between baryons and dark 
+matter. The kSZ effect becomes a direct tracer of the relaxation scale 
+$k_{\mathrm{rel}}$ and the temporal structure of the gravitational field.
+% ---------------------------------------------------------
+\section{Velocity Fields in RDCC}
+
+The cosmic velocity field is governed by the Euler equation,
+\begin{equation}
+    \frac{\partial \mathbf{v}}{\partial a}
+    + \frac{1}{a} (\mathbf{v} \cdot \nabla)\mathbf{v}
+    = -\frac{1}{aH} \nabla \Phi_{\mathrm{RDCC}}.
+\end{equation}
+
+In RDCC, the gravitational potential takes the form
+\begin{equation}
+    \Phi_{\mathrm{RDCC}}(k,a)
+    = \Phi(k,a)
+      \left[
+        1 - \chi_{\Phi}
+        \left(\frac{k}{k_{\mathrm{rel}}}\right)^{\alpha}
+      \right].
+\end{equation}
+
+The velocity divergence,
+\begin{equation}
+    \theta = \nabla \cdot \mathbf{v},
+\end{equation}
+is therefore modified by the relaxation mechanism. Small-scale modes contribute 
+less to the divergence, while large-scale modes retain their coherence. The 
+velocity field becomes smoother and more coherent on scales near $k_{\mathrm{rel}}$.
+% ---------------------------------------------------------
+\section{The RDCC kSZ Signal}
+
+The kSZ temperature shift is given by
+\begin{equation}
+    \frac{\Delta T_{\mathrm{kSZ}}}{T_{\gamma}}
+    = -\sigma_{T}
+      \int n_{e}(\mathbf{x})\,
+      \frac{\mathbf{v} \cdot \hat{\mathbf{n}}}{c}\,
+      dl,
+\end{equation}
+where $\hat{\mathbf{n}}$ is the line-of-sight direction.
+
+In RDCC, both the electron density and the velocity field carry the imprint of the 
+relaxation scale. The kSZ signal becomes
+\begin{equation}
+    \Delta T_{\mathrm{kSZ,RDCC}}
+    = \Delta T_{\mathrm{kSZ}}
+      \left[
+        1 - \chi_{\mathrm{kSZ}}
+        \left(\frac{k}{k_{\mathrm{rel}}}\right)^{\alpha}
+      \right].
+\end{equation}
+
+This modification suppresses small-scale kSZ fluctuations and enhances large-scale 
+coherence.
+% ---------------------------------------------------------
+\section{Pairwise Momentum and Bulk Flows}
+
+The pairwise momentum field,
+\begin{equation}
+    p_{12}(r)
+    = \left\langle
+        \left[
+            1 + \delta_{e}(\mathbf{x})
+        \right]
+        \mathbf{v}(\mathbf{x})
+        \cdot \hat{\mathbf{r}}
+    \right\rangle,
+\end{equation}
+is a key observable for the kSZ effect.
+
+In RDCC, the suppression of small-scale potential evolution reduces the amplitude 
+of small-scale pairwise velocities, while the enhanced coherence of large-scale 
+modes increases the amplitude of bulk flows. The pairwise momentum becomes
+\begin{equation}
+    p_{12,\mathrm{RDCC}}(r)
+    = p_{12}(r)
+      \left[
+        1 - \chi_{p}
+        \left(\frac{1}{k_{\mathrm{rel}} r}\right)^{\alpha}
+      \right].
+\end{equation}
+
+This produces a characteristic scale-dependent modulation that reflects the 
+relaxation scale.
+% ---------------------------------------------------------
+\section{The kSZ Power Spectrum}
+
+The angular power spectrum of the kSZ effect is given by
+\begin{equation}
+    C_{\ell}^{\mathrm{kSZ}}
+    = \int dk\,
+      P_{q}(k)\,
+      j_{\ell}^{2}(kr),
+\end{equation}
+where $P_{q}(k)$ is the power spectrum of the momentum field.
+
+In RDCC, the momentum power spectrum becomes
+\begin{equation}
+    P_{q,\mathrm{RDCC}}(k)
+    = P_{q}(k)
+      \left[
+        1 - \chi_{q}
+        \left(\frac{k}{k_{\mathrm{rel}}}\right)^{\alpha}
+      \right].
+\end{equation}
+
+This modification suppresses small-scale kSZ power and enhances large-scale 
+coherence, producing a distinctive RDCC signature in the kSZ power spectrum.
+% ---------------------------------------------------------
+\section{Conclusion}
+
+The kinematic Sunyaev--Zel'dovich effect in the Relaxation-Driven Cyclic Cosmology 
+reflects the scale-dependent evolution of the gravitational potential. The 
+relaxation mechanism modifies the velocity divergence, the amplitude of bulk flows, 
+and the coupling between baryons and dark matter. These effects produce distinctive 
+signatures in the kSZ temperature shift, the pairwise momentum field, and the kSZ 
+power spectrum. The present Companion establishes the theoretical foundation for 
+future studies of cosmic velocity fields, baryon dynamics, and the interplay 
+between matter and radiation in RDCC.
+
+% ========================
+% References
+% ========================
+
+\begin{thebibliography}{10}
+
+\bibitem{Flagship} Lehmann, M. (2026). Relaxation-Driven Cyclic Cosmology (RDCC): A Minimal CPT-Symmetric Framework with a Single Parameter. Flagship Paper. Zenodo: \url{https://zenodo.org/records/19744958} (v43.0 or later).
+
+\bibitem{Zenodo} The complete RDCC companion series (I--LVII) is available at the same Zenodo record above.
+
+% Thematisch relevante Companions
+\bibitem{CompXVI} Companion XVI: Boltzmann Code and Modified Hierarchy.
+\bibitem{CompXXXI} Companion XXXI: RDCC Halo Model and Non-Linear Structure.
+\bibitem{CompXXXII} Companion XXXII--XXXIX: Galaxy--Halo Connection, Cosmic Web, Lensing, RSD, ISW, tSZ, Rotation Curves, CGM.
+
+% Wichtige externe Referenzen
+\bibitem{Planck2020} Planck Collaboration (2020), Astron. Astrophys. 641, A6.
+\bibitem{DESI2024} DESI Collaboration (2024/2025), arXiv: [aktuelle $f\sigma_8$/BAO-Paper].
+\bibitem{JWST2024} Maiolino et al. (2024), Nature (JWST high-$z$ galaxies/quasars).
+\bibitem{Kaiser1987} Kaiser, N. (1987), Mon. Not. R. Astron. Soc. 227, 1 (RSD).
+\bibitem{Bartelmann2001} Bartelmann, M. \& Schneider, P. (2001), Phys. Rep. 340, 291 (Weak Lensing Review).
+\bibitem{HuOkamoto2002} Hu, W. \& Okamoto, T. (2002), Astrophys. J. 574, 566 (CMB Lensing).
+\bibitem{LewisChallinor2006} Lewis, A. \& Challinor, A. (2006), Phys. Rep. 429, 1 (CMB Lensing Review).
+\bibitem{NFW1997} Navarro, J. F., Frenk, C. S. \& White, S. D. M. (1997), Astrophys. J. 490, 493 (Halo Profiles).
+
+\end{thebibliography}
+
+\end{document}

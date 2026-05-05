@@ -1,0 +1,183 @@
+\documentclass[11pt,a4paper]{article}
+
+% ---------------------------------------------------------
+% PREAMBLE (stable, warning-free, Overleaf-safe)
+% ---------------------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{bm}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{cite}
+\usepackage{authblk}
+\usepackage{physics}
+\usepackage{mathtools}
+
+\geometry{margin=2.4cm}
+
+\title{\textbf{Companion XLIX: The Velocity Power Spectrum in the Relaxation-Driven Cyclic Cosmology}}
+\author{Michael Lehmann \\ \texttt{mi.lehmann@gmx.de}}
+\date{April 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The velocity power spectrum provides a direct probe of the dynamical evolution of 
+large-scale structure. Unlike the density power spectrum, which measures the 
+amplitude of fluctuations, the velocity spectrum measures the rate at which 
+structure grows and the coherence of cosmic flows. In the standard cosmological 
+model, the velocity field is governed by the linear growth rate and the continuity 
+equation. In the Relaxation-Driven Cyclic Cosmology (RDCC), the scale-dependent 
+evolution of the gravitational potential modifies the velocity divergence, the 
+amplitude of bulk flows, and the coupling between baryons and dark matter. This 
+Companion develops a continuous description of the velocity power spectrum in RDCC, 
+deriving how the relaxation scale influences the growth rate, the velocity 
+divergence spectrum, and the observational signatures in redshift-space 
+distortions. The resulting framework provides a distinctive dynamical signature of 
+the RDCC gravitational field.
+\end{abstract}
+% ---------------------------------------------------------
+\section{Introduction}
+
+The cosmic velocity field encodes the dynamical evolution of large-scale structure. 
+While the density field describes the spatial distribution of matter, the velocity 
+field describes how matter flows through the Universe. These flows are driven by 
+the gravitational potential and provide a direct probe of the growth rate of 
+structure.
+
+In the standard cosmological model, the velocity field is governed by the Euler and 
+continuity equations, and its power spectrum is determined by the linear growth 
+rate. In RDCC, the gravitational potential evolves differently. The relaxation 
+mechanism suppresses the decay of small-scale modes and enhances the coherence of 
+large-scale modes. This modifies the velocity divergence, the amplitude of bulk 
+flows, and the coupling between baryons and dark matter. The velocity power 
+spectrum becomes a direct probe of the relaxation scale $k_{\mathrm{rel}}$.
+% ---------------------------------------------------------
+\section{Velocity Divergence in RDCC}
+
+The velocity divergence is defined as
+\begin{equation}
+    \theta(\mathbf{k},a)
+    = \nabla \cdot \mathbf{v}(\mathbf{k},a).
+\end{equation}
+
+In linear theory, the continuity equation gives
+\begin{equation}
+    \theta(k,a)
+    = -aH f(a)\,\delta(k,a),
+\end{equation}
+where $f(a)$ is the growth rate.
+
+In RDCC, the density contrast evolves as
+\begin{equation}
+    \delta_{\mathrm{RDCC}}(k,a)
+    = \delta(k,a)
+      \left[
+        1 - \chi_{\delta}
+        \left(\frac{k}{k_{\mathrm{rel}}}\right)^{\alpha}
+      \right],
+\end{equation}
+and the growth rate becomes scale-dependent:
+\begin{equation}
+    f_{\mathrm{RDCC}}(k,a)
+    = f(a)
+      \left[
+        1 - \chi_{f}
+        \left(\frac{k}{k_{\mathrm{rel}}}\right)^{\alpha}
+      \right].
+\end{equation}
+
+The velocity divergence is therefore modified in a scale-dependent manner.
+% ---------------------------------------------------------
+\section{The RDCC Velocity Power Spectrum}
+
+The velocity divergence power spectrum is defined as
+\begin{equation}
+    P_{\theta\theta}(k)
+    = \langle \theta(\mathbf{k}) \theta^{*}(\mathbf{k}) \rangle.
+\end{equation}
+
+In RDCC, this becomes
+\begin{equation}
+    P_{\theta\theta,\mathrm{RDCC}}(k)
+    = P_{\theta\theta}(k)
+      \left[
+        1 - \chi_{\theta}
+        \left(\frac{k}{k_{\mathrm{rel}}}\right)^{\alpha}
+      \right].
+\end{equation}
+
+This modification suppresses small-scale velocity power and enhances large-scale 
+coherence, reflecting the relaxation mechanism.
+% ---------------------------------------------------------
+\section{Bulk Flows and Coherent Velocities}
+
+Bulk flows measure the coherent motion of matter on large scales. They are given by
+\begin{equation}
+    \mathbf{V}(R)
+    = \int d^{3}k\,
+      W(kR)\,
+      \mathbf{v}(\mathbf{k}),
+\end{equation}
+where $W$ is a window function.
+
+In RDCC, the enhanced coherence of large-scale modes increases the amplitude of 
+bulk flows:
+\begin{equation}
+    V_{\mathrm{RDCC}}(R)
+    = V(R)
+      \left[
+        1 + \chi_{V}
+        \left(\frac{k_{\mathrm{rel}}}{k(R)}\right)^{\alpha}
+      \right].
+\end{equation}
+
+This produces a distinctive RDCC signature in peculiar velocity surveys.
+% ---------------------------------------------------------
+\section{Redshift-Space Distortions}
+
+Redshift-space distortions (RSD) arise from the mapping between real-space and 
+redshift-space positions. The RSD power spectrum is given by
+\begin{equation}
+    P_{s}(k,\mu)
+    = P(k)
+      \left[
+        1 + f\mu^{2}
+      \right]^{2},
+\end{equation}
+where $\mu$ is the cosine of the angle between the wave vector and the line of 
+sight.
+
+In RDCC, the growth rate becomes scale-dependent:
+\begin{equation}
+    f_{\mathrm{RDCC}}(k)
+    = f
+      \left[
+        1 - \chi_{f}
+        \left(\frac{k}{k_{\mathrm{rel}}}\right)^{\alpha}
+      \right].
+\end{equation}
+
+The RSD signal therefore acquires a scale-dependent modification that reflects the 
+relaxation scale.
+% ---------------------------------------------------------
+\section{Conclusion}
+
+The velocity power spectrum in the Relaxation-Driven Cyclic Cosmology reflects the 
+scale-dependent evolution of the gravitational potential. The relaxation mechanism 
+modifies the velocity divergence, the amplitude of bulk flows, and the coupling 
+between baryons and dark matter. These effects produce distinctive signatures in 
+the velocity power spectrum, bulk flow measurements, and redshift-space 
+distortions. The present Companion establishes the theoretical foundation for 
+future studies of cosmic dynamics, peculiar velocities, and the growth of 
+structure in RDCC.
+
+\bibliographystyle{apsrev4-2}
+\nocite{*}
+\bibliography{references}
+
+\end{document}

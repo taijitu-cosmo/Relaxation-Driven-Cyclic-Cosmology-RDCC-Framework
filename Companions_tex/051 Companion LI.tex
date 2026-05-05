@@ -1,0 +1,181 @@
+\documentclass[11pt,a4paper]{article}
+
+% ---------------------------------------------------------
+% PREAMBLE (stable, warning-free, Overleaf-safe)
+% ---------------------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{bm}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{cite}
+\usepackage{authblk}
+\usepackage{physics}
+\usepackage{mathtools}
+
+\geometry{margin=2.4cm}
+
+\title{\textbf{Companion LI: The Time Derivative of the Gravitational Potential in the Relaxation-Driven Cyclic Cosmology}}
+\author{Michael Lehmann \\ \texttt{mi.lehmann@gmx.de}}
+\date{April 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The time derivative of the gravitational potential, $\dot{\Phi}$, plays a central 
+role in several cosmological observables, including the integrated Sachs--Wolfe 
+(ISW) effect, the Rees--Sciama effect, and the evolution of large-scale structure. 
+In the standard cosmological model, $\dot{\Phi}$ is small during matter domination 
+and becomes significant only at late times due to dark energy. In the 
+Relaxation-Driven Cyclic Cosmology (RDCC), the scale-dependent evolution of the 
+gravitational potential introduces a new temporal structure in $\dot{\Phi}$, as the 
+relaxation mechanism modifies the decay of small-scale modes and enhances the 
+coherence of large-scale modes. This Companion develops a continuous description of 
+$\dot{\Phi}$ in RDCC, deriving how the relaxation scale influences the ISW signal, 
+the Rees--Sciama effect, and the temporal evolution of the gravitational field. The 
+resulting framework provides a direct observational probe of the RDCC relaxation 
+mechanism.
+\end{abstract}
+% ---------------------------------------------------------
+\section{Introduction}
+
+The gravitational potential $\Phi$ governs the motion of matter and the propagation 
+of light. Its time derivative, $\dot{\Phi}$, encodes the dynamical evolution of the 
+gravitational field and plays a central role in several cosmological observables. 
+The integrated Sachs--Wolfe (ISW) effect arises from the line-of-sight integral of 
+$\dot{\Phi}$, while the Rees--Sciama effect arises from non-linear contributions to 
+$\dot{\Phi}$.
+
+In the standard cosmological model, $\dot{\Phi}$ is small during matter domination 
+and becomes significant only at late times due to dark energy. In RDCC, the 
+gravitational potential evolves differently. The relaxation mechanism suppresses the 
+decay of small-scale modes and enhances the coherence of large-scale modes. This 
+modifies the temporal structure of $\dot{\Phi}$ in a scale-dependent manner, 
+producing distinctive signatures in the ISW and Rees--Sciama effects.
+% ---------------------------------------------------------
+\section{The RDCC Gravitational Potential}
+
+The gravitational potential in RDCC is given by
+\begin{equation}
+    \Phi_{\mathrm{RDCC}}(k,a)
+    = \Phi(k,a)
+      \left[
+        1 - \chi_{\Phi}
+        \left(\frac{k}{k_{\mathrm{rel}}}\right)^{\alpha}
+      \right].
+\end{equation}
+
+The time derivative becomes
+\begin{equation}
+    \dot{\Phi}_{\mathrm{RDCC}}(k,a)
+    = \dot{\Phi}(k,a)
+      \left[
+        1 - \chi_{\Phi}
+        \left(\frac{k}{k_{\mathrm{rel}}}\right)^{\alpha}
+      \right]
+      - \Phi(k,a)\,
+        \chi_{\Phi}\,\alpha\,
+        \left(\frac{k}{k_{\mathrm{rel}}}\right)^{\alpha}
+        \frac{\dot{k}_{\mathrm{rel}}}{k_{\mathrm{rel}}}.
+\end{equation}
+
+This expression shows that $\dot{\Phi}$ acquires a new contribution from the 
+relaxation mechanism.
+% ---------------------------------------------------------
+\section{The RDCC ISW Effect}
+
+The ISW temperature shift is given by
+\begin{equation}
+    \frac{\Delta T_{\mathrm{ISW}}}{T_{\gamma}}
+    = 2 \int \dot{\Phi}\, d\chi.
+\end{equation}
+
+In RDCC, this becomes
+\begin{equation}
+    \Delta T_{\mathrm{ISW,RDCC}}
+    = \Delta T_{\mathrm{ISW}}
+      \left[
+        1 - \chi_{\mathrm{ISW}}
+        \left(\frac{k}{k_{\mathrm{rel}}}\right)^{\alpha}
+      \right]
+      + 2 \int d\chi\,
+        \Phi(k,a)\,
+        \chi_{\Phi}\,\alpha\,
+        \left(\frac{k}{k_{\mathrm{rel}}}\right)^{\alpha}
+        \frac{\dot{k}_{\mathrm{rel}}}{k_{\mathrm{rel}}}.
+\end{equation}
+
+The second term is unique to RDCC and provides a direct observational probe of the 
+relaxation scale.
+% ---------------------------------------------------------
+\section{The Rees--Sciama Effect in RDCC}
+
+The Rees--Sciama effect arises from non-linear contributions to $\dot{\Phi}$. In 
+RDCC, the non-linear potential becomes
+\begin{equation}
+    \Phi_{\mathrm{NL,RDCC}}
+    = \Phi_{\mathrm{NL}}
+      \left[
+        1 - \chi_{\mathrm{NL}}
+        \left(\frac{k}{k_{\mathrm{rel}}}\right)^{\alpha}
+      \right].
+\end{equation}
+
+The resulting Rees--Sciama temperature shift becomes
+\begin{equation}
+    \Delta T_{\mathrm{RS,RDCC}}
+    = \Delta T_{\mathrm{RS}}
+      \left[
+        1 - \chi_{\mathrm{RS}}
+        \left(\frac{k}{k_{\mathrm{rel}}}\right)^{\alpha}
+      \right].
+\end{equation}
+
+This modification suppresses small-scale contributions and enhances large-scale 
+coherence.
+% ---------------------------------------------------------
+\section{Temporal Coherence and RDCC Signatures}
+
+The relaxation mechanism modifies the temporal coherence of the gravitational 
+potential. The correlation function of $\dot{\Phi}$ becomes
+\begin{equation}
+    \xi_{\dot{\Phi},\mathrm{RDCC}}(k,a)
+    = \xi_{\dot{\Phi}}(k,a)
+      \left[
+        1 - \chi_{\xi}
+        \left(\frac{k}{k_{\mathrm{rel}}}\right)^{\alpha}
+      \right].
+\end{equation}
+
+This modification produces:
+
+\begin{itemize}
+    \item enhanced large-scale ISW correlations,
+    \item suppressed small-scale Rees--Sciama fluctuations,
+    \item a characteristic turnover near the relaxation scale.
+\end{itemize}
+
+These signatures provide a direct observational probe of the RDCC gravitational 
+field.
+% ---------------------------------------------------------
+\section{Conclusion}
+
+The time derivative of the gravitational potential in the Relaxation-Driven Cyclic 
+Cosmology reflects the scale-dependent evolution of the gravitational field. The 
+relaxation mechanism modifies $\dot{\Phi}$ in a scale-dependent manner, producing 
+distinctive signatures in the ISW effect, the Rees--Sciama effect, and the temporal 
+coherence of the gravitational potential. These effects provide a direct 
+observational window into the relaxation scale and the temporal structure of the 
+RDCC gravitational field. The present Companion establishes the theoretical 
+foundation for future studies of CMB secondary anisotropies, potential evolution, 
+and the interplay between matter and gravity in RDCC.
+
+\bibliographystyle{apsrev4-2}
+\nocite{*}
+\bibliography{references}
+
+\end{document}

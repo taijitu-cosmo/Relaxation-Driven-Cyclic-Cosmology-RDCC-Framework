@@ -1,0 +1,175 @@
+\documentclass[11pt,a4paper]{article}
+
+% ---------------------------------------------------------
+% PREAMBLE (stable, warning-free, Overleaf-safe)
+% ---------------------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{bm}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{cite}
+\usepackage{authblk}
+\usepackage{physics}
+\usepackage{mathtools}
+
+\geometry{margin=2.4cm}
+
+\title{\textbf{Companion XXXIV: Filaments, Coherence, and the Geometry of the Cosmic Web in the Relaxation-Driven Cyclic Cosmology}}
+\author{Michael Lehmann \\ \texttt{mi.lehmann@gmx.de}}
+\date{April 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The cosmic web is the most striking manifestation of non-linear structure formation. 
+Its filaments, sheets, and voids encode the dynamical history of the Universe and 
+reflect the coherence of the underlying gravitational field. In the 
+Relaxation-Driven Cyclic Cosmology (RDCC), the scale-dependent evolution of the 
+gravitational potential alters the geometry and dynamics of the web in a 
+characteristic way. This Companion develops a continuous description of filament 
+formation, examines the influence of the relaxation scale on web coherence, and 
+derives analytical expressions for filament thickness, curvature, and stability. 
+The resulting picture reveals a cosmic web that is smoother, more coherent, and 
+more strongly shaped by large-scale modes than in the standard cosmological model.
+\end{abstract}
+% ---------------------------------------------------------
+\section{Introduction}
+
+The cosmic web emerges from the anisotropic collapse of matter under gravity. 
+Filaments form where collapse proceeds along two principal axes, sheets where only 
+one axis collapses, and voids where expansion dominates. In the standard 
+cosmological model, the geometry of the web is governed by the interplay between 
+the initial tidal field and the non-linear amplification of density perturbations.
+
+In RDCC, the relaxation-modified potential evolution introduces a new layer of 
+structure. Large-scale modes retain a higher degree of temporal coherence, while 
+small-scale modes experience a suppressed evolution. This imbalance reshapes the 
+web's architecture: filaments become smoother, voids expand more coherently, and 
+the connectivity of the web reflects the influence of the relaxation scale 
+$k_{\mathrm{rel}}$.
+% ---------------------------------------------------------
+\section{Filament Formation in RDCC}
+
+Filaments arise from the collapse of matter along two eigenvectors of the tidal 
+tensor. The collapse time is determined by the evolution of the gravitational 
+potential $\Phi(k,a)$, which in RDCC takes the form
+\begin{equation}
+    \Phi_{\mathrm{RDCC}}(k,a)
+    = \Phi(k,a)
+      \left[1 - \chi_{\Phi}
+      \left(\frac{k}{k_{\mathrm{rel}}}\right)^{\alpha}\right].
+\end{equation}
+
+Modes with $k \ll k_{\mathrm{rel}}$ evolve coherently, while modes with 
+$k \gg k_{\mathrm{rel}}$ experience a reduced potential decay. This difference 
+modifies the collapse sequence. Filaments form earlier in regions dominated by 
+large-scale coherence, and their cross-sectional profiles become smoother because 
+the suppressed small-scale modes contribute less to the steepening of the density 
+gradient.
+
+The characteristic filament radius can be estimated by balancing the tidal 
+compression with the relaxation-modified potential:
+\begin{equation}
+    r_{\mathrm{fil}}
+    \sim \left[
+        \frac{\Phi_{\mathrm{RDCC}}}{\lambda_{1} - \lambda_{2}}
+    \right]^{1/2},
+\end{equation}
+where $\lambda_{1}$ and $\lambda_{2}$ are the dominant eigenvalues of the tidal 
+tensor.
+% ---------------------------------------------------------
+\section{Coherence and Curvature of Filaments}
+
+The coherence of a filament refers to the degree to which its spine follows a 
+smooth trajectory through space. In RDCC, the enhanced temporal stability of 
+large-scale modes leads to a more coherent gravitational field, which in turn 
+reduces the curvature of filament spines.
+
+The curvature $\kappa$ of a filament can be approximated by
+\begin{equation}
+    \kappa
+    \sim \frac{\abs{\nabla_{\perp}\Phi_{\mathrm{RDCC}}}}{
+        \abs{\nabla_{\parallel}\Phi_{\mathrm{RDCC}}}^{2}},
+\end{equation}
+where the subscripts denote derivatives perpendicular and parallel to the filament 
+axis. Because the relaxation mechanism suppresses small-scale fluctuations, the 
+perpendicular gradient becomes smoother, reducing $\kappa$ and producing straighter, 
+more extended filaments.
+
+This effect is particularly pronounced in regions where the tidal field is dominated 
+by modes near $k_{\mathrm{rel}}$, which act as a stabilizing backbone for the web.
+% ---------------------------------------------------------
+\section{Void Expansion and Web Connectivity}
+
+Voids expand as matter flows outward along the eigenvectors of the tidal tensor. 
+In RDCC, the suppression of small-scale potential evolution reduces the formation 
+of substructure within voids, allowing them to expand more coherently. The void 
+radius evolves approximately as
+\begin{equation}
+    R_{\mathrm{void}}(a)
+    \propto a^{\gamma_{\mathrm{RDCC}}},
+\end{equation}
+where $\gamma_{\mathrm{RDCC}}$ exceeds its standard-cosmology counterpart due to 
+the enhanced influence of large-scale modes.
+
+The connectivity of the web is also altered. Filaments linking massive halos become 
+more stable, while the number of small-scale filaments decreases. This produces a 
+web with fewer but more prominent connections, reflecting the imprint of the 
+relaxation scale on the geometry of structure formation.
+% ---------------------------------------------------------
+\section{Observational Signatures}
+
+The RDCC modifications to the cosmic web manifest in several measurable ways. 
+Weak-lensing maps reveal smoother filamentary structures and a reduced abundance 
+of small-scale peaks. Galaxy surveys show enhanced alignment of galaxies along 
+filaments, reflecting the increased coherence of the underlying tidal field. 
+Void statistics exhibit larger effective radii and a narrower distribution of 
+shapes, consistent with the suppression of small-scale perturbations.
+
+These signatures provide a direct observational window into the relaxation scale 
+and the temporal structure of the gravitational field in RDCC.
+% ---------------------------------------------------------
+\section{Conclusion}
+
+The cosmic web in the Relaxation-Driven Cyclic Cosmology is shaped by the 
+scale-dependent evolution of the gravitational potential. Filaments form earlier 
+and with smoother profiles, voids expand more coherently, and the connectivity of 
+the web reflects the influence of the relaxation scale. These features distinguish 
+RDCC from the standard cosmological model and offer a rich set of observational 
+tests. The present Companion establishes the theoretical foundation for future 
+studies of galaxy alignment, filament lensing, and the topology of the cosmic web 
+within the RDCC framework.
+
+% ========================
+% References
+% ========================
+
+\begin{thebibliography}{10}
+
+\bibitem{Flagship} Lehmann, M. (2026). Relaxation-Driven Cyclic Cosmology (RDCC): A Minimal CPT-Symmetric Framework with a Single Parameter. Flagship Paper. Zenodo: \url{https://zenodo.org/records/19744958} (v43.0 or later).
+
+\bibitem{Zenodo} The complete RDCC companion series (I--LVII) is available at the same Zenodo record above.
+
+% Thematisch relevante Companions
+\bibitem{CompXVI} Companion XVI: Boltzmann Code and Modified Hierarchy.
+\bibitem{CompXXXI} Companion XXXI: RDCC Halo Model and Non-Linear Structure.
+\bibitem{CompXXXII} Companion XXXII--XXXIX: Galaxy--Halo Connection, Cosmic Web, Lensing, RSD, ISW, tSZ, Rotation Curves, CGM.
+
+% Wichtige externe Referenzen
+\bibitem{Planck2020} Planck Collaboration (2020), Astron. Astrophys. 641, A6.
+\bibitem{DESI2024} DESI Collaboration (2024/2025), arXiv: [aktuelle $f\sigma_8$/BAO-Paper].
+\bibitem{JWST2024} Maiolino et al. (2024), Nature (JWST high-$z$ galaxies/quasars).
+\bibitem{Kaiser1987} Kaiser, N. (1987), Mon. Not. R. Astron. Soc. 227, 1 (RSD).
+\bibitem{Bartelmann2001} Bartelmann, M. \& Schneider, P. (2001), Phys. Rep. 340, 291 (Weak Lensing Review).
+\bibitem{HuOkamoto2002} Hu, W. \& Okamoto, T. (2002), Astrophys. J. 574, 566 (CMB Lensing).
+\bibitem{LewisChallinor2006} Lewis, A. \& Challinor, A. (2006), Phys. Rep. 429, 1 (CMB Lensing Review).
+\bibitem{NFW1997} Navarro, J. F., Frenk, C. S. \& White, S. D. M. (1997), Astrophys. J. 490, 493 (Halo Profiles).
+
+\end{thebibliography}
+
+\end{document}

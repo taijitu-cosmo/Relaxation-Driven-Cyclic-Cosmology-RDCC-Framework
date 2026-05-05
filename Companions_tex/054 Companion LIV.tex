@@ -1,0 +1,188 @@
+\documentclass[11pt,a4paper]{article}
+
+% ---------------------------------------------------------
+% PREAMBLE (stable, warning-free, Overleaf-safe)
+% ---------------------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{bm}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{cite}
+\usepackage{authblk}
+\usepackage{physics}
+\usepackage{mathtools}
+
+\geometry{margin=2.4cm}
+
+\title{\textbf{Companion LIV: The Quadratic Lensing Estimator in the Relaxation-Driven Cyclic Cosmology}}
+\author{Michael Lehmann \\ \texttt{mi.lehmann@gmx.de}}
+\date{April 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Quadratic estimators provide the standard method for reconstructing the CMB lensing 
+potential from mode coupling in temperature and polarization fields. In the 
+standard cosmological model, the estimator response and reconstruction noise are 
+determined by the lensing potential power spectrum and the statistical properties 
+of the CMB. In the Relaxation-Driven Cyclic Cosmology (RDCC), the scale-dependent 
+evolution of the gravitational potential modifies the lensing kernel, the 
+mode-coupling structure, and the estimator normalization in a characteristic way. 
+This Companion develops a continuous description of the quadratic lensing estimator 
+in RDCC, deriving how the relaxation scale influences the estimator response, the 
+reconstruction noise, and the coherence of the reconstructed potential. The 
+resulting framework provides a distinctive observational signature of the RDCC 
+gravitational field.
+\end{abstract}
+% ---------------------------------------------------------
+\section{Introduction}
+
+CMB lensing reconstruction relies on the fact that gravitational lensing couples 
+modes of the CMB temperature and polarization fields. Quadratic estimators exploit 
+this coupling to reconstruct the lensing potential $\phi$. The estimator response 
+and reconstruction noise depend on the lensing potential power spectrum and the 
+statistical properties of the CMB.
+
+In the standard cosmological model, the lensing potential evolves smoothly and 
+scale-independently. In RDCC, the gravitational potential evolves differently. The 
+relaxation mechanism suppresses the decay of small-scale modes and enhances the 
+coherence of large-scale modes. This modifies the lensing potential, the 
+mode-coupling structure, and the estimator response in a scale-dependent manner, 
+producing a distinctive signature in the reconstructed lensing potential.
+% ---------------------------------------------------------
+\section{The Quadratic Lensing Estimator}
+
+The standard quadratic estimator is given by
+\begin{equation}
+    \hat{\phi}_{LM}
+    = N_{L}
+      \sum_{\ell m}
+      \sum_{\ell' m'}
+      X_{\ell m}
+      X_{\ell' m'}
+      \mathcal{W}_{\ell \ell' L}^{m m' M},
+\end{equation}
+where $X$ denotes temperature or polarization fields, $\mathcal{W}$ is a weighting 
+kernel, and $N_{L}$ is the normalization.
+
+The estimator response is defined as
+\begin{equation}
+    \langle \hat{\phi}_{LM} \rangle
+    = R_{L}\, \phi_{LM}.
+\end{equation}
+
+In the standard cosmological model, $R_{L} \approx 1$ on most scales.
+% ---------------------------------------------------------
+\section{The RDCC Modification of the Estimator Response}
+
+In RDCC, the lensing potential evolves as
+\begin{equation}
+    \phi_{\mathrm{RDCC}}
+    = \phi
+      \left[
+        1 - \chi_{\phi}
+        \left(\frac{L}{L_{\mathrm{rel}}}\right)^{\alpha}
+      \right].
+\end{equation}
+
+The estimator response becomes
+\begin{equation}
+    R_{L,\mathrm{RDCC}}
+    = R_{L}
+      \left[
+        1 - \chi_{R}
+        \left(\frac{L}{L_{\mathrm{rel}}}\right)^{\alpha}
+      \right].
+\end{equation}
+
+This modification reflects the scale-dependent evolution of the gravitational 
+potential.
+% ---------------------------------------------------------
+\section{Reconstruction Noise in RDCC}
+
+The reconstruction noise is given by
+\begin{equation}
+    N_{L}^{(0)}
+    = \left[
+        \sum_{\ell \ell'}
+        \frac{
+          \left|
+            \mathcal{W}_{\ell \ell' L}
+          \right|^{2}
+        }{
+          C_{\ell}^{XX}
+          C_{\ell'}^{XX}
+        }
+      \right]^{-1}.
+\end{equation}
+
+In RDCC, the CMB power spectra become
+\begin{equation}
+    C_{\ell,\mathrm{RDCC}}^{XX}
+    = C_{\ell}^{XX}
+      \left[
+        1 - \chi_{X}
+        \left(\frac{\ell}{\ell_{\mathrm{rel}}}\right)^{\alpha}
+      \right].
+\end{equation}
+
+The reconstruction noise becomes
+\begin{equation}
+    N_{L,\mathrm{RDCC}}^{(0)}
+    = N_{L}^{(0)}
+      \left[
+        1 + \chi_{N}
+        \left(\frac{L}{L_{\mathrm{rel}}}\right)^{\alpha}
+      \right].
+\end{equation}
+
+This modification increases noise at small scales and decreases noise at large 
+scales.
+% ---------------------------------------------------------
+\section{Coherence of the Reconstructed Potential}
+
+The reconstructed potential is
+\begin{equation}
+    \hat{\phi}_{LM,\mathrm{RDCC}}
+    = \hat{\phi}_{LM}
+      \left[
+        1 - \chi_{\mathrm{rec}}
+        \left(\frac{L}{L_{\mathrm{rel}}}\right)^{\alpha}
+      \right].
+\end{equation}
+
+The relaxation mechanism enhances the coherence of large-scale modes. The 
+reconstructed potential therefore exhibits:
+
+\begin{itemize}
+    \item enhanced large-scale structure,
+    \item suppressed small-scale fluctuations,
+    \item a characteristic turnover near $L_{\mathrm{rel}}$,
+    \item a modified estimator response function.
+\end{itemize}
+
+These signatures provide a direct observational probe of the RDCC gravitational 
+field.
+% ---------------------------------------------------------
+\section{Conclusion}
+
+The quadratic lensing estimator in the Relaxation-Driven Cyclic Cosmology reflects 
+the scale-dependent evolution of the gravitational potential. The relaxation 
+mechanism modifies the estimator response, the reconstruction noise, and the 
+coherence of the reconstructed potential in a scale-dependent manner, producing 
+distinctive signatures in CMB lensing reconstruction. These effects provide a 
+direct observational window into the relaxation scale and the temporal structure of 
+the RDCC gravitational field. The present Companion establishes the theoretical 
+foundation for future studies of CMB lensing, potential reconstruction, and the 
+interplay between matter and gravity in RDCC.
+
+\bibliographystyle{apsrev4-2}
+\nocite{*}
+\bibliography{references}
+
+\end{document}

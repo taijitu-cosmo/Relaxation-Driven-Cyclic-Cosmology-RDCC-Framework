@@ -1,0 +1,187 @@
+\documentclass[11pt,a4paper]{article}
+
+% ---------------------------------------------------------
+% PREAMBLE (stable, warning-free, Overleaf-safe)
+% ---------------------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{bm}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{cite}
+\usepackage{authblk}
+\usepackage{physics}
+\usepackage{mathtools}
+
+\geometry{margin=2.4cm}
+
+\title{\textbf{Companion XLI: The Epoch of Reionization in the Relaxation-Driven Cyclic Cosmology}}
+\author{Michael Lehmann \\ \texttt{mi.lehmann@gmx.de}}
+\date{April 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The Epoch of Reionization (EoR) marks the transition from a neutral to an ionized 
+Universe and represents one of the most sensitive probes of early structure 
+formation. In the standard cosmological model, reionization is driven by the 
+formation of the first stars and galaxies, whose ultraviolet radiation ionizes the 
+intergalactic medium. In the Relaxation-Driven Cyclic Cosmology (RDCC), the 
+scale-dependent evolution of the gravitational potential modifies the formation 
+history of early galaxies, the propagation of ionization fronts, and the topology 
+of reionization. This Companion develops a continuous description of reionization 
+in RDCC, deriving how the relaxation scale influences the timing, morphology, and 
+observational signatures of the EoR. The resulting framework provides a natural 
+interpretation of the early appearance of massive galaxies and the extended 
+ionization structures observed in deep surveys.
+\end{abstract}
+% ---------------------------------------------------------
+\section{Introduction}
+
+The Epoch of Reionization is a pivotal phase in cosmic history. After recombination, 
+the Universe remained neutral for several hundred million years, until the first 
+stars and galaxies formed and emitted ultraviolet photons capable of ionizing 
+hydrogen. The resulting ionized bubbles expanded, merged, and eventually filled the 
+Universe.
+
+In the standard cosmological model, the timing and morphology of reionization are 
+determined by the formation rate of early galaxies and the clumpiness of the 
+intergalactic medium. In RDCC, the gravitational potential evolves differently. The 
+relaxation mechanism suppresses the growth of small-scale modes and enhances the 
+coherence of large-scale modes. This modifies the formation history of early 
+galaxies and the propagation of ionization fronts, imprinting the relaxation scale 
+$k_{\mathrm{rel}}$ onto the structure of the EoR.
+% ---------------------------------------------------------
+\section{Early Galaxy Formation in RDCC}
+
+The formation of the first galaxies is governed by the collapse of dark matter 
+halos. In RDCC, the gravitational potential takes the form
+\begin{equation}
+    \Phi_{\mathrm{RDCC}}(k,a)
+    = \Phi(k,a)
+      \left[
+        1 - \chi_{\Phi}
+        \left(\frac{k}{k_{\mathrm{rel}}}\right)^{\alpha}
+      \right].
+\end{equation}
+
+Large-scale modes, which dominate the collapse of massive halos, retain their 
+coherence. As a result, massive halos form earlier in RDCC than in the standard 
+cosmological model. Small-scale modes, which would normally produce numerous 
+low-mass halos, are suppressed, delaying the formation of dwarf galaxies.
+
+The halo mass function at high redshift becomes
+\begin{equation}
+    n_{\mathrm{RDCC}}(M,z)
+    = n(M,z)
+      \left[
+        1 - \chi_{n}
+        \left(\frac{k(M)}{k_{\mathrm{rel}}}\right)^{\alpha}
+      \right].
+\end{equation}
+
+This modification naturally explains the early appearance of massive galaxies 
+observed by JWST.
+% ---------------------------------------------------------
+\section{Ionization Fronts and the RDCC Radiation Field}
+
+Ionization fronts propagate through the intergalactic medium according to
+\begin{equation}
+    \frac{dR_{\mathrm{I}}}{dt}
+    = \frac{\dot{N}_{\gamma}}{4\pi R_{\mathrm{I}}^{2} n_{\mathrm{H}}}
+      - \alpha_{\mathrm{B}} n_{\mathrm{H}} R_{\mathrm{I}},
+\end{equation}
+where $\dot{N}_{\gamma}$ is the ionizing photon production rate.
+
+In RDCC, the altered formation history of early galaxies modifies $\dot{N}_{\gamma}$. 
+Massive galaxies, which form earlier, produce strong ionizing radiation fields, 
+while the suppressed formation of dwarf galaxies reduces the contribution from 
+low-mass halos.
+
+The resulting ionization fronts are larger, smoother, and more coherent than in the 
+standard cosmological model. Their expansion reflects the coherence of the 
+gravitational potential on scales near $k_{\mathrm{rel}}$.
+% ---------------------------------------------------------
+\section{Topology of Reionization in RDCC}
+
+The topology of reionization describes the spatial distribution of ionized and 
+neutral regions. In RDCC, the suppression of small-scale modes reduces the 
+fragmentation of ionized bubbles, while the enhanced coherence of large-scale modes 
+promotes the formation of extended ionized regions.
+
+The ionized volume fraction evolves as
+\begin{equation}
+    Q_{\mathrm{HII,RDCC}}(z)
+    = Q_{\mathrm{HII}}(z)
+      \left[
+        1 + \chi_{Q}
+        \left(\frac{k_{\mathrm{rel}}}{k_{\mathrm{HII}}}\right)^{\alpha}
+      \right],
+\end{equation}
+where $k_{\mathrm{HII}}$ characterizes the typical size of ionized bubbles.
+
+This modification produces a smoother reionization topology with larger ionized 
+regions and fewer small-scale neutral pockets.
+% ---------------------------------------------------------
+\section{21-cm Signatures and Observational Probes}
+
+The 21-cm line of neutral hydrogen provides a direct probe of the EoR. The 
+brightness temperature contrast is given by
+\begin{equation}
+    \delta T_{b}
+    \propto x_{\mathrm{HI}}
+    \left(1 - \frac{T_{\gamma}}{T_{s}}\right),
+\end{equation}
+where $x_{\mathrm{HI}}$ is the neutral fraction and $T_{s}$ is the spin temperature.
+
+In RDCC, the modified reionization topology and the altered formation history of 
+early galaxies imprint distinctive signatures on the 21-cm power spectrum. The 
+suppression of small-scale modes reduces small-scale fluctuations, while the 
+enhanced coherence of large-scale modes amplifies large-scale structure.
+
+These signatures provide a direct observational window into the relaxation scale 
+and the temporal structure of the gravitational field.
+% ---------------------------------------------------------
+\section{Conclusion}
+
+The Epoch of Reionization in the Relaxation-Driven Cyclic Cosmology reflects the 
+scale-dependent evolution of the gravitational potential. The relaxation mechanism 
+modifies the formation history of early galaxies, the propagation of ionization 
+fronts, and the topology of reionization. These effects produce distinctive 
+signatures in the ionized volume fraction, the morphology of ionized bubbles, and 
+the 21-cm power spectrum. The present Companion establishes the theoretical 
+foundation for future studies of early galaxy formation, cosmic dawn, and the 
+interaction between radiation and matter in RDCC.
+
+% ========================
+% References
+% ========================
+
+\begin{thebibliography}{10}
+
+\bibitem{Flagship} Lehmann, M. (2026). Relaxation-Driven Cyclic Cosmology (RDCC): A Minimal CPT-Symmetric Framework with a Single Parameter. Flagship Paper. Zenodo: \url{https://zenodo.org/records/19744958} (v43.0 or later).
+
+\bibitem{Zenodo} The complete RDCC companion series (I--LVII) is available at the same Zenodo record above.
+
+% Thematisch relevante Companions
+\bibitem{CompXVI} Companion XVI: Boltzmann Code and Modified Hierarchy.
+\bibitem{CompXXXI} Companion XXXI: RDCC Halo Model and Non-Linear Structure.
+\bibitem{CompXXXII} Companion XXXII--XXXIX: Galaxy--Halo Connection, Cosmic Web, Lensing, RSD, ISW, tSZ, Rotation Curves, CGM.
+
+% Wichtige externe Referenzen
+\bibitem{Planck2020} Planck Collaboration (2020), Astron. Astrophys. 641, A6.
+\bibitem{DESI2024} DESI Collaboration (2024/2025), arXiv: [aktuelle $f\sigma_8$/BAO-Paper].
+\bibitem{JWST2024} Maiolino et al. (2024), Nature (JWST high-$z$ galaxies/quasars).
+\bibitem{Kaiser1987} Kaiser, N. (1987), Mon. Not. R. Astron. Soc. 227, 1 (RSD).
+\bibitem{Bartelmann2001} Bartelmann, M. \& Schneider, P. (2001), Phys. Rep. 340, 291 (Weak Lensing Review).
+\bibitem{HuOkamoto2002} Hu, W. \& Okamoto, T. (2002), Astrophys. J. 574, 566 (CMB Lensing).
+\bibitem{LewisChallinor2006} Lewis, A. \& Challinor, A. (2006), Phys. Rep. 429, 1 (CMB Lensing Review).
+\bibitem{NFW1997} Navarro, J. F., Frenk, C. S. \& White, S. D. M. (1997), Astrophys. J. 490, 493 (Halo Profiles).
+
+\end{thebibliography}
+
+\end{document}

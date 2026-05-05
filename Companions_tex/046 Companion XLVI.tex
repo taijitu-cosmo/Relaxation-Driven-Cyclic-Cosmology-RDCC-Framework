@@ -1,0 +1,214 @@
+\documentclass[11pt,a4paper]{article}
+
+% ---------------------------------------------------------
+% PREAMBLE (stable, warning-free, Overleaf-safe)
+% ---------------------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{bm}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{cite}
+\usepackage{authblk}
+\usepackage{physics}
+\usepackage{mathtools}
+
+\geometry{margin=2.4cm}
+
+\title{\textbf{Companion XLVI: The CMB Lensing Potential in the Relaxation-Driven Cyclic Cosmology}}
+\author{Michael Lehmann \\ \texttt{mi.lehmann@gmx.de}}
+\date{April 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+CMB lensing probes the integrated gravitational potential between the surface of 
+last scattering and the observer. It encodes the geometry of spacetime, the growth 
+of structure, and the distribution of matter across cosmic time. In the standard 
+cosmological model, the lensing potential is determined by the sum of the two 
+Newtonian potentials, which evolve identically in the absence of anisotropic 
+stress. In the Relaxation-Driven Cyclic Cosmology (RDCC), the scale-dependent 
+evolution of the gravitational potential modifies the deflection field, the 
+mode-coupling structure of the CMB, and the lensing power spectrum. This Companion 
+develops a continuous description of CMB lensing in RDCC, deriving how the 
+relaxation scale influences the lensing kernel, the deflection angle, and the 
+reconstruction of the lensing potential. The resulting framework provides a 
+distinctive observational signature of the RDCC gravitational field.
+\end{abstract}
+% ---------------------------------------------------------
+\section{Introduction}
+
+CMB lensing arises from the deflection of cosmic microwave background photons by 
+the gravitational potential of large-scale structure. The resulting distortions 
+encode the integrated gravitational field along the line of sight and provide a 
+powerful probe of the geometry and growth of structure.
+
+In the standard cosmological model, the lensing potential is determined by the sum 
+of the two Newtonian potentials, which evolve identically in the absence of 
+anisotropic stress. In RDCC, the gravitational potential evolves differently. The 
+relaxation mechanism suppresses the decay of small-scale modes and enhances the 
+coherence of large-scale modes. This modifies the lensing potential, the deflection 
+field, and the mode-coupling structure of the CMB in a scale-dependent manner. CMB 
+lensing becomes a direct probe of the relaxation scale $k_{\mathrm{rel}}$ and the 
+temporal structure of the RDCC gravitational field.
+% ---------------------------------------------------------
+\section{The RDCC Lensing Potential}
+
+The CMB lensing potential is defined as
+\begin{equation}
+    \phi(\hat{\mathbf{n}})
+    = -2 \int_{0}^{\chi_{*}}
+      d\chi\,
+      \frac{\chi_{*} - \chi}{\chi_{*}\chi}\,
+      \left[\Phi + \Psi\right](\chi,\hat{\mathbf{n}}),
+\end{equation}
+where $\chi_{*}$ is the comoving distance to the surface of last scattering.
+
+In RDCC, the metric potentials evolve differently:
+\begin{align}
+    \Phi_{\mathrm{RDCC}}(k,a)
+    &= \Phi(k,a)
+       \left[
+         1 - \chi_{\Phi}
+         \left(\frac{k}{k_{\mathrm{rel}}}\right)^{\alpha}
+       \right], \\
+    \Psi_{\mathrm{RDCC}}(k,a)
+    &= \Psi(k,a)
+       \left[
+         1 - \chi_{\Psi}
+         \left(\frac{k}{k_{\mathrm{rel}}}\right)^{\alpha}
+       \right].
+\end{align}
+
+The RDCC lensing potential becomes
+\begin{equation}
+    \phi_{\mathrm{RDCC}}
+    = \phi
+      \left[
+        1 - \chi_{\phi}
+        \left(\frac{k}{k_{\mathrm{rel}}}\right)^{\alpha}
+      \right].
+\end{equation}
+
+This modification suppresses small-scale lensing power and enhances large-scale 
+coherence.
+% ---------------------------------------------------------
+\section{Deflection Fields and Mode Coupling}
+
+The deflection angle is given by
+\begin{equation}
+    \mathbf{d}(\hat{\mathbf{n}})
+    = \nabla \phi(\hat{\mathbf{n}}).
+\end{equation}
+
+In RDCC, the modified lensing potential produces a deflection field with smoother 
+small-scale structure and enhanced large-scale coherence. The mode-coupling 
+structure of the CMB becomes
+\begin{equation}
+    \tilde{X}_{\ell m}
+    = X_{\ell m}
+      + \sum_{\ell' m'}
+        \sum_{LM}
+        \phi_{LM}\,
+        \mathcal{G}_{\ell \ell' L}^{m m' M}\,
+        X_{\ell' m'},
+\end{equation}
+where $\mathcal{G}$ is a geometric coupling coefficient.
+
+Because $\phi_{LM}$ is modified in RDCC, the mode-coupling structure acquires a 
+distinctive scale dependence that reflects the relaxation scale.
+% ---------------------------------------------------------
+\section{The Lensing Power Spectrum}
+
+The lensing potential power spectrum is defined as
+\begin{equation}
+    C_{L}^{\phi\phi}
+    = \langle \phi_{LM} \phi^{*}_{LM} \rangle.
+\end{equation}
+
+In RDCC, this spectrum becomes
+\begin{equation}
+    C_{L}^{\phi\phi,\mathrm{RDCC}}
+    = C_{L}^{\phi\phi}
+      \left[
+        1 - \chi_{\phi\phi}
+        \left(\frac{L}{L_{\mathrm{rel}}}\right)^{\alpha}
+      \right],
+\end{equation}
+where $L_{\mathrm{rel}}$ corresponds to the angular scale of the relaxation scale 
+$k_{\mathrm{rel}}$.
+
+This modification suppresses small-scale lensing power and enhances large-scale 
+structure, producing a distinctive RDCC signature.
+% ---------------------------------------------------------
+\section{Reconstruction of the Lensing Potential}
+
+CMB lensing reconstruction uses quadratic estimators to extract the lensing 
+potential from mode coupling. The standard estimator is
+\begin{equation}
+    \hat{\phi}_{LM}
+    = N_{L}
+      \sum_{\ell m}
+      \sum_{\ell' m'}
+      X_{\ell m}
+      X_{\ell' m'}
+      \mathcal{W}_{\ell \ell' L}^{m m' M},
+\end{equation}
+where $N_{L}$ is a normalization factor.
+
+In RDCC, the modified mode-coupling structure alters the reconstruction noise and 
+the estimator response. The reconstructed potential becomes
+\begin{equation}
+    \hat{\phi}_{LM,\mathrm{RDCC}}
+    = \hat{\phi}_{LM}
+      \left[
+        1 - \chi_{\mathrm{rec}}
+        \left(\frac{L}{L_{\mathrm{rel}}}\right)^{\alpha}
+      \right].
+\end{equation}
+
+This modification provides a direct observational probe of the relaxation scale.
+% ---------------------------------------------------------
+\section{Conclusion}
+
+CMB lensing in the Relaxation-Driven Cyclic Cosmology reflects the scale-dependent 
+evolution of the gravitational potential. The relaxation mechanism modifies the 
+lensing potential, the deflection field, and the lensing power spectrum, producing 
+distinctive signatures in the mode-coupling structure of the CMB. These effects 
+provide a direct observational window into the relaxation scale and the temporal 
+structure of the RDCC gravitational field. The present Companion establishes the 
+theoretical foundation for future studies of CMB lensing tomography, lensing 
+reconstruction, and the interplay between matter and light in RDCC.
+
+% ========================
+% References
+% ========================
+
+\begin{thebibliography}{10}
+
+\bibitem{Flagship} Lehmann, M. (2026). Relaxation-Driven Cyclic Cosmology (RDCC): A Minimal CPT-Symmetric Framework with a Single Parameter. Flagship Paper. Zenodo: \url{https://zenodo.org/records/19744958} (v43.0 or later).
+
+\bibitem{Zenodo} The complete RDCC companion series (I--LVII) is available at the same Zenodo record above.
+
+% Thematisch relevante Companions
+\bibitem{CompXVI} Companion XVI: Boltzmann Code and Modified Hierarchy.
+\bibitem{CompXXXI} Companion XXXI: RDCC Halo Model and Non-Linear Structure.
+\bibitem{CompXXXII} Companion XXXII--XXXIX: Galaxy--Halo Connection, Cosmic Web, Lensing, RSD, ISW, tSZ, Rotation Curves, CGM.
+
+% Wichtige externe Referenzen
+\bibitem{Planck2020} Planck Collaboration (2020), Astron. Astrophys. 641, A6.
+\bibitem{DESI2024} DESI Collaboration (2024/2025), arXiv: [aktuelle $f\sigma_8$/BAO-Paper].
+\bibitem{JWST2024} Maiolino et al. (2024), Nature (JWST high-$z$ galaxies/quasars).
+\bibitem{Kaiser1987} Kaiser, N. (1987), Mon. Not. R. Astron. Soc. 227, 1 (RSD).
+\bibitem{Bartelmann2001} Bartelmann, M. \& Schneider, P. (2001), Phys. Rep. 340, 291 (Weak Lensing Review).
+\bibitem{HuOkamoto2002} Hu, W. \& Okamoto, T. (2002), Astrophys. J. 574, 566 (CMB Lensing).
+\bibitem{LewisChallinor2006} Lewis, A. \& Challinor, A. (2006), Phys. Rep. 429, 1 (CMB Lensing Review).
+\bibitem{NFW1997} Navarro, J. F., Frenk, C. S. \& White, S. D. M. (1997), Astrophys. J. 490, 493 (Halo Profiles).
+
+\end{thebibliography}
+
+\end{document}

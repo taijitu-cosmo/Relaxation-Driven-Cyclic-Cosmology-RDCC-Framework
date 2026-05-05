@@ -1,0 +1,180 @@
+\documentclass[11pt,a4paper]{article}
+
+% ---------------------------------------------------------
+% PREAMBLE (stable, warning-free, Overleaf-safe)
+% ---------------------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{bm}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{cite}
+\usepackage{authblk}
+\usepackage{physics}
+\usepackage{mathtools}
+
+\geometry{margin=2.4cm}
+
+\title{\textbf{Companion LV: The CMB-Lensing × Galaxy Cross-Correlation in the Relaxation-Driven Cyclic Cosmology}}
+\author{Michael Lehmann \\ \texttt{mi.lehmann@gmx.de}}
+\date{April 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The cross-correlation between CMB lensing and galaxy density provides a powerful 
+probe of the relationship between matter and the gravitational potential. In the 
+standard cosmological model, this correlation is determined by the matter power 
+spectrum, the galaxy bias, and the lensing kernel. In the Relaxation-Driven Cyclic 
+Cosmology (RDCC), the scale-dependent evolution of the gravitational potential 
+modifies the lensing kernel, the matter distribution, and the growth rate in a 
+characteristic way. This Companion develops a continuous description of the 
+CMB-lensing × galaxy cross-correlation in RDCC, deriving how the relaxation scale 
+influences the coupling between matter and lensing, the coherence of large-scale 
+modes, and the observational signatures in galaxy surveys and CMB experiments. The 
+resulting framework provides a distinctive observational signature of the RDCC 
+gravitational field.
+\end{abstract}
+% ---------------------------------------------------------
+\section{Introduction}
+
+The cross-correlation between CMB lensing and galaxy density probes the connection 
+between the gravitational potential and the matter distribution. CMB lensing traces 
+the integrated potential along the line of sight, while galaxy surveys trace the 
+matter density at specific redshifts. Their cross-correlation therefore encodes the 
+relationship between matter and the gravitational field.
+
+In the standard cosmological model, this correlation is determined by the matter 
+power spectrum, the galaxy bias, and the lensing kernel. In RDCC, the gravitational 
+potential evolves differently. The relaxation mechanism suppresses the decay of 
+small-scale modes and enhances the coherence of large-scale modes. This modifies 
+the lensing kernel, the matter distribution, and the growth rate in a scale-
+dependent manner, producing a distinctive signature in the CMB-lensing × galaxy 
+cross-correlation.
+% ---------------------------------------------------------
+\section{The RDCC Lensing Kernel}
+
+The CMB lensing potential is given by
+\begin{equation}
+    \phi(\hat{\mathbf{n}})
+    = -2 \int_{0}^{\chi_{*}}
+      d\chi\,
+      \frac{\chi_{*} - \chi}{\chi_{*}\chi}\,
+      \left[\Phi + \Psi\right](\chi,\hat{\mathbf{n}}).
+\end{equation}
+
+In RDCC, the metric potentials evolve as
+\begin{align}
+    \Phi_{\mathrm{RDCC}}(k,a)
+    &= \Phi(k,a)
+       \left[
+         1 - \chi_{\Phi}
+         \left(\frac{k}{k_{\mathrm{rel}}}\right)^{\alpha}
+       \right], \\
+    \Psi_{\mathrm{RDCC}}(k,a)
+    &= \Psi(k,a)
+       \left[
+         1 - \chi_{\Psi}
+         \left(\frac{k}{k_{\mathrm{rel}}}\right)^{\alpha}
+       \right].
+\end{align}
+
+The RDCC lensing kernel becomes
+\begin{equation}
+    W_{\phi,\mathrm{RDCC}}(\chi)
+    = W_{\phi}(\chi)
+      \left[
+        1 - \chi_{\phi}
+        \left(\frac{k}{k_{\mathrm{rel}}}\right)^{\alpha}
+      \right].
+\end{equation}
+% ---------------------------------------------------------
+\section{The RDCC Galaxy Density Field}
+
+The galaxy density contrast is given by
+\begin{equation}
+    \delta_{g}(k,z)
+    = b(z)\, \delta_{m}(k,z),
+\end{equation}
+where $b(z)$ is the galaxy bias.
+
+In RDCC, the matter density evolves as
+\begin{equation}
+    \delta_{m,\mathrm{RDCC}}(k,z)
+    = \delta_{m}(k,z)
+      \left[
+        1 - \chi_{\delta}
+        \left(\frac{k}{k_{\mathrm{rel}}}\right)^{\alpha}
+      \right].
+\end{equation}
+
+The galaxy density becomes
+\begin{equation}
+    \delta_{g,\mathrm{RDCC}}(k,z)
+    = b(z)\,
+      \delta_{m}(k,z)
+      \left[
+        1 - \chi_{g}
+        \left(\frac{k}{k_{\mathrm{rel}}}\right)^{\alpha}
+      \right].
+\end{equation}
+% ---------------------------------------------------------
+\section{The RDCC Lensing × Galaxy Cross-Correlation}
+
+The cross-correlation is defined as
+\begin{equation}
+    C_{L}^{\phi g}
+    = \int d\chi\,
+      \frac{W_{\phi}(\chi)\, W_{g}(\chi)}{\chi^{2}}\,
+      P_{m}\left(k=\frac{L}{\chi},z(\chi)\right).
+\end{equation}
+
+In RDCC, this becomes
+\begin{equation}
+    C_{L}^{\phi g,\mathrm{RDCC}}
+    = C_{L}^{\phi g}
+      \left[
+        1 - \chi_{\phi g}
+        \left(\frac{L}{L_{\mathrm{rel}}}\right)^{\alpha}
+      \right].
+\end{equation}
+
+This modification reflects the scale-dependent evolution of the gravitational 
+potential and the matter distribution.
+% ---------------------------------------------------------
+\section{Large-Scale Coherence and RDCC Signatures}
+
+The relaxation mechanism enhances the coherence of large-scale modes. The 
+CMB-lensing × galaxy cross-correlation therefore exhibits:
+
+\begin{itemize}
+    \item enhanced power at large angular scales,
+    \item suppressed power at small scales,
+    \item a characteristic turnover near $L_{\mathrm{rel}}$,
+    \item a modified redshift dependence of the correlation amplitude.
+\end{itemize}
+
+These signatures provide a direct observational probe of the RDCC gravitational 
+field.
+% ---------------------------------------------------------
+\section{Conclusion}
+
+The CMB-lensing × galaxy cross-correlation in the Relaxation-Driven Cyclic 
+Cosmology reflects the scale-dependent evolution of the gravitational potential and 
+the matter distribution. The relaxation mechanism modifies the lensing kernel, the 
+matter density field, and the growth rate in a scale-dependent manner, producing 
+distinctive signatures in the cross-correlation spectrum. These effects provide a 
+direct observational window into the relaxation scale and the temporal structure of 
+the RDCC gravitational field. The present Companion establishes the theoretical 
+foundation for future studies of CMB–LSS coupling, matter evolution, and the 
+interplay between light and gravity in RDCC.
+
+\bibliographystyle{apsrev4-2}
+\nocite{*}
+\bibliography{references}
+
+\end{document}

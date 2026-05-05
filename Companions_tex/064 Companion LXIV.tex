@@ -1,0 +1,164 @@
+\documentclass[11pt,a4paper]{article}
+
+% ---------------------------------------------------------
+% PREAMBLE (stable, warning-free, Overleaf-safe)
+% ---------------------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{bm}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{cite}
+\usepackage{authblk}
+\usepackage{physics}
+\usepackage{mathtools}
+
+\geometry{margin=2.4cm}
+
+\title{\textbf{Companion LXIV: Wasserstein Distances of Persistence Diagrams in the Relaxation-Driven Cyclic Cosmology}}
+\author{Michael Lehmann \\ \texttt{mi.lehmann@gmx.de}}
+\date{April 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Wasserstein distances provide a metric-space comparison of persistence diagrams, 
+quantifying the difference between topological structures across filtrations. In 
+weak-lensing analyses, these distances measure how the topology of convergence 
+fields changes with redshift, smoothing scale, or cosmological model. In the 
+standard cosmological model, Wasserstein distances reflect the nonlinear matter 
+distribution and the projection of large-scale structure. In the Relaxation-Driven 
+Cyclic Cosmology (RDCC), the scale-dependent evolution of the gravitational 
+potential modifies the metric structure of persistence diagrams in a 
+characteristic way. This Companion develops a continuous description of 
+Wasserstein distances in RDCC, deriving how the relaxation scale influences 
+diagram geometry, topological stability, and the observational signatures in 
+weak-lensing surveys. The resulting framework provides a distinctive metric-space 
+probe of the RDCC gravitational field.
+\end{abstract}
+% ---------------------------------------------------------
+\section{Introduction}
+
+Persistent homology provides a topological description of cosmological fields by 
+tracking the birth and death of connected components and loops across a 
+filtration. Wasserstein distances extend this by defining a metric on the space of 
+persistence diagrams, allowing a quantitative comparison of topological structure.
+
+In the standard cosmological model, Wasserstein distances reflect the nonlinear 
+matter distribution and the projection of large-scale structure. In RDCC, the 
+gravitational potential evolves differently. The relaxation mechanism suppresses 
+the decay of small-scale modes and enhances the coherence of large-scale modes. 
+This modifies the metric structure of persistence diagrams in a scale-dependent 
+manner, producing a distinctive signature in Wasserstein-distance analyses.
+% ---------------------------------------------------------
+\section{Persistence Diagrams and Wasserstein Distances}
+
+A persistence diagram $D$ consists of points $(b,d)$ representing the birth and 
+death of topological features. The $p$-Wasserstein distance between two diagrams 
+$D_{1}$ and $D_{2}$ is
+
+\begin{equation}
+    W_{p}(D_{1},D_{2})
+    = \left[
+        \inf_{\gamma}
+        \sum_{x \in D_{1}}
+        \| x - \gamma(x) \|_{\infty}^{p}
+      \right]^{1/p},
+\end{equation}
+
+where $\gamma$ ranges over all bijections between the diagrams (including the 
+diagonal).
+% ---------------------------------------------------------
+\section{RDCC Modification of Persistence Diagrams}
+
+In RDCC, the convergence evolves as
+\begin{equation}
+    \kappa_{\mathrm{RDCC}}(\ell)
+    = \kappa(\ell)
+      \left[
+        1 - \chi_{\kappa}
+        \left(\frac{\ell}{\ell_{\mathrm{rel}}}\right)^{\alpha}
+      \right].
+\end{equation}
+
+This modifies the birth and death thresholds of topological features:
+
+\begin{align}
+    b_{\mathrm{RDCC}} &= b \left[ 1 - \chi_{b} (\ell/\ell_{\mathrm{rel}})^{\alpha} \right], \\
+    d_{\mathrm{RDCC}} &= d \left[ 1 - \chi_{d} (\ell/\ell_{\mathrm{rel}})^{\alpha} \right].
+\end{align}
+
+The RDCC persistence diagram becomes
+\begin{equation}
+    D_{\mathrm{RDCC}}
+    = \left\{
+        (b_{\mathrm{RDCC}}, d_{\mathrm{RDCC}})
+      \right\}.
+\end{equation}
+% ---------------------------------------------------------
+\section{Wasserstein Distances in RDCC}
+
+The Wasserstein distance between a standard and an RDCC diagram is
+
+\begin{equation}
+    W_{p}(D, D_{\mathrm{RDCC}})
+    = \left[
+        \sum_{i}
+        \left\|
+          (b_{i}, d_{i})
+          -
+          (b_{i,\mathrm{RDCC}}, d_{i,\mathrm{RDCC}})
+        \right\|_{\infty}^{p}
+      \right]^{1/p}.
+\end{equation}
+
+This becomes
+\begin{equation}
+    W_{p}(D, D_{\mathrm{RDCC}})
+    = W_{p}(D,D)
+      \left[
+        1 - \chi_{W}
+        \left(\frac{\ell}{\ell_{\mathrm{rel}}}\right)^{\alpha}
+      \right],
+\end{equation}
+
+reflecting the relaxation-driven modification of topological distances.
+% ---------------------------------------------------------
+\section{Metric-Space Signatures of RDCC}
+
+The relaxation mechanism enhances the coherence of large-scale modes. Wasserstein 
+distances therefore exhibit:
+
+\begin{itemize}
+    \item reduced distances between diagrams at large scales,
+    \item enhanced distances at small scales,
+    \item a characteristic turnover near $\ell_{\mathrm{rel}}$,
+    \item modified scaling with smoothing scale and redshift,
+    \item altered clustering of diagrams in metric space.
+\end{itemize}
+
+These signatures provide a direct observational probe of the RDCC gravitational 
+field in metric space.
+% ---------------------------------------------------------
+\section{Conclusion}
+
+Wasserstein distances of persistence diagrams in the Relaxation-Driven Cyclic 
+Cosmology reflect the scale-dependent evolution of the gravitational potential and 
+the nonlinear matter distribution. The relaxation mechanism modifies the metric 
+structure of persistence diagrams in a scale-dependent manner, producing 
+distinctive signatures in weak-lensing surveys. These effects provide a direct 
+observational window into the relaxation scale and the temporal structure of the 
+RDCC gravitational field. The present Companion establishes the theoretical 
+foundation for future studies of topological metric spaces, nonlinear structure, 
+and the interplay between light and gravity in RDCC.
+
+\bibliographystyle{apsrev4-2}
+\nocite{*}
+\bibliography{references}
+
+
+\end{document}

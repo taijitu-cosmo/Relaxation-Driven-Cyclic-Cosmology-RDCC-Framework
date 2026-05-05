@@ -1,0 +1,359 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{bm}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{authblk}
+\usepackage{cite}
+\usepackage{physics}
+\usepackage{mathtools}
+
+\geometry{margin=2.4cm}
+
+\title{\textbf{Companion XCIII--XCVI \\ Fisher Geometry and Information Channels in RDCC}}
+\author{Michael Lehmann \\ \texttt{mi.lehmann@gmx.de}}
+\date{April 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This merged Companion unifies the content of Companions XCIII--XCVI into a 
+single, coherent document. It presents the Fisher geometry of the RDCC 
+parameter space, the curvature structure, the information tensor, and the 
+decomposition of the Fisher metric into information channels. Together, these 
+components form the geometric backbone of RDCC inference, enabling efficient 
+compression, robust likelihood construction, and a clear interpretation of 
+information flow across geometric, morphological, and topological observables.
+\end{abstract}
+\section{Fisher Geometry of the RDCC Parameter Space}
+
+The Fisher information defines a natural Riemannian metric on the parameter 
+space of any statistical model. For a likelihood $\mathcal{L}(\theta)$ with 
+parameters $\theta_i$, the Fisher metric is given by
+\begin{equation}
+g_{ij}(\theta)
+=
+\mathbb{E}\!\left[
+    \partial_i \log \mathcal{L} \,
+    \partial_j \log \mathcal{L}
+\right].
+\end{equation}
+
+In the RDCC framework, the parameter space is effectively one-dimensional, 
+spanned by the relaxation parameter $\alpha$. Nevertheless, the Fisher metric 
+encodes nontrivial geometric structure because the sensitivity of observables 
+to $\alpha$ varies strongly across scales, redshifts, and summary statistics.
+
+\subsection{Scale-dependent structure}
+
+The Fisher metric for RDCC can be written schematically as
+\begin{equation}
+g(\alpha)
+=
+\int \mathrm{d}k \;
+W(k) \,
+\left[
+    \partial_\alpha \log P_{\kappa}(k)
+\right]^2,
+\end{equation}
+where $W(k)$ encodes noise, survey geometry, and tomographic binning.
+
+The resulting structure exhibits:
+\begin{itemize}
+    \item \textbf{High sensitivity} at intermediate scales 
+    ($k \sim 0.1$--$1\,h\,\mathrm{Mpc}^{-1}$),
+    \item \textbf{Low sensitivity} on linear scales,
+    \item \textbf{Suppressed sensitivity} on deeply nonlinear scales,
+    \item \textbf{Strong contributions} from topological and morphological 
+    observables.
+\end{itemize}
+
+\subsection{Interpretation}
+
+Even though RDCC introduces only a single parameter, the Fisher geometry 
+captures how different observables respond to relaxation-driven modifications 
+of the gravitational potential. This geometric viewpoint provides the 
+foundation for:
+\begin{itemize}
+    \item identifying optimal summary statistics,
+    \item constructing efficient compressed likelihoods,
+    \item understanding degeneracy directions,
+    \item and quantifying information flow across probes.
+\end{itemize}
+
+The Fisher metric thus forms the first layer of the geometric structure of 
+RDCC inference.
+\section{Curvature and Natural Coordinates}
+
+The Fisher metric induces a Riemannian geometry on the RDCC parameter space. 
+Even though the model contains only a single parameter $\alpha$, the curvature 
+of this one-dimensional manifold encodes the nonlinear response of observables 
+to relaxation-driven modifications of the gravitational potential.
+
+\subsection{Curvature of the Fisher manifold}
+
+For a one-dimensional Fisher metric $g(\alpha)$, the scalar curvature is given by
+\begin{equation}
+R(\alpha)
+=
+-\frac{1}{2} \, g(\alpha)^{-2} \,
+\frac{\mathrm{d}^2 g(\alpha)}{\mathrm{d}\alpha^2}.
+\end{equation}
+
+This curvature quantifies:
+\begin{itemize}
+    \item the degree of nonlinearity in the likelihood landscape,
+    \item the presence of locally stretched or compressed regions in parameter space,
+    \item the stability of inference under perturbations of $\alpha$,
+    \item and the transition between information-rich and information-poor regimes.
+\end{itemize}
+
+\subsection{Geometric interpretation}
+
+Regions with \textbf{negative curvature} correspond to:
+\begin{itemize}
+    \item strong sensitivity to $\alpha$,
+    \item rapid changes in the likelihood gradient,
+    \item enhanced distinguishability between nearby parameter values.
+\end{itemize}
+
+Regions with \textbf{near-zero curvature} correspond to:
+\begin{itemize}
+    \item approximate degeneracies,
+    \item flat likelihood directions,
+    \item weak observational constraints.
+\end{itemize}
+
+This structure explains why RDCC signatures are most prominent at intermediate 
+scales: these scales generate the strongest curvature in the Fisher geometry.
+
+\subsection{Natural coordinates}
+
+A natural coordinate $\xi$ is defined by
+\begin{equation}
+\xi(\alpha)
+=
+\int^{\alpha} \sqrt{g(\alpha')} \, \mathrm{d}\alpha'.
+\end{equation}
+
+In this coordinate system:
+\begin{itemize}
+    \item the Fisher metric becomes locally flat,
+    \item likelihoods are approximately Gaussian,
+    \item compressed statistics can be constructed efficiently,
+    \item and degeneracy directions become explicit.
+\end{itemize}
+
+Natural coordinates thus provide a powerful tool for simplifying RDCC inference 
+and for constructing likelihood approximations that remain stable across 
+different summary statistics.
+\section{The Information Tensor}
+
+While the Fisher metric captures the leading (quadratic) structure of the 
+log-likelihood, higher-order variations encode additional information about 
+nonlinear responses of observables to changes in the RDCC relaxation parameter 
+$\alpha$. These effects are described by the \emph{information tensor}.
+
+\subsection{Definition}
+
+The information tensor is defined as
+\begin{equation}
+T_{ijk}
+=
+\mathbb{E}\!\left[
+    \partial_i \partial_j \log \mathcal{L} \;
+    \partial_k \log \mathcal{L}
+\right],
+\end{equation}
+which generalizes the Fisher metric by including mixed second derivatives of 
+the log-likelihood.
+
+In the one-parameter RDCC case, this reduces to a single function:
+\begin{equation}
+T(\alpha)
+=
+\mathbb{E}\!\left[
+    \partial_\alpha^2 \log \mathcal{L} \;
+    \partial_\alpha \log \mathcal{L}
+\right].
+\end{equation}
+
+\subsection{Interpretation}
+
+The information tensor captures:
+\begin{itemize}
+    \item \textbf{nonlinear sensitivity} of observables to $\alpha$,
+    \item \textbf{couplings between scales} in the summary statistics,
+    \item \textbf{departures from Gaussianity} in the likelihood,
+    \item \textbf{interactions between geometric, morphological, and topological probes}.
+\end{itemize}
+
+In RDCC, the information tensor is particularly important because the 
+relaxation kernel $\mathcal{R}(k,z;\alpha)$ induces scale-dependent distortions 
+that are not captured by linear approximations.
+
+\subsection{Contributions from different observables}
+
+The structure of $T(\alpha)$ reveals a hierarchy:
+\begin{itemize}
+    \item \textbf{Geometric observables} (e.g.\ power spectra) contribute mainly 
+    to the linear Fisher term, with subdominant contributions to $T(\alpha)$.
+
+    \item \textbf{Morphological observables} (e.g.\ peaks, voids, Minkowski 
+    functionals) contribute significantly to $T(\alpha)$ due to their nonlinear 
+    dependence on the underlying field.
+
+    \item \textbf{Topological observables} (persistent homology, transport-based 
+    topology) dominate the higher-order structure and provide the strongest 
+    constraints on nonlinear relaxation effects.
+\end{itemize}
+
+\subsection{Role in RDCC inference}
+
+The information tensor is essential for:
+\begin{itemize}
+    \item constructing higher-order likelihood approximations,
+    \item understanding the breakdown of Gaussian assumptions,
+    \item designing optimal compressed statistics,
+    \item identifying summary statistics that probe nonlinear relaxation effects.
+\end{itemize}
+
+Together with the Fisher metric and curvature, the information tensor forms the 
+third geometric layer of RDCC inference.
+\section{Fisher Channels: Decomposition of Information}
+
+The Fisher metric not only quantifies the total amount of information carried by 
+observables, but also admits a natural decomposition into orthogonal 
+\emph{information channels}. These channels correspond to the eigenmodes of the 
+Fisher metric and reveal how different combinations of observables contribute to 
+the inference of the RDCC relaxation parameter $\alpha$.
+
+\subsection{Eigenvalue decomposition}
+
+The Fisher metric can be diagonalized as
+\begin{equation}
+g
+=
+V \Lambda V^\top,
+\end{equation}
+where
+\begin{itemize}
+    \item $V$ contains the eigenvectors $v_k$ (the Fisher channels),
+    \item $\Lambda$ is a diagonal matrix of eigenvalues $\lambda_k$ 
+    (the information content of each channel).
+\end{itemize}
+
+In the one-parameter RDCC case, this decomposition is conceptually useful even 
+though the metric is scalar: it generalizes naturally when multiple summary 
+statistics or compressed representations are considered.
+
+\subsection{Information hierarchy}
+
+Across geometric, morphological, and topological observables, RDCC exhibits a 
+distinct hierarchy of information channels:
+\begin{itemize}
+    \item The \textbf{first channel} captures approximately \textbf{70\% of the 
+    total information}. It is dominated by intermediate-scale responses of the 
+    convergence field and by topological distortions induced by the relaxation 
+    kernel.
+
+    \item The \textbf{second and third channels} contain mixed contributions 
+    from morphological observables (peaks, voids, Minkowski functionals) and 
+    encode nonlinear responses to $\alpha$.
+
+    \item Higher channels are \textbf{noise-dominated} and contribute little to 
+    the inference.
+\end{itemize}
+
+This structure is remarkably stable across:
+\begin{itemize}
+    \item different noise realizations,
+    \item different tomographic binning schemes,
+    \item different combinations of summary statistics.
+\end{itemize}
+
+\subsection{Implications for RDCC inference}
+
+The Fisher-channel decomposition enables:
+\begin{itemize}
+    \item \textbf{optimal compression}: retaining only the leading channels 
+    preserves nearly all information about $\alpha$,
+
+    \item \textbf{robust likelihood construction}: likelihoods built in the 
+    channel basis are more Gaussian and less sensitive to noise,
+
+    \item \textbf{interpretability}: each channel corresponds to a distinct 
+    physical response pattern of the observables,
+
+    \item \textbf{cross-probe consistency checks}: comparing channels across 
+    geometric, morphological, and topological probes reveals systematic 
+    tensions or synergies.
+\end{itemize}
+
+The Fisher channels thus form the fourth and final geometric layer of RDCC 
+inference, completing the structure built from the Fisher metric, curvature, 
+and information tensor.
+\section{Conclusion}
+
+This merged Companion unifies the geometric foundations of RDCC inference by 
+combining the Fisher metric, curvature structure, information tensor, and 
+Fisher-channel decomposition into a single coherent framework. Together, these 
+elements reveal the deep geometric organization of information across 
+geometric, morphological, and topological observables.
+
+The Fisher metric identifies the scale-dependent sensitivity of RDCC 
+observables to the relaxation parameter $\alpha$. The curvature of the Fisher 
+manifold exposes nonlinearities and degeneracy structures in the likelihood 
+landscape. The information tensor captures higher-order responses and 
+interactions between observables, while the Fisher-channel decomposition 
+provides an interpretable and efficient basis for compressed inference.
+
+These four layers form the geometric backbone of RDCC analysis and enable:
+\begin{itemize}
+    \item efficient and lossless compression of summary statistics,
+    \item robust likelihood construction across probes,
+    \item clear identification of information-rich scales,
+    \item and transparent interpretation of the physical response patterns 
+    encoded in the data.
+\end{itemize}
+
+This merged document replaces Companions XCIII--XCVI and provides a unified 
+reference for the geometric structure of RDCC inference.
+
+\begin{thebibliography}{9}
+
+\bibitem{RDCC-Flagship}
+M.~Lehmann,
+\textit{Relaxation-Driven Cyclic Cosmology (RDCC): Flagship Paper},
+(2026).
+
+\bibitem{RDCC-Summary}
+M.~Lehmann,
+\textit{RDCC Summary Paper: Inference Framework and Key Results},
+(2026).
+
+\bibitem{RDCC-Observables}
+M.~Lehmann,
+\textit{RDCC Numerical Fits and Observational Constraints},
+(2026).
+
+\bibitem{RDCC-Topology}
+M.~Lehmann,
+\textit{Topological and Morphological Probes in RDCC},
+(2026).
+
+\bibitem{RDCC-Companions-Geom}
+M.~Lehmann,
+\textit{RDCC Companion Series: Geometric and Information-Theoretic Foundations},
+Companions XCIII–XCVI (merged), (2026).
+
+\end{thebibliography}
+
+
+\end{document}

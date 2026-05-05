@@ -1,0 +1,158 @@
+\documentclass[11pt,a4paper]{article}
+
+% ---------------------------------------------------------
+% PREAMBLE (stable, warning-free, Overleaf-safe)
+% ---------------------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{bm}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{cite}
+\usepackage{authblk}
+\usepackage{physics}
+\usepackage{mathtools}
+
+\geometry{margin=2.4cm}
+
+\title{\textbf{Companion LXV: Fréchet Means of Persistence Diagrams in the Relaxation-Driven Cyclic Cosmology}}
+\author{Michael Lehmann \\ \texttt{mi.lehmann@gmx.de}}
+\date{April 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Fréchet means provide a statistical summary of persistence diagrams by minimizing 
+the expected Wasserstein distance to an ensemble of diagrams. In weak-lensing 
+analyses, they characterize the average topological structure of convergence 
+fields across realizations, redshift bins, or smoothing scales. In the standard 
+cosmological model, Fréchet means reflect the nonlinear matter distribution and the 
+projection of large-scale structure. In the Relaxation-Driven Cyclic Cosmology 
+(RDCC), the scale-dependent evolution of the gravitational potential modifies the 
+ensemble topology, shifting the mean diagram in a characteristic way. This 
+Companion develops a continuous description of Fréchet means in RDCC, deriving how 
+the relaxation scale influences ensemble topology, diagram geometry, and the 
+observational signatures in weak-lensing surveys. The resulting framework provides 
+a distinctive ensemble-level probe of the RDCC gravitational field.
+\end{abstract}
+% ---------------------------------------------------------
+\section{Introduction}
+
+Persistence diagrams encode the birth and death of topological features in 
+weak-lensing convergence fields. While Wasserstein distances compare individual 
+diagrams, Fréchet means summarize entire ensembles by minimizing the expected 
+distance to all diagrams in the set.
+
+In the standard cosmological model, Fréchet means reflect the nonlinear matter 
+distribution and the projection of large-scale structure. In RDCC, the 
+gravitational potential evolves differently. The relaxation mechanism suppresses 
+the decay of small-scale modes and enhances the coherence of large-scale modes. 
+This modifies the ensemble topology in a scale-dependent manner, producing a 
+distinctive signature in Fréchet-mean analyses.
+% ---------------------------------------------------------
+\section{Fréchet Means of Persistence Diagrams}
+
+Given an ensemble of persistence diagrams $\{D_{i}\}$, the Fréchet mean $D^{*}$ is 
+defined as
+
+\begin{equation}
+    D^{*}
+    = \arg\min_{D}
+      \sum_{i}
+      W_{p}(D, D_{i})^{p},
+\end{equation}
+
+where $W_{p}$ is the $p$-Wasserstein distance.
+
+The Fréchet mean represents the diagram that best summarizes the ensemble.
+% ---------------------------------------------------------
+\section{RDCC Modification of Persistence Diagrams}
+
+In RDCC, the convergence evolves as
+\begin{equation}
+    \kappa_{\mathrm{RDCC}}(\ell)
+    = \kappa(\ell)
+      \left[
+        1 - \chi_{\kappa}
+        \left(\frac{\ell}{\ell_{\mathrm{rel}}}\right)^{\alpha}
+      \right].
+\end{equation}
+
+This modifies the birth and death thresholds of topological features:
+
+\begin{align}
+    b_{\mathrm{RDCC}} &= b \left[ 1 - \chi_{b} (\ell/\ell_{\mathrm{rel}})^{\alpha} \right], \\
+    d_{\mathrm{RDCC}} &= d \left[ 1 - \chi_{d} (\ell/\ell_{\mathrm{rel}})^{\alpha} \right].
+\end{align}
+
+The ensemble of RDCC diagrams becomes
+\begin{equation}
+    \{ D_{i,\mathrm{RDCC}} \}
+    = \left\{
+        (b_{i,\mathrm{RDCC}}, d_{i,\mathrm{RDCC}})
+      \right\}.
+\end{equation}
+% ---------------------------------------------------------
+\section{Fréchet Means in RDCC}
+
+The RDCC Fréchet mean is
+
+\begin{equation}
+    D^{*}_{\mathrm{RDCC}}
+    = \arg\min_{D}
+      \sum_{i}
+      W_{p}(D, D_{i,\mathrm{RDCC}})^{p}.
+\end{equation}
+
+To first order in the relaxation parameter,
+
+\begin{equation}
+    D^{*}_{\mathrm{RDCC}}
+    = D^{*}
+      \left[
+        1 - \chi_{F}
+        \left(\frac{\ell}{\ell_{\mathrm{rel}}}\right)^{\alpha}
+      \right].
+\end{equation}
+
+This modification reflects the relaxation-driven shift in ensemble topology.
+% ---------------------------------------------------------
+\section{Ensemble-Level Signatures of RDCC}
+
+The relaxation mechanism enhances the coherence of large-scale modes. Fréchet 
+means therefore exhibit:
+
+\begin{itemize}
+    \item a shift toward longer-lived large-scale features,
+    \item suppression of short-lived small-scale features,
+    \item reduced ensemble variance at large scales,
+    \item enhanced variance at small scales,
+    \item a characteristic turnover near $\ell_{\mathrm{rel}}$,
+    \item modified clustering of diagrams in Fréchet space.
+\end{itemize}
+
+These signatures provide a direct ensemble-level probe of the RDCC gravitational 
+field.
+% ---------------------------------------------------------
+\section{Conclusion}
+
+Fréchet means of persistence diagrams in the Relaxation-Driven Cyclic Cosmology 
+reflect the scale-dependent evolution of the gravitational potential and the 
+nonlinear matter distribution. The relaxation mechanism modifies the ensemble 
+topology in a scale-dependent manner, producing distinctive signatures in 
+weak-lensing surveys. These effects provide a direct observational window into the 
+relaxation scale and the temporal structure of the RDCC gravitational field. The 
+present Companion establishes the theoretical foundation for future studies of 
+topological ensemble statistics, nonlinear structure, and the interplay between 
+light and gravity in RDCC.
+
+\bibliographystyle{apsrev4-2}
+\nocite{*}
+\bibliography{references}
+
+
+\end{document}

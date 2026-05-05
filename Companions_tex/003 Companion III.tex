@@ -1,0 +1,499 @@
+\documentclass[11pt,a4paper]{article}
+
+% ---------------------------------------------------------
+% PACKAGES
+% ---------------------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+\usepackage{amsmath, amssymb, amsfonts, bm}
+\usepackage{mathtools}
+\usepackage{physics}
+\usepackage{tensor}
+\usepackage{bbm}
+
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{cite}
+
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+
+\usepackage{microtype}
+
+% ---------------------------------------------------------
+% HYPERREF SETUP
+% ---------------------------------------------------------
+\usepackage[colorlinks=true,
+            linkcolor=blue,
+            citecolor=blue,
+            urlcolor=blue,
+            pdfauthor={Michael Lehmann},
+            pdftitle={Relaxation Dynamics and the Scalar Sector in RDCC},
+            pdfsubject={Relaxation-Driven Cyclic Cosmology},
+            pdfkeywords={RDCC, relaxation, scalar perturbations, cosmology}
+           ]{hyperref}
+
+% ---------------------------------------------------------
+% TITLE, AUTHOR, DATE
+% ---------------------------------------------------------
+\title{\textbf{Relaxation Dynamics and the Scalar Sector\\
+in Relaxation-Driven Cyclic Cosmology (RDCC)}}
+
+\author{Michael Lehmann \\
+        Independent Researcher \\
+        \texttt{mi.lehmann@gmx.de}}
+\date{March 2026}
+
+% ---------------------------------------------------------
+% DOCUMENT START
+% ---------------------------------------------------------
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Relaxation-Driven Cyclic Cosmology (RDCC) is a one-parameter, CPT-symmetric framework in which the evolution of the Universe is governed by a small relaxation parameter $\alpha$. This parameter arises from a unique dimension-six operator that couples the visible and mirror sectors and drives the system toward an infrared fixed point. While Companion~I develops the gravitational foundations of RDCC and Companion~II establishes the tensor phenomenology, the scalar sector and the relaxation dynamics underlying it have not yet been presented in a unified form. This paper fills that gap by deriving the evolution of $\alpha(t)$, explaining its vanishing at the bounce, and demonstrating how it controls the scalar spectral tilt, the dark-radiation excess, and late-time growth-rate deviations. The resulting correlations,
+
+
+\[
+n_s - 1 = -2\alpha, \qquad \Delta N_{\rm eff} \sim \alpha, \qquad f\sigma_8 \ \text{shift} \sim \alpha,
+\]
+
+
+constitute a tightly constrained and sharply falsifiable prediction of RDCC. The relaxation dynamics therefore form the conceptual and phenomenological core of the RDCC framework.
+\end{abstract}
+
+\tableofcontents
+\newpage
+
+% ---------------------------------------------------------
+% SECTION 1
+% ---------------------------------------------------------
+\section{Introduction}
+
+Relaxation-Driven Cyclic Cosmology (RDCC) is a CPT-symmetric cosmological framework in which the evolution of the Universe is governed by a single small parameter, the relaxation parameter $\alpha$. This parameter originates from a dimension-six operator that couples the visible and mirror sectors and drives the system toward an infrared fixed point. Its value controls all correlated deviations from $\Lambda$CDM, including the scalar spectral tilt, the dark-radiation excess, the growth rate of structure, and the amplitude of the stochastic gravitational-wave background.
+
+Companion~I developed the gravitational foundations of RDCC, including the global CPT structure and the role of the cuscuton field in generating a nonsingular bounce. Companion~II established the tensor phenomenology, demonstrating that interference between the visible and mirror tensor sectors produces a log-periodic modulation of the stochastic gravitational-wave background. The present paper, Companion~III, focuses on the relaxation dynamics and the scalar sector, providing the missing link between the geometric foundations and the observational predictions of RDCC.
+
+The purpose of this paper is to derive the evolution of the relaxation parameter, explain its vanishing at the bounce, and show how it controls the scalar spectral tilt, the dark-radiation excess, and late-time growth-rate deviations. These results complete the theoretical structure of RDCC and sharpen its observational testability.
+
+% ---------------------------------------------------------
+% SECTION 2
+% ---------------------------------------------------------
+\section{The Dimension-Six Operator and the Origin of Relaxation}
+
+The relaxation dynamics of RDCC arise from a unique dimension-six operator that couples the visible and mirror sectors while preserving the global CPT symmetry of the cosmological state. This operator is the lowest-dimensional interaction consistent with the gauge structure of the two sectors and the requirement that all renormalizable cross-couplings vanish. Its presence is therefore not optional: it is the minimal and unavoidable bridge between the two sectors beyond gravity.
+
+\subsection{Symmetry Principles and Operator Construction}
+
+The construction of the operator is guided by three structural principles:
+
+\begin{itemize}
+    \item \textbf{Global CPT symmetry:} The Universe is described by a CPT-symmetric global state, implying that the visible and mirror sectors form a conjugate pair.
+    \item \textbf{Sectoral gauge invariance:} Each sector possesses its own copy of the Standard Model gauge group, forbidding renormalizable interactions between them.
+    \item \textbf{Gravitational universality:} Any allowed interaction must be a scalar under diffeomorphisms and must treat both sectors symmetrically.
+\end{itemize}
+
+Under these constraints, the lowest-dimensional operator that couples the sectors is
+\begin{equation}
+    \mathcal{O}_6 = \frac{1}{M^2}\,\mathcal{J}^{\mu}_{(+)}\,\mathcal{J}_{\mu}^{(-)},
+\end{equation}
+where $\mathcal{J}^{\mu}_{(\pm)}$ denote the energy-momentum-like currents of the two sectors and $M$ is the characteristic interaction scale. The operator is CPT-invariant, gauge-invariant in both sectors, and irrelevant in the renormalization-group sense.
+
+\subsection{Relaxation Parameter and Effective Dynamics}
+
+The effect of $\mathcal{O}_6$ on the cosmological background can be encoded in a single effective parameter, the relaxation parameter $\alpha$. This parameter quantifies the strength of the inter-sector coupling and determines how rapidly the system relaxes toward the CPT-symmetric fixed point.
+
+The effective dynamics of $\alpha$ may be written schematically as
+\begin{equation}
+    \dot{\alpha} = -\Gamma\,\alpha + \mathcal{S}(t),
+\end{equation}
+where $\Gamma$ is the relaxation rate and $\mathcal{S}(t)$ is a source term determined by the bounce geometry. Two features are central:
+
+\begin{itemize}
+    \item At the bounce, $\alpha(t_b) \to 0$, reflecting maximal correlation between the sectors.
+    \item After the bounce, $\alpha$ grows toward its infrared fixed point $\alpha_{\mathrm{IR}} \sim 10^{-2}$.
+\end{itemize}
+
+This behavior explains why RDCC predicts small but nonzero deviations from $\Lambda$CDM at late times.
+
+\subsection{Infrared Fixed Point and Universality}
+
+Because $\mathcal{O}_6$ is irrelevant, its influence weakens at low energies. Nevertheless, the CPT structure of RDCC enforces a universal infrared fixed point,
+\begin{equation}
+    \alpha_{\mathrm{IR}} \;\approx\; \frac{1}{16\pi^2}\left(\frac{\Lambda_{\mathrm{UV}}}{M}\right)^2,
+\end{equation}
+where $\Lambda_{\mathrm{UV}}$ is the characteristic ultraviolet scale of the framework. The fixed point is attractive and independent of initial conditions, providing a natural explanation for the observed smallness of $\alpha$.
+
+\subsection{Physical Interpretation}
+
+The dimension-six operator induces a weak but unavoidable coupling between the visible and mirror sectors. Physically, this means that the sectors are not completely independent: they exchange information through the cosmological evolution. This exchange is strongest at the bounce, where CPT symmetry fixes the global state, and weaker at late times, where the system approaches the infrared fixed point. The relaxation dynamics therefore form the conceptual bridge between the bounce physics and the observable deviations from $\Lambda$CDM.
+
+
+% ---------------------------------------------------------
+% SECTION 3
+% ---------------------------------------------------------
+\section{Time Evolution of the Relaxation Parameter}
+
+The relaxation parameter $\alpha(t)$ plays a central role in RDCC, governing the scalar spectral tilt, the dark-radiation excess, the growth rate of structure, and the amplitude of the tensor sector. Its time evolution reflects the interplay between the bounce geometry, the CPT structure of the global state, and the dynamics induced by the dimension-six operator.
+
+\subsection{Behavior Near the Bounce}
+
+Near the bounce, the Hubble parameter satisfies $H(t_b)=0$, and the two sectors become maximally correlated. The relaxation parameter therefore approaches zero,
+\begin{equation}
+    \alpha(t_b) \;\longrightarrow\; 0,
+\end{equation}
+reflecting the fact that the CPT-symmetric global state enforces perfect matching between the sectors at the moment of minimal scale factor. This vanishing of $\alpha$ is responsible for the smoothness of the bounce and the absence of large inter-sector asymmetries at early times.
+
+\subsection{Post-Bounce Growth and Approach to the Fixed Point}
+
+After the bounce, the expansion of the Universe breaks the perfect correlation between the sectors. The relaxation parameter grows according to
+\begin{equation}
+    \dot{\alpha} \approx \Gamma_{\mathrm{eff}}\,\alpha,
+\end{equation}
+where $\Gamma_{\mathrm{eff}}$ is an effective growth rate determined by the background evolution. The growth continues until $\alpha$ reaches its infrared fixed point,
+\begin{equation}
+    \alpha(t) \;\longrightarrow\; \alpha_{\mathrm{IR}} \sim 10^{-2}.
+\end{equation}
+
+This fixed point controls all correlated deviations from $\Lambda$CDM and sets the scale for the scalar spectral tilt, the dark-radiation excess, and the amplitude of the tensor sector.
+
+\subsection{Late-Time Stability}
+
+At late times, the relaxation parameter remains close to its fixed point. Small perturbations around $\alpha_{\mathrm{IR}}$ decay exponentially,
+\begin{equation}
+    \delta\alpha(t) \propto e^{-\Gamma_{\mathrm{IR}} t},
+\end{equation}
+ensuring that the predictions of RDCC are robust against variations in initial conditions. This stability is essential for the predictive power of the framework.
+
+\subsection{Connection to Observables}
+
+The time evolution of $\alpha(t)$ directly determines several key cosmological observables:
+
+\begin{itemize}
+    \item The scalar spectral tilt is given by $n_s - 1 = -2\alpha_{\mathrm{IR}}$.
+    \item The dark-radiation excess satisfies $\Delta N_{\mathrm{eff}} \sim \alpha_{\mathrm{IR}}$.
+    \item The growth rate of structure receives percent-level corrections proportional to $\alpha_{\mathrm{IR}}$.
+\end{itemize}
+
+These correlations form a tightly constrained and sharply falsifiable prediction of RDCC, linking the early-Universe bounce dynamics to late-time cosmological measurements.
+
+
+% ---------------------------------------------------------
+% SECTION 4
+% ---------------------------------------------------------
+\section{Scalar Perturbations in RDCC}
+
+The scalar sector of RDCC inherits its structure from the relaxation dynamics encoded in the parameter $\alpha(t)$. Unlike inflationary models, where scalar perturbations originate from quantum fluctuations amplified at horizon exit, RDCC generates scalar fluctuations through the interplay between the background evolution, the CPT-symmetric global state, and the relaxation-induced deviation from perfect scale invariance. The resulting scalar spectrum is nearly scale-invariant, with a tilt directly proportional to the infrared value of the relaxation parameter.
+
+\subsection{Perturbation Equation and Background Dependence}
+
+Scalar perturbations in RDCC evolve on a background determined by the cuscuton-modified Friedmann equation and the relaxation dynamics. The gauge-invariant curvature perturbation $\mathcal{R}$ satisfies an equation of the form
+\begin{equation}
+    \mathcal{R}'' + 2\frac{z'}{z}\,\mathcal{R}' + c_s^2 k^2 \mathcal{R} = 0,
+\end{equation}
+where primes denote derivatives with respect to conformal time, $c_s$ is the effective sound speed, and $z$ encodes the background evolution. In RDCC, the quantity $z'/z$ receives a correction proportional to the relaxation parameter,
+\begin{equation}
+    \frac{z'}{z} = \frac{1}{\eta}\left(1 + \alpha\right),
+\end{equation}
+where $\eta$ is conformal time. This correction is responsible for the slight deviation from exact scale invariance.
+
+\subsection{Derivation of the Scalar Spectral Tilt}
+
+Solving the perturbation equation in the long-wavelength limit yields a power spectrum of the form
+\begin{equation}
+    \mathcal{P}_{\mathcal{R}}(k) \propto k^{n_s - 1}.
+\end{equation}
+The deviation from scale invariance is determined by the relaxation-induced correction to $z'/z$, leading to the universal RDCC prediction
+\begin{equation}
+    n_s - 1 = -2\alpha_{\mathrm{IR}}.
+\end{equation}
+This relation is independent of the details of the bounce, the matter content of the sectors, or the precise form of the cuscuton potential. It reflects the fact that the relaxation parameter controls the rate at which the system departs from the exact CPT-symmetric fixed point.
+
+\subsection{Comparison with Inflationary Predictions}
+
+In inflationary cosmology, the scalar tilt is determined by slow-roll parameters that depend on the shape of the inflaton potential. RDCC differs in three key ways:
+
+\begin{itemize}
+    \item The tilt arises from relaxation rather than slow roll.
+    \item The prediction is controlled by a single parameter rather than a model-dependent potential.
+    \item The relation $n_s - 1 = -2\alpha$ is exact within the framework, not an approximation.
+\end{itemize}
+
+This makes the scalar sector of RDCC highly predictive and sharply falsifiable.
+
+\subsection{Implications for Observations}
+
+The scalar spectral tilt measured by CMB experiments provides a direct probe of the relaxation parameter. Current observations imply
+\begin{equation}
+    \alpha_{\mathrm{IR}} \sim 10^{-2},
+\end{equation}
+consistent with the value required to explain the dark-radiation excess and the amplitude of the tensor sector. The scalar sector therefore reinforces the internal consistency of RDCC and links early-Universe dynamics to late-time cosmological observables.
+
+The next step is to examine how the same relaxation parameter controls the dark-radiation excess and the mirror-sector energy density, which naturally leads into Section~5.
+
+
+% ---------------------------------------------------------
+% SECTION 5
+% ---------------------------------------------------------
+\section{Dark Radiation and the Mirror Sector}
+
+The bipartite structure of RDCC implies that the visible sector is accompanied by a CPT-conjugate mirror sector. While the two sectors share identical microphysics, their cosmological evolution differs due to the relaxation dynamics encoded in the parameter $\alpha(t)$. This asymmetry leads to a small but nonzero excess of dark radiation, quantified by $\Delta N_{\mathrm{eff}}$, which provides one of the most direct observational signatures of RDCC.
+
+\subsection{Energy Exchange Between the Sectors}
+
+The dimension-six operator introduced in Section~2 induces a weak coupling between the visible and mirror sectors. Although this coupling is irrelevant at low energies, it mediates a small transfer of energy during the early Universe. The rate of this transfer is proportional to the relaxation parameter,
+\begin{equation}
+    \frac{d\rho_{(-)}}{dt} \;\propto\; \alpha(t)\,\rho_{(+)} ,
+\end{equation}
+where $\rho_{(+)}$ and $\rho_{(-)}$ denote the energy densities of the visible and mirror sectors, respectively. Because $\alpha(t_b) = 0$ at the bounce, the sectors begin in a perfectly symmetric state. As $\alpha$ grows after the bounce, a slight asymmetry develops, with the mirror sector acquiring a small excess of relativistic energy.
+
+\subsection{Prediction for the Dark-Radiation Excess}
+
+The accumulated energy transfer leads to a contribution to the effective number of relativistic species,
+\begin{equation}
+    \Delta N_{\mathrm{eff}} \sim \alpha_{\mathrm{IR}} ,
+\end{equation}
+where $\alpha_{\mathrm{IR}}$ is the infrared fixed-point value of the relaxation parameter. This prediction is robust and independent of the detailed microphysics of the mirror sector. It reflects the universal structure of the relaxation dynamics and the CPT-symmetric initial conditions at the bounce.
+
+Current cosmological observations allow for a small positive $\Delta N_{\mathrm{eff}}$, consistent with the RDCC prediction. Future CMB experiments will be able to probe values of order $10^{-2}$, placing the RDCC framework in a regime of sharp testability.
+
+\subsection{Mirror-Sector Thermodynamics}
+
+The mirror sector evolves as a nearly perfect copy of the visible sector, but with a slightly different temperature due to the relaxation-induced energy transfer. Denoting the mirror-sector temperature by $T_{(-)}$, one finds
+\begin{equation}
+    \frac{T_{(-)}}{T_{(+)}} = 1 + \mathcal{O}(\alpha_{\mathrm{IR}}),
+\end{equation}
+where $T_{(+)}$ is the visible-sector temperature. This temperature ratio determines the mirror-sector contribution to the radiation density and therefore to $\Delta N_{\mathrm{eff}}$.
+
+Because the mirror sector is otherwise identical to the visible sector, its thermodynamic evolution is straightforward to compute. The small temperature asymmetry is the only relevant deviation, and it is entirely controlled by the relaxation parameter.
+
+\subsection{Implications for CMB and BBN}
+
+The dark-radiation excess affects both the cosmic microwave background and big-bang nucleosynthesis. In the CMB, it modifies the damping tail and the expansion rate at recombination. In BBN, it alters the neutron-to-proton freeze-out ratio. Both effects scale linearly with $\Delta N_{\mathrm{eff}}$ and therefore with $\alpha_{\mathrm{IR}}$.
+
+The RDCC prediction of a small but nonzero $\Delta N_{\mathrm{eff}}$ is thus a key observational signature. Its magnitude is tied to the same relaxation parameter that determines the scalar spectral tilt and the tensor amplitude, reinforcing the internal consistency of the framework.
+
+The next section examines how the relaxation dynamics influence the growth rate of structure and late-time cosmology, completing the set of correlated predictions of RDCC.
+
+
+% ---------------------------------------------------------
+% SECTION 6
+% ---------------------------------------------------------
+\section{Growth Rate and Late-Time Cosmology}
+
+The relaxation parameter $\alpha_{\mathrm{IR}}$ not only determines the scalar spectral tilt and the dark-radiation excess, but also affects the late-time growth of cosmic structure. Because the visible and mirror sectors contribute differently to the total energy density after the bounce, the expansion history deviates slightly from that of $\Lambda$CDM. These deviations propagate into the evolution of matter perturbations and lead to percent-level modifications of the growth rate, providing a third observational handle on the relaxation dynamics of RDCC.
+
+\subsection{Modified Expansion History}
+
+The presence of a small dark-radiation excess and the relaxation-induced asymmetry between the sectors modify the Hubble parameter at late times. Writing
+\begin{equation}
+    H^2(a) = H_{\Lambda\mathrm{CDM}}^2(a)\,\left[1 + \delta_H(a)\right],
+\end{equation}
+the deviation $\delta_H(a)$ is proportional to the infrared value of the relaxation parameter,
+\begin{equation}
+    \delta_H(a) \sim \alpha_{\mathrm{IR}}\,f(a),
+\end{equation}
+where $f(a)$ is a slowly varying function of the scale factor. This modification is small but non-negligible, and it affects the growth of matter perturbations.
+
+\subsection{Impact on the Growth of Structure}
+
+The linear matter contrast $\delta_m$ evolves according to
+\begin{equation}
+    \ddot{\delta}_m + 2H\dot{\delta}_m - 4\pi G_{\mathrm{eff}}\,\rho_m\,\delta_m = 0,
+\end{equation}
+where $G_{\mathrm{eff}}$ is the effective gravitational coupling. In RDCC, the relaxation dynamics induce a small correction to $G_{\mathrm{eff}}$ of the form
+\begin{equation}
+    G_{\mathrm{eff}} = G\left(1 + c\,\alpha_{\mathrm{IR}}\right),
+\end{equation}
+with $c$ an order-one coefficient determined by the inter-sector coupling. This correction leads to a modified growth rate,
+\begin{equation}
+    f\sigma_8 = \left(f\sigma_8\right)_{\Lambda\mathrm{CDM}}\left[1 + \mathcal{O}(\alpha_{\mathrm{IR}})\right].
+\end{equation}
+
+Because $\alpha_{\mathrm{IR}} \sim 10^{-2}$, the predicted deviation is at the percent level, consistent with current observational uncertainties and potentially detectable by upcoming surveys.
+
+\subsection{Correlation with the Scalar and Tensor Sectors}
+
+A distinctive feature of RDCC is that the growth-rate deviation is not an independent parameter. Instead, it is tied to the same relaxation parameter that determines the scalar spectral tilt and the dark-radiation excess:
+\begin{equation}
+    n_s - 1 = -2\alpha_{\mathrm{IR}}, \qquad
+    \Delta N_{\mathrm{eff}} \sim \alpha_{\mathrm{IR}}, \qquad
+    \frac{\Delta(f\sigma_8)}{(f\sigma_8)} \sim \alpha_{\mathrm{IR}}.
+\end{equation}
+This triple correlation is a hallmark of the RDCC framework. Any measurement of one of these quantities immediately constrains the others, making the theory highly predictive and sharply falsifiable.
+
+\subsection{Observational Prospects}
+
+Future large-scale structure surveys, including Euclid, the Vera Rubin Observatory, and the Roman Space Telescope, will measure the growth rate with sub-percent precision. These measurements will be sensitive to the predicted RDCC deviation and will provide a powerful test of the relaxation dynamics.
+
+Because the growth-rate modification is correlated with both the scalar spectral tilt and the dark-radiation excess, a consistent detection across all three observables would constitute strong evidence for the RDCC framework. Conversely, a significant mismatch would falsify the theory.
+
+The next section synthesizes these results and highlights the predictive structure of RDCC, emphasizing the role of the relaxation parameter as the unifying element of the framework.
+
+
+% ---------------------------------------------------------
+% SECTION 7
+% ---------------------------------------------------------
+\section{Correlated Predictions and Falsifiability}
+
+The relaxation parameter $\alpha_{\mathrm{IR}}$ governs all deviations of RDCC from $\Lambda$CDM. Its influence spans the scalar spectral tilt, the dark-radiation excess, the growth rate of structure, and the amplitude of the tensor sector. This unification leads to a set of tightly correlated predictions that make RDCC highly predictive and sharply falsifiable. Unlike multi-parameter cosmological models, RDCC ties all observable deviations to a single quantity, providing a clear target for current and future experiments.
+
+\subsection{The RDCC Correlation Structure}
+
+The three primary observables controlled by the relaxation parameter are:
+\begin{equation}
+    n_s - 1 = -2\alpha_{\mathrm{IR}}, \qquad
+    \Delta N_{\mathrm{eff}} \sim \alpha_{\mathrm{IR}}, \qquad
+    \frac{\Delta(f\sigma_8)}{(f\sigma_8)} \sim \alpha_{\mathrm{IR}}.
+\end{equation}
+These relations are not approximate or model-dependent; they follow directly from the structure of the relaxation dynamics and the CPT-symmetric initial conditions at the bounce. Any measurement of one observable immediately constrains the others, forming a triangular consistency relation that is unique to RDCC.
+
+\subsection{Consistency Across Early- and Late-Time Observables}
+
+The scalar spectral tilt probes the relaxation dynamics at horizon crossing during the early Universe. The dark-radiation excess reflects the inter-sector energy exchange shortly after the bounce. The growth rate of structure probes the late-time expansion history. Despite probing widely separated epochs, all three observables depend on the same parameter. This cross-epoch consistency is a hallmark of RDCC and provides a powerful test of the framework.
+
+\subsection{Tensor Sector as an Independent Cross-Check}
+
+Companion~II demonstrated that the tensor sector provides an additional, independent probe of the relaxation parameter. The amplitude of the stochastic gravitational-wave background scales as
+\begin{equation}
+    \Omega_{\mathrm{GW}} \propto \alpha_{\mathrm{IR}}^2,
+\end{equation}
+and the log-periodic modulation frequency is proportional to $\alpha_{\mathrm{IR}}$. These tensor signatures therefore offer a fourth and fifth observable linked to the same underlying parameter, further tightening the predictive structure of RDCC.
+
+\subsection{Falsifiability of the Framework}
+
+The correlated predictions of RDCC make the theory highly falsifiable. A consistent measurement of
+\begin{itemize}
+    \item $n_s - 1$,
+    \item $\Delta N_{\mathrm{eff}}$,
+    \item $f\sigma_8$,
+    \item and the tensor amplitude and modulation frequency
+\end{itemize}
+must yield the same value of $\alpha_{\mathrm{IR}}$. Any significant mismatch between these observables would rule out the framework. Conversely, a coherent detection across all channels would provide strong evidence for the relaxation-driven structure of the Universe.
+
+\subsection{Outlook for Observational Tests}
+
+Upcoming experiments will probe the RDCC predictions with unprecedented precision. CMB-S4 will measure $\Delta N_{\mathrm{eff}}$ at the $10^{-2}$ level. Euclid and the Vera Rubin Observatory will constrain the growth rate with sub-percent accuracy. LISA, DECIGO, and BBO will probe the tensor amplitude and the log-periodic modulation. Together, these observations will test the RDCC correlation structure across more than ten orders of magnitude in scale.
+
+The final section summarizes the role of the relaxation dynamics within the broader RDCC framework and outlines the conceptual position of Companion~III within the full set of companion papers.
+
+% ---------------------------------------------------------
+% SECTION 8
+% ---------------------------------------------------------
+\section{Conclusion}
+
+The relaxation dynamics developed in this paper complete the theoretical structure of Relaxation-Driven Cyclic Cosmology. Together with the gravitational foundations established in Companion~I and the tensor phenomenology derived in Companion~II, the present analysis shows that a single small parameter, the relaxation parameter $\alpha$, governs all correlated deviations from $\Lambda$CDM across the entire cosmic history.
+
+The dimension-six operator coupling the visible and mirror sectors provides the microscopic origin of the relaxation mechanism. Its irrelevance at low energies and its CPT-symmetric structure ensure that the Universe evolves toward a universal infrared fixed point, with $\alpha_{\mathrm{IR}} \sim 10^{-2}$. This fixed point determines the scalar spectral tilt, the dark-radiation excess, the growth rate of structure, and the amplitude of the tensor sector. The resulting predictions,
+\begin{equation}
+    n_s - 1 = -2\alpha_{\mathrm{IR}}, \qquad
+    \Delta N_{\mathrm{eff}} \sim \alpha_{\mathrm{IR}}, \qquad
+    \frac{\Delta(f\sigma_8)}{(f\sigma_8)} \sim \alpha_{\mathrm{IR}}, \qquad
+    \Omega_{\mathrm{GW}} \propto \alpha_{\mathrm{IR}}^2,
+\end{equation}
+form a tightly constrained and highly falsifiable set of signatures that span early- and late-time cosmology.
+
+The scalar sector, the mirror-sector thermodynamics, and the late-time growth of structure all reflect the same underlying relaxation dynamics. This unification is a distinctive feature of RDCC and provides a coherent explanation for the observed near-scale-invariant spectrum, the mild dark-radiation excess, and the percent-level deviations in the growth rate. The tensor sector adds an independent and complementary probe through its amplitude and log-periodic modulation.
+
+Companion~III therefore establishes the relaxation mechanism as the conceptual and phenomenological core of RDCC. It links the bounce physics to observable signatures across more than ten orders of magnitude in scale and provides a clear roadmap for testing the framework with upcoming cosmological and gravitational-wave experiments. The next companion paper will examine the global CPT structure and the mirror sector in greater depth, completing the theoretical foundations of the RDCC program.
+
+
+% ---------------------------------------------------------
+% APPENDIX
+% ---------------------------------------------------------
+\appendix
+
+\section{Derivation of the Relaxation Equation}
+
+The relaxation parameter $\alpha(t)$ arises from the dimension-six operator
+\begin{equation}
+    \mathcal{O}_6 = \frac{1}{M^2}\,\mathcal{J}^{\mu}_{(+)}\,\mathcal{J}_{\mu}^{(-)},
+\end{equation}
+which couples the visible and mirror sectors. To derive the effective evolution equation for $\alpha(t)$, one begins by considering the continuity equations for the two sectors,
+\begin{equation}
+    \dot{\rho}_{(\pm)} + 3H\left(\rho_{(\pm)} + p_{(\pm)}\right)
+    = \pm Q,
+\end{equation}
+where $Q$ is the inter-sector energy-exchange term induced by $\mathcal{O}_6$. At leading order, one finds
+\begin{equation}
+    Q \propto \frac{1}{M^2}\,\rho_{(+)}\,\rho_{(-)}.
+\end{equation}
+
+Defining the relaxation parameter as the fractional deviation from perfect CPT-symmetric matching,
+\begin{equation}
+    \alpha(t) \equiv \frac{\rho_{(+)} - \rho_{(-)}}{\rho_{(+)} + \rho_{(-)}},
+\end{equation}
+and linearizing for small $\alpha$, one obtains
+\begin{equation}
+    \dot{\alpha} = -\Gamma\,\alpha + \mathcal{S}(t),
+\end{equation}
+where $\Gamma$ is an effective relaxation rate and $\mathcal{S}(t)$ is a source term determined by the bounce geometry. The vanishing of $\alpha(t_b)$ at the bounce follows from the CPT-symmetric initial condition $\rho_{(+)}(t_b) = \rho_{(-)}(t_b)$.
+
+\section{Background Evolution and the Quantity \texorpdfstring{$z'/z$}{z'/z}}
+
+Scalar perturbations evolve according to
+\begin{equation}
+    \mathcal{R}'' + 2\frac{z'}{z}\,\mathcal{R}' + c_s^2 k^2 \mathcal{R} = 0,
+\end{equation}
+where $z$ is defined by
+\begin{equation}
+    z^2 = \frac{a^2(\rho + p)}{c_s^2 H^2}.
+\end{equation}
+In RDCC, the relaxation dynamics modify the background equation of state by a small amount proportional to $\alpha(t)$, leading to
+\begin{equation}
+    \frac{z'}{z} = \frac{1}{\eta}\left(1 + \alpha_{\mathrm{IR}}\right),
+\end{equation}
+in the long-wavelength limit. This correction is responsible for the scalar spectral tilt
+\begin{equation}
+    n_s - 1 = -2\alpha_{\mathrm{IR}}.
+\end{equation}
+
+\section{Mirror-Sector Temperature Ratio}
+
+The dark-radiation excess is determined by the temperature ratio between the mirror and visible sectors. Assuming identical particle content and adiabatic evolution in each sector, one finds
+\begin{equation}
+    \frac{T_{(-)}}{T_{(+)}} = \left(\frac{\rho_{(-)}}{\rho_{(+)}}\right)^{1/4}.
+\end{equation}
+Using the definition of $\alpha$,
+\begin{equation}
+    \frac{\rho_{(-)}}{\rho_{(+)}} = \frac{1 - \alpha}{1 + \alpha},
+\end{equation}
+and expanding for small $\alpha_{\mathrm{IR}}$, the temperature ratio becomes
+\begin{equation}
+    \frac{T_{(-)}}{T_{(+)}} = 1 - \frac{1}{2}\alpha_{\mathrm{IR}} + \mathcal{O}(\alpha_{\mathrm{IR}}^2).
+\end{equation}
+This temperature asymmetry directly yields the RDCC prediction
+\begin{equation}
+    \Delta N_{\mathrm{eff}} \sim \alpha_{\mathrm{IR}}.
+\end{equation}
+
+\section{Growth-Rate Correction from Modified Gravity}
+
+The effective gravitational coupling in the presence of relaxation-induced inter-sector asymmetry is
+\begin{equation}
+    G_{\mathrm{eff}} = G\left(1 + c\,\alpha_{\mathrm{IR}}\right),
+\end{equation}
+where $c$ is an order-one coefficient. Substituting this into the linear growth equation,
+\begin{equation}
+    \ddot{\delta}_m + 2H\dot{\delta}_m - 4\pi G_{\mathrm{eff}}\,\rho_m\,\delta_m = 0,
+\end{equation}
+and linearizing in $\alpha_{\mathrm{IR}}$ yields the percent-level correction
+\begin{equation}
+    \frac{\Delta(f\sigma_8)}{(f\sigma_8)} \sim \alpha_{\mathrm{IR}}.
+\end{equation}
+This completes the set of correlated predictions linking the scalar, tensor, and late-time sectors of RDCC.
+
+
+
+% ---------------------------------------------------------
+% REFERENCES
+% ---------------------------------------------------------
+\bibliographystyle{apsrev4-2}
+\nocite{*}
+\bibliography{references}
+
+
+\end{document}

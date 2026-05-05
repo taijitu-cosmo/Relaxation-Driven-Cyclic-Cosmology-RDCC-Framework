@@ -1,0 +1,198 @@
+\documentclass[11pt,a4paper]{article}
+
+% ---------------------------------------------------------
+% PREAMBLE (stable, warning-free, Overleaf-safe)
+% ---------------------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{bm}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{cite}
+\usepackage{authblk}
+\usepackage{physics}
+\usepackage{mathtools}
+
+\geometry{margin=2.4cm}
+
+\title{\textbf{Companion XXXVIII: The Circumgalactic Medium in the Relaxation-Driven Cyclic Cosmology}}
+\author{Michael Lehmann \\ \texttt{mi.lehmann@gmx.de}}
+\date{April 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The circumgalactic medium (CGM) forms the interface between galaxies and the cosmic 
+web. It regulates gas inflows, outflows, and the long-term evolution of galaxies. 
+In the Relaxation-Driven Cyclic Cosmology (RDCC), the scale-dependent evolution of 
+the gravitational potential modifies the thermodynamic structure, kinematics, and 
+ionization state of the CGM. This Companion develops a continuous description of 
+the RDCC circumgalactic medium, deriving how the relaxation scale influences the 
+density and temperature profiles, the stability of gaseous halos, and the dynamics 
+of inflows and outflows. The resulting framework provides a natural explanation for 
+the observed coherence of CGM absorption systems and the extended gaseous envelopes 
+around massive galaxies.
+\end{abstract}
+% ---------------------------------------------------------
+\section{Introduction}
+
+The circumgalactic medium is a vast reservoir of gas that surrounds galaxies and 
+mediates the exchange of mass, energy, and metals between galaxies and their 
+environment. Observations reveal a multiphase structure extending hundreds of 
+kiloparsecs, with cold filaments, warm ionized gas, and hot virialized atmospheres 
+coexisting in a delicate balance.
+
+In the standard cosmological model, the CGM is shaped by the interplay between 
+gravitational collapse, radiative cooling, and feedback. In RDCC, the gravitational 
+potential evolves differently. The relaxation mechanism suppresses the growth of 
+small-scale modes and enhances the coherence of large-scale modes. This modifies 
+the density and temperature structure of the CGM, the stability of gaseous halos, 
+and the dynamics of inflows and outflows. The CGM becomes a direct tracer of the 
+relaxation scale $k_{\mathrm{rel}}$.
+% ---------------------------------------------------------
+\section{The RDCC Potential and the Structure of Gaseous Halos}
+
+The gravitational potential that shapes the CGM is modified in RDCC according to
+\begin{equation}
+    \Phi_{\mathrm{RDCC}}(k,a)
+    = \Phi(k,a)
+      \left[1 - \chi_{\Phi}
+      \left(\frac{k}{k_{\mathrm{rel}}}\right)^{\alpha}\right].
+\end{equation}
+
+This modification reduces the depth of the potential wells of low-mass halos while 
+preserving the coherence of the potential in massive halos. The hydrostatic 
+equilibrium condition,
+\begin{equation}
+    \frac{1}{\rho}\frac{dP}{dr}
+    = -\frac{d\Phi_{\mathrm{RDCC}}}{dr},
+\end{equation}
+then yields a density profile that is smoother and more extended than in the 
+standard cosmological model.
+
+The temperature profile follows from the ideal-gas relation,
+\begin{equation}
+    T_{\mathrm{RDCC}}(r)
+    = \frac{\mu m_{p}}{k_{B}}
+      \frac{1}{\rho(r)}
+      \int_{r}^{\infty}
+      \rho(r')\,\frac{d\Phi_{\mathrm{RDCC}}}{dr'}\,dr'.
+\end{equation}
+
+The resulting CGM is less centrally concentrated and exhibits a broader transition 
+between the inner halo and the outer gaseous envelope.
+% ---------------------------------------------------------
+\section{Cooling, Condensation, and the Multiphase Structure}
+
+The CGM is inherently multiphase, with cold clouds embedded in a hot background. 
+The formation of these cold clouds depends on the competition between radiative 
+cooling and gravitational compression. In RDCC, the cooling time becomes
+\begin{equation}
+    t_{\mathrm{cool,RDCC}}
+    = \frac{3 k_{B} T_{\mathrm{RDCC}}}{n_{e} \Lambda(T_{\mathrm{RDCC}})},
+\end{equation}
+where the modified temperature profile delays cooling in low-mass halos and 
+accelerates it in massive halos.
+
+The condition for thermal instability,
+\begin{equation}
+    \frac{d\ln \Lambda}{d\ln T} < 2,
+\end{equation}
+is reached at different radii in RDCC than in the standard cosmological model. 
+Massive halos develop extended regions of thermal instability, leading to the 
+formation of cold filaments that penetrate deep into the halo. Low-mass halos, 
+whose potentials are weakened by the relaxation mechanism, suppress the formation 
+of cold clouds altogether.
+
+This asymmetry provides a natural explanation for the observed scarcity of cold 
+gas around dwarf galaxies and the prevalence of cold filaments around massive 
+galaxies.
+% ---------------------------------------------------------
+\section{Inflow and Outflow Dynamics}
+
+Gas flows into and out of galaxies through the CGM. In RDCC, the dynamics of these 
+flows are modified by the relaxation-modified potential. The inflow velocity can be 
+approximated as
+\begin{equation}
+    v_{\mathrm{in,RDCC}}(r)
+    = \sqrt{
+        \frac{2 G M_{\mathrm{RDCC}}(r)}{r}
+    },
+\end{equation}
+where the reduced mass profile of low-mass halos slows inflows and the enhanced 
+coherence of massive halos accelerates them.
+
+Outflows driven by stellar or AGN feedback must overcome the escape velocity,
+\begin{equation}
+    v_{\mathrm{esc,RDCC}}(r)
+    = \sqrt{
+        2 \abs{\Phi_{\mathrm{RDCC}}(r)}
+    }.
+\end{equation}
+
+Because the potential is shallower in low-mass halos, outflows escape more easily, 
+leading to a CGM that is metal-poor and diffuse. Massive halos retain their 
+outflows, enriching their CGM and promoting the formation of multiphase structures.
+
+The CGM thus becomes a dynamical record of the relaxation scale.
+% ---------------------------------------------------------
+\section{Ionization Structure and Observational Signatures}
+
+The ionization state of the CGM is sensitive to its density and temperature 
+structure. In RDCC, the modified profiles lead to characteristic absorption 
+signatures. The column density of an ion species $X$ becomes
+\begin{equation}
+    N_{X,\mathrm{RDCC}}
+    = \int n_{X}(r)\,dr,
+\end{equation}
+where $n_{X}(r)$ reflects the RDCC-modified density and temperature.
+
+Massive halos exhibit extended absorption systems with coherent velocity 
+structures, while low-mass halos show weaker and more fragmented absorption. 
+These predictions align with observations of Lyman-$\alpha$ absorbers and metal 
+lines around galaxies across cosmic time.
+% ---------------------------------------------------------
+\section{Conclusion}
+
+The circumgalactic medium in the Relaxation-Driven Cyclic Cosmology reflects the 
+scale-dependent evolution of the gravitational potential. The relaxation mechanism 
+modifies the density and temperature structure of gaseous halos, the formation of 
+multiphase gas, and the dynamics of inflows and outflows. These effects produce a 
+CGM that is smoother, more coherent, and more extended around massive galaxies, 
+while suppressing cold gas around low-mass galaxies. The present Companion 
+establishes the theoretical foundation for future studies of galaxy evolution, 
+chemical enrichment, and the interaction between galaxies and the cosmic web in 
+RDCC.
+
+% ========================
+% References
+% ========================
+
+\begin{thebibliography}{10}
+
+\bibitem{Flagship} Lehmann, M. (2026). Relaxation-Driven Cyclic Cosmology (RDCC): A Minimal CPT-Symmetric Framework with a Single Parameter. Flagship Paper. Zenodo: \url{https://zenodo.org/records/19744958} (v43.0 or later).
+
+\bibitem{Zenodo} The complete RDCC companion series (I--LVII) is available at the same Zenodo record above.
+
+% Thematisch relevante Companions
+\bibitem{CompXVI} Companion XVI: Boltzmann Code and Modified Hierarchy.
+\bibitem{CompXXXI} Companion XXXI: RDCC Halo Model and Non-Linear Structure.
+\bibitem{CompXXXII} Companion XXXII--XXXIX: Galaxy--Halo Connection, Cosmic Web, Lensing, RSD, ISW, tSZ, Rotation Curves, CGM.
+
+% Wichtige externe Referenzen
+\bibitem{Planck2020} Planck Collaboration (2020), Astron. Astrophys. 641, A6.
+\bibitem{DESI2024} DESI Collaboration (2024/2025), arXiv: [aktuelle $f\sigma_8$/BAO-Paper].
+\bibitem{JWST2024} Maiolino et al. (2024), Nature (JWST high-$z$ galaxies/quasars).
+\bibitem{Kaiser1987} Kaiser, N. (1987), Mon. Not. R. Astron. Soc. 227, 1 (RSD).
+\bibitem{Bartelmann2001} Bartelmann, M. \& Schneider, P. (2001), Phys. Rep. 340, 291 (Weak Lensing Review).
+\bibitem{HuOkamoto2002} Hu, W. \& Okamoto, T. (2002), Astrophys. J. 574, 566 (CMB Lensing).
+\bibitem{LewisChallinor2006} Lewis, A. \& Challinor, A. (2006), Phys. Rep. 429, 1 (CMB Lensing Review).
+\bibitem{NFW1997} Navarro, J. F., Frenk, C. S. \& White, S. D. M. (1997), Astrophys. J. 490, 493 (Halo Profiles).
+
+\end{thebibliography}
+
+\end{document}

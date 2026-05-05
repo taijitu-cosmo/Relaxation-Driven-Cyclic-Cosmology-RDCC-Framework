@@ -1,0 +1,160 @@
+\documentclass[11pt,a4paper]{article}
+
+% ---------------------------------------------------------
+% PREAMBLE (stable, warning-free, Overleaf-safe)
+% ---------------------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{bm}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{cite}
+\usepackage{authblk}
+\usepackage{physics}
+\usepackage{mathtools}
+
+\geometry{margin=2.4cm}
+
+\title{\textbf{Companion LXXI: Hilbert-Space Embeddings of Persistence Diagrams in the Relaxation-Driven Cyclic Cosmology}}
+\author{Michael Lehmann \\ \texttt{mi.lehmann@gmx.de}}
+\date{April 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Hilbert-space embeddings of persistence diagrams provide a linearized 
+representation of topological structure, enabling inner-product computations, 
+kernel methods, and spectral analyses. In weak-lensing analyses, such embeddings 
+capture how connected components, loops, and void-like structures contribute to 
+the geometry of topological feature space. In the standard cosmological model, 
+these embeddings reflect the nonlinear matter distribution and the projection of 
+large-scale structure. In the Relaxation-Driven Cyclic Cosmology (RDCC), the 
+scale-dependent evolution of the gravitational potential modifies the Hilbert-space 
+geometry of persistence diagrams in a characteristic way. This Companion develops 
+a continuous description of Hilbert-space embeddings in RDCC, deriving how the 
+relaxation scale influences linearized topology, kernel structure, and the 
+observational signatures in weak-lensing surveys. The resulting framework provides 
+a distinctive probe of the RDCC gravitational field through linearized topological 
+geometry.
+\end{abstract}
+% ---------------------------------------------------------
+\section{Introduction}
+
+Persistence diagrams encode the birth and death of topological features in 
+weak-lensing convergence fields. While wavelet transforms provide a multi-scale 
+representation of topological fluctuations, Hilbert-space embeddings offer a 
+linearized representation that enables inner-product computations, kernel methods, 
+and spectral analyses.
+
+In the standard cosmological model, the Hilbert-space geometry reflects the 
+nonlinear matter distribution and the projection of large-scale structure. In 
+RDCC, the gravitational potential evolves differently. The relaxation mechanism 
+suppresses the decay of small-scale modes and enhances the coherence of large-scale 
+modes. This modifies the Hilbert-space geometry of persistence diagrams in a 
+scale-dependent manner, producing a distinctive signature in embedding analyses.
+% ---------------------------------------------------------
+\section{Hilbert-Space Embeddings of Persistence Diagrams}
+
+A persistence diagram $D$ can be embedded into a reproducing kernel Hilbert space 
+(RKHS) $\mathcal{H}$ via
+
+\begin{equation}
+    \Phi(D)
+    = \sum_{(b,d) \in D}
+      w(b,d) \, k(\cdot, (b,d)),
+\end{equation}
+
+where $k$ is a positive-definite kernel and $w(b,d)$ is a weight function.
+
+The inner product becomes
+
+\begin{equation}
+    \langle \Phi(D_{1}), \Phi(D_{2}) \rangle_{\mathcal{H}}
+    = \sum_{x \in D_{1}}
+      \sum_{y \in D_{2}}
+      w(x) w(y) k(x,y).
+\end{equation}
+% ---------------------------------------------------------
+\section{RDCC Modification of Persistence Diagrams}
+
+In RDCC, the convergence evolves as
+\begin{equation}
+    \kappa_{\mathrm{RDCC}}(\ell)
+    = \kappa(\ell)
+      \left[
+        1 - \chi_{\kappa}
+        \left(\frac{\ell}{\ell_{\mathrm{rel}}}\right)^{\alpha}
+      \right].
+\end{equation}
+
+This modifies the birth and death thresholds of topological features:
+
+\begin{align}
+    b_{\mathrm{RDCC}} &= b \left[ 1 - \chi_{b} (\ell/\ell_{\mathrm{rel}})^{\alpha} \right], \\
+    d_{\mathrm{RDCC}} &= d \left[ 1 - \chi_{d} (\ell/\ell_{\mathrm{rel}})^{\alpha} \right].
+\end{align}
+
+Thus the RDCC embedding becomes
+
+\begin{equation}
+    \Phi_{\mathrm{RDCC}}(D)
+    = \Phi(D)
+      \left[
+        1 - \chi_{\Phi}
+        \left(\frac{\ell}{\ell_{\mathrm{rel}}}\right)^{\alpha}
+      \right].
+\end{equation}
+% ---------------------------------------------------------
+\section{Kernel Structure in RDCC}
+
+The RDCC-modified kernel is
+
+\begin{equation}
+    k_{\mathrm{RDCC}}(x,y)
+    = k(x,y)
+      \left[
+        1 - \chi_{k}
+        \left(\frac{\ell}{\ell_{\mathrm{rel}}}\right)^{\alpha}
+      \right].
+\end{equation}
+
+This modification reflects the relaxation-driven change in linearized topology.
+% ---------------------------------------------------------
+\section{Linearized Topological Signatures of RDCC}
+
+The relaxation mechanism enhances the coherence of large-scale modes. Hilbert-space 
+embeddings therefore exhibit:
+
+\begin{itemize}
+    \item enhanced inner products for large-scale topological features,
+    \item suppressed inner products for small-scale features,
+    \item a characteristic turnover near $\ell_{\mathrm{rel}}$,
+    \item modified kernel eigenvalue spectra,
+    \item altered alignment of embedded persistence lifetimes.
+\end{itemize}
+
+These signatures provide a direct probe of the RDCC gravitational field through 
+linearized topological geometry.
+% ---------------------------------------------------------
+\section{Conclusion}
+
+Hilbert-space embeddings of persistence diagrams in the Relaxation-Driven Cyclic 
+Cosmology reflect the scale-dependent evolution of the gravitational potential and 
+the nonlinear matter distribution. The relaxation mechanism modifies the 
+linearized topology in a scale-dependent manner, producing distinctive signatures 
+in weak-lensing surveys. These effects provide a direct observational window into 
+the relaxation scale and the temporal structure of the RDCC gravitational field. 
+The present Companion establishes the theoretical foundation for future studies of 
+kernel topology, nonlinear structure, and the interplay between light and gravity 
+in RDCC.
+
+\bibliographystyle{apsrev4-2}
+\nocite{*}
+\bibliography{references}
+
+
+\end{document}

@@ -1,0 +1,573 @@
+\documentclass[11pt,a4paper]{article}
+
+% ---------------------------------------------------------
+% PREAMBLE
+% ---------------------------------------------------------
+\usepackage{float}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{booktabs}
+\usepackage{physics}
+\usepackage{bm}
+
+\geometry{margin=2.5cm}
+
+% ---------------------------------------------------------
+% TITLE (robust version)
+% ---------------------------------------------------------
+\title{%
+  \textbf{Companion VIII}\\[8pt]
+  {\Large Emergent Speed of Light as an Inter-Sector Coherence Boundary}\\[4pt]
+  {\Large in Relaxation-Driven Cyclic Cosmology (RDCC)}
+}
+
+\author{
+Michael Lehmann \\ Independent Researcher
+}
+
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+% ---------------------------------------------------------
+% ABSTRACT
+% ---------------------------------------------------------
+\begin{abstract}
+In the Relaxation-Driven Cyclic Cosmology (RDCC) framework, the Universe is described as a single, globally CPT-symmetric quantum state with a bipartite Hilbert-space structure 
+\(\mathcal{H} = \mathcal{H}_+ \otimes \mathcal{H}_-\).
+At the cosmological bounce this global state is maximally entangled and timeless. 
+Sectoral observers, however, experience only a projection onto one branch, which induces a thermodynamic arrow of time and classical causality.
+
+In this note we propose that the speed of light \(c\) is not a fundamental constant but an \emph{emergent inter-sector coherence boundary}: the maximal rate at which global quantum coherence can propagate across the bipartite state before relaxation dynamics (governed by the \emph{dimensionless} infrared parameter \(\alpha_{\mathrm{IR}}\)) enforce sectoral decoherence. 
+
+We derive qualitative scaling relations linking \(c\), the infrared relaxation scale \(\alpha_{\mathrm{IR}}\), the freeze-out Hubble rate \(H_{\mathrm{IR}}\), the maximum cosmic scale \(R_{\max}\), and the cycle duration \(T_{\text{cycle}}\). These relations suggest that the numerical value of \(c\) may ultimately be tied to the global structure of the Universe at the bounce.
+\end{abstract}
+
+
+\section*{Executive Summary}
+
+This Companion develops a structurally motivated interpretation of the speed of light \(c\) within the Relaxation-Driven Cyclic Cosmology (RDCC) framework. Building on the dynamical results of Companions V–VII, we show that \(c\) can be understood as an \emph{inter-sector coherence boundary}: the maximal rate at which global quantum coherence can propagate across the bipartite CPT-symmetric state before relaxation dynamics enforce sectoral decoherence.
+
+The key insight is that the relaxation parameter \(\alpha\) provides a natural, dimensionless measure of decoherence per Hubble time. Once \(\alpha\) freezes to its infrared value \(\alpha_{\mathrm{IR}}\), the combination \(\alpha_{\mathrm{IR}} H_{\mathrm{IR}}\) defines the effective decoherence rate of the global state. This leads to a characteristic coherence length
+
+
+\[
+\ell_{\mathrm{coh}} \sim \frac{c}{\alpha_{\mathrm{IR}} H_{\mathrm{IR}}},
+\]
+
+
+which we identify with the maximal scale of the expanding phase, and a corresponding coherence time
+
+
+\[
+T_{\mathrm{cycle}} \sim \frac{1}{\alpha_{\mathrm{IR}} H_{\mathrm{IR}}}.
+\]
+
+
+
+These relations are not speculative additions but follow directly from the established RDCC dynamics: the bipartite Hilbert-space structure, the dimension-six inter-sector operator, and the early freeze-out of \(\alpha(a)\). The interpretation of \(c\) as a coherence boundary therefore emerges naturally from the same mechanisms that govern the scalar tilt, dark-radiation excess, growth-rate deviation, and tensor modulation.
+
+This Companion thus provides a coherent extension of the RDCC framework: it does not introduce new fields or assumptions, but clarifies how the invariant speed \(c\) fits into the global CPT-symmetric structure and the relaxation-driven dynamics already established in earlier Companions.
+
+
+
+% ---------------------------------------------------------
+% INTRODUCTION
+% ---------------------------------------------------------
+\section{Introduction}
+
+Relaxation-Driven Cyclic Cosmology (RDCC) describes the Universe as a globally 
+CPT-symmetric quantum state with a bipartite Hilbert-space structure,
+\begin{equation}
+\mathcal{H} = \mathcal{H}_+ \otimes \mathcal{H}_- ,
+\end{equation}
+where the two sectors correspond to thermodynamically opposite arrows of time. 
+At the cosmological bounce the global state is maximally entangled, timeless, 
+and without classical spatial extent. Classical spacetime, causality, and the 
+thermodynamic arrow of time emerge only after sectoral projection, which breaks 
+global coherence and selects an effective temporal direction within each sector.
+
+In this framework the speed of light \(c\) plays a dual role. For sectoral 
+observers it appears as the familiar invariant limiting speed of relativistic 
+physics. From the global perspective, however, RDCC suggests a deeper 
+interpretation: \(c\) may mark the \emph{inter-sector coherence boundary}, the 
+maximal velocity at which global quantum coherence can propagate across the 
+bipartite state before relaxation dynamics drive the sectors toward decoherence.
+
+This perspective is structurally consistent with RDCC's core principles:
+\begin{itemize}
+    \item the bounce as a timeless fixed point of the globally entangled state,
+    \item the relaxation parameter \(\alpha\) as the dimensionless rate of 
+          decoherence per Hubble time,
+    \item and the emergence of classical spacetime from sectoral projection of a 
+          globally coherent quantum state.
+\end{itemize}
+
+In this Companion we develop this interpretation and examine whether the 
+combination \(\alpha_{\mathrm{IR}} H_{\mathrm{IR}}\), which governs the infrared 
+decoherence rate, naturally leads to a characteristic coherence length and 
+coherence time that can be associated with the maximum scale of the expanding 
+phase and the duration of a full RDCC cycle. The resulting scaling relations 
+provide a structural, non-speculative link between the invariant speed \(c\) and 
+the relaxation-driven dynamics of the RDCC framework.
+
+
+% ---------------------------------------------------------
+% SECTION 2 — INTER-SECTOR COHERENCE BOUNDARY
+% ---------------------------------------------------------
+\section{Inter-Sector Coherence Boundary}
+\label{sec:inter-sector-boundary}
+
+In RDCC the two sectors \(\mathcal{H}_+\) and \(\mathcal{H}_-\) encode thermodynamically opposite 
+arrows of time. At the bounce the global state on 
+\(\mathcal{H}_+ \otimes \mathcal{H}_-\) is maximally entangled and therefore 
+admits no classical notion of distance, duration, or causal structure. 
+Classical spacetime, together with a directed entropy flow, emerges only 
+\emph{after} sectoral projection, which breaks global coherence and selects an 
+effective arrow of time within each sector.
+
+Within this framework we interpret the speed of light \(c\) as an 
+\emph{inter-sector coherence boundary}: it characterizes the maximal rate at 
+which global quantum coherence can be converted into sectoral correlations 
+before relaxation dynamics enforce decoherence. Equivalently, \(c\) marks the 
+limiting “conversion speed’’ at which information encoded in the globally 
+entangled state becomes accessible as quasi-local, classical correlations in a 
+given sector.
+
+This interpretation leaves all standard relativistic physics within each sector 
+intact: the local light cone structure, Lorentz invariance, and the role of \(c\) 
+as an invariant speed are unchanged. What RDCC adds is a global explanation for 
+\emph{why} a finite invariant speed exists at all: it is the emergent boundary 
+set by the relaxation-driven breakdown of inter-sector coherence.
+
+Conceptually, this is analogous to Lieb–Robinson bounds in quantum many-body 
+systems, where the spread of correlations is limited by an emergent causal cone. 
+In RDCC, the “Lieb–Robinson velocity’’ of the bipartite state is identified with 
+\(c\), now understood as the maximal velocity of coherence-to-correlation 
+transfer under relaxation.
+
+The relaxation parameter \(\alpha\) is dimensionless in RDCC. Its physical meaning 
+is the \emph{fractional decoherence rate per Hubble time}. Accordingly, the 
+combination \(\alpha H\) has units of an inverse time and acts as the effective 
+rate at which the off-diagonal components of the global density matrix decay in 
+the sectoral basis. This quantity will play a central role in the scaling 
+relations derived below, where it controls how rapidly global coherence is 
+converted into classical sectoral structure.
+
+
+% ---------------------------------------------------------
+% SECTION 3 — SCALING RELATIONS
+% ---------------------------------------------------------
+\section{Scaling Relations}
+
+The relaxation parameter \(\alpha(a)\) evolves dynamically according to the multiplicative
+decoherence equation derived in Companion~VI,
+\begin{equation}
+\frac{d\alpha}{dt} = \Gamma\,\alpha , \qquad \Gamma = \alpha H ,
+\end{equation}
+and freezes to its infrared value \(\alpha_{\mathrm{IR}}\) once the Universe enters the late-time regime.
+In this phase the Hubble rate \(H_{\mathrm{IR}}\) sets the characteristic expansion scale of the
+sectoral Universe, while the inter-sector coherence boundary \(c\) limits the maximal rate at
+which global quantum coherence can propagate across the bipartite state.
+
+\subsection*{Coherence length from the decoherence equation}
+
+The combination \(\alpha_{\mathrm{IR}} H_{\mathrm{IR}}\) has units of an inverse time and represents the
+effective decay rate of the off-diagonal components of the global density matrix,
+\begin{equation}
+\frac{d}{dt}\rho_{\mathrm{off}} \sim - \alpha_{\mathrm{IR}} H_{\mathrm{IR}}\, \rho_{\mathrm{off}} .
+\end{equation}
+A coherence signal propagating at speed \(c\) can therefore remain dynamically relevant only
+over distances for which the propagation time does not exceed the decoherence time,
+\begin{equation}
+t_{\mathrm{coh}} \sim \frac{1}{\alpha_{\mathrm{IR}} H_{\mathrm{IR}}} .
+\end{equation}
+This yields a characteristic coherence length
+\begin{equation}
+\ell_{\mathrm{coh}} \sim c\, t_{\mathrm{coh}}
+\sim \frac{c}{\alpha_{\mathrm{IR}} H_{\mathrm{IR}}} .
+\label{eq:lcoh}
+\end{equation}
+
+\subsection*{Maximum scale of the expanding phase}
+
+If inter-sector coherence is a prerequisite for maintaining the global CPT structure across
+the expanding branch, then the maximal spatial extent of a single cycle cannot exceed the
+coherence length. This motivates the identification
+\begin{equation}
+R_{\max} \approx \ell_{\mathrm{coh}}
+= \frac{c}{\alpha_{\mathrm{IR}} H_{\mathrm{IR}}} .
+\label{eq:Rmax}
+\end{equation}
+
+This identification assumes that maintaining global CPT coherence across the expanding 
+branch requires correlations to persist over the full spatial extent of the cycle.
+
+Equation~\eqref{eq:Rmax} is therefore not a postulate but follows directly from the requirement
+that global coherence must be preserved across the entire expanding phase.
+
+\subsection*{Cycle duration}
+
+The same decoherence timescale determines the duration of a full cosmological cycle.
+Since the bounce corresponds to the point of maximal global coherence, the system must
+re-establish coherence on a timescale comparable to the decoherence time. This yields
+\begin{equation}
+T_{\mathrm{cycle}} \sim t_{\mathrm{coh}}
+\sim \frac{1}{\alpha_{\mathrm{IR}} H_{\mathrm{IR}}} .
+\label{eq:Tcycle}
+\end{equation}
+
+\subsection*{Numerical plausibility}
+
+For \(\alpha_{\mathrm{IR}} \approx 0.017\) and a present-day Hubble rate
+\(H_0 \approx 70\,\mathrm{km/s/Mpc}\), one finds
+
+
+\[
+T_{\mathrm{cycle}} \sim 10^{11}\,\text{years},
+\]
+
+
+comfortably larger than a Hubble time, as expected for a stable cyclic cosmology.\footnote{
+This estimate is illustrative and uses present-day values. A more precise computation would
+evaluate \(H_{\mathrm{IR}}\) at the epoch where \(\alpha\) freezes out, but the order of magnitude
+remains unchanged.
+}
+
+Equations~\eqref{eq:Rmax} and \eqref{eq:Tcycle} therefore arise as direct consequences of
+the RDCC decoherence dynamics. They suggest that the numerical value of \(c\) may reflect
+constraints imposed by the global structure of the Universe at the bounce, mediated by the
+infrared relaxation scale \(\alpha_{\mathrm{IR}}\).
+
+
+
+% ---------------------------------------------------------
+% SECTION 4 — ENTANGLEMENT AND DECOHERENCE SKETCH
+% ---------------------------------------------------------
+\section{Entanglement and Decoherence Sketch}
+
+A quantitative derivation of the scaling relations developed in Sec.~3 requires an explicit
+treatment of inter-sector entanglement and its decay under the relaxation dynamics.  
+Here we outline the structural ingredients that motivate the coherence-length relation 
+without committing to a specific microscopic model.
+
+Let $\rho_{\mathrm{global}}$ denote the density matrix of the full bipartite state at the bounce.  
+Maximal entanglement implies
+\begin{equation}
+S_{\mathrm{ent}}(\mathcal{H}_+) = S_{\mathrm{ent}}(\mathcal{H}_-) ,
+\end{equation}
+and the absence of any preferred temporal direction.  
+Sectoral projection corresponds to tracing out one branch,
+\begin{equation}
+\rho_+ = \Tr_{\mathcal{H}_-} \rho_{\mathrm{global}}, 
+\qquad
+\rho_- = \Tr_{\mathcal{H}_+} \rho_{\mathrm{global}} ,
+\end{equation}
+which induces classicality, a thermodynamic arrow, and causal structure within each sector.
+
+The only coupling between the two sectors is generated by the dimension-six operator
+\begin{equation}
+\mathcal{L}_{\mathrm{int}} 
+= \frac{1}{M^2}\, T^{(+)}_{\mu\nu} T^{(-)\mu\nu},
+\end{equation}
+introduced in the Flagship model.  
+This operator governs the decay of the off-diagonal components of $\rho_{\mathrm{global}}$ and 
+therefore controls the rate at which inter-sector coherence is lost.
+
+Since the relaxation parameter $\alpha$ is dimensionless, the combination $\alpha H$ carries 
+units of an inverse time and acts as the effective decoherence rate.  
+To leading order one expects an evolution equation of the form
+\begin{equation}
+\frac{d}{dt}\,\rho_{\mathrm{global}}^{\mathrm{(off)}} 
+= - \alpha H \, \rho_{\mathrm{global}}^{\mathrm{(off)}} ,
+\label{eq:offdiag_decay}
+\end{equation}
+where $H$ is the sectoral Hubble rate.  
+Equation~(\ref{eq:offdiag_decay}) expresses that decoherence is driven by the cosmic expansion 
+itself, with $\alpha$ determining the fractional loss of coherence per Hubble time.
+
+Inter-sector coherence cannot propagate arbitrarily fast.  
+Interpreting the invariant speed $c$ as the maximal propagation velocity of global coherence 
+implies the bound
+\begin{equation}
+v_{\mathrm{coh}} \leq c .
+\end{equation}
+Combining this with the decoherence rate $\alpha H$ yields the characteristic coherence length
+\begin{equation}
+\ell_{\mathrm{coh}} \sim \frac{c}{\alpha H},
+\end{equation}
+the maximal distance over which quantum correlations across the bipartite state remain 
+dynamically relevant within a Hubble time.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\textwidth]{coherence_decay.pdf}
+    \caption{
+        Exponential decay of inter-sector correlations obtained from the stationary 
+        solution of a simple transport--decay model,
+        $C(d) \propto \exp[-d/\ell_{\mathrm{coh}}]$ with 
+        $\ell_{\mathrm{coh}} = c/(\alpha H)$.
+        Different curves correspond to different values of the effective decoherence 
+        rate $\alpha H$. 
+        The coherence length marks the scale beyond which quantum correlations across 
+        the bipartite state become dynamically irrelevant within a Hubble time.
+    }
+    \label{fig:coherence_decay}
+\end{figure}
+
+
+This coherence boundary induces an emergent causal structure:  
+regions separated by distances larger than $\ell_{\mathrm{coh}}$ cannot maintain inter-sector 
+correlations and therefore behave as effectively decohered, causally disconnected domains.  
+This is conceptually analogous to the effective lightcone in quantum many-body systems governed 
+by Lieb--Robinson bounds, where the spread of correlations is limited by an emergent causal cone 
+rather than by fundamental particle propagation.
+
+Identifying $\ell_{\mathrm{coh}}$ with the maximum scale $R_{\max}$ of the expanding phase yields 
+Eq.~(\ref{eq:Rmax}), while the corresponding coherence time reproduces Eq.~(\ref{eq:Tcycle}).  
+Thus the interplay of entanglement, decoherence, and the invariant speed $c$ naturally leads to 
+the scaling relations derived in Sec.~3.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.72\textwidth]{coherence_cone.pdf}
+    \caption{
+        Emergent coherence cone obtained from the transport--decay model. 
+        The red line shows the coherence boundary $x = v_{\mathrm{coh}} t$ with 
+        $v_{\mathrm{coh}} = c$, representing the maximal propagation speed of global 
+        coherence before relaxation suppresses inter-sector correlations. 
+        The dashed black line shows the relativistic lightcone $x = ct$ for comparison. 
+        The coherence boundary defines the region in which inter-sector correlations 
+        remain dynamically relevant, analogous to Lieb--Robinson cones in 
+        quantum many-body systems.
+    }
+    \label{fig:coherence_cone}
+\end{figure}
+
+
+
+% ---------------------------------------------------------
+% SECTION 5 — 
+% ---------------------------------------------------------
+\section{Connection to Tensor Modulation and RDCC Dynamics}
+
+The interpretation of the speed of light $c$ as an inter-sector coherence boundary is not an
+isolated hypothesis. It is structurally linked to the same microscopic mechanism that governs
+the relaxation dynamics, the freeze-out of $\alpha(a)$, and the log-periodic tensor modulation
+derived in Companions~II--VI. This section clarifies how these ingredients fit together and why
+the coherence-boundary picture is a natural extension of the established RDCC framework.
+
+\subsection{Shared Origin in the Dimension-Six Operator}
+
+The only coupling between the visible and mirror sectors is the dimension-six operator
+\begin{equation}
+\mathcal{L}_{\text{int}} = \frac{1}{M^2}\, T^{(+)}_{\mu\nu} T^{(-)\mu\nu},
+\end{equation}
+which we treat as an effective low-energy description without specifying its ultraviolet
+completion, since no such completion is required for the structural arguments developed
+in this Companion.
+
+This operator simultaneously:
+\begin{enumerate}
+    \item generates the relaxation equation $\dot{\alpha} = \Gamma \alpha$,
+    \item induces the freeze-out of $\alpha(a)$ at early times,
+    \item produces the tensor-sector interference responsible for the RDCC modulation pattern,
+    \item and governs the decay of off-diagonal components of the global density matrix.
+\end{enumerate}
+
+The coherence-boundary interpretation of $c$ emerges naturally once one recognizes that
+all four phenomena arise from the same structural mechanism: the finite rate at which
+global correlations between the two sectors can be maintained in an expanding Universe.
+
+\subsection{Coherence Propagation vs.\ Relaxation Dynamics}
+
+The relaxation parameter $\alpha$ quantifies the fractional loss of inter-sector coherence per
+Hubble time. The combination $\alpha H$ therefore sets the characteristic timescale on which
+global correlations decay. If the propagation of coherence is limited by a maximal velocity
+$v_{\text{coh}}$, then the coherence length is
+\begin{equation}
+\ell_{\mathrm{coh}} \sim \frac{v_{\text{coh}}}{\alpha H}.
+\end{equation}
+
+Identifying $v_{\text{coh}}$ with the invariant speed $c$ is not an additional assumption but a
+structural requirement:
+\begin{itemize}
+    \item the same operator that limits coherence propagation also governs tensor interference,
+    \item the same relaxation dynamics that freeze $\alpha$ also determine the modulation frequency,
+    \item and the same CPT-symmetric global state enforces a universal causal boundary.
+\end{itemize}
+
+Thus $c$ appears as the \emph{sectoral manifestation} of the maximal rate at which global
+coherence can propagate before relaxation suppresses it.
+
+\subsection{Consistency with Tensor Modulation}
+
+Companion~II showed that the tensor spectrum acquires a log-periodic modulation of the form
+\begin{equation}
+h(k) = h_0(k)\left[1 + \alpha_{\mathrm{IR}} \cos\!\left(\omega_{\mathrm{mod}} \ln\frac{k}{k_*}\right)\right],
+\end{equation}
+with modulation frequency $\omega_{\mathrm{mod}} \propto \alpha_{\mathrm{IR}}$. This modulation arises
+from interference between the two CPT-conjugate branches of the global state.
+
+The coherence-boundary picture provides a complementary interpretation:
+\begin{itemize}
+    \item tensor modes probe the global coherence structure directly,
+    \item the modulation frequency reflects the rate at which coherence is lost,
+    \item and the invariant speed $c$ sets the maximal propagation speed of the interfering branches.
+\end{itemize}
+
+In this sense, the tensor modulation is the observational imprint of the same coherence
+boundary that defines $\ell_{\mathrm{coh}}$.
+
+\subsection{Freeze-Out and the Emergence of a Universal Boundary}
+
+Companion~VI demonstrated that $\alpha(a)$ freezes to its infrared value by $a \sim 10^{-4}$.
+After freeze-out:
+\begin{enumerate}
+    \item the decoherence rate becomes constant,
+    \item the coherence length $\ell_{\mathrm{coh}}$ becomes time-independent,
+    \item and the maximal propagation speed of coherence becomes a fixed structural constant.
+\end{enumerate}
+
+This provides a natural explanation for why $c$ appears universal and time-independent in the
+late Universe: it is the emergent boundary of a coherence structure that has already frozen out.
+
+\subsection{Summary}
+
+The coherence-boundary interpretation of $c$ is not an external addition to RDCC. It is the
+structural completion of the same mechanism that produces:
+\begin{itemize}
+    \item the relaxation dynamics,
+    \item the freeze-out of $\alpha(a)$,
+    \item the tensor-sector modulation,
+    \item and the stability of the RDCC prediction vector.
+\end{itemize}
+
+All of these phenomena originate from the interplay between global CPT symmetry, the
+dimension-six operator, and the finite rate at which coherence can propagate across the
+bipartite state.
+
+
+
+\section{Conclusion}
+
+In this Companion we have explored the possibility that the invariant speed of light \(c\) 
+admits a structural interpretation within the Relaxation-Driven Cyclic Cosmology (RDCC) 
+framework. Rather than treating \(c\) as a fundamental input, we have examined whether it 
+can be understood as an \emph{inter-sector coherence boundary}: the maximal rate at which 
+global quantum coherence can propagate across the bipartite CPT-symmetric state before 
+relaxation dynamics enforce sectoral decoherence.
+
+This interpretation is grounded in three elements already established in Companions~I--VII:
+
+\begin{enumerate}
+    \item the global CPT fixpoint at the bounce, where the relaxation parameter satisfies 
+    \(\alpha \to 0\) and the two sectors become maximally correlated;
+
+    \item the dynamical freeze-out of the relaxation parameter, 
+    \(\alpha(a) \to \alpha_{\mathrm{IR}}\), long before any observable epoch;
+
+    \item the role of the dimension-six operator in governing both inter-sector equilibration 
+    and the decay of off-diagonal components of the global density matrix.
+\end{enumerate}
+
+Within this structure, the combination \(\alpha_{\mathrm{IR}} H_{\mathrm{IR}}\) naturally appears as an 
+effective decoherence rate, suggesting that the characteristic coherence length of the global 
+state scales as
+
+
+\[
+\ell_{\mathrm{coh}} \sim \frac{c}{\alpha_{\mathrm{IR}} H_{\mathrm{IR}}}.
+\]
+
+
+Identifying this coherence length with the maximal scale of the expanding phase yields the 
+qualitative relations
+
+
+\[
+R_{\max} \approx \frac{c}{\alpha_{\mathrm{IR}} H_{\mathrm{IR}}}, 
+\qquad
+T_{\mathrm{cycle}} \sim \frac{1}{\alpha_{\mathrm{IR}} H_{\mathrm{IR}}},
+\]
+
+
+which connect the numerical value of \(c\) to the infrared relaxation dynamics and the global 
+structure of the RDCC cycle.
+
+These relations are not presented as predictions but as structural consequences of the 
+RDCC architecture. They demonstrate that the existence of a finite invariant speed is 
+compatible with---and may even be illuminated by---the bipartite, CPT-symmetric 
+description of the Universe. The interpretation developed here remains agnostic about the 
+microscopic origin of \(c\), but it provides a coherent framework in which the emergence of a 
+causal boundary can be understood as a consequence of global coherence constraints.
+
+A complete assessment of this proposal will require a quantitative treatment of 
+inter-sector entanglement entropy, its evolution under the dimension-six operator, and the 
+precise mapping between coherence propagation and sectoral causal structure. The present 
+Companion therefore serves as a conceptual bridge between the dynamical foundations 
+established in Companions~III--VI and future work aimed at a more rigorous information-
+theoretic formulation of RDCC.
+
+\section{Outlook: Physical Consequences}
+
+Interpreting the speed of light $c$ as an inter-sector coherence boundary leads to several 
+conceptual and phenomenological consequences that can be explored within the established 
+RDCC framework without introducing additional dynamical assumptions.  
+These consequences follow directly from the scaling relations and the decoherence structure 
+developed in this Companion.
+
+\paragraph{Emergent causal structure.}
+The coherence length $\ell_{\mathrm{coh}} = c/(\alpha_{\mathrm{IR}} H_{\mathrm{IR}})$ defines the maximal spatial 
+range over which inter-sector correlations remain dynamically relevant.  
+This induces an effective causal structure that parallels Lieb--Robinson bounds in 
+quantum many-body systems: the relativistic lightcone appears as the saturation limit of 
+correlation propagation in the underlying bipartite CPT-symmetric state.  
+In this view, the invariant speed $c$ is not imposed but emerges as the boundary of 
+correlation coherence.
+
+\paragraph{Stability of the cosmological cycle.}
+The cycle duration $T_{\mathrm{cycle}} \sim 1/(\alpha_{\mathrm{IR}} H_{\mathrm{IR}})$ depends only on the frozen 
+infrared relaxation strength and the Hubble rate at freeze-out.  
+A finite coherence boundary ensures that decoherence proceeds efficiently enough to prevent 
+the accumulation of long-range inter-sector correlations across cycles, thereby contributing 
+to the dynamical stability of the RDCC evolution.  
+This connects the existence of a finite $c$ to the long-term robustness of the cyclic background.
+
+\paragraph{Connection to tensor-sector phenomenology.}
+The same dimension-six operator that governs the decay of off-diagonal density-matrix 
+components also generates the log-periodic modulation of primordial tensor modes.  
+The coherence-boundary interpretation of $c$ therefore provides a unified structural 
+perspective: the mechanism that limits correlation propagation also shapes the tensor 
+spectrum.  
+Future gravitational-wave observations may thus probe the same underlying coherence 
+structure that determines the emergent value of $c$.
+
+\paragraph{Geometric interpretation.}
+Although we do not attempt to construct a full emergent metric, the correlation structure 
+encoded in $\ell_{\mathrm{coh}}$ provides a natural geometric scale.  
+Distances larger than $\ell_{\mathrm{coh}}$ are effectively decohered, suggesting that aspects of 
+large-scale geometry may be understood in terms of correlation decay rather than 
+fundamental spacetime primitives.  
+This perspective is compatible with the global CPT-symmetric structure of RDCC and 
+requires no modification of Einstein gravity.
+
+\paragraph{Future directions.}
+A quantitative treatment of correlation propagation in the bipartite state - particularly a 
+precise definition of inter-sector correlation functions and their evolution under the 
+dimension-six operator—would allow for a more rigorous derivation of the coherence 
+boundary and its relation to $c$.  
+Such developments may clarify whether the emergent causal structure identified here can 
+be connected to broader approaches in quantum information geometry, entanglement 
+dynamics, and emergent spacetime.
+
+
+\end{document}

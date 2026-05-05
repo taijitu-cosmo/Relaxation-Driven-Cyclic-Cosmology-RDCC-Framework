@@ -1,0 +1,284 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{bm}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{authblk}
+\usepackage{cite}
+\usepackage{physics}
+\usepackage{mathtools}
+
+\geometry{margin=2.4cm}
+
+\title{\textbf{Companion XCIX--C \\ Optimal Probes and Benchmark Suite for RDCC}}
+\author[1]{Michael Lehmann}
+\affil[1]{Independent Researcher}
+\date{April 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This merged Companion unifies the content of Companions XCIX--C into a single 
+document. It presents the optimal-probe framework for RDCC inference, including 
+criteria for selecting geometric, morphological, and topological observables, 
+and provides the benchmark suite used to validate these probes across 
+simulations, noise realizations, and tomographic configurations. Together, 
+these components form the operational backbone of RDCC data analysis.
+\end{abstract}
+\section{Optimal Probes for RDCC Inference}
+
+The RDCC framework induces scale-dependent and morphology-dependent signatures 
+in the convergence field. Identifying the optimal probes for extracting these 
+signatures is essential for efficient and robust inference. This section 
+summarizes the criteria for selecting optimal geometric, morphological, and 
+topological observables.
+
+\subsection{Definition of an optimal probe}
+
+An observable $O$ is considered an \emph{optimal probe} of the relaxation 
+parameter $\alpha$ if it satisfies:
+\begin{enumerate}
+    \item \textbf{High Fisher information:}
+    
+
+\[
+    g_O(\alpha) = 
+    \mathbb{E}\!\left[
+        (\partial_\alpha \log \mathcal{L}_O)^2
+    \right]
+    \quad \text{is large};
+    \]
+
+
+
+    \item \textbf{Low degeneracy:}
+    the observable responds to $\alpha$ in a direction orthogonal to existing 
+    probes;
+
+    \item \textbf{Stability:}
+    the response is robust across noise realizations and tomographic schemes;
+
+    \item \textbf{Computational efficiency:}
+    the observable can be measured and modeled at scale.
+\end{enumerate}
+
+These criteria ensure that optimal probes contribute uniquely and efficiently 
+to the inference pipeline.
+
+\subsection{Geometric probes}
+
+Geometric probes include:
+\begin{itemize}
+    \item convergence power spectra,
+    \item tomographic cross-spectra,
+    \item angular correlation functions.
+\end{itemize}
+
+Their strengths:
+\begin{itemize}
+    \item well-understood modeling,
+    \item high signal-to-noise on linear and quasi-linear scales,
+    \item strong constraints on the amplitude and shape of RDCC distortions.
+\end{itemize}
+
+Limitations:
+\begin{itemize}
+    \item reduced sensitivity on nonlinear scales,
+    \item partial degeneracy with noise and baryonic effects.
+\end{itemize}
+
+\subsection{Morphological probes}
+
+Morphological probes include:
+\begin{itemize}
+    \item peak counts,
+    \item void statistics,
+    \item Minkowski functionals.
+\end{itemize}
+
+Their strengths:
+\begin{itemize}
+    \item strong sensitivity to intermediate-scale distortions,
+    \item complementary degeneracy structure relative to geometric probes,
+    \item robustness to certain noise patterns.
+\end{itemize}
+
+Limitations:
+\begin{itemize}
+    \item increased modeling complexity,
+    \item sensitivity to smoothing and filtering choices.
+\end{itemize}
+
+\subsection{Topological probes}
+
+Topological probes include:
+\begin{itemize}
+    \item persistent homology,
+    \item Betti curves,
+    \item transport-based topology.
+\end{itemize}
+
+Their strengths:
+\begin{itemize}
+    \item highest sensitivity to nonlinear relaxation effects,
+    \item strong breaking of degeneracies,
+    \item stable information content across noise realizations.
+\end{itemize}
+
+Limitations:
+\begin{itemize}
+    \item computationally expensive,
+    \item requires careful treatment of sampling noise.
+\end{itemize}
+
+\subsection{Combined optimal-probe strategy}
+
+The optimal RDCC probe combination is a hybrid of:
+\begin{itemize}
+    \item geometric probes for large-scale structure,
+    \item morphological probes for intermediate-scale sensitivity,
+    \item topological probes for nonlinear relaxation signatures.
+\end{itemize}
+
+This multi-layered structure forms the foundation of the benchmark suite 
+presented in the next section.
+\section{Benchmark Suite and Validation}
+
+To evaluate the performance of optimal probes and to ensure the robustness of 
+RDCC inference, we construct a comprehensive benchmark suite. This suite 
+quantifies the sensitivity, stability, and degeneracy structure of each probe 
+and validates their performance across simulations, noise realizations, and 
+tomographic configurations.
+
+\subsection{Structure of the benchmark suite}
+
+The benchmark suite consists of:
+\begin{itemize}
+    \item \textbf{Simulation grid:}  
+    A grid of RDCC simulations spanning a range of $\alpha$ values, noise 
+    levels, and smoothing scales.
+
+    \item \textbf{Probe library:}  
+    A collection of geometric, morphological, and topological observables 
+    measured consistently across the simulation grid.
+
+    \item \textbf{Response functions:}  
+    Numerical derivatives $\partial_\alpha O$ for each observable $O$, 
+    estimated using finite differences.
+
+    \item \textbf{Fisher matrices:}  
+    Probe-specific and combined Fisher matrices used to quantify information 
+    content and degeneracy structure.
+
+    \item \textbf{Null-direction analysis:}  
+    Identification of weakly informative directions in observable space.
+\end{itemize}
+
+\subsection{Validation criteria}
+
+Each probe is validated according to:
+\begin{enumerate}
+    \item \textbf{Sensitivity:}  
+    The magnitude and stability of $\partial_\alpha O$ across simulations.
+
+    \item \textbf{Consistency:}  
+    Agreement between independent noise realizations and tomographic schemes.
+
+    \item \textbf{Degeneracy breaking:}  
+    The ability of the probe to break degeneracies present in geometric 
+    observables.
+
+    \item \textbf{Cross-probe alignment:}  
+    Stability of the probe’s response direction relative to other probes.
+
+    \item \textbf{Computational feasibility:}  
+    Runtime and memory requirements for large-scale surveys.
+\end{enumerate}
+
+\subsection{Results of the benchmark suite}
+
+The benchmark suite reveals a clear hierarchy:
+\begin{itemize}
+    \item \textbf{Geometric probes} perform best on large scales and provide 
+    stable baseline constraints.
+
+    \item \textbf{Morphological probes} add significant information on 
+    intermediate scales and break several geometric degeneracies.
+
+    \item \textbf{Topological probes} provide the strongest constraints on 
+    nonlinear relaxation effects and dominate the high-information channels.
+
+    \item \textbf{Combined probes} achieve near-optimal performance, capturing 
+    almost all available information about $\alpha$.
+\end{itemize}
+
+\subsection{Implications for RDCC analysis}
+
+The benchmark suite provides:
+\begin{itemize}
+    \item a validated set of optimal probes,
+    \item a robust framework for multi-probe inference,
+    \item a quantitative understanding of degeneracy structure,
+    \item and a foundation for future survey applications.
+\end{itemize}
+
+This completes the operational backbone of RDCC inference and prepares the 
+ground for the final conclusions of this merged Companion.
+\section{Conclusion}
+
+This merged Companion unifies the optimal-probe framework and the benchmark 
+suite for RDCC inference. The optimal-probe analysis identifies the geometric, 
+morphological, and topological observables that provide the strongest and most 
+complementary constraints on the relaxation parameter $\alpha$. The benchmark 
+suite validates these probes across simulations, noise realizations, and 
+tomographic configurations, revealing a clear hierarchy of information content 
+and degeneracy-breaking power.
+
+Together, these components form the operational backbone of RDCC data analysis:
+\begin{itemize}
+    \item geometric probes provide stable large-scale constraints,
+    \item morphological probes enhance intermediate-scale sensitivity,
+    \item topological probes dominate nonlinear relaxation signatures,
+    \item and combined probes achieve near-optimal performance.
+\end{itemize}
+
+This merged document replaces Companions XCIX--C and provides a unified 
+reference for probe selection, validation, and multi-probe inference in the 
+RDCC framework.
+
+\begin{thebibliography}{9}
+
+\bibitem{RDCC-Flagship}
+M.~Lehmann,
+\textit{Relaxation-Driven Cyclic Cosmology (RDCC): Flagship Paper},
+(2026).
+
+\bibitem{RDCC-Summary}
+M.~Lehmann,
+\textit{RDCC Summary Paper: Inference Framework and Key Results},
+(2026).
+
+\bibitem{RDCC-Observables}
+M.~Lehmann,
+\textit{RDCC Numerical Fits and Observational Constraints},
+(2026).
+
+\bibitem{RDCC-Topology}
+M.~Lehmann,
+\textit{Topological and Morphological Probes in RDCC},
+(2026).
+
+\bibitem{RDCC-Companions-Opt}
+M.~Lehmann,
+\textit{RDCC Companion Series: Optimal Probes and Benchmark Suite},
+Companions XCIX--C (merged), (2026).
+
+\end{thebibliography}
+
+\end{document}

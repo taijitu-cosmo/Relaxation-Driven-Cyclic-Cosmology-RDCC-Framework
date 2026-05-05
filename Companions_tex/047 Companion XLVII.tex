@@ -1,0 +1,200 @@
+\documentclass[11pt,a4paper]{article}
+
+% ---------------------------------------------------------
+% PREAMBLE (stable, warning-free, Overleaf-safe)
+% ---------------------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{bm}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{cite}
+\usepackage{authblk}
+\usepackage{physics}
+\usepackage{mathtools}
+
+\geometry{margin=2.4cm}
+
+\title{\textbf{Companion XLVII: The Bispectrum in the Relaxation-Driven Cyclic Cosmology}}
+\author{Michael Lehmann \\ \texttt{mi.lehmann@gmx.de}}
+\date{April 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The bispectrum provides a powerful probe of non-Gaussianity and mode coupling in 
+the large-scale structure of the Universe. In the standard cosmological model, 
+non-Gaussianity arises from non-linear gravitational evolution and baryonic 
+processes, while primordial non-Gaussianity is typically assumed to be small. In 
+the Relaxation-Driven Cyclic Cosmology (RDCC), the scale-dependent evolution of 
+the gravitational potential introduces a new source of non-Gaussianity, as the 
+relaxation mechanism modifies the temporal evolution of density perturbations in a 
+scale-dependent manner. This Companion develops a continuous description of the 
+bispectrum in RDCC, deriving how the relaxation scale influences the shape, 
+amplitude, and configuration dependence of the bispectrum. The resulting framework 
+provides a distinctive observational signature of the RDCC gravitational field.
+\end{abstract}
+% ---------------------------------------------------------
+\section{Introduction}
+
+The bispectrum is the Fourier transform of the three-point correlation function and 
+provides a direct measure of non-Gaussianity in the matter distribution. While the 
+power spectrum captures the variance of density fluctuations, the bispectrum 
+captures the coupling between modes of different scales. In the standard 
+cosmological model, this coupling arises from non-linear gravitational evolution 
+and baryonic processes.
+
+In RDCC, the gravitational potential evolves differently. The relaxation mechanism 
+suppresses the decay of small-scale modes and enhances the coherence of large-scale 
+modes. This modifies the coupling between modes in a scale-dependent manner, 
+producing a distinctive bispectrum signature that reflects the relaxation scale 
+$k_{\mathrm{rel}}$.
+% ---------------------------------------------------------
+\section{The RDCC Density Field and Mode Coupling}
+
+The density contrast evolves according to
+\begin{equation}
+    \delta(\mathbf{k},a)
+    = D(a)\,\delta(\mathbf{k},a_{i})
+      + \int d^{3}q\,
+        F_{2}(\mathbf{q},\mathbf{k}-\mathbf{q},a)\,
+        \delta(\mathbf{q})\,
+        \delta(\mathbf{k}-\mathbf{q})
+      + \cdots,
+\end{equation}
+where $F_{2}$ is the second-order kernel.
+
+In RDCC, the kernel becomes scale-dependent:
+\begin{equation}
+    F_{2,\mathrm{RDCC}}
+    = F_{2}
+      \left[
+        1 - \chi_{F}
+        \left(\frac{k}{k_{\mathrm{rel}}}\right)^{\alpha}
+      \right].
+\end{equation}
+
+This modification alters the coupling between modes and introduces a new source of 
+non-Gaussianity.
+% ---------------------------------------------------------
+\section{The RDCC Bispectrum}
+
+The bispectrum is defined as
+\begin{equation}
+    \langle
+      \delta(\mathbf{k}_{1})
+      \delta(\mathbf{k}_{2})
+      \delta(\mathbf{k}_{3})
+    \rangle
+    = (2\pi)^{3}
+      \delta_{D}(\mathbf{k}_{1}
+                +\mathbf{k}_{2}
+                +\mathbf{k}_{3})
+      B(k_{1},k_{2},k_{3}).
+\end{equation}
+
+In RDCC, the bispectrum becomes
+\begin{equation}
+    B_{\mathrm{RDCC}}
+    = 2 F_{2,\mathrm{RDCC}}(k_{1},k_{2})
+      P_{\mathrm{RDCC}}(k_{1})
+      P_{\mathrm{RDCC}}(k_{2})
+      + \text{cyc.},
+\end{equation}
+where the RDCC power spectrum is
+\begin{equation}
+    P_{\mathrm{RDCC}}(k)
+    = P(k)
+      \left[
+        1 - \chi_{P}
+        \left(\frac{k}{k_{\mathrm{rel}}}\right)^{\alpha}
+      \right].
+\end{equation}
+
+The bispectrum therefore acquires a scale-dependent modification that reflects the 
+relaxation scale.
+% ---------------------------------------------------------
+\section{Shape Dependence and RDCC Signatures}
+
+The bispectrum depends on the shape of the triangle formed by the three wave 
+vectors. In the standard cosmological model, the bispectrum is largest for 
+squeezed, equilateral, and folded configurations.
+
+In RDCC, the suppression of small-scale modes reduces the amplitude of the 
+bispectrum in equilateral configurations, while the enhanced coherence of 
+large-scale modes increases the amplitude in squeezed configurations.
+
+The RDCC bispectrum therefore exhibits a characteristic enhancement in squeezed 
+triangles, providing a direct observational probe of the relaxation scale.
+% ---------------------------------------------------------
+\section{The Reduced Bispectrum and Observational Probes}
+
+The reduced bispectrum is defined as
+\begin{equation}
+    Q(k_{1},k_{2},k_{3})
+    = \frac{
+        B(k_{1},k_{2},k_{3})
+      }{
+        P(k_{1})P(k_{2})
+        + P(k_{2})P(k_{3})
+        + P(k_{3})P(k_{1})
+      }.
+\end{equation}
+
+In RDCC, this becomes
+\begin{equation}
+    Q_{\mathrm{RDCC}}
+    = Q
+      \left[
+        1 - \chi_{Q}
+        \left(\frac{k}{k_{\mathrm{rel}}}\right)^{\alpha}
+      \right].
+\end{equation}
+
+This modification produces a distinctive scale dependence that can be measured in 
+galaxy surveys, weak lensing surveys, and CMB lensing reconstructions.
+% ---------------------------------------------------------
+\section{Conclusion}
+
+The bispectrum in the Relaxation-Driven Cyclic Cosmology reflects the 
+scale-dependent evolution of the gravitational potential. The relaxation mechanism 
+modifies the mode-coupling kernel, the power spectrum, and the shape dependence of 
+the bispectrum, producing distinctive signatures in squeezed, equilateral, and 
+folded configurations. These effects provide a direct observational probe of the 
+relaxation scale and the temporal structure of the RDCC gravitational field. The 
+present Companion establishes the theoretical foundation for future studies of 
+non-Gaussianity, mode coupling, and the higher-order statistics of large-scale 
+structure in RDCC.
+
+% ========================
+% References
+% ========================
+
+\begin{thebibliography}{10}
+
+\bibitem{Flagship} Lehmann, M. (2026). Relaxation-Driven Cyclic Cosmology (RDCC): A Minimal CPT-Symmetric Framework with a Single Parameter. Flagship Paper. Zenodo: \url{https://zenodo.org/records/19744958} (v43.0 or later).
+
+\bibitem{Zenodo} The complete RDCC companion series (I--LVII) is available at the same Zenodo record above.
+
+% Thematisch relevante Companions
+\bibitem{CompXVI} Companion XVI: Boltzmann Code and Modified Hierarchy.
+\bibitem{CompXXXI} Companion XXXI: RDCC Halo Model and Non-Linear Structure.
+\bibitem{CompXXXII} Companion XXXII--XXXIX: Galaxy--Halo Connection, Cosmic Web, Lensing, RSD, ISW, tSZ, Rotation Curves, CGM.
+
+% Wichtige externe Referenzen
+\bibitem{Planck2020} Planck Collaboration (2020), Astron. Astrophys. 641, A6.
+\bibitem{DESI2024} DESI Collaboration (2024/2025), arXiv: [aktuelle $f\sigma_8$/BAO-Paper].
+\bibitem{JWST2024} Maiolino et al. (2024), Nature (JWST high-$z$ galaxies/quasars).
+\bibitem{Kaiser1987} Kaiser, N. (1987), Mon. Not. R. Astron. Soc. 227, 1 (RSD).
+\bibitem{Bartelmann2001} Bartelmann, M. \& Schneider, P. (2001), Phys. Rep. 340, 291 (Weak Lensing Review).
+\bibitem{HuOkamoto2002} Hu, W. \& Okamoto, T. (2002), Astrophys. J. 574, 566 (CMB Lensing).
+\bibitem{LewisChallinor2006} Lewis, A. \& Challinor, A. (2006), Phys. Rep. 429, 1 (CMB Lensing Review).
+\bibitem{NFW1997} Navarro, J. F., Frenk, C. S. \& White, S. D. M. (1997), Astrophys. J. 490, 493 (Halo Profiles).
+
+\end{thebibliography}
+
+\end{document}

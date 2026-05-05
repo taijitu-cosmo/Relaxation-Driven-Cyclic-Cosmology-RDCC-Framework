@@ -1,0 +1,207 @@
+\documentclass[11pt,a4paper]{article}
+
+% ---------------------------------------------------------
+% PREAMBLE (stable, warning-free, Overleaf-safe)
+% ---------------------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{bm}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{cite}
+\usepackage{authblk}
+\usepackage{physics}
+\usepackage{mathtools}
+
+\geometry{margin=2.4cm}
+
+\title{\textbf{Companion XXXVII: Disk Dynamics and Rotation Curves in the Relaxation-Driven Cyclic Cosmology}}
+\author{Michael Lehmann \\ \texttt{mi.lehmann@gmx.de}}
+\date{April 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The rotation curves of disk galaxies provide one of the most direct observational 
+probes of gravitational dynamics on kiloparsec scales. Their characteristic flatness 
+is traditionally interpreted as evidence for extended dark matter halos. In the 
+Relaxation-Driven Cyclic Cosmology (RDCC), the scale-dependent evolution of the 
+gravitational potential modifies the internal structure of halos and the distribution 
+of angular momentum in a way that reshapes the dynamics of galactic disks. This 
+Companion develops a continuous description of disk formation, derives the RDCC 
+rotation curve, and explains how the relaxation scale influences the transition 
+between rising, flat, and declining regimes. The resulting framework provides a 
+natural interpretation of observed rotation curves without invoking exotic dark 
+matter microphysics.
+\end{abstract}
+% ---------------------------------------------------------
+\section{Introduction}
+
+Disk galaxies are among the most dynamically ordered structures in the Universe. 
+Their rotation curves, which remain approximately flat far beyond the luminous 
+extent of the disk, have long been regarded as a cornerstone of the dark matter 
+paradigm. In the standard cosmological model, this flatness arises from the 
+presence of an extended halo whose density profile declines more slowly than the 
+baryonic component.
+
+In RDCC, the gravitational potential evolves differently. The relaxation mechanism 
+suppresses the growth of small-scale modes and enhances the coherence of large-scale 
+modes. This modifies the density structure of halos, the distribution of angular 
+momentum, and the gravitational field experienced by the disk. The rotation curve 
+becomes a direct tracer of the relaxation scale $k_{\mathrm{rel}}$ and the temporal 
+structure of the potential.
+% ---------------------------------------------------------
+\section{The RDCC Gravitational Potential and Disk Formation}
+
+The formation of a galactic disk begins with the collapse of gas within a dark 
+matter halo. The gravitational potential governing this collapse is modified in 
+RDCC according to
+\begin{equation}
+    \Phi_{\mathrm{RDCC}}(k,a)
+    = \Phi(k,a)
+      \left[1 - \chi_{\Phi}
+      \left(\frac{k}{k_{\mathrm{rel}}}\right)^{\alpha}\right].
+\end{equation}
+
+This modification affects the radial distribution of mass within the halo. 
+Small-scale modes, which would normally steepen the inner density profile, are 
+suppressed. As a result, the inner halo becomes less cuspy, while the outer halo 
+retains its coherence. The disk forms within a gravitational field that is smoother 
+and more extended than in the standard cosmological model.
+
+The angular momentum distribution of the collapsing gas is similarly affected. 
+Modes near the relaxation scale dominate the torque field, leading to a more 
+coherent spin axis and a narrower distribution of specific angular momentum.
+% ---------------------------------------------------------
+\section{Derivation of the RDCC Rotation Curve}
+
+The circular velocity of a test particle in the disk is given by
+\begin{equation}
+    v_{c}^{2}(r)
+    = r\,\frac{\partial \Phi_{\mathrm{RDCC}}}{\partial r}.
+\end{equation}
+
+To evaluate this expression, we consider the RDCC-modified density profile of the 
+halo. For a spherically symmetric halo, the potential satisfies
+\begin{equation}
+    \frac{\partial \Phi_{\mathrm{RDCC}}}{\partial r}
+    = \frac{G M_{\mathrm{RDCC}}(r)}{r^{2}},
+\end{equation}
+where $M_{\mathrm{RDCC}}(r)$ is the enclosed mass.
+
+The RDCC mass profile can be approximated as
+\begin{equation}
+    M_{\mathrm{RDCC}}(r)
+    = M(r)
+      \left[
+        1 - \chi_{M}
+        \left(\frac{1}{k_{\mathrm{rel}} r}\right)^{\alpha}
+      \right],
+\end{equation}
+reflecting the reduced contribution of small-scale modes to the inner density.
+
+Substituting this into the circular velocity yields
+\begin{equation}
+    v_{c,\mathrm{RDCC}}^{2}(r)
+    = \frac{G M(r)}{r}
+      \left[
+        1 - \chi_{M}
+        \left(\frac{1}{k_{\mathrm{rel}} r}\right)^{\alpha}
+      \right].
+\end{equation}
+
+This expression captures the essential RDCC modification: the rotation curve rises 
+more gently in the inner region and transitions smoothly to a flat profile at 
+intermediate radii.
+% ---------------------------------------------------------
+\section{The Flatness of Rotation Curves in RDCC}
+
+The flatness of rotation curves arises when the enclosed mass grows approximately 
+linearly with radius. In RDCC, this behavior emerges naturally from the interplay 
+between suppressed small-scale modes and coherent large-scale modes. The mass 
+profile becomes
+\begin{equation}
+    M_{\mathrm{RDCC}}(r)
+    \approx \rho_{0}\, r^{3}
+    \left[
+        1 - \chi_{\rho}
+        \left(\frac{1}{k_{\mathrm{rel}} r}\right)^{\alpha}
+    \right],
+\end{equation}
+which yields a circular velocity
+\begin{equation}
+    v_{c,\mathrm{RDCC}}(r)
+    \approx \sqrt{4\pi G \rho_{0}}\, r
+    \left[
+        1 - \frac{\chi_{\rho}}{2}
+        \left(\frac{1}{k_{\mathrm{rel}} r}\right)^{\alpha}
+    \right].
+\end{equation}
+
+At radii $r \gg k_{\mathrm{rel}}^{-1}$, the correction term becomes negligible, and 
+the rotation curve approaches a constant value. The flatness is therefore a direct 
+consequence of the relaxation scale, which determines the radius at which the 
+transition occurs.
+% ---------------------------------------------------------
+\section{Declining Rotation Curves and the Outer Halo}
+
+At sufficiently large radii, the density profile of the halo declines more steeply, 
+and the rotation curve begins to fall. In RDCC, this decline is smoother than in 
+the standard cosmological model because the outer halo retains a higher degree of 
+coherence. The circular velocity in the outer region can be approximated as
+\begin{equation}
+    v_{c,\mathrm{RDCC}}(r)
+    \propto r^{-1/2}
+    \left[
+        1 - \chi_{\mathrm{out}}
+        \left(\frac{1}{k_{\mathrm{rel}} r}\right)^{\alpha}
+    \right].
+\end{equation}
+
+This expression predicts a gentle decline in the rotation curve, consistent with 
+observations of extended HI disks.
+% ---------------------------------------------------------
+\section{Conclusion}
+
+The dynamics of galactic disks in the Relaxation-Driven Cyclic Cosmology reflect 
+the scale-dependent evolution of the gravitational potential. The relaxation 
+mechanism modifies the density structure of halos, the distribution of angular 
+momentum, and the gravitational field experienced by the disk. These effects 
+produce rotation curves that rise gently in the inner region, remain flat over a 
+broad range of radii, and decline smoothly in the outer halo. The present 
+Companion establishes the theoretical foundation for future studies of disk 
+stability, bar formation, and the interplay between baryons and dark matter in 
+RDCC.
+
+% ========================
+% References
+% ========================
+
+\begin{thebibliography}{10}
+
+\bibitem{Flagship} Lehmann, M. (2026). Relaxation-Driven Cyclic Cosmology (RDCC): A Minimal CPT-Symmetric Framework with a Single Parameter. Flagship Paper. Zenodo: \url{https://zenodo.org/records/19744958} (v43.0 or later).
+
+\bibitem{Zenodo} The complete RDCC companion series (I--LVII) is available at the same Zenodo record above.
+
+% Thematisch relevante Companions
+\bibitem{CompXVI} Companion XVI: Boltzmann Code and Modified Hierarchy.
+\bibitem{CompXXXI} Companion XXXI: RDCC Halo Model and Non-Linear Structure.
+\bibitem{CompXXXII} Companion XXXII--XXXIX: Galaxy--Halo Connection, Cosmic Web, Lensing, RSD, ISW, tSZ, Rotation Curves, CGM.
+
+% Wichtige externe Referenzen
+\bibitem{Planck2020} Planck Collaboration (2020), Astron. Astrophys. 641, A6.
+\bibitem{DESI2024} DESI Collaboration (2024/2025), arXiv: [aktuelle $f\sigma_8$/BAO-Paper].
+\bibitem{JWST2024} Maiolino et al. (2024), Nature (JWST high-$z$ galaxies/quasars).
+\bibitem{Kaiser1987} Kaiser, N. (1987), Mon. Not. R. Astron. Soc. 227, 1 (RSD).
+\bibitem{Bartelmann2001} Bartelmann, M. \& Schneider, P. (2001), Phys. Rep. 340, 291 (Weak Lensing Review).
+\bibitem{HuOkamoto2002} Hu, W. \& Okamoto, T. (2002), Astrophys. J. 574, 566 (CMB Lensing).
+\bibitem{LewisChallinor2006} Lewis, A. \& Challinor, A. (2006), Phys. Rep. 429, 1 (CMB Lensing Review).
+\bibitem{NFW1997} Navarro, J. F., Frenk, C. S. \& White, S. D. M. (1997), Astrophys. J. 490, 493 (Halo Profiles).
+
+\end{thebibliography}
+
+\end{document}

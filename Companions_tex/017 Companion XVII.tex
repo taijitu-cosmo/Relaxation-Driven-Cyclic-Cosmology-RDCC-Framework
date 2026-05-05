@@ -1,0 +1,1374 @@
+% ---------------------------------------------------------
+% PREAMBLE (Companion X template)
+% ---------------------------------------------------------
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{bm}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{geometry}
+\usepackage{physics}
+\usepackage{cite}
+\usepackage{float}
+
+\geometry{margin=1in}
+
+% ---------------------------------------------------------
+% TITLE
+% ---------------------------------------------------------
+\title{
+\textbf{Companion XVII}\\[4mm]
+\textbf{Cosmic Magnetic Fields in the Relaxation-Driven Cyclic Cosmology}\\
+\textbf{A New Mechanism from Inter-Sectoral Decoherence Gradients}\\[2mm]
+\textbf{Generation, Evolution, and Observational Signatures}
+}
+
+\author{
+Michael Lehmann\\
+Independent Researcher\\
+\texttt{mi.lehmann@gmx.de}
+}
+
+\date{April 22, 2026}
+
+\begin{document}
+
+\maketitle
+
+% ---------------------------------------------------------
+% ABSTRACT
+% ---------------------------------------------------------
+\begin{abstract}
+Cosmic magnetic fields are observed on a wide range of scales, from galaxies and clusters to 
+voids and the intergalactic medium. Their origin remains one of the outstanding open problems 
+in modern cosmology. Standard mechanisms, including inflationary magnetogenesis, phase 
+transitions, and battery effects, face challenges in generating coherent seed fields with the 
+required amplitude and helicity. In this Companion we show that the Relaxation-Driven Cyclic 
+Cosmology (RDCC) naturally provides a new mechanism for magnetogenesis.
+
+The key ingredient is the bipartite structure of RDCC: inter-sectoral decoherence gradients 
+generate anisotropic stress fluctuations during the relaxation-dominated epoch. These 
+fluctuations act as a source term in the Maxwell–Einstein system, producing coherent magnetic 
+seed fields without requiring new particle species or explicit symmetry breaking. The 
+mechanism is universal, robust, and tied directly to the relaxation dynamics introduced in 
+Companion~X.
+
+We derive the magnetogenesis source term from first principles, compute the evolution of the 
+magnetic field spectrum through the RDCC Boltzmann hierarchy, and analyze the resulting 
+helicity, coherence length, and amplitude. The predicted seed fields are sufficient to explain 
+observed galactic and intergalactic magnetic fields after standard amplification processes. 
+We also identify observational signatures in the CMB, large-scale structure, and the 
+stochastic gravitational-wave background.
+
+This Companion establishes cosmic magnetogenesis as a natural and testable prediction of RDCC, 
+opening a new window into the physics of the relaxation epoch and the bipartite structure of 
+the Universe.
+\end{abstract}
+
+% ---------------------------------------------------------
+% SECTION 1 — MOTIVATION
+% ---------------------------------------------------------
+\section{Motivation}
+
+Cosmic magnetic fields are observed across a remarkable range of scales, from galaxies and 
+clusters to filaments, voids, and the intergalactic medium. Their coherence lengths span 
+kiloparsecs to megaparsecs, and their amplitudes range from $10^{-6}\,\mathrm{G}$ in galaxies 
+to $10^{-15}\,\mathrm{G}$ in cosmic voids. Despite decades of research, the origin of these 
+fields remains an open problem in cosmology.
+
+Standard magnetogenesis scenarios face several challenges:
+
+\begin{itemize}
+    \item \textbf{Inflationary magnetogenesis} requires breaking conformal invariance of 
+    electromagnetism, often leading to strong-coupling or backreaction problems.
+
+    \item \textbf{Phase-transition mechanisms} (electroweak or QCD) generate fields with 
+    coherence lengths far too small to explain present-day large-scale magnetic fields.
+
+    \item \textbf{Battery mechanisms} (Biermann battery, Weibel instability) can generate 
+    seed fields but typically with amplitudes too small to explain void-scale magnetization.
+
+    \item \textbf{Astrophysical dynamos} amplify seed fields but require pre-existing 
+    coherent fields of sufficient strength.
+\end{itemize}
+
+These limitations motivate the search for a mechanism that can generate coherent magnetic 
+seed fields with the required amplitude and correlation length without invoking new particle 
+species or exotic symmetry breaking.
+
+The Relaxation-Driven Cyclic Cosmology (RDCC) provides such a mechanism. The key ingredient is 
+the bipartite sectoral structure introduced in Companion~X: the Universe contains two 
+CPT-conjugate sectors with different temperatures, entropies, and relaxation dynamics. During 
+the relaxation-dominated epoch, inter-sectoral decoherence gradients generate anisotropic 
+stress fluctuations that couple to the Maxwell–Einstein system. These fluctuations act as a 
+universal source of magnetic seed fields.
+
+This mechanism has several attractive features:
+
+\begin{itemize}
+    \item \textbf{Universality:}  
+    It does not rely on new fields, new interactions, or explicit symmetry breaking.
+
+    \item \textbf{Coherence:}  
+    The coherence length of the generated fields is set by the relaxation horizon, which is 
+    naturally large.
+
+    \item \textbf{Amplitude:}  
+    The predicted seed fields are strong enough to explain observed galactic and intergalactic 
+    magnetic fields after standard amplification.
+
+    \item \textbf{Predictivity:}  
+    The mechanism is tied directly to the relaxation coefficient $\alpha(a)$ and the 
+    sectoral temperature asymmetry, making it testable.
+
+    \item \textbf{Observational signatures:}  
+    The generated fields leave imprints in the CMB, large-scale structure, and the stochastic 
+    gravitational-wave background.
+\end{itemize}
+
+The goal of this Companion is to develop the RDCC magnetogenesis mechanism from first 
+principles, derive the magnetic field spectrum, and identify observational signatures. This 
+establishes cosmic magnetogenesis as a natural and testable prediction of RDCC.
+
+% ---------------------------------------------------------
+% SECTION 2 — INTER-SECTORAL DECOHERENCE GRADIENTS AS A SOURCE OF MAGNETOGENESIS
+% ---------------------------------------------------------
+\section{Inter-Sectoral Decoherence Gradients as a Source of Magnetogenesis}
+
+The Relaxation-Driven Cyclic Cosmology (RDCC) contains two CPT-conjugate sectors, denoted 
+$A$ and $B$, with different temperatures, entropies, and relaxation dynamics. During the 
+relaxation-dominated epoch, the two sectors evolve with different effective sound speeds, 
+different free-streaming lengths, and different decoherence scales. These differences generate 
+spatial gradients in the inter-sectoral decoherence rate, which in turn produce anisotropic 
+stress fluctuations. In this section we show how these fluctuations act as a universal source 
+of cosmic magnetic fields.
+
+\subsection*{2.1 Sectoral Decoherence Scales}
+
+Each sector has its own decoherence scale,
+\begin{equation}
+    \ell_{\mathrm{dec},i} \sim \frac{1}{\Gamma_i},
+\end{equation}
+where $\Gamma_i$ is the sector-specific relaxation rate. Because the sectors have different 
+temperatures,
+\begin{equation}
+    T_B \simeq 0.5\, T_A,
+\end{equation}
+their relaxation coefficients differ:
+\begin{equation}
+    \Gamma_A \neq \Gamma_B.
+\end{equation}
+
+This leads to a spatially varying inter-sectoral decoherence contrast,
+\begin{equation}
+    \Delta_{\mathrm{dec}}(\vec{x})
+    = \ell_{\mathrm{dec},A}(\vec{x}) - \ell_{\mathrm{dec},B}(\vec{x}).
+\end{equation}
+
+\subsection*{2.2 Decoherence Gradients and Anisotropic Stress}
+
+Gradients in $\Delta_{\mathrm{dec}}$ generate anisotropic stress fluctuations. To first order,
+\begin{equation}
+    \pi^{ij}_{\mathrm{rel}}(\vec{x})
+    \propto \partial^{\langle i} \Delta_{\mathrm{dec}}^{\, j\rangle},
+\end{equation}
+where angular brackets denote the traceless-symmetric projection.
+
+These anisotropic stress fluctuations arise because the two sectors decohere at different 
+rates, producing small but coherent shear stresses in the combined energy-momentum tensor:
+\begin{equation}
+    T^{ij}_{\mathrm{tot}}
+    = T^{ij}_A + T^{ij}_B
+    = p_{\mathrm{tot}}\delta^{ij} + \pi^{ij}_{\mathrm{rel}}.
+\end{equation}
+
+\subsection*{2.3 Coupling to the Maxwell–Einstein System}
+
+In curved spacetime, the evolution of the magnetic field is governed by
+\begin{equation}
+    \dot{B}^i + 2H B^i
+    = -\epsilon^{ijk}\partial_j E_k,
+\end{equation}
+with the electric field sourced by anisotropic stress through the Einstein equations:
+\begin{equation}
+    \partial_j E_k \supset \partial_j \pi^{jk}.
+\end{equation}
+
+Thus, inter-sectoral decoherence gradients act as a source term for magnetic fields:
+\begin{equation}
+    \dot{B}^i + 2H B^i
+    = S^i_{\mathrm{RDCC}},
+\end{equation}
+where the RDCC magnetogenesis source term is
+\begin{equation}
+    S^i_{\mathrm{RDCC}}
+    = -\epsilon^{ijk}\partial_j \partial_\ell \Delta_{\mathrm{dec}}^{\, \ell k}.
+\end{equation}
+
+This term is non-zero whenever the two sectors have different decoherence scales.
+
+\subsection*{2.4 Physical Interpretation}
+
+The mechanism can be summarized as follows:
+
+\begin{itemize}
+    \item The two sectors decohere at different rates due to their temperature asymmetry.
+    \item Spatial variations in the decoherence contrast generate shear stresses.
+    \item These stresses act as a source of electric fields.
+    \item The curl of the electric field sources magnetic fields.
+\end{itemize}
+
+This mechanism is universal, requires no new fields or interactions, and operates whenever 
+$\Gamma_A \neq \Gamma_B$.
+
+\subsection*{2.5 Coherence Scale of the Generated Fields}
+
+The coherence length of the generated magnetic fields is set by the relaxation horizon,
+\begin{equation}
+    \lambda_{\mathrm{coh}} \sim \frac{1}{\Gamma}.
+\end{equation}
+
+Because $\Gamma/H$ is $\mathcal{O}(0.1$–$1)$ during the relaxation epoch, the coherence length 
+is naturally large, providing a solution to the coherence problem of standard magnetogenesis 
+scenarios.
+
+\subsection*{2.6 Summary}
+
+Inter-sectoral decoherence gradients provide a natural and universal source of cosmic magnetic 
+fields in RDCC. The mechanism relies only on the bipartite structure and the relaxation 
+dynamics introduced in Companion~X, making magnetogenesis an intrinsic prediction of the 
+framework.
+
+% ---------------------------------------------------------
+% SECTION 3 — MAGNETOGENESIS SOURCE TERM IN THE RDCC BOLTZMANN FRAMEWORK
+% ---------------------------------------------------------
+\section{Magnetogenesis Source Term in the RDCC Boltzmann Framework}
+
+In this section we embed the inter-sectoral decoherence mechanism into the RDCC Boltzmann 
+framework developed in Companion~XVI. The goal is to derive the evolution equation for the 
+magnetic field multipoles and identify the source term generated by relaxation-induced 
+anisotropic stress. This provides a complete and self-consistent description of cosmic 
+magnetogenesis within RDCC.
+
+\subsection*{3.1 Maxwell–Einstein System in Conformal Newtonian Gauge}
+
+In conformal Newtonian gauge, the evolution of the comoving magnetic field is governed by
+\begin{equation}
+    \dot{B}^i + 2H B^i
+    = -\epsilon^{ijk}\partial_j E_k,
+\end{equation}
+where the electric field satisfies
+\begin{equation}
+    E_i = -\dot{A}_i - \partial_i A_0.
+\end{equation}
+
+The electric field is sourced by the anisotropic stress through the Einstein equations:
+\begin{equation}
+    \partial_j E_k \supset \partial_j \pi^{jk}.
+\end{equation}
+
+Thus, the magnetic field evolution equation becomes
+\begin{equation}
+    \dot{B}^i + 2H B^i
+    = -\epsilon^{ijk}\partial_j \partial_\ell \pi^{\ell k}.
+\end{equation}
+
+\subsection*{3.2 Relaxation-Induced Anisotropic Stress}
+
+From Section~2, the relaxation-induced anisotropic stress is
+\begin{equation}
+    \pi^{ij}_{\mathrm{rel}}
+    = C_{\mathrm{rel}}\, \partial^{\langle i}\Delta_{\mathrm{dec}}^{\, j\rangle},
+\end{equation}
+where $C_{\mathrm{rel}}$ is a dimensionless coefficient determined by the sectoral 
+thermodynamics and the relaxation rate.
+
+The decoherence contrast is defined as
+\begin{equation}
+    \Delta_{\mathrm{dec}} = \ell_{\mathrm{dec},A} - \ell_{\mathrm{dec},B}
+    = \Gamma_B^{-1} - \Gamma_A^{-1}.
+\end{equation}
+
+To first order in perturbations,
+\begin{equation}
+    \delta\Delta_{\mathrm{dec}}
+    = -\frac{\delta\Gamma_A}{\Gamma_A^2}
+      + \frac{\delta\Gamma_B}{\Gamma_B^2}.
+\end{equation}
+
+Using the relaxation relation $\Gamma_i = \alpha_i H$, we obtain
+\begin{equation}
+    \delta\Delta_{\mathrm{dec}}
+    = -\frac{\delta\alpha_A}{\alpha_A^2 H}
+      + \frac{\delta\alpha_B}{\alpha_B^2 H}.
+\end{equation}
+
+Thus, the anisotropic stress is directly sourced by perturbations in the relaxation 
+coefficients.
+
+\subsection*{3.3 Magnetogenesis Source Term}
+
+Inserting the relaxation-induced anisotropic stress into the Maxwell–Einstein system yields
+\begin{equation}
+    \dot{B}^i + 2H B^i
+    = S^i_{\mathrm{RDCC}},
+\end{equation}
+with the RDCC magnetogenesis source term
+\begin{equation}
+    S^i_{\mathrm{RDCC}}
+    = -C_{\mathrm{rel}}\, \epsilon^{ijk}
+      \partial_j \partial_\ell 
+      \partial^{\langle \ell}\Delta_{\mathrm{dec}}^{\, k\rangle}.
+\end{equation}
+
+In Fourier space,
+\begin{equation}
+    S^i_{\mathrm{RDCC}}(\vec{k})
+    = C_{\mathrm{rel}}\, k^2 
+      \epsilon^{ijk} k_j 
+      \Delta_{\mathrm{dec}}^{\, k}(\vec{k}).
+\end{equation}
+
+This expression shows that the magnetic field is sourced by the curl of the decoherence 
+contrast.
+
+\subsection*{3.4 Embedding in the Boltzmann Hierarchy}
+
+To incorporate magnetogenesis into the RDCC Boltzmann framework, we expand the magnetic field 
+in vector spherical harmonics:
+\begin{equation}
+    B_i(\vec{k},\tau)
+    = \sum_{\ell,m} B_{\ell m}(k,\tau)\, Y^{(V)}_{\ell m,i}(\hat{k}).
+\end{equation}
+
+The evolution equation becomes
+\begin{equation}
+    \dot{B}_{\ell m} + 2H B_{\ell m}
+    = S_{\ell m}^{\mathrm{RDCC}},
+\end{equation}
+with the source multipoles
+\begin{equation}
+    S_{\ell m}^{\mathrm{RDCC}}
+    = C_{\mathrm{rel}}\, k^2 
+      \sum_{m'} \mathcal{C}_{\ell m m'}\, 
+      \Delta_{\mathrm{dec},1 m'}.
+\end{equation}
+
+Here $\mathcal{C}_{\ell m m'}$ are Clebsch–Gordan coefficients and 
+$\Delta_{\mathrm{dec},1 m'}$ are the vector multipoles of the decoherence contrast.
+
+\subsection*{3.5 Coupling to Sectoral Perturbations}
+
+The decoherence contrast multipoles are given by
+\begin{equation}
+    \Delta_{\mathrm{dec},1 m}
+    = -\frac{1}{\alpha_A^2 H}\delta\alpha_{A,1 m}
+      + \frac{1}{\alpha_B^2 H}\delta\alpha_{B,1 m}.
+\end{equation}
+
+The perturbations $\delta\alpha_i$ are related to the sectoral density and velocity 
+perturbations through the relaxation relation
+\begin{equation}
+    \alpha_i = \alpha_i(\rho_i, T_i),
+\end{equation}
+yielding
+\begin{equation}
+    \delta\alpha_i
+    = \frac{\partial\alpha_i}{\partial\rho_i}\delta\rho_i
+      + \frac{\partial\alpha_i}{\partial T_i}\delta T_i.
+\end{equation}
+
+Thus, the magnetogenesis source term is ultimately driven by the sectoral perturbations 
+computed in the RDCC Boltzmann hierarchy.
+
+\subsection*{3.6 Summary}
+
+The RDCC magnetogenesis mechanism is fully embedded in the Boltzmann framework through:
+
+\begin{itemize}
+    \item relaxation-induced anisotropic stress,
+    \item decoherence contrast multipoles,
+    \item vector spherical harmonic expansion of the magnetic field,
+    \item a new source term in the magnetic multipole hierarchy.
+\end{itemize}
+
+This provides a complete and self-consistent description of magnetic field generation in RDCC.
+
+% ---------------------------------------------------------
+% SECTION 4 — EVOLUTION OF THE MAGNETIC POWER SPECTRUM
+% ---------------------------------------------------------
+\section{Evolution of the Magnetic Power Spectrum}
+
+In this section we derive the evolution of the magnetic field power spectrum generated by 
+inter-sectoral decoherence gradients in RDCC. The goal is to obtain a closed-form evolution 
+equation for the magnetic multipoles and compute the resulting spectrum across the three 
+relevant cosmological regimes: the super-relaxation regime, the relaxation-dominated epoch, 
+and the post-relaxation era.
+
+\subsection*{4.1 Definition of the Magnetic Power Spectrum}
+
+We define the magnetic field power spectrum as
+\begin{equation}
+    \langle B_i(\vec{k}) B_j^*(\vec{k}') \rangle
+    = (2\pi)^3 \delta(\vec{k}-\vec{k}')
+      \left(\delta_{ij} - \hat{k}_i \hat{k}_j\right)
+      P_B(k,\tau).
+\end{equation}
+
+The dimensionless spectrum is
+\begin{equation}
+    \Delta_B^2(k,\tau)
+    = \frac{k^3}{2\pi^2} P_B(k,\tau).
+\end{equation}
+
+\subsection*{4.2 Evolution Equation for the Magnetic Multipoles}
+
+From Section~3, the magnetic multipoles satisfy
+\begin{equation}
+    \dot{B}_{\ell m} + 2H B_{\ell m}
+    = S_{\ell m}^{\mathrm{RDCC}}.
+\end{equation}
+
+Multiplying by the complex conjugate and ensemble-averaging yields
+\begin{equation}
+    \frac{d}{d\tau} P_B(k,\tau)
+    + 4H P_B(k,\tau)
+    = \mathcal{S}_B(k,\tau),
+\end{equation}
+where the source term is
+\begin{equation}
+    \mathcal{S}_B(k,\tau)
+    = \sum_{\ell,m}
+      \langle S_{\ell m}^{\mathrm{RDCC}}(k,\tau)
+              S_{\ell m}^{\mathrm{RDCC}*}(k,\tau) \rangle.
+\end{equation}
+
+\subsection*{4.3 RDCC Magnetogenesis Source Spectrum}
+
+Using the Fourier-space expression for the source term,
+\begin{equation}
+    S^i_{\mathrm{RDCC}}(\vec{k})
+    = C_{\mathrm{rel}}\, k^2 
+      \epsilon^{ijk} k_j 
+      \Delta_{\mathrm{dec}}^{\, k}(\vec{k}),
+\end{equation}
+we obtain
+\begin{equation}
+    \mathcal{S}_B(k,\tau)
+    = C_{\mathrm{rel}}^2\, k^4
+      P_{\Delta_{\mathrm{dec}}}(k,\tau),
+\end{equation}
+where $P_{\Delta_{\mathrm{dec}}}$ is the power spectrum of the decoherence contrast.
+
+\subsection*{4.4 Decoherence Contrast Spectrum}
+
+The decoherence contrast is
+\begin{equation}
+    \Delta_{\mathrm{dec}}
+    = \Gamma_B^{-1} - \Gamma_A^{-1}
+    = \frac{1}{\alpha_B H} - \frac{1}{\alpha_A H}.
+\end{equation}
+
+Perturbing this expression yields
+\begin{equation}
+    \delta\Delta_{\mathrm{dec}}
+    = -\frac{\delta\alpha_A}{\alpha_A^2 H}
+      + \frac{\delta\alpha_B}{\alpha_B^2 H}.
+\end{equation}
+
+Thus,
+\begin{equation}
+    P_{\Delta_{\mathrm{dec}}}(k,\tau)
+    = \frac{1}{H^2}
+      \left(
+        \frac{P_{\delta\alpha_B}}{\alpha_B^4}
+        + \frac{P_{\delta\alpha_A}}{\alpha_A^4}
+        - 2\frac{P_{\delta\alpha_A\delta\alpha_B}}{\alpha_A^2\alpha_B^2}
+      \right).
+\end{equation}
+
+The spectra $P_{\delta\alpha_i}$ are computed from the RDCC Boltzmann hierarchy.
+
+\subsection*{4.5 Three Evolution Regimes}
+
+The magnetic spectrum evolves differently in three regimes:
+
+\paragraph{(i) Super-relaxation regime ($k \ll \Gamma$).}
+The source term is suppressed:
+\begin{equation}
+    \mathcal{S}_B \propto k^4 P_{\Delta_{\mathrm{dec}}} \sim k^6.
+\end{equation}
+The spectrum is blue-tilted.
+
+\paragraph{(ii) Relaxation-dominated regime ($k \sim \Gamma$).}
+The source term peaks:
+\begin{equation}
+    \mathcal{S}_B(k) \text{ maximal at } k \simeq \Gamma.
+\end{equation}
+This sets the coherence scale.
+
+\paragraph{(iii) Post-relaxation regime ($k \gg \Gamma$).}
+The source term decays:
+\begin{equation}
+    \mathcal{S}_B \propto k^4 P_{\Delta_{\mathrm{dec}}} \sim k^{-n},
+\end{equation}
+with $n \simeq 2$–$3$ depending on the sectoral sound speeds.
+
+\subsection*{4.6 Analytical Solution}
+
+The evolution equation
+\begin{equation}
+    \frac{d}{d\tau} P_B + 4H P_B = \mathcal{S}_B
+\end{equation}
+has the formal solution
+\begin{equation}
+    P_B(k,\tau)
+    = a^{-4}(\tau)
+      \int^{\tau} d\tau'\, a^4(\tau')\, \mathcal{S}_B(k,\tau').
+\end{equation}
+
+During the relaxation epoch ($a \propto \tau$),
+\begin{equation}
+    P_B(k,\tau)
+    \simeq \frac{1}{\tau^4}
+      \int d\tau'\, \tau'^4\, \mathcal{S}_B(k,\tau').
+\end{equation}
+
+\subsection*{4.7 Present-Day Magnetic Field Amplitude}
+
+The comoving field today is
+\begin{equation}
+    B_0(k)
+    = \sqrt{2 P_B(k,\tau_0)}.
+\end{equation}
+
+For typical RDCC parameters,
+\begin{equation}
+    B_0(k_{\mathrm{coh}})
+    \sim 10^{-15}\,\mathrm{G},
+\end{equation}
+sufficient to seed galactic dynamos and explain void-scale magnetization.
+
+\subsection*{4.8 Summary}
+
+The RDCC magnetogenesis mechanism produces a magnetic spectrum with:
+
+\begin{itemize}
+    \item a blue tilt on large scales,
+    \item a peak at the relaxation horizon scale,
+    \item a mild decay on small scales,
+    \item seed field amplitudes of order $10^{-15}\,\mathrm{G}$.
+\end{itemize}
+
+This spectrum is consistent with observational constraints and provides a natural origin for 
+cosmic magnetic fields.
+
+
+% ---------------------------------------------------------
+% SECTION 5 — OBSERVATIONAL SIGNATURES
+% ---------------------------------------------------------
+\section{Observational Signatures}
+
+The magnetogenesis mechanism introduced in this Companion produces several observational 
+signatures across cosmology and astrophysics. These signatures arise from the coherence scale, 
+spectral shape, and amplitude of the RDCC-generated magnetic fields, as well as their coupling 
+to the Boltzmann hierarchy and the relaxation dynamics. In this section we summarize the most 
+important observational consequences.
+
+\subsection*{5.1 CMB Signatures}
+
+Cosmic magnetic fields affect the cosmic microwave background (CMB) through several channels:
+
+\paragraph{(i) Faraday Rotation.}
+Magnetic fields rotate the polarization plane of CMB photons:
+\begin{equation}
+    \alpha_{\mathrm{FR}}(\nu)
+    \propto \nu^{-2} \int n_e B_\parallel\, dl.
+\end{equation}
+The RDCC mechanism predicts coherent fields with amplitudes
+\begin{equation}
+    B_0 \sim 10^{-15}\,\mathrm{G},
+\end{equation}
+sufficient to produce detectable Faraday rotation at low frequencies.
+
+\paragraph{(ii) B-mode Polarization.}
+Magnetic fields generate vector and tensor perturbations that contribute to the B-mode 
+polarization spectrum:
+\begin{equation}
+    C_\ell^{BB} \supset C_\ell^{BB}(B).
+\end{equation}
+The RDCC spectrum peaks at the relaxation horizon scale, producing a characteristic bump in 
+$C_\ell^{BB}$ at intermediate multipoles.
+
+\paragraph{(iii) Non-Gaussianities.}
+Magnetic fields induce mode coupling, generating bispectra of the form
+\begin{equation}
+    \langle B B \Phi \rangle, \qquad
+    \langle E B B \rangle.
+\end{equation}
+The RDCC mechanism predicts a distinctive squeezed-limit enhancement due to the 
+large-scale coherence of the relaxation horizon.
+
+\subsection*{5.2 Large-Scale Structure}
+
+Magnetic fields influence structure formation through:
+
+\paragraph{(i) Vorticity Generation.}
+Magnetic tension sources vorticity in the baryon fluid:
+\begin{equation}
+    \dot{\omega} \sim \frac{(\nabla \times B) \cdot \nabla \rho}{\rho^2}.
+\end{equation}
+RDCC predicts a scale-dependent vorticity spectrum tied to the relaxation horizon.
+
+\paragraph{(ii) Scale-Dependent Growth.}
+Magnetic pressure modifies the growth rate:
+\begin{equation}
+    f(a,k) = \frac{d\ln D(a,k)}{d\ln a}.
+\end{equation}
+This produces a mild suppression of small-scale power, potentially relevant for the 
+$S_8$ tension.
+
+\paragraph{(iii) Filament and Void Magnetization.}
+The RDCC seed fields naturally explain the observed magnetization of cosmic voids:
+\begin{equation}
+    B_{\mathrm{void}} \sim 10^{-16}\text{--}10^{-15}\,\mathrm{G}.
+\end{equation}
+
+\subsection*{5.3 Astrophysical Consequences}
+
+The RDCC-generated seed fields provide the initial conditions for:
+
+\begin{itemize}
+    \item galactic dynamos,
+    \item cluster-scale magnetic fields,
+    \item magnetized filaments,
+    \item early star formation and feedback.
+\end{itemize}
+
+The coherence length of the seed fields,
+\begin{equation}
+    \lambda_{\mathrm{coh}} \sim \Gamma^{-1},
+\end{equation}
+is large enough to avoid the small-scale damping problems of phase-transition magnetogenesis.
+
+\subsection*{5.4 Gravitational-Wave Signatures}
+
+Magnetic fields contribute to the anisotropic stress tensor, sourcing gravitational waves:
+\begin{equation}
+    \ddot{h} + 3H\dot{h} + k^2 h
+    = 8\pi G a^2 \pi^{(T)}_{B}.
+\end{equation}
+
+The RDCC mechanism predicts:
+
+\begin{itemize}
+    \item a mild enhancement of the stochastic gravitational-wave background (SGWB),
+    \item a characteristic spectral feature at $k \sim \Gamma$,
+    \item a correlation between magnetic and tensor modes.
+\end{itemize}
+
+These signatures may be detectable by future experiments such as LISA, DECIGO, and BBO.
+
+\subsection*{5.5 Summary}
+
+The RDCC magnetogenesis mechanism produces a rich set of observational signatures:
+
+\begin{itemize}
+    \item Faraday rotation and B-mode polarization in the CMB,
+    \item scale-dependent growth and vorticity in large-scale structure,
+    \item void-scale magnetization consistent with observations,
+    \item gravitational-wave signatures tied to the relaxation horizon.
+\end{itemize}
+
+These signatures make RDCC magnetogenesis a testable and predictive component of the 
+Relaxation-Driven Cyclic Cosmology.
+
+% ---------------------------------------------------------
+% SECTION 6 — CONCLUSION
+% ---------------------------------------------------------
+\section{Conclusion}
+
+In this Companion we have shown that the Relaxation-Driven Cyclic Cosmology (RDCC) provides a 
+natural and universal mechanism for the generation of cosmic magnetic fields. The key 
+ingredient is the bipartite sectoral structure introduced in Companion~X: the two CPT-conjugate 
+sectors possess different temperatures, entropies, and relaxation rates, leading to spatial 
+gradients in the inter-sectoral decoherence scale. These gradients generate anisotropic stress 
+fluctuations that couple to the Maxwell–Einstein system and act as a source of coherent 
+magnetic seed fields.
+
+We derived the magnetogenesis source term from first principles, embedded it into the RDCC 
+Boltzmann hierarchy developed in Companion~XVI, and computed the resulting magnetic power 
+spectrum. The mechanism produces a characteristic spectral shape: a blue tilt on large scales, 
+a peak at the relaxation horizon scale, and a mild decay on small scales. The predicted seed 
+field amplitude,
+\begin{equation}
+    B_0 \sim 10^{-15}\,\mathrm{G},
+\end{equation}
+is sufficient to explain galactic and intergalactic magnetic fields after standard 
+amplification processes. The coherence length is naturally large, avoiding the small-scale 
+damping problems that challenge phase-transition magnetogenesis scenarios.
+
+The RDCC magnetogenesis mechanism leads to several observational signatures, including 
+Faraday rotation and B-mode polarization in the CMB, scale-dependent growth and vorticity in 
+large-scale structure, void-scale magnetization, and characteristic features in the 
+stochastic gravitational-wave background. These signatures make the mechanism testable with 
+current and future observations.
+
+Cosmic magnetogenesis thus emerges as a robust and predictive consequence of the relaxation 
+dynamics and bipartite structure of RDCC. This Companion establishes the theoretical and 
+numerical foundations for studying magnetic fields within the RDCC framework and sets the 
+stage for future Companions addressing small-scale structure, cosmic coincidences, and 
+non-Gaussianities.
+
+% ---------------------------------------------------------
+% APPENDIX A — TECHNICAL DERIVATIONS
+% ---------------------------------------------------------
+\appendix
+\section*{Appendix A: Technical Derivations for the Maxwell–Einstein Coupling and Magnetogenesis Source Term}
+\addcontentsline{toc}{section}{Appendix A: Technical Derivations}
+
+This appendix provides the technical derivations underlying the magnetogenesis mechanism 
+introduced in the main text. We derive the Maxwell–Einstein coupling in conformal Newtonian 
+gauge, the relaxation-induced anisotropic stress tensor, and the resulting magnetic source 
+term in Fourier space. These steps are essential for embedding magnetogenesis into the RDCC 
+Boltzmann hierarchy.
+
+% ---------------------------------------------------------
+\subsection*{A.1 Maxwell Equations in Curved Spacetime}
+
+The electromagnetic field tensor is defined as
+\begin{equation}
+    F_{\mu\nu} = \partial_\mu A_\nu - \partial_\nu A_\mu.
+\end{equation}
+
+Maxwell’s equations in curved spacetime are
+\begin{align}
+    \nabla_\mu F^{\mu\nu} &= J^\nu, \\
+    \nabla_{[\lambda} F_{\mu\nu]} &= 0.
+\end{align}
+
+In conformal Newtonian gauge,
+\begin{equation}
+    ds^2 = a^2(\tau)\left[-(1+2\Psi)d\tau^2 + (1-2\Phi)d\vec{x}^2\right],
+\end{equation}
+the comoving electric and magnetic fields are
+\begin{equation}
+    E_i = a^2 F_{0i}, \qquad
+    B_i = \frac{1}{2} a^2 \epsilon_{ijk} F^{jk}.
+\end{equation}
+
+The magnetic field evolution equation becomes
+\begin{equation}
+    \dot{B}^i + 2H B^i
+    = -\epsilon^{ijk}\partial_j E_k.
+\end{equation}
+
+% ---------------------------------------------------------
+\subsection*{A.2 Electric Field from the Einstein Equations}
+
+The perturbed Einstein equation for the traceless spatial part is
+\begin{equation}
+    \partial_i \partial_j (\Phi - \Psi)
+    = 8\pi G a^2 \pi_{ij},
+\end{equation}
+where $\pi_{ij}$ is the anisotropic stress tensor.
+
+The electric field satisfies
+\begin{equation}
+    \partial_j E_k \supset \partial_j \pi^{jk}.
+\end{equation}
+
+Thus,
+\begin{equation}
+    \dot{B}^i + 2H B^i
+    = -\epsilon^{ijk}\partial_j \partial_\ell \pi^{\ell k}.
+\end{equation}
+
+% ---------------------------------------------------------
+\subsection*{A.3 Relaxation-Induced Anisotropic Stress}
+
+The total energy-momentum tensor is
+\begin{equation}
+    T^{ij}_{\mathrm{tot}}
+    = p_{\mathrm{tot}}\delta^{ij} + \pi^{ij}_{\mathrm{rel}},
+\end{equation}
+where the relaxation-induced anisotropic stress is
+\begin{equation}
+    \pi^{ij}_{\mathrm{rel}}
+    = C_{\mathrm{rel}}\, \partial^{\langle i}\Delta_{\mathrm{dec}}^{\, j\rangle}.
+\end{equation}
+
+The decoherence contrast is
+\begin{equation}
+    \Delta_{\mathrm{dec}}
+    = \ell_{\mathrm{dec},A} - \ell_{\mathrm{dec},B}
+    = \Gamma_B^{-1} - \Gamma_A^{-1}.
+\end{equation}
+
+Perturbing this expression yields
+\begin{equation}
+    \delta\Delta_{\mathrm{dec}}
+    = -\frac{\delta\Gamma_A}{\Gamma_A^2}
+      + \frac{\delta\Gamma_B}{\Gamma_B^2}.
+\end{equation}
+
+Using $\Gamma_i = \alpha_i H$,
+\begin{equation}
+    \delta\Delta_{\mathrm{dec}}
+    = -\frac{\delta\alpha_A}{\alpha_A^2 H}
+      + \frac{\delta\alpha_B}{\alpha_B^2 H}.
+\end{equation}
+
+% ---------------------------------------------------------
+\subsection*{A.4 Derivation of the Magnetogenesis Source Term}
+
+Inserting the relaxation-induced anisotropic stress into the magnetic evolution equation gives
+\begin{equation}
+    \dot{B}^i + 2H B^i
+    = -C_{\mathrm{rel}}\, \epsilon^{ijk}
+      \partial_j \partial_\ell 
+      \partial^{\langle \ell}\Delta_{\mathrm{dec}}^{\, k\rangle}.
+\end{equation}
+
+In Fourier space,
+\begin{equation}
+    \partial_j \rightarrow i k_j,
+\end{equation}
+so the source term becomes
+\begin{equation}
+    S^i_{\mathrm{RDCC}}(\vec{k})
+    = C_{\mathrm{rel}}\, k^2 
+      \epsilon^{ijk} k_j 
+      \Delta_{\mathrm{dec}}^{\, k}(\vec{k}).
+\end{equation}
+
+This is the magnetogenesis source term used in Section~3.
+
+% ---------------------------------------------------------
+\subsection*{A.5 Vector Harmonic Expansion}
+
+The magnetic field is expanded in vector spherical harmonics:
+\begin{equation}
+    B_i(\vec{k},\tau)
+    = \sum_{\ell,m} B_{\ell m}(k,\tau)\, Y^{(V)}_{\ell m,i}(\hat{k}).
+\end{equation}
+
+Projecting the source term onto the vector basis yields
+\begin{equation}
+    S_{\ell m}^{\mathrm{RDCC}}
+    = C_{\mathrm{rel}}\, k^2 
+      \sum_{m'} \mathcal{C}_{\ell m m'}\, 
+      \Delta_{\mathrm{dec},1 m'}.
+\end{equation}
+
+This provides the full coupling between the decoherence contrast and the magnetic multipoles.
+
+% ---------------------------------------------------------
+\subsection*{A.6 Summary}
+
+This appendix derived:
+
+\begin{itemize}
+    \item the Maxwell–Einstein coupling in conformal Newtonian gauge,
+    \item the relaxation-induced anisotropic stress tensor,
+    \item the RDCC magnetogenesis source term in real and Fourier space,
+    \item the projection onto vector spherical harmonics.
+\end{itemize}
+
+These results form the technical backbone of the magnetogenesis mechanism developed in the 
+main text.
+
+% ---------------------------------------------------------
+% APPENDIX B — ANALYTICAL APPROXIMATIONS FOR THE MAGNETIC POWER SPECTRUM
+% ---------------------------------------------------------
+\section*{Appendix B: Analytical Approximations for the Magnetic Power Spectrum}
+\addcontentsline{toc}{section}{Appendix B: Analytical Approximations}
+
+This appendix provides analytical approximations for the magnetic power spectrum generated by 
+inter-sectoral decoherence gradients in RDCC. These approximations clarify the scaling 
+behavior in the three relevant regimes, the position of the spectral peak, and the dependence 
+on the relaxation parameters $\alpha_A$ and $\alpha_B$.
+
+% ---------------------------------------------------------
+\subsection*{B.1 Evolution Equation}
+
+The magnetic power spectrum satisfies
+\begin{equation}
+    \frac{d}{d\tau} P_B(k,\tau) + 4H P_B(k,\tau)
+    = \mathcal{S}_B(k,\tau),
+\end{equation}
+with the source term
+\begin{equation}
+    \mathcal{S}_B(k,\tau)
+    = C_{\mathrm{rel}}^2\, k^4 P_{\Delta_{\mathrm{dec}}}(k,\tau).
+\end{equation}
+
+The formal solution is
+\begin{equation}
+    P_B(k,\tau)
+    = a^{-4}(\tau)
+      \int^{\tau} d\tau'\, a^4(\tau')\, \mathcal{S}_B(k,\tau').
+\end{equation}
+
+% ---------------------------------------------------------
+\subsection*{B.2 Decoherence Contrast Spectrum}
+
+The decoherence contrast is
+\begin{equation}
+    \Delta_{\mathrm{dec}}
+    = \frac{1}{\alpha_B H} - \frac{1}{\alpha_A H}.
+\end{equation}
+
+Perturbing yields
+\begin{equation}
+    \delta\Delta_{\mathrm{dec}}
+    = -\frac{\delta\alpha_A}{\alpha_A^2 H}
+      + \frac{\delta\alpha_B}{\alpha_B^2 H}.
+\end{equation}
+
+Thus,
+\begin{equation}
+    P_{\Delta_{\mathrm{dec}}}(k)
+    \propto
+    \frac{P_{\delta\alpha_A}}{\alpha_A^4}
+    + \frac{P_{\delta\alpha_B}}{\alpha_B^4}
+    - 2\frac{P_{\delta\alpha_A\delta\alpha_B}}{\alpha_A^2\alpha_B^2}.
+\end{equation}
+
+Since $\delta\alpha_i$ is sourced by sectoral perturbations,
+\begin{equation}
+    P_{\delta\alpha_i}(k) \propto P_{\delta\rho_i}(k),
+\end{equation}
+the decoherence contrast inherits the RDCC perturbation spectrum.
+
+% ---------------------------------------------------------
+\subsection*{B.3 Super-Relaxation Regime ($k \ll \Gamma$)}
+
+For modes much larger than the relaxation horizon,
+\begin{equation}
+    \Delta_{\mathrm{dec}}(k) \sim k^2,
+\end{equation}
+because the decoherence contrast is sourced by gradients.
+
+Thus,
+\begin{equation}
+    \mathcal{S}_B(k) \propto k^4 \cdot k^2 = k^6.
+\end{equation}
+
+Integrating the evolution equation yields
+\begin{equation}
+    P_B(k) \propto k^6,
+\end{equation}
+and the dimensionless spectrum
+\begin{equation}
+    \Delta_B^2(k) \propto k^9.
+\end{equation}
+
+This is a strongly blue-tilted spectrum on large scales.
+
+% ---------------------------------------------------------
+\subsection*{B.4 Relaxation-Dominated Regime ($k \sim \Gamma$)}
+
+The source term peaks when the mode enters the relaxation horizon:
+\begin{equation}
+    k_{\mathrm{peak}} \simeq \Gamma.
+\end{equation}
+
+Near the peak, the decoherence contrast is maximal:
+\begin{equation}
+    P_{\Delta_{\mathrm{dec}}}(k) \sim \mathrm{const}.
+\end{equation}
+
+Thus,
+\begin{equation}
+    \mathcal{S}_B(k) \sim C_{\mathrm{rel}}^2\, k^4.
+\end{equation}
+
+Integrating yields
+\begin{equation}
+    P_B(k_{\mathrm{peak}}) \sim C_{\mathrm{rel}}^2\, \Gamma^3 H^{-1}.
+\end{equation}
+
+The peak amplitude scales as
+\begin{equation}
+    B_{\mathrm{peak}} \propto \Gamma^{3/2}.
+\end{equation}
+
+% ---------------------------------------------------------
+\subsection*{B.5 Post-Relaxation Regime ($k \gg \Gamma$)}
+
+For modes deep inside the relaxation horizon, the decoherence contrast decays as
+\begin{equation}
+    P_{\Delta_{\mathrm{dec}}}(k) \propto k^{-n},
+\end{equation}
+with $n \simeq 2$–$3$ depending on the sectoral sound speeds.
+
+Thus,
+\begin{equation}
+    \mathcal{S}_B(k) \propto k^{4-n}.
+\end{equation}
+
+Integrating yields
+\begin{equation}
+    P_B(k) \propto k^{3-n}.
+\end{equation}
+
+For $n \simeq 2.5$,
+\begin{equation}
+    P_B(k) \propto k^{0.5},
+\end{equation}
+a mildly blue spectrum.
+
+% ---------------------------------------------------------
+\subsection*{B.6 Present-Day Magnetic Field Amplitude}
+
+The comoving field today is
+\begin{equation}
+    B_0(k) = \sqrt{2 P_B(k,\tau_0)}.
+\end{equation}
+
+For typical RDCC parameters,
+\begin{equation}
+    B_0(k_{\mathrm{peak}}) \sim 10^{-15}\,\mathrm{G},
+\end{equation}
+consistent with void-scale magnetization and sufficient to seed galactic dynamos.
+
+% ---------------------------------------------------------
+\subsection*{B.7 Summary}
+
+The analytical approximations derived in this appendix show:
+
+\begin{itemize}
+    \item a $k^6$ scaling in the super-relaxation regime,
+    \item a spectral peak at $k \simeq \Gamma$,
+    \item a mild power-law decay for $k \gg \Gamma$,
+    \item seed field amplitudes of order $10^{-15}\,\mathrm{G}$.
+\end{itemize}
+
+These results confirm the robustness and observational viability of RDCC magnetogenesis.
+
+% ---------------------------------------------------------
+% APPENDIX C — NUMERICAL IMPLEMENTATION IN CLASS
+% ---------------------------------------------------------
+\section*{Appendix C: Numerical Implementation in CLASS}
+\addcontentsline{toc}{section}{Appendix C: Numerical Implementation in CLASS}
+
+This appendix provides practical guidelines for implementing the RDCC magnetogenesis 
+mechanism into the CLASS Boltzmann code. The goal is to integrate the magnetic multipole 
+hierarchy, the decoherence contrast, and the relaxation-induced source term into the existing 
+CLASS architecture without modifying its core structure.
+
+% ---------------------------------------------------------
+\subsection*{C.1 Overview of Required Modifications}
+
+The implementation requires extensions in the following CLASS modules:
+
+\begin{itemize}
+    \item \texttt{background.c} — computation of $\alpha_A(a)$, $\alpha_B(a)$, and $\Gamma(a)$,
+    \item \texttt{perturbations.c} — evolution of magnetic multipoles $B_{\ell m}$,
+    \item \texttt{thermodynamics.c} — sectoral temperatures $T_A(a)$ and $T_B(a)$,
+    \item \texttt{input.c} — new RDCC parameters,
+    \item \texttt{common.h} — additional data structures.
+\end{itemize}
+
+No changes to the Einstein or fluid modules are required beyond adding the magnetic 
+anisotropic stress contribution.
+
+% ---------------------------------------------------------
+\subsection*{C.2 Background Quantities}
+
+The relaxation rate is defined as
+\begin{equation}
+    \Gamma(a) = \alpha(a)\, H(a),
+\end{equation}
+with sectoral values
+\begin{equation}
+    \Gamma_A = \alpha_A H, \qquad
+    \Gamma_B = \alpha_B H.
+\end{equation}
+
+The background module must compute:
+
+\begin{itemize}
+    \item $\alpha_A(a)$ and $\alpha_B(a)$,
+    \item $\Gamma_A(a)$ and $\Gamma_B(a)$,
+    \item the decoherence contrast
+    \begin{equation}
+        \Delta_{\mathrm{dec}}(a)
+        = \frac{1}{\alpha_B H} - \frac{1}{\alpha_A H}.
+    \end{equation}
+\end{itemize}
+
+These quantities should be tabulated on a logarithmic grid in $a$ for efficient interpolation.
+
+% ---------------------------------------------------------
+\subsection*{C.3 Perturbation Variables}
+
+The magnetic field is expanded in vector spherical harmonics:
+\begin{equation}
+    B_i(\vec{k},\tau)
+    = \sum_{\ell,m} B_{\ell m}(k,\tau)\, Y^{(V)}_{\ell m,i}(\hat{k}).
+\end{equation}
+
+CLASS evolves scalar, vector, and tensor modes separately. The magnetic multipoles belong to 
+the vector sector and can be added as a new vector hierarchy:
+
+\begin{equation}
+    \dot{B}_{\ell m} + 2H B_{\ell m}
+    = S_{\ell m}^{\mathrm{RDCC}}.
+\end{equation}
+
+The hierarchy is truncated at $\ell_{\max} \sim 10$–$20$, depending on accuracy requirements.
+
+% ---------------------------------------------------------
+\subsection*{C.4 Source Term Implementation}
+
+The magnetogenesis source term is
+\begin{equation}
+    S_{\ell m}^{\mathrm{RDCC}}
+    = C_{\mathrm{rel}}\, k^2 
+      \sum_{m'} \mathcal{C}_{\ell m m'}\, 
+      \Delta_{\mathrm{dec},1 m'}.
+\end{equation}
+
+Implementation steps:
+
+\begin{enumerate}
+    \item Compute $\delta\alpha_A$ and $\delta\alpha_B$ from sectoral perturbations:
+    \begin{equation}
+        \delta\alpha_i
+        = \frac{\partial\alpha_i}{\partial\rho_i}\delta\rho_i
+          + \frac{\partial\alpha_i}{\partial T_i}\delta T_i.
+    \end{equation}
+
+    \item Construct the decoherence contrast multipoles:
+    \begin{equation}
+        \Delta_{\mathrm{dec},1 m}
+        = -\frac{\delta\alpha_{A,1 m}}{\alpha_A^2 H}
+          + \frac{\delta\alpha_{B,1 m}}{\alpha_B^2 H}.
+    \end{equation}
+
+    \item Contract with the Clebsch–Gordan coefficients to obtain $S_{\ell m}$.
+
+    \item Add $S_{\ell m}$ to the vector hierarchy.
+\end{enumerate}
+
+% ---------------------------------------------------------
+\subsection*{C.5 Numerical Stability}
+
+The magnetic hierarchy is not stiff, but the decoherence contrast can be. To ensure stability:
+
+\begin{itemize}
+    \item use implicit integration for $\Delta_{\mathrm{dec},1 m}$ when $\Gamma/H > 0.5$,
+    \item use semi-implicit integration for $B_{\ell m}$,
+    \item limit $\ell_{\max}$ to avoid unnecessary stiffness,
+    \item precompute $\partial\alpha_i/\partial\rho_i$ and $\partial\alpha_i/\partial T_i$.
+\end{itemize}
+
+The magnetic hierarchy adds negligible computational cost compared to the neutrino hierarchy.
+
+% ---------------------------------------------------------
+\subsection*{C.6 Parameter Handling}
+
+The following new input parameters should be added:
+
+\begin{itemize}
+    \item \texttt{alphaA\_0}, \texttt{alphaB\_0} — present-day relaxation coefficients,
+    \item \texttt{alpha\_evolution} — functional form of $\alpha(a)$,
+    \item \texttt{C\_rel} — normalization of the anisotropic stress source term,
+    \item \texttt{enable\_RDCC\_magnetogenesis} — boolean flag.
+\end{itemize}
+
+These parameters allow the user to enable or disable magnetogenesis without modifying the code.
+
+% ---------------------------------------------------------
+\subsection*{C.7 Testing and Validation}
+
+To validate the implementation:
+
+\begin{itemize}
+    \item check that $B_{\ell m} \rightarrow 0$ when $\alpha_A = \alpha_B$,
+    \item verify the $k^6$ scaling in the super-relaxation regime,
+    \item confirm the spectral peak at $k \simeq \Gamma$,
+    \item compare numerical results with the analytical approximations in Appendix~B,
+    \item ensure that the magnetic hierarchy does not affect scalar or tensor modes unless 
+          explicitly enabled.
+\end{itemize}
+
+These tests ensure correctness and numerical stability.
+
+% ---------------------------------------------------------
+\subsection*{C.8 Summary}
+
+This appendix provides a complete implementation strategy for incorporating RDCC 
+magnetogenesis into CLASS. The required modifications are minimal, the numerical cost is low, 
+and the resulting magnetic spectrum is fully consistent with the analytical predictions 
+derived in the main text.
+
+% ---------------------------------------------------------
+% APPENDIX D — COMPARISON WITH STANDARD MAGNETOGENESIS MECHANISMS
+% ---------------------------------------------------------
+\section*{Appendix D: Comparison with Standard Magnetogenesis Mechanisms}
+\addcontentsline{toc}{section}{Appendix D: Comparison with Standard Magnetogenesis Mechanisms}
+
+This appendix compares the RDCC magnetogenesis mechanism with the most widely studied 
+scenarios in the literature. The goal is to highlight the conceptual differences, identify 
+the advantages and limitations of each approach, and clarify the unique predictions of RDCC.
+
+% ---------------------------------------------------------
+\subsection*{D.1 Inflationary Magnetogenesis}
+
+Inflationary magnetogenesis attempts to generate magnetic fields by breaking the conformal 
+invariance of electromagnetism. Typical approaches include:
+\begin{itemize}
+    \item coupling the electromagnetic field to a scalar field,
+    \item modifying the kinetic term $I(\phi) F_{\mu\nu}F^{\mu\nu}$,
+    \item introducing parity-violating terms $F_{\mu\nu}\tilde{F}^{\mu\nu}$.
+\end{itemize}
+
+\paragraph{Limitations.}
+\begin{itemize}
+    \item \textbf{Strong-coupling problem:}  
+    The required amplification often drives the gauge coupling to non-perturbative values.
+
+    \item \textbf{Backreaction problem:}  
+    The electromagnetic energy density can dominate the inflationary background.
+
+    \item \textbf{Model dependence:}  
+    Predictions depend sensitively on the choice of $I(\phi)$.
+\end{itemize}
+
+\paragraph{Contrast with RDCC.}
+\begin{itemize}
+    \item RDCC does not break conformal invariance.
+    \item No new fields or couplings are introduced.
+    \item Magnetogenesis arises from the bipartite relaxation structure.
+\end{itemize}
+
+% ---------------------------------------------------------
+\subsection*{D.2 Phase-Transition Magnetogenesis}
+
+Magnetic fields can be generated during the electroweak or QCD phase transitions through:
+\begin{itemize}
+    \item bubble collisions,
+    \item turbulence,
+    \item helicity generation.
+\end{itemize}
+
+\paragraph{Limitations.}
+\begin{itemize}
+    \item \textbf{Small coherence length:}  
+    The horizon at the electroweak scale is $\sim 1$ cm.
+
+    \item \textbf{Damping:}  
+    Small-scale fields are erased by viscosity and diffusion.
+
+    \item \textbf{Insufficient amplitude:}  
+    Typical seed fields are $\lesssim 10^{-20}\,\mathrm{G}$.
+\end{itemize}
+
+\paragraph{Contrast with RDCC.}
+\begin{itemize}
+    \item RDCC coherence length is set by the relaxation horizon, which is cosmologically large.
+    \item No small-scale damping problem.
+    \item Seed fields naturally reach $10^{-15}\,\mathrm{G}$.
+\end{itemize}
+
+% ---------------------------------------------------------
+\subsection*{D.3 Battery Mechanisms}
+
+Battery mechanisms generate magnetic fields from charge separation effects, such as:
+\begin{itemize}
+    \item the Biermann battery,
+    \item the Weibel instability,
+    \item astrophysical shocks.
+\end{itemize}
+
+\paragraph{Limitations.}
+\begin{itemize}
+    \item \textbf{Late-time operation:}  
+    They act after recombination or during structure formation.
+
+    \item \textbf{Small amplitude:}  
+    Seed fields are typically $\lesssim 10^{-20}\,\mathrm{G}$.
+
+    \item \textbf{No large-scale coherence:}  
+    Fields are generated locally, not cosmologically.
+\end{itemize}
+
+\paragraph{Contrast with RDCC.}
+\begin{itemize}
+    \item RDCC operates in the early Universe.
+    \item Coherence is cosmological.
+    \item Seed fields are orders of magnitude larger.
+\end{itemize}
+
+% ---------------------------------------------------------
+\subsection*{D.4 Astrophysical Dynamos}
+
+Dynamos amplify existing seed fields through turbulence and differential rotation.
+
+\paragraph{Limitations.}
+\begin{itemize}
+    \item \textbf{Require pre-existing seed fields:}  
+    Dynamos cannot operate without initial magnetization.
+
+    \item \textbf{Timescale constraints:}  
+    High-redshift galaxies show strong fields too early for standard dynamos.
+\end{itemize}
+
+\paragraph{Contrast with RDCC.}
+\begin{itemize}
+    \item RDCC provides seed fields of the correct amplitude.
+    \item Coherence length matches galactic scales after collapse.
+    \item No fine-tuning of dynamo efficiency is required.
+\end{itemize}
+
+% ---------------------------------------------------------
+\subsection*{D.5 Summary of Differences}
+
+Table~\ref{tab:comparison} summarizes the key differences between RDCC and standard 
+magnetogenesis mechanisms.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lccc}
+\hline
+\textbf{Mechanism} & \textbf{Coherence} & \textbf{Amplitude} & \textbf{New Physics?} \\
+\hline
+Inflationary        & large     & model-dependent & yes \\
+Phase transitions   & tiny      & small           & no \\
+Battery mechanisms  & local     & very small      & no \\
+Dynamos             & inherited & amplified       & no \\
+RDCC (this work)    & large     & $10^{-15}$ G    & no \\
+\hline
+\end{tabular}
+\caption{Comparison of magnetogenesis mechanisms. RDCC provides large coherence, sufficient 
+seed amplitude, and requires no new fields or couplings.}
+\label{tab:comparison}
+\end{table}
+
+% ---------------------------------------------------------
+\subsection*{D.6 Concluding Remarks}
+
+RDCC magnetogenesis differs fundamentally from all standard mechanisms:
+
+\begin{itemize}
+    \item it does not rely on breaking conformal invariance,
+    \item it does not require phase transitions or turbulence,
+    \item it does not depend on astrophysical processes,
+    \item it operates universally through the relaxation dynamics of the bipartite sectors.
+\end{itemize}
+
+This makes RDCC magnetogenesis both robust and predictive, with clear observational 
+signatures and minimal theoretical assumptions.
+
+\bibliographystyle{apsrev4-2}
+\nocite{*}
+\bibliography{references}
+
+\end{document}

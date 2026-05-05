@@ -1,0 +1,189 @@
+\documentclass[11pt,a4paper]{article}
+
+% ---------------------------------------------------------
+% PREAMBLE (stable, warning-free, Overleaf-safe)
+% ---------------------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{bm}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{cite}
+\usepackage{authblk}
+\usepackage{physics}
+\usepackage{mathtools}
+\usepackage{textgreek}
+\geometry{margin=2.4cm}
+
+\title{\textbf{Companion LXXIV: Fisher Information Geometry of Persistence Diagrams in the Relaxation-Driven Cyclic Cosmology}}
+\author{Michael Lehmann \\ \texttt{mi.lehmann@gmx.de}}
+\date{April 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Fisher information geometry provides a Riemannian structure on statistical 
+manifolds, quantifying the sensitivity of probability distributions to underlying 
+model parameters. Applied to persistence diagrams, this framework measures how 
+topological features respond to changes in cosmological dynamics. Building on the 
+Hilbert-space embeddings, kernel methods, and statistical tests developed in 
+previous Companions, this work introduces the Fisher information metric for 
+persistence diagrams in the Relaxation-Driven Cyclic Cosmology (RDCC). The 
+relaxation mechanism modifies the scale-dependent evolution of the gravitational 
+potential, inducing characteristic changes in the Fisher geometry of topological 
+ensembles. The resulting information metric provides a powerful tool for 
+parameter sensitivity, model discrimination, and information-theoretic analysis of 
+weak-lensing topology.
+\end{abstract}
+% ---------------------------------------------------------
+\section{Introduction}
+
+Persistence diagrams encode the birth and death of topological features in weak-
+lensing convergence fields. Previous Companions developed Hilbert-space embeddings, 
+kernel PCA, and maximum mean discrepancy (MMD) as tools for analyzing and 
+distinguishing the Relaxation-Driven Cyclic Cosmology (RDCC) from ΛCDM.
+
+Fisher information geometry extends this framework by introducing a Riemannian 
+metric on the space of probability distributions of persistence diagrams. This 
+metric quantifies how sensitively the distribution responds to changes in 
+cosmological parameters. In RDCC, the relaxation mechanism modifies the 
+gravitational potential in a scale-dependent manner, producing characteristic 
+signatures in the Fisher information of topological ensembles.
+% ---------------------------------------------------------
+\section{Fisher Information Geometry}
+
+Given a family of probability densities $p(x|\theta)$ depending on parameters 
+$\theta = (\theta_{1}, \dots, \theta_{d})$, the Fisher information matrix is
+
+\begin{equation}
+    I_{ab}(\theta)
+    = \mathbb{E}
+      \left[
+        \partial_{\theta_{a}} \log p(x|\theta)
+        \,
+        \partial_{\theta_{b}} \log p(x|\theta)
+      \right].
+\end{equation}
+
+This defines a Riemannian metric on the parameter manifold.
+
+For persistence diagrams, we consider the induced density in an RKHS via the 
+embedding $\Phi(D)$:
+
+
+
+\[
+    p(D|\theta)
+    \propto
+    \exp\left(
+        - \| \Phi(D) - \mu(\theta) \|_{\mathcal{H}}^{2}
+    \right),
+\]
+
+
+
+where $\mu(\theta)$ is the mean embedding.
+% ---------------------------------------------------------
+\section{RDCC Modification of Persistence Diagram Distributions}
+
+In RDCC, the convergence evolves as
+
+\begin{equation}
+    \kappa_{\mathrm{RDCC}}(\ell)
+    = \kappa(\ell)
+      \left[
+        1 - \chi_{\kappa}
+        \left(\frac{\ell}{\ell_{\mathrm{rel}}}\right)^{\alpha}
+      \right].
+\end{equation}
+
+This modifies the distribution of persistence diagrams:
+
+
+
+\[
+    p_{\mathrm{RDCC}}(D|\theta)
+    = p(D|\theta)
+      \left[
+        1 - \chi_{p}
+        \left(\frac{\ell}{\ell_{\mathrm{rel}}}\right)^{\alpha}
+      \right].
+\]
+
+
+
+The mean embedding shifts as
+
+
+
+\[
+    \mu_{\mathrm{RDCC}}(\theta)
+    = \mu(\theta)
+      \left[
+        1 - \chi_{\mu}
+        \left(\frac{\ell}{\ell_{\mathrm{rel}}}\right)^{\alpha}
+      \right].
+\]
+
+
+% ---------------------------------------------------------
+\section{Fisher Information in RDCC}
+
+The RDCC Fisher information matrix becomes
+
+\begin{equation}
+    I^{\mathrm{RDCC}}_{ab}
+    = I_{ab}
+      \left[
+        1 - \chi_{I,ab}
+        \left(\frac{\ell}{\ell_{\mathrm{rel}}}\right)^{\alpha}
+      \right].
+\end{equation}
+
+RDCC induces:
+
+\begin{itemize}
+    \item enhanced sensitivity to large-scale topological modes,
+    \item suppressed sensitivity to small-scale modes,
+    \item a characteristic turnover near $\ell_{\mathrm{rel}}$,
+    \item modified curvature of the information manifold,
+    \item altered geodesic distances between topological distributions.
+\end{itemize}
+% ---------------------------------------------------------
+\section{Information-Geometric Signatures of RDCC}
+
+The Fisher metric reveals how RDCC modifies the information content of topological 
+features. Key signatures include:
+
+\begin{itemize}
+    \item increased Fisher curvature for long-lived persistence features,
+    \item reduced curvature for short-lived features,
+    \item anisotropic deformation of the parameter manifold,
+    \item enhanced distinguishability of RDCC from ΛCDM at large scales,
+    \item modified geodesic flow of topological distributions across redshift.
+\end{itemize}
+
+These effects provide a direct information-theoretic probe of the RDCC 
+gravitational field.
+% ---------------------------------------------------------
+\section{Conclusion}
+
+Fisher information geometry provides a powerful framework for analyzing the 
+parameter sensitivity of persistence diagrams in the Relaxation-Driven Cyclic 
+Cosmology. The relaxation mechanism modifies the Fisher metric in a scale-dependent 
+manner, producing distinctive signatures in the information geometry of weak-
+lensing topology. These effects offer a direct, information-theoretic window into 
+the relaxation scale and the temporal structure of the RDCC gravitational field. 
+The present Companion establishes the foundation for future studies of Fisher 
+kernels, parameter forecasts, and information geometry in cosmological topology.
+
+\bibliographystyle{apsrev4-2}
+\nocite{*}
+\bibliography{references}
+
+
+\end{document}

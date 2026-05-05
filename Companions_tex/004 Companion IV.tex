@@ -1,0 +1,458 @@
+\documentclass[11pt,a4paper]{article}
+
+% ---------------------------------------------------------
+% PACKAGES
+% ---------------------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+\usepackage{amsmath, amssymb, amsfonts, bm}
+\usepackage{mathtools}
+\usepackage{physics}
+\usepackage{tensor}
+\usepackage{bbm}
+
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{cite}
+
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+
+\usepackage{microtype}
+
+% ---------------------------------------------------------
+% HYPERREF SETUP
+% ---------------------------------------------------------
+\usepackage[colorlinks=true,
+            linkcolor=blue,
+            citecolor=blue,
+            urlcolor=blue,
+            pdfauthor={Michael Lehmann},
+            pdftitle={The Global CPT State and the Mirror Sector in RDCC},
+            pdfsubject={Relaxation-Driven Cyclic Cosmology},
+            pdfkeywords={RDCC, CPT symmetry, mirror sector, cosmology}
+           ]{hyperref}
+
+% ---------------------------------------------------------
+% TITLE, AUTHOR, DATE
+% ---------------------------------------------------------
+\title{\textbf{The Global CPT State and the Mirror Sector\\
+in Relaxation-Driven Cyclic Cosmology (RDCC)}}
+
+\author{Michael Lehmann \\
+        Independent Researcher \\
+        \texttt{mi.lehmann@gmx.de}}
+
+\date{March 2026}
+
+% ---------------------------------------------------------
+% DOCUMENT START
+% ---------------------------------------------------------
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Relaxation-Driven Cyclic Cosmology (RDCC) describes the Universe as a bipartite, CPT-symmetric system composed of a visible and a mirror sector. While Companion~I established the gravitational foundations and Companion~II and III developed the tensor and scalar phenomenology, the global structure of the cosmological state and the physical role of the mirror sector have not yet been presented in a unified framework. This paper fills that conceptual gap by constructing the global CPT state, analyzing the bipartite Hilbert-space structure, and deriving the thermodynamic and dynamical properties of the mirror sector. The dimension-six operator that drives relaxation is shown to mediate a small but unavoidable exchange of energy and information between the sectors, linking the CPT-symmetric bounce to late-time observables. The resulting picture is that of a Universe whose large-scale evolution, cyclic structure, and observable deviations from $\Lambda$CDM all emerge from the interplay between CPT symmetry, bipartite entanglement, and relaxation dynamics. Companion~IV therefore provides the conceptual foundation for the RDCC framework and prepares the ground for the observational synthesis presented in Companion~V.
+\end{abstract}
+
+\tableofcontents
+\newpage
+
+% ---------------------------------------------------------
+% SECTION 1
+% ---------------------------------------------------------
+\section{Introduction}
+
+Relaxation-Driven Cyclic Cosmology (RDCC) proposes that the Universe is fundamentally a CPT-symmetric system composed of two conjugate sectors: the visible sector and a mirror sector with identical microphysics. This bipartite structure is not an auxiliary assumption but a direct consequence of imposing global CPT symmetry on the cosmological state. The bounce connecting successive cycles acts as the CPT fixed point, enforcing perfect matching between the sectors at the moment of minimal scale factor.
+
+Companion~I developed the gravitational foundations of RDCC, including the role of the cuscuton field in generating a nonsingular bounce. Companion~II established the tensor phenomenology, showing that interference between the tensor modes of the two sectors produces a characteristic log-periodic modulation of the stochastic gravitational-wave background. Companion~III introduced the relaxation dynamics that govern the scalar sector, the dark-radiation excess, and the late-time growth of structure.
+
+The present paper, Companion~IV, provides the conceptual and structural foundation for these results by constructing the global CPT state, analyzing the bipartite Hilbert-space structure, and deriving the thermodynamic and dynamical properties of the mirror sector. This framework explains why the Universe is bipartite, how the sectors remain correlated across the bounce, and why the relaxation parameter controls all observable deviations from $\Lambda$CDM.
+
+% ---------------------------------------------------------
+% SECTION 2
+% ---------------------------------------------------------
+\section{The Global CPT State}
+
+The defining feature of RDCC is that the Universe is described not by a single-sector quantum state but by a bipartite, CPT-symmetric global state. This structure is required once one demands that the cosmological state itself, rather than only the microscopic laws, respects CPT symmetry. The bounce connecting successive cycles acts as the fixed point of this symmetry, enforcing a precise relation between the visible and mirror sectors.
+
+\subsection{CPT Symmetry as a State-Level Principle}
+
+In conventional quantum field theory, CPT symmetry is a property of the dynamics: the Hamiltonian is invariant under the combined action of charge conjugation, parity, and time reversal. RDCC extends this principle to the cosmological state,
+\begin{equation}
+    |\Psi_{\mathrm{CPT}}\rangle = \Theta\,|\Psi_{\mathrm{CPT}}\rangle,
+\end{equation}
+where $\Theta$ is the antiunitary CPT operator. This condition implies that the state must contain two sectors related by CPT conjugation. The visible sector corresponds to the forward-time branch, while the mirror sector corresponds to the backward-time branch.
+
+\subsection{Bipartite Hilbert-Space Structure}
+
+The global Hilbert space factorizes into two identical components,
+\begin{equation}
+    \mathcal{H} = \mathcal{H}_{(+)} \otimes \mathcal{H}_{(-)},
+\end{equation}
+where $\mathcal{H}_{(+)}$ describes the visible sector and $\mathcal{H}_{(-)}$ its CPT-conjugate mirror. The global state takes the form
+\begin{equation}
+    |\Psi_{\mathrm{CPT}}\rangle = \sum_i \lambda_i\,|i\rangle_{(+)} \otimes \Theta|i\rangle_{(-)},
+\end{equation}
+with $\lambda_i$ real and positive. This structure ensures that the two sectors are entangled in a way that enforces CPT symmetry at the level of the full cosmological state.
+
+\subsection{The Bounce as a CPT Fixed Point}
+
+The bounce plays a special role in RDCC: it is the moment at which the two sectors coincide. At the bounce time $t_b$, the scale factor reaches its minimum, and the global state satisfies
+\begin{equation}
+    \rho_{(+)}(t_b) = \rho_{(-)}(t_b), \qquad
+    T_{(+)}(t_b) = T_{(-)}(t_b),
+\end{equation}
+reflecting perfect CPT matching. This condition is not imposed by hand but follows from the requirement that the global state be invariant under $\Theta$. The bounce therefore acts as the pivot point around which the two sectors evolve in opposite time directions.
+
+\subsection{Entanglement and Information Flow}
+
+The bipartite structure implies that the visible and mirror sectors are entangled at the bounce. This entanglement is responsible for the matching of thermodynamic quantities and for the vanishing of the relaxation parameter,
+\begin{equation}
+    \alpha(t_b) = 0.
+\end{equation}
+As the Universe evolves away from the bounce, the entanglement becomes diluted, and the sectors begin to diverge. The dimension-six operator mediates a small exchange of energy and information, ensuring that the sectors remain weakly correlated even at late times.
+
+\subsection{Physical Interpretation}
+
+The global CPT state provides a unified picture of the Universe as a pair of time-reversed cosmological branches. The visible sector evolves forward in time from the bounce, while the mirror sector evolves backward. Both branches share identical microphysics, and their slight asymmetry at late times is governed by the relaxation dynamics. This structure explains the origin of the mirror sector, the existence of dark radiation, and the correlated deviations from $\Lambda$CDM.
+
+The next section develops the mathematical structure of the bipartite Hilbert space in more detail and examines how the mirror sector inherits its microphysical properties from the CPT symmetry of the global state.
+
+
+% ---------------------------------------------------------
+% SECTION 3
+% ---------------------------------------------------------
+\section{Bipartite Hilbert Space Structure}
+
+The global CPT state introduced in the previous section implies that the Universe is fundamentally described by a bipartite Hilbert space. This structure is not an auxiliary construction but a direct consequence of imposing CPT symmetry at the level of the cosmological state. The visible and mirror sectors arise as the two components of this bipartite structure, each carrying identical microphysics but evolving in opposite time directions.
+
+\subsection{Factorization of the Global Hilbert Space}
+
+The global Hilbert space factorizes into two identical components,
+\begin{equation}
+    \mathcal{H} = \mathcal{H}_{(+)} \otimes \mathcal{H}_{(-)},
+\end{equation}
+where $\mathcal{H}_{(+)}$ describes the visible sector and $\mathcal{H}_{(-)}$ its CPT-conjugate mirror. Each sector contains a full copy of the Standard Model degrees of freedom, including gauge fields, fermions, and scalar fields. The factorization is exact at the level of the microscopic theory but becomes dynamically relevant only through the relaxation dynamics.
+
+\subsection{CPT Conjugation Between the Sectors}
+
+The CPT operator $\Theta$ acts as an antiunitary map between the two sectors,
+\begin{equation}
+    \Theta: \mathcal{H}_{(+)} \longrightarrow \mathcal{H}_{(-)},
+\end{equation}
+and satisfies
+\begin{equation}
+    \Theta^2 = \mathbbm{1}.
+\end{equation}
+For any basis state $|i\rangle_{(+)}$ in the visible sector, the corresponding mirror-sector state is given by
+\begin{equation}
+    |i\rangle_{(-)} = \Theta\,|i\rangle_{(+)}.
+\end{equation}
+This relation ensures that the microphysics of the two sectors is identical, with all quantum numbers appropriately conjugated.
+
+\subsection{Structure of the Global CPT State}
+
+The global cosmological state takes the Schmidt-decomposed form
+\begin{equation}
+    |\Psi_{\mathrm{CPT}}\rangle = \sum_i \lambda_i\,|i\rangle_{(+)} \otimes \Theta|i\rangle_{(-)},
+\end{equation}
+where the coefficients $\lambda_i$ encode the entanglement between the sectors. The state is invariant under the action of $\Theta$,
+\begin{equation}
+    \Theta\,|\Psi_{\mathrm{CPT}}\rangle = |\Psi_{\mathrm{CPT}}\rangle,
+\end{equation}
+which enforces the matching conditions at the bounce and constrains the evolution of the relaxation parameter.
+
+\subsection{Entanglement at the Bounce}
+
+At the bounce, the entanglement between the sectors is maximal. The reduced density matrices satisfy
+\begin{equation}
+    \rho_{(+)}(t_b) = \rho_{(-)}(t_b),
+\end{equation}
+reflecting perfect CPT matching. This condition ensures that the relaxation parameter vanishes at the bounce,
+\begin{equation}
+    \alpha(t_b) = 0,
+\end{equation}
+and that the two sectors begin their evolution from a common thermodynamic and geometric state.
+
+\subsection{Decoherence and Sectoral Divergence}
+
+As the Universe evolves away from the bounce, the entanglement between the sectors becomes diluted. The visible and mirror sectors begin to diverge due to the expansion of the Universe and the relaxation dynamics induced by the dimension-six operator. The reduced density matrices evolve according to
+\begin{equation}
+    \rho_{(\pm)}(t) = \mathrm{Tr}_{(\mp)}\left[|\Psi_{\mathrm{CPT}}(t)\rangle\langle\Psi_{\mathrm{CPT}}(t)|\right],
+\end{equation}
+and the deviation between them is quantified by the relaxation parameter $\alpha(t)$. This divergence is small but cosmologically significant, giving rise to the dark-radiation excess, the scalar spectral tilt, and the percent-level growth-rate deviation.
+
+\subsection{Physical Interpretation}
+
+The bipartite Hilbert-space structure provides a natural explanation for the existence of the mirror sector and its role in cosmology. The mirror sector is not an independent universe but the CPT-conjugate branch of the visible sector, entangled with it at the bounce and weakly coupled through the relaxation dynamics. This structure unifies the microphysical symmetry principles with the large-scale evolution of the Universe.
+
+The next section develops the microphysical properties of the mirror sector, showing how its thermodynamics, particle content, and cosmological evolution follow from the bipartite structure and the global CPT symmetry.
+
+% ---------------------------------------------------------
+% SECTION 4
+% ---------------------------------------------------------
+\section{Mirror Sector Microphysics}
+
+The mirror sector arises as the CPT-conjugate component of the global cosmological state. Its existence is not optional: it follows directly from the bipartite Hilbert-space structure and the requirement that the global state be invariant under CPT. The mirror sector contains a complete copy of the Standard Model, with identical particle content, gauge interactions, and microphysical laws. The differences between the sectors emerge dynamically through the relaxation mechanism and the expansion of the Universe.
+
+\subsection{Identical Microphysics from CPT Symmetry}
+
+CPT symmetry implies that the mirror sector must possess the same local quantum field theory as the visible sector. For every field $\Phi_{(+)}$ in the visible sector, there exists a corresponding mirror field
+\begin{equation}
+    \Phi_{(-)} = \Theta\,\Phi_{(+)}\,\Theta^{-1},
+\end{equation}
+with identical dynamics. The Lagrangian therefore factorizes as
+\begin{equation}
+    \mathcal{L} = \mathcal{L}_{(+)} + \mathcal{L}_{(-)} + \mathcal{L}_{\mathrm{int}},
+\end{equation}
+where $\mathcal{L}_{\mathrm{int}}$ contains only higher-dimensional operators, the leading one being the dimension-six operator discussed in Companion~III. Renormalizable interactions between the sectors are forbidden by gauge invariance and CPT symmetry.
+
+\subsection{Thermodynamic Matching at the Bounce}
+
+At the bounce, the visible and mirror sectors satisfy
+\begin{equation}
+    T_{(+)}(t_b) = T_{(-)}(t_b), \qquad
+    \rho_{(+)}(t_b) = \rho_{(-)}(t_b),
+\end{equation}
+reflecting perfect CPT matching. This condition ensures that the relaxation parameter vanishes at the bounce and that the two sectors begin their evolution from a common thermodynamic state. The entanglement structure of the global CPT state enforces this matching and prevents any initial asymmetry.
+
+\subsection{Post-Bounce Temperature Evolution}
+
+After the bounce, the sectors evolve independently except for the small coupling induced by the dimension-six operator. Because the visible and mirror sectors experience slightly different expansion histories due to the relaxation dynamics, a small temperature asymmetry develops:
+\begin{equation}
+    \frac{T_{(-)}}{T_{(+)}} = 1 + \mathcal{O}(\alpha_{\mathrm{IR}}).
+\end{equation}
+This asymmetry is responsible for the dark-radiation excess and is one of the key observational signatures of RDCC.
+
+\subsection{Mirror-Sector Particle Content}
+
+The mirror sector contains the full Standard Model particle content:
+\begin{itemize}
+    \item mirror quarks and leptons,
+    \item mirror gauge bosons ($W'$, $Z'$, $\gamma'$, $g'$),
+    \item a mirror Higgs field,
+    \item and all corresponding composite states.
+\end{itemize}
+Because the mirror sector is thermally decoupled from the visible sector after the bounce, its particle abundances evolve independently. The only communication between the sectors occurs through the dimension-six operator, which mediates a small exchange of energy and information.
+
+\subsection{Cosmological Role of the Mirror Sector}
+
+The mirror sector contributes to the total energy density of the Universe primarily through its relativistic degrees of freedom. Its contribution to the effective number of neutrino species is
+\begin{equation}
+    \Delta N_{\mathrm{eff}} \sim \alpha_{\mathrm{IR}},
+\end{equation}
+as shown in Companion~III. The mirror sector therefore plays a central role in the early-Universe cosmology of RDCC, influencing the expansion rate, the damping tail of the CMB, and the growth of structure.
+
+\subsection{Interpretation within the Global CPT Framework}
+
+The mirror sector is best understood not as a hidden copy of the visible sector but as the CPT-conjugate branch of the global cosmological state. Its thermodynamic and dynamical properties follow from the entanglement structure at the bounce and the relaxation dynamics that govern the divergence of the sectors. This interpretation unifies the microphysical symmetry principles with the large-scale evolution of the Universe and provides a coherent explanation for the existence and properties of the mirror sector.
+
+The next section examines how the inter-sector coupling mediates the exchange of energy and information between the sectors, linking the global CPT structure to the relaxation dynamics developed in Companion~III.
+
+% ---------------------------------------------------------
+% SECTION 5
+% ---------------------------------------------------------
+\section{Inter-Sector Coupling and Information Flow}
+
+The visible and mirror sectors evolve independently at the level of renormalizable interactions, but they remain weakly correlated through higher-dimensional operators and through the entanglement structure inherited from the CPT-symmetric bounce. This section develops the physical and mathematical structure of the inter-sector coupling, showing how a small exchange of energy and information arises and how it governs the relaxation dynamics central to RDCC.
+
+\subsection{Origin of the Inter-Sector Coupling}
+
+Gauge invariance forbids renormalizable interactions between the visible and mirror sectors. The leading allowed interaction is therefore a dimension-six operator of the form
+\begin{equation}
+    \mathcal{O}_6 = \frac{1}{M^2}\,\mathcal{J}^{\mu}_{(+)}\,\mathcal{J}_{\mu}^{(-)},
+\end{equation}
+where $\mathcal{J}^{\mu}_{(\pm)}$ are energy-momentum-like currents in the two sectors. This operator is CPT-invariant, symmetric under the exchange of the sectors, and irrelevant in the renormalization-group sense. Its irrelevance ensures that the coupling is weak at late times, while its universality ensures that it cannot be removed without violating CPT symmetry at the level of the global state.
+
+\subsection{Energy Exchange After the Bounce}
+
+The dimension-six operator mediates a small exchange of energy between the sectors. The continuity equations take the form
+\begin{equation}
+    \dot{\rho}_{(\pm)} + 3H\left(\rho_{(\pm)} + p_{(\pm)}\right)
+    = \pm Q,
+\end{equation}
+where $Q$ is the inter-sector transfer rate. At leading order,
+\begin{equation}
+    Q \propto \frac{1}{M^2}\,\rho_{(+)}\,\rho_{(-)}.
+\end{equation}
+Because the sectors are perfectly matched at the bounce, the initial transfer vanishes. As the sectors diverge due to the expansion of the Universe, a small but nonzero transfer develops, generating the temperature asymmetry responsible for the dark-radiation excess.
+
+\subsection{Information Flow and the Relaxation Parameter}
+
+The inter-sector coupling does not merely transfer energy; it also transfers information. The relaxation parameter
+\begin{equation}
+    \alpha(t) = \frac{\rho_{(+)} - \rho_{(-)}}{\rho_{(+)} + \rho_{(-)}}
+\end{equation}
+quantifies the deviation from perfect CPT matching. Its evolution equation,
+\begin{equation}
+    \dot{\alpha} = -\Gamma\,\alpha + \mathcal{S}(t),
+\end{equation}
+encodes the competition between the dilution of entanglement (which drives the sectors apart) and the inter-sector coupling (which partially restores correlation). The infrared fixed point,
+\begin{equation}
+    \alpha_{\mathrm{IR}} \sim 10^{-2},
+\end{equation}
+emerges from this balance and determines all correlated deviations from $\Lambda$CDM.
+
+\subsection{CPT Symmetry and the Direction of Information Flow}
+
+Although the visible and mirror sectors evolve in opposite time directions relative to the bounce, the inter-sector coupling respects CPT symmetry. The transfer term $Q$ changes sign between the sectors, ensuring that the global state remains invariant under the action of $\Theta$. The information flow is therefore not directional in the usual thermodynamic sense; instead, it reflects the structure of the global CPT state and the entanglement inherited from the bounce.
+
+\subsection{Cosmological Consequences}
+
+The inter-sector coupling has several observable consequences:
+\begin{itemize}
+    \item It generates the small temperature asymmetry responsible for the dark-radiation excess.
+    \item It controls the scalar spectral tilt through the relaxation dynamics.
+    \item It modifies the late-time growth rate of structure.
+    \item It influences the tensor sector by correlating the amplitudes of the two branches.
+\end{itemize}
+These effects are all proportional to $\alpha_{\mathrm{IR}}$, making the inter-sector coupling the physical origin of the RDCC correlation structure.
+
+\subsection{Interpretation Within the Bipartite Framework}
+
+The inter-sector coupling is best understood as a remnant of the entanglement structure at the bounce. It ensures that the two sectors do not evolve as completely independent universes but remain weakly correlated throughout cosmic history. This correlation is essential for the predictive power of RDCC and for the existence of the universal infrared fixed point.
+
+The next section examines the cosmological implications of the global CPT structure, focusing on how the bipartite state shapes the large-scale evolution of the Universe and the emergence of the cyclic structure.
+
+% ---------------------------------------------------------
+% SECTION 6
+% ---------------------------------------------------------
+\section{Cosmological Consequences of the Global CPT Structure}
+
+The global CPT structure of RDCC shapes the evolution of the Universe across all epochs. The bipartite Hilbert-space structure, the entanglement at the bounce, and the weak inter-sector coupling together determine the thermodynamic history, the expansion rate, and the observable deviations from $\Lambda$CDM. This section synthesizes these consequences and highlights the unifying role of the global CPT state.
+
+\subsection{The Bounce as a Thermodynamic and Geometric Pivot}
+
+The bounce is the moment at which the two sectors coincide. Because the global state is CPT-invariant, the bounce enforces
+\begin{equation}
+    \rho_{(+)}(t_b) = \rho_{(-)}(t_b), \qquad
+    T_{(+)}(t_b) = T_{(-)}(t_b),
+\end{equation}
+and sets the relaxation parameter to zero,
+\begin{equation}
+    \alpha(t_b) = 0.
+\end{equation}
+This matching condition ensures that the Universe begins each cycle from a state of perfect CPT symmetry. The subsequent divergence of the sectors is therefore a dynamical effect, not an initial asymmetry.
+
+\subsection{Post-Bounce Divergence and the Emergence of Asymmetry}
+
+After the bounce, the visible and mirror sectors evolve independently under the expansion of the Universe. The dilution of entanglement and the irrelevance of the inter-sector coupling cause the sectors to diverge slightly. This divergence is quantified by the relaxation parameter,
+\begin{equation}
+    \alpha(t) = \frac{\rho_{(+)} - \rho_{(-)}}{\rho_{(+)} + \rho_{(-)}},
+\end{equation}
+which grows from zero at the bounce to its infrared fixed-point value,
+\begin{equation}
+    \alpha_{\mathrm{IR}} \sim 10^{-2}.
+\end{equation}
+This small asymmetry is responsible for the dark-radiation excess, the scalar spectral tilt, and the percent-level growth-rate deviation.
+
+\subsection{Dark Radiation from the Mirror Sector}
+
+The mirror sector contributes to the total radiation density of the Universe. Because the sectors develop a small temperature asymmetry,
+\begin{equation}
+    \frac{T_{(-)}}{T_{(+)}} = 1 + \mathcal{O}(\alpha_{\mathrm{IR}}),
+\end{equation}
+the mirror sector contributes a small but nonzero amount of dark radiation. The resulting excess in the effective number of neutrino species is
+\begin{equation}
+    \Delta N_{\mathrm{eff}} \sim \alpha_{\mathrm{IR}},
+\end{equation}
+as derived in Companion~III. This prediction is robust and independent of the detailed microphysics of the mirror sector.
+
+\subsection{Scalar and Tensor Signatures}
+
+The global CPT structure influences both the scalar and tensor sectors:
+\begin{itemize}
+    \item The scalar spectral tilt arises from the relaxation-induced correction to the background evolution,
+    \begin{equation}
+        n_s - 1 = -2\alpha_{\mathrm{IR}}.
+    \end{equation}
+    \item The tensor sector exhibits a log-periodic modulation due to interference between the two branches of the global state, as shown in Companion~II.
+\end{itemize}
+These signatures provide independent probes of the relaxation dynamics and the bipartite structure of the Universe.
+
+\subsection{Late-Time Growth of Structure}
+
+The relaxation dynamics modify the effective gravitational coupling and the expansion history, leading to a percent-level deviation in the growth rate of structure,
+\begin{equation}
+    \frac{\Delta(f\sigma_8)}{(f\sigma_8)} \sim \alpha_{\mathrm{IR}}.
+\end{equation}
+This deviation is correlated with the scalar spectral tilt and the dark-radiation excess, forming a triangular consistency relation that is unique to RDCC.
+
+\subsection{Cyclic Interpretation of the Global CPT State}
+
+The global CPT structure naturally leads to a cyclic interpretation of the Universe. Each cycle begins at a CPT-symmetric bounce, evolves forward (visible sector) and backward (mirror sector) in time, and eventually returns to a new bounce. The entanglement at the bounce ensures continuity between cycles, while the relaxation dynamics generate the small asymmetries that give rise to observable signatures.
+
+The next section explores the conceptual implications of this structure, focusing on the nature of time, the interpretation of the bipartite Universe, and the philosophical foundations of RDCC.
+
+
+% ---------------------------------------------------------
+% SECTION 7
+% ---------------------------------------------------------
+\section{Conceptual Implications of the Global CPT Structure}
+
+The global CPT structure of RDCC has profound implications for the nature of time, the interpretation of cosmological evolution, and the conceptual foundations of the Universe. The bipartite Hilbert-space structure, the entanglement at the bounce, and the weak inter-sector coupling together form a coherent picture in which the Universe is not a single time-directed history but a CPT-symmetric process composed of two conjugate branches. This section explores the conceptual consequences of this structure.
+
+\subsection{Time as an Emergent, Relational Quantity}
+
+In RDCC, time is not a fundamental parameter but an emergent property of the evolution of each sector relative to the bounce. The visible sector evolves forward in time from the bounce, while the mirror sector evolves backward. The global CPT state is static in the sense that it is invariant under the action of $\Theta$, but each sector experiences a directed flow of time due to the monotonic evolution of its local degrees of freedom.
+
+This relational view of time resolves the apparent asymmetry between the two sectors: each sector experiences its own arrow of time, but the global state remains CPT-symmetric. The bounce acts as the point of minimal entropy for both sectors, ensuring that the thermodynamic arrow of time aligns with the direction of expansion.
+
+\subsection{The Universe as a Bipartite Process}
+
+The bipartite Hilbert-space structure implies that the Universe is fundamentally a two-branch process. The visible and mirror sectors are not independent universes but two halves of a single CPT-symmetric whole. Their entanglement at the bounce ensures that they share a common origin, while their subsequent divergence gives rise to the observable asymmetries of the late Universe.
+
+This interpretation provides a natural explanation for the existence of the mirror sector and its role in cosmology. The mirror sector is not an exotic addition to the Standard Model but the CPT-conjugate branch of the global cosmological state.
+
+\subsection{Cyclic Evolution and the Role of the Bounce}
+
+The global CPT structure leads naturally to a cyclic interpretation of cosmology. Each cycle begins at a CPT-symmetric bounce, evolves forward (visible sector) and backward (mirror sector) in time, and eventually returns to a new bounce. The entanglement at the bounce ensures continuity between cycles, while the relaxation dynamics generate the small asymmetries that give rise to observable signatures.
+
+The bounce is therefore not merely a geometric event but a structural feature of the global state. It is the point at which the two sectors coincide, the entanglement is maximal, and the relaxation parameter vanishes.
+
+\subsection{Symmetry, Information, and the Nature of Physical Law}
+
+The global CPT structure suggests that physical law is fundamentally symmetric, while the observed asymmetries of the Universe arise from the relational structure of the global state. The inter-sector coupling mediates a small exchange of energy and information, ensuring that the sectors remain weakly correlated throughout cosmic history.
+
+This perspective unifies the microphysical symmetry principles with the large-scale evolution of the Universe. It also provides a natural explanation for the universality of the relaxation parameter and its role in determining the scalar spectral tilt, the dark-radiation excess, and the growth-rate deviation.
+
+\subsection{Interpretation of Observables}
+
+The observable Universe corresponds to the reduced density matrix of the visible sector,
+\begin{equation}
+    \rho_{(+)}(t) = \mathrm{Tr}_{(-)}\left[|\Psi_{\mathrm{CPT}}(t)\rangle\langle\Psi_{\mathrm{CPT}}(t)|\right].
+\end{equation}
+The mirror sector influences observables only through its contribution to the global state and the inter-sector coupling. This structure explains why the mirror sector is not directly observable but still leaves measurable imprints on the expansion history, the CMB, and the growth of structure.
+
+\subsection{A Unified Conceptual Framework}
+
+The global CPT structure provides a unified conceptual framework for RDCC. It explains:
+\begin{itemize}
+    \item why the Universe is bipartite,
+    \item why the bounce is CPT-symmetric,
+    \item why the relaxation parameter governs all observable deviations from $\Lambda$CDM,
+    \item and why the mirror sector exists and contributes to dark radiation.
+\end{itemize}
+This framework integrates the microphysical symmetry principles with the large-scale evolution of the Universe and provides a coherent interpretation of the RDCC correlation structure.
+
+The final section summarizes the role of the global CPT structure within the RDCC framework and outlines the position of Companion~IV within the broader program.
+
+
+% ---------------------------------------------------------
+% SECTION 8
+% ---------------------------------------------------------
+\section{Conclusion}
+
+The global CPT structure developed in this paper provides the conceptual foundation for Relaxation-Driven Cyclic Cosmology. By treating the Universe as a bipartite quantum system composed of a visible and a mirror sector, RDCC elevates CPT symmetry from a property of the microscopic laws to a defining principle of the cosmological state. The bounce emerges as the CPT fixed point at which the two sectors coincide, the entanglement is maximal, and the relaxation parameter vanishes.
+
+The bipartite Hilbert-space structure explains the existence and properties of the mirror sector. Its microphysics is identical to that of the visible sector, and its thermodynamic evolution follows from the entanglement inherited from the bounce. The weak inter-sector coupling, mediated by the dimension-six operator, ensures that the sectors remain correlated throughout cosmic history while allowing them to diverge sufficiently to generate observable signatures.
+
+The global CPT state unifies the microphysical symmetry principles with the large-scale evolution of the Universe. It explains why the relaxation parameter controls the scalar spectral tilt, the dark-radiation excess, and the growth-rate deviation, and why these observables form a tightly correlated and highly falsifiable set of predictions. The tensor sector provides an additional, independent probe through its log-periodic modulation and amplitude scaling.
+
+Companion~IV therefore completes the conceptual architecture of RDCC. It establishes the global CPT state as the structural backbone of the framework and clarifies the physical role of the mirror sector. Together with the gravitational foundations of Companion~I, the tensor phenomenology of Companion~II, and the relaxation dynamics of Companion~III, the present analysis prepares the ground for the observational synthesis and global fit developed in Companion~V.
+
+\end{document}

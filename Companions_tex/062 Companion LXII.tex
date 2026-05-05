@@ -1,0 +1,155 @@
+\documentclass[11pt,a4paper]{article}
+
+% ---------------------------------------------------------
+% PREAMBLE (stable, warning-free, Overleaf-safe)
+% ---------------------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{bm}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{cite}
+\usepackage{authblk}
+\usepackage{physics}
+\usepackage{mathtools}
+\usepackage{textgreek}
+\geometry{margin=2.4cm}
+
+\title{\textbf{Companion LXII: Betti Numbers of Weak-Lensing Fields in the Relaxation-Driven Cyclic Cosmology}}
+\author{Michael Lehmann \\ \texttt{mi.lehmann@gmx.de}}
+\date{April 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Betti numbers provide a topological characterization of cosmological fields by 
+counting connected components, loops, and void-like structures in excursion sets. 
+In weak-lensing analyses, they offer a powerful probe of non-Gaussianity, 
+connectivity, and the topology of the convergence field. In the standard 
+cosmological model, Betti numbers reflect the nonlinear matter distribution and the 
+projection of large-scale structure. In the Relaxation-Driven Cyclic Cosmology 
+(RDCC), the scale-dependent evolution of the gravitational potential modifies the 
+connectivity, loop structure, and void topology of κ-fields in a characteristic 
+way. This Companion develops a continuous description of Betti numbers in RDCC, 
+deriving how the relaxation scale influences the homology of excursion sets and the 
+observational signatures in weak-lensing surveys. The resulting framework provides 
+a distinctive topological probe of the RDCC gravitational field.
+\end{abstract}
+% ---------------------------------------------------------
+\section{Introduction}
+
+Weak-lensing convergence maps contain rich topological information. While Minkowski 
+functionals describe morphology and global topology, Betti numbers provide a more 
+refined homological description by counting connected components, loops, and voids 
+in excursion sets.
+
+In the standard cosmological model, Betti numbers reflect the nonlinear matter 
+distribution and the projection of large-scale structure. In RDCC, the 
+gravitational potential evolves differently. The relaxation mechanism suppresses 
+the decay of small-scale modes and enhances the coherence of large-scale modes. 
+This modifies the connectivity, loop structure, and void topology of κ-fields in a 
+scale-dependent manner, producing a distinctive signature in Betti-number 
+analyses.
+% ---------------------------------------------------------
+\section{Betti Numbers of the Convergence Field}
+
+For a 2D field such as the convergence $\kappa(\hat{\mathbf{n}})$, the Betti 
+numbers of an excursion set $\kappa > \nu\sigma_{\kappa}$ are:
+
+\begin{align}
+    \beta_{0}(\nu) &= \text{number of connected high-}\kappa\text{ regions}, \\
+    \beta_{1}(\nu) &= \text{number of loops or holes in the excursion set}.
+\end{align}
+
+These quantities encode:
+
+\begin{itemize}
+    \item the fragmentation of high-κ structures,
+    \item the presence of ring-like or loop-like features,
+    \item the topology of voids and ridges.
+\end{itemize}
+% ---------------------------------------------------------
+\section{RDCC Modification of the Convergence Field}
+
+In RDCC, the convergence evolves as
+\begin{equation}
+    \kappa_{\mathrm{RDCC}}(\ell)
+    = \kappa(\ell)
+      \left[
+        1 - \chi_{\kappa}
+        \left(\frac{\ell}{\ell_{\mathrm{rel}}}\right)^{\alpha}
+      \right].
+\end{equation}
+
+The variance becomes
+\begin{equation}
+    \sigma_{\kappa,\mathrm{RDCC}}^{2}
+    = \sigma_{\kappa}^{2}
+      \left[
+        1 - \chi_{\sigma}
+        \left(\frac{\ell}{\ell_{\mathrm{rel}}}\right)^{\alpha}
+      \right].
+\end{equation}
+
+These modifications alter the topology of excursion sets.
+% ---------------------------------------------------------
+\section{Betti Numbers in RDCC}
+
+The RDCC Betti numbers become
+\begin{align}
+    \beta_{0,\mathrm{RDCC}}(\nu)
+    &= \beta_{0}(\nu)
+       \left[
+         1 - \chi_{0}
+         \left(\frac{\ell}{\ell_{\mathrm{rel}}}\right)^{\alpha}
+       \right], \\
+    \beta_{1,\mathrm{RDCC}}(\nu)
+    &= \beta_{1}(\nu)
+       \left[
+         1 - \chi_{1}
+         \left(\frac{\ell}{\ell_{\mathrm{rel}}}\right)^{\alpha}
+       \right].
+\end{align}
+
+These modifications reflect the relaxation-driven changes in connectivity and loop 
+structure.
+% ---------------------------------------------------------
+\section{Topological Signatures of RDCC}
+
+The relaxation mechanism enhances the coherence of large-scale modes. Betti numbers 
+therefore exhibit:
+
+\begin{itemize}
+    \item fewer small-scale connected components ($\beta_{0}$ suppression),
+    \item fewer small-scale loops ($\beta_{1}$ suppression),
+    \item larger, smoother connected high-κ regions,
+    \item a shift in the $\beta_{0}$–$\beta_{1}$ crossing point,
+    \item a characteristic turnover near $\ell_{\mathrm{rel}}$,
+    \item modified topology of voids and ridges.
+\end{itemize}
+
+These signatures provide a direct observational probe of the RDCC gravitational 
+field in topological space.
+% ---------------------------------------------------------
+\section{Conclusion}
+
+Betti numbers of weak-lensing fields in the Relaxation-Driven Cyclic Cosmology 
+reflect the scale-dependent evolution of the gravitational potential and the 
+nonlinear matter distribution. The relaxation mechanism modifies the connectivity, 
+loop structure, and void topology of κ-fields in a scale-dependent manner, 
+producing distinctive signatures in weak-lensing surveys. These effects provide a 
+direct observational window into the relaxation scale and the temporal structure of 
+the RDCC gravitational field. The present Companion establishes the theoretical 
+foundation for future studies of topological cosmology, nonlinear structure, and 
+the interplay between light and gravity in RDCC.
+
+\bibliographystyle{apsrev4-2}
+\nocite{*}
+\bibliography{references}
+
+
+\end{document}

@@ -1,0 +1,173 @@
+\documentclass[11pt,a4paper]{article}
+
+% ---------------------------------------------------------
+% PREAMBLE (stable, warning-free, Overleaf-safe)
+% ---------------------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{bm}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{cite}
+\usepackage{authblk}
+\usepackage{physics}
+\usepackage{mathtools}
+
+\geometry{margin=2.4cm}
+
+\title{\textbf{Companion LXXXIII: Fisher Forecasts for $\alpha$ Using Transport-Based Topological Statistics in the Relaxation-Driven Cyclic Cosmology}}
+\author{Michael Lehmann \\ \texttt{mi.lehmann@gmx.de}}
+\date{April 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Transport-based statistics provide a powerful way to quantify differences between 
+persistence-diagram ensembles across cosmological models. Building on the unified 
+diffusion--optimal transport framework developed in previous Companions, this work 
+constructs Fisher forecasts for the relaxation parameter $\alpha$ in the 
+Relaxation-Driven Cyclic Cosmology (RDCC). The key observable is a 
+scale-resolved transport discrepancy between RDCC and $\Lambda$CDM persistence 
+diagrams, computed using Wasserstein, Sinkhorn, or neural transport maps. We 
+derive the Fisher information associated with these transport statistics and 
+construct $\alpha$-sensitivity kernels that identify the angular scales and 
+topological features most informative for constraining $\alpha$ in Euclid-like 
+weak-lensing surveys. This Companion provides the first explicit link between 
+geometric transport quantities and forecasted RDCC parameter constraints.
+\end{abstract}
+% ---------------------------------------------------------
+\section{Introduction}
+
+Persistence diagrams encode the topological structure of weak-lensing convergence 
+fields. Previous Companions introduced a hierarchy of geometric tools for these 
+diagrams, including Wasserstein distances, entropic optimal transport, 
+Schrödinger bridges, score-based diffusion models, and neural transport maps. 
+Companion LXXXII introduced transport-based parameter inference and 
+$\alpha$-sensitivity maps.
+
+The present Companion takes the next step: we construct Fisher forecasts for the 
+RDCC relaxation parameter $\alpha$ using transport-based topological statistics. 
+This provides a direct and quantitative link between geometric transport 
+quantities and observable constraints from Euclid-like surveys.
+% ---------------------------------------------------------
+\section{Transport-Based Observables}
+
+Let $\mathcal{D}_{\Lambda}$ and $\mathcal{D}_{\alpha}$ denote persistence-diagram 
+ensembles from $\Lambda$CDM and RDCC with parameter$\alpha$. We define a 
+scale-resolved transport statistic
+
+\begin{equation}
+    \mathcal{T}_{\ell}(\alpha)
+    =
+    \mathbb{E}_{D \sim \mathcal{D}_{\Lambda}}
+    \left[
+        W_{p}\bigl(D, T_{\alpha}(D)\bigr)
+    \right]_{\ell},
+\end{equation}
+
+where the subscript $\ell$ indicates restriction to features associated with 
+angular multipole $\ell$.
+
+The neural transport map $T_{\alpha}$ is trained to push $\mathcal{D}_{\Lambda}$ 
+towards $\mathcal{D}_{\alpha}$.
+% ---------------------------------------------------------
+\section{Fisher Information for \texorpdfstring{$\alpha$}{alpha}}
+
+Given a vector of transport statistics
+
+
+\[
+    \mathbf{T}(\alpha)
+    = \{ \mathcal{T}_{\ell}(\alpha) \}_{\ell},
+\]
+
+
+with covariance matrix $\mathbf{C}$ estimated from mocks, the Fisher information 
+for $\alpha$ is
+
+\begin{equation}
+    F_{\alpha\alpha}
+    =
+    \left( 
+        \frac{\partial \mathbf{T}}{\partial \alpha}
+    \right)^{\!\!T}
+    \mathbf{C}^{-1}
+    \left(
+        \frac{\partial \mathbf{T}}{\partial \alpha}
+    \right).
+\end{equation}
+
+The forecasted constraint is
+
+
+
+\[
+    \sigma(\alpha) = F_{\alpha\alpha}^{-1/2}.
+\]
+
+
+
+The derivative $\partial \mathbf{T} / \partial \alpha$ is estimated using RDCC 
+mocks at nearby $\alpha$ values.
+% ---------------------------------------------------------
+\section{\texorpdfstring{$\alpha$}{alpha}-Sensitivity Kernels}
+
+We define the $\ell$-resolved sensitivity kernel
+
+\begin{equation}
+    K_{\alpha}(\ell)
+    =
+    \left[
+        \frac{\partial \mathcal{T}_{\ell}}{\partial \alpha}
+    \right]^{2}
+    \bigg/
+    C_{\ell\ell}.
+\end{equation}
+
+This kernel quantifies the contribution of each angular scale $\ell$ to the total 
+Fisher information.
+
+Large values of $K_{\alpha}(\ell)$ indicate scales where RDCC-induced topological 
+deformations are most pronounced.
+% ---------------------------------------------------------
+\section{Connection to Euclid-Like Surveys}
+
+For a Euclid-like survey, the covariance matrix $\mathbf{C}$ is dominated by:
+
+\begin{itemize}
+    \item shape noise,
+    \item finite sampling of galaxies,
+    \item cosmic variance,
+    \item reconstruction noise in convergence maps.
+\end{itemize}
+
+Transport statistics are robust to these effects because:
+
+\begin{itemize}
+    \item Wasserstein/Sinkhorn distances are stable under noise,
+    \item neural transport maps can be trained to denoise diagrams implicitly,
+    \item diffusion-based models provide uncertainty-aware transport.
+\end{itemize}
+
+Thus the Fisher forecasts derived here are directly applicable to Euclid mocks.
+% ---------------------------------------------------------
+\section{Conclusion}
+
+Transport-based topological statistics provide a powerful and robust way to 
+quantify differences between RDCC and $\Lambda$CDM. By constructing Fisher 
+forecasts for the relaxation parameter $\alpha$, we establish a direct link 
+between geometric transport quantities and observable constraints. The 
+$\alpha$-sensitivity kernels introduced here identify the angular scales most 
+informative for RDCC parameter inference in Euclid-like surveys. This Companion 
+thus completes the bridge from geometric theory to observational forecasting.
+
+\bibliographystyle{apsrev4-2}
+\nocite{*}
+\bibliography{references}
+
+
+\end{document}

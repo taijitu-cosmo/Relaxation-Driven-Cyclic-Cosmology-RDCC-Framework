@@ -1,0 +1,618 @@
+\documentclass[11pt,a4paper]{article}
+
+% ---------------------------------------------------------
+% PACKAGES
+% ---------------------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath, amssymb, amsfonts, bm}
+\usepackage{mathtools}
+\usepackage{physics}
+\usepackage{tensor}
+\usepackage{bbm}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{cite}
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+\usepackage{microtype}
+\usepackage[most]{tcolorbox}
+
+% ---------------------------------------------------------
+% HYPERREF
+% ---------------------------------------------------------
+\usepackage[colorlinks=true,
+            linkcolor=blue,
+            citecolor=blue,
+            urlcolor=blue,
+            pdfauthor={Michael Lehmann},
+            pdftitle={Observational Synthesis and Global Fit in RDCC},
+            pdfsubject={Relaxation-Driven Cyclic Cosmology},
+            pdfkeywords={RDCC, cosmology, global fit, CPT symmetry, relaxation dynamics}
+           ]{hyperref}
+
+% ---------------------------------------------------------
+% TITLE
+% ---------------------------------------------------------
+\title{\textbf{Observational Synthesis and Global Fit in\\
+Relaxation-Driven Cyclic Cosmology (RDCC)}}
+
+\author{Michael Lehmann \\
+        Independent Researcher \\
+        \texttt{mi.lehmann@gmx.de}}
+
+\date{March 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Relaxation-Driven Cyclic Cosmology (RDCC) is a one-parameter, CPT-symmetric framework in which all observable deviations from $\Lambda$CDM arise from a single infrared quantity, the relaxation parameter $\alpha_{\mathrm{IR}}$. Companion~I established the gravitational foundations, Companion~II developed the tensor phenomenology, Companion~III derived the relaxation dynamics and scalar sector, and Companion~IV constructed the global CPT state and the physical role of the mirror sector. The present paper, Companion~V, synthesizes these results into a unified observational framework and develops the global fit that tests RDCC across early- and late-time cosmology.
+
+The scalar spectral tilt, the dark-radiation excess, the percent-level growth-rate deviation, and the tensor amplitude and modulation frequency form a tightly correlated set of predictions,
+
+
+\[
+n_s - 1 = -2\alpha_{\mathrm{IR}}, \qquad
+\Delta N_{\mathrm{eff}} \sim \alpha_{\mathrm{IR}}, \qquad
+\frac{\Delta(f\sigma_8)}{(f\sigma_8)} \sim \alpha_{\mathrm{IR}}, \qquad
+\Omega_{\mathrm{GW}} \propto \alpha_{\mathrm{IR}}^2,
+\]
+
+
+spanning more than ten orders of magnitude in scale. Companion~V constructs the joint likelihood for these observables, identifies the optimal parameter extraction strategy, and presents a first prototype global fit. The resulting posterior peaks at $\alpha_{\mathrm{IR}} \sim 0.016$, in excellent agreement with the analytic estimate $\alpha_{\mathrm{IR}} \simeq (1 - n_s)/2$, demonstrating that the correlated RDCC prediction structure is compatible with current data at the present level of precision.
+
+The synthesis developed here provides the first complete empirical assessment of RDCC and establishes the framework as a sharply predictive and falsifiable alternative to $\Lambda$CDM. It also defines the observational roadmap for testing the relaxation-driven, CPT-symmetric structure of the Universe with upcoming CMB, large-scale structure, and gravitational-wave experiments.
+\end{abstract}
+
+
+\tableofcontents
+\newpage
+
+% ---------------------------------------------------------
+% SECTION 1
+% ---------------------------------------------------------
+\section{Introduction}
+
+Relaxation-Driven Cyclic Cosmology (RDCC) is a one-parameter, CPT-symmetric framework in which all observable deviations from $\Lambda$CDM arise from a single infrared quantity, the relaxation parameter $\alpha_{\mathrm{IR}}$. The previous companion papers established the theoretical foundations of this structure. Companion~I developed the gravitational and geometric basis of the nonsingular bounce. Companion~II derived the tensor phenomenology, including the log-periodic modulation of the stochastic gravitational-wave background. Companion~III introduced the relaxation dynamics that govern the scalar sector, the dark-radiation excess, and the late-time growth of structure. Companion~IV constructed the global CPT state and the bipartite Hilbert-space structure that underlies the existence and thermodynamics of the mirror sector.
+
+The present paper, Companion~V, synthesizes these results into a unified observational framework. Its purpose is to assemble the full set of RDCC predictions, quantify their correlations, and develop the global fit that tests the theory across early- and late-time cosmology. Because all deviations from $\Lambda$CDM are controlled by the single parameter $\alpha_{\mathrm{IR}}$, RDCC is highly predictive: the scalar spectral tilt, the dark-radiation excess, the percent-level growth-rate deviation, and the tensor amplitude and modulation frequency must all yield the same value of $\alpha_{\mathrm{IR}}$.
+
+This structure leads to a four-dimensional prediction vector,
+
+
+\[
+\mathbf{O}_{\mathrm{RDCC}} =
+\left( n_s,\ \Delta N_{\mathrm{eff}},\ f\sigma_8,\ \Omega_{\mathrm{GW}} \right),
+\]
+
+
+in which each observable is a direct function of $\alpha_{\mathrm{IR}}$. The resulting triangular and quadrilateral consistency relations form the empirical backbone of RDCC and provide a sharply falsifiable alternative to $\Lambda$CDM.
+
+Companion~V develops the joint likelihood for these observables, identifies the optimal strategy for extracting $\alpha_{\mathrm{IR}}$ from current and future data, and outlines the observational roadmap for testing RDCC with CMB experiments, large-scale structure surveys, and gravitational-wave detectors. The synthesis presented here completes the theoretical and phenomenological structure of RDCC and establishes the framework as a unified, one-parameter description of cosmic evolution.
+
+
+% ---------------------------------------------------------
+% SECTION 2
+% ---------------------------------------------------------
+\section{The RDCC Prediction Vector}
+
+Relaxation-Driven Cyclic Cosmology is a one-parameter framework. All observable deviations from $\Lambda$CDM arise from the infrared value of the relaxation parameter, $\alpha_{\mathrm{IR}}$. This structure leads to a tightly constrained set of predictions that span early- and late-time cosmology as well as the tensor sector. The purpose of this section is to define the RDCC prediction vector, derive its dependence on $\alpha_{\mathrm{IR}}$, and establish the internal consistency relations that form the empirical backbone of the global fit.
+
+\subsection{Definition of the Prediction Vector}
+
+The four primary observables controlled by RDCC are collected into the prediction vector
+\begin{equation}
+    \mathbf{O}_{\mathrm{RDCC}}
+    =
+    \left(
+        n_s,\ 
+        \Delta N_{\mathrm{eff}},\ 
+        f\sigma_8,\ 
+        \Omega_{\mathrm{GW}}
+    \right).
+\end{equation}
+Each component probes a different epoch of cosmic history:
+\begin{itemize}
+    \item $n_s$ probes the early-Universe scalar sector at horizon crossing.
+    \item $\Delta N_{\mathrm{eff}}$ probes the mirror-sector thermodynamics shortly after the bounce.
+    \item $f\sigma_8$ probes the late-time growth of structure.
+    \item $\Omega_{\mathrm{GW}}$ probes the tensor sector across a wide range of frequencies.
+\end{itemize}
+Despite probing widely separated scales, all four observables depend on the same parameter.
+
+\subsection{Functional Dependence on the Relaxation Parameter}
+
+The universal RDCC relations derived in Companions~III and IV imply
+\begin{align}
+    n_s - 1 &= -2\alpha_{\mathrm{IR}}, \\
+    \Delta N_{\mathrm{eff}} &\sim \alpha_{\mathrm{IR}}, \\
+    \frac{\Delta(f\sigma_8)}{(f\sigma_8)} &\sim \alpha_{\mathrm{IR}}, \\
+    \Omega_{\mathrm{GW}} &\propto \alpha_{\mathrm{IR}}^2.
+\end{align}
+The first three relations are linear in $\alpha_{\mathrm{IR}}$, while the tensor amplitude scales quadratically. This difference reflects the fact that the tensor sector is sourced by interference between the two CPT-conjugate branches of the global state, as shown in Companion~II.
+
+\subsection{Internal Consistency Relations}
+
+Because all observables depend on the same parameter, RDCC predicts a set of internal consistency relations:
+\begin{align}
+    n_s - 1 &= -2\,\Delta N_{\mathrm{eff}} + \mathcal{O}(\alpha_{\mathrm{IR}}^2), \\
+    n_s - 1 &= -2\,\frac{\Delta(f\sigma_8)}{(f\sigma_8)} + \mathcal{O}(\alpha_{\mathrm{IR}}^2), \\
+    \Delta N_{\mathrm{eff}} &= \frac{\Delta(f\sigma_8)}{(f\sigma_8)} + \mathcal{O}(\alpha_{\mathrm{IR}}^2).
+\end{align}
+These relations form a triangular structure linking the scalar, radiation, and growth sectors. The tensor amplitude adds a fourth relation,
+\begin{equation}
+    \Omega_{\mathrm{GW}} \propto (n_s - 1)^2,
+\end{equation}
+closing the quadrilateral of RDCC predictions.
+
+
+\begin{tcolorbox}[title=RDCC Core Prediction Structure,colback=white,colframe=black]
+
+
+\[
+\begin{aligned}
+n_s - 1 &= -2\,\alpha_{\mathrm{IR}}, \\
+\Delta N_{\mathrm{eff}} &= c_1\,\alpha_{\mathrm{IR}}, \\
+\frac{\Delta(f\sigma_8)}{f\sigma_8} &= c_2\,\alpha_{\mathrm{IR}}, \\
+\Omega_{\mathrm{GW}} &\propto \alpha_{\mathrm{IR}}^2.
+\end{aligned}
+\]
+
+
+These relations form the triangular (scalar–radiation–growth) and quadrilateral (adding tensors) consistency structure of RDCC. The global fit tests whether all four channels converge to the same value of $\alpha_{\mathrm{IR}}$.
+\end{tcolorbox}
+
+
+
+\subsection{Implications for the Global Fit}
+
+The one-parameter nature of RDCC implies that the global fit is overconstrained. A single value of $\alpha_{\mathrm{IR}}$ must simultaneously reproduce:
+\begin{itemize}
+    \item the scalar spectral tilt,
+    \item the dark-radiation excess,
+    \item the growth-rate deviation,
+    \item and the tensor amplitude and modulation frequency.
+\end{itemize}
+Any significant inconsistency between these observables falsifies the framework. Conversely, a coherent fit across all channels would provide strong evidence for the relaxation-driven structure of the Universe.
+
+The next section examines the early-Universe constraints, focusing on the scalar spectral tilt and the dark-radiation excess, which together provide the most direct probe of $\alpha_{\mathrm{IR}}$.
+
+
+% ---------------------------------------------------------
+% SECTION 3
+% ---------------------------------------------------------
+\section{Early-Universe Constraints}
+
+The early Universe provides the most direct and model-independent probes of the relaxation parameter $\alpha_{\mathrm{IR}}$. Two observables dominate this regime: the scalar spectral tilt $n_s$ and the dark-radiation excess $\Delta N_{\mathrm{eff}}$. Both quantities are measured with high precision by cosmic microwave background (CMB) experiments and are tightly linked to the relaxation dynamics developed in Companion~III. This section constructs the early-Universe likelihood, quantifies the sensitivity of each observable to $\alpha_{\mathrm{IR}}$, and establishes the combined constraint that forms the first component of the global RDCC fit.
+
+\subsection{Scalar Spectral Tilt}
+
+The scalar spectral tilt is one of the cleanest predictions of RDCC. As shown in Companion~III, the relaxation-induced correction to the background quantity $z'/z$ leads to the universal relation
+\begin{equation}
+    n_s - 1 = -2\alpha_{\mathrm{IR}}.
+\end{equation}
+This prediction is independent of the details of the bounce, the matter content of the sectors, or the precise form of the cuscuton potential. It reflects the fact that the relaxation parameter controls the rate at which the system departs from exact scale invariance.
+
+Current CMB measurements determine $n_s$ with percent-level precision, making the scalar tilt the single most sensitive probe of $\alpha_{\mathrm{IR}}$. The likelihood for $n_s$ may be written as
+\begin{equation}
+    \mathcal{L}_{n_s}(\alpha_{\mathrm{IR}})
+    \propto
+    \exp\!\left[
+        -\frac{1}{2}
+        \frac{
+            \left(n_s^{\mathrm{obs}} - 1 + 2\alpha_{\mathrm{IR}}\right)^2
+        }{
+            \sigma_{n_s}^2
+        }
+    \right],
+\end{equation}
+where $n_s^{\mathrm{obs}}$ and $\sigma_{n_s}$ denote the observed value and its uncertainty.
+
+\subsection{Dark-Radiation Excess}
+
+The second early-Universe observable is the dark-radiation excess, quantified by $\Delta N_{\mathrm{eff}}$. As shown in Companions~III and IV, the mirror sector acquires a slightly different temperature due to the relaxation-induced energy exchange after the bounce. The resulting excess of relativistic degrees of freedom satisfies
+\begin{equation}
+    \Delta N_{\mathrm{eff}} \sim \alpha_{\mathrm{IR}}.
+\end{equation}
+This relation is robust and independent of the detailed microphysics of the mirror sector. It reflects the universal structure of the relaxation dynamics and the CPT-symmetric initial conditions at the bounce.
+
+The likelihood for $\Delta N_{\mathrm{eff}}$ is given by
+\begin{equation}
+    \mathcal{L}_{N_{\mathrm{eff}}}(\alpha_{\mathrm{IR}})
+    \propto
+    \exp\!\left[
+        -\frac{1}{2}
+        \frac{
+            \left(\Delta N_{\mathrm{eff}}^{\mathrm{obs}} - \alpha_{\mathrm{IR}}\right)^2
+        }{
+            \sigma_{N_{\mathrm{eff}}}^2
+        }
+    \right].
+\end{equation}
+
+\subsection{Joint Early-Universe Likelihood}
+
+Because both observables depend on the same parameter, the combined early-Universe likelihood is
+\begin{equation}
+    \mathcal{L}_{\mathrm{early}}(\alpha_{\mathrm{IR}})
+    =
+    \mathcal{L}_{n_s}(\alpha_{\mathrm{IR}})
+    \times
+    \mathcal{L}_{N_{\mathrm{eff}}}(\alpha_{\mathrm{IR}}).
+\end{equation}
+This likelihood provides the first and strongest constraint on $\alpha_{\mathrm{IR}}$. The scalar tilt typically dominates the constraint due to its smaller observational uncertainty, while $\Delta N_{\mathrm{eff}}$ provides an independent cross-check that enforces the RDCC consistency relations.
+
+\subsection{Interpretation and Sensitivity}
+
+The early-Universe constraints probe the relaxation dynamics at two distinct epochs:
+\begin{itemize}
+    \item $n_s$ probes the background evolution at horizon crossing.
+    \item $\Delta N_{\mathrm{eff}}$ probes the mirror-sector thermodynamics shortly after the bounce.
+\end{itemize}
+The agreement between these two probes is therefore a nontrivial test of RDCC. A consistent value of $\alpha_{\mathrm{IR}}$ extracted from both observables would strongly support the relaxation-driven structure of the Universe, while any significant mismatch would falsify the framework.
+
+The next section turns to the late-time Universe, where the growth rate of structure provides a complementary probe of $\alpha_{\mathrm{IR}}$ and further tightens the global constraint.
+
+
+% ---------------------------------------------------------
+% SECTION 4
+% ---------------------------------------------------------
+\section{Late-Time Constraints}
+
+The late-time Universe provides a complementary probe of the relaxation parameter $\alpha_{\mathrm{IR}}$. While the early-Universe observables $n_s$ and $\Delta N_{\mathrm{eff}}$ constrain the relaxation dynamics near the bounce and during radiation domination, the growth rate of structure and the modified expansion history probe the infrared regime in which the system has approached its fixed point. The combination of early- and late-time constraints therefore tests RDCC across more than ten orders of magnitude in scale.
+
+\subsection{Modified Expansion History}
+
+The relaxation-induced asymmetry between the visible and mirror sectors leads to a small modification of the Hubble parameter at late times. Writing
+\begin{equation}
+    H^2(a) = H^2_{\Lambda\mathrm{CDM}}(a)\,\left[1 + \delta_H(a)\right],
+\end{equation}
+the deviation $\delta_H(a)$ is proportional to the infrared value of the relaxation parameter,
+\begin{equation}
+    \delta_H(a) \sim \alpha_{\mathrm{IR}}\,f(a),
+\end{equation}
+where $f(a)$ is a slowly varying function of the scale factor. This modification is small but non-negligible, and it affects the growth of matter perturbations.
+
+The expansion history alone does not strongly constrain $\alpha_{\mathrm{IR}}$, but it plays a crucial role in the joint likelihood by correlating the growth-rate deviation with the early-Universe observables.
+
+\subsection{Growth of Structure}
+
+The linear matter contrast $\delta_m$ evolves according to
+\begin{equation}
+    \ddot{\delta}_m + 2H\dot{\delta}_m - 4\pi G_{\mathrm{eff}}\,\rho_m\,\delta_m = 0,
+\end{equation}
+where $G_{\mathrm{eff}}$ is the effective gravitational coupling. In RDCC, the relaxation dynamics induce a small correction,
+\begin{equation}
+    G_{\mathrm{eff}} = G\left(1 + c\,\alpha_{\mathrm{IR}}\right),
+\end{equation}
+with $c$ an order-one coefficient determined by the inter-sector coupling.
+
+This modification leads to a percent-level deviation in the growth rate,
+\begin{equation}
+    f\sigma_8 = (f\sigma_8)_{\Lambda\mathrm{CDM}}\left[1 + \mathcal{O}(\alpha_{\mathrm{IR}})\right].
+\end{equation}
+Because $\alpha_{\mathrm{IR}} \sim 10^{-2}$, the predicted deviation is at the percent level, consistent with current observational uncertainties and potentially detectable by upcoming surveys.
+
+\subsection{Late-Time Likelihood}
+
+The likelihood for the growth rate may be written as
+\begin{equation}
+    \mathcal{L}_{f\sigma_8}(\alpha_{\mathrm{IR}})
+    \propto
+    \exp\!\left[
+        -\frac{1}{2}
+        \frac{
+            \left(
+                (f\sigma_8)^{\mathrm{obs}}
+                -
+                (f\sigma_8)_{\Lambda\mathrm{CDM}}\left[1 + k\,\alpha_{\mathrm{IR}}\right]
+            \right)^2
+        }{
+            \sigma_{f\sigma_8}^2
+        }
+    \right],
+\end{equation}
+where $k$ is an order-one coefficient that encodes the response of the growth rate to the relaxation dynamics.
+
+Because the growth-rate deviation is correlated with both $n_s$ and $\Delta N_{\mathrm{eff}}$, the late-time likelihood plays a crucial role in enforcing the RDCC consistency relations.
+
+\subsection{Complementarity with Early-Universe Constraints}
+
+The late-time constraints probe the infrared regime of the relaxation dynamics, while the early-Universe constraints probe the ultraviolet regime near the bounce. The agreement between these two regimes is therefore a nontrivial test of RDCC. A consistent value of $\alpha_{\mathrm{IR}}$ extracted from both epochs would strongly support the relaxation-driven structure of the Universe.
+
+The next section examines the tensor sector, which provides an independent and highly distinctive probe of $\alpha_{\mathrm{IR}}$ through the amplitude and log-periodic modulation of the stochastic gravitational-wave background.
+
+
+% ---------------------------------------------------------
+% SECTION 5
+% ---------------------------------------------------------
+\section{Tensor Sector and Gravitational Waves}
+
+The tensor sector provides an independent and highly distinctive probe of the relaxation parameter $\alpha_{\mathrm{IR}}$. Unlike the scalar spectral tilt, the dark-radiation excess, and the growth-rate deviation, which arise from the background evolution and the mirror-sector thermodynamics, the tensor signatures originate from interference between the two CPT-conjugate branches of the global state. This mechanism, developed in Companion~II, leads to two characteristic predictions: a quadratic scaling of the tensor amplitude with $\alpha_{\mathrm{IR}}$ and a log-periodic modulation of the stochastic gravitational-wave background.
+
+\subsection{Amplitude of the Stochastic Background}
+
+The amplitude of the stochastic gravitational-wave background is suppressed in RDCC relative to inflationary models. The interference between the visible and mirror tensor modes leads to a cancellation at leading order, leaving a residual amplitude proportional to the square of the relaxation parameter,
+\begin{equation}
+    \Omega_{\mathrm{GW}} \propto \alpha_{\mathrm{IR}}^2.
+\end{equation}
+This quadratic scaling reflects the fact that the tensor sector is sourced by the mismatch between the two branches of the global CPT state. Because $\alpha_{\mathrm{IR}} \sim 10^{-2}$, the predicted amplitude is small but potentially detectable by next-generation gravitational-wave observatories.
+
+\subsection{Log-Periodic Modulation}
+
+A distinctive feature of RDCC is the log-periodic modulation of the tensor spectrum. As shown in Companion~II, the interference between the two CPT-conjugate branches produces oscillations of the form
+\begin{equation}
+    \Omega_{\mathrm{GW}}(f)
+    =
+    \Omega_0(f)\left[
+        1 + A\,\cos\!\left(\omega\,\ln\!\frac{f}{f_*} + \phi\right)
+    \right],
+\end{equation}
+where:
+\begin{itemize}
+    \item $A$ is the modulation amplitude,
+    \item $\omega$ is the modulation frequency,
+    \item $f_*$ is a characteristic scale,
+    \item $\phi$ is a phase determined by the bounce.
+\end{itemize}
+The modulation frequency is directly proportional to the relaxation parameter,
+\begin{equation}
+    \omega \propto \alpha_{\mathrm{IR}},
+\end{equation}
+providing a second, independent tensor-sector probe of the same parameter.
+
+\subsection{Tensor Likelihood}
+
+The tensor likelihood combines the amplitude and modulation measurements. For a given experiment, the likelihood may be written schematically as
+\begin{equation}
+    \mathcal{L}_{\mathrm{GW}}(\alpha_{\mathrm{IR}})
+    =
+    \mathcal{L}_{\Omega_{\mathrm{GW}}}\!\left(\alpha_{\mathrm{IR}}^2\right)
+    \times
+    \mathcal{L}_{\omega}\!\left(\alpha_{\mathrm{IR}}\right).
+\end{equation}
+Because the amplitude scales quadratically while the modulation frequency scales linearly, the tensor sector provides a powerful degeneracy-breaking mechanism in the global fit.
+
+\subsection{Experimental Sensitivity}
+
+Upcoming gravitational-wave observatories will probe the RDCC tensor signatures across a wide range of frequencies:
+\begin{itemize}
+    \item LISA will probe the millihertz regime.
+    \item DECIGO and BBO will probe the decihertz regime with high precision.
+    \item Pulsar timing arrays probe the nanohertz regime.
+\end{itemize}
+The combination of these experiments will allow for a multi-band reconstruction of the tensor spectrum, providing a stringent test of the RDCC predictions.
+
+\subsection{Complementarity with Scalar and Growth Sectors}
+
+The tensor sector is independent of the scalar and growth sectors in $\Lambda$CDM, but tightly correlated with them in RDCC. A consistent value of $\alpha_{\mathrm{IR}}$ extracted from the tensor amplitude, the modulation frequency, the scalar tilt, the dark-radiation excess, and the growth-rate deviation would provide strong evidence for the relaxation-driven structure of the Universe. Any significant mismatch would falsify the framework.
+
+The next section constructs the full joint likelihood and develops the global fit that synthesizes all observational channels into a single constraint on $\alpha_{\mathrm{IR}}$.
+
+
+% ---------------------------------------------------------
+% SECTION 6
+% ---------------------------------------------------------
+\section{Joint Likelihood and Global Fit}
+
+The defining feature of RDCC is that all observable deviations from $\Lambda$CDM are governed by a single parameter, the relaxation parameter $\alpha_{\mathrm{IR}}$. This structure implies that the global fit is overconstrained: a single value of $\alpha_{\mathrm{IR}}$ must simultaneously reproduce the scalar spectral tilt, the dark-radiation excess, the growth-rate deviation, and the tensor amplitude and modulation frequency. This section constructs the joint likelihood that synthesizes these observational channels into a unified constraint on $\alpha_{\mathrm{IR}}$.
+
+\subsection{Structure of the Joint Likelihood}
+
+The full likelihood is the product of the early-Universe, late-time, and tensor-sector likelihoods,
+\begin{equation}
+    \mathcal{L}_{\mathrm{tot}}(\alpha_{\mathrm{IR}})
+    =
+    \mathcal{L}_{\mathrm{early}}(\alpha_{\mathrm{IR}})
+    \times
+    \mathcal{L}_{\mathrm{late}}(\alpha_{\mathrm{IR}})
+    \times
+    \mathcal{L}_{\mathrm{GW}}(\alpha_{\mathrm{IR}}).
+\end{equation}
+Each component probes a different epoch of cosmic history:
+\begin{itemize}
+    \item $\mathcal{L}_{\mathrm{early}}$ constrains $\alpha_{\mathrm{IR}}$ through $n_s$ and $\Delta N_{\mathrm{eff}}$.
+    \item $\mathcal{L}_{\mathrm{late}}$ constrains $\alpha_{\mathrm{IR}}$ through $f\sigma_8$ and the modified expansion history.
+    \item $\mathcal{L}_{\mathrm{GW}}$ constrains $\alpha_{\mathrm{IR}}$ through the tensor amplitude and modulation frequency.
+\end{itemize}
+The combination of these channels provides a multi-epoch, multi-probe test of RDCC.
+
+
+\begin{tcolorbox}[title=Likelihood Architecture,colback=white,colframe=black]
+\begin{center}
+\begin{tabular}{lll}
+\textbf{Observable} & \textbf{RDCC Prediction} & \textbf{Likelihood Form} \\
+\hline
+$n_s$ & $1 - 2\alpha_{\mathrm{IR}}$ & Gaussian \\
+$\Delta N_{\mathrm{eff}}$ & $c_1\,\alpha_{\mathrm{IR}}$ & Gaussian \\
+$f\sigma_8$ & $(f\sigma_8)_{\Lambda\mathrm{CDM}}(1 + c_2\alpha_{\mathrm{IR}})$ & Gaussian \\
+$\Omega_{\mathrm{GW}}$ & $c_3\,\alpha_{\mathrm{IR}}^2$ & Experiment-specific Gaussian \\
+\end{tabular}
+\end{center}
+The full likelihood is the product of these components and depends on a single parameter, $\alpha_{\mathrm{IR}}$.
+\end{tcolorbox}
+
+
+
+\subsection{Parameter Extraction}
+
+Because RDCC is a one-parameter framework, the posterior distribution for $\alpha_{\mathrm{IR}}$ is given by
+\begin{equation}
+    P(\alpha_{\mathrm{IR}}\,|\,\mathrm{data})
+    \propto
+    \mathcal{L}_{\mathrm{tot}}(\alpha_{\mathrm{IR}})\,\pi(\alpha_{\mathrm{IR}}),
+\end{equation}
+where $\pi(\alpha_{\mathrm{IR}})$ is the prior. A natural choice is a flat prior on the interval
+\begin{equation}
+    0 \leq \alpha_{\mathrm{IR}} \leq 0.1,
+\end{equation}
+reflecting the fact that $\alpha_{\mathrm{IR}}$ is a small, dimensionless parameter determined by the infrared fixed point of the relaxation dynamics.
+
+The posterior is sharply peaked because the scalar tilt provides a strong constraint, while the dark-radiation excess, the growth-rate deviation, and the tensor signatures provide independent cross-checks.
+
+\subsection{Consistency Relations as Hard Constraints}
+
+The RDCC consistency relations,
+\begin{align}
+    n_s - 1 &= -2\,\Delta N_{\mathrm{eff}}, \\
+    n_s - 1 &= -2\,\frac{\Delta(f\sigma_8)}{(f\sigma_8)}, \\
+    \Omega_{\mathrm{GW}} &\propto (n_s - 1)^2,
+\end{align}
+are not soft tendencies but hard predictions of the framework. They can be implemented in the likelihood either as:
+\begin{itemize}
+    \item explicit constraints on the functional form of each observable, or
+    \item penalty terms that suppress parameter combinations violating the relations.
+\end{itemize}
+In either case, the consistency relations dramatically reduce the allowed parameter space and make the global fit highly predictive.
+
+\subsection{Degeneracy Breaking Through Tensor Observables}
+
+The tensor sector plays a crucial role in the global fit. Because the tensor amplitude scales as $\alpha_{\mathrm{IR}}^2$ while the scalar and growth observables scale linearly, the tensor likelihood breaks degeneracies that would otherwise remain in the early- and late-time sectors. The modulation frequency provides an additional linear probe, further tightening the constraint.
+
+The combination of amplitude and modulation measurements therefore provides a powerful cross-check of the value of $\alpha_{\mathrm{IR}}$ inferred from the scalar and growth sectors.
+
+\subsection{Interpretation of the Global Fit}
+
+A successful global fit requires that all observational channels yield the same value of $\alpha_{\mathrm{IR}}$. The resulting posterior distribution provides:
+\begin{itemize}
+    \item a best-fit value of $\alpha_{\mathrm{IR}}$,
+    \item confidence intervals determined by the combined likelihood,
+    \item and a measure of the internal consistency of the RDCC predictions.
+\end{itemize}
+A coherent fit across all channels would provide strong evidence for the relaxation-driven structure of the Universe. Conversely, any significant mismatch between the inferred values of $\alpha_{\mathrm{IR}}$ would falsify the framework.
+
+The next section develops forecasts for upcoming experiments, showing how future data will sharpen the global fit and test RDCC with unprecedented precision.
+
+
+\subsection{Prototype global fit for \texorpdfstring{$\alpha_{\mathrm{IR}}$}{alphaIR}}
+\label{subsec:prototype_global_fit}
+
+The one-parameter structure of RDCC allows for a particularly transparent first confrontation with data. In this subsection we implement a prototype global fit for the infrared relaxation parameter $\alpha_{\mathrm{IR}}$, using the likelihood architecture summarized above.
+
+For concreteness, we combine four observational channels:
+\begin{itemize}
+  \item the scalar spectral tilt $n_s$ from Planck 2018 TT,TE,EE+lowE,
+  \item the dark-radiation excess $\Delta N_{\mathrm{eff}}$ constrained by CMB+BBN,
+  \item an effective growth-rate deviation $\Delta(f\sigma_8)/f\sigma_8$ motivated by large-scale-structure and redshift-space-distortion measurements,
+  \item and an upper bound on the stochastic gravitational-wave background $\Omega_{\mathrm{GW}}$ from PTA/LIGO-like constraints.
+\end{itemize}
+Each observable is modeled by a Gaussian likelihood centered on the current best-fit value with its quoted $1\sigma$ uncertainty. The RDCC predictions are taken from the core prediction structure,
+\begin{equation}
+  n_s - 1 = -2\alpha_{\mathrm{IR}}, \qquad
+  \Delta N_{\mathrm{eff}} = c_1 \alpha_{\mathrm{IR}}, \qquad
+  \frac{\Delta(f\sigma_8)}{f\sigma_8} = c_2 \alpha_{\mathrm{IR}}, \qquad
+  \Omega_{\mathrm{GW}} \propto \alpha_{\mathrm{IR}}^2,
+\end{equation}
+with $c_1, c_2, c_3$ treated as order-one coefficients encoding the detailed mapping between the microscopic relaxation dynamics and late-time observables. The full likelihood is the product of the four Gaussian components and depends on a single parameter, $\alpha_{\mathrm{IR}}$.
+
+We evaluate the resulting one-dimensional posterior $P(\alpha_{\mathrm{IR}}|\mathrm{data})$ on a grid in the range $\alpha_{\mathrm{IR}} \in [0, 0.05]$. A representative result is shown in Fig.~\ref{fig:rdcc_global_fit_posterior}. The posterior exhibits a well-defined maximum at
+\begin{equation}
+  \alpha_{\mathrm{IR}}^{\mathrm{best\;fit}} \sim 0.016,
+\end{equation}
+with a $68\%$ credible interval at the percent level. This value is in excellent agreement with the analytic estimate $\alpha_{\mathrm{IR}} \simeq (1 - n_s)/2$ inferred from the scalar tilt alone, and it confirms that the one-parameter RDCC prediction structure is compatible with current CMB, LSS, and GW bounds within the present level of precision.
+
+We emphasize that this prototype fit is deliberately minimal: it treats the four likelihood components as uncorrelated Gaussians and uses approximate effective constraints for the growth rate and the stochastic gravitational-wave background. Its purpose is not to compete with full Boltzmann-code based analyses, but to demonstrate that the RDCC framework is fit-ready and that a single parameter $\alpha_{\mathrm{IR}}$ can consistently account for the leading correlated deviations from $\Lambda$CDM across multiple observational channels. A more refined global analysis, including correlated data sets and a detailed modeling of the tensor sector, is left for future work.
+
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.7\textwidth]{RDCC_global_fit_posterior.pdf}
+  \caption{Prototype one-parameter posterior for the RDCC infrared relaxation parameter $\alpha_{\mathrm{IR}}$, combining constraints from the scalar tilt $n_s$, dark radiation $\Delta N_{\mathrm{eff}}$, the growth-rate observable $f\sigma_8$, and an upper bound on the stochastic gravitational-wave background $\Omega_{\mathrm{GW}}$. The fit illustrates that the analytic estimate $\alpha_{\mathrm{IR}} \simeq (1 - n_s)/2$ is consistent with a simple global likelihood analysis and that the one-parameter RDCC prediction structure is compatible with current data at the present level of precision.}
+  \label{fig:rdcc_global_fit_posterior}
+\end{figure}
+
+
+
+% ---------------------------------------------------------
+% SECTION 7
+% ---------------------------------------------------------
+\section{Forecasts for Upcoming Experiments}
+
+The next decade will see a dramatic improvement in the precision of cosmological measurements across the CMB, large-scale structure, and gravitational-wave sectors. Because RDCC is a one-parameter framework, these improvements translate directly into sharper constraints on the relaxation parameter $\alpha_{\mathrm{IR}}$. This section develops forecasts for the sensitivity of upcoming experiments and quantifies their impact on the global fit.
+
+\subsection{\texorpdfstring{CMB Experiments: Sensitivity to the Scalar Tilt and Dark Radiation}{CMB Experiments: Sensitivity to the Scalar Tilt and Dark Radiation}}
+
+Future CMB experiments such as CMB-S4, LiteBIRD, and PICO will measure the scalar spectral tilt and the dark-radiation excess with unprecedented precision. The expected uncertainties are
+\begin{align}
+    \sigma(n_s) &\sim 10^{-3}, \\
+    \sigma(\Delta N_{\mathrm{eff}}) &\sim 10^{-2}.
+\end{align}
+Because RDCC predicts
+\begin{equation}
+    n_s - 1 = -2\alpha_{\mathrm{IR}}, \qquad
+    \Delta N_{\mathrm{eff}} \sim \alpha_{\mathrm{IR}},
+\end{equation}
+these experiments will be able to measure $\alpha_{\mathrm{IR}}$ at the percent level. A detection of $\Delta N_{\mathrm{eff}}$ at the predicted magnitude would provide strong evidence for the mirror-sector thermodynamics and the relaxation dynamics.
+
+\subsection{\texorpdfstring{Large-Scale Structure Surveys: Sensitivity to $f\sigma_8$}{Large-Scale Structure Surveys: Sensitivity to f sigma 8}}
+
+Upcoming large-scale structure surveys, including Euclid, the Vera Rubin Observatory, and the Roman Space Telescope, will measure the growth rate of structure with sub-percent precision. The expected uncertainty is
+\begin{equation}
+    \sigma(f\sigma_8) \sim 0.5\%.
+\end{equation}
+Because RDCC predicts a percent-level deviation,
+\begin{equation}
+    \frac{\Delta(f\sigma_8)}{(f\sigma_8)} \sim \alpha_{\mathrm{IR}},
+\end{equation}
+these surveys will provide a powerful late-time probe of the relaxation parameter. The combination of early- and late-time constraints will significantly tighten the global fit and test the RDCC consistency relations across cosmic epochs.
+
+
+\subsection{\texorpdfstring{Gravitational-Wave Observatories: Sensitivity to $\Omega_{\mathrm{GW}}$ and Modulation}{Gravitational-Wave Observatories: Sensitivity to ΩGW and Modulation}}
+
+
+
+Next-generation gravitational-wave observatories will probe the tensor sector across a wide range of frequencies:
+\begin{itemize}
+    \item LISA (millihertz),
+    \item DECIGO and BBO (decihertz),
+    \item pulsar timing arrays (nanohertz).
+\end{itemize}
+RDCC predicts two distinctive tensor signatures:
+\begin{align}
+    \Omega_{\mathrm{GW}} &\propto \alpha_{\mathrm{IR}}^2, \\
+    \omega_{\mathrm{mod}} &\propto \alpha_{\mathrm{IR}}.
+\end{align}
+The quadratic scaling of the amplitude and the linear scaling of the modulation frequency provide two independent probes of the relaxation parameter. DECIGO and BBO, in particular, are expected to reach sensitivities capable of detecting the predicted modulation pattern.
+
+\subsection{Combined Forecast and Expected Precision}
+
+Combining the forecasts from CMB, large-scale structure, and gravitational-wave experiments yields an expected uncertainty on the relaxation parameter of
+\begin{equation}
+    \sigma(\alpha_{\mathrm{IR}}) \sim \text{few} \times 10^{-3}.
+\end{equation}
+This level of precision is sufficient to:
+\begin{itemize}
+    \item confirm or rule out the RDCC prediction for the scalar spectral tilt,
+    \item detect or exclude the predicted dark-radiation excess,
+    \item measure the percent-level growth-rate deviation,
+    \item and identify the tensor modulation signature.
+\end{itemize}
+The multi-probe synergy therefore places RDCC in a regime of sharp testability.
+
+\subsection{Implications for the RDCC Program}
+
+The forecasts indicate that the next decade of cosmological observations will decisively test the relaxation-driven structure of the Universe. A consistent measurement of $\alpha_{\mathrm{IR}}$ across all observational channels would provide strong evidence for RDCC, while any significant mismatch would falsify the framework. The global fit developed in this paper therefore provides a roadmap for interpreting upcoming data and assessing the viability of RDCC as a unified description of cosmic evolution.
+
+The final section summarizes the role of the global fit within the RDCC program and outlines the broader implications for cosmology.
+
+
+% ---------------------------------------------------------
+% SECTION 8
+% ---------------------------------------------------------
+\section{Conclusion}
+
+The global fit developed in this paper synthesizes the full predictive structure of Relaxation-Driven Cyclic Cosmology. Because all observable deviations from $\Lambda$CDM arise from a single infrared parameter, $\alpha_{\mathrm{IR}}$, RDCC is uniquely constrained: the scalar spectral tilt, the dark-radiation excess, the percent-level growth-rate deviation, and the tensor amplitude and modulation frequency must all be consistent with the same value of $\alpha_{\mathrm{IR}}$. This one-parameter structure transforms RDCC into a sharply testable alternative to $\Lambda$CDM.
+
+Early-Universe observables provide the strongest constraints. The scalar spectral tilt fixes $\alpha_{\mathrm{IR}}$ at the percent level, while the dark-radiation excess offers an independent cross-check tied to the mirror-sector thermodynamics. The late-time growth of structure probes the infrared regime of the relaxation dynamics and correlates directly with the early-Universe predictions. The tensor sector adds a fully independent channel: the amplitude scales quadratically with $\alpha_{\mathrm{IR}}$, while the log-periodic modulation frequency scales linearly, providing a powerful degeneracy-breaking mechanism.
+
+In this work we implemented a first prototype global fit, combining representative constraints from the scalar tilt, dark radiation, large-scale structure, and upper bounds on the stochastic gravitational-wave background. The resulting one-dimensional posterior exhibits a well-defined maximum at $\alpha_{\mathrm{IR}} \sim 0.016$, in excellent agreement with the analytic estimate $\alpha_{\mathrm{IR}} \simeq (1 - n_s)/2$. This demonstrates that the correlated RDCC prediction structure is compatible with current data at the present level of precision and that the framework is empirically well-posed. A more refined global analysis, incorporating correlated likelihoods and detailed modeling of the tensor sector, is a natural next step.
+
+Upcoming experiments will test the framework with unprecedented precision. CMB-S4 will probe $\Delta N_{\mathrm{eff}}$ at the $10^{-2}$ level, Euclid and the Vera Rubin Observatory will measure the growth rate with sub-percent accuracy, and next-generation gravitational-wave observatories will search for the predicted tensor amplitude and log-periodic modulation. Together, these observations will determine whether the relaxation parameter inferred from early-Universe physics, late-time structure formation, and the tensor sector converges to a single value.
+
+Companion~V completes the empirical foundation of RDCC. Together with the gravitational structure of Companion~I, the tensor phenomenology of Companion~II, the relaxation dynamics of Companion~III, and the global CPT state of Companion~IV, the present analysis establishes RDCC as a coherent, one-parameter cosmological framework whose predictions span more than ten orders of magnitude in scale. The prototype global fit developed here provides the roadmap for the next stage of the program: the systematic confrontation of the relaxation-driven, CPT-symmetric structure of the Universe with precision cosmological data.
+
+
+\end{document}

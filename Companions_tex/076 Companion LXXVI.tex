@@ -1,0 +1,177 @@
+\documentclass[11pt,a4paper]{article}
+
+% ---------------------------------------------------------
+% PREAMBLE (stable, warning-free, Overleaf-safe)
+% ---------------------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{bm}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{cite}
+\usepackage{authblk}
+\usepackage{physics}
+\usepackage{mathtools}
+
+\geometry{margin=2.4cm}
+
+\title{\textbf{Companion LXXVI: Wasserstein Information Geometry of Persistence Diagrams in the Relaxation-Driven Cyclic Cosmology}}
+\author{Michael Lehmann \\ \texttt{mi.lehmann@gmx.de}}
+\date{April 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Wasserstein geometry provides the natural metric structure on the space of 
+persistence diagrams, capturing the optimal transport cost required to match 
+topological features across diagrams. Information geometry, in contrast, equips 
+statistical manifolds with a Riemannian structure derived from Fisher information. 
+This Companion develops a unified Wasserstein information geometry for persistence 
+diagrams in the Relaxation-Driven Cyclic Cosmology (RDCC). The relaxation 
+mechanism modifies the scale-dependent evolution of the gravitational potential, 
+altering both the Wasserstein transport structure and the information-theoretic 
+curvature of topological ensembles. The resulting framework provides a 
+geometrically rich and observationally relevant description of RDCC signatures in 
+weak-lensing topology.
+\end{abstract}
+% ---------------------------------------------------------
+\section{Introduction}
+
+Persistence diagrams encode the birth and death of topological features in weak-
+lensing convergence fields. Wasserstein distances provide the canonical metric on 
+the space of diagrams, measuring the optimal transport cost required to match 
+topological features across realizations. Previous Companions developed Hilbert-
+space embeddings, kernel PCA, MMD, and Fisher information geometry as tools for 
+analyzing the Relaxation-Driven Cyclic Cosmology (RDCC).
+
+Wasserstein information geometry synthesizes these perspectives by equipping the 
+Wasserstein space of persistence diagrams with an information-theoretic Riemannian 
+structure. This structure quantifies how sensitively the optimal transport 
+geometry responds to changes in cosmological parameters. In RDCC, the relaxation 
+mechanism modifies the gravitational potential in a scale-dependent manner, 
+producing characteristic signatures in the Wasserstein information geometry of 
+topological ensembles.
+% ---------------------------------------------------------
+\section{Wasserstein Geometry of Persistence Diagrams}
+
+Given two persistence diagrams $D$ and $E$, the $p$-Wasserstein distance is
+
+\begin{equation}
+    W_{p}(D,E)
+    = \left(
+        \inf_{\gamma}
+        \sum_{x \in D}
+        \| x - \gamma(x) \|^{p}
+      \right)^{1/p},
+\end{equation}
+
+where $\gamma$ ranges over bijections between $D$ and $E$ (including the diagonal).
+
+This metric captures the minimal transport cost required to match topological 
+features across diagrams.
+% ---------------------------------------------------------
+\section{Information Geometry on Wasserstein Space}
+
+Let $p(D|\theta)$ be a statistical model for persistence diagrams. The Fisher 
+information matrix is
+
+\begin{equation}
+    I_{ab}(\theta)
+    = \mathbb{E}
+      \left[
+        \partial_{\theta_{a}} \log p(D|\theta)
+        \,
+        \partial_{\theta_{b}} \log p(D|\theta)
+      \right].
+\end{equation}
+
+The Wasserstein information metric is defined by pulling back the Fisher metric 
+through the Wasserstein map:
+
+\begin{equation}
+    g^{W}_{ab}(\theta)
+    = \mathbb{E}
+      \left[
+        \partial_{\theta_{a}} W_{p}(D, \mu(\theta))
+        \,
+        \partial_{\theta_{b}} W_{p}(D, \mu(\theta))
+      \right],
+\end{equation}
+
+where $\mu(\theta)$ is the Wasserstein barycenter of the distribution.
+% ---------------------------------------------------------
+\section{RDCC Modification of Wasserstein Structure}
+
+In RDCC, the convergence evolves as
+
+\begin{equation}
+    \kappa_{\mathrm{RDCC}}(\ell)
+    = \kappa(\ell)
+      \left[
+        1 - \chi_{\kappa}
+        \left(\frac{\ell}{\ell_{\mathrm{rel}}}\right)^{\alpha}
+      \right].
+\end{equation}
+
+This modifies the birth and death coordinates of topological features:
+
+\begin{align}
+    b_{\mathrm{RDCC}} &= b \left[ 1 - \chi_{b} (\ell/\ell_{\mathrm{rel}})^{\alpha} \right], \\
+    d_{\mathrm{RDCC}} &= d \left[ 1 - \chi_{d} (\ell/\ell_{\mathrm{rel}})^{\alpha} \right].
+\end{align}
+
+The Wasserstein distance becomes
+
+\begin{equation}
+    W_{p}^{\mathrm{RDCC}}(D,E)
+    = W_{p}(D,E)
+      \left[
+        1 - \chi_{W}
+        \left(\frac{\ell}{\ell_{\mathrm{rel}}}\right)^{\alpha}
+      \right].
+\end{equation}
+% ---------------------------------------------------------
+\section{Wasserstein Information Geometry in RDCC}
+
+The RDCC Wasserstein information metric is
+
+\begin{equation}
+    g^{W,\mathrm{RDCC}}_{ab}
+    = g^{W}_{ab}
+      \left[
+        1 - \chi_{g,ab}
+        \left(\frac{\ell}{\ell_{\mathrm{rel}}}\right)^{\alpha}
+      \right].
+\end{equation}
+
+RDCC induces:
+
+\begin{itemize}
+    \item reduced Wasserstein curvature at small scales,
+    \item enhanced curvature at large scales,
+    \item a characteristic turnover near $\ell_{\mathrm{rel}}$,
+    \item anisotropic deformation of Wasserstein geodesics,
+    \item modified barycentric flow of topological ensembles.
+\end{itemize}
+% ---------------------------------------------------------
+\section{Conclusion}
+
+Wasserstein information geometry provides a powerful framework for analyzing the 
+optimal-transport sensitivity of persistence diagrams in the Relaxation-Driven 
+Cyclic Cosmology. The relaxation mechanism modifies both the Wasserstein transport 
+structure and the information-theoretic curvature of topological ensembles in a 
+scale-dependent manner. These effects offer a geometrically rich and 
+observationally relevant probe of the RDCC gravitational field. The present 
+Companion establishes the foundation for future studies of Wasserstein geometry, 
+information geometry, and optimal transport in cosmological topology.
+
+\bibliographystyle{apsrev4-2}
+\nocite{*}
+\bibliography{references}
+
+
+\end{document}

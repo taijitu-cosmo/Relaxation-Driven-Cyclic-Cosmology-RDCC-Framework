@@ -1,0 +1,177 @@
+\documentclass[11pt,a4paper]{article}
+
+% ---------------------------------------------------------
+% PREAMBLE (stable, warning-free, Overleaf-safe)
+% ---------------------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{bm}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{cite}
+\usepackage{authblk}
+\usepackage{physics}
+\usepackage{mathtools}
+
+\geometry{margin=2.4cm}
+
+\title{\textbf{Companion LXXXVI: Neural Joint Likelihoods for RDCC — Combining Transport, Minkowski Functionals, and Shear Power in a Unified Flow-Based Model}}
+\author{Michael Lehmann \\ \texttt{mi.lehmann@gmx.de}}
+\date{April 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Weak-lensing surveys provide multiple complementary probes of the large-scale 
+structure, including topological persistence diagrams, Minkowski functionals, and 
+the shear power spectrum. Previous Companions developed transport-based 
+statistics, multi-probe Fisher forecasts, and cross-correlation analyses for the 
+Relaxation-Driven Cyclic Cosmology (RDCC). In this work, we introduce a unified 
+neural joint likelihood that combines these observables into a single 
+flow-based generative model. The likelihood is constructed using normalizing 
+flows trained on multi-probe summary vectors, enabling differentiable inference 
+of the relaxation parameter $\alpha$. This framework captures non-Gaussian 
+topology, morphological structure, and two-point correlations simultaneously, 
+yielding a powerful and flexible tool for RDCC parameter estimation in 
+Euclid-like surveys.
+\end{abstract}
+% ---------------------------------------------------------
+\section{Introduction}
+
+Weak-lensing convergence maps contain rich information about the large-scale 
+structure. Different observables probe different aspects of this structure:
+
+\begin{itemize}
+    \item transport-based persistence-diagram statistics capture non-Gaussian 
+          topological information,
+    \item Minkowski functionals quantify morphological features,
+    \item the shear power spectrum $C_\ell^{\gamma\gamma}$ captures two-point 
+          correlations.
+\end{itemize}
+
+Previous Companions developed each of these probes individually and constructed 
+pairwise joint analyses. The present Companion unifies all three into a single 
+neural joint likelihood, enabling coherent and differentiable inference of the 
+RDCC relaxation parameter $\alpha$.
+% ---------------------------------------------------------
+\section{Multi-Probe Summary Vector}
+
+We define the combined summary vector
+
+
+
+\[
+    \mathbf{s}
+    =
+    \left\{
+        \mathcal{T}_{\ell},
+        V_{0}(\nu),
+        V_{1}(\nu),
+        V_{2}(\nu),
+        C_{\ell}^{\gamma\gamma}
+    \right\},
+\]
+
+
+
+where:
+
+\begin{itemize}
+    \item $\mathcal{T}_{\ell}$ are transport-based topological statistics,
+    \item $V_{i}(\nu)$ are Minkowski functionals,
+    \item $C_{\ell}^{\gamma\gamma}$ is the shear power spectrum.
+\end{itemize}
+
+This vector captures topology, morphology, and two-point structure simultaneously.
+% ---------------------------------------------------------
+\section{Flow-Based Likelihood Model}
+
+We construct a normalizing flow $f_{\theta}$ such that
+
+
+
+\[
+    \mathbf{z} = f_{\theta}(\mathbf{s})
+\]
+
+
+
+maps the summary vector to a Gaussian latent space. The likelihood is
+
+
+
+\[
+    \mathcal{L}(\mathbf{s} \mid \alpha)
+    =
+    \mathcal{N}\!\left(
+        f_{\theta}(\mathbf{s});
+        \mu(\alpha),
+        \Sigma(\alpha)
+    \right)
+    \left|
+        \det \frac{\partial f_{\theta}}{\partial \mathbf{s}}
+    \right|.
+\]
+
+
+
+The flow is trained on simulations across a grid of $\alpha$ values.
+% ---------------------------------------------------------
+\section{Differentiable RDCC Inference}
+
+Because the likelihood is differentiable with respect to $\alpha$, we can perform:
+
+\begin{itemize}
+    \item gradient-based maximum-likelihood estimation,
+    \item Hamiltonian Monte Carlo,
+    \item variational inference,
+    \item neural posterior estimation.
+\end{itemize}
+
+The derivative
+
+
+
+\[
+    \frac{\partial \mathcal{L}}{\partial \alpha}
+\]
+
+
+
+is computed via automatic differentiation through the flow.
+% ---------------------------------------------------------
+\section{Advantages of the Unified Approach}
+
+The neural joint likelihood provides:
+
+\begin{itemize}
+    \item a coherent combination of topology, morphology, and two-point structure,
+    \item improved constraints on $\alpha$ through multi-probe synergy,
+    \item a flexible generative model for summary statistics,
+    \item robustness to non-Gaussianity and survey noise,
+    \item differentiable inference pipelines for Euclid-like surveys.
+\end{itemize}
+
+This framework generalizes classical Gaussian likelihoods and captures 
+non-linear, non-Gaussian RDCC signatures.
+% ---------------------------------------------------------
+\section{Conclusion}
+
+We introduced a unified neural joint likelihood that combines topological 
+transport statistics, Minkowski functionals, and the shear power spectrum into a 
+single flow-based generative model. This framework captures complementary 
+information from topology, morphology, and two-point correlations, enabling 
+powerful and differentiable inference of the RDCC relaxation parameter $\alpha$. 
+The present Companion completes the transition from geometric theory to 
+state-of-the-art multi-probe likelihood modeling for Euclid-like surveys.
+
+\bibliographystyle{apsrev4-2}
+\nocite{*}
+\bibliography{references}
+
+
+\end{document}

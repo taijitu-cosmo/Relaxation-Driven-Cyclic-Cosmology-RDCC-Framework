@@ -1,0 +1,171 @@
+\documentclass[11pt,a4paper]{article}
+
+% ---------------------------------------------------------
+% PREAMBLE (stable, warning-free, Overleaf-safe)
+% ---------------------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{bm}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{cite}
+\usepackage{authblk}
+\usepackage{physics}
+\usepackage{mathtools}
+
+\geometry{margin=2.4cm}
+
+\title{\textbf{Companion LXXXII: Transport-Based Parameter Inference and $\alpha$-Sensitivity Maps for the Relaxation-Driven Cyclic Cosmology}}
+\author{Michael Lehmann \\ \texttt{mi.lehmann@gmx.de}}
+\date{April 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Transport-based statistics provide a natural way to compare distributions of 
+persistence diagrams across cosmological models. Building on the diffusion--optimal 
+transport framework developed in previous Companions, this work introduces 
+transport-based parameter inference and $\alpha$-sensitivity maps for the 
+Relaxation-Driven Cyclic Cosmology (RDCC). The relaxation parameter $\alpha$ 
+controls the scale-dependent suppression of the gravitational potential, which in 
+turn deforms the distribution of weak-lensing persistence diagrams. We construct 
+transport distances and neural transport maps between RDCC and $\Lambda$CDM 
+ensembles, and define sensitivity fields that quantify how these transport 
+statistics respond to variations in $\alpha$. The resulting framework provides a 
+direct link between geometric transport quantities and observable constraints on 
+$\alpha$ from Euclid-like weak-lensing surveys.
+\end{abstract}
+% ---------------------------------------------------------
+\section{Introduction}
+
+Weak-lensing convergence maps encode the projected large-scale structure of the 
+Universe. Their topological structure can be quantified using persistence 
+diagrams, which capture the birth and death of connected components, loops, and 
+voids. Previous Companions developed a hierarchy of geometric tools for these 
+diagrams, including Wasserstein distances, entropic optimal transport, 
+Schrödinger bridges, diffusion models, and neural transport flows.
+
+In the Relaxation-Driven Cyclic Cosmology (RDCC), the relaxation parameter 
+$\alpha$ controls the scale-dependent suppression of the gravitational potential. 
+This induces characteristic deformations in the distribution of persistence 
+diagrams relative to $\Lambda$CDM. The goal of this Companion is to translate 
+these deformations into \emph{transport-based parameter constraints} and explicit 
+\emph{$\alpha$-sensitivity maps} that can be evaluated on Euclid-like mock 
+catalogues.
+% ---------------------------------------------------------
+\section{Transport Distances as Summary Statistics}
+
+Let $\mathcal{D}_{\Lambda}$ and $\mathcal{D}_{\alpha}$ denote ensembles of 
+persistence diagrams from $\Lambda$CDM and RDCC with parameter $\alpha$, 
+respectively. We define a transport-based discrepancy
+
+\begin{equation}
+    \mathcal{T}(\alpha)
+    =
+    \mathbb{E}_{D \sim \mathcal{D}_{\Lambda}}
+    \left[
+        W_{p}\bigl(D, T_{\alpha}(D)\bigr)
+    \right],
+\end{equation}
+
+where $W_{p}$ is a Wasserstein or Sinkhorn distance, and $T_{\alpha}$ is a neural 
+transport map pushing $\mathcal{D}_{\Lambda}$ towards $\mathcal{D}_{\alpha}$.
+
+The function $\mathcal{T}(\alpha)$ acts as a \emph{summary statistic}: it 
+vanishes when the two ensembles are indistinguishable and grows as RDCC deviates 
+from $\Lambda$CDM. Its scale dependence can be probed by restricting diagrams to 
+features in specific birth--death or angular multipole ranges.
+% ---------------------------------------------------------
+\section{\texorpdfstring{$\alpha$}{alpha}-Sensitivity Maps}
+
+We define the $\alpha$-sensitivity of the transport statistic as
+
+\begin{equation}
+    S_{\alpha}(\ell)
+    =
+    \frac{\partial}{\partial \alpha}
+    \mathcal{T}_{\ell}(\alpha)
+    \bigg|_{\alpha = \alpha_{0}},
+\end{equation}
+
+where $\mathcal{T}_{\ell}(\alpha)$ is the transport discrepancy computed from 
+features associated with angular scale $\ell$, and $\alpha_{0}$ is a fiducial 
+value.
+
+In practice, $S_{\alpha}(\ell)$ is estimated by finite differences using RDCC 
+mocks at nearby $\alpha$ values. The resulting function provides an 
+\emph{$\ell$-resolved sensitivity map} indicating which scales contribute most 
+strongly to constraining $\alpha$.
+% ---------------------------------------------------------
+\section{Likelihood-Free Inference with Transport Statistics}
+
+Given observed persistence diagrams $\mathcal{D}_{\mathrm{obs}}$ from a 
+Euclid-like survey, we define an empirical transport discrepancy
+
+\begin{equation}
+    \widehat{\mathcal{T}}(\alpha)
+    =
+    \mathbb{E}_{D \sim \mathcal{D}_{\mathrm{obs}}}
+    \left[
+        W_{p}\bigl(D, T_{\alpha}^{\mathrm{mock}}(D)\bigr)
+    \right],
+\end{equation}
+
+where $T_{\alpha}^{\mathrm{mock}}$ is trained on simulations at parameter 
+$\alpha$. This quantity can be used in a likelihood-free inference scheme:
+
+\begin{itemize}
+    \item sample $\alpha$ from a prior,
+    \item generate RDCC mocks and train $T_{\alpha}^{\mathrm{mock}}$,
+    \item compute $\widehat{\mathcal{T}}(\alpha)$,
+    \item accept or weight $\alpha$ according to the discrepancy.
+\end{itemize}
+
+The resulting posterior on $\alpha$ is driven directly by transport-based 
+topological differences between RDCC and $\Lambda$CDM.
+% ---------------------------------------------------------
+\section{Connection to Previous Geometric Companions}
+
+The present framework leverages several structures developed earlier:
+
+\begin{itemize}
+    \item Wasserstein and Sinkhorn distances (Companions LXXVI--LXXVII),
+    \item Schrödinger bridges and diffusion-regularized transport (LXXVIII),
+    \item score-based diffusion models (LXXIX),
+    \item neural Schrödinger flows and unified diffusion--OT geometry (LXXX--LXXXI).
+\end{itemize}
+
+Neural transport maps $T_{\alpha}$ can be instantiated as:
+
+\begin{itemize}
+    \item the mean flow of a neural Schrödinger SDE,
+    \item the deterministic component of a unified diffusion--OT model,
+    \item or an explicit OT map parameterized by a neural network.
+\end{itemize}
+
+In all cases, the RDCC parameter $\alpha$ enters through the modified convergence 
+field and the resulting deformation of the persistence-diagram distribution.
+% ---------------------------------------------------------
+\section{Conclusion}
+
+Transport-based statistics provide a natural and geometrically meaningful way to 
+compare persistence-diagram ensembles across cosmological models. In the 
+Relaxation-Driven Cyclic Cosmology, the relaxation parameter $\alpha$ induces 
+scale-dependent deformations that can be captured by neural transport maps and 
+Wasserstein or Sinkhorn discrepancies. The $\alpha$-sensitivity maps introduced 
+here quantify which angular scales and topological features contribute most 
+strongly to constraining $\alpha$ in Euclid-like weak-lensing surveys. The present 
+Companion thus connects the geometric machinery of previous Companions directly 
+to observable parameter inference, addressing the need for explicit links between 
+theory and constraints.
+
+\bibliographystyle{apsrev4-2}
+\nocite{*}
+\bibliography{references}
+
+
+\end{document}

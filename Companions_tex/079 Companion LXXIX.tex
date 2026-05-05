@@ -1,0 +1,183 @@
+\documentclass[11pt,a4paper]{article}
+
+% ---------------------------------------------------------
+% PREAMBLE (stable, warning-free, Overleaf-safe)
+% ---------------------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{bm}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{cite}
+\usepackage{authblk}
+\usepackage{physics}
+\usepackage{mathtools}
+
+\geometry{margin=2.4cm}
+
+\title{\textbf{Companion LXXIX: Score-Matching and Diffusion Models for Persistence Diagrams in the Relaxation-Driven Cyclic Cosmology}}
+\author{Michael Lehmann \\ \texttt{mi.lehmann@gmx.de}}
+\date{April 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Score-based diffusion models provide a powerful generative framework for learning 
+complex probability distributions through stochastic differential equations. 
+Applied to persistence diagrams, these models learn the gradient of the log-density 
+(score function), enabling sampling, denoising, and likelihood-free inference in 
+topological data analysis. Building on the Schrödinger bridge dynamics introduced 
+in Companion LXXVIII, this work develops score-matching and diffusion models for 
+persistence diagrams in the Relaxation-Driven Cyclic Cosmology (RDCC). The 
+relaxation mechanism modifies the scale-dependent evolution of the gravitational 
+potential, inducing characteristic changes in score fields, diffusion trajectories, 
+and generative flows. The resulting framework provides a modern, flexible, and 
+probabilistically grounded approach to modeling RDCC signatures in weak-lensing 
+topology.
+\end{abstract}
+% ---------------------------------------------------------
+\section{Introduction}
+
+Persistence diagrams encode the birth and death of topological features in weak-
+lensing convergence fields. Previous Companions introduced Wasserstein geometry, 
+entropic optimal transport, and Schrödinger bridges as tools for analyzing the 
+Relaxation-Driven Cyclic Cosmology (RDCC).
+
+Score-based diffusion models extend this framework by learning the gradient of the 
+log-density of persistence diagrams. This score function governs the reverse-time 
+diffusion process that generates new diagrams from noise. In cosmology, this 
+provides a powerful method for modeling the distribution of topological features, 
+denoising weak-lensing maps, and performing likelihood-free inference.
+
+In RDCC, the relaxation mechanism modifies the underlying distribution of 
+persistence diagrams, producing characteristic signatures in the score field and 
+the associated diffusion dynamics.
+% ---------------------------------------------------------
+\section{Score Matching for Persistence Diagrams}
+
+Let $p(D)$ be the probability density of persistence diagrams. The score function 
+is
+
+\begin{equation}
+    s(D)
+    = \nabla_{D} \log p(D).
+\end{equation}
+
+Score matching estimates $s(D)$ by minimizing
+
+\begin{equation}
+    \mathcal{L}_{\mathrm{SM}}
+    = \mathbb{E}_{p}
+      \left[
+        \| s_{\theta}(D) \|^{2}
+        + 2 \, \nabla \cdot s_{\theta}(D)
+      \right],
+\end{equation}
+
+where $s_{\theta}$ is a neural approximation of the score.
+
+For persistence diagrams, the gradient acts on birth-death coordinates.
+% ---------------------------------------------------------
+\section{Diffusion Models for Persistence Diagrams}
+
+Forward diffusion adds noise:
+
+\begin{equation}
+    dD_{t}
+    = \sqrt{\beta(t)} \, dB_{t},
+\end{equation}
+
+where $B_{t}$ is Brownian motion on diagram space.
+
+The reverse-time SDE is
+
+\begin{equation}
+    dD_{t}
+    = \left[
+        - \beta(t) s(D_{t}, t)
+      \right] dt
+      + \sqrt{\beta(t)} \, d\bar{B}_{t},
+\end{equation}
+
+where $s(D_{t}, t)$ is the time-dependent score.
+
+Sampling proceeds by integrating this reverse SDE from noise to data.
+% ---------------------------------------------------------
+\section{RDCC Modification of Score Fields}
+
+In RDCC, the convergence evolves as
+
+\begin{equation}
+    \kappa_{\mathrm{RDCC}}(\ell)
+    = \kappa(\ell)
+      \left[
+        1 - \chi_{\kappa}
+        \left(\frac{\ell}{\ell_{\mathrm{rel}}}\right)^{\alpha}
+      \right].
+\end{equation}
+
+This modifies the log-density of persistence diagrams:
+
+\begin{equation}
+    \log p_{\mathrm{RDCC}}(D)
+    = \log p(D)
+      - \chi_{p}
+        \left(\frac{\ell}{\ell_{\mathrm{rel}}}\right)^{\alpha}.
+\end{equation}
+
+The score becomes
+
+\begin{equation}
+    s_{\mathrm{RDCC}}(D)
+    = s(D)
+      \left[
+        1 - \chi_{s}
+        \left(\frac{\ell}{\ell_{\mathrm{rel}}}\right)^{\alpha}
+      \right].
+\end{equation}
+% ---------------------------------------------------------
+\section{RDCC Diffusion Dynamics}
+
+The RDCC reverse-time SDE is
+
+\begin{equation}
+    dD_{t}
+    = - \beta(t)
+      s(D_{t})
+      \left[
+        1 - \chi_{s}
+        \left(\frac{\ell}{\ell_{\mathrm{rel}}}\right)^{\alpha}
+      \right]
+      dt
+      + \sqrt{\beta(t)} \, d\bar{B}_{t}.
+\end{equation}
+
+RDCC induces:
+
+\begin{itemize}
+    \item reduced score magnitude at small scales,
+    \item enhanced score magnitude at large scales,
+    \item modified diffusion trajectories,
+    \item altered generative flows,
+    \item scale-dependent deformation of reverse-time dynamics.
+\end{itemize}
+% ---------------------------------------------------------
+\section{Conclusion}
+
+Score-based diffusion models provide a modern and flexible framework for modeling 
+the distribution of persistence diagrams. In the Relaxation-Driven Cyclic 
+Cosmology, the relaxation mechanism modifies the score field and the associated 
+diffusion dynamics in a scale-dependent manner, producing distinctive signatures 
+in weak-lensing topology. The present Companion establishes the foundation for 
+future studies of generative modeling, neural SDEs, and diffusion-based inference 
+in cosmological topology.
+
+\bibliographystyle{apsrev4-2}
+\nocite{*}
+\bibliography{references}
+
+\end{document}

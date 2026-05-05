@@ -1,0 +1,251 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{bm}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{authblk}
+\usepackage{cite}
+\usepackage{physics}
+\usepackage{mathtools}
+
+\geometry{margin=2.4cm}
+
+\title{\textbf{Companion XCVII--XCVIII \\ Degeneracy Structure and Null Directions in RDCC}}
+\author{Michael Lehmann \\ \texttt{mi.lehmann@gmx.de}}
+\date{April 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This merged Companion unifies the content of Companions XCVII--XCVIII into a 
+single document. It presents the degeneracy structure of RDCC inference, the 
+geometry of null directions in the Fisher manifold, and the alignment between 
+weakly constrained modes across geometric, morphological, and topological 
+observables. Together, these components provide a complete description of the 
+flat and weakly informative regions of the RDCC likelihood landscape.
+\end{abstract}
+\section{Degeneracy Structure in RDCC Inference}
+
+Even though RDCC introduces only a single physical parameter, the relaxation 
+parameter $\alpha$, the inference landscape exhibits nontrivial degeneracy 
+structure. These degeneracies arise from scale-dependent responses of 
+observables, partial cancellations between geometric and topological probes, 
+and the presence of weakly informative regions in the Fisher manifold.
+
+\subsection{Definition of degeneracy directions}
+
+A degeneracy direction is defined as a direction in parameter space along which 
+the likelihood varies only weakly. In the one-parameter RDCC case, this 
+corresponds to regions where
+\begin{equation}
+\partial_\alpha \log \mathcal{L} \approx 0,
+\end{equation}
+or equivalently where the Fisher information
+\begin{equation}
+g(\alpha) = \mathbb{E}\!\left[ (\partial_\alpha \log \mathcal{L})^2 \right]
+\end{equation}
+is small.
+
+These regions correspond to:
+\begin{itemize}
+    \item weak sensitivity of observables to $\alpha$,
+    \item partial cancellations between different probes,
+    \item noise-dominated scales,
+    \item or intrinsic symmetries of the relaxation kernel.
+\end{itemize}
+
+\subsection{Scale-dependent degeneracies}
+
+RDCC exhibits a characteristic pattern of degeneracies:
+\begin{itemize}
+    \item \textbf{Linear scales} ($k \lesssim 0.05\,h\,\mathrm{Mpc}^{-1}$):  
+    weak response to $\alpha$, dominated by cosmic variance.
+
+    \item \textbf{Intermediate scales} ($k \sim 0.1$--$1\,h\,\mathrm{Mpc}^{-1}$):  
+    strong breaking of degeneracies due to the relaxation kernel.
+
+    \item \textbf{Deeply nonlinear scales}:  
+    partial re-emergence of degeneracies due to noise and baryonic effects.
+\end{itemize}
+
+This structure is stable across:
+\begin{itemize}
+    \item tomographic binning schemes,
+    \item combinations of geometric and topological probes,
+    \item different noise realizations.
+\end{itemize}
+
+\subsection{Cross-probe degeneracies}
+
+Degeneracies may arise not only within a single observable, but also across 
+different probes. For example:
+\begin{itemize}
+    \item geometric probes (power spectra) may show weak sensitivity where
+    \item topological probes (persistent homology, transport-based topology)
+    remain strongly informative.
+\end{itemize}
+
+This cross-probe structure is essential for:
+\begin{itemize}
+    \item designing optimal combinations of summary statistics,
+    \item identifying complementary probes,
+    \item constructing robust likelihoods that avoid information loss.
+\end{itemize}
+
+The degeneracy structure thus forms the first component of the merged 
+XCVII--XCVIII Companion.
+\section{Null Directions and Alignment}
+
+Degeneracy directions describe regions of weak sensitivity in the likelihood, 
+but a deeper geometric structure emerges when these directions are analyzed in 
+terms of \emph{null directions} of the Fisher metric. These correspond to 
+directions in observable space along which variations in $\alpha$ induce 
+minimal or vanishing response.
+
+\subsection{Definition of null directions}
+
+A null direction is defined by a vector $u$ in observable space such that
+\begin{equation}
+u^\top \, \partial_\alpha \mathbf{d} \approx 0,
+\end{equation}
+where $\mathbf{d}$ denotes the vector of summary statistics.
+
+Equivalently, in terms of the Fisher metric,
+\begin{equation}
+g(\alpha) \approx 0
+\quad \Longleftrightarrow \quad
+\partial_\alpha \log \mathcal{L} \approx 0.
+\end{equation}
+
+Null directions arise when:
+\begin{itemize}
+    \item the relaxation kernel induces symmetric distortions,
+    \item geometric and topological probes respond in opposite ways,
+    \item noise dominates the observable combination,
+    \item or the observable is intrinsically insensitive to $\alpha$.
+\end{itemize}
+
+\subsection{Alignment across probes}
+
+A key feature of RDCC inference is the \emph{alignment} of null directions 
+across different classes of observables. Specifically:
+\begin{itemize}
+    \item geometric probes (power spectra),
+    \item morphological probes (peaks, voids, Minkowski functionals),
+    \item and topological probes (persistent homology, transport-based topology)
+\end{itemize}
+share partially aligned null directions.
+
+This alignment implies:
+\begin{itemize}
+    \item certain combinations of observables are jointly insensitive to $\alpha$,
+    \item degeneracies persist even when probes are combined,
+    \item but the \emph{orthogonal} combinations remain highly informative.
+\end{itemize}
+
+\subsection{Geometric interpretation}
+
+Null directions correspond to flat regions in the Fisher manifold. In natural 
+coordinates, these appear as extended plateaus where the likelihood varies only 
+weakly. The alignment of null directions across probes indicates that these 
+plateaus are not artifacts of a single observable, but reflect intrinsic 
+properties of the relaxation dynamics.
+
+\subsection{Implications for inference}
+
+Understanding null directions is essential for:
+\begin{itemize}
+    \item constructing stable likelihoods,
+    \item avoiding overfitting in compressed representations,
+    \item designing probe combinations that maximize information,
+    \item and identifying observables that break degeneracies most efficiently.
+\end{itemize}
+
+The structure of null directions thus forms the second component of the merged 
+XCVII--XCVIII Companion.
+\section{Cross-Probe Structure of Degeneracies}
+
+The degeneracy and null-direction structure of RDCC inference is not confined 
+to a single observable. Instead, it emerges from the interplay between 
+geometric, morphological, and topological probes. This cross-probe structure 
+reveals how different summary statistics respond to the relaxation parameter 
+$\alpha$ and how their sensitivities overlap or diverge.
+
+\subsection{Shared and complementary degeneracies}
+
+Across probes, we observe:
+\begin{itemize}
+    \item \textbf{Shared degeneracies}:  
+    Certain combinations of observables exhibit similar weak responses to 
+    $\alpha$, leading to aligned null directions.
+
+    \item \textbf{Complementary degeneracies}:  
+    Some probes remain insensitive where others are strongly informative, 
+    enabling degeneracy breaking through probe combination.
+
+    \item \textbf{Stable degeneracy patterns}:  
+    The structure persists across noise realizations and tomographic schemes.
+\end{itemize}
+
+This structure is essential for designing optimal multi-probe inference 
+pipelines.
+
+\subsection{Implications for compressed inference}
+
+The cross-probe degeneracy structure informs:
+\begin{itemize}
+    \item the construction of compressed statistics that avoid null directions,
+    \item the identification of probe combinations that maximize information,
+    \item the design of likelihoods that remain stable across probes,
+    \item and the interpretation of tensions or synergies between observables.
+\end{itemize}
+
+\section{Conclusion}
+
+This merged Companion unifies the degeneracy and null-direction structure of 
+RDCC inference. Degeneracy directions identify weakly informative regions of 
+the likelihood, while null directions reveal deeper geometric structure in 
+observable space. Their alignment across probes highlights intrinsic properties 
+of the relaxation dynamics and informs the design of robust, multi-probe 
+inference strategies.
+
+Together, these components replace Companions XCVII--XCVIII and provide a 
+complete description of the flat and weakly constrained regions of the RDCC 
+likelihood landscape.
+
+\begin{thebibliography}{9}
+
+\bibitem{RDCC-Flagship}
+M.~Lehmann,
+\textit{Relaxation-Driven Cyclic Cosmology (RDCC): Flagship Paper},
+(2026).
+
+\bibitem{RDCC-Summary}
+M.~Lehmann,
+\textit{RDCC Summary Paper: Inference Framework and Key Results},
+(2026).
+
+\bibitem{RDCC-Observables}
+M.~Lehmann,
+\textit{RDCC Numerical Fits and Observational Constraints},
+(2026).
+
+\bibitem{RDCC-Topology}
+M.~Lehmann,
+\textit{Topological and Morphological Probes in RDCC},
+(2026).
+
+\bibitem{RDCC-Companions-Deg}
+M.~Lehmann,
+\textit{RDCC Companion Series: Degeneracy Structure and Null Directions},
+Companions XCVII--XCVIII (merged), (2026).
+
+\end{thebibliography}
+
+\end{document}

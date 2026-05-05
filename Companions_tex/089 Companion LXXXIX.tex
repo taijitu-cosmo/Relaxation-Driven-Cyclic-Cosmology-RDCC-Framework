@@ -1,0 +1,213 @@
+\documentclass[11pt,a4paper]{article}
+
+% ---------------------------------------------------------
+% PREAMBLE (stable, warning-free, Overleaf-safe)
+% ---------------------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{bm}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{cite}
+\usepackage{authblk}
+\usepackage{physics}
+\usepackage{mathtools}
+
+\geometry{margin=2.4cm}
+
+\title{\textbf{Companion LXXXIX: Hierarchical Bayesian RDCC Inference with Multi-Probe Priors and Transport-Regularized Posteriors}}
+\author{Michael Lehmann \\ \texttt{mi.lehmann@gmx.de}}
+\date{April 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The Relaxation-Driven Cyclic Cosmology (RDCC) introduces the relaxation parameter 
+$\alpha$, which modifies the scale-dependent gravitational potential and induces 
+observable signatures in weak-lensing convergence fields. Previous Companions 
+developed transport-based topological statistics, multi-probe likelihoods, and 
+emulator-accelerated inference. In this work, we construct a hierarchical Bayesian 
+framework for RDCC inference that incorporates multi-probe priors, 
+transport-regularized posteriors, and emulator uncertainty. The hierarchical 
+structure enables principled combination of topological, morphological, and 
+two-point observables, while transport regularization ensures geometric 
+consistency across probes. This Companion provides the final statistical layer 
+required for robust, scalable, and fully Bayesian RDCC parameter estimation.
+\end{abstract}
+% ---------------------------------------------------------
+\section{Introduction}
+
+Weak-lensing surveys provide multiple complementary observables, including:
+
+\begin{itemize}
+    \item topological transport statistics,
+    \item Minkowski functionals,
+    \item shear power spectra,
+    \item neural joint likelihoods (Companion LXXXVI),
+    \item emulator-accelerated predictions (Companion LXXXVIII).
+\end{itemize}
+
+A hierarchical Bayesian framework is required to:
+
+\begin{itemize}
+    \item combine these probes coherently,
+    \item propagate emulator uncertainty,
+    \item incorporate survey systematics,
+    \item regularize posteriors using geometric transport constraints.
+\end{itemize}
+
+This Companion constructs such a framework.
+% ---------------------------------------------------------
+\section{Hierarchical Model Structure}
+
+We define the hierarchical model:
+
+
+
+\[
+    \alpha \sim p(\alpha),
+\]
+
+
+
+
+
+\[
+    \theta_{\mathrm{emu}} \sim p(\theta_{\mathrm{emu}}),
+\]
+
+
+
+
+
+\[
+    \mathbf{s} \sim p(\mathbf{s} \mid \alpha, \theta_{\mathrm{emu}}),
+\]
+
+
+
+where:
+
+\begin{itemize}
+    \item $\alpha$ is the RDCC relaxation parameter,
+    \item $\theta_{\mathrm{emu}}$ are emulator parameters,
+    \item $\mathbf{s}$ is the multi-probe summary vector.
+\end{itemize}
+
+The posterior is:
+
+
+
+\[
+    p(\alpha, \theta_{\mathrm{emu}} \mid \mathbf{s}_{\mathrm{obs}})
+    \propto
+    p(\mathbf{s}_{\mathrm{obs}} \mid \alpha, \theta_{\mathrm{emu}})
+    p(\theta_{\mathrm{emu}})
+    p(\alpha).
+\]
+
+
+% ---------------------------------------------------------
+\section{Multi-Probe Priors}
+
+We define a prior that incorporates:
+
+\begin{itemize}
+    \item theoretical RDCC constraints,
+    \item emulator smoothness priors,
+    \item cross-probe consistency priors.
+\end{itemize}
+
+The multi-probe prior is:
+
+
+
+\[
+    p(\alpha)
+    \propto
+    \exp\!\left[
+        -\lambda_{\mathrm{th}}
+        \left(
+            \frac{\partial^{2} \mathcal{T}_{\ell}}{\partial \alpha^{2}}
+        \right)^{2}
+    \right],
+\]
+
+
+
+which penalizes unphysical curvature in transport statistics.
+% ---------------------------------------------------------
+\section{Transport-Regularized Posteriors}
+
+Transport regularization enforces geometric consistency across probes:
+
+
+
+\[
+    \mathcal{R}_{\mathrm{trans}}
+    =
+    \sum_{\ell}
+    W_{2}^{2}
+    \left(
+        S_{\theta}(\alpha),
+        S_{\theta}(\alpha + \delta)
+    \right),
+\]
+
+
+
+where $S_{\theta}$ is the neural transport surrogate.
+
+The posterior becomes:
+
+
+
+\[
+    p(\alpha \mid \mathbf{s})
+    \propto
+    \mathcal{L}(\mathbf{s} \mid \alpha)
+    \exp\!\left[
+        -\lambda_{\mathrm{trans}}
+        \mathcal{R}_{\mathrm{trans}}
+    \right].
+\]
+
+
+% ---------------------------------------------------------
+\section{Inference and Sampling}
+
+The hierarchical posterior is sampled using:
+
+\begin{itemize}
+    \item Hamiltonian Monte Carlo,
+    \item No-U-Turn Sampler (NUTS),
+    \item Variational inference,
+    \item Neural posterior estimation.
+\end{itemize}
+
+Gradients are computed via automatic differentiation through:
+
+\begin{itemize}
+    \item the neural joint likelihood (Companion LXXXVI),
+    \item emulator flows (Companion LXXXVIII),
+    \item transport regularization terms.
+\end{itemize}
+% ---------------------------------------------------------
+\section{Conclusion}
+
+We introduced a hierarchical Bayesian framework for RDCC inference that combines 
+multi-probe priors, emulator uncertainty, and transport-regularized posteriors. 
+This framework unifies topology, morphology, and two-point statistics into a 
+single coherent Bayesian model and provides the final statistical layer required 
+for robust RDCC parameter estimation in Euclid-like surveys.
+
+\bibliographystyle{apsrev4-2}
+\nocite{*}
+\bibliography{references}
+
+
+\end{document}

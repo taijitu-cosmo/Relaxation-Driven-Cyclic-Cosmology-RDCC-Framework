@@ -1,0 +1,184 @@
+\documentclass[11pt,a4paper]{article}
+
+% ---------------------------------------------------------
+% PREAMBLE (stable, warning-free, Overleaf-safe)
+% ---------------------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{bm}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{cite}
+\usepackage{authblk}
+\usepackage{physics}
+\usepackage{mathtools}
+
+\geometry{margin=2.4cm}
+
+\title{\textbf{Companion LVIII: The Weak-Lensing Bispectrum in the Relaxation-Driven Cyclic Cosmology}}
+\author{Michael Lehmann \\ \texttt{mi.lehmann@gmx.de}}
+\date{April 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The weak-lensing bispectrum probes the non-Gaussian structure of the gravitational 
+potential by measuring the three-point correlations of the cosmic shear field. In 
+the standard cosmological model, the bispectrum arises from nonlinear structure 
+formation and the mode coupling induced by gravitational evolution. In the 
+Relaxation-Driven Cyclic Cosmology (RDCC), the scale-dependent evolution of the 
+gravitational potential modifies the nonlinear coupling, the potential depth, and 
+the three-point structure of the shear field in a characteristic way. This 
+Companion develops a continuous description of the weak-lensing bispectrum in 
+RDCC, deriving how the relaxation scale influences the bispectrum amplitude, the 
+configuration dependence, and the observational signatures in cosmic shear 
+surveys. The resulting framework provides a distinctive probe of the RDCC 
+gravitational field beyond the two-point level.
+\end{abstract}
+% ---------------------------------------------------------
+\section{Introduction}
+
+Weak gravitational lensing probes the integrated gravitational potential along the 
+line of sight. While the power spectrum captures the Gaussian component of the 
+shear field, the bispectrum captures the non-Gaussian structure induced by 
+nonlinear gravitational evolution. The bispectrum is sensitive to the mode 
+coupling between large and small scales and provides a powerful probe of the 
+gravitational field.
+
+In the standard cosmological model, the bispectrum arises from nonlinear structure 
+formation and the coupling of density modes. In RDCC, the gravitational potential 
+evolves differently. The relaxation mechanism suppresses the decay of small-scale 
+modes and enhances the coherence of large-scale modes. This modifies the nonlinear 
+coupling, the potential depth, and the three-point structure of the shear field in 
+a scale-dependent manner, producing a distinctive signature in the weak-lensing 
+bispectrum.
+% ---------------------------------------------------------
+\section{The RDCC Nonlinear Potential}
+
+The nonlinear gravitational potential evolves as
+\begin{equation}
+    \Phi_{\mathrm{NL,RDCC}}(k,a)
+    = \Phi_{\mathrm{NL}}(k,a)
+      \left[
+        1 - \chi_{\mathrm{NL}}
+        \left(\frac{k}{k_{\mathrm{rel}}}\right)^{\alpha}
+      \right].
+\end{equation}
+
+The nonlinear mode-coupling kernel becomes
+\begin{equation}
+    F_{2,\mathrm{RDCC}}(\mathbf{k}_{1},\mathbf{k}_{2})
+    = F_{2}(\mathbf{k}_{1},\mathbf{k}_{2})
+      \left[
+        1 - \chi_{F}
+        \left(
+          \frac{k_{1} + k_{2}}{2k_{\mathrm{rel}}}
+        \right)^{\alpha}
+      \right].
+\end{equation}
+
+This modification reflects the scale-dependent evolution of the gravitational 
+potential.
+% ---------------------------------------------------------
+\section{The Weak-Lensing Bispectrum}
+
+The convergence bispectrum is defined as
+\begin{equation}
+    B_{\kappa}(\ell_{1},\ell_{2},\ell_{3})
+    = \int_{0}^{\chi_{H}}
+      d\chi\,
+      \frac{
+        W^{3}(\chi)
+      }{
+        \chi^{4}
+      }
+      B_{m}\left(
+        \frac{\ell_{1}}{\chi},
+        \frac{\ell_{2}}{\chi},
+        \frac{\ell_{3}}{\chi};
+        z(\chi)
+      \right).
+\end{equation}
+
+In RDCC, the matter bispectrum becomes
+\begin{equation}
+    B_{m,\mathrm{RDCC}}
+    = B_{m}
+      \left[
+        1 - \chi_{B}
+        \left(
+          \frac{k_{1} + k_{2} + k_{3}}{3k_{\mathrm{rel}}}
+        \right)^{\alpha}
+      \right].
+\end{equation}
+
+The convergence bispectrum becomes
+\begin{equation}
+    B_{\kappa,\mathrm{RDCC}}
+    = B_{\kappa}
+      \left[
+        1 - \chi_{\kappa}
+        \left(
+          \frac{\ell_{1} + \ell_{2} + \ell_{3}}{3\ell_{\mathrm{rel}}}
+        \right)^{\alpha}
+      \right].
+\end{equation}
+% ---------------------------------------------------------
+\section{Configuration Dependence and RDCC Signatures}
+
+The relaxation mechanism enhances the coherence of large-scale modes. The 
+weak-lensing bispectrum therefore exhibits:
+
+\begin{itemize}
+    \item enhanced equilateral configurations at large angular scales,
+    \item suppressed squeezed configurations at small scales,
+    \item a characteristic turnover near $\ell_{\mathrm{rel}}$,
+    \item a modified redshift dependence of the bispectrum amplitude.
+\end{itemize}
+
+These signatures provide a direct observational probe of the RDCC gravitational 
+field beyond the two-point level.
+% ---------------------------------------------------------
+\section{Redshift Evolution of the RDCC Bispectrum}
+
+The redshift evolution of the RDCC bispectrum is given by
+\begin{equation}
+    \frac{\partial B_{\kappa,\mathrm{RDCC}}}{\partial z}
+    = \frac{\partial B_{\kappa}}{\partial z}
+      \left[
+        1 - \chi_{\kappa}
+        \left(
+          \frac{\ell_{1} + \ell_{2} + \ell_{3}}{3\ell_{\mathrm{rel}}}
+        \right)^{\alpha}
+      \right]
+      - B_{\kappa}\,
+        \chi_{\kappa}\,\alpha\,
+        \left(
+          \frac{\ell_{1} + \ell_{2} + \ell_{3}}{3\ell_{\mathrm{rel}}}
+        \right)^{\alpha}
+        \frac{\partial \ln \ell_{\mathrm{rel}}}{\partial z}.
+\end{equation}
+
+This term is unique to RDCC and provides a direct probe of the relaxation scale.
+% ---------------------------------------------------------
+\section{Conclusion}
+
+The weak-lensing bispectrum in the Relaxation-Driven Cyclic Cosmology reflects the 
+scale-dependent evolution of the gravitational potential and the nonlinear matter 
+distribution. The relaxation mechanism modifies the nonlinear coupling, the 
+potential depth, and the three-point structure of the shear field in a 
+scale-dependent manner, producing distinctive signatures in cosmic shear surveys. 
+These effects provide a direct observational window into the relaxation scale and 
+the temporal structure of the RDCC gravitational field. The present Companion 
+establishes the theoretical foundation for future studies of non-Gaussianity, 
+matter evolution, and the interplay between light and gravity in RDCC.
+
+\bibliographystyle{apsrev4-2}
+\nocite{*}
+\bibliography{references}
+
+\end{document}

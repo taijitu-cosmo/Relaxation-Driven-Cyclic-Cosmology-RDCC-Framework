@@ -1,0 +1,158 @@
+\documentclass[11pt,a4paper]{article}
+
+% ---------------------------------------------------------
+% PREAMBLE (stable, warning-free, Overleaf-safe)
+% ---------------------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{bm}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{cite}
+\usepackage{authblk}
+\usepackage{physics}
+\usepackage{mathtools}
+
+\geometry{margin=2.4cm}
+
+\title{\textbf{Companion LXVIII: Cross-Correlation Functions of Persistence Diagrams in the Relaxation-Driven Cyclic Cosmology}}
+\author{Michael Lehmann \\ \texttt{mi.lehmann@gmx.de}}
+\date{April 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Cross-correlation functions of persistence diagrams quantify the coupling of 
+topological features across different filtration parameters, smoothing scales, or 
+redshift slices. In weak-lensing analyses, these correlations measure how the 
+birth and death of connected components, loops, and void-like structures co-evolve 
+across the gravitational field. In the standard cosmological model, cross-
+correlation functions reflect the nonlinear matter distribution and the projection 
+of large-scale structure. In the Relaxation-Driven Cyclic Cosmology (RDCC), the 
+scale-dependent evolution of the gravitational potential modifies the filtration-
+coupled topology in a characteristic way. This Companion develops a continuous 
+description of cross-correlation functions in RDCC, deriving how the relaxation 
+scale influences topological coupling, persistence-lifetime alignment, and the 
+observational signatures in weak-lensing surveys. The resulting framework provides 
+a distinctive probe of the RDCC gravitational field through filtration-coupled 
+topology.
+\end{abstract}
+% ---------------------------------------------------------
+\section{Introduction}
+
+Persistence diagrams encode the birth and death of topological features in 
+weak-lensing convergence fields. While cross-covariance measures the correlated 
+spread of topological features across ensembles, cross-correlation functions 
+quantify the coupling of topological structure across different filtration 
+parameters, smoothing scales, or redshift slices.
+
+In the standard cosmological model, cross-correlation functions reflect the 
+nonlinear matter distribution and the projection of large-scale structure. In 
+RDCC, the gravitational potential evolves differently. The relaxation mechanism 
+suppresses the decay of small-scale modes and enhances the coherence of large-scale 
+modes. This modifies the filtration-coupled topology in a scale-dependent manner, 
+producing a distinctive signature in cross-correlation analyses.
+% ---------------------------------------------------------
+\section{Cross-Correlation Functions of Persistence Diagrams}
+
+Given two filtrations with persistence diagrams $D(\nu_{1})$ and $D(\nu_{2})$, the 
+cross-correlation function is defined as
+
+\begin{equation}
+    \xi_{D}(\nu_{1}, \nu_{2})
+    = \frac{
+        \left\langle
+            W_{p}(D(\nu_{1}), D^{*})
+            W_{p}(D(\nu_{2}), D^{*})
+        \right\rangle
+      }{
+        \sqrt{
+            \left\langle W_{p}(D(\nu_{1}), D^{*})^{2} \right\rangle
+            \left\langle W_{p}(D(\nu_{2}), D^{*})^{2} \right\rangle
+        }
+      }.
+\end{equation}
+
+This function measures the degree of filtration-coupled topology.
+% ---------------------------------------------------------
+\section{RDCC Modification of Persistence Diagrams}
+
+In RDCC, the convergence evolves as
+\begin{equation}
+    \kappa_{\mathrm{RDCC}}(\ell)
+    = \kappa(\ell)
+      \left[
+        1 - \chi_{\kappa}
+        \left(\frac{\ell}{\ell_{\mathrm{rel}}}\right)^{\alpha}
+      \right].
+\end{equation}
+
+This modifies the birth and death thresholds of topological features:
+
+\begin{align}
+    b_{\mathrm{RDCC}} &= b \left[ 1 - \chi_{b} (\ell/\ell_{\mathrm{rel}})^{\alpha} \right], \\
+    d_{\mathrm{RDCC}} &= d \left[ 1 - \chi_{d} (\ell/\ell_{\mathrm{rel}})^{\alpha} \right].
+\end{align}
+
+Thus the RDCC filtration diagrams become
+\begin{equation}
+    D_{\mathrm{RDCC}}(\nu)
+    = \left\{
+        (b_{\mathrm{RDCC}}(\nu), d_{\mathrm{RDCC}}(\nu))
+      \right\}.
+\end{equation}
+% ---------------------------------------------------------
+\section{Cross-Correlation Functions in RDCC}
+
+The RDCC cross-correlation function is
+
+\begin{equation}
+    \xi_{D,\mathrm{RDCC}}(\nu_{1}, \nu_{2})
+    = \xi_{D}(\nu_{1}, \nu_{2})
+      \left[
+        1 - \chi_{\xi}
+        \left(\frac{\ell}{\ell_{\mathrm{rel}}}\right)^{\alpha}
+      \right].
+\end{equation}
+
+This modification reflects the relaxation-driven change in filtration-coupled 
+topology.
+% ---------------------------------------------------------
+\section{Filtration-Coupled Topological Signatures of RDCC}
+
+The relaxation mechanism enhances the coherence of large-scale modes. Cross-
+correlation functions therefore exhibit:
+
+\begin{itemize}
+    \item enhanced correlation between large-scale filtration thresholds,
+    \item suppressed correlation between small-scale thresholds,
+    \item a characteristic turnover near $\ell_{\mathrm{rel}}$,
+    \item modified redshift evolution of filtration-coupled topology,
+    \item altered alignment of persistence lifetimes across thresholds.
+\end{itemize}
+
+These signatures provide a direct probe of the RDCC gravitational field through 
+filtration-coupled topology.
+% ---------------------------------------------------------
+\section{Conclusion}
+
+Cross-correlation functions of persistence diagrams in the Relaxation-Driven Cyclic 
+Cosmology reflect the scale-dependent evolution of the gravitational potential and 
+the nonlinear matter distribution. The relaxation mechanism modifies the 
+filtration-coupled topology in a scale-dependent manner, producing distinctive 
+signatures in weak-lensing surveys. These effects provide a direct observational 
+window into the relaxation scale and the temporal structure of the RDCC 
+gravitational field. The present Companion establishes the theoretical foundation 
+for future studies of filtration-coupled topology, nonlinear structure, and the 
+interplay between light and gravity in RDCC.
+
+\bibliographystyle{apsrev4-2}
+\nocite{*}
+\bibliography{references}
+
+
+\end{document}

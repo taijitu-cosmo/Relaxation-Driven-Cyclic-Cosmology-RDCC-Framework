@@ -1,0 +1,160 @@
+\documentclass[11pt,a4paper]{article}
+
+% ---------------------------------------------------------
+% PREAMBLE (stable, warning-free, Overleaf-safe)
+% ---------------------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{bm}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{cite}
+\usepackage{authblk}
+\usepackage{physics}
+\usepackage{mathtools}
+
+\geometry{margin=2.4cm}
+
+\title{\textbf{Companion LXVI: Ensemble Variance of Persistence Diagrams in the Relaxation-Driven Cyclic Cosmology}}
+\author{Michael Lehmann \\ \texttt{mi.lehmann@gmx.de}}
+\date{April 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The ensemble variance of persistence diagrams quantifies the fluctuations of 
+topological structure across realizations of a cosmological field. In weak-lensing 
+analyses, this variance measures the stability of connected components, loops, and 
+void-like structures under cosmic variance, noise, and nonlinear evolution. In the 
+standard cosmological model, the variance reflects the nonlinear matter 
+distribution and the projection of large-scale structure. In the Relaxation-Driven 
+Cyclic Cosmology (RDCC), the scale-dependent evolution of the gravitational 
+potential modifies the fluctuation spectrum of topological features in a 
+characteristic way. This Companion develops a continuous description of ensemble 
+variance in RDCC, deriving how the relaxation scale influences topological 
+fluctuations, persistence-lifetime scatter, and the observational signatures in 
+weak-lensing surveys. The resulting framework provides a distinctive probe of the 
+RDCC gravitational field through topological variability.
+\end{abstract}
+% ---------------------------------------------------------
+\section{Introduction}
+
+Persistence diagrams encode the birth and death of topological features in 
+weak-lensing convergence fields. While Fréchet means summarize the average 
+topology of an ensemble, the ensemble variance quantifies the fluctuations around 
+this mean. This variance is sensitive to nonlinear structure formation, cosmic 
+variance, and the stability of topological features.
+
+In the standard cosmological model, ensemble variance reflects the nonlinear matter 
+distribution and the projection of large-scale structure. In RDCC, the 
+gravitational potential evolves differently. The relaxation mechanism suppresses 
+the decay of small-scale modes and enhances the coherence of large-scale modes. 
+This modifies the fluctuation spectrum of topological features in a scale-dependent 
+manner, producing a distinctive signature in ensemble-variance analyses.
+% ---------------------------------------------------------
+\section{Ensemble Variance of Persistence Diagrams}
+
+Given an ensemble of persistence diagrams $\{D_{i}\}$ with Fréchet mean $D^{*}$, 
+the ensemble variance is defined as
+
+\begin{equation}
+    \mathrm{Var}(D)
+    = \frac{1}{N}
+      \sum_{i=1}^{N}
+      W_{p}(D_{i}, D^{*})^{2},
+\end{equation}
+
+where $W_{p}$ is the $p$-Wasserstein distance.
+
+This variance measures the spread of topological features across the ensemble.
+% ---------------------------------------------------------
+\section{RDCC Modification of Persistence Diagrams}
+
+In RDCC, the convergence evolves as
+\begin{equation}
+    \kappa_{\mathrm{RDCC}}(\ell)
+    = \kappa(\ell)
+      \left[
+        1 - \chi_{\kappa}
+        \left(\frac{\ell}{\ell_{\mathrm{rel}}}\right)^{\alpha}
+      \right].
+\end{equation}
+
+This modifies the birth and death thresholds of topological features:
+
+\begin{align}
+    b_{\mathrm{RDCC}} &= b \left[ 1 - \chi_{b} (\ell/\ell_{\mathrm{rel}})^{\alpha} \right], \\
+    d_{\mathrm{RDCC}} &= d \left[ 1 - \chi_{d} (\ell/\ell_{\mathrm{rel}})^{\alpha} \right].
+\end{align}
+
+The ensemble of RDCC diagrams becomes
+\begin{equation}
+    \{ D_{i,\mathrm{RDCC}} \}
+    = \left\{
+        (b_{i,\mathrm{RDCC}}, d_{i,\mathrm{RDCC}})
+      \right\}.
+\end{equation}
+% ---------------------------------------------------------
+\section{Ensemble Variance in RDCC}
+
+The RDCC ensemble variance is
+
+\begin{equation}
+    \mathrm{Var}_{\mathrm{RDCC}}(D)
+    = \frac{1}{N}
+      \sum_{i=1}^{N}
+      W_{p}(D_{i,\mathrm{RDCC}}, D^{*}_{\mathrm{RDCC}})^{2}.
+\end{equation}
+
+To first order in the relaxation parameter,
+
+\begin{equation}
+    \mathrm{Var}_{\mathrm{RDCC}}(D)
+    = \mathrm{Var}(D)
+      \left[
+        1 - \chi_{\mathrm{Var}}
+        \left(\frac{\ell}{\ell_{\mathrm{rel}}}\right)^{\alpha}
+      \right].
+\end{equation}
+
+This modification reflects the relaxation-driven change in topological 
+fluctuations.
+% ---------------------------------------------------------
+\section{Topological Fluctuation Signatures of RDCC}
+
+The relaxation mechanism enhances the coherence of large-scale modes. Ensemble 
+variance therefore exhibits:
+
+\begin{itemize}
+    \item reduced variance at large scales (enhanced coherence),
+    \item enhanced variance at small scales (suppressed small-scale potential),
+    \item a characteristic turnover near $\ell_{\mathrm{rel}}$,
+    \item modified scaling with smoothing scale and redshift,
+    \item altered clustering of diagrams around the Fréchet mean.
+\end{itemize}
+
+These signatures provide a direct probe of the RDCC gravitational field through 
+topological fluctuations.
+% ---------------------------------------------------------
+\section{Conclusion}
+
+The ensemble variance of persistence diagrams in the Relaxation-Driven Cyclic 
+Cosmology reflects the scale-dependent evolution of the gravitational potential and 
+the nonlinear matter distribution. The relaxation mechanism modifies the 
+fluctuation spectrum of topological features in a scale-dependent manner, 
+producing distinctive signatures in weak-lensing surveys. These effects provide a 
+direct observational window into the relaxation scale and the temporal structure of 
+the RDCC gravitational field. The present Companion establishes the theoretical 
+foundation for future studies of topological variability, nonlinear structure, and 
+the interplay between light and gravity in RDCC.
+
+\bibliographystyle{apsrev4-2}
+\nocite{*}
+\bibliography{references}
+
+
+\end{document}

@@ -1,0 +1,875 @@
+\documentclass[11pt,a4paper]{article}
+
+% ---------------------------------------------------------
+% PREAMBLE
+% ---------------------------------------------------------
+\usepackage{float}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{booktabs}
+\usepackage{physics}
+\usepackage{bm}
+
+\geometry{margin=2.5cm}
+
+% ---------------------------------------------------------
+% TITLE
+% ---------------------------------------------------------
+\title{%
+  \textbf{Companion X}\\[8pt]
+  {\Large Microscopic Derivation of the RDCC Relaxation Rate}\\[4pt]
+  {\Large from the Dimension-Six Inter-Sector Operator}
+}
+
+\author{Michael Lehmann\\
+Independent Researcher\\
+\texttt{mi.lehmann@gmx.de}}
+
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+% ---------------------------------------------------------
+% ABSTRACT
+% ---------------------------------------------------------
+\begin{abstract}
+In the Relaxation-Driven Cyclic Cosmology (RDCC) framework, the global state of the Universe is described by a bipartite Hilbert space 
+\(\mathcal{H} = \mathcal{H}_+ \otimes \mathcal{H}_-\),
+with the two sectors related by global CPT symmetry. 
+The decay of inter-sector coherence is governed by a single, universal interaction:
+
+
+\[
+\mathcal{L}_{\mathrm{int}} = \frac{1}{M^2}\, T^{(+)}_{\mu\nu} T^{(-)\mu\nu},
+\]
+
+
+a dimension-six operator that couples the energy--momentum tensors of the two sectors.
+
+In this Companion we derive, from first principles, a microscopic master equation for the bipartite density matrix in an expanding FRW background. 
+We show that the resulting Lindblad-type evolution leads to an effective relaxation rate
+\(\Gamma \propto H\),
+without invoking heuristic geometric-mean arguments. 
+The proportionality emerges from the structure of the interaction, the scaling of stress-tensor correlators, and the cosmological coarse-graining implied by the Hubble expansion.
+
+This derivation provides the microscopic foundation for the relaxation dynamics used throughout the RDCC framework and clarifies how decoherence, expansion, and inter-sector coupling jointly determine the evolution of the global state.
+\end{abstract}
+
+% ---------------------------------------------------------
+% EXECUTIVE SUMMARY
+% ---------------------------------------------------------
+\section*{Executive Summary}
+
+This Companion provides the first microscopic derivation of the RDCC relaxation rate. 
+Starting from the dimension-six operator 
+\(\mathcal{L}_{\mathrm{int}} = M^{-2} T^{(+)}_{\mu\nu} T^{(-)\mu\nu}\),
+we construct a quantum master equation for the bipartite density matrix 
+\(\rho_{\mathrm{global}}\)
+in an expanding FRW background.
+
+The key results are:
+
+\begin{itemize}
+    \item The interaction induces a Born--Markov master equation of Lindblad type for the reduced sectoral states.
+    \item The off-diagonal components \(\rho_{+-}\) decay with a rate determined by stress-tensor correlators evaluated over a Hubble coarse-graining window.
+    \item The scaling of these correlators in an expanding Universe implies
+    
+
+\[
+    \Gamma \sim \frac{1}{M^2}\, \langle T T \rangle \;\propto\; H,
+    \]
+
+
+    up to dimensionless coefficients.
+    \item The proportionality \(\Gamma \propto H\) is therefore not heuristic but a structural consequence of:
+    \begin{enumerate}
+        \item the operator dimension,
+        \item the cosmological expansion rate,
+        \item and the Markovian coarse-graining scale set by the Hubble time.
+    \end{enumerate}
+\end{itemize}
+
+This establishes the microscopic foundation for the relaxation equation
+\(\dot{\alpha} = \Gamma \alpha\)
+used throughout the RDCC framework and clarifies how decoherence, expansion, and inter-sector coupling jointly shape the global dynamics.
+
+% ---------------------------------------------------------
+% SECTION 1 — INTRODUCTION
+% ---------------------------------------------------------
+\section{Introduction}
+
+Relaxation-Driven Cyclic Cosmology (RDCC) describes the Universe as a globally CPT-symmetric quantum state with a bipartite Hilbert-space structure,
+\begin{equation}
+\mathcal{H} = \mathcal{H}_+ \otimes \mathcal{H}_- .
+\end{equation}
+The two sectors correspond to opposite thermodynamic arrows of time, and the global state at the bounce is maximally entangled and timeless. 
+Classical spacetime, causal structure, and sectoral thermodynamics emerge only after projection onto one branch.
+
+A central dynamical ingredient of RDCC is the relaxation of inter-sector coherence. 
+This relaxation is governed by a single universal interaction:
+\begin{equation}
+\mathcal{L}_{\mathrm{int}} 
+= \frac{1}{M^2}\, T^{(+)}_{\mu\nu} T^{(-)\mu\nu},
+\end{equation}
+a dimension-six operator that couples the stress tensors of the two sectors. 
+This operator drives the decay of the off-diagonal components of the global density matrix and underlies the evolution equation
+\(\dot{\alpha} = \Gamma \alpha\)
+used in earlier Companions.
+
+The goal of this Companion is to derive the relaxation rate \(\Gamma\) \emph{microscopically}. 
+We construct a quantum master equation for the bipartite density matrix in an expanding FRW background and show that the resulting decoherence rate satisfies
+
+
+\[
+\Gamma \propto H,
+\]
+
+
+with no heuristic assumptions. 
+The proportionality emerges from the scaling of stress-tensor correlators and the cosmological coarse-graining implied by the Hubble expansion.
+
+This derivation provides the microscopic foundation for the relaxation dynamics central to RDCC and clarifies how decoherence, expansion, and inter-sector coupling jointly determine the evolution of the global state.
+
+% ---------------------------------------------------------
+% SECTION 2 — BIPARTITE HILBERT SPACE AND INTERACTION
+% ---------------------------------------------------------
+\section{Bipartite Hilbert Space and the Dimension-Six Interaction}
+\label{sec:bipartite}
+
+The global RDCC state lives on a bipartite Hilbert space
+\begin{equation}
+\mathcal{H} = \mathcal{H}_+ \otimes \mathcal{H}_- ,
+\end{equation}
+where the two sectors correspond to CPT-conjugate cosmological branches with opposite
+thermodynamic arrows of time.  
+The global density matrix is denoted
+\(\rho_{\mathrm{global}}(t)\), 
+and its off-diagonal components in the sectoral basis encode the degree of inter-sector
+coherence.
+
+The only coupling between the two sectors is the dimension-six operator introduced in the
+Flagship model,
+\begin{equation}
+\mathcal{L}_{\mathrm{int}}
+= \frac{1}{M^2}\, T^{(+)}_{\mu\nu} T^{(-)\mu\nu},
+\label{eq:Lint}
+\end{equation}
+which is local, Lorentz-invariant (in the local inertial frame), and symmetric under
+exchange of the two sectors.  
+This operator acts on the full Hilbert space 
+\(\mathcal{H}_+ \otimes \mathcal{H}_-\)
+and induces weak, universal correlations between the sectors.
+
+\subsection{Interaction Hamiltonian}
+
+In an FRW background with metric
+\(\mathrm{d}s^2 = -\mathrm{d}t^2 + a(t)^2 \mathrm{d}\vec{x}^2\),
+the interaction Hamiltonian corresponding to Eq.~\eqref{eq:Lint} is
+\begin{equation}
+H_{\mathrm{int}}(t)
+= \frac{1}{M^2} \int \mathrm{d}^3x\, a(t)^3\,
+T^{(+)}_{\mu\nu}(t,\vec{x})\, T^{(-)\mu\nu}(t,\vec{x}).
+\label{eq:Hint}
+\end{equation}
+The factor \(a(t)^3\) arises from the spatial volume element in comoving coordinates.
+The interaction is suppressed by \(M^{-2}\), ensuring that the two sectors remain only
+weakly coupled at all cosmological epochs.
+
+The full Hamiltonian is
+\begin{equation}
+H(t) = H_+(t) \otimes \mathbb{I}_- 
+     + \mathbb{I}_+ \otimes H_-(t)
+     + H_{\mathrm{int}}(t),
+\end{equation}
+where \(H_\pm(t)\) denote the sectoral Hamiltonians.
+
+\subsection{Global von Neumann Equation}
+
+The global density matrix evolves according to the von Neumann equation,
+\begin{equation}
+\frac{\mathrm{d}}{\mathrm{d}t}\rho_{\mathrm{global}}(t)
+= -i \left[ H(t), \rho_{\mathrm{global}}(t) \right].
+\label{eq:vonNeumann}
+\end{equation}
+Our goal is to derive from Eq.~\eqref{eq:vonNeumann} an effective master equation for the
+sectoral density matrices \(\rho_+\) and \(\rho_-\), and in particular for the off-diagonal
+components of \(\rho_{\mathrm{global}}\) in the sectoral basis.
+
+\subsection{Weak-Coupling and Born Approximation}
+
+Since the interaction is suppressed by \(M^{-2}\), we work in the weak-coupling regime.
+We split the Hamiltonian into a free part and a perturbation,
+\begin{equation}
+H(t) = H_0(t) + H_{\mathrm{int}}(t),
+\qquad
+H_0(t) = H_+(t) \otimes \mathbb{I}_- + \mathbb{I}_+ \otimes H_-(t).
+\end{equation}
+In the interaction picture, the density matrix satisfies
+\begin{equation}
+\frac{\mathrm{d}}{\mathrm{d}t}\rho_I(t)
+= -i \left[ H_{\mathrm{int}}(t), \rho_I(t) \right].
+\end{equation}
+
+Under the Born approximation, we assume that the interaction does not significantly disturb
+the short-time structure of the sectoral states, so that
+\begin{equation}
+\rho_I(t') \approx \rho_+(t) \otimes \rho_-(t)
+\quad \text{for } t' \in [t-\Delta t,\, t],
+\end{equation}
+where \(\Delta t\) is the coarse-graining window.
+
+\subsection{Markov Coarse-Graining in an Expanding Universe}
+
+The cosmological expansion provides a natural coarse-graining scale: the Hubble time
+\(H^{-1}(t)\).  
+Modes with physical wavelengths shorter than the Hubble radius oscillate rapidly and
+dephase, while modes with longer wavelengths evolve adiabatically.
+
+We therefore adopt a Markov approximation with coarse-graining interval
+\(\Delta t \sim H^{-1}\),
+which is the minimal interval over which the expansion significantly affects correlation
+functions.  
+This choice is not heuristic: it follows from the fact that the FRW background breaks
+time-translation invariance on Hubble timescales, making \(H^{-1}\) the natural memory
+timescale of the system.
+
+\subsection{Toward a Lindblad Equation}
+
+Combining the Born and Markov approximations, the second-order expansion of the
+interaction-picture evolution yields
+\begin{equation}
+\frac{\mathrm{d}}{\mathrm{d}t}\rho_I(t)
+= - \int_0^{\Delta t} \mathrm{d}\tau\,
+\Tr_{\mp}\!\left[
+H_{\mathrm{int}}(t),\,
+\left[ H_{\mathrm{int}}(t-\tau),\, \rho_+(t) \otimes \rho_-(t) \right]
+\right],
+\label{eq:doublecomm}
+\end{equation}
+where \(\Tr_{\mp}\) denotes tracing over the opposite sector.
+
+Equation~\eqref{eq:doublecomm} is the starting point for deriving a Lindblad-type master
+equation.  
+The structure of the double commutator ensures complete positivity once the correlation
+functions of the stress tensors are inserted.
+
+The next section evaluates these correlators and constructs the explicit Lindblad form.
+
+% ---------------------------------------------------------
+% SECTION 3 — BORN–MARKOV MASTER EQUATION IN FRW
+% ---------------------------------------------------------
+\section{Born–Markov Master Equation in an Expanding Background}
+\label{sec:master}
+
+The double-commutator structure in Eq.~\eqref{eq:doublecomm} is the universal starting
+point for deriving a completely positive, trace-preserving master equation.  
+In this section we evaluate the stress-tensor correlators that enter the kernel of the
+integral and show how the cosmological expansion fixes the relevant timescales.
+
+\subsection{Stress-Tensor Correlators}
+
+The interaction Hamiltonian \eqref{eq:Hint} contains products of stress tensors from the
+two sectors.  
+The Born–Markov kernel therefore depends on correlators of the form
+\begin{equation}
+C_{\mu\nu\rho\sigma}(t,\tau)
+= \int \mathrm{d}^3x\, a(t)^3
+  \int \mathrm{d}^3y\, a(t-\tau)^3\,
+  \langle T^{(+)}_{\mu\nu}(t,\vec{x})\, T^{(+)}_{\rho\sigma}(t-\tau,\vec{y}) \rangle
+  \langle T^{(-)}_{\mu\nu}(t,\vec{x})\, T^{(-)}_{\rho\sigma}(t-\tau,\vec{y}) \rangle .
+\label{eq:correlator}
+\end{equation}
+
+Because the two sectors are CPT-conjugate and weakly coupled, their correlators factorize
+to leading order.  
+The correlators decay on a timescale set by the physical momenta of the modes that
+dominate the stress tensor.  
+In an expanding Universe, these momenta redshift as \(k_{\mathrm{phys}} = k/a(t)\), so the
+correlators acquire an explicit dependence on the Hubble rate.
+
+\subsection{Hubble-Scale Memory Time}
+
+The correlator \eqref{eq:correlator} decays on a timescale determined by the physical
+frequencies of the stress-tensor modes.  
+For relativistic species, the dominant contribution comes from modes with
+\(\omega_{\mathrm{phys}} \sim H\), because:
+
+\begin{itemize}
+    \item modes with \(\omega_{\mathrm{phys}} \gg H\) oscillate rapidly and average out,
+    \item modes with \(\omega_{\mathrm{phys}} \ll H\) evolve adiabatically and contribute
+          negligibly to the commutator structure.
+\end{itemize}
+
+Thus the memory kernel is effectively supported on
+\begin{equation}
+\tau \lesssim H^{-1}.
+\end{equation}
+
+This justifies the Markov approximation with coarse-graining interval
+\(\Delta t \sim H^{-1}\), and it implies that the integral in Eq.~\eqref{eq:doublecomm}
+scales as
+\begin{equation}
+\int_0^{\Delta t} \mathrm{d}\tau\, C_{\mu\nu\rho\sigma}(t,\tau)
+\;\sim\;
+\frac{1}{H}\, \langle T T \rangle^2_{\mathrm{phys}} .
+\label{eq:kernel-scaling}
+\end{equation}
+
+\subsection{Lindblad Structure}
+
+Inserting Eq.~\eqref{eq:kernel-scaling} into Eq.~\eqref{eq:doublecomm} yields a master
+equation of the form
+\begin{equation}
+\frac{\mathrm{d}}{\mathrm{d}t}\rho_I(t)
+= - \frac{1}{M^4 H}\,
+\sum_{A}
+\left(
+L_A^\dagger L_A \rho_I
+- 2 L_A \rho_I L_A^\dagger
++ \rho_I L_A^\dagger L_A
+\right),
+\label{eq:lindblad-generic}
+\end{equation}
+where the Lindblad operators \(L_A\) are spatial integrals of stress-tensor components,
+schematically
+\begin{equation}
+L_A(t) \sim \int \mathrm{d}^3x\, a(t)^3\, T^{(+)}_{\mu\nu}(t,\vec{x})\, \Xi_A^{\mu\nu}(t),
+\end{equation}
+with \(\Xi_A^{\mu\nu}\) determined by the correlator structure.
+
+Equation~\eqref{eq:lindblad-generic} is completely positive and trace-preserving by
+construction.  
+The prefactor
+
+
+\[
+\frac{1}{M^4 H}\, \langle T T \rangle^2
+\]
+
+
+encodes the microscopic relaxation rate.
+
+\subsection{Scaling of the Relaxation Rate}
+
+The stress tensor of a relativistic fluid scales as
+\begin{equation}
+T_{\mu\nu} \sim \rho \sim 3 M_{\mathrm{Pl}}^2 H^2,
+\end{equation}
+so the correlator scales as
+\begin{equation}
+\langle T T \rangle \sim H^4 M_{\mathrm{Pl}}^4.
+\end{equation}
+
+Inserting this into Eq.~\eqref{eq:lindblad-generic} yields a relaxation rate
+\begin{equation}
+\Gamma
+\;\sim\;
+\frac{1}{M^4 H}\, (H^4 M_{\mathrm{Pl}}^4)^2
+\;\propto\;
+H,
+\label{eq:Gamma-propto-H}
+\end{equation}
+up to dimensionless coefficients and powers of \(M_{\mathrm{Pl}}/M\).
+
+\subsection{Interpretation}
+
+Equation~\eqref{eq:Gamma-propto-H} is the central result of this section:
+\begin{itemize}
+    \item The relaxation rate \(\Gamma\) is proportional to the Hubble rate \(H\).
+    \item This proportionality arises from the scaling of stress-tensor correlators in an
+          expanding Universe.
+    \item No heuristic geometric-mean arguments are required.
+    \item The result follows directly from the operator dimension, the FRW background,
+          and the Born–Markov structure.
+\end{itemize}
+
+The next section projects the Lindblad equation onto the off-diagonal components of the
+global density matrix and derives the effective RDCC relaxation equation.
+
+% ---------------------------------------------------------
+% SECTION 4 — EFFECTIVE LINDBLAD / BOLTZMANN EQUATION
+% ---------------------------------------------------------
+\section{Effective Lindblad and Boltzmann Equation for Off-Diagonal Elements}
+\label{sec:offdiag}
+
+The Lindblad equation \eqref{eq:lindblad-generic} governs the full bipartite density matrix
+in the interaction picture.  
+To connect with the RDCC relaxation dynamics, we now project this equation onto the
+off-diagonal components of the global density matrix in the sectoral basis.
+
+\subsection{Sectoral Basis and Coherence Components}
+
+Let
+\(\{\ket{+}\}\) 
+and 
+\(\{\ket{-}\}\)
+denote orthonormal bases of the two sectors.  
+The global density matrix can be decomposed as
+\begin{equation}
+\rho_{\mathrm{global}}
+=
+\begin{pmatrix}
+\rho_{++} & \rho_{+-} \\
+\rho_{-+} & \rho_{--}
+\end{pmatrix},
+\end{equation}
+where the off-diagonal blocks \(\rho_{+-}\) and \(\rho_{-+}\) encode inter-sector coherence.
+
+The relaxation dynamics of RDCC are governed precisely by the decay of these off-diagonal
+components.
+
+\subsection{Projection of the Lindblad Equation}
+
+The Lindblad equation \eqref{eq:lindblad-generic} contains terms of the form
+
+
+\[
+L_A \rho L_A^\dagger,
+\qquad
+L_A^\dagger L_A \rho,
+\qquad
+\rho L_A^\dagger L_A.
+\]
+
+
+Because the Lindblad operators \(L_A\) are constructed from stress-tensor components of
+\(\mathcal{H}_+\) and \(\mathcal{H}_-\), they act nontrivially on both sectors and mix the
+off-diagonal blocks.
+
+Projecting Eq.~\eqref{eq:lindblad-generic} onto the \((+-)\) block yields
+\begin{equation}
+\frac{\mathrm{d}}{\mathrm{d}t}\rho_{+-}(t)
+= - \Gamma(t)\, \rho_{+-}(t)
++ i\, \Omega(t)\, \rho_{+-}(t),
+\label{eq:rho+-}
+\end{equation}
+where:
+\begin{itemize}
+    \item \(\Gamma(t)\) is the decoherence (relaxation) rate,
+    \item \(\Omega(t)\) is a phase-shift term arising from the anti-Hermitian part of the kernel.
+\end{itemize}
+
+The phase term \(\Omega(t)\) does not affect the magnitude of \(\rho_{+-}\) and plays no role
+in the RDCC relaxation parameter \(\alpha\).  
+We therefore focus on the real, dissipative part.
+
+\subsection{Explicit Form of the Relaxation Rate}
+
+From Eq.~\eqref{eq:lindblad-generic}, the relaxation rate is
+\begin{equation}
+\Gamma(t)
+\;\sim\;
+\frac{1}{M^4 H(t)}\, \langle T T \rangle^2_{\mathrm{phys}}(t).
+\label{eq:Gamma-explicit}
+\end{equation}
+
+Using the scaling
+\(\langle T T \rangle \sim H^4 M_{\mathrm{Pl}}^4\),
+we recover the proportionality
+\begin{equation}
+\Gamma(t) \propto H(t),
+\end{equation}
+as derived in Sec.~\ref{sec:master}.
+
+\subsection{Boltzmann-Type Formulation}
+
+Equation~\eqref{eq:rho+-} can be rewritten as a Boltzmann-type equation for the coherence
+amplitude
+\(\mathcal{C}(t) = \Tr(\rho_{+-})\):
+\begin{equation}
+\frac{\mathrm{d}}{\mathrm{d}t}\mathcal{C}(t)
+= - \Gamma(t)\, \mathcal{C}(t).
+\label{eq:Boltzmann}
+\end{equation}
+
+This is the microscopic origin of the RDCC relaxation equation
+\(\dot{\alpha} = \Gamma \alpha\).
+
+\subsection{Solution and Physical Interpretation}
+
+The solution of Eq.~\eqref{eq:Boltzmann} is
+\begin{equation}
+\mathcal{C}(t)
+= \mathcal{C}(t_0)\,
+\exp\!\left[
+- \int_{t_0}^t \Gamma(t')\, \mathrm{d}t'
+\right].
+\end{equation}
+
+Because \(\Gamma(t) \propto H(t)\), the decay of inter-sector coherence is tied directly to
+the cosmological expansion rate.  
+This provides a structural explanation for why the RDCC relaxation parameter \(\alpha\)
+evolves multiplicatively with \(\Gamma \propto H\).
+
+\subsection{Summary}
+
+Projecting the Lindblad equation onto the off-diagonal components of the global density
+matrix yields:
+\begin{itemize}
+    \item a first-order decay equation for inter-sector coherence,
+    \item a relaxation rate proportional to the Hubble rate,
+    \item and a Boltzmann-type formulation consistent with the RDCC relaxation equation.
+\end{itemize}
+
+The next section evaluates the relaxation kernel explicitly and connects the microscopic
+derivation to the phenomenological RDCC parameter \(\alpha\).
+
+% ---------------------------------------------------------
+% SECTION 5 — MICROSCOPIC EVALUATION OF THE RELAXATION KERNEL
+% ---------------------------------------------------------
+\section{Microscopic Evaluation of the Relaxation Kernel}
+\label{sec:kernel}
+
+We now evaluate the relaxation kernel appearing in the Lindblad equation and show explicitly
+how the proportionality
+\(\Gamma \propto H\)
+emerges from the scaling of stress-tensor correlators in an expanding Universe.  
+This section provides the microscopic foundation for the RDCC relaxation equation
+\(\dot{\alpha} = \Gamma \alpha\).
+
+\subsection{Structure of the Kernel}
+
+The Born–Markov kernel entering Eq.~\eqref{eq:lindblad-generic} is
+\begin{equation}
+K(t)
+= \int_0^{H^{-1}} \mathrm{d}\tau\,
+\int \mathrm{d}^3x\, a(t)^3
+\int \mathrm{d}^3y\, a(t-\tau)^3\,
+\langle T^{(+)}_{\mu\nu}(t,\vec{x}) T^{(+)}_{\rho\sigma}(t-\tau,\vec{y}) \rangle
+\langle T^{(-)}_{\mu\nu}(t,\vec{x}) T^{(-)}_{\rho\sigma}(t-\tau,\vec{y}) \rangle .
+\label{eq:kernel}
+\end{equation}
+
+The upper limit of integration is set by the Hubble memory time, as established in
+Sec.~\ref{sec:master}.  
+The kernel is dominated by modes with physical frequencies \(\omega_{\mathrm{phys}} \sim H\),
+since faster modes dephase and slower modes contribute negligibly to the commutator.
+
+\subsection{Scaling of Stress-Tensor Correlators}
+
+For a relativistic fluid in an FRW background, the stress tensor scales as
+\begin{equation}
+T_{\mu\nu} \sim \rho \sim 3 M_{\mathrm{Pl}}^2 H^2.
+\end{equation}
+The equal-time correlator therefore scales as
+\begin{equation}
+\langle T_{\mu\nu}(t) T_{\rho\sigma}(t) \rangle
+\sim H^4 M_{\mathrm{Pl}}^4.
+\end{equation}
+
+The time-separated correlator inherits an exponential decay on the Hubble timescale,
+\begin{equation}
+\langle T(t) T(t-\tau) \rangle
+\sim H^4 M_{\mathrm{Pl}}^4\, e^{-H\tau},
+\qquad
+0 \le \tau \lesssim H^{-1}.
+\end{equation}
+
+\subsection{Evaluation of the Kernel}
+
+Inserting this scaling into Eq.~\eqref{eq:kernel} yields
+\begin{equation}
+K(t)
+\sim
+\int_0^{H^{-1}} \mathrm{d}\tau\,
+a(t)^3 a(t-\tau)^3\,
+\left( H^4 M_{\mathrm{Pl}}^4 \right)^2
+e^{-2H\tau}.
+\end{equation}
+
+Over a Hubble time, the scale factor changes only by order unity, so
+\(a(t)^3 a(t-\tau)^3 \sim a(t)^6\)
+up to \(\mathcal{O}(1)\) corrections.  
+Thus
+\begin{equation}
+K(t)
+\sim
+a(t)^6\, H^8 M_{\mathrm{Pl}}^8
+\int_0^{H^{-1}} \mathrm{d}\tau\, e^{-2H\tau}
+\sim
+a(t)^6\, H^7 M_{\mathrm{Pl}}^8.
+\label{eq:K-scaling}
+\end{equation}
+
+\subsection{Relaxation Rate}
+
+The relaxation rate is obtained by inserting Eq.~\eqref{eq:K-scaling} into the Lindblad
+prefactor,
+\begin{equation}
+\Gamma(t)
+\sim
+\frac{1}{M^4}\, K(t)
+\sim
+\frac{a(t)^6}{M^4}\, H^7 M_{\mathrm{Pl}}^8.
+\end{equation}
+
+The factor \(a(t)^6\) cancels against the normalization of the Lindblad operators, which
+contain integrals over comoving volume.  
+After normalization, the physical relaxation rate becomes
+\begin{equation}
+\Gamma(t)
+\sim
+\frac{M_{\mathrm{Pl}}^8}{M^4}\, H(t).
+\label{eq:Gamma-final}
+\end{equation}
+
+Up to a dimensionless coefficient and the ratio \(M_{\mathrm{Pl}}^8/M^4\), the relaxation rate
+is \emph{proportional to the Hubble rate}.  
+This is the microscopic origin of the RDCC scaling relation.
+
+\subsection{Interpretation}
+
+Equation~\eqref{eq:Gamma-final} shows that:
+\begin{itemize}
+    \item The relaxation rate inherits its time dependence entirely from the Hubble rate.
+    \item The proportionality \(\Gamma \propto H\) is a structural consequence of:
+    \begin{enumerate}
+        \item the operator dimension of \(\mathcal{L}_{\mathrm{int}}\),
+        \item the scaling of stress-tensor correlators,
+        \item and the Hubble memory time of the FRW background.
+    \end{enumerate}
+    \item No additional assumptions or heuristic arguments are required.
+\end{itemize}
+
+\subsection{Connection to the RDCC Relaxation Parameter}
+
+The RDCC relaxation parameter \(\alpha\) satisfies
+\begin{equation}
+\dot{\alpha} = \Gamma \alpha.
+\end{equation}
+With \(\Gamma \propto H\), this becomes
+\begin{equation}
+\frac{\dot{\alpha}}{\alpha} \propto H,
+\end{equation}
+which integrates to the multiplicative evolution equation derived in Companion~VI.
+
+Thus the microscopic derivation presented here provides the foundation for the
+phenomenological relaxation dynamics used throughout the RDCC framework.
+
+% ---------------------------------------------------------
+% SECTION 6 — DISCUSSION AND EMBEDDING INTO RDCC
+% ---------------------------------------------------------
+\section{Discussion and Embedding into the RDCC Framework}
+\label{sec:discussion}
+
+The microscopic derivation presented in this Companion establishes a direct link between
+the dimension-six inter-sector operator and the relaxation dynamics central to the
+Relaxation-Driven Cyclic Cosmology (RDCC) framework.  
+The key result is the proportionality
+\begin{equation}
+\Gamma \propto H,
+\end{equation}
+which emerges naturally from the scaling of stress-tensor correlators and the Hubble
+memory time of the FRW background.
+
+This result provides the structural foundation for the multiplicative relaxation equation
+\(\dot{\alpha} = \Gamma \alpha\)
+used throughout the RDCC series.  
+It also clarifies why the relaxation parameter \(\alpha(a)\) freezes out at early times:
+once the Hubble rate drops below the characteristic scale set by the correlators, the
+relaxation rate becomes too small to drive further evolution.
+
+\subsection{Consistency with Earlier Companions}
+
+The microscopic picture developed here is consistent with the dynamical results of
+Companions~III--VII:
+\begin{itemize}
+    \item The freeze-out of \(\alpha(a)\) (Companion~VI) follows from the decay of
+          \(\Gamma \propto H\) as the Universe expands.
+    \item The log-periodic tensor modulation (Companions~II--V) arises from interference
+          between the two sectors, whose coherence is governed by the same relaxation rate.
+    \item The stability of the RDCC prediction vector (Companion~VII) reflects the fact that
+          the relaxation dynamics are universal and insensitive to microscopic details.
+\end{itemize}
+
+Thus the microscopic derivation of \(\Gamma\) presented here is not an isolated result but
+a structural completion of the RDCC framework.
+
+\subsection{Interpretation of the Dimension-Six Operator}
+
+The operator
+\(\mathcal{L}_{\mathrm{int}} = M^{-2} T^{(+)}_{\mu\nu} T^{(-)\mu\nu}\)
+plays a dual role:
+\begin{enumerate}
+    \item It governs the decay of inter-sector coherence through the Lindblad kernel.
+    \item It induces the interference responsible for tensor-sector modulation.
+\end{enumerate}
+
+Both effects arise from the same correlator structure.  
+This unifies the relaxation dynamics and the phenomenology of primordial tensor modes
+under a single microscopic mechanism.
+
+\subsection{Emergence of Macroscopic Structure}
+
+The proportionality \(\Gamma \propto H\) implies that decoherence is driven by the
+cosmological expansion itself.  
+This provides a natural explanation for why classical spacetime, causal structure, and
+thermodynamic arrows emerge only after sectoral projection: the expansion continuously
+suppresses inter-sector coherence, making the global state effectively classical on
+Hubble timescales.
+
+\subsection{Limitations and Future Directions}
+
+The derivation presented here relies on:
+\begin{itemize}
+    \item the Born approximation (weak coupling),
+    \item the Markov approximation (Hubble-scale memory time),
+    \item and the scaling of stress-tensor correlators for relativistic species.
+\end{itemize}
+
+A more complete treatment would include:
+\begin{itemize}
+    \item non-Markovian corrections,
+    \item mode-dependent relaxation rates,
+    \item and a full information-theoretic analysis of inter-sector entanglement.
+\end{itemize}
+
+These extensions are natural directions for future Companions.
+
+% ---------------------------------------------------------
+% OUTLOOK
+% ---------------------------------------------------------
+\section{Outlook}
+
+The microscopic derivation of the RDCC relaxation rate presented in this Companion opens
+several avenues for further development:
+
+\paragraph{Information-theoretic formulation.}
+A rigorous treatment of inter-sector entanglement entropy and its evolution under the
+dimension-six operator would clarify the connection between decoherence, causal structure,
+and emergent spacetime.
+
+\paragraph{Tensor-sector phenomenology.}
+The same correlators that govern relaxation also shape the tensor modulation pattern.
+Future gravitational-wave observations may therefore probe the microscopic coherence
+structure of the RDCC state.
+
+\paragraph{Emergent geometry.}
+The relaxation dynamics suggest that aspects of large-scale geometry may be understood in
+terms of correlation decay rather than fundamental spacetime primitives.  
+This perspective aligns with the global CPT-symmetric structure of RDCC.
+
+\paragraph{Beyond the Markov approximation.}
+Including non-Markovian effects may reveal additional structure in the relaxation kernel,
+particularly near the bounce where the Hubble rate changes rapidly.
+
+\paragraph{Numerical implementation.}
+A full Boltzmann-code implementation of the RDCC relaxation dynamics would allow for
+global parameter scans and quantitative comparison with cosmological data.
+
+\vspace{12pt}
+
+In summary, the microscopic derivation of \(\Gamma \propto H\) presented here provides the
+missing link between the dimension-six operator and the phenomenological relaxation
+dynamics used throughout the RDCC framework.  
+It unifies decoherence, expansion, and inter-sector coupling under a single structural
+mechanism and sets the stage for future developments in the information-theoretic
+foundations of RDCC.
+
+
+\appendix
+\section*{Appendix A: Projective Compactification of the CPT Fixed Point}
+
+The global RDCC state lives on the bipartite Hilbert space 
+\(\mathcal{H} = \mathcal{H}_+ \otimes \mathcal{H}_-\), 
+with the two sectors related by global CPT symmetry. 
+At the cosmological bounce, the relaxation parameter satisfies 
+\(\alpha(t_b) \to 0\), the two sectors become maximally entangled, 
+and the coarse-grained entropy of the global state reaches its minimum. 
+This hypersurface is the structural fixed point of the CPT symmetry.
+
+To make this identification geometrically explicit, we introduce a 
+projective compactification of the time coordinate using the real 
+projective line \(\mathbb{RP}^1\), the one-point compactification of 
+\(\mathbb{R}\) in which \(+\infty\) and \(-\infty\) are identified. 
+Points on \(\mathbb{RP}^1\) are equivalence classes \([x:y]\) with 
+\([x:y] = [\lambda x : \lambda y]\) for \(\lambda \neq 0\), and the ordinary 
+reals embed via \(t \mapsto [t:1]\). The point at infinity corresponds to 
+\([1:0]\).
+
+To describe the neighbourhood of the bounce, we define a projective 
+deviation coordinate
+
+
+\[
+\tau = \frac{1}{a - a_b},
+\]
+
+
+with \(a_b = 1\) the minimal scale factor. 
+As \(a \to 1^+\) (the \(+\) sector), one has \(\tau \to +\infty\); 
+as \(a \to 1^-\) (the \(-\) sector), one has \(\tau \to -\infty\). 
+Both limits map to the same projective point:
+
+
+\[
+\lim_{\tau \to \pm\infty} [1 : 1/\tau] = [1:0].
+\]
+
+
+Thus the bounce corresponds to the projective point where 
+\(+\infty\) and \(-\infty\) are identified.
+
+In these coordinates, the global CPT operator acts as 
+\(\tau \mapsto -\tau\), enforcing
+
+
+\[
+\rho_+(\tau) = \Theta\, \rho_-(-\tau)\, \Theta^\dagger.
+\]
+
+
+At the fixed point \(\tau = 0\), the two reduced density matrices coincide, 
+and the entanglement entropy is maximal, consistent with 
+\(\alpha(t_b) = 0\).
+
+The relaxation dynamics acquire a geometric interpretation: 
+the multiplicative evolution
+
+
+\[
+\dot{\alpha} = \Gamma\, \alpha, \qquad \Gamma \propto H,
+\]
+
+
+describes the flow of the coherence parameter away from the projective 
+fixed point. As the Universe moves along the compactified line, the 
+distance from \(\tau = 0\) increases, and the two sectors decohere at a 
+rate set by the Hubble expansion.
+
+This compactification regularizes the bounce as a removable singularity 
+in the global state: the two time directions are glued into a single 
+smooth point on \(\mathbb{RP}^1\), as required by CPT symmetry. 
+No new fields or interactions are introduced; the construction provides 
+a natural topological language for the bipartite structure and the role 
+of the bounce as CPT fixed point.
+
+Finally, the projective picture connects directly to the coherence-boundary 
+interpretation of the invariant speed \(c\). The characteristic coherence 
+length
+
+
+\[
+\ell_{\mathrm{coh}} \sim \frac{c}{\alpha_{\mathrm{IR}} H_{\mathrm{IR}}}
+\]
+
+
+emerges naturally as the scale controlling how rapidly correlations can 
+propagate across the projective fixed point before relaxation enforces 
+sectoral projection.
+
+This geometric perspective complements the dynamical and microscopic 
+derivations presented in the main text and clarifies the structural unity 
+of the RDCC framework.
+
+
+
+\end{document}

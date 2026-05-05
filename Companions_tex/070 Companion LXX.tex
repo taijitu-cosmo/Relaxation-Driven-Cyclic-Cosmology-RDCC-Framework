@@ -1,0 +1,159 @@
+\documentclass[11pt,a4paper]{article}
+
+% ---------------------------------------------------------
+% PREAMBLE (stable, warning-free, Overleaf-safe)
+% ---------------------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{bm}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{cite}
+\usepackage{authblk}
+\usepackage{physics}
+\usepackage{mathtools}
+
+\geometry{margin=2.4cm}
+
+\title{\textbf{Companion LXX: Wavelet Transforms of Persistence Diagrams in the Relaxation-Driven Cyclic Cosmology}}
+\author{Michael Lehmann \\ \texttt{mi.lehmann@gmx.de}}
+\date{April 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Wavelet transforms of persistence diagrams provide a joint scale–position 
+representation of topological fluctuations in cosmological fields. In weak-lensing 
+analyses, wavelet coefficients quantify how the birth and death of connected 
+components, loops, and void-like structures vary across both scale and filtration 
+parameter. In the standard cosmological model, the wavelet structure reflects the 
+nonlinear matter distribution and the projection of large-scale structure. In the 
+Relaxation-Driven Cyclic Cosmology (RDCC), the scale-dependent evolution of the 
+gravitational potential modifies the multi-scale topology in a characteristic way. 
+This Companion develops a continuous description of wavelet transforms in RDCC, 
+deriving how the relaxation scale influences multi-scale topological coherence, 
+wavelet-energy distributions, and the observational signatures in weak-lensing 
+surveys. The resulting framework provides a distinctive probe of the RDCC 
+gravitational field through multi-scale topology.
+\end{abstract}
+% ---------------------------------------------------------
+\section{Introduction}
+
+Persistence diagrams encode the birth and death of topological features in 
+weak-lensing convergence fields. While spectral density functions provide a 
+frequency-resolved view of topological fluctuations, wavelet transforms offer a 
+joint representation in scale and position, capturing localized multi-scale 
+structure.
+
+In the standard cosmological model, the wavelet structure reflects the nonlinear 
+matter distribution and the projection of large-scale structure. In RDCC, the 
+gravitational potential evolves differently. The relaxation mechanism suppresses 
+the decay of small-scale modes and enhances the coherence of large-scale modes. 
+This modifies the multi-scale topology in a scale-dependent manner, producing a 
+distinctive signature in wavelet analyses.
+% ---------------------------------------------------------
+\section{Wavelet Transforms of Persistence Diagrams}
+
+Given a filtration-ordered sequence of persistence diagrams $\{D(\nu)\}$, the 
+continuous wavelet transform (CWT) of the Wasserstein-distance fluctuations is
+
+\begin{equation}
+    W_{D}(a, b)
+    = \int
+      W_{p}(D(\nu), D^{*})
+      \psi^{*}\!\left(\frac{\nu - b}{a}\right)
+      \frac{d\nu}{\sqrt{|a|}},
+\end{equation}
+
+where $a$ is the scale, $b$ is the position, and $\psi$ is the mother wavelet.
+
+The wavelet energy is
+
+\begin{equation}
+    E_{D}(a)
+    = \int |W_{D}(a, b)|^{2} \, db.
+\end{equation}
+% ---------------------------------------------------------
+\section{RDCC Modification of Persistence Diagrams}
+
+In RDCC, the convergence evolves as
+\begin{equation}
+    \kappa_{\mathrm{RDCC}}(\ell)
+    = \kappa(\ell)
+      \left[
+        1 - \chi_{\kappa}
+        \left(\frac{\ell}{\ell_{\mathrm{rel}}}\right)^{\alpha}
+      \right].
+\end{equation}
+
+This modifies the birth and death thresholds of topological features:
+
+\begin{align}
+    b_{\mathrm{RDCC}} &= b \left[ 1 - \chi_{b} (\ell/\ell_{\mathrm{rel}})^{\alpha} \right], \\
+    d_{\mathrm{RDCC}} &= d \left[ 1 - \chi_{d} (\ell/\ell_{\mathrm{rel}})^{\alpha} \right].
+\end{align}
+
+Thus the RDCC wavelet coefficients become
+
+\begin{equation}
+    W_{D,\mathrm{RDCC}}(a, b)
+    = W_{D}(a, b)
+      \left[
+        1 - \chi_{W}
+        \left(\frac{\ell}{\ell_{\mathrm{rel}}}\right)^{\alpha}
+      \right].
+\end{equation}
+% ---------------------------------------------------------
+\section{Wavelet Energy in RDCC}
+
+The RDCC wavelet energy is
+
+\begin{equation}
+    E_{D,\mathrm{RDCC}}(a)
+    = E_{D}(a)
+      \left[
+        1 - \chi_{E}
+        \left(\frac{\ell}{\ell_{\mathrm{rel}}}\right)^{\alpha}
+      \right].
+\end{equation}
+
+This modification reflects the relaxation-driven change in multi-scale topology.
+% ---------------------------------------------------------
+\section{Multi-Scale Topological Signatures of RDCC}
+
+The relaxation mechanism enhances the coherence of large-scale modes. Wavelet 
+transforms therefore exhibit:
+
+\begin{itemize}
+    \item enhanced wavelet energy at large scales,
+    \item suppressed wavelet energy at small scales,
+    \item a characteristic turnover near $\ell_{\mathrm{rel}}$,
+    \item modified scale–position localization of topological features,
+    \item altered alignment of persistence lifetimes across scales.
+\end{itemize}
+
+These signatures provide a direct probe of the RDCC gravitational field through 
+multi-scale topology.
+% ---------------------------------------------------------
+\section{Conclusion}
+
+Wavelet transforms of persistence diagrams in the Relaxation-Driven Cyclic 
+Cosmology reflect the scale-dependent evolution of the gravitational potential and 
+the nonlinear matter distribution. The relaxation mechanism modifies the multi-
+scale topology in a scale-dependent manner, producing distinctive signatures in 
+weak-lensing surveys. These effects provide a direct observational window into the 
+relaxation scale and the temporal structure of the RDCC gravitational field. The 
+present Companion establishes the theoretical foundation for future studies of 
+multi-scale topology, nonlinear structure, and the interplay between light and 
+gravity in RDCC.
+
+\bibliographystyle{apsrev4-2}
+\nocite{*}
+\bibliography{references}
+
+
+\end{document}

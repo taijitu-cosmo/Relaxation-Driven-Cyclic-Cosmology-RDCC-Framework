@@ -1,0 +1,182 @@
+\documentclass[11pt,a4paper]{article}
+
+% ---------------------------------------------------------
+% PREAMBLE (stable, warning-free, Overleaf-safe)
+% ---------------------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{bm}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{cite}
+\usepackage{authblk}
+\usepackage{physics}
+\usepackage{mathtools}
+\usepackage{textgreek}
+
+\geometry{margin=2.4cm}
+
+\title{\textbf{Companion LXXV: The Fisher Kernel for Persistence Diagrams in the Relaxation-Driven Cyclic Cosmology}}
+\author{Michael Lehmann \\ \texttt{mi.lehmann@gmx.de}}
+\date{April 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The Fisher kernel provides a principled method for combining information geometry 
+with reproducing kernel Hilbert space (RKHS) methods. Applied to persistence 
+diagrams, it yields feature maps that incorporate both the geometric structure of 
+the underlying statistical manifold and the linear structure of kernel methods. 
+Building on the Fisher information geometry introduced in Companion LXXIV, this 
+work develops the Fisher kernel for persistence diagrams in the Relaxation-Driven 
+Cyclic Cosmology (RDCC). The relaxation mechanism modifies the scale-dependent 
+evolution of the gravitational potential, inducing characteristic changes in the 
+Fisher score and the resulting kernel. The Fisher kernel provides a powerful tool 
+for classification, regression, and model discrimination in weak-lensing topology, 
+bridging information geometry and RKHS-based topological data analysis.
+\end{abstract}
+% ---------------------------------------------------------
+\section{Introduction}
+
+Persistence diagrams encode the birth and death of topological features in weak-
+lensing convergence fields. Previous Companions developed Hilbert-space embeddings, 
+kernel PCA, maximum mean discrepancy (MMD), and Fisher information geometry as 
+tools for analyzing and distinguishing the Relaxation-Driven Cyclic Cosmology 
+(RDCC) from ΛCDM.
+
+The Fisher kernel provides a natural synthesis of these approaches. It maps each 
+persistence diagram to a feature vector given by the Fisher score, which measures 
+the sensitivity of the log-likelihood to changes in cosmological parameters. The 
+inner product of these score vectors defines a kernel that incorporates both 
+information geometry and RKHS structure. This kernel is particularly well-suited 
+for classification, regression, and hypothesis testing in cosmological topology.
+% ---------------------------------------------------------
+\section{Fisher Score and Fisher Kernel}
+
+Given a statistical model $p(D|\theta)$ for persistence diagrams $D$, the Fisher 
+score is
+
+\begin{equation}
+    U_{\theta}(D)
+    = \partial_{\theta} \log p(D|\theta).
+\end{equation}
+
+The Fisher information matrix is
+
+\begin{equation}
+    I(\theta)
+    = \mathbb{E}
+      \left[
+        U_{\theta}(D) U_{\theta}(D)^{\top}
+      \right].
+\end{equation}
+
+The Fisher kernel is defined as
+
+\begin{equation}
+    k_{F}(D_{1}, D_{2})
+    = U_{\theta}(D_{1})^{\top}
+      I(\theta)^{-1}
+      U_{\theta}(D_{2}).
+\end{equation}
+
+This kernel incorporates both the curvature of the statistical manifold and the 
+local sensitivity of persistence diagrams to parameter changes.
+% ---------------------------------------------------------
+\section{RDCC Modification of Fisher Scores}
+
+In RDCC, the convergence evolves as
+
+\begin{equation}
+    \kappa_{\mathrm{RDCC}}(\ell)
+    = \kappa(\ell)
+      \left[
+        1 - \chi_{\kappa}
+        \left(\frac{\ell}{\ell_{\mathrm{rel}}}\right)^{\alpha}
+      \right].
+\end{equation}
+
+This modifies the distribution of persistence diagrams:
+
+
+
+\[
+    p_{\mathrm{RDCC}}(D|\theta)
+    = p(D|\theta)
+      \left[
+        1 - \chi_{p}
+        \left(\frac{\ell}{\ell_{\mathrm{rel}}}\right)^{\alpha}
+      \right].
+\]
+
+
+
+The Fisher score becomes
+
+\begin{equation}
+    U^{\mathrm{RDCC}}_{\theta}(D)
+    = U_{\theta}(D)
+      \left[
+        1 - \chi_{U}
+        \left(\frac{\ell}{\ell_{\mathrm{rel}}}\right)^{\alpha}
+      \right].
+\end{equation}
+% ---------------------------------------------------------
+\section{The Fisher Kernel in RDCC}
+
+The RDCC Fisher kernel is
+
+\begin{equation}
+    k_{F,\mathrm{RDCC}}(D_{1}, D_{2})
+    = k_{F}(D_{1}, D_{2})
+      \left[
+        1 - \chi_{F}
+        \left(\frac{\ell}{\ell_{\mathrm{rel}}}\right)^{\alpha}
+      \right].
+\end{equation}
+
+RDCC induces:
+
+\begin{itemize}
+    \item enhanced kernel similarity for large-scale topological modes,
+    \item suppressed similarity for small-scale modes,
+    \item a characteristic turnover near $\ell_{\mathrm{rel}}$,
+    \item modified Fisher curvature of the topological manifold,
+    \item altered alignment of Fisher score vectors across redshift.
+\end{itemize}
+% ---------------------------------------------------------
+\section{Applications to Cosmological Topology}
+
+The Fisher kernel enables:
+
+\begin{itemize}
+    \item classification of RDCC vs. ΛCDM topological ensembles,
+    \item regression of RDCC parameters from persistence diagrams,
+    \item kernel PCA in Fisher space,
+    \item Fisher-kernel MMD tests,
+    \item information-geometric feature extraction for weak-lensing surveys.
+\end{itemize}
+
+These applications provide a powerful bridge between information geometry, kernel 
+methods, and cosmological inference.
+% ---------------------------------------------------------
+\section{Conclusion}
+
+The Fisher kernel provides a principled method for combining information geometry 
+with RKHS-based analysis of persistence diagrams. In the Relaxation-Driven Cyclic 
+Cosmology, the relaxation mechanism modifies the Fisher score and the resulting 
+kernel in a scale-dependent manner, producing distinctive signatures in weak-
+lensing topology. The present Companion establishes the foundation for future 
+studies of Fisher-kernel methods, parameter inference, and information geometry in 
+cosmological topology.
+
+\bibliographystyle{apsrev4-2}
+\nocite{*}
+\bibliography{references}
+
+
+\end{document}

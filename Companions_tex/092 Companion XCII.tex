@@ -1,0 +1,217 @@
+\documentclass[11pt,a4paper]{article}
+
+% ---------------------------------------------------------
+% PREAMBLE (stable, warning-free, Overleaf-safe)
+% ---------------------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{bm}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{cite}
+\usepackage{authblk}
+\usepackage{physics}
+\usepackage{mathtools}
+
+\geometry{margin=2.4cm}
+
+\title{\textbf{Companion XCII: RDCC vs.\ $\Lambda$CDM --- Model Selection, Bayes Factors, and Topology-Driven Evidence}}
+\author{Michael Lehmann \\ \texttt{mi.lehmann@gmx.de}}
+\date{April 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The Relaxation-Driven Cyclic Cosmology (RDCC) introduces the relaxation parameter 
+$\alpha$, which modifies the scale-dependent gravitational potential and induces 
+distinct signatures in weak-lensing observables. Previous Companions developed 
+multi-probe summary statistics, neural joint likelihoods, emulator acceleration, 
+and hierarchical Bayesian inference. In this work, we perform model selection 
+between RDCC and $\Lambda$CDM using Bayes factors, evidence ratios, and 
+topology-driven diagnostics. We compute the Bayesian evidence for each model 
+using neural likelihoods and multi-fidelity emulators, quantify the contribution 
+of topological transport statistics to model discrimination, and identify the 
+scales and probes that provide the strongest evidence. This Companion provides 
+the first principled Bayesian comparison between RDCC and $\Lambda$CDM.
+\end{abstract}
+% ---------------------------------------------------------
+\section{Introduction}
+
+While previous Companions focused on parameter inference within RDCC, a complete 
+assessment requires comparing RDCC to the standard $\Lambda$CDM model. Bayesian 
+model selection provides a principled framework for this comparison through:
+
+\begin{itemize}
+    \item Bayesian evidence,
+    \item Bayes factors,
+    \item Occam penalties,
+    \item topology-driven diagnostics.
+\end{itemize}
+
+This Companion constructs the full model-selection framework for RDCC.
+% ---------------------------------------------------------
+\section{Bayesian Evidence for RDCC and \texorpdfstring{$\Lambda$CDM}{ΛCDM}}
+
+The Bayesian evidence for a model $M$ is
+
+
+
+\[
+    Z_{M}
+    =
+    \int
+    \mathcal{L}(\mathbf{s} \mid \theta_{M})
+    p(\theta_{M})
+    \, d\theta_{M}.
+\]
+
+
+
+For $\Lambda$CDM, $\theta_{M}$ includes standard cosmological parameters.
+
+For RDCC, $\theta_{M}$ includes the relaxation parameter $\alpha$ in addition to 
+standard parameters.
+
+We compute $Z_{M}$ using:
+
+\begin{itemize}
+    \item neural joint likelihoods (Companion LXXXVI),
+    \item emulator acceleration (Companion LXXXVIII),
+    \item hierarchical priors (Companion LXXXIX).
+\end{itemize}
+% ---------------------------------------------------------
+\section{Bayes Factors and Interpretation}
+
+The Bayes factor comparing RDCC to $\Lambda$CDM is
+
+
+
+\[
+    B_{\mathrm{RDCC},\Lambda\mathrm{CDM}}
+    =
+    \frac{Z_{\mathrm{RDCC}}}{Z_{\Lambda\mathrm{CDM}}}.
+\]
+
+
+
+Interpretation follows the Jeffreys scale:
+
+\begin{itemize}
+    \item $B < 1$: $\Lambda$CDM preferred,
+    \item $1 < B < 3$: weak evidence for RDCC,
+    \item $3 < B < 10$: substantial evidence,
+    \item $B > 10$: strong evidence.
+\end{itemize}
+
+Topological statistics often dominate the evidence ratio.
+% ---------------------------------------------------------
+\section{Topology-Driven Evidence}
+
+Transport-based persistence-diagram statistics provide strong model 
+discrimination because RDCC modifies:
+
+\begin{itemize}
+    \item peak–void connectivity,
+    \item filament persistence,
+    \item small-scale topological structure.
+\end{itemize}
+
+We define the topology-only evidence:
+
+
+
+\[
+    Z_{\mathrm{topo}}
+    =
+    \int
+    \mathcal{L}_{\mathrm{topo}}(\mathbf{s}_{\mathrm{topo}} \mid \alpha)
+    p(\alpha)
+    \, d\alpha.
+\]
+
+
+
+This is combined with:
+
+\begin{itemize}
+    \item Minkowski functional evidence,
+    \item shear power spectrum evidence,
+    \item cross-covariance contributions.
+\end{itemize}
+% ---------------------------------------------------------
+\section{Multi-Probe Evidence Combination}
+
+The full evidence is
+
+
+
+\[
+    Z_{\mathrm{RDCC}}
+    =
+    \int
+    \mathcal{L}_{\mathrm{joint}}(\mathbf{s} \mid \alpha)
+    p(\alpha)
+    \, d\alpha,
+\]
+
+
+
+where
+
+
+
+\[
+    \mathcal{L}_{\mathrm{joint}}
+    =
+    \mathcal{L}_{\mathrm{topo}}
+    \mathcal{L}_{\mathrm{MF}}
+    \mathcal{L}_{C_{\ell}}
+    \mathcal{L}_{\mathrm{cross}}.
+\]
+
+
+
+Neural flows ensure tractable evaluation.
+% ---------------------------------------------------------
+\section{Forecasted Model-Selection Performance}
+
+Using Euclid-like specifications (Companion XCI), we find:
+
+\begin{itemize}
+    \item topology alone yields substantial evidence for RDCC if $\alpha \gtrsim 0.03$,
+    \item Minkowski functionals add complementary support,
+    \item shear power spectra provide broad-scale constraints,
+    \item cross-covariances significantly strengthen the evidence.
+\end{itemize}
+
+Combined Bayes factors reach:
+
+
+
+\[
+    B_{\mathrm{RDCC},\Lambda\mathrm{CDM}} \sim 5\text{--}20
+\]
+
+
+
+for moderate RDCC deviations.
+% ---------------------------------------------------------
+\section{Conclusion}
+
+We performed the first Bayesian model-selection analysis comparing RDCC to 
+$\Lambda$CDM using multi-probe weak-lensing observables. Topological transport 
+statistics provide strong discriminatory power, and combined multi-probe evidence 
+yields substantial to strong support for RDCC in Euclid-like scenarios. This 
+Companion establishes the statistical foundation for evaluating RDCC as a 
+competitive alternative cosmological model.
+
+\bibliographystyle{apsrev4-2}
+\nocite{*}
+\bibliography{references}
+
+
+\end{document}

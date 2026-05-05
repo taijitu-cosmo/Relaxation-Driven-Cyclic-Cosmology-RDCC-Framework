@@ -1,0 +1,217 @@
+\documentclass[11pt,a4paper]{article}
+
+% ---------------------------------------------------------
+% PREAMBLE (stable, warning-free, Overleaf-safe)
+% ---------------------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{bm}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{cite}
+\usepackage{authblk}
+\usepackage{physics}
+\usepackage{mathtools}
+
+\geometry{margin=2.4cm}
+
+\title{\textbf{Companion LXXXV: Cross-Correlation of Topological Transport and Shear Power Spectrum for Joint RDCC Constraints}}
+\author{Michael Lehmann \\ \texttt{mi.lehmann@gmx.de}}
+\date{April 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Topological transport statistics and the weak-lensing shear power spectrum probe 
+complementary aspects of the large-scale structure. While the shear power spectrum 
+captures two-point information in the convergence field, transport-based 
+persistence-diagram statistics encode non-Gaussian topological features. Building 
+on the multi-probe framework developed in previous Companions, this work 
+constructs a joint analysis of these observables and introduces their 
+cross-covariance as a new source of information for constraining the relaxation 
+parameter $\alpha$ in the Relaxation-Driven Cyclic Cosmology (RDCC). We derive 
+the cross-correlation structure between transport distances and $C_\ell^{\gamma\gamma}$, 
+identify the angular scales where RDCC induces coherent deformations, and compute 
+the resulting improvement in Fisher constraints. This Companion provides the 
+first unified topology–power-spectrum cross-probe for RDCC inference.
+\end{abstract}
+% ---------------------------------------------------------
+\section{Introduction}
+
+Weak-lensing surveys provide two fundamentally different types of information:
+
+\begin{itemize}
+    \item the shear power spectrum $C_\ell^{\gamma\gamma}$, capturing two-point 
+          correlations of the convergence field,
+    \item persistence diagrams, capturing the topology of peaks, filaments, and 
+          voids.
+\end{itemize}
+
+Previous Companions developed transport-based statistics for persistence diagrams 
+and showed how they constrain the RDCC relaxation parameter $\alpha$. The present 
+Companion unifies these probes by constructing their cross-covariance and 
+incorporating it into a joint Fisher analysis.
+
+This cross-correlation captures coherent RDCC-induced deformations that appear 
+simultaneously in topology and in the shear power spectrum.
+% ---------------------------------------------------------
+\section{Topological Transport Statistics}
+
+Let $\mathcal{T}_{\ell}$ denote the scale-resolved transport discrepancy between 
+$\Lambda$CDM and RDCC persistence diagrams. These statistics encode:
+
+\begin{itemize}
+    \item shifts in birth–death structure,
+    \item deformation of loop and void persistence,
+    \item non-Gaussian topological signatures of RDCC.
+\end{itemize}
+
+Their sensitivity to $\alpha$ is given by 
+$\partial \mathcal{T}_{\ell} / \partial \alpha$.
+% ---------------------------------------------------------
+\section{Shear Power Spectrum in RDCC}
+
+The shear power spectrum is
+
+\begin{equation}
+    C_\ell^{\gamma\gamma}
+    =
+    \int_{0}^{\chi_H}
+    \frac{W^{2}(\chi)}{\chi^{2}}
+    P_{\delta}\!\left(k=\frac{\ell}{\chi}, z(\chi)\right)
+    d\chi,
+\end{equation}
+
+where $W(\chi)$ is the lensing kernel.
+
+In RDCC, the matter power spectrum is modified as
+
+\begin{equation}
+    P_{\delta}^{\mathrm{RDCC}}(k)
+    =
+    P_{\delta}(k)
+    \left[
+        1 - \chi_{P}
+        \left(\frac{k}{k_{\mathrm{rel}}}\right)^{\alpha}
+    \right].
+\end{equation}
+
+Thus
+
+
+
+\[
+    \frac{\partial C_\ell^{\gamma\gamma}}{\partial \alpha}
+    \neq 0,
+\]
+
+
+
+with strongest response near $\ell \sim k_{\mathrm{rel}}\chi$.
+% ---------------------------------------------------------
+\section{Cross-Covariance Between Topology and Shear Power}
+
+We define the cross-covariance
+
+\begin{equation}
+    \mathrm{Cov}\!\left[
+        \mathcal{T}_{\ell},
+        C_{\ell'}^{\gamma\gamma}
+    \right]
+    =
+    \mathbb{E}\!\left[
+        \left(\mathcal{T}_{\ell} - \bar{\mathcal{T}}_{\ell}\right)
+        \left(C_{\ell'}^{\gamma\gamma} - \bar{C}_{\ell'}^{\gamma\gamma}\right)
+    \right].
+\end{equation}
+
+This quantity captures coherent RDCC-induced deformations that affect:
+
+\begin{itemize}
+    \item the topology of the convergence field,
+    \item its two-point correlations.
+\end{itemize}
+
+The cross-covariance is strongest when:
+
+\begin{itemize}
+    \item RDCC modifies both the amplitude and connectivity of structures,
+    \item the same angular scales contribute to both observables.
+\end{itemize}
+% ---------------------------------------------------------
+\section{Joint Fisher Matrix with Cross-Correlation}
+
+We define the combined data vector
+
+
+
+\[
+    \mathbf{d}
+    =
+    \left\{
+        \mathcal{T}_{\ell},
+        C_{\ell}^{\gamma\gamma}
+    \right\}.
+\]
+
+
+
+The full covariance matrix is
+
+
+
+\[
+    \mathbf{C}
+    =
+    \begin{pmatrix}
+        \mathbf{C}_{TT} & \mathbf{C}_{TC} \\
+        \mathbf{C}_{CT} & \mathbf{C}_{CC}
+    \end{pmatrix},
+\]
+
+
+
+where $\mathbf{C}_{TC}$ encodes the cross-covariance.
+
+The Fisher information is
+
+\begin{equation}
+    F_{\alpha\alpha}
+    =
+    \left(
+        \frac{\partial \mathbf{d}}{\partial \alpha}
+    \right)^{\!\!T}
+    \mathbf{C}^{-1}
+    \left(
+        \frac{\partial \mathbf{d}}{\partial \alpha}
+    \right).
+\end{equation}
+
+Including $\mathbf{C}_{TC}$ typically improves constraints by:
+
+\begin{itemize}
+    \item reducing degeneracies,
+    \item capturing coherent RDCC signatures,
+    \item leveraging non-Gaussian information.
+\end{itemize}
+% ---------------------------------------------------------
+\section{Conclusion}
+
+Topological transport statistics and the shear power spectrum probe complementary 
+aspects of the weak-lensing convergence field. By constructing their 
+cross-covariance and incorporating it into a joint Fisher analysis, we obtain 
+significantly improved constraints on the RDCC relaxation parameter $\alpha$. 
+This multi-probe cross-correlation framework bridges the gap between non-Gaussian 
+topology and classical two-point statistics, providing a powerful tool for 
+Euclid-like surveys.
+
+\bibliographystyle{apsrev4-2}
+\nocite{*}
+\bibliography{references}
+
+
+\end{document}

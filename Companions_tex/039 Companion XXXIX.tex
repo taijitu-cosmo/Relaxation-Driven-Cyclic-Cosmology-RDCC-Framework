@@ -1,0 +1,190 @@
+\documentclass[11pt,a4paper]{article}
+
+% ---------------------------------------------------------
+% PREAMBLE (stable, warning-free, Overleaf-safe)
+% ---------------------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{bm}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{cite}
+\usepackage{authblk}
+\usepackage{physics}
+\usepackage{mathtools}
+
+\geometry{margin=2.4cm}
+
+\title{\textbf{Companion XXXIX: The Thermal Sunyaev--Zel'dovich Effect in the Relaxation-Driven Cyclic Cosmology}}
+\author{Michael Lehmann \\ \texttt{mi.lehmann@gmx.de}}
+\date{April 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The thermal Sunyaev--Zel'dovich (tSZ) effect provides a direct probe of the pressure 
+distribution in galaxy clusters and the thermodynamic state of the intracluster 
+medium (ICM). In the Relaxation-Driven Cyclic Cosmology (RDCC), the scale-dependent 
+evolution of the gravitational potential modifies the formation history of clusters, 
+the temperature and density structure of their gas, and the coherence of the 
+surrounding large-scale environment. This Companion develops a continuous 
+description of the tSZ effect in RDCC, deriving how the relaxation scale influences 
+the Compton-$y$ parameter, the pressure profile, and the integrated tSZ signal. The 
+resulting framework provides a natural interpretation of observed deviations from 
+self-similar scaling relations and offers new predictions for upcoming CMB surveys.
+\end{abstract}
+% ---------------------------------------------------------
+\section{Introduction}
+
+The thermal Sunyaev--Zel'dovich effect arises from the inverse Compton scattering 
+of cosmic microwave background photons by hot electrons in galaxy clusters. It is 
+a unique probe of the thermal energy content of the intracluster medium and is 
+largely insensitive to redshift. In the standard cosmological model, the tSZ signal 
+is determined by the depth of the gravitational potential, the virial temperature 
+of the gas, and the pressure profile of the cluster.
+
+In RDCC, the gravitational potential evolves differently. The relaxation mechanism 
+suppresses the growth of small-scale modes and enhances the coherence of large-scale 
+modes. This modifies the collapse history of clusters, the thermodynamic structure 
+of their gas, and the pressure distribution that determines the tSZ signal. The 
+tSZ effect becomes a direct tracer of the relaxation scale $k_{\mathrm{rel}}$ and 
+the temporal structure of the gravitational field.
+% ---------------------------------------------------------
+\section{The RDCC Potential and Cluster Formation}
+
+The formation of galaxy clusters is governed by the evolution of the gravitational 
+potential. In RDCC, this potential takes the form
+\begin{equation}
+    \Phi_{\mathrm{RDCC}}(k,a)
+    = \Phi(k,a)
+      \left[1 - \chi_{\Phi}
+      \left(\frac{k}{k_{\mathrm{rel}}}\right)^{\alpha}\right].
+\end{equation}
+
+Large-scale modes, which dominate the collapse of massive halos, retain a high 
+degree of temporal coherence. As a result, clusters form earlier and with deeper 
+potential wells than in the standard cosmological model. Small-scale modes, which 
+would normally contribute to the steepening of the inner density profile, are 
+suppressed, leading to smoother central regions.
+
+The virial temperature of the intracluster medium becomes
+\begin{equation}
+    T_{\mathrm{vir,RDCC}}
+    = T_{\mathrm{vir}}
+      \left[1 - \chi_{T}
+      \left(\frac{k(M)}{k_{\mathrm{rel}}}\right)^{\alpha}\right],
+\end{equation}
+reflecting the modified collapse dynamics.
+% ---------------------------------------------------------
+\section{Pressure Profiles and the Compton-\texorpdfstring{$y$}{y} Parameter}
+
+The tSZ effect is quantified by the Compton-$y$ parameter,
+\begin{equation}
+    y = \frac{\sigma_{T}}{m_{e} c^{2}}
+        \int P_{e}(r)\,dl,
+\end{equation}
+where $P_{e}(r)$ is the electron pressure.
+
+In RDCC, the pressure profile is modified by the relaxation mechanism. The 
+hydrostatic equilibrium condition,
+\begin{equation}
+    \frac{1}{\rho}\frac{dP}{dr}
+    = -\frac{d\Phi_{\mathrm{RDCC}}}{dr},
+\end{equation}
+yields a pressure distribution that is smoother in the core and more extended in 
+the outskirts.
+
+The RDCC pressure profile can be approximated as
+\begin{equation}
+    P_{\mathrm{RDCC}}(r)
+    = P(r)
+      \left[
+        1 - \chi_{P}
+        \left(\frac{1}{k_{\mathrm{rel}} r}\right)^{\alpha}
+      \right],
+\end{equation}
+where $P(r)$ is the standard pressure profile.
+
+This modification enhances the tSZ signal in the outskirts while reducing it in 
+the core.
+% ---------------------------------------------------------
+\section{Integrated tSZ Signal and Scaling Relations}
+
+The integrated tSZ signal is given by
+\begin{equation}
+    Y = \int y\,d\Omega.
+\end{equation}
+
+In RDCC, the integrated signal becomes
+\begin{equation}
+    Y_{\mathrm{RDCC}}
+    = Y
+      \left[
+        1 - \chi_{Y}
+        \left(\frac{k(M)}{k_{\mathrm{rel}}}\right)^{\alpha}
+      \right].
+\end{equation}
+
+This modification alters the scaling relation between $Y$ and halo mass. Massive 
+clusters, whose formation is accelerated by the coherence of large-scale modes, 
+exhibit enhanced tSZ signals. Low-mass clusters, whose collapse is delayed by the 
+relaxation mechanism, show suppressed tSZ signals.
+
+These deviations from self-similar scaling provide a direct observational probe of 
+the relaxation scale.
+% ---------------------------------------------------------
+\section{Observational Signatures}
+
+The RDCC modifications to the tSZ effect manifest in several measurable ways. 
+Clusters exhibit smoother pressure profiles, enhanced tSZ signals in their 
+outskirts, and deviations from standard scaling relations. The tSZ power spectrum 
+is similarly affected, with a suppression of small-scale power and an enhancement 
+of large-scale coherence.
+
+These signatures provide a direct observational window into the relaxation scale 
+and the temporal structure of the gravitational field in RDCC.
+% ---------------------------------------------------------
+\section{Conclusion}
+
+The thermal Sunyaev--Zel'dovich effect in the Relaxation-Driven Cyclic Cosmology 
+reflects the scale-dependent evolution of the gravitational potential. The 
+relaxation mechanism modifies the formation history of clusters, the thermodynamic 
+structure of their gas, and the pressure distribution that determines the tSZ 
+signal. These effects produce distinctive signatures in the Compton-$y$ parameter, 
+the integrated tSZ signal, and the tSZ power spectrum. The present Companion 
+establishes the theoretical foundation for future studies of cluster astrophysics, 
+CMB secondary anisotropies, and the interplay between baryons and dark matter in 
+RDCC.
+
+% ========================
+% References
+% ========================
+
+\begin{thebibliography}{10}
+
+\bibitem{Flagship} Lehmann, M. (2026). Relaxation-Driven Cyclic Cosmology (RDCC): A Minimal CPT-Symmetric Framework with a Single Parameter. Flagship Paper. Zenodo: \url{https://zenodo.org/records/19744958} (v43.0 or later).
+
+\bibitem{Zenodo} The complete RDCC companion series (I--LVII) is available at the same Zenodo record above.
+
+% Thematisch relevante Companions
+\bibitem{CompXVI} Companion XVI: Boltzmann Code and Modified Hierarchy.
+\bibitem{CompXXXI} Companion XXXI: RDCC Halo Model and Non-Linear Structure.
+\bibitem{CompXXXII} Companion XXXII--XXXIX: Galaxy--Halo Connection, Cosmic Web, Lensing, RSD, ISW, tSZ, Rotation Curves, CGM.
+
+% Wichtige externe Referenzen
+\bibitem{Planck2020} Planck Collaboration (2020), Astron. Astrophys. 641, A6.
+\bibitem{DESI2024} DESI Collaboration (2024/2025), arXiv: [aktuelle $f\sigma_8$/BAO-Paper].
+\bibitem{JWST2024} Maiolino et al. (2024), Nature (JWST high-$z$ galaxies/quasars).
+\bibitem{Kaiser1987} Kaiser, N. (1987), Mon. Not. R. Astron. Soc. 227, 1 (RSD).
+\bibitem{Bartelmann2001} Bartelmann, M. \& Schneider, P. (2001), Phys. Rep. 340, 291 (Weak Lensing Review).
+\bibitem{HuOkamoto2002} Hu, W. \& Okamoto, T. (2002), Astrophys. J. 574, 566 (CMB Lensing).
+\bibitem{LewisChallinor2006} Lewis, A. \& Challinor, A. (2006), Phys. Rep. 429, 1 (CMB Lensing Review).
+\bibitem{NFW1997} Navarro, J. F., Frenk, C. S. \& White, S. D. M. (1997), Astrophys. J. 490, 493 (Halo Profiles).
+
+\end{thebibliography}
+
+\end{document}

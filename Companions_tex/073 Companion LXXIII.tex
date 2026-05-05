@@ -1,0 +1,197 @@
+\documentclass[11pt,a4paper]{article}
+
+% ---------------------------------------------------------
+% PREAMBLE (stable, warning-free, Overleaf-safe)
+% ---------------------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{bm}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{cite}
+\usepackage{authblk}
+\usepackage{physics}
+\usepackage{mathtools}
+\usepackage{textgreek}
+\geometry{margin=2.4cm}
+
+\title{\textbf{Companion LXXIII: Maximum Mean Discrepancy of Persistence Diagrams in the Relaxation-Driven Cyclic Cosmology}}
+\author{Michael Lehmann \\ \texttt{mi.lehmann@gmx.de}}
+\date{April 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The maximum mean discrepancy (MMD) provides a kernel-based statistical test for 
+distinguishing probability distributions in a reproducing kernel Hilbert space 
+(RKHS). Applied to persistence diagrams, MMD quantifies whether two ensembles of 
+topological features arise from the same underlying cosmological model. In weak-
+lensing analyses, this enables a direct comparison between the Relaxation-Driven 
+Cyclic Cosmology (RDCC) and the standard ΛCDM model. Building on the Hilbert-space 
+embeddings and kernel PCA developed in previous Companions, this work derives the 
+MMD for persistence diagrams in RDCC, identifies the scale-dependent signatures of 
+potential relaxation, and establishes a statistically rigorous framework for 
+model discrimination using topological data analysis. The resulting test provides 
+a robust, nonparametric, and observationally accessible probe of the RDCC 
+gravitational field.
+\end{abstract}
+% ---------------------------------------------------------
+\section{Introduction}
+
+Persistence diagrams encode the birth and death of topological features in weak-
+lensing convergence fields. Hilbert-space embeddings and kernel PCA provide a 
+linearized and spectrally decomposed representation of these diagrams. Maximum 
+mean discrepancy (MMD) extends this framework by enabling statistical tests 
+between two distributions of embedded diagrams.
+
+In cosmology, MMD offers a powerful tool for distinguishing between models based 
+on their topological signatures. In RDCC, the relaxation mechanism modifies the 
+scale-dependent evolution of the gravitational potential, altering the distribution 
+of persistence diagrams in a characteristic way. MMD provides a direct, 
+nonparametric test for detecting these modifications in weak-lensing surveys.
+% ---------------------------------------------------------
+\section{Maximum Mean Discrepancy for Persistence Diagrams}
+
+Given two ensembles of persistence diagrams
+
+
+\[
+    \{D_{i}\}_{i=1}^{n}, \qquad
+    \{E_{j}\}_{j=1}^{m},
+\]
+
+
+their embeddings into an RKHS $\mathcal{H}$ are
+
+
+\[
+    \Phi(D_{i}), \qquad \Phi(E_{j}).
+\]
+
+
+
+The squared MMD is defined as
+\begin{align}
+    \mathrm{MMD}^{2}
+    &= \left\|
+        \frac{1}{n} \sum_{i=1}^{n} \Phi(D_{i})
+        - \frac{1}{m} \sum_{j=1}^{m} \Phi(E_{j})
+       \right\|_{\mathcal{H}}^{2} \\
+    &= \frac{1}{n^{2}} \sum_{i,i'} k(D_{i}, D_{i'})
+     + \frac{1}{m^{2}} \sum_{j,j'} k(E_{j}, E_{j'})
+     - \frac{2}{nm} \sum_{i,j} k(D_{i}, E_{j}).
+\end{align}
+
+This quantity is zero if and only if the two distributions are identical.
+% ---------------------------------------------------------
+\section{RDCC Modification of Persistence Diagram Distributions}
+
+In RDCC, the convergence evolves as
+\begin{equation}
+    \kappa_{\mathrm{RDCC}}(\ell)
+    = \kappa(\ell)
+      \left[
+        1 - \chi_{\kappa}
+        \left(\frac{\ell}{\ell_{\mathrm{rel}}}\right)^{\alpha}
+      \right].
+\end{equation}
+
+This modifies the birth and death thresholds of topological features, shifting the 
+distribution of persistence diagrams:
+
+
+\[
+    D \mapsto D_{\mathrm{RDCC}}.
+\]
+
+
+
+The kernel becomes
+
+
+\[
+    k_{\mathrm{RDCC}}(D_{i}, D_{j})
+    = k(D_{i}, D_{j})
+      \left[
+        1 - \chi_{k}
+        \left(\frac{\ell}{\ell_{\mathrm{rel}}}\right)^{\alpha}
+      \right].
+\]
+
+
+% ---------------------------------------------------------
+\section{MMD in RDCC}
+
+The RDCC-modified MMD is
+
+\begin{align}
+    \mathrm{MMD}^{2}_{\mathrm{RDCC}}
+    &= \mathrm{MMD}^{2}
+       \left[
+         1 - \chi_{\mathrm{MMD}}
+         \left(\frac{\ell}{\ell_{\mathrm{rel}}}\right)^{\alpha}
+       \right].
+\end{align}
+
+RDCC therefore induces:
+
+\begin{itemize}
+    \item increased separation from ΛCDM at large scales,
+    \item suppressed separation at small scales,
+    \item a characteristic turnover near $\ell_{\mathrm{rel}}$,
+    \item enhanced sensitivity to long-lived persistence features,
+    \item modified kernel expectations across redshift.
+\end{itemize}
+% ---------------------------------------------------------
+\section{Hypothesis Testing: RDCC vs. ΛCDM}
+
+Define the null hypothesis
+
+
+\[
+    H_{0}: \mathcal{P}_{\mathrm{RDCC}} = \mathcal{P}_{\Lambda\mathrm{CDM}},
+\]
+
+
+and the alternative
+
+
+\[
+    H_{1}: \mathcal{P}_{\mathrm{RDCC}} \neq \mathcal{P}_{\Lambda\mathrm{CDM}}.
+\]
+
+
+
+The test statistic is $\mathrm{MMD}^{2}_{\mathrm{RDCC}}$.
+
+Permutation tests or asymptotic bounds yield $p$-values.
+
+RDCC predicts:
+
+\begin{itemize}
+    \item significant rejection of $H_{0}$ at large scales,
+    \item marginal separation at small scales,
+    \item maximal discriminative power near $\ell_{\mathrm{rel}}$.
+\end{itemize}
+% ---------------------------------------------------------
+\section{Conclusion}
+
+Maximum mean discrepancy provides a statistically rigorous method for 
+distinguishing the Relaxation-Driven Cyclic Cosmology from ΛCDM using persistence 
+diagrams. The relaxation mechanism modifies the distribution of topological 
+features in a scale-dependent manner, producing distinctive signatures in the MMD 
+test statistic. These effects offer a direct, nonparametric, and observationally 
+accessible probe of the RDCC gravitational field. The present Companion establishes 
+the foundation for future studies of statistical topology, model discrimination, 
+and cosmological inference in RDCC.
+
+\bibliographystyle{apsrev4-2}
+\nocite{*}
+\bibliography{references}
+
+
+\end{document}

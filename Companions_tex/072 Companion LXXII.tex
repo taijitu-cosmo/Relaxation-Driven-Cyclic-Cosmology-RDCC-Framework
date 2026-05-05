@@ -1,0 +1,168 @@
+\documentclass[11pt,a4paper]{article}
+
+% ---------------------------------------------------------
+% PREAMBLE (stable, warning-free, Overleaf-safe)
+% ---------------------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{bm}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{cite}
+\usepackage{authblk}
+\usepackage{physics}
+\usepackage{mathtools}
+
+\geometry{margin=2.4cm}
+
+\title{\textbf{Companion LXXII: Kernel PCA of Persistence Diagrams in the Relaxation-Driven Cyclic Cosmology}}
+\author{Michael Lehmann \\ \texttt{mi.lehmann@gmx.de}}
+\date{April 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Kernel principal component analysis (kernel PCA) provides a spectral decomposition 
+of persistence diagrams embedded in a reproducing kernel Hilbert space (RKHS). In 
+weak-lensing analyses, this decomposition reveals the dominant modes of 
+topological variation across connected components, loops, and void-like structures. 
+In the standard cosmological model, the kernel spectrum reflects the nonlinear 
+matter distribution and the projection of large-scale structure. In the 
+Relaxation-Driven Cyclic Cosmology (RDCC), the scale-dependent evolution of the 
+gravitational potential modifies the kernel eigenvalue spectrum in a characteristic 
+way. This Companion develops a continuous description of kernel PCA in RDCC, 
+deriving how the relaxation scale influences spectral topology, principal 
+components, and the observational signatures in weak-lensing surveys. The 
+resulting framework provides a distinctive probe of the RDCC gravitational field 
+through spectral decomposition of linearized topology.
+\end{abstract}
+% ---------------------------------------------------------
+\section{Introduction}
+
+Persistence diagrams encode the birth and death of topological features in 
+weak-lensing convergence fields. Hilbert-space embeddings provide a linearized 
+representation of these diagrams, enabling kernel methods and inner-product 
+computations. Kernel PCA extends this framework by decomposing the embedded 
+topology into orthogonal spectral modes.
+
+In the standard cosmological model, the kernel eigenvalue spectrum reflects the 
+nonlinear matter distribution and the projection of large-scale structure. In 
+RDCC, the gravitational potential evolves differently. The relaxation mechanism 
+suppresses the decay of small-scale modes and enhances the coherence of large-scale 
+modes. This modifies the kernel spectrum in a scale-dependent manner, producing a 
+distinctive signature in kernel PCA analyses.
+% ---------------------------------------------------------
+\section{Kernel PCA of Persistence Diagrams}
+
+Given persistence diagrams $D_{1}, \dots, D_{N}$ embedded into an RKHS via 
+$\Phi(D_{i})$, the kernel matrix is
+
+\begin{equation}
+    K_{ij}
+    = \langle \Phi(D_{i}), \Phi(D_{j}) \rangle_{\mathcal{H}}.
+\end{equation}
+
+Kernel PCA solves the eigenvalue problem
+
+\begin{equation}
+    K \bm{v}_{k}
+    = \lambda_{k} \bm{v}_{k},
+\end{equation}
+
+where $\lambda_{k}$ are the kernel eigenvalues and $\bm{v}_{k}$ the corresponding 
+eigenvectors.
+
+The $k$-th principal component is
+
+\begin{equation}
+    \mathrm{PC}_{k}(D_{i})
+    = \sum_{j=1}^{N} v_{k,j} K_{ij}.
+\end{equation}
+% ---------------------------------------------------------
+\section{RDCC Modification of Kernel Structure}
+
+In RDCC, the convergence evolves as
+\begin{equation}
+    \kappa_{\mathrm{RDCC}}(\ell)
+    = \kappa(\ell)
+      \left[
+        1 - \chi_{\kappa}
+        \left(\frac{\ell}{\ell_{\mathrm{rel}}}\right)^{\alpha}
+      \right].
+\end{equation}
+
+This modifies the birth and death thresholds of topological features, and hence the 
+kernel:
+
+\begin{equation}
+    K^{\mathrm{RDCC}}_{ij}
+    = K_{ij}
+      \left[
+        1 - \chi_{K}
+        \left(\frac{\ell}{\ell_{\mathrm{rel}}}\right)^{\alpha}
+      \right].
+\end{equation}
+
+The RDCC eigenvalue problem becomes
+
+\begin{equation}
+    K^{\mathrm{RDCC}} \bm{v}^{\mathrm{RDCC}}_{k}
+    = \lambda^{\mathrm{RDCC}}_{k} \bm{v}^{\mathrm{RDCC}}_{k}.
+\end{equation}
+% ---------------------------------------------------------
+\section{Spectral Signatures in RDCC}
+
+To first order in the relaxation parameter,
+
+\begin{equation}
+    \lambda^{\mathrm{RDCC}}_{k}
+    = \lambda_{k}
+      \left[
+        1 - \chi_{\lambda,k}
+        \left(\frac{\ell}{\ell_{\mathrm{rel}}}\right)^{\alpha}
+      \right].
+\end{equation}
+
+RDCC therefore induces:
+
+\begin{itemize}
+    \item enhanced large-scale eigenvalues (coherent modes),
+    \item suppressed small-scale eigenvalues (relaxation damping),
+    \item a characteristic turnover near $\ell_{\mathrm{rel}}$,
+    \item modified ordering of principal components,
+    \item altered projection of persistence lifetimes onto spectral modes.
+\end{itemize}
+% ---------------------------------------------------------
+\section{Principal Components in RDCC}
+
+The RDCC principal components are
+
+\begin{equation}
+    \mathrm{PC}^{\mathrm{RDCC}}_{k}(D_{i})
+    = \sum_{j=1}^{N}
+      v^{\mathrm{RDCC}}_{k,j}
+      K^{\mathrm{RDCC}}_{ij}.
+\end{equation}
+
+These components encode the dominant RDCC-modified topological modes.
+% ---------------------------------------------------------
+\section{Conclusion}
+
+Kernel PCA of persistence diagrams in the Relaxation-Driven Cyclic Cosmology 
+reveals the spectral structure of linearized topology. The relaxation mechanism 
+modifies the kernel eigenvalue spectrum in a scale-dependent manner, producing 
+distinctive signatures in weak-lensing surveys. These effects provide a direct 
+observational window into the relaxation scale and the temporal structure of the 
+RDCC gravitational field. The present Companion establishes the theoretical 
+foundation for future studies of spectral topology, kernel methods, and 
+statistical tests in RDCC.
+
+\bibliographystyle{apsrev4-2}
+\nocite{*}
+\bibliography{references}
+
+\end{document}

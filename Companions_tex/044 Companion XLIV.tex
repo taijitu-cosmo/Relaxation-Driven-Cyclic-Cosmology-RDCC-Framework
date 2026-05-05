@@ -1,0 +1,192 @@
+\documentclass[11pt,a4paper]{article}
+
+% ---------------------------------------------------------
+% PREAMBLE (stable, warning-free, Overleaf-safe)
+% ---------------------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{bm}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{cite}
+\usepackage{authblk}
+\usepackage{physics}
+\usepackage{mathtools}
+
+\geometry{margin=2.4cm}
+
+\title{\textbf{Companion XLIV: Gravitational Slip in the Relaxation-Driven Cyclic Cosmology}}
+\author{Michael Lehmann \\ \texttt{mi.lehmann@gmx.de}}
+\date{April 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The gravitational slip, defined as the difference between the two scalar metric 
+potentials in the Newtonian gauge, provides a sensitive probe of the dynamical 
+structure of spacetime. In the standard cosmological model, the slip is negligible 
+in the absence of anisotropic stress, and the two potentials evolve identically. 
+In the Relaxation-Driven Cyclic Cosmology (RDCC), the scale-dependent evolution of 
+the gravitational potential introduces a natural gravitational slip, as the 
+relaxation mechanism modifies the temporal evolution of the potentials in a 
+scale-dependent manner. This Companion develops a continuous description of the 
+gravitational slip in RDCC, deriving how the relaxation scale influences the 
+metric potentials, the anisotropic stress, and the observational signatures in 
+weak lensing, redshift-space distortions, and the integrated Sachs--Wolfe effect. 
+The resulting framework provides a new geometric perspective on the RDCC Universe.
+\end{abstract}
+% ---------------------------------------------------------
+\section{Introduction}
+
+In the Newtonian gauge, scalar perturbations of the metric are described by two 
+potentials, $\Phi$ and $\Psi$, which govern the motion of matter and the 
+propagation of light. In the standard cosmological model, these potentials are 
+equal in the absence of anisotropic stress, and their evolution is governed by the 
+linear growth of structure.
+
+In RDCC, the gravitational potential evolves differently. The relaxation mechanism 
+suppresses the decay of small-scale modes and enhances the coherence of large-scale 
+modes. This modifies the temporal evolution of the metric potentials in a 
+scale-dependent manner, producing a natural gravitational slip. The slip becomes a 
+direct tracer of the relaxation scale $k_{\mathrm{rel}}$ and the temporal structure 
+of the RDCC gravitational field.
+% ---------------------------------------------------------
+\section{Metric Potentials in RDCC}
+
+The perturbed metric in the Newtonian gauge is
+\begin{equation}
+    ds^{2}
+    = -(1 + 2\Psi)\,dt^{2}
+      + a^{2}(t)(1 - 2\Phi)\,d\mathbf{x}^{2}.
+\end{equation}
+
+In RDCC, the relaxation mechanism modifies the evolution of the potentials. The 
+potential $\Phi$ evolves according to
+\begin{equation}
+    \Phi_{\mathrm{RDCC}}(k,a)
+    = \Phi(k,a)
+      \left[
+        1 - \chi_{\Phi}
+        \left(\frac{k}{k_{\mathrm{rel}}}\right)^{\alpha}
+      \right],
+\end{equation}
+while the potential $\Psi$ evolves as
+\begin{equation}
+    \Psi_{\mathrm{RDCC}}(k,a)
+    = \Psi(k,a)
+      \left[
+        1 - \chi_{\Psi}
+        \left(\frac{k}{k_{\mathrm{rel}}}\right)^{\alpha}
+      \right].
+\end{equation}
+
+Because the relaxation mechanism affects the two potentials differently, a 
+gravitational slip arises naturally.
+% ---------------------------------------------------------
+\section{Definition and Evolution of the Gravitational Slip}
+
+The gravitational slip is defined as
+\begin{equation}
+    \eta(k,a)
+    = \frac{\Phi_{\mathrm{RDCC}}(k,a)}{\Psi_{\mathrm{RDCC}}(k,a)}.
+\end{equation}
+
+In the standard cosmological model, $\eta = 1$ in the absence of anisotropic 
+stress. In RDCC, the slip becomes
+\begin{equation}
+    \eta_{\mathrm{RDCC}}(k,a)
+    = \frac{
+        1 - \chi_{\Phi}
+        \left(\frac{k}{k_{\mathrm{rel}}}\right)^{\alpha}
+    }{
+        1 - \chi_{\Psi}
+        \left(\frac{k}{k_{\mathrm{rel}}}\right)^{\alpha}
+    }.
+\end{equation}
+
+This expression shows that the slip is scale-dependent and becomes most pronounced 
+near the relaxation scale. The slip reflects the temporal structure of the RDCC 
+gravitational field and provides a direct geometric signature of the relaxation 
+mechanism.
+% ---------------------------------------------------------
+\section{Anisotropic Stress and the RDCC Geometry}
+
+In general relativity, a gravitational slip can arise from anisotropic stress. In 
+RDCC, the slip arises even in the absence of physical anisotropic stress, because 
+the relaxation mechanism modifies the temporal evolution of the metric potentials 
+in a scale-dependent manner.
+
+The effective anisotropic stress can be defined as
+\begin{equation}
+    \pi_{\mathrm{eff}}(k,a)
+    = \frac{k^{2}}{4\pi G a^{2}}
+      \left[
+        \Phi_{\mathrm{RDCC}}(k,a)
+        - \Psi_{\mathrm{RDCC}}(k,a)
+      \right].
+\end{equation}
+
+This effective stress encodes the geometric imprint of the relaxation mechanism and 
+provides a new perspective on the structure of spacetime in RDCC.
+% ---------------------------------------------------------
+\section{Observational Signatures}
+
+The gravitational slip affects several key observables. Weak lensing is sensitive 
+to the combination $\Phi + \Psi$, while galaxy motions are sensitive to $\Psi$ 
+alone. The slip therefore modifies the relation between lensing and clustering.
+
+The integrated Sachs--Wolfe effect is sensitive to the time derivative of the 
+metric potentials, and the slip introduces a scale-dependent modification to the 
+ISW signal.
+
+Redshift-space distortions depend on the velocity field, which is governed by 
+$\Psi$. The slip therefore introduces a scale-dependent modification to the RSD 
+signal.
+
+These signatures provide a direct observational window into the relaxation scale 
+and the geometric structure of the RDCC Universe.
+% ---------------------------------------------------------
+\section{Conclusion}
+
+The gravitational slip in the Relaxation-Driven Cyclic Cosmology reflects the 
+scale-dependent evolution of the metric potentials. The relaxation mechanism 
+modifies the temporal evolution of $\Phi$ and $\Psi$ in a scale-dependent manner, 
+producing a natural gravitational slip even in the absence of anisotropic stress. 
+This slip affects weak lensing, redshift-space distortions, and the integrated 
+Sachs--Wolfe effect, providing a direct geometric signature of the RDCC 
+gravitational field. The present Companion establishes the theoretical foundation 
+for future studies of the geometry of spacetime, the interplay between matter and 
+light, and the observational tests of RDCC.
+
+% ========================
+% References
+% ========================
+
+\begin{thebibliography}{10}
+
+\bibitem{Flagship} Lehmann, M. (2026). Relaxation-Driven Cyclic Cosmology (RDCC): A Minimal CPT-Symmetric Framework with a Single Parameter. Flagship Paper. Zenodo: \url{https://zenodo.org/records/19744958} (v43.0 or later).
+
+\bibitem{Zenodo} The complete RDCC companion series (I--LVII) is available at the same Zenodo record above.
+
+% Thematisch relevante Companions
+\bibitem{CompXVI} Companion XVI: Boltzmann Code and Modified Hierarchy.
+\bibitem{CompXXXI} Companion XXXI: RDCC Halo Model and Non-Linear Structure.
+\bibitem{CompXXXII} Companion XXXII--XXXIX: Galaxy--Halo Connection, Cosmic Web, Lensing, RSD, ISW, tSZ, Rotation Curves, CGM.
+
+% Wichtige externe Referenzen
+\bibitem{Planck2020} Planck Collaboration (2020), Astron. Astrophys. 641, A6.
+\bibitem{DESI2024} DESI Collaboration (2024/2025), arXiv: [aktuelle $f\sigma_8$/BAO-Paper].
+\bibitem{JWST2024} Maiolino et al. (2024), Nature (JWST high-$z$ galaxies/quasars).
+\bibitem{Kaiser1987} Kaiser, N. (1987), Mon. Not. R. Astron. Soc. 227, 1 (RSD).
+\bibitem{Bartelmann2001} Bartelmann, M. \& Schneider, P. (2001), Phys. Rep. 340, 291 (Weak Lensing Review).
+\bibitem{HuOkamoto2002} Hu, W. \& Okamoto, T. (2002), Astrophys. J. 574, 566 (CMB Lensing).
+\bibitem{LewisChallinor2006} Lewis, A. \& Challinor, A. (2006), Phys. Rep. 429, 1 (CMB Lensing Review).
+\bibitem{NFW1997} Navarro, J. F., Frenk, C. S. \& White, S. D. M. (1997), Astrophys. J. 490, 493 (Halo Profiles).
+
+\end{thebibliography}
+
+\end{document}

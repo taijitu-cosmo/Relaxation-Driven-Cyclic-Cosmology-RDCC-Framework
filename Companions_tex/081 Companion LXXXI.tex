@@ -1,0 +1,179 @@
+\documentclass[11pt,a4paper]{article}
+
+% ---------------------------------------------------------
+% PREAMBLE (stable, warning-free, Overleaf-safe)
+% ---------------------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{bm}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{cite}
+\usepackage{authblk}
+\usepackage{physics}
+\usepackage{mathtools}
+
+\geometry{margin=2.4cm}
+
+\title{\textbf{Companion LXXXI: Diffusion–Optimal Transport Unification and Neural Transport Maps for Persistence Diagrams in the Relaxation-Driven Cyclic Cosmology}}
+\author{Michael Lehmann \\ \texttt{mi.lehmann@gmx.de}}
+\date{April 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Diffusion models and optimal transport (OT) provide two complementary perspectives 
+on probability distributions: diffusion models describe generative stochastic 
+dynamics, while OT characterizes deterministic transport maps. Recent advances 
+have shown that these two viewpoints can be unified through stochastic control, 
+Schrödinger bridges, and score-based transport geometry. Building on the neural 
+Schrödinger flows developed in Companion LXXX, this work introduces a unified 
+diffusion–OT framework for persistence diagrams in the Relaxation-Driven Cyclic 
+Cosmology (RDCC). The relaxation mechanism modifies the scale-dependent evolution 
+of the gravitational potential, inducing characteristic changes in both the 
+deterministic OT map and the stochastic diffusion flow. The resulting neural 
+transport maps provide a powerful tool for modeling RDCC signatures, enabling 
+likelihood-free inference, generative modeling, and transport-based parameter 
+constraints from weak-lensing topology.
+\end{abstract}
+% ---------------------------------------------------------
+\section{Introduction}
+
+Persistence diagrams encode the topological structure of weak-lensing convergence 
+fields. Previous Companions introduced Wasserstein geometry, entropic optimal 
+transport, Schrödinger bridges, score-based diffusion models, and neural 
+Schrödinger flows as tools for analyzing the Relaxation-Driven Cyclic Cosmology 
+(RDCC).
+
+Diffusion models provide stochastic generative dynamics, while optimal transport 
+provides deterministic transport maps. Unifying these perspectives yields a 
+powerful framework in which:
+
+\begin{itemize}
+    \item diffusion models approximate OT maps in the zero-noise limit,
+    \item OT maps arise as the mean flow of Schrödinger bridges,
+    \item score fields encode the gradient of the log-density,
+    \item neural SDEs learn both stochastic and deterministic transport geometry.
+\end{itemize}
+
+In RDCC, the relaxation mechanism modifies both the deterministic and stochastic 
+components of transport, producing characteristic signatures in the unified 
+diffusion–OT geometry.
+% ---------------------------------------------------------
+\section{Optimal Transport Maps for Persistence Diagrams}
+
+Let $\rho_{0}$ and $\rho_{1}$ be distributions of persistence diagrams. The OT map 
+$T$ solves
+
+\begin{equation}
+    T = \arg\min_{T}
+    \int \| D - T(D) \|^{2} \, d\rho_{0}(D),
+\end{equation}
+
+subject to $T_{\#} \rho_{0} = \rho_{1}$.
+
+For persistence diagrams, $T$ acts on birth-death coordinates and encodes the 
+deterministic geometric deformation between topological ensembles.
+% ---------------------------------------------------------
+\section{Diffusion Models as Stochastic Transport Maps}
+
+A diffusion model defines the reverse-time SDE
+
+\begin{equation}
+    dD_{t}
+    = - \beta(t) s(D_{t}, t) \, dt
+      + \sqrt{\beta(t)} \, d\bar{B}_{t}.
+\end{equation}
+
+The mean flow of this SDE approximates the OT map:
+
+\begin{equation}
+    \mathbb{E}[D_{t}] \approx T(D_{0}).
+\end{equation}
+
+Thus diffusion models provide a stochastic relaxation of OT maps.
+% ---------------------------------------------------------
+\section{Unified Diffusion–OT Geometry}
+
+The unified framework is governed by the controlled SDE
+
+\begin{equation}
+    dD_{t}
+    = \left[
+        - \varepsilon(t) s(D_{t}, t)
+        + u(D_{t}, t)
+      \right] dt
+      + \sqrt{2 \varepsilon(t)} \, dB_{t},
+\end{equation}
+
+where
+
+\begin{itemize}
+    \item $s(D_{t}, t)$ is the score field,
+    \item $u(D_{t}, t)$ is a deterministic OT-like control,
+    \item $\varepsilon(t)$ interpolates between OT ($\varepsilon \to 0$) and diffusion.
+\end{itemize}
+
+This yields a continuum between:
+
+
+
+\[
+\text{deterministic OT} \quad \leftrightarrow \quad \text{stochastic diffusion}.
+\]
+
+
+% ---------------------------------------------------------
+\section{RDCC Modification of Unified Transport Geometry}
+
+In RDCC, the convergence evolves as
+
+\begin{equation}
+    \kappa_{\mathrm{RDCC}}(\ell)
+    = \kappa(\ell)
+      \left[
+        1 - \chi_{\kappa}
+        \left(\frac{\ell}{\ell_{\mathrm{rel}}}\right)^{\alpha}
+      \right].
+\end{equation}
+
+This modifies:
+
+\begin{itemize}
+    \item the score field $s(D,t)$,
+    \item the deterministic OT control $u(D,t)$,
+    \item the diffusion schedule $\varepsilon(t)$,
+    \item the curvature of transport trajectories,
+    \item the barycentric flow across redshift.
+\end{itemize}
+
+RDCC induces:
+
+\begin{itemize}
+    \item enhanced deterministic transport at large scales,
+    \item suppressed stochasticity at small scales,
+    \item a characteristic turnover near $\ell_{\mathrm{rel}}$,
+    \item scale-dependent deformation of transport maps.
+\end{itemize}
+% ---------------------------------------------------------
+\section{Conclusion}
+
+Diffusion models and optimal transport provide complementary perspectives on the 
+geometry of probability distributions. Neural Schrödinger flows unify these 
+perspectives into a single framework for learning stochastic and deterministic 
+transport processes. In the Relaxation-Driven Cyclic Cosmology, the relaxation 
+mechanism modifies both components of transport in a scale-dependent manner, 
+producing distinctive signatures in weak-lensing topology. The present Companion 
+establishes the foundation for transport-based RDCC parameter inference, 
+generative modeling, and unified geometric analysis of topological data.
+
+\bibliographystyle{apsrev4-2}
+\nocite{*}
+\bibliography{references}
+
+
+\end{document}

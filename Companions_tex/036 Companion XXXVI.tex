@@ -1,0 +1,184 @@
+\documentclass[11pt,a4paper]{article}
+
+% ---------------------------------------------------------
+% PREAMBLE (stable, warning-free, Overleaf-safe)
+% ---------------------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{bm}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{cite}
+\usepackage{authblk}
+\usepackage{physics}
+\usepackage{mathtools}
+
+\geometry{margin=2.4cm}
+
+\title{\textbf{Companion XXXVI: The Baryonic Cycle in the Relaxation-Driven Cyclic Cosmology}}
+\author{Michael Lehmann \\ \texttt{mi.lehmann@gmx.de}}
+\date{April 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The formation of galaxies is governed by the complex interplay between gas cooling, 
+star formation, and feedback. These processes form a self-regulating baryonic cycle 
+that determines the luminosity, morphology, and chemical evolution of galaxies. 
+In the Relaxation-Driven Cyclic Cosmology (RDCC), the scale-dependent evolution of 
+the gravitational potential modifies the thermodynamic pathways through which gas 
+accretes, cools, and condenses into stars. This Companion develops a continuous 
+description of the baryonic cycle in RDCC, deriving how the relaxation scale 
+influences cooling times, feedback efficiency, and the equilibrium between inflows 
+and outflows. The resulting framework provides a natural explanation for the 
+suppressed star formation in low-mass halos and the early assembly of massive 
+galaxies observed in deep surveys.
+\end{abstract}
+% ---------------------------------------------------------
+\section{Introduction}
+
+The baryonic cycle is the engine of galaxy formation. Gas flows into halos along 
+filaments, cools radiatively, condenses into molecular clouds, forms stars, and is 
+then reheated or expelled by stellar and AGN feedback. This cycle is not linear but 
+self-regulating: the rate at which gas cools determines the star formation rate, 
+which in turn determines the strength of feedback, which then modifies the cooling 
+rate.
+
+In RDCC, the gravitational potential that shapes this cycle evolves differently 
+from the standard cosmological model. The relaxation mechanism suppresses the 
+growth of small-scale modes and enhances the coherence of large-scale modes. This 
+modifies the density, temperature, and entropy structure of the gas as it accretes 
+onto halos. The baryonic cycle becomes sensitive to the relaxation scale 
+$k_{\mathrm{rel}}$, which imprints itself on the thermodynamic history of galaxies.
+% ---------------------------------------------------------
+\section{Gas Accretion and the RDCC Potential}
+
+Gas accretion onto halos is driven by the gravitational potential. In RDCC, this 
+potential is modified by the relaxation mechanism:
+\begin{equation}
+    \Phi_{\mathrm{RDCC}}(k,a)
+    = \Phi(k,a)
+      \left[1 - \chi_{\Phi}
+      \left(\frac{k}{k_{\mathrm{rel}}}\right)^{\alpha}\right].
+\end{equation}
+
+The suppression of small-scale modes reduces the depth of the potential wells of 
+low-mass halos. As a result, the infalling gas experiences a weaker compression, 
+leading to lower virial temperatures. The virial temperature in RDCC becomes
+\begin{equation}
+    T_{\mathrm{vir,RDCC}}
+    = T_{\mathrm{vir}}
+      \left[1 - \chi_{T}
+      \left(\frac{k(M)}{k_{\mathrm{rel}}}\right)^{\alpha}\right].
+\end{equation}
+
+This reduction in virial temperature has profound consequences for the cooling 
+efficiency of gas in low-mass halos.
+% ---------------------------------------------------------
+\section{Cooling Pathways and Thermodynamic Evolution}
+
+Radiative cooling depends on the density and temperature of the gas. In RDCC, the 
+modified virial temperature alters the cooling time:
+\begin{equation}
+    t_{\mathrm{cool,RDCC}}
+    = \frac{3 k_{B} T_{\mathrm{vir,RDCC}}}{n_{e} \Lambda(T_{\mathrm{vir,RDCC}})},
+\end{equation}
+where $\Lambda$ is the cooling function.
+
+Because $T_{\mathrm{vir,RDCC}}$ is reduced for low-mass halos, the cooling time 
+increases, delaying the onset of star formation. Massive halos, whose collapse is 
+accelerated by the coherence of large-scale modes, maintain higher virial 
+temperatures and shorter cooling times. This asymmetry naturally produces a 
+suppressed star formation rate in dwarf galaxies and an enhanced early star 
+formation rate in massive galaxies.
+
+The thermodynamic evolution of the gas thus becomes a direct tracer of the 
+relaxation scale.
+% ---------------------------------------------------------
+\section{Feedback and the Regulation of Star Formation}
+
+Feedback from supernovae and active galactic nuclei injects energy into the 
+interstellar medium, reheating or expelling gas. The efficiency of feedback 
+depends on the depth of the gravitational potential. In RDCC, the reduced 
+potential depth of low-mass halos enhances the effectiveness of feedback, while 
+the deeper potentials of massive halos remain largely unaffected.
+
+The energy required to unbind gas from a halo of mass $M$ is
+\begin{equation}
+    E_{\mathrm{bind,RDCC}}
+    = \frac{1}{2} M_{\mathrm{gas}} v_{\mathrm{esc,RDCC}}^{2},
+\end{equation}
+with
+\begin{equation}
+    v_{\mathrm{esc,RDCC}}
+    = v_{\mathrm{esc}}
+      \left[1 - \chi_{v}
+      \left(\frac{k(M)}{k_{\mathrm{rel}}}\right)^{\alpha}\right].
+\end{equation}
+
+This modification amplifies the impact of feedback in dwarf-scale halos, 
+suppressing their star formation even further.
+% ---------------------------------------------------------
+\section{Equilibrium Between Inflows and Outflows}
+
+Galaxies evolve toward a quasi-equilibrium state in which inflows, outflows, and 
+star formation balance each other. In RDCC, this equilibrium is shifted by the 
+relaxation-modified potential. The equilibrium condition can be written as
+\begin{equation}
+    \dot{M}_{\mathrm{in}}(M)
+    = \dot{M}_{\star}(M)
+      + \dot{M}_{\mathrm{out}}(M),
+\end{equation}
+where each term carries an RDCC correction.
+
+Low-mass halos reach equilibrium at lower stellar masses because their inflow 
+rates are reduced and their outflow rates are enhanced. Massive halos reach 
+equilibrium earlier and at higher stellar masses, reflecting their accelerated 
+collapse and more efficient cooling.
+
+This framework provides a natural explanation for the observed bimodality in 
+galaxy populations.
+% ---------------------------------------------------------
+\section{Conclusion}
+
+The baryonic cycle in the Relaxation-Driven Cyclic Cosmology is shaped by the 
+scale-dependent evolution of the gravitational potential. The relaxation mechanism 
+modifies gas accretion, cooling, feedback, and the equilibrium between inflows and 
+outflows. These effects suppress star formation in low-mass halos, enhance early 
+star formation in massive halos, and reshape the thermodynamic pathways through 
+which galaxies assemble their stellar mass. The present Companion establishes the 
+foundation for future studies of galaxy evolution, chemical enrichment, and the 
+interaction between baryons and dark matter in RDCC.
+
+% ========================
+% References
+% ========================
+
+\begin{thebibliography}{10}
+
+\bibitem{Flagship} Lehmann, M. (2026). Relaxation-Driven Cyclic Cosmology (RDCC): A Minimal CPT-Symmetric Framework with a Single Parameter. Flagship Paper. Zenodo: \url{https://zenodo.org/records/19744958} (v43.0 or later).
+
+\bibitem{Zenodo} The complete RDCC companion series (I--LVII) is available at the same Zenodo record above.
+
+% Thematisch relevante Companions
+\bibitem{CompXVI} Companion XVI: Boltzmann Code and Modified Hierarchy.
+\bibitem{CompXXXI} Companion XXXI: RDCC Halo Model and Non-Linear Structure.
+\bibitem{CompXXXII} Companion XXXII--XXXIX: Galaxy--Halo Connection, Cosmic Web, Lensing, RSD, ISW, tSZ, Rotation Curves, CGM.
+
+% Wichtige externe Referenzen
+\bibitem{Planck2020} Planck Collaboration (2020), Astron. Astrophys. 641, A6.
+\bibitem{DESI2024} DESI Collaboration (2024/2025), arXiv: [aktuelle $f\sigma_8$/BAO-Paper].
+\bibitem{JWST2024} Maiolino et al. (2024), Nature (JWST high-$z$ galaxies/quasars).
+\bibitem{Kaiser1987} Kaiser, N. (1987), Mon. Not. R. Astron. Soc. 227, 1 (RSD).
+\bibitem{Bartelmann2001} Bartelmann, M. \& Schneider, P. (2001), Phys. Rep. 340, 291 (Weak Lensing Review).
+\bibitem{HuOkamoto2002} Hu, W. \& Okamoto, T. (2002), Astrophys. J. 574, 566 (CMB Lensing).
+\bibitem{LewisChallinor2006} Lewis, A. \& Challinor, A. (2006), Phys. Rep. 429, 1 (CMB Lensing Review).
+\bibitem{NFW1997} Navarro, J. F., Frenk, C. S. \& White, S. D. M. (1997), Astrophys. J. 490, 493 (Halo Profiles).
+
+\end{thebibliography}
+
+\end{document}

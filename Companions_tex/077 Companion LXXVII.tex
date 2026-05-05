@@ -1,0 +1,171 @@
+\documentclass[11pt,a4paper]{article}
+
+% ---------------------------------------------------------
+% PREAMBLE (stable, warning-free, Overleaf-safe)
+% ---------------------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{bm}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{cite}
+\usepackage{authblk}
+\usepackage{physics}
+\usepackage{mathtools}
+\usepackage{textgreek}
+
+\geometry{margin=2.4cm}
+
+\title{\textbf{Companion LXXVII: Entropic Optimal Transport and Sinkhorn Geometry of Persistence Diagrams in the Relaxation-Driven Cyclic Cosmology}}
+\author{Michael Lehmann \\ \texttt{mi.lehmann@gmx.de}}
+\date{April 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Entropic optimal transport provides a regularized and computationally efficient 
+variant of classical Wasserstein geometry. The resulting Sinkhorn divergence 
+defines a smooth, stable, and differentiable metric structure on probability 
+measures, making it particularly well-suited for topological data analysis. 
+Building on the Wasserstein information geometry developed in Companion LXXVI, 
+this work introduces entropic optimal transport and Sinkhorn geometry for 
+persistence diagrams in the Relaxation-Driven Cyclic Cosmology (RDCC). The 
+relaxation mechanism modifies the scale-dependent evolution of the gravitational 
+potential, inducing characteristic changes in entropic transport costs, barycentric 
+flows, and geometric curvature. The resulting framework provides a powerful and 
+computationally robust tool for analyzing RDCC signatures in weak-lensing topology.
+\end{abstract}
+% ---------------------------------------------------------
+\section{Introduction}
+
+Persistence diagrams encode the birth and death of topological features in weak-
+lensing convergence fields. Classical Wasserstein distances provide a natural 
+metric on the space of diagrams, but they are computationally expensive and 
+non-smooth. Entropic optimal transport introduces a regularization term that 
+smooths the transport plan, yielding the Sinkhorn divergence—a fast, stable, and 
+differentiable alternative.
+
+In cosmology, these properties are particularly valuable: weak-lensing topology 
+requires robust metrics that remain stable under noise, sampling variation, and 
+small-scale fluctuations. In the Relaxation-Driven Cyclic Cosmology (RDCC), the 
+relaxation mechanism modifies the gravitational potential in a scale-dependent 
+manner, producing characteristic signatures in entropic transport geometry.
+% ---------------------------------------------------------
+\section{Entropic Optimal Transport}
+
+Given two persistence diagrams $D$ and $E$ with cost matrix $C$, the entropic OT 
+problem is
+
+\begin{equation}
+    \mathrm{OT}_{\varepsilon}(D,E)
+    = \min_{\pi}
+      \left[
+        \sum_{i,j} \pi_{ij} C_{ij}
+        + \varepsilon \sum_{i,j} \pi_{ij} \log \pi_{ij}
+      \right],
+\end{equation}
+
+where $\varepsilon > 0$ is the entropic regularization parameter.
+
+The Sinkhorn divergence is
+
+\begin{equation}
+    S_{\varepsilon}(D,E)
+    = \mathrm{OT}_{\varepsilon}(D,E)
+    - \frac{1}{2}
+      \mathrm{OT}_{\varepsilon}(D,D)
+    - \frac{1}{2}
+      \mathrm{OT}_{\varepsilon}(E,E).
+\end{equation}
+
+This divergence is symmetric, positive definite, and smooth.
+% ---------------------------------------------------------
+\section{RDCC Modification of Entropic Transport}
+
+In RDCC, the convergence evolves as
+
+\begin{equation}
+    \kappa_{\mathrm{RDCC}}(\ell)
+    = \kappa(\ell)
+      \left[
+        1 - \chi_{\kappa}
+        \left(\frac{\ell}{\ell_{\mathrm{rel}}}\right)^{\alpha}
+      \right].
+\end{equation}
+
+This modifies the birth and death coordinates of topological features:
+
+\begin{align}
+    b_{\mathrm{RDCC}} &= b \left[ 1 - \chi_{b} (\ell/\ell_{\mathrm{rel}})^{\alpha} \right], \\
+    d_{\mathrm{RDCC}} &= d \left[ 1 - \chi_{d} (\ell/\ell_{\mathrm{rel}})^{\alpha} \right].
+\end{align}
+
+The entropic OT cost becomes
+
+\begin{equation}
+    \mathrm{OT}^{\mathrm{RDCC}}_{\varepsilon}(D,E)
+    = \mathrm{OT}_{\varepsilon}(D,E)
+      \left[
+        1 - \chi_{\mathrm{OT}}
+        \left(\frac{\ell}{\ell_{\mathrm{rel}}}\right)^{\alpha}
+      \right].
+\end{equation}
+% ---------------------------------------------------------
+\section{Sinkhorn Geometry in RDCC}
+
+The RDCC Sinkhorn divergence is
+
+\begin{equation}
+    S^{\mathrm{RDCC}}_{\varepsilon}(D,E)
+    = S_{\varepsilon}(D,E)
+      \left[
+        1 - \chi_{S}
+        \left(\frac{\ell}{\ell_{\mathrm{rel}}}\right)^{\alpha}
+      \right].
+\end{equation}
+
+RDCC induces:
+
+\begin{itemize}
+    \item reduced entropic transport cost at small scales,
+    \item enhanced cost at large scales,
+    \item a characteristic turnover near $\ell_{\mathrm{rel}}$,
+    \item modified Sinkhorn barycenters,
+    \item altered entropic geodesics in topological space.
+\end{itemize}
+% ---------------------------------------------------------
+\section{Applications to Cosmological Topology}
+
+Entropic OT enables:
+
+\begin{itemize}
+    \item stable comparison of noisy persistence diagrams,
+    \item fast computation of barycenters across redshift bins,
+    \item differentiable topological metrics for machine learning,
+    \item entropic Wasserstein flows for RDCC parameter inference,
+    \item robust RDCC vs. ΛCDM discrimination under noise.
+\end{itemize}
+
+These applications provide a computationally efficient and geometrically rich 
+framework for analyzing RDCC signatures in weak-lensing topology.
+% ---------------------------------------------------------
+\section{Conclusion}
+
+Entropic optimal transport and Sinkhorn geometry provide a smooth, stable, and 
+computationally efficient framework for analyzing persistence diagrams in the 
+Relaxation-Driven Cyclic Cosmology. The relaxation mechanism modifies entropic 
+transport costs and geometric curvature in a scale-dependent manner, producing 
+distinctive signatures in weak-lensing topology. The present Companion establishes 
+the foundation for future studies of entropic geometry, Schrödinger bridges, and 
+regularized optimal transport in cosmological topology.
+
+\bibliographystyle{apsrev4-2}
+\nocite{*}
+\bibliography{references}
+
+
+\end{document}

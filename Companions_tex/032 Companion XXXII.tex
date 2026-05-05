@@ -1,0 +1,204 @@
+\documentclass[11pt,a4paper]{article}
+
+% ---------------------------------------------------------
+% PREAMBLE (stable, warning-free, Overleaf-safe)
+% ---------------------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{bm}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{cite}
+\usepackage{authblk}
+\usepackage{physics}
+\usepackage{mathtools}
+\usepackage{enumitem}
+
+\geometry{margin=2.4cm}
+
+\title{\textbf{Companion XXXII: Halo Concentration, Density Profiles, and Substructure in the Relaxation-Driven Cyclic Cosmology}}
+\author{Michael Lehmann \\ \texttt{mi.lehmann@gmx.de}}
+\date{April 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This Companion investigates how the Relaxation-Driven Cyclic Cosmology (RDCC) modifies 
+the internal structure of dark matter halos. While Companion~XXXI established the 
+non-linear halo model and its global implications, the present work focuses on the 
+microstructure of halos: their density profiles, concentration--mass relation, 
+subhalo abundance, and the emergence of core-like features. The relaxation-induced 
+suppression of small-scale potential evolution alters the collapse history of halos 
+and reshapes their internal architecture. We derive analytical estimates, discuss 
+scaling relations, and outline observational signatures relevant for weak lensing, 
+galaxy--galaxy lensing, and cluster astrophysics.
+\end{abstract}
+% ---------------------------------------------------------
+\section{Introduction}
+
+Dark matter halos are not only the building blocks of cosmic structure but also 
+repositories of dynamical information. Their internal density profiles, concentration 
+parameters, and substructure content encode the history of gravitational collapse. 
+In the standard cosmological model, halo structure is shaped by hierarchical growth 
+and the scale-free nature of cold dark matter.
+
+In the Relaxation-Driven Cyclic Cosmology (RDCC), the situation changes 
+fundamentally. The relaxation-modified potential evolution introduces a 
+scale-dependent suppression of small-scale growth, which alters the timing and 
+efficiency of halo collapse. As a result, halo profiles, concentrations, and 
+subhalo populations acquire characteristic RDCC signatures.
+
+This Companion develops the theoretical framework for halo microstructure in RDCC.
+% ---------------------------------------------------------
+\section{Density Profiles in RDCC}
+
+The standard Navarro–Frenk–White (NFW) profile is
+\begin{equation}
+    \rho_{\mathrm{NFW}}(r)
+    = \frac{\rho_{s}}{(r/r_{s})(1+r/r_{s})^{2}}.
+\end{equation}
+
+In RDCC, the suppression of small-scale potential evolution modifies the inner 
+collapse dynamics. We model the RDCC profile as
+\begin{equation}
+    \rho_{\mathrm{RDCC}}(r)
+    = \rho_{\mathrm{NFW}}(r)
+      \left[1 - \chi_{\rho}
+      \left(\frac{r}{r_{\mathrm{rel}}}\right)^{\beta}\right],
+\end{equation}
+where $r_{\mathrm{rel}}$ is the scale corresponding to $k_{\mathrm{rel}}$.
+
+RDCC predicts:
+\begin{itemize}[leftmargin=1.2cm]
+    \item slightly shallower inner slopes,
+    \item smoother transitions between inner and outer regions,
+    \item reduced central densities for low-mass halos,
+    \item preserved outer profiles for massive halos.
+\end{itemize}
+% ---------------------------------------------------------
+\section{Concentration--Mass Relation}
+
+The concentration parameter is defined as
+\begin{equation}
+    c(M) = \frac{r_{\mathrm{vir}}}{r_{s}}.
+\end{equation}
+
+In RDCC, the delayed collapse of small halos and the earlier collapse of massive 
+halos modify the concentration--mass relation:
+\begin{equation}
+    c_{\mathrm{RDCC}}(M)
+    = c(M)
+      \left[1 - \chi_{c}
+      \left(\frac{k(M)}{k_{\mathrm{rel}}}\right)^{\alpha}\right].
+\end{equation}
+
+Consequences:
+\begin{itemize}[leftmargin=1.2cm]
+    \item reduced concentrations for dwarf-scale halos,
+    \item nearly unchanged concentrations for cluster-scale halos,
+    \item a characteristic turnover mass $M_{\mathrm{rel}}$,
+    \item smoother redshift evolution of $c(M)$.
+\end{itemize}
+% ---------------------------------------------------------
+\section{Subhalo Abundance and Survival}
+
+Subhalos trace the hierarchical assembly of halos. Their abundance is commonly 
+described by the subhalo mass function:
+\begin{equation}
+    \frac{dN}{d\ln m}
+    \propto m^{-\gamma}.
+\end{equation}
+
+In RDCC, the suppression of small-scale growth reduces the formation of low-mass 
+subhalos:
+\begin{equation}
+    \left(\frac{dN}{d\ln m}\right)_{\mathrm{RDCC}}
+    = \left(\frac{dN}{d\ln m}\right)
+      \left[1 - \chi_{\mathrm{sub}}
+      \left(\frac{k(m)}{k_{\mathrm{rel}}}\right)^{\alpha}\right].
+\end{equation}
+
+RDCC predicts:
+\begin{itemize}[leftmargin=1.2cm]
+    \item fewer low-mass subhalos,
+    \item enhanced survival of intermediate-mass subhalos,
+    \item reduced tidal stripping due to smoother potentials,
+    \item a natural explanation for missing-satellite-like features.
+\end{itemize}
+% ---------------------------------------------------------
+\section{Core Formation and Inner Structure}
+
+The relaxation-modified potential evolution leads to a reduced efficiency of 
+small-scale collapse. This can produce core-like features in low-mass halos.
+
+We model the RDCC core radius as
+\begin{equation}
+    r_{\mathrm{core}}
+    \sim r_{s}
+    \left(\frac{k_{\mathrm{rel}}}{k(M)}\right)^{\alpha}.
+\end{equation}
+
+Implications:
+\begin{itemize}[leftmargin=1.2cm]
+    \item dwarf-scale halos develop shallow cores,
+    \item Milky-Way-scale halos remain cusp-like,
+    \item cluster-scale halos are unaffected,
+    \item core sizes correlate with $k_{\mathrm{rel}}$.
+\end{itemize}
+% ---------------------------------------------------------
+\section{Observational Signatures}
+
+The RDCC modifications to halo structure affect several observables:
+
+\begin{itemize}[leftmargin=1.2cm]
+    \item \textbf{Galaxy--galaxy lensing:} reduced small-scale shear signals.
+    \item \textbf{Weak lensing peaks:} fewer high-concentration peaks.
+    \item \textbf{Rotation curves:} natural emergence of shallow cores.
+    \item \textbf{Cluster lensing:} preserved NFW-like outer profiles.
+    \item \textbf{Substructure lensing:} reduced subhalo-induced perturbations.
+\end{itemize}
+
+These signatures provide a direct test of RDCC on non-linear scales.
+% ---------------------------------------------------------
+\section{Conclusion}
+
+This Companion develops the internal structure of dark matter halos in the 
+Relaxation-Driven Cyclic Cosmology. The relaxation-modified potential evolution 
+reshapes halo profiles, concentrations, and subhalo populations. These effects 
+propagate into lensing, galaxy dynamics, and the morphology of the cosmic web. 
+Together with Companion~XXXI, the present work establishes the foundation for 
+RDCC non-linear cosmology and prepares the ground for future studies of galaxy 
+formation, cluster astrophysics, and cosmic web topology.
+
+% ========================
+% References
+% ========================
+
+\begin{thebibliography}{10}
+
+\bibitem{Flagship} Lehmann, M. (2026). Relaxation-Driven Cyclic Cosmology (RDCC): A Minimal CPT-Symmetric Framework with a Single Parameter. Flagship Paper. Zenodo: \url{https://zenodo.org/records/19744958} (v43.0 or later).
+
+\bibitem{Zenodo} The complete RDCC companion series (I--LVII) is available at the same Zenodo record above.
+
+% Thematisch relevante Companions
+\bibitem{CompXVI} Companion XVI: Boltzmann Code and Modified Hierarchy.
+\bibitem{CompXXXI} Companion XXXI: RDCC Halo Model and Non-Linear Structure.
+\bibitem{CompXXXII} Companion XXXII--XXXIX: Galaxy--Halo Connection, Cosmic Web, Lensing, RSD, ISW, tSZ, Rotation Curves, CGM.
+
+% Wichtige externe Referenzen
+\bibitem{Planck2020} Planck Collaboration (2020), Astron. Astrophys. 641, A6.
+\bibitem{DESI2024} DESI Collaboration (2024/2025), arXiv: [aktuelle $f\sigma_8$/BAO-Paper].
+\bibitem{JWST2024} Maiolino et al. (2024), Nature (JWST high-$z$ galaxies/quasars).
+\bibitem{Kaiser1987} Kaiser, N. (1987), Mon. Not. R. Astron. Soc. 227, 1 (RSD).
+\bibitem{Bartelmann2001} Bartelmann, M. \& Schneider, P. (2001), Phys. Rep. 340, 291 (Weak Lensing Review).
+\bibitem{HuOkamoto2002} Hu, W. \& Okamoto, T. (2002), Astrophys. J. 574, 566 (CMB Lensing).
+\bibitem{LewisChallinor2006} Lewis, A. \& Challinor, A. (2006), Phys. Rep. 429, 1 (CMB Lensing Review).
+\bibitem{NFW1997} Navarro, J. F., Frenk, C. S. \& White, S. D. M. (1997), Astrophys. J. 490, 493 (Halo Profiles).
+
+\end{thebibliography}
+
+\end{document}

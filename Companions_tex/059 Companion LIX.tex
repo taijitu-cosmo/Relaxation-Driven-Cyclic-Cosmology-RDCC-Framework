@@ -1,0 +1,191 @@
+\documentclass[11pt,a4paper]{article}
+
+% ---------------------------------------------------------
+% PREAMBLE (stable, warning-free, Overleaf-safe)
+% ---------------------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{bm}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{cite}
+\usepackage{authblk}
+\usepackage{physics}
+\usepackage{mathtools}
+
+\geometry{margin=2.4cm}
+
+\title{\textbf{Companion LIX: Mass-Mapping Inversion in the Relaxation-Driven Cyclic Cosmology}}
+\author{Michael Lehmann \\ \texttt{mi.lehmann@gmx.de}}
+\date{April 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Mass-mapping techniques reconstruct the projected mass density or gravitational 
+potential from weak-lensing shear fields. In the standard cosmological model, the 
+inversion from shear to convergence and potential is determined by the lensing 
+kernel, the geometry of the Universe, and the statistical properties of the shear 
+field. In the Relaxation-Driven Cyclic Cosmology (RDCC), the scale-dependent 
+evolution of the gravitational potential modifies the inversion kernel, the 
+reconstruction response, and the coherence of the reconstructed mass maps in a 
+characteristic way. This Companion develops a continuous description of mass-
+mapping inversion in RDCC, deriving how the relaxation scale influences the 
+reconstruction of $\kappa$ and $\Phi$, the mode coupling, and the observational 
+signatures in lensing surveys. The resulting framework provides a distinctive probe 
+of the RDCC gravitational field in real-space mass maps.
+\end{abstract}
+% ---------------------------------------------------------
+\section{Introduction}
+
+Weak gravitational lensing distorts the shapes of background galaxies, allowing the 
+reconstruction of the projected mass density (convergence $\kappa$) or the 
+gravitational potential $\Phi$. Mass-mapping techniques invert the shear field to 
+obtain $\kappa$ or $\Phi$, providing a powerful probe of the matter distribution 
+and the gravitational field.
+
+In the standard cosmological model, the inversion is determined by the lensing 
+kernel, the geometry of the Universe, and the statistical properties of the shear 
+field. In RDCC, the gravitational potential evolves differently. The relaxation 
+mechanism suppresses the decay of small-scale modes and enhances the coherence of 
+large-scale modes. This modifies the inversion kernel, the reconstruction response, 
+and the coherence of the reconstructed mass maps in a scale-dependent manner, 
+producing a distinctive signature in mass-mapping analyses.
+% ---------------------------------------------------------
+\section{The RDCC Convergence Field}
+
+The convergence is related to the gravitational potential by
+\begin{equation}
+    \kappa(\hat{\mathbf{n}})
+    = \frac{1}{2}\nabla^{2}\phi(\hat{\mathbf{n}}).
+\end{equation}
+
+In RDCC, the lensing potential evolves as
+\begin{equation}
+    \phi_{\mathrm{RDCC}}
+    = \phi
+      \left[
+        1 - \chi_{\phi}
+        \left(\frac{\ell}{\ell_{\mathrm{rel}}}\right)^{\alpha}
+      \right].
+\end{equation}
+
+The RDCC convergence becomes
+\begin{equation}
+    \kappa_{\mathrm{RDCC}}(\ell)
+    = \kappa(\ell)
+      \left[
+        1 - \chi_{\kappa}
+        \left(\frac{\ell}{\ell_{\mathrm{rel}}}\right)^{\alpha}
+      \right].
+\end{equation}
+
+This modification reflects the scale-dependent evolution of the gravitational 
+potential.
+% ---------------------------------------------------------
+\section{Mass-Mapping Inversion in RDCC}
+
+The standard inversion from shear to convergence is
+\begin{equation}
+    \hat{\kappa}(\ell)
+    = D(\ell)\, \gamma(\ell),
+\end{equation}
+where $D(\ell)$ is the Kaiser–Squires kernel.
+
+In RDCC, the shear field becomes
+\begin{equation}
+    \gamma_{\mathrm{RDCC}}(\ell)
+    = \gamma(\ell)
+      \left[
+        1 - \chi_{\gamma}
+        \left(\frac{\ell}{\ell_{\mathrm{rel}}}\right)^{\alpha}
+      \right].
+\end{equation}
+
+The reconstructed convergence becomes
+\begin{equation}
+    \hat{\kappa}_{\mathrm{RDCC}}(\ell)
+    = D(\ell)\,
+      \gamma(\ell)
+      \left[
+        1 - \chi_{\gamma}
+        \left(\frac{\ell}{\ell_{\mathrm{rel}}}\right)^{\alpha}
+      \right].
+\end{equation}
+
+This modification alters the reconstruction response.
+% ---------------------------------------------------------
+\section{Reconstruction Response and RDCC Signatures}
+
+The reconstruction response is defined as
+\begin{equation}
+    R_{\ell}
+    = \frac{\langle \hat{\kappa}_{\mathrm{RDCC}}(\ell) \rangle}
+           {\kappa_{\mathrm{RDCC}}(\ell)}.
+\end{equation}
+
+In RDCC, this becomes
+\begin{equation}
+    R_{\ell,\mathrm{RDCC}}
+    = R_{\ell}
+      \left[
+        1 - \chi_{R}
+        \left(\frac{\ell}{\ell_{\mathrm{rel}}}\right)^{\alpha}
+      \right].
+\end{equation}
+
+The relaxation mechanism enhances large-scale coherence and suppresses small-scale 
+structure. Mass maps therefore exhibit:
+
+\begin{itemize}
+    \item enhanced large-scale potential wells,
+    \item suppressed small-scale peaks,
+    \item a characteristic turnover near $\ell_{\mathrm{rel}}$,
+    \item modified reconstruction noise at high $\ell$.
+\end{itemize}
+% ---------------------------------------------------------
+\section{Real-Space Mass Maps in RDCC}
+
+The real-space convergence map is
+\begin{equation}
+    \kappa(\hat{\mathbf{n}})
+    = \int \frac{d^{2}\ell}{(2\pi)^{2}}\,
+      \kappa(\ell)\,
+      e^{i\ell\cdot\hat{\mathbf{n}}}.
+\end{equation}
+
+In RDCC, the reconstructed map becomes
+\begin{equation}
+    \kappa_{\mathrm{RDCC}}(\hat{\mathbf{n}})
+    = \kappa(\hat{\mathbf{n}})
+      - \chi_{\kappa}
+        \int \frac{d^{2}\ell}{(2\pi)^{2}}\,
+        \kappa(\ell)
+        \left(\frac{\ell}{\ell_{\mathrm{rel}}}\right)^{\alpha}
+        e^{i\ell\cdot\hat{\mathbf{n}}}.
+\end{equation}
+
+This modification produces a distinctive smoothing pattern tied to the relaxation 
+scale.
+% ---------------------------------------------------------
+\section{Conclusion}
+
+Mass-mapping inversion in the Relaxation-Driven Cyclic Cosmology reflects the 
+scale-dependent evolution of the gravitational potential and the matter 
+distribution. The relaxation mechanism modifies the inversion kernel, the 
+reconstruction response, and the coherence of the reconstructed mass maps in a 
+scale-dependent manner, producing distinctive signatures in weak-lensing surveys. 
+These effects provide a direct observational window into the relaxation scale and 
+the temporal structure of the RDCC gravitational field. The present Companion 
+establishes the theoretical foundation for future studies of mass reconstruction, 
+nonlinear structure, and the interplay between light and gravity in RDCC.
+
+\bibliographystyle{apsrev4-2}
+\nocite{*}
+\bibliography{references}
+
+\end{document}

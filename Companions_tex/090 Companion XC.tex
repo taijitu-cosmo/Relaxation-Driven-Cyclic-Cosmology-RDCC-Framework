@@ -1,0 +1,189 @@
+\documentclass[11pt,a4paper]{article}
+
+% ---------------------------------------------------------
+% PREAMBLE (stable, warning-free, Overleaf-safe)
+% ---------------------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{bm}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{cite}
+\usepackage{authblk}
+\usepackage{physics}
+\usepackage{mathtools}
+
+\geometry{margin=2.4cm}
+
+\title{\textbf{Companion XC: End-to-End RDCC Inference Pipeline — From Simulations to Posteriors}}
+\author{Michael Lehmann \\ \texttt{mi.lehmann@gmx.de}}
+\date{April 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The Relaxation-Driven Cyclic Cosmology (RDCC) introduces the relaxation parameter 
+$\alpha$, which modifies the scale-dependent gravitational potential and induces 
+observable signatures in weak-lensing convergence fields. Previous Companions 
+developed topological transport statistics, multi-probe likelihoods, neural 
+surrogates, hierarchical Bayesian inference, and emulator-accelerated pipelines. 
+In this work, we assemble these components into a unified end-to-end RDCC 
+inference pipeline. The pipeline begins with simulations, extracts multi-probe 
+summary statistics, evaluates neural joint likelihoods, incorporates emulator 
+uncertainty, applies hierarchical Bayesian modeling, and produces final 
+posteriors for $\alpha$. This Companion provides the complete computational and 
+statistical workflow required for applying RDCC to Euclid-like survey data.
+\end{abstract}
+% ---------------------------------------------------------
+\section{Pipeline Overview}
+
+The end-to-end RDCC inference pipeline consists of the following stages:
+
+\begin{enumerate}
+    \item Simulation of weak-lensing convergence maps for a grid of $\alpha$.
+    \item Extraction of multi-probe summary statistics:
+    \begin{itemize}
+        \item transport-based persistence-diagram statistics,
+        \item Minkowski functionals,
+        \item shear power spectra.
+    \end{itemize}
+    \item Training of neural joint likelihoods (Companion LXXXVI).
+    \item Calibration via flow-matching and score diagnostics (Companion LXXXVII).
+    \item Emulator acceleration using neural transport surrogates (Companion LXXXVIII).
+    \item Hierarchical Bayesian inference with transport-regularized posteriors 
+          (Companion LXXXIX).
+    \item Posterior sampling and uncertainty quantification.
+\end{enumerate}
+% ---------------------------------------------------------
+\section{Simulation Stage}
+
+We generate weak-lensing convergence maps $\kappa(\theta)$ for a grid of $\alpha$ 
+values using:
+
+\begin{itemize}
+    \item N-body simulations,
+    \item fast approximate solvers,
+    \item multi-fidelity simulation flows (Companion LXXXVIII).
+\end{itemize}
+
+Each simulation produces:
+
+\begin{itemize}
+    \item convergence maps,
+    \item persistence diagrams,
+    \item Minkowski functional curves,
+    \item shear power spectra.
+\end{itemize}
+% ---------------------------------------------------------
+\section{Summary-Statistic Extraction}
+
+We compute:
+
+\begin{itemize}
+    \item transport distances $\mathcal{T}_{\ell}$,
+    \item Minkowski functionals $V_{i}(\nu)$,
+    \item shear power spectra $C_{\ell}^{\gamma\gamma}$.
+\end{itemize}
+
+These form the multi-probe summary vector:
+
+
+
+\[
+    \mathbf{s}
+    =
+    \left\{
+        \mathcal{T}_{\ell},
+        V_{0}(\nu),
+        V_{1}(\nu),
+        V_{2}(\nu),
+        C_{\ell}^{\gamma\gamma}
+    \right\}.
+\]
+
+
+% ---------------------------------------------------------
+\section{Neural Joint Likelihood Evaluation}
+
+We evaluate the neural joint likelihood $\mathcal{L}_{\theta}$ from Companion 
+LXXXVI:
+
+
+
+\[
+    \mathcal{L}_{\theta}(\mathbf{s} \mid \alpha)
+    =
+    \mathcal{N}\!\left(
+        f_{\theta}(\mathbf{s});
+        \mu(\alpha),
+        \Sigma(\alpha)
+    \right)
+    \left|
+        \det \frac{\partial f_{\theta}}{\partial \mathbf{s}}
+    \right|.
+\]
+
+
+
+Calibration ensures statistical correctness (Companion LXXXVII).
+% ---------------------------------------------------------
+\section{Hierarchical Bayesian Inference}
+
+We define the hierarchical posterior:
+
+
+
+\[
+    p(\alpha, \theta_{\mathrm{emu}} \mid \mathbf{s}_{\mathrm{obs}})
+    \propto
+    \mathcal{L}_{\theta}(\mathbf{s}_{\mathrm{obs}} \mid \alpha, \theta_{\mathrm{emu}})
+    p(\theta_{\mathrm{emu}})
+    p(\alpha).
+\]
+
+
+
+Transport regularization (Companion LXXXIX) enforces geometric consistency.
+% ---------------------------------------------------------
+\section{Posterior Sampling and Final Constraints}
+
+We sample the posterior using:
+
+\begin{itemize}
+    \item Hamiltonian Monte Carlo,
+    \item NUTS,
+    \item variational inference,
+    \item neural posterior estimation.
+\end{itemize}
+
+The final output is:
+
+
+
+\[
+    p(\alpha \mid \mathbf{s}_{\mathrm{obs}})
+\]
+
+
+
+with credible intervals and diagnostic checks.
+% ---------------------------------------------------------
+\section{Conclusion}
+
+This Companion assembled all previous components into a unified end-to-end RDCC 
+inference pipeline. The pipeline integrates simulations, multi-probe summary 
+statistics, neural likelihoods, emulator acceleration, hierarchical Bayesian 
+modeling, and transport regularization. It provides a complete, scalable, and 
+statistically robust workflow for inferring the RDCC relaxation parameter $\alpha$ 
+from Euclid-like weak-lensing data.
+
+\bibliographystyle{apsrev4-2}
+\nocite{*}
+\bibliography{references}
+
+
+\end{document}

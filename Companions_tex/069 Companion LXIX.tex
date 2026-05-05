@@ -1,0 +1,148 @@
+\documentclass[11pt,a4paper]{article}
+
+% ---------------------------------------------------------
+% PREAMBLE (stable, warning-free, Overleaf-safe)
+% ---------------------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{bm}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{cite}
+\usepackage{authblk}
+\usepackage{physics}
+\usepackage{mathtools}
+
+\geometry{margin=2.4cm}
+
+\title{\textbf{Companion LXIX: Spectral Density Functions of Persistence Diagrams in the Relaxation-Driven Cyclic Cosmology}}
+\author{Michael Lehmann \\ \texttt{mi.lehmann@gmx.de}}
+\date{April 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Spectral density functions (SDFs) of persistence diagrams provide a frequency-
+resolved characterization of topological fluctuations in cosmological fields. In 
+weak-lensing analyses, SDFs quantify how the birth and death of connected 
+components, loops, and void-like structures contribute across frequency modes. In 
+the standard cosmological model, the SDF reflects the nonlinear matter distribution 
+and the projection of large-scale structure. In the Relaxation-Driven Cyclic 
+Cosmology (RDCC), the scale-dependent evolution of the gravitational potential 
+modifies the spectral distribution of topological features in a characteristic way. 
+This Companion develops a continuous description of SDFs in RDCC, deriving how the 
+relaxation scale influences frequency-resolved topology, spectral coherence, and 
+the observational signatures in weak-lensing surveys. The resulting framework 
+provides a distinctive probe of the RDCC gravitational field through spectral 
+topology.
+\end{abstract}
+% ---------------------------------------------------------
+\section{Introduction}
+
+Persistence diagrams encode the birth and death of topological features in 
+weak-lensing convergence fields. While cross-correlation functions quantify 
+filtration-coupled topology, spectral density functions provide a frequency-
+resolved view of topological fluctuations.
+
+In the standard cosmological model, the SDF reflects the nonlinear matter 
+distribution and the projection of large-scale structure. In RDCC, the 
+gravitational potential evolves differently. The relaxation mechanism suppresses 
+the decay of small-scale modes and enhances the coherence of large-scale modes. 
+This modifies the spectral distribution of topological features in a scale-
+dependent manner, producing a distinctive signature in SDF analyses.
+% ---------------------------------------------------------
+\section{Spectral Density Functions of Persistence Diagrams}
+
+Given a time- or filtration-ordered sequence of persistence diagrams 
+$\{D(\nu_{i})\}$, the spectral density function is defined as the Fourier transform 
+of the Wasserstein-distance fluctuations:
+
+\begin{equation}
+    S_{D}(\omega)
+    = \left|
+        \sum_{i}
+        W_{p}(D(\nu_{i}), D^{*})
+        e^{-i \omega \nu_{i}}
+      \right|^{2}.
+\end{equation}
+
+This function measures the frequency content of topological fluctuations.
+% ---------------------------------------------------------
+\section{RDCC Modification of Persistence Diagrams}
+
+In RDCC, the convergence evolves as
+\begin{equation}
+    \kappa_{\mathrm{RDCC}}(\ell)
+    = \kappa(\ell)
+      \left[
+        1 - \chi_{\kappa}
+        \left(\frac{\ell}{\ell_{\mathrm{rel}}}\right)^{\alpha}
+      \right].
+\end{equation}
+
+This modifies the birth and death thresholds of topological features:
+
+\begin{align}
+    b_{\mathrm{RDCC}} &= b \left[ 1 - \chi_{b} (\ell/\ell_{\mathrm{rel}})^{\alpha} \right], \\
+    d_{\mathrm{RDCC}} &= d \left[ 1 - \chi_{d} (\ell/\ell_{\mathrm{rel}})^{\alpha} \right].
+\end{align}
+
+Thus the RDCC spectral sequence becomes
+\begin{equation}
+    W_{p}(D_{\mathrm{RDCC}}(\nu), D^{*}_{\mathrm{RDCC}}).
+\end{equation}
+% ---------------------------------------------------------
+\section{Spectral Density Functions in RDCC}
+
+The RDCC spectral density function is
+
+\begin{equation}
+    S_{D,\mathrm{RDCC}}(\omega)
+    = S_{D}(\omega)
+      \left[
+        1 - \chi_{S}
+        \left(\frac{\ell}{\ell_{\mathrm{rel}}}\right)^{\alpha}
+      \right].
+\end{equation}
+
+This modification reflects the relaxation-driven change in frequency-resolved 
+topology.
+% ---------------------------------------------------------
+\section{Spectral Topological Signatures of RDCC}
+
+The relaxation mechanism enhances the coherence of large-scale modes. Spectral 
+density functions therefore exhibit:
+
+\begin{itemize}
+    \item enhanced low-frequency power (large-scale coherence),
+    \item suppressed high-frequency power (small-scale suppression),
+    \item a characteristic turnover near $\ell_{\mathrm{rel}}$,
+    \item modified spectral slopes across redshift,
+    \item altered frequency alignment of persistence lifetimes.
+\end{itemize}
+
+These signatures provide a direct probe of the RDCC gravitational field through 
+spectral topology.
+% ---------------------------------------------------------
+\section{Conclusion}
+
+Spectral density functions of persistence diagrams in the Relaxation-Driven Cyclic 
+Cosmology reflect the scale-dependent evolution of the gravitational potential and 
+the nonlinear matter distribution. The relaxation mechanism modifies the frequency-
+resolved topology in a scale-dependent manner, producing distinctive signatures in 
+weak-lensing surveys. These effects provide a direct observational window into the 
+relaxation scale and the temporal structure of the RDCC gravitational field. The 
+present Companion establishes the theoretical foundation for future studies of 
+spectral topology, nonlinear structure, and the interplay between light and gravity 
+in RDCC.
+
+\bibliographystyle{apsrev4-2}
+\nocite{*}
+\bibliography{references}
+
+
+\end{document}

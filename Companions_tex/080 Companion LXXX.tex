@@ -1,0 +1,181 @@
+\documentclass[11pt,a4paper]{article}
+
+% ---------------------------------------------------------
+% PREAMBLE (stable, warning-free, Overleaf-safe)
+% ---------------------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{bm}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{cite}
+\usepackage{authblk}
+\usepackage{physics}
+\usepackage{mathtools}
+
+\geometry{margin=2.4cm}
+
+\title{\textbf{Companion LXXX: Neural Schrödinger Flows and Score-Transport Geometry of Persistence Diagrams in the Relaxation-Driven Cyclic Cosmology}}
+\author{Michael Lehmann \\ \texttt{mi.lehmann@gmx.de}}
+\date{April 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Neural Schrödinger flows unify score-based diffusion models and Schrödinger bridge 
+dynamics into a single framework for learning stochastic transport processes. 
+Applied to persistence diagrams, these flows learn the time-dependent drift and 
+diffusion fields that interpolate between topological ensembles in a probabilistic 
+and geometrically meaningful way. Building on the entropic optimal transport and 
+score-based models developed in previous Companions, this work introduces neural 
+Schrödinger flows for persistence diagrams in the Relaxation-Driven Cyclic 
+Cosmology (RDCC). The relaxation mechanism modifies the scale-dependent evolution 
+of the gravitational potential, inducing characteristic changes in score fields, 
+transport geometry, and stochastic flow trajectories. The resulting framework 
+provides a powerful and flexible tool for modeling RDCC signatures in weak-lensing 
+topology.
+\end{abstract}
+% ---------------------------------------------------------
+\section{Introduction}
+
+Persistence diagrams encode the birth and death of topological features in weak-
+lensing convergence fields. Previous Companions introduced Wasserstein geometry, 
+entropic optimal transport, Schrödinger bridges, and score-based diffusion models 
+as tools for analyzing the Relaxation-Driven Cyclic Cosmology (RDCC).
+
+Neural Schrödinger flows unify these approaches by learning the drift and 
+diffusion fields of a stochastic differential equation (SDE) that transports one 
+distribution of persistence diagrams into another. This combines the dynamic 
+interpretation of Schrödinger bridges with the generative power of score-based 
+models, yielding a flexible and expressive framework for modeling topological 
+distributions.
+
+In RDCC, the relaxation mechanism modifies the underlying gravitational potential 
+in a scale-dependent manner, producing characteristic signatures in the learned 
+transport geometry.
+% ---------------------------------------------------------
+\section{Neural Schrödinger Flows}
+
+A neural Schrödinger flow is defined by the SDE
+
+\begin{equation}
+    dD_{t}
+    = v_{\theta}(D_{t}, t) \, dt
+    + \sqrt{2 \varepsilon(t)} \, dB_{t},
+\end{equation}
+
+where
+
+\begin{itemize}
+    \item $v_{\theta}(D_{t}, t)$ is a neural network approximating the drift,
+    \item $\varepsilon(t)$ is a time-dependent diffusion schedule,
+    \item $B_{t}$ is Brownian motion on diagram space.
+\end{itemize}
+
+The flow is trained to match boundary distributions $\rho_{0}$ and $\rho_{1}$ by 
+minimizing a Schrödinger-bridge-inspired objective.
+% ---------------------------------------------------------
+\section{Score-Transport Geometry}
+
+The drift is decomposed as
+
+\begin{equation}
+    v_{\theta}(D, t)
+    = - \varepsilon(t) \, s_{\theta}(D, t)
+      + u_{\theta}(D, t),
+\end{equation}
+
+where
+
+\begin{itemize}
+    \item $s_{\theta}(D, t)$ is the learned score field,
+    \item $u_{\theta}(D, t)$ is a learned residual transport term.
+\end{itemize}
+
+This decomposition yields a geometric interpretation:
+
+\begin{itemize}
+    \item the score term drives the flow toward high-density regions,
+    \item the residual term encodes transport geometry beyond pure diffusion.
+\end{itemize}
+% ---------------------------------------------------------
+\section{RDCC Modification of Neural Schrödinger Dynamics}
+
+In RDCC, the convergence evolves as
+
+\begin{equation}
+    \kappa_{\mathrm{RDCC}}(\ell)
+    = \kappa(\ell)
+      \left[
+        1 - \chi_{\kappa}
+        \left(\frac{\ell}{\ell_{\mathrm{rel}}}\right)^{\alpha}
+      \right].
+\end{equation}
+
+This modifies the log-density of persistence diagrams:
+
+\begin{equation}
+    \log p_{\mathrm{RDCC}}(D)
+    = \log p(D)
+      - \chi_{p}
+        \left(\frac{\ell}{\ell_{\mathrm{rel}}}\right)^{\alpha}.
+\end{equation}
+
+The RDCC score becomes
+
+\begin{equation}
+    s_{\mathrm{RDCC}}(D, t)
+    = s(D, t)
+      \left[
+        1 - \chi_{s}
+        \left(\frac{\ell}{\ell_{\mathrm{rel}}}\right)^{\alpha}
+      \right].
+\end{equation}
+
+The RDCC drift is
+
+\begin{equation}
+    v^{\mathrm{RDCC}}_{\theta}(D, t)
+    = v_{\theta}(D, t)
+      \left[
+        1 - \chi_{v}
+        \left(\frac{\ell}{\ell_{\mathrm{rel}}}\right)^{\alpha}
+      \right].
+\end{equation}
+% ---------------------------------------------------------
+\section{RDCC Signatures in Neural Transport Geometry}
+
+RDCC induces:
+
+\begin{itemize}
+    \item reduced score magnitude at small scales,
+    \item enhanced drift at large scales,
+    \item modified stochastic flow trajectories,
+    \item altered dynamic barycenters,
+    \item scale-dependent deformation of transport geometry,
+    \item characteristic curvature in learned Schrödinger flows.
+\end{itemize}
+
+These signatures provide a generative and dynamic probe of the RDCC gravitational 
+field.
+% ---------------------------------------------------------
+\section{Conclusion}
+
+Neural Schrödinger flows unify score-based diffusion models and Schrödinger bridge 
+dynamics into a single framework for learning stochastic transport processes. In 
+the Relaxation-Driven Cyclic Cosmology, the relaxation mechanism modifies the 
+score field, drift dynamics, and transport geometry in a scale-dependent manner, 
+producing distinctive signatures in weak-lensing topology. The present Companion 
+establishes the foundation for future studies of neural SDEs, generative modeling, 
+and dynamic geometric analysis in cosmological topology.
+
+\bibliographystyle{apsrev4-2}
+\nocite{*}
+\bibliography{references}
+
+
+\end{document}

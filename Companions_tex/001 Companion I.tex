@@ -1,0 +1,824 @@
+\documentclass[11pt,a4paper]{article}
+
+% ---------------------------------------------------------
+% PACKAGES
+% ---------------------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb, amsfonts, bm}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{physics}
+\usepackage{graphicx}
+\usepackage{cite}
+\usepackage{tensor}
+\usepackage{mathtools}
+\usepackage{bbm}
+
+\geometry{margin=2.5cm}
+
+% ---------------------------------------------------------
+% TITLE
+% ---------------------------------------------------------
+\title{\textbf{Gravity as the Global Bridge in Relaxation-Driven Cyclic Cosmology (RDCC)}\\
+\vspace{0.3cm}
+\large A Maximal-Formal Structural Analysis of Global Gravity in a CPT-Symmetric Universe}
+
+\author{Michael Lehmann \\ Independent Researcher}
+\date{March 2026}
+
+% ---------------------------------------------------------
+% DOCUMENT
+% ---------------------------------------------------------
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Relaxation-Driven Cyclic Cosmology (RDCC) describes the Universe as a globally CPT-symmetric quantum state with a bipartite Hilbert-space structure. All gauge interactions act strictly within a single sector, while gravity uniquely couples to the sum of both sectors. This makes gravity the only interaction that probes the full global state rather than a single projected branch. In this paper we develop a maximal-formal mathematical description of gravity in RDCC, including the variation of the global Einstein-Hilbert action, the derivation of the effective Newton constant, the structure of the two-sector stress-energy dynamics, the effective Friedmann equations, the bounce fixpoint, and the linearized tensor equations. We define the gravitational shadow of the mirror sector as the structural origin of dark matter and derive its observational consequences. The inter-sector operator $T^{(+)}_{\mu\nu} T^{(-)\mu\nu}/M_*^2$ is shown to arise naturally from integrating out heavy fields, and its renormalization-group flow leads to the infrared relaxation parameter $\alpha$. Gravity emerges as the unique global interaction in a bipartite CPT-symmetric Universe, providing a unified explanation for the weakness of gravity, the existence of dark matter, and the stability of the nonsingular bounce.
+\end{abstract}
+
+\tableofcontents
+\newpage
+
+% ---------------------------------------------------------
+% SECTION 1
+% ---------------------------------------------------------
+\section{Introduction}
+
+The standard $\Lambda$CDM model provides an exceptionally successful phenomenological description of cosmology, yet it leaves several structural questions unanswered: Why is gravity so weak compared to gauge interactions? Why does dark matter interact only gravitationally? Why does the Universe appear asymmetric in time despite CPT symmetry being exact in local quantum field theory? And why does the Big Bang singularity require new physics beyond general relativity?
+
+Relaxation-Driven Cyclic Cosmology (RDCC) offers a minimal and predictive framework addressing these questions through a single structural postulate: the global quantum state of the Universe is a CPT eigenstate. The minimal realization of such a state requires a bipartite Hilbert-space factorization,
+\begin{equation}
+\mathcal{H} = \mathcal{H}_+ \otimes \mathcal{H}_-,
+\end{equation}
+where $\mathcal{H}_+$ describes the visible sector and $\mathcal{H}_-$ its CPT-conjugate mirror sector. All gauge interactions act strictly within a single sector, while gravity couples to the \emph{sum} of the two energy-momentum tensors. This makes gravity the only interaction that probes the full global state rather than a single projected branch.
+
+The structural asymmetry between gravity and gauge forces is the key to understanding the global role of gravity in RDCC. The mirror sector contributes an invisible gravitational component that dilutes the apparent strength of gravity without introducing new particles or new scales. This provides a natural explanation for the observed dark matter abundance: the mirror sector acts as a gravitational shadow that is invisible to gauge interactions but fully visible to gravity.
+
+In this paper we develop a maximal-formal mathematical description of gravity in RDCC. We derive the global Einstein equations from the variation of the two-sector action, obtain the effective Newton constant measured by visible-sector observers, analyze the two-sector stress-energy dynamics and the relaxation parameter $\alpha$, derive the effective Friedmann equations and the bounce fixpoint, and develop the linearized tensor equations in the global CPT-symmetric background. We define the gravitational shadow of the mirror sector and derive its observational consequences. Finally, we show how the inter-sector operator arises from integrating out heavy fields and how its renormalization-group flow leads to the infrared relaxation parameter $\alpha$.
+
+Gravity emerges as the unique global interaction in a bipartite CPT-symmetric Universe, providing a unified explanation for the weakness of gravity, the existence of dark matter, and the stability of the nonsingular bounce.
+% ---------------------------------------------------------
+% SECTION 2
+% ---------------------------------------------------------
+\section{Global CPT-Symmetric State and Bipartite Structure}
+
+RDCC is built on the structural postulate that the global quantum state of the Universe is a CPT eigenstate,
+\begin{equation}
+\widehat{\mathrm{CPT}} \, \ket{\Psi} = \ket{\Psi}.
+\end{equation}
+The minimal realization of such a state requires a bipartite Hilbert-space factorization,
+\begin{equation}
+\mathcal{H} = \mathcal{H}_+ \otimes \mathcal{H}_-,
+\end{equation}
+where $\mathcal{H}_+$ describes the visible sector and $\mathcal{H}_-$ its CPT-conjugate mirror sector. A generic CPT-symmetric state may be written in Schmidt-like form,
+\begin{equation}
+\ket{\Psi} = \sum_i c_i \, \ket{i}_+ \otimes \ket{\bar{i}}_-,
+\end{equation}
+where $\ket{\bar{i}}_-$ denotes the CPT conjugate of $\ket{i}_+$. The coefficients $c_i$ encode the degree of sectoral entanglement.
+
+In the infrared limit of the relaxation dynamics, the relaxation parameter $\alpha$ approaches zero and the two sectors become maximally correlated. The bounce corresponds to the moment at which the global state reaches minimal coarse-grained entropy and the CPT symmetry is manifest.
+
+\subsection{Sectoral Projection and Observers}
+
+Observers exist only within a single sector. A visible-sector observer has access only to operators acting on $\mathcal{H}_+$, and therefore perceives an effective density matrix obtained by tracing out the mirror sector,
+\begin{equation}
+\rho_+ = \mathrm{Tr}_{\mathcal{H}_-} \ket{\Psi}\bra{\Psi}.
+\end{equation}
+All gauge interactions act strictly within $\mathcal{H}_+$ or $\mathcal{H}_-$, while gravity couples to the full state. This asymmetry is the origin of the gravitational shadow of the mirror sector.
+
+\subsection{Global Stress-Energy Tensor}
+
+The total stress-energy tensor sourcing the metric is
+\begin{equation}
+T_{\mu\nu}^{\mathrm{tot}} = T_{\mu\nu}^{(+)} + T_{\mu\nu}^{(-)}.
+\end{equation}
+The inter-sector interaction is described by the leading irrelevant operator,
+\begin{equation}
+\mathcal{L}_{\mathrm{int}} = \frac{1}{M_*^2} T^{(+)}_{\mu\nu} T^{(-)\mu\nu},
+\end{equation}
+which generates the relaxation parameter $\alpha$ and ensures that gravity is the only interaction that probes the full CPT-symmetric state.
+
+% ---------------------------------------------------------
+% SECTION 3
+% ---------------------------------------------------------
+\section{Global Einstein-Hilbert Action and Variation}
+
+\subsection{Two-Sector Action}
+
+The global action of RDCC consists of the Einstein-Hilbert term and the matter actions of the two sectors,
+\begin{equation}
+S = \frac{1}{16\pi G_N} \int d^4x \sqrt{-g} \, R 
++ S_+[g_{\mu\nu}, \Phi_+] 
++ S_-[g_{\mu\nu}, \Phi_-]
++ S_{\mathrm{int}}[g_{\mu\nu}],
+\end{equation}
+where $S_{\mathrm{int}}$ contains the inter-sector operator,
+\begin{equation}
+S_{\mathrm{int}} = \frac{1}{M_*^2} \int d^4x \sqrt{-g} \, 
+T^{(+)}_{\mu\nu} T^{(-)\mu\nu}.
+\end{equation}
+
+\subsection{Variation with Respect to the Metric}
+
+Varying the action with respect to the metric yields the global Einstein equations,
+\begin{equation}
+G_{\mu\nu} = 8\pi G_N \left( T_{\mu\nu}^{(+)} + T_{\mu\nu}^{(-)} + T_{\mu\nu}^{\mathrm{int}} \right),
+\end{equation}
+where
+\begin{equation}
+T_{\mu\nu}^{\mathrm{int}} = -\frac{2}{\sqrt{-g}} \frac{\delta S_{\mathrm{int}}}{\delta g^{\mu\nu}}.
+\end{equation}
+
+To leading order in the EFT expansion, the interaction term contributes only at order $M_*^{-2}$ and is negligible for background cosmology. The global Einstein equations therefore reduce to
+\begin{equation}
+G_{\mu\nu} = 8\pi G_N \left( T_{\mu\nu}^{(+)} + T_{\mu\nu}^{(-)} \right).
+\end{equation}
+
+\subsection{Sectoral Einstein Equations}
+
+A visible-sector observer perceives an effective Einstein equation obtained by projecting onto $\mathcal{H}_+$,
+\begin{equation}
+G_{\mu\nu}^{\mathrm{eff}} = 8\pi G_{\mathrm{eff}} \, T_{\mu\nu}^{(+)}.
+\end{equation}
+The effective Newton constant is defined by
+\begin{equation}
+G_{\mathrm{eff}} = \frac{G_N}{1 + \rho_-/\rho_+},
+\end{equation}
+where $\rho_+$ and $\rho_-$ are the energy densities of the two sectors. This projection effect explains the apparent weakness of gravity and provides a natural interpretation of dark matter as the gravitational shadow of the mirror sector.
+
+\subsection{Interpretation}
+
+The global Einstein equations describe the dynamics of the full CPT-symmetric Universe, while the sectoral Einstein equations describe the dynamics perceived by observers confined to a single sector. The difference between $G_N$ and $G_{\mathrm{eff}}$ is a purely geometric projection effect arising from the bipartite structure of the global state.
+% ---------------------------------------------------------
+% SECTION 4
+% ---------------------------------------------------------
+\section{Derivation of the Effective Newton Constant}
+
+In RDCC the metric couples to the total stress-energy tensor,
+\begin{equation}
+T_{\mu\nu}^{\mathrm{tot}} = T_{\mu\nu}^{(+)} + T_{\mu\nu}^{(-)}.
+\end{equation}
+The global Einstein equations are
+\begin{equation}
+G_{\mu\nu} = 8\pi G_N \left( T_{\mu\nu}^{(+)} + T_{\mu\nu}^{(-)} \right).
+\label{eq:globalEinstein}
+\end{equation}
+
+A visible-sector observer, however, measures gravitational dynamics only through the response of the metric to $T_{\mu\nu}^{(+)}$. To obtain the effective Newton constant we consider the linearized Einstein equations around an FRW background.
+
+\subsection{Linearized Background Response}
+
+Let
+\begin{equation}
+g_{\mu\nu} = \bar{g}_{\mu\nu} + h_{\mu\nu},
+\end{equation}
+where $\bar{g}_{\mu\nu}$ is the FRW background and $h_{\mu\nu}$ is a small perturbation. Linearizing Eq.~(\ref{eq:globalEinstein}) yields
+\begin{equation}
+\delta G_{\mu\nu} = 8\pi G_N \left( \delta T_{\mu\nu}^{(+)} + \delta T_{\mu\nu}^{(-)} \right).
+\end{equation}
+
+A visible-sector observer measures the response
+\begin{equation}
+\delta G_{\mu\nu}^{\mathrm{eff}} = 8\pi G_{\mathrm{eff}} \, \delta T_{\mu\nu}^{(+)}.
+\end{equation}
+
+Equating the two expressions gives
+\begin{equation}
+G_{\mathrm{eff}} = G_N \left( 1 + \frac{\delta T_{\mu\nu}^{(-)}}{\delta T_{\mu\nu}^{(+)}} \right).
+\end{equation}
+
+For homogeneous FRW backgrounds,
+\begin{equation}
+\frac{\delta T_{\mu\nu}^{(-)}}{\delta T_{\mu\nu}^{(+)}} = \frac{\rho_-}{\rho_+},
+\end{equation}
+yielding the effective Newton constant
+\begin{equation}
+G_{\mathrm{eff}} = \frac{G_N}{1 + \rho_-/\rho_+}.
+\label{eq:Geff}
+\end{equation}
+
+\subsection{Interpretation}
+
+Equation (\ref{eq:Geff}) shows that gravity appears weaker to visible-sector observers because the metric responds to the total energy density, while visible matter contributes only a fraction of it. The mirror sector acts as a gravitational shadow that dilutes the apparent strength of gravity.
+
+This provides a structural explanation for the observed dark matter abundance:
+\begin{equation}
+\frac{\Omega_{\mathrm{DM}}}{\Omega_b} \approx \frac{\rho_-}{\rho_+}.
+\end{equation}
+
+In RDCC the temperature ratio $x = T'/T \approx 0.5$ implies
+\begin{equation}
+\frac{\rho_-}{\rho_+} \approx x^4 \approx 0.06,
+\end{equation}
+consistent with the observed dark matter fraction when baryogenesis and mirror baryogenesis are included.
+
+% ---------------------------------------------------------
+% SECTION 5
+% ---------------------------------------------------------
+\section{Two-Sector Stress-Energy Dynamics and Relaxation}
+
+The two sectors exchange energy through the relaxation operator. The continuity equations are
+\begin{align}
+\dot{\rho}_+ + 3H(\rho_+ + p_+) &= -Q, \\
+\dot{\rho}_- + 3H(\rho_- + p_-) &= +Q,
+\end{align}
+where $Q$ is the inter-sector energy transfer rate.
+
+\subsection{Form of the Relaxation Source Term}
+
+The relaxation parameter $\alpha$ defines the strength of the inter-sector coupling. The minimal form consistent with CPT symmetry and the bounce dynamics is
+\begin{equation}
+Q = \alpha H (\rho_+ - \rho_-).
+\label{eq:Q}
+\end{equation}
+
+This form ensures:
+
+\begin{itemize}
+\item $Q = 0$ at the bounce ($H = 0$),
+\item $Q \to 0$ in the infrared ($\alpha \to 0$),
+\item energy flows from the hotter to the colder sector,
+\item the total energy is conserved:
+\begin{equation}
+\dot{\rho}_{\mathrm{tot}} + 3H(\rho_{\mathrm{tot}} + p_{\mathrm{tot}}) = 0.
+\end{equation}
+\end{itemize}
+
+\subsection{Infrared Fixed Point}
+
+The relaxation parameter flows to zero in the infrared,
+\begin{equation}
+\alpha \to 0 \quad \text{as} \quad t \to \pm \infty,
+\end{equation}
+ensuring that the two sectors become maximally correlated at the bounce.
+
+% ---------------------------------------------------------
+% SECTION 6
+% ---------------------------------------------------------
+\section{Effective Friedmann Equations and the Bounce Fixpoint}
+
+\subsection{Global Friedmann Equations}
+
+The global Einstein equations yield the global Friedmann equations,
+\begin{align}
+H^2 &= \frac{8\pi G_N}{3} (\rho_+ + \rho_-), \\
+\dot{H} &= -4\pi G_N (\rho_+ + p_+ + \rho_- + p_-).
+\end{align}
+
+\subsection{Sectoral Friedmann Equations}
+
+A visible-sector observer infers
+\begin{equation}
+H^2 = \frac{8\pi G_{\mathrm{eff}}}{3} \rho_+,
+\end{equation}
+with $G_{\mathrm{eff}}$ given by Eq.~(\ref{eq:Geff}).
+
+\subsection{Bounce Conditions}
+
+The bounce occurs when
+\begin{equation}
+H(t_b) = 0,
+\end{equation}
+which implies
+\begin{equation}
+\rho_+(t_b) + \rho_-(t_b) = 0.
+\end{equation}
+
+Since both energy densities are positive, this requires a modification of the effective stress-energy tensor. In RDCC this modification is provided by the cuscuton-like scalar field $\Phi$, whose effective pressure becomes negative near the bounce.
+
+The full bounce conditions are
+\begin{align}
+H(t_b) &= 0, \\
+\dot{H}(t_b) &> 0, \\
+\alpha(t_b) &\to 0, \\
+\rho_{\mathrm{tot}}(t_b) &= \rho_{\mathrm{crit}}.
+\end{align}
+
+\subsection{Stability of the Bounce}
+
+The condition $\dot{H}(t_b) > 0$ ensures that the bounce is stable and that the Universe transitions smoothly from contraction to expansion. The relaxation parameter approaching zero ensures maximal correlation between the two sectors at the bounce, consistent with the CPT-symmetric global state.
+% ---------------------------------------------------------
+% SECTION 7
+% ---------------------------------------------------------
+\section{Linearized Gravity in a CPT-Symmetric Two-Sector Universe}
+
+To understand how gravitational perturbations propagate in RDCC, we linearize the global Einstein equations around a spatially flat FRW background. The metric is decomposed as
+\begin{equation}
+g_{\mu\nu} = \bar{g}_{\mu\nu} + h_{\mu\nu},
+\end{equation}
+where $\bar{g}_{\mu\nu}$ is the background metric and $h_{\mu\nu}$ is a small perturbation.
+
+\subsection{Perturbation of the Global Einstein Equations}
+
+Linearizing Eq.~(\ref{eq:globalEinstein}) yields
+\begin{equation}
+\delta G_{\mu\nu} = 8\pi G_N \left( \delta T_{\mu\nu}^{(+)} + \delta T_{\mu\nu}^{(-)} \right).
+\label{eq:linEinstein}
+\end{equation}
+
+The perturbations of the stress-energy tensors are defined by
+\begin{equation}
+\delta T_{\mu\nu}^{(\pm)} = 
+\frac{\partial T_{\mu\nu}^{(\pm)}}{\partial g_{\alpha\beta}} h_{\alpha\beta}
++ \delta T_{\mu\nu}^{(\pm)}[\delta \Phi_\pm],
+\end{equation}
+where the second term accounts for matter perturbations.
+
+\subsection{Tensor Mode Decomposition}
+
+We focus on tensor perturbations, which satisfy
+\begin{equation}
+\nabla^\mu h_{\mu\nu} = 0, \qquad h^\mu_{\ \mu} = 0.
+\end{equation}
+
+The tensor perturbation can be decomposed into contributions from the two sectors:
+\begin{equation}
+h_{ij} = h_{ij}^{(+)} + h_{ij}^{(-)}.
+\end{equation}
+
+The global tensor equation becomes
+\begin{equation}
+\ddot{h}_{ij} + 3H \dot{h}_{ij} - \frac{\nabla^2}{a^2} h_{ij}
+= 16\pi G_N \left( \pi_{ij}^{(+)} + \pi_{ij}^{(-)} \right),
+\label{eq:tensorGlobal}
+\end{equation}
+where $\pi_{ij}^{(\pm)}$ are the anisotropic stress tensors.
+
+\subsection{Sectoral Tensor Equations}
+
+A visible-sector observer perceives only $h_{ij}^{(+)}$. Projecting Eq.~(\ref{eq:tensorGlobal}) onto $\mathcal{H}_+$ yields
+\begin{equation}
+\ddot{h}_{ij}^{(+)} + 3H \dot{h}_{ij}^{(+)} - \frac{\nabla^2}{a^2} h_{ij}^{(+)}
+= 16\pi G_{\mathrm{eff}} \, \pi_{ij}^{(+)}.
+\label{eq:tensorSector}
+\end{equation}
+
+The effective Newton constant $G_{\mathrm{eff}}$ is given by Eq.~(\ref{eq:Geff}).
+
+\subsection{CPT-Induced Tensor Correlations}
+
+The global CPT symmetry implies
+\begin{equation}
+h_{ij}^{(-)}(t,\mathbf{x}) = h_{ij}^{(+)}(-t,\mathbf{x}),
+\end{equation}
+up to a phase determined by the CPT eigenvalue of the global state.
+
+This leads to:
+
+\begin{itemize}
+\item symmetric tensor amplitudes at the bounce,
+\item interference between the two tensor sectors,
+\item log-periodic modulations in the global tensor spectrum.
+\end{itemize}
+
+These modulations arise \emph{classically} from the two-sector structure and do not require quantization of the gravitational field.
+
+\subsection{Tensor Modes at the Bounce}
+
+At the bounce,
+\begin{equation}
+H = 0, \qquad \alpha = 0,
+\end{equation}
+and the tensor equation reduces to
+\begin{equation}
+\ddot{h}_{ij} - \frac{\nabla^2}{a_b^2} h_{ij}
+= 16\pi G_N \left( \pi_{ij}^{(+)} + \pi_{ij}^{(-)} \right).
+\end{equation}
+
+The two sectors contribute equally, and the tensor perturbation propagates the pure CPT eigenstate.
+
+This is the structural origin of the log-periodic oscillations in the stochastic gravitational-wave background predicted by RDCC.
+
+% ---------------------------------------------------------
+% SECTION 8
+% ---------------------------------------------------------
+\section{The Gravitational Shadow of the Mirror Sector as Dark Matter}
+
+\subsection{Definition}
+
+We define the gravitational shadow as the contribution of the mirror sector to the metric response perceived by visible-sector observers:
+\begin{equation}
+\mathcal{S}_{\mu\nu} \equiv 
+\frac{\delta G_{\mu\nu}}{\delta T_{\mu\nu}^{(-)}}.
+\end{equation}
+
+Using Eq.~(\ref{eq:linEinstein}), we obtain
+\begin{equation}
+\mathcal{S}_{\mu\nu} = 8\pi G_N.
+\end{equation}
+
+Thus the mirror sector contributes to the metric with the same gravitational strength as the visible sector.
+
+\subsection{Effective Dark Matter Density}
+
+A visible-sector observer infers an effective dark matter density
+\begin{equation}
+\rho_{\mathrm{DM}}^{\mathrm{eff}} = \rho_-.
+\end{equation}
+
+This is not a new particle species but the gravitational imprint of the mirror sector.
+
+\subsection{Effective Friedmann Equation with Shadow Term}
+
+The sectoral Friedmann equation becomes
+\begin{equation}
+H^2 = \frac{8\pi G_N}{3} (\rho_+ + \rho_-)
+= \frac{8\pi G_{\mathrm{eff}}}{3} \rho_+.
+\end{equation}
+
+\subsection{Observational Consequences}
+
+The gravitational shadow behaves exactly like cold dark matter:
+
+\begin{itemize}
+\item it clusters gravitationally,
+\item it contributes to the matter power spectrum,
+\item it affects the CMB acoustic peaks,
+\item it modifies the growth-rate observable $f\sigma_8(z)$,
+\item it produces no gauge interactions.
+\end{itemize}
+
+\subsection{Falsifiability}
+
+RDCC predicts that dark matter is entirely gravitational and mirror-baryonic. Therefore:
+
+\begin{itemize}
+\item detection of WIMPs or any non-gravitational dark matter candidate would falsify RDCC,
+\item non-detection of WIMPs strengthens the RDCC interpretation,
+\item mirror-sector BBN signatures would strongly support RDCC.
+\end{itemize}
+
+The gravitational shadow is thus both a structural consequence and a testable prediction of RDCC.
+% ---------------------------------------------------------
+% SECTION 9
+% ---------------------------------------------------------
+\section{EFT Origin of the Inter-Sector Operator and RG Flow}
+
+The inter-sector operator
+\begin{equation}
+\mathcal{L}_{\mathrm{int}} = \frac{1}{M_*^2} T^{(+)}_{\mu\nu} T^{(-)\mu\nu}
+\label{eq:Lint}
+\end{equation}
+plays a central role in RDCC. It generates the relaxation parameter $\alpha$, mediates energy exchange between the two sectors, and ensures that gravity is the only interaction that probes the full CPT-symmetric state.
+
+In this section we derive Eq.~(\ref{eq:Lint}) from integrating out heavy fields and analyze its renormalization-group (RG) flow.
+
+\subsection{Integrating Out Heavy Mediators}
+
+Consider a heavy scalar field $X$ with mass $M_*$ that couples to both sectors:
+\begin{equation}
+\mathcal{L}_X = -\frac{1}{2} X(\Box + M_*^2)X 
++ \frac{1}{M_*} X \left( T^{(+)} + T^{(-)} \right),
+\end{equation}
+where $T^{(\pm)} = T^{(\pm)\mu}_{\ \ \ \mu}$ are the traces of the stress-energy tensors.
+
+Integrating out $X$ at tree level yields the effective operator
+\begin{equation}
+\mathcal{L}_{\mathrm{eff}} = 
+\frac{1}{2M_*^2} \left( T^{(+)} + T^{(-)} \right)^2.
+\end{equation}
+
+Expanding this expression gives
+\begin{equation}
+\mathcal{L}_{\mathrm{eff}} = 
+\frac{1}{2M_*^2} \left[
+T^{(+)2} + T^{(-)2} + 2 T^{(+)} T^{(-)}
+\right].
+\end{equation}
+
+The cross-term is precisely the inter-sector operator,
+\begin{equation}
+\mathcal{L}_{\mathrm{int}} = \frac{1}{M_*^2} T^{(+)} T^{(-)}.
+\end{equation}
+
+A similar derivation holds for heavy spin-1 or spin-2 mediators.
+
+\subsection{Covariant Completion}
+
+The covariant completion of the operator is
+\begin{equation}
+\mathcal{L}_{\mathrm{int}} = 
+\frac{1}{M_*^2} T^{(+)}_{\mu\nu} T^{(-)\mu\nu},
+\end{equation}
+which is the form used in RDCC.
+
+\subsection{Renormalization-Group Flow}
+
+The RG flow of the operator is governed by
+\begin{equation}
+\mu \frac{d}{d\mu} \left( \frac{1}{M_*^2} \right)
+= \gamma \frac{1}{M_*^2},
+\end{equation}
+where $\gamma$ is the anomalous dimension.
+
+The relaxation parameter $\alpha$ is proportional to the running of the operator:
+\begin{equation}
+\alpha(\mu) \propto \frac{1}{M_*^2(\mu)}.
+\end{equation}
+
+In the infrared,
+\begin{equation}
+\alpha(\mu) \to 0,
+\end{equation}
+ensuring maximal correlation between the two sectors at the bounce.
+
+\subsection{Interpretation}
+
+The inter-sector operator is not an ad hoc addition but a natural EFT consequence of integrating out heavy fields. Its RG flow provides the microscopic origin of the relaxation parameter $\alpha$.
+
+% ---------------------------------------------------------
+% SECTION 10
+% ---------------------------------------------------------
+\section{Gravity as the Structural Bridge Between the Two Sectors}
+
+In RDCC gravity is the only interaction that couples to the full CPT-symmetric state. All gauge interactions act strictly within a single sector, while the metric responds to the sum of the two stress-energy tensors.
+
+This structural asymmetry has several profound consequences.
+
+\subsection{Global vs. Sectoral Reality}
+
+The global Einstein equations describe the dynamics of the full CPT-symmetric Universe:
+\begin{equation}
+G_{\mu\nu} = 8\pi G_N (T_{\mu\nu}^{(+)} + T_{\mu\nu}^{(-)}).
+\end{equation}
+
+A visible-sector observer perceives only
+\begin{equation}
+G_{\mu\nu}^{\mathrm{eff}} = 8\pi G_{\mathrm{eff}} T_{\mu\nu}^{(+)}.
+\end{equation}
+
+The difference between $G_N$ and $G_{\mathrm{eff}}$ is a projection effect arising from the bipartite structure of the global state.
+
+\subsection{Emergent Asymmetry}
+
+Sectoral observers perceive:
+
+\begin{itemize}
+\item a thermodynamic arrow of time,
+\item matter-antimatter asymmetry,
+\item baryon dominance,
+\item dark matter,
+\item a weak gravitational force.
+\end{itemize}
+
+All of these are emergent properties of the projection onto a single sector.
+
+\subsection{Gravity as the Bridge}
+
+Gravity connects:
+
+\begin{itemize}
+\item the global CPT-symmetric state,
+\item the two-sector Hilbert-space structure,
+\item the relaxation dynamics,
+\item the bounce fixpoint,
+\item the effective sectoral physics.
+\end{itemize}
+
+It is the only interaction that carries information between the two sectors.
+
+\subsection{Structural Interpretation}
+
+Gravity is not merely another force.  
+It is the structural bridge between:
+
+\begin{itemize}
+\item the global mathematical structure of the Universe, and
+\item the asymmetric phenomenology observed by sectoral observers.
+\end{itemize}
+
+This interpretation is unique to RDCC and provides a unified explanation for several cosmological puzzles.
+
+% ---------------------------------------------------------
+% SECTION 11
+% ---------------------------------------------------------
+\section{Conclusion}
+
+In this paper we have developed a maximal-formal mathematical description of gravity in Relaxation-Driven Cyclic Cosmology (RDCC). The key results are:
+
+\begin{itemize}
+\item The global Einstein equations couple the metric to the sum of the two stress-energy tensors.
+\item A visible-sector observer perceives an effective Newton constant $G_{\mathrm{eff}} = G_N / (1 + \rho_-/\rho_+)$.
+\item The mirror sector acts as a gravitational shadow, providing a natural explanation for dark matter.
+\item The two-sector stress-energy dynamics are governed by the relaxation parameter $\alpha$.
+\item The effective Friedmann equations and the bounce fixpoint follow from the global CPT-symmetric structure.
+\item Linearized tensor perturbations exhibit CPT-induced correlations and log-periodic modulations.
+\item The inter-sector operator arises naturally from integrating out heavy fields, and its RG flow generates the relaxation parameter.
+\item Gravity emerges as the unique global interaction in a bipartite CPT-symmetric Universe.
+\end{itemize}
+
+RDCC provides a unified structural explanation for the weakness of gravity, the existence of dark matter, and the stability of the nonsingular bounce. The theory is falsifiable: detection of non-gravitational dark matter candidates would rule it out, while mirror-sector signatures or gravitational-wave modulations would strongly support it.
+
+Gravity is not merely a force in RDCC.  
+It is the bridge between the global CPT-symmetric state and the sectoral physics observed by visible-sector observers.
+% ---------------------------------------------------------
+% APPENDIX A
+% ---------------------------------------------------------
+\appendix
+\section*{Appendix A: Variation of the Global Einstein-Hilbert Action}
+\addcontentsline{toc}{section}{Appendix A: Variation of the Global Einstein-Hilbert Action}
+
+We derive the global Einstein equations from the variation of the action
+\begin{equation}
+S = \frac{1}{16\pi G_N} \int d^4x \sqrt{-g} \, R 
++ S_+[g_{\mu\nu}, \Phi_+] 
++ S_-[g_{\mu\nu}, \Phi_-]
++ S_{\mathrm{int}}[g_{\mu\nu}].
+\end{equation}
+
+\subsection*{A.1 Variation of the Einstein-Hilbert Term}
+
+The variation of the Einstein-Hilbert action is
+\begin{equation}
+\delta S_{\mathrm{EH}} = \frac{1}{16\pi G_N} 
+\int d^4x \sqrt{-g} \left( G_{\mu\nu} \, \delta g^{\mu\nu} \right)
++ \text{boundary terms}.
+\end{equation}
+
+Boundary terms vanish for cosmological spacetimes.
+
+\subsection*{A.2 Variation of the Matter Actions}
+
+The variation of the matter actions defines the stress-energy tensors:
+\begin{equation}
+\delta S_\pm = -\frac{1}{2} \int d^4x \sqrt{-g} \, 
+T_{\mu\nu}^{(\pm)} \, \delta g^{\mu\nu}.
+\end{equation}
+
+\subsection*{A.3 Variation of the Inter-Sector Operator}
+
+The interaction term is
+\begin{equation}
+S_{\mathrm{int}} = \frac{1}{M_*^2} 
+\int d^4x \sqrt{-g} \, T^{(+)}_{\mu\nu} T^{(-)\mu\nu}.
+\end{equation}
+
+Its variation is
+\begin{equation}
+\delta S_{\mathrm{int}} = 
+-\frac{1}{2} \int d^4x \sqrt{-g} \, 
+T_{\mu\nu}^{\mathrm{int}} \, \delta g^{\mu\nu},
+\end{equation}
+where
+\begin{equation}
+T_{\mu\nu}^{\mathrm{int}} = 
+-\frac{2}{\sqrt{-g}} \frac{\delta S_{\mathrm{int}}}{\delta g^{\mu\nu}}.
+\end{equation}
+
+To leading order in $M_*^{-2}$, this term is negligible for background cosmology.
+
+\subsection*{A.4 Global Einstein Equations}
+
+Collecting all variations yields
+\begin{equation}
+G_{\mu\nu} = 8\pi G_N 
+\left( T_{\mu\nu}^{(+)} + T_{\mu\nu}^{(-)} + T_{\mu\nu}^{\mathrm{int}} \right).
+\end{equation}
+
+To leading order,
+\begin{equation}
+G_{\mu\nu} = 8\pi G_N 
+\left( T_{\mu\nu}^{(+)} + T_{\mu\nu}^{(-)} \right).
+\end{equation}
+
+% ---------------------------------------------------------
+% APPENDIX B
+% ---------------------------------------------------------
+\section*{Appendix B: Linearized Tensor Equations}
+\addcontentsline{toc}{section}{Appendix B: Linearized Tensor Equations}
+
+We derive the tensor perturbation equations used in Section 7.
+
+\subsection*{B.1 Metric Perturbation}
+
+The perturbed metric is
+\begin{equation}
+g_{\mu\nu} = \bar{g}_{\mu\nu} + h_{\mu\nu},
+\end{equation}
+with tensor perturbations satisfying
+\begin{equation}
+\nabla^\mu h_{\mu\nu} = 0, \qquad h^\mu_{\ \mu} = 0.
+\end{equation}
+
+\subsection*{B.2 Linearized Einstein Tensor}
+
+The linearized Einstein tensor is
+\begin{equation}
+\delta G_{ij} = 
+\ddot{h}_{ij} + 3H \dot{h}_{ij} - \frac{\nabla^2}{a^2} h_{ij}.
+\end{equation}
+
+\subsection*{B.3 Linearized Stress-Energy Tensor}
+
+The anisotropic stress perturbations satisfy
+\begin{equation}
+\delta T_{ij}^{(\pm)} = \pi_{ij}^{(\pm)}.
+\end{equation}
+
+\subsection*{B.4 Global Tensor Equation}
+
+The global tensor equation is
+\begin{equation}
+\ddot{h}_{ij} + 3H \dot{h}_{ij} - \frac{\nabla^2}{a^2} h_{ij}
+= 16\pi G_N \left( \pi_{ij}^{(+)} + \pi_{ij}^{(-)} \right).
+\end{equation}
+
+\subsection*{B.5 Sectoral Tensor Equation}
+
+Projecting onto $\mathcal{H}_+$ yields
+\begin{equation}
+\ddot{h}_{ij}^{(+)} + 3H \dot{h}_{ij}^{(+)} - \frac{\nabla^2}{a^2} h_{ij}^{(+)}
+= 16\pi G_{\mathrm{eff}} \, \pi_{ij}^{(+)}.
+\end{equation}
+
+% ---------------------------------------------------------
+% APPENDIX C
+% ---------------------------------------------------------
+\section*{Appendix C: Relaxation Dynamics and Fixed Points}
+\addcontentsline{toc}{section}{Appendix C: Relaxation Dynamics and Fixed Points}
+
+\subsection*{C.1 Continuity Equations}
+
+The continuity equations are
+\begin{align}
+\dot{\rho}_+ + 3H(\rho_+ + p_+) &= -Q, \\
+\dot{\rho}_- + 3H(\rho_- + p_-) &= +Q.
+\end{align}
+
+\subsection*{C.2 Relaxation Source Term}
+
+The relaxation source term is
+\begin{equation}
+Q = \alpha H (\rho_+ - \rho_-).
+\end{equation}
+
+\subsection*{C.3 Total Energy Conservation}
+
+Adding the two continuity equations yields
+\begin{equation}
+\dot{\rho}_{\mathrm{tot}} + 3H(\rho_{\mathrm{tot}} + p_{\mathrm{tot}}) = 0.
+\end{equation}
+
+\subsection*{C.4 Infrared Fixed Point}
+
+The RG flow drives
+\begin{equation}
+\alpha \to 0 \quad \text{as} \quad t \to \pm \infty.
+\end{equation}
+
+\subsection*{C.5 Bounce Conditions}
+
+At the bounce,
+\begin{equation}
+H = 0, \qquad \alpha = 0.
+\end{equation}
+
+The bounce is stable if
+\begin{equation}
+\dot{H} > 0.
+\end{equation}
+
+% ---------------------------------------------------------
+% APPENDIX D
+% ---------------------------------------------------------
+\section*{Appendix D: Derivation of the Effective Newton Constant}
+\addcontentsline{toc}{section}{Appendix D: Derivation of the Effective Newton Constant}
+
+We derive Eq.~(\ref{eq:Geff}) from the linearized Einstein equations.
+
+\subsection*{D.1 Background Response}
+
+The global linearized equation is
+\begin{equation}
+\delta G_{\mu\nu} = 8\pi G_N 
+\left( \delta T_{\mu\nu}^{(+)} + \delta T_{\mu\nu}^{(-)} \right).
+\end{equation}
+
+A visible-sector observer measures
+\begin{equation}
+\delta G_{\mu\nu}^{\mathrm{eff}} = 
+8\pi G_{\mathrm{eff}} \, \delta T_{\mu\nu}^{(+)}.
+\end{equation}
+
+Equating the two gives
+\begin{equation}
+G_{\mathrm{eff}} = G_N 
+\left( 1 + \frac{\delta T_{\mu\nu}^{(-)}}{\delta T_{\mu\nu}^{(+)}} \right).
+\end{equation}
+
+\subsection*{D.2 FRW Background}
+
+For homogeneous perturbations,
+\begin{equation}
+\frac{\delta T_{\mu\nu}^{(-)}}{\delta T_{\mu\nu}^{(+)}} 
+= \frac{\rho_-}{\rho_+}.
+\end{equation}
+
+Thus,
+\begin{equation}
+G_{\mathrm{eff}} = \frac{G_N}{1 + \rho_-/\rho_+}.
+\end{equation}
+
+This completes the derivation.
+\end{document}

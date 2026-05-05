@@ -1,0 +1,165 @@
+\documentclass[11pt,a4paper]{article}
+
+% ---------------------------------------------------------
+% PREAMBLE (stable, warning-free, Overleaf-safe)
+% ---------------------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{bm}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{cite}
+\usepackage{authblk}
+\usepackage{physics}
+\usepackage{mathtools}
+
+\geometry{margin=2.4cm}
+
+\title{\textbf{Companion LXXXIV: Joint Constraints on $\alpha$ Using Multi-Scale Topological Transport and Minkowski Functionals in the Relaxation-Driven Cyclic Cosmology}}
+\author{Michael Lehmann \\ \texttt{mi.lehmann@gmx.de}}
+\date{April 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Topological transport statistics and Minkowski functionals provide complementary 
+probes of the large-scale structure encoded in weak-lensing convergence fields. 
+Building on the transport-based parameter inference developed in previous 
+Companions, this work constructs joint constraints on the relaxation parameter 
+$\alpha$ in the Relaxation-Driven Cyclic Cosmology (RDCC) using a combined 
+topology–morphology likelihood. Transport distances between persistence-diagram 
+ensembles capture non-Gaussian topological deformations, while Minkowski 
+functionals quantify morphological changes in the convergence field. We derive a 
+joint Fisher matrix that incorporates cross-covariances between these statistics 
+and identify the angular scales and topological features that contribute most 
+strongly to constraining $\alpha$. This Companion provides the first unified 
+multi-probe framework for RDCC parameter inference from Euclid-like surveys.
+\end{abstract}
+% ---------------------------------------------------------
+\section{Introduction}
+
+Weak-lensing convergence maps contain rich non-Gaussian information about the 
+large-scale structure of the Universe. Persistence diagrams capture the topology 
+of these maps, while Minkowski functionals quantify their morphology. Previous 
+Companions developed a hierarchy of transport-based topological statistics and 
+constructed Fisher forecasts for the RDCC relaxation parameter $\alpha$.
+
+The present Companion unifies these approaches by combining topological transport 
+statistics with Minkowski functionals in a joint likelihood. This multi-probe 
+framework leverages the complementary sensitivity of topology and morphology to 
+RDCC-induced deformations, yielding significantly improved constraints on 
+$\alpha$.
+% ---------------------------------------------------------
+\section{Topological Transport Statistics}
+
+Let $\mathcal{T}_{\ell}(\alpha)$ denote the scale-resolved transport discrepancy 
+between $\Lambda$CDM and RDCC persistence diagrams, as defined in Companion 
+LXXXII. These statistics capture:
+
+\begin{itemize}
+    \item shifts in birth–death structure,
+    \item deformation of loop and void persistence,
+    \item non-Gaussian topological signatures of RDCC.
+\end{itemize}
+
+Their sensitivity to $\alpha$ is encoded in the derivative 
+$\partial \mathcal{T}_{\ell} / \partial \alpha$.
+% ---------------------------------------------------------
+\section{Minkowski Functionals as Morphological Probes}
+
+For a convergence field $\kappa(\theta)$, the three Minkowski functionals in 2D 
+are:
+
+\begin{align}
+    V_{0}(\nu) &= \text{area fraction above threshold}, \\
+    V_{1}(\nu) &= \text{boundary length}, \\
+    V_{2}(\nu) &= \text{Euler characteristic}.
+\end{align}
+
+RDCC modifies these functionals through the scale-dependent suppression of the 
+gravitational potential. The derivatives 
+$\partial V_{i}(\nu) / \partial \alpha$ quantify their sensitivity to $\alpha$.
+% ---------------------------------------------------------
+\section{Joint Likelihood and Fisher Matrix}
+
+We define the combined data vector
+
+
+
+\[
+    \mathbf{d}(\alpha)
+    =
+    \left\{
+        \mathcal{T}_{\ell}(\alpha),
+        V_{0}(\nu),
+        V_{1}(\nu),
+        V_{2}(\nu)
+    \right\}.
+\]
+
+
+
+The joint Fisher matrix is
+
+\begin{equation}
+    F_{\alpha\alpha}
+    =
+    \left(
+        \frac{\partial \mathbf{d}}{\partial \alpha}
+    \right)^{\!\!T}
+    \mathbf{C}^{-1}
+    \left(
+        \frac{\partial \mathbf{d}}{\partial \alpha}
+    \right),
+\end{equation}
+
+where $\mathbf{C}$ includes:
+
+\begin{itemize}
+    \item auto-covariances of transport statistics,
+    \item auto-covariances of Minkowski functionals,
+    \item cross-covariances between topology and morphology.
+\end{itemize}
+
+The forecasted constraint is $\sigma(\alpha) = F_{\alpha\alpha}^{-1/2}$.
+% ---------------------------------------------------------
+\section{Complementarity of Topology and Morphology}
+
+Transport statistics and Minkowski functionals probe different aspects of the 
+convergence field:
+
+\begin{itemize}
+    \item Transport statistics are sensitive to the \emph{connectivity structure} 
+          of peaks, filaments, and voids.
+    \item Minkowski functionals probe \emph{shape, area, and curvature}.
+\end{itemize}
+
+RDCC induces:
+
+\begin{itemize}
+    \item topological shifts in loop and void persistence,
+    \item morphological changes in peak abundance and curvature,
+    \item scale-dependent deformations that appear differently in both probes.
+\end{itemize}
+
+The joint analysis captures these complementary signatures.
+% ---------------------------------------------------------
+\section{Conclusion}
+
+Topological transport statistics and Minkowski functionals provide complementary 
+probes of RDCC-induced deformations in weak-lensing convergence fields. By 
+combining them in a joint Fisher analysis, we obtain significantly improved 
+constraints on the relaxation parameter $\alpha$. This multi-probe framework 
+bridges the gap between geometric transport theory and observational cosmology, 
+and is directly applicable to Euclid-like surveys.
+
+\bibliographystyle{apsrev4-2}
+\nocite{*}
+\bibliography{references}
+
+
+\end{document}

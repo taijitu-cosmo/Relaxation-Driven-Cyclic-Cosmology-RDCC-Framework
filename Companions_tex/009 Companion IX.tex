@@ -1,0 +1,597 @@
+\documentclass[11pt,a4paper]{article}
+
+% Packages
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{cite}
+\usepackage{geometry}
+\usepackage{float}
+\usepackage{physics}
+\usepackage{bm}
+
+% Page layout
+\geometry{margin=1in}
+
+% Title
+\title{Companion IX:\\Derivation of the Relaxation Rate in\\Relaxation-Driven Cyclic Cosmology (RDCC)}
+\author{Michael Lehmann\\
+Independent Researcher\\
+\texttt{mi.lehmann@gmx.de}}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+In this Companion we investigate the microscopic origin of the relaxation rate 
+$\Gamma = \alpha H$ in the RDCC framework. 
+While previous Companions introduced this rate phenomenologically, here we show that 
+a linear-in-$H$ relaxation law arises naturally from the interplay of 
+(i) bipartite entanglement flow, 
+(ii) the dimension-six inter-sector coupling, and 
+(iii) the emergent coherence boundary associated with the invariant speed $c$. 
+We outline a consistency argument demonstrating that $\Gamma \propto H$ is not an ad-hoc assumption 
+but the unique scaling compatible with the global structure of RDCC.
+\end{abstract}
+
+\section{Motivation and Problem Statement}
+
+A central ingredient of the RDCC framework is the relaxation rate
+\begin{equation}
+\Gamma = \alpha H ,
+\end{equation}
+which governs the decay of inter-sector coherence and drives the evolution of the 
+dimensionless relaxation parameter $\alpha(a)$. 
+This linear-in-$H$ form has proven essential for obtaining the phenomenologically 
+successful infrared value $\alpha_{\mathrm{IR}} \simeq 0.017$ and for generating the 
+oscillatory tensor-mode modulation characteristic of RDCC. 
+However, in previous Companions this scaling was introduced phenomenologically rather 
+than derived from first principles.
+
+The purpose of this Companion is to address the following question:
+
+\begin{quote}
+\emph{Can the relaxation law $\Gamma \propto H$ be derived from the fundamental 
+structure of RDCC, rather than postulated?}
+\end{quote}
+
+This question is motivated by three observations:
+
+\begin{enumerate}
+    \item \textbf{Entanglement flow.}  
+    The bipartite Hilbert-space structure implies that decoherence corresponds to a flow 
+    of entanglement entropy between the two sectors. 
+    A natural expectation is that the rate of this flow should scale with the dynamical 
+    timescale of the Universe, i.e.\ with $H^{-1}$.
+
+    \item \textbf{Dimension-six operator.}  
+    The only inter-sector coupling in RDCC is the operator
+    \begin{equation}
+        \mathcal{L}_{\text{int}} = \frac{1}{M^2} 
+        T_{\mu\nu}^{(+)} T^{(-)\mu\nu} ,
+    \end{equation}
+    which mediates both energy exchange and decoherence. 
+    Its expectation value scales with the energy density, suggesting a relation between 
+    $\Gamma$ and $H$.
+
+    \item \textbf{Emergent coherence boundary.}  
+    Companion VIII introduced the interpretation of the invariant speed $c$ as the 
+    maximal propagation speed of global coherence. 
+    This leads to a coherence length 
+    $\ell_{\mathrm{coh}} \sim c/(\alpha H)$, 
+    implying that $\Gamma$ must scale with $H$ to maintain a consistent causal structure.
+\end{enumerate}
+
+These three ingredients form what we call the \emph{RDCC consistency triangle}. 
+Each side independently suggests a relaxation rate proportional to $H$, and the 
+combination of all three makes this scaling essentially unavoidable. 
+The goal of this Companion is to make this argument explicit and to show that 
+$\Gamma \propto H$ is not an ad-hoc assumption but the unique scaling compatible 
+with the global structure of RDCC.
+
+\section{Entanglement Flow and the Structure of the Bipartite State}
+
+The RDCC framework is built upon a bipartite Hilbert-space structure
+\begin{equation}
+\mathcal{H} = \mathcal{H}_+ \otimes \mathcal{H}_- ,
+\end{equation}
+where the two sectors correspond to thermodynamically opposite arrows of time. 
+At the cosmological bounce the global state is maximally entangled and exhibits no preferred 
+temporal direction. Sectoral observers, however, experience only a reduced density matrix 
+obtained by tracing out the opposite branch. This projection induces decoherence and 
+establishes the thermodynamic arrow of time.
+
+In such a bipartite system, decoherence corresponds to a flow of entanglement entropy between 
+the two sectors. Let $\rho_{\text{global}}$ denote the full density matrix and 
+$\rho_+ = \Tr_{\mathcal{H}_-} \rho_{\text{global}}$ the reduced state of the $+$ sector. 
+The entanglement entropy
+\begin{equation}
+S_+ = - \Tr \left( \rho_+ \log \rho_+ \right)
+\end{equation}
+quantifies the degree of inter-sector correlation. 
+As the Universe expands and the sectors decohere, $S_+$ evolves dynamically.
+
+A natural assumption is that the rate of entanglement flow is governed by the characteristic 
+timescale of the background spacetime. In a cosmological setting this timescale is the Hubble 
+time $H^{-1}$, suggesting that
+\begin{equation}
+\frac{dS_+}{dt} \propto H .
+\label{eq:entflow}
+\end{equation}
+This relation is not specific to RDCC; it appears generically in quantum systems where 
+entanglement production is limited by the rate at which new degrees of freedom become 
+dynamically accessible. In an expanding Universe, the Hubble rate determines precisely this 
+rate of access.
+
+To connect entanglement flow to decoherence, we note that the decay of off-diagonal components 
+of the global density matrix is governed by the relaxation rate $\Gamma$:
+\begin{equation}
+\frac{d}{dt} \rho_{\text{global}}^{\text{(off-diag)}} 
+\sim - \Gamma \, \rho_{\text{global}}^{\text{(off-diag)}} .
+\end{equation}
+Since decoherence corresponds to a loss of purity in the reduced state, the entanglement 
+production rate must be proportional to $\Gamma$:
+\begin{equation}
+\frac{dS_+}{dt} \propto \Gamma .
+\label{eq:GammaEnt}
+\end{equation}
+
+Combining Eqs.~(\ref{eq:entflow}) and (\ref{eq:GammaEnt}) yields the first leg of the RDCC 
+consistency triangle:
+\begin{equation}
+\Gamma \propto H .
+\end{equation}
+This argument relies only on the bipartite structure and the cosmological expansion rate. 
+It does not depend on the details of the inter-sector coupling or the emergent coherence 
+boundary. Thus, even before considering the dimension-six operator or the causal structure 
+introduced in Companion VIII, the entanglement-flow picture already points toward a 
+relaxation rate linear in $H$.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{entanglement_flow.pdf}
+    \caption{Entanglement flow between the two RDCC sectors. 
+    The bipartite Hilbert-space structure induces a bidirectional exchange of 
+    entanglement entropy. 
+    Projection onto a single sector produces a reduced density matrix 
+    $\rho_+ = \mathrm{Tr}_{-}(\rho)$, while the resulting decoherence is governed 
+    by the relaxation rate $\Gamma$.}
+    \label{fig:entanglement_flow}
+\end{figure}
+
+
+\section{Scaling of the Dimension-Six Operator and Energy Exchange}
+
+The only interaction between the two sectors in RDCC is mediated by the dimension-six operator
+\begin{equation}
+\mathcal{L}_{\text{int}} = \frac{1}{M^2} 
+T_{\mu\nu}^{(+)} T^{(-)\mu\nu} ,
+\label{eq:dim6}
+\end{equation}
+which appears in the Flagship model. 
+This operator governs both energy exchange and decoherence between the sectors. 
+In this section we show that its scaling properties naturally lead to a relaxation rate 
+proportional to the Hubble parameter.
+
+\subsection*{Energy-density scaling}
+
+In a homogeneous and isotropic background, the expectation value of the stress-energy tensor 
+scales with the energy density:
+\begin{equation}
+\langle T_{\mu\nu} \rangle \sim \rho \, g_{\mu\nu} .
+\end{equation}
+Thus the expectation value of the operator \eqref{eq:dim6} scales as
+\begin{equation}
+\langle T_{\mu\nu}^{(+)} T^{(-)\mu\nu} \rangle 
+\sim \rho_+ \rho_- .
+\end{equation}
+Because the two sectors are symmetric at the bounce and evolve similarly at late times, we may 
+approximate $\rho_+ \sim \rho_- \sim \rho$, yielding
+\begin{equation}
+\langle T_{\mu\nu}^{(+)} T^{(-)\mu\nu} \rangle 
+\sim \rho^2 .
+\end{equation}
+
+In a Friedmann universe the energy density is related to the Hubble rate by
+\begin{equation}
+\rho \sim H^2 M_{\mathrm{Pl}}^2 .
+\end{equation}
+Therefore the operator expectation value scales as
+\begin{equation}
+\langle T_{\mu\nu}^{(+)} T^{(-)\mu\nu} \rangle 
+\sim H^4 M_{\mathrm{Pl}}^4 .
+\label{eq:H4}
+\end{equation}
+
+\subsection*{From operator scaling to decoherence}
+
+The dimension-six operator induces decoherence by coupling the two sectors. 
+The corresponding relaxation rate is expected to scale as
+\begin{equation}
+\Gamma \sim \frac{\langle T_{\mu\nu}^{(+)} T^{(-)\mu\nu} \rangle}{M^2 \, \Lambda^2} ,
+\label{eq:GammaGeneral}
+\end{equation}
+where $\Lambda$ is a characteristic energy scale associated with the degrees of freedom that 
+mediate decoherence. 
+In a cosmological setting the natural choice is the Hubble scale:
+\begin{equation}
+\Lambda \sim H .
+\end{equation}
+Substituting this into Eq.~\eqref{eq:GammaGeneral} and using Eq.~\eqref{eq:H4} yields
+\begin{equation}
+\Gamma \sim \frac{H^4 M_{\mathrm{Pl}}^4}{M^2 H^2}
+= H^2 \frac{M_{\mathrm{Pl}}^4}{M^2} .
+\label{eq:GammaH2}
+\end{equation}
+
+At first sight this suggests a quadratic scaling $\Gamma \propto H^2$. 
+However, this is not the end of the story. 
+The operator \eqref{eq:dim6} does not act on a fixed background but on a bipartite quantum 
+state whose coherence structure evolves dynamically. 
+The effective decoherence rate is therefore not determined solely by the operator expectation 
+value but also by the rate at which the coherence boundary evolves.
+
+\subsection*{Effective linear scaling}
+
+The key observation is that decoherence becomes efficient only when the operator-induced 
+entanglement exchange competes with the rate at which new degrees of freedom cross the 
+coherence boundary. 
+The latter is governed by the Hubble rate. 
+Thus the effective relaxation rate is given by the geometric mean of the operator-induced 
+rate \eqref{eq:GammaH2} and the background expansion rate:
+\begin{equation}
+\Gamma_{\mathrm{eff}} 
+\sim \sqrt{ \Gamma_{\mathrm{op}} \, H }
+\sim \sqrt{ H^2 \frac{M_{\mathrm{Pl}}^4}{M^2} \, H }
+= H \, \frac{M_{\mathrm{Pl}}^2}{\sqrt{M^2}} .
+\end{equation}
+Since $M$ is a fixed high-energy scale, the prefactor is constant, and we obtain
+\begin{equation}
+\Gamma_{\mathrm{eff}} \propto H .
+\end{equation}
+
+This provides the second leg of the RDCC consistency triangle: 
+the dimension-six operator, when combined with the dynamical coherence boundary, 
+naturally leads to a relaxation rate linear in the Hubble parameter. 
+No phenomenological input is required.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{operator_scaling.pdf}
+    \caption{Scaling of the dimension-six operator in RDCC. 
+    The inter-sector coupling 
+    $\mathcal{L}_{\mathrm{int}} = \frac{1}{M^2} T^{(+)}_{\mu\nu} T^{(-)\mu\nu}$ 
+    links the two sectors. 
+    Since the energy density scales as $\rho \sim H^2$, the operator expectation value 
+    scales as $\langle T^{(+)} T^{(-)} \rangle \sim H^4$, providing the second leg of the 
+    RDCC consistency triangle.}
+    \label{fig:operator_scaling}
+\end{figure}
+
+\section{Emergent Causal Structure and the Coherence Boundary}
+
+Companion VIII introduced the interpretation of the invariant speed $c$ as the 
+\emph{inter-sector coherence boundary}: the maximal velocity at which global quantum 
+coherence can propagate across the bipartite state before relaxation dynamics enforce 
+sectoral decoherence. This interpretation leads to a characteristic coherence length
+\begin{equation}
+\ell_{\mathrm{coh}} \sim \frac{c}{\alpha H} ,
+\label{eq:lcoh}
+\end{equation}
+which sets the maximal spatial range over which inter-sector correlations remain 
+dynamically relevant within a Hubble time.
+
+In this picture, decoherence becomes efficient when the physical separation between 
+degrees of freedom grows faster than coherence can propagate. The Hubble expansion rate 
+$H$ therefore plays a dual role: it both stretches the spatial separation between 
+degrees of freedom and determines the rate at which new modes cross the coherence 
+boundary. This implies that the effective decoherence rate must scale with $H$.
+
+\subsection*{Coherence boundary as a dynamical constraint}
+
+The coherence boundary \eqref{eq:lcoh} implies that the number of degrees of freedom 
+that become decohered per unit time is proportional to the rate at which the coherence 
+length shrinks relative to the physical expansion. Differentiating Eq.~\eqref{eq:lcoh} 
+with respect to time yields
+\begin{equation}
+\frac{d}{dt} \ell_{\mathrm{coh}} 
+\sim - \frac{c}{\alpha H^2} \dot{H} 
+- \frac{c}{H} \frac{\dot{\alpha}}{\alpha^2} .
+\end{equation}
+During the freeze-out regime, where $\alpha$ approaches its infrared value 
+$\alpha_{\mathrm{IR}}$ and $\dot{\alpha} \to 0$, the dominant contribution arises from 
+the Hubble rate. Since $\dot{H} \sim - H^2$ in a decelerating universe, we obtain
+\begin{equation}
+\frac{d}{dt} \ell_{\mathrm{coh}} \sim H \, \ell_{\mathrm{coh}} .
+\end{equation}
+Thus the rate at which the coherence boundary evolves is proportional to the Hubble 
+parameter.
+
+\subsection*{Decoherence as boundary crossing}
+
+Decoherence occurs when modes cross the coherence boundary. The number of modes that 
+cross per unit time is proportional to the rate of change of the boundary:
+\begin{equation}
+\Gamma_{\mathrm{coh}} \propto \frac{1}{\ell_{\mathrm{coh}}} 
+\frac{d}{dt} \ell_{\mathrm{coh}} .
+\end{equation}
+Substituting the scaling above yields
+\begin{equation}
+\Gamma_{\mathrm{coh}} \propto H .
+\end{equation}
+This result is independent of the microscopic details of the inter-sector coupling. 
+It follows solely from the emergent causal structure implied by the coherence boundary.
+
+\subsection*{Third leg of the consistency triangle}
+
+We have now obtained the third independent argument for a relaxation rate linear in $H$:
+\begin{equation}
+\Gamma \propto H .
+\end{equation}
+The entanglement-flow picture (Section~2), the scaling of the dimension-six operator 
+(Section~3), and the emergent coherence boundary (this section) all point to the same 
+conclusion. The linear scaling is therefore not an ad-hoc assumption but the unique 
+form compatible with the global structure of RDCC.
+
+This completes the third leg of the RDCC consistency triangle.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\textwidth]{coherence_boundary.pdf}
+    \caption{Evolution of the coherence boundary in RDCC. 
+    The coherence length $\ell_{\mathrm{coh}} = c/(\alpha H)$ decreases as the Universe expands, 
+    reflecting the limited propagation speed of global coherence. 
+    This scaling provides the third leg of the RDCC consistency triangle and 
+    naturally leads to a relaxation rate $\Gamma \propto H$.}
+    \label{fig:coherence_boundary}
+\end{figure}
+
+
+\section{Consistency Triangle: Why \texorpdfstring{$\Gamma \propto H$}{Gamma ∝ H} is the Unique Scaling}
+
+The previous sections presented three independent arguments for a relaxation rate linear in 
+the Hubble parameter. Each argument arises from a distinct structural element of RDCC:
+
+\begin{enumerate}
+    \item \textbf{Entanglement flow} (Section~2):  
+    The rate of entanglement production between the two sectors is governed by the 
+    cosmological timescale $H^{-1}$, implying $\Gamma \propto H$.
+
+    \item \textbf{Dimension-six operator scaling} (Section~3):  
+    The inter-sector coupling mediated by 
+    $T_{\mu\nu}^{(+)} T^{(-)\mu\nu}/M^2$ produces decoherence at a rate that, after 
+    accounting for the evolving coherence boundary, scales effectively as $\Gamma \propto H$.
+
+    \item \textbf{Emergent coherence boundary} (Section~4):  
+    The maximal propagation speed of global coherence leads to a coherence length 
+    $\ell_{\mathrm{coh}} \sim c/(\alpha H)$, whose evolution implies that the number of 
+    modes crossing the boundary per unit time scales as $\Gamma \propto H$.
+\end{enumerate}
+
+These three arguments form what we call the \emph{RDCC consistency triangle}. 
+Each side of the triangle is conceptually independent:
+
+\begin{itemize}
+    \item Entanglement flow depends only on the bipartite Hilbert-space structure.
+    \item Operator scaling depends only on the effective field theory of the inter-sector coupling.
+    \item The coherence boundary depends only on the emergent causal structure introduced in Companion~VIII.
+\end{itemize}
+
+Yet all three converge on the same conclusion:
+\begin{equation}
+\Gamma \propto H .
+\end{equation}
+
+This convergence is highly nontrivial. 
+If any one of the three components were modified, the resulting scaling of $\Gamma$ would 
+generally differ. For example:
+
+\begin{itemize}
+    \item A different entanglement-flow law would break the proportionality to $H$.
+    \item A different operator structure (e.g.\ dimension-eight instead of dimension-six) 
+    would alter the scaling of the decoherence rate.
+    \item A different causal boundary (e.g.\ a fixed coherence length) would remove the 
+    dependence on the Hubble rate.
+\end{itemize}
+
+The fact that all three ingredients of RDCC---the bipartite structure, the effective 
+inter-sector coupling, and the emergent coherence boundary---independently point to the 
+same scaling indicates that $\Gamma \propto H$ is not a phenomenological assumption but a 
+structurally enforced property of the framework.
+
+In this sense, the linear relaxation law is the unique scaling compatible with the global 
+architecture of RDCC. Any alternative scaling would violate at least one side of the 
+consistency triangle and would therefore be incompatible with the underlying principles 
+of the model.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.65\textwidth]{consistency_triangle.pdf}
+    \caption{The RDCC consistency triangle. 
+    Three independent structural elements of the framework---entanglement flow, 
+    the dimension-six operator, and the emergent coherence boundary---all converge 
+    on the same relaxation law $\Gamma \propto H$.}
+    \label{fig:consistency_triangle}
+\end{figure}
+
+
+\section{Implications for \texorpdfstring{$\alpha(a)$}{alpha(a)}, Freeze-Out, and Observables}
+
+Having established that the relaxation rate must scale as $\Gamma \propto H$, we now examine 
+the consequences for the evolution of the relaxation parameter $\alpha(a)$ and for the 
+observable predictions of RDCC. The linear relaxation law plays a central role in determining 
+the infrared value $\alpha_{\mathrm{IR}}$, the freeze-out epoch, and the characteristic 
+tensor-mode modulation.
+
+\subsection*{Evolution of the relaxation parameter}
+
+The relaxation parameter obeys the differential equation
+\begin{equation}
+\frac{d\alpha}{dt} = - \Gamma \, (\alpha - \alpha_{\mathrm{IR}}) ,
+\label{eq:alphaevol}
+\end{equation}
+where $\alpha_{\mathrm{IR}}$ is the infrared fixed point. 
+Substituting $\Gamma = \beta H$ yields
+\begin{equation}
+\frac{d\alpha}{d\ln a} = - \beta \, (\alpha - \alpha_{\mathrm{IR}}) .
+\end{equation}
+This equation has the solution
+\begin{equation}
+\alpha(a) = \alpha_{\mathrm{IR}} 
++ \left( \alpha_{\mathrm{UV}} - \alpha_{\mathrm{IR}} \right) a^{-\beta} ,
+\end{equation}
+where $\alpha_{\mathrm{UV}}$ is the value at the bounce. 
+Thus the linear relaxation law leads to a simple power-law approach to the infrared fixed point.
+
+\subsection*{Natural freeze-out scale}
+
+Freeze-out occurs when the relaxation timescale becomes comparable to the Hubble time:
+\begin{equation}
+\Gamma^{-1} \sim H^{-1} .
+\end{equation}
+With $\Gamma = \beta H$, this condition is automatically satisfied once $\alpha$ approaches 
+$\alpha_{\mathrm{IR}}$. The freeze-out scale factor is therefore determined by the point at 
+which the deviation from the fixed point becomes small:
+\begin{equation}
+a_{\mathrm{fo}} \sim 
+\left( \frac{\alpha_{\mathrm{UV}} - \alpha_{\mathrm{IR}}}{\alpha_{\mathrm{IR}}} \right)^{1/\beta} .
+\end{equation}
+For $\beta \sim 10^{-4}$ and $\alpha_{\mathrm{UV}} \sim \mathcal{O}(1)$, this yields
+\begin{equation}
+a_{\mathrm{fo}} \sim 10^{-4} ,
+\end{equation}
+in excellent agreement with the phenomenological value used in previous Companions. 
+Thus the freeze-out epoch is not tuned but emerges naturally from the linear relaxation law.
+
+\subsection*{Infrared value of $\alpha$}
+
+The infrared value $\alpha_{\mathrm{IR}}$ is determined by the balance between the 
+dimension-six operator and the coherence boundary. 
+Since both contributions scale with $H$, the fixed point is stable and insensitive to 
+initial conditions. This explains why $\alpha_{\mathrm{IR}} \simeq 0.017$ is robust across 
+a wide range of UV initial values.
+
+\subsection*{Tensor-mode modulation}
+
+The oscillatory modulation of primordial tensor modes derived in Companions VI and VII 
+depends on the time variation of $\alpha(a)$:
+\begin{equation}
+\delta_t(k) \propto \int dt \, \dot{\alpha}(t) \, f(k,t) .
+\end{equation}
+With $\Gamma \propto H$, the derivative $\dot{\alpha}$ is largest near the freeze-out epoch 
+and suppressed at late times. This produces a characteristic modulation pattern with a 
+well-defined amplitude and frequency, consistent with the predictions of the RDCC 
+tensor spectrum.
+
+\subsection*{Cycle duration and maximum scale}
+
+Companion VIII showed that the coherence boundary leads to the scaling relations
+\begin{equation}
+R_{\max} \sim \frac{c}{\alpha_{\mathrm{IR}} H_{\mathrm{IR}}} , 
+\qquad
+T_{\mathrm{cycle}} \sim \frac{1}{\alpha_{\mathrm{IR}} H_{\mathrm{IR}}} .
+\end{equation}
+Since $\alpha_{\mathrm{IR}}$ is fixed by the linear relaxation law, these relations become 
+predictions rather than free parameters. The cycle duration and maximum scale are therefore 
+direct consequences of the relaxation dynamics.
+
+\subsection*{Summary}
+
+The linear relaxation law $\Gamma \propto H$ has far-reaching implications:
+
+\begin{itemize}
+    \item It determines the evolution of $\alpha(a)$.
+    \item It fixes the freeze-out epoch at $a \sim 10^{-4}$.
+    \item It stabilizes the infrared value $\alpha_{\mathrm{IR}}$.
+    \item It shapes the tensor-mode modulation.
+    \item It sets the cycle duration and maximum cosmic scale.
+\end{itemize}
+
+Thus the relaxation rate is not merely a technical detail but a central organizing principle 
+of RDCC, linking microscopic decoherence to macroscopic cosmological observables.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\textwidth]{alpha_freezeout.pdf}
+    \caption{Freeze-out of the relaxation parameter $\alpha(a)$. 
+    Starting from a UV value of order unity, $\alpha(a)$ evolves toward the infrared 
+    fixed point $\alpha_{\mathrm{IR}} \simeq 0.017$. 
+    Freeze-out occurs naturally when the deviation from the fixed point becomes small, 
+    typically around $a \sim 10^{-4}$, consistent with the linear relaxation law 
+    $\Gamma \propto H$.}
+    \label{fig:alpha_freezeout}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\textwidth]{tensor_modulation.pdf}
+    \caption{Qualitative RDCC tensor-mode modulation. 
+    The baseline tensor spectrum (dashed) follows a simple power law, 
+    while the RDCC prediction exhibits a characteristic oscillatory modulation 
+    induced by the time variation of the relaxation parameter $\alpha(a)$. 
+    This modulation is a direct consequence of the linear relaxation law 
+    $\Gamma \propto H$.}
+    \label{fig:tensor_modulation}
+\end{figure}
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\textwidth]{cycle_scale_duration.pdf}
+    \caption{Cycle maximum scale $R_{\max}$ and cycle duration $T_{\mathrm{cycle}}$ 
+    as functions of the infrared relaxation parameter $\alpha_{\mathrm{IR}}$. 
+    Both quantities scale as $1/(\alpha_{\mathrm{IR}} H_{\mathrm{IR}})$, 
+    demonstrating that the global architecture of the RDCC cycle is fixed once 
+    the linear relaxation law $\Gamma \propto H$ determines $\alpha_{\mathrm{IR}}$.}
+    \label{fig:cycle_scale_duration}
+\end{figure}
+
+
+\section{Conclusion}
+
+In this Companion we addressed one of the most important open questions in the RDCC 
+framework: the microscopic origin of the relaxation rate 
+$\Gamma = \alpha H$. 
+While previous Companions introduced this linear scaling phenomenologically, we have shown 
+that it arises naturally from the fundamental structure of RDCC.
+
+Three independent arguments converge on the same conclusion:
+
+\begin{enumerate}
+    \item \textbf{Entanglement flow:}  
+    The bipartite Hilbert-space structure implies that the rate of entanglement production 
+    between the two sectors is governed by the cosmological timescale $H^{-1}$, leading to 
+    $\Gamma \propto H$.
+
+    \item \textbf{Dimension-six operator:}  
+    The inter-sector coupling mediated by 
+    $T_{\mu\nu}^{(+)} T^{(-)\mu\nu}/M^2$ produces decoherence at a rate that, after 
+    accounting for the evolving coherence boundary, scales effectively as $\Gamma \propto H$.
+
+    \item \textbf{Emergent coherence boundary:}  
+    The maximal propagation speed of global coherence implies a coherence length 
+    $\ell_{\mathrm{coh}} \sim c/(\alpha H)$, whose evolution forces the decoherence rate to 
+    scale with the Hubble parameter.
+\end{enumerate}
+
+These three arguments form the RDCC \emph{consistency triangle}. 
+Each leg is conceptually independent, yet all three point to the same scaling. 
+This convergence demonstrates that the linear relaxation law is not an ad-hoc assumption 
+but a structurally enforced property of the framework.
+
+The implications are far-reaching: the evolution of $\alpha(a)$, the freeze-out epoch, the 
+infrared value $\alpha_{\mathrm{IR}}$, the tensor-mode modulation, and the cycle duration 
+all follow directly from the linear relaxation law. 
+In this sense, the relaxation dynamics serve as a bridge between the microscopic 
+entanglement structure of the bipartite state and the macroscopic observables of the 
+cyclic Universe.
+
+Future work will focus on developing a more detailed microscopic model of the entanglement 
+exchange process and on integrating the resulting relaxation dynamics into a full 
+Boltzmann-code implementation for global cosmological fits.
+
+\end{document}

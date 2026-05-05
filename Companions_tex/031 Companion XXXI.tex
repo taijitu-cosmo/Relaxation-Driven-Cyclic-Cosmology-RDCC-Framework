@@ -1,0 +1,166 @@
+\documentclass[11pt,a4paper]{article}
+
+% ---------------------------------------------------------
+% PREAMBLE (stable, warning-free, Overleaf-safe)
+% ---------------------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{bm}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{cite}
+\usepackage{authblk}
+\usepackage{physics}
+\usepackage{mathtools}
+\usepackage{enumitem}
+
+\geometry{margin=2.4cm}
+
+\title{\textbf{Companion XXXI: The RDCC Halo Model and the Architecture of the Non-Linear Universe}}
+\author{Michael Lehmann \\ \texttt{mi.lehmann@gmx.de}}
+\date{April 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This Companion develops a comprehensive non-linear structure formation framework for the Relaxation-Driven Cyclic Cosmology (RDCC). While earlier Companions concentrated on linear and quasi-linear observables, the present work examines the transition to fully non-linear scales, the formation and evolution of dark matter halos, and the resulting architecture of the cosmic web. We derive the RDCC-modified spherical-collapse threshold, the halo mass function, bias relations, and the non-linear matter power spectrum. The relaxation-induced suppression of small-scale potential evolution produces characteristic signatures in halo abundance, clustering strength, and internal halo structure. This Companion thereby establishes the theoretical foundation for non-linear cosmology within RDCC and lays the groundwork for future studies of galaxy formation, cluster physics, and cosmic web topology.
+\end{abstract}
+
+\section{Introduction}
+
+The non-linear Universe is shaped by the formation and evolution of dark matter halos — the fundamental building blocks of galaxies, clusters, and the cosmic web. In standard cosmology, halo formation is governed by the linear growth factor, the matter power spectrum, and the spherical-collapse threshold. In the Relaxation-Driven Cyclic Cosmology (RDCC), the relaxation-modified evolution of gravitational potentials introduces a scale-dependent suppression of small-scale growth together with an enhancement of large-scale coherence.
+
+This Companion develops a unified RDCC halo model that connects linear perturbation theory with the fully non-linear regime. The results extend the linear framework of Companions XVI–XIX and provide a consistent description of non-linear matter clustering, halo statistics, and the large-scale architecture of the cosmic web.
+
+\section{From Linear to Non-Linear Structure in RDCC}
+
+The linear matter power spectrum in RDCC is modified by the relaxation scale \(k_{\mathrm{rel}}\):
+
+\begin{equation}
+    P_{\mathrm{lin,RDCC}}(k,a)
+    = P_{\mathrm{lin}}(k,a)
+      \left[1 - \chi_{P}\left(\frac{k}{k_{\mathrm{rel}}}\right)^{\alpha}\right].
+\end{equation}
+
+Because the growth rate itself becomes scale-dependent, the mapping from linear to non-linear scales is altered. We define the dimensionless power as
+
+\begin{equation}
+    \Delta^{2}(k) = \frac{k^{3}}{2\pi^{2}} P(k).
+\end{equation}
+
+In RDCC the non-linear power spectrum is obtained via a relaxation-modified halo-model mapping:
+
+\begin{equation}
+    \Delta_{\mathrm{NL}}^{2}(k)
+    = \mathcal{F}_{\mathrm{RDCC}}
+      \!\left(\Delta_{\mathrm{lin}}^{2}(k)\right).
+\end{equation}
+
+The most important consequences are a suppression of non-linear power on small scales, an enhancement of coherence on large scales, a clear turnover at \(k_{\mathrm{rel}}\), and overall smoother transitions between the linear and non-linear regimes.
+\section{Halo Collapse in the RDCC Framework}
+
+The spherical-collapse threshold itself becomes scale-dependent because of the modified potential evolution:
+
+\begin{equation}
+    \delta_{c,\mathrm{RDCC}}(k)
+    = \delta_{c}
+      \left[1 - \chi_{\delta}
+      \left(\frac{k}{k_{\mathrm{rel}}}\right)^{\alpha}\right].
+\end{equation}
+
+This modification has several important consequences: massive halos tend to form earlier, the collapse of low-mass halos is delayed, small-scale fragmentation is reduced, and halo density profiles become smoother overall. The virial overdensity is affected in a similar way:
+
+\begin{equation}
+    \Delta_{\mathrm{vir,RDCC}}
+    = \Delta_{\mathrm{vir}}
+      \left[1 - \chi_{\mathrm{vir}}
+      \left(\frac{k}{k_{\mathrm{rel}}}\right)^{\alpha}\right].
+\end{equation}
+
+\section{The RDCC Halo Mass Function}
+
+The Press–Schechter mass function is modified accordingly:
+
+\begin{equation}
+    n_{\mathrm{RDCC}}(M)
+    = n(M)
+      \left[1 - \chi_{n}
+      \left(\frac{k(M)}{k_{\mathrm{rel}}}\right)^{\alpha}\right].
+\end{equation}
+
+As a result, RDCC predicts an enhanced abundance of massive halos, a suppression of low-mass halos, a characteristic turnover mass \(M_{\mathrm{rel}}\), and generally smoother slopes of the mass function.
+\section{Halo Bias in RDCC}
+
+The halo bias takes the form
+
+\begin{equation}
+    b_{\mathrm{RDCC}}(M)
+    = b(M)
+      \left[1 - \chi_{b}
+      \left(\frac{k(M)}{k_{\mathrm{rel}}}\right)^{\alpha}\right].
+\end{equation}
+
+This scale-dependent bias leads to stronger large-scale clustering, weaker small-scale clustering, redshift-dependent bias signatures, and tracer-dependent clustering amplitudes.
+
+\section{Non-Linear Matter Power Spectrum in RDCC}
+
+Within the halo model the total non-linear matter power spectrum is the sum of the one-halo and two-halo contributions:
+
+\begin{equation}
+    P_{\mathrm{NL}}(k) = P_{1h}(k) + P_{2h}(k).
+\end{equation}
+
+In RDCC both terms are modified:
+
+\begin{align}
+    P_{1h,\mathrm{RDCC}}(k)
+    &= P_{1h}(k)
+       \left[1 - \chi_{1h}
+       \left(\frac{k}{k_{\mathrm{rel}}}\right)^{\alpha}\right], \\
+    P_{2h,\mathrm{RDCC}}(k)
+    &= P_{2h}(k)
+       \left[1 - \chi_{2h}
+       \left(\frac{k}{k_{\mathrm{rel}}}\right)^{\alpha}\right].
+\end{align}
+
+Consequently, the non-linear power is suppressed on small scales, enhanced on large scales, exhibits a turnover at \(k_{\mathrm{rel}}\), and shows smoother transitions between linear and non-linear regimes.
+\section{Implications for the Cosmic Web}
+
+These modifications propagate directly into the large-scale morphology of the cosmic web. Filaments become thicker, voids grow larger, the connectivity between halos and filaments becomes smoother, and small-scale substructure is reduced. Such signatures offer promising observational tests for RDCC through weak lensing, galaxy clustering, and cosmic web statistics.
+
+\section{Conclusion}
+
+This Companion establishes a consistent halo model for the Relaxation-Driven Cyclic Cosmology and demonstrates its implications for non-linear structure formation. The relaxation-modified evolution of gravitational potentials fundamentally alters halo collapse, the mass function, halo bias, and the non-linear matter power spectrum. These effects shape the architecture of the cosmic web and open a rich set of observational probes that will become accessible with upcoming surveys. The results presented here complete the bridge from the linear RDCC framework to the fully non-linear regime and set the stage for future investigations of galaxy formation, cluster physics, and cosmic web topology within the RDCC picture.
+
+% ========================
+% References
+% ========================
+
+\begin{thebibliography}{10}
+
+\bibitem{Flagship} Lehmann, M. (2026). Relaxation-Driven Cyclic Cosmology (RDCC): A Minimal CPT-Symmetric Framework with a Single Parameter. Flagship Paper. Zenodo: \url{https://zenodo.org/records/19744958} (v43.0 or later).
+
+\bibitem{Zenodo} The complete RDCC companion series (I--LVII) is available at the same Zenodo record above.
+
+% Thematisch relevante Companions
+\bibitem{CompXVI} Companion XVI: Boltzmann Code and Modified Hierarchy.
+\bibitem{CompXXXI} Companion XXXI: RDCC Halo Model and Non-Linear Structure.
+\bibitem{CompXXXII} Companion XXXII--XXXIX: Galaxy--Halo Connection, Cosmic Web, Lensing, RSD, ISW, tSZ, Rotation Curves, CGM.
+
+% Wichtige externe Referenzen
+\bibitem{Planck2020} Planck Collaboration (2020), Astron. Astrophys. 641, A6.
+\bibitem{DESI2024} DESI Collaboration (2024/2025), arXiv: [aktuelle $f\sigma_8$/BAO-Paper].
+\bibitem{JWST2024} Maiolino et al. (2024), Nature (JWST high-$z$ galaxies/quasars).
+\bibitem{Kaiser1987} Kaiser, N. (1987), Mon. Not. R. Astron. Soc. 227, 1 (RSD).
+\bibitem{Bartelmann2001} Bartelmann, M. \& Schneider, P. (2001), Phys. Rep. 340, 291 (Weak Lensing Review).
+\bibitem{HuOkamoto2002} Hu, W. \& Okamoto, T. (2002), Astrophys. J. 574, 566 (CMB Lensing).
+\bibitem{LewisChallinor2006} Lewis, A. \& Challinor, A. (2006), Phys. Rep. 429, 1 (CMB Lensing Review).
+\bibitem{NFW1997} Navarro, J. F., Frenk, C. S. \& White, S. D. M. (1997), Astrophys. J. 490, 493 (Halo Profiles).
+
+\end{thebibliography}
+
+\end{document}

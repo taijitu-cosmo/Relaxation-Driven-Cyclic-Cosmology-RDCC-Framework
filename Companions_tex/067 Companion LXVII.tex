@@ -1,0 +1,159 @@
+\documentclass[11pt,a4paper]{article}
+
+% ---------------------------------------------------------
+% PREAMBLE (stable, warning-free, Overleaf-safe)
+% ---------------------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{bm}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{cite}
+\usepackage{authblk}
+\usepackage{physics}
+\usepackage{mathtools}
+
+\geometry{margin=2.4cm}
+
+\title{\textbf{Companion LXVII: Cross-Covariance of Persistence Diagrams in the Relaxation-Driven Cyclic Cosmology}}
+\author{Michael Lehmann \\ \texttt{mi.lehmann@gmx.de}}
+\date{April 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The cross-covariance of persistence diagrams quantifies the correlated topological 
+structure between different realizations, smoothing scales, or redshift slices of a 
+cosmological field. In weak-lensing analyses, this covariance captures how 
+connected components, loops, and void-like structures co-vary across the 
+gravitational field. In the standard cosmological model, cross-covariance reflects 
+the nonlinear matter distribution and the projection of large-scale structure. In 
+the Relaxation-Driven Cyclic Cosmology (RDCC), the scale-dependent evolution of the 
+gravitational potential modifies the correlation structure of topological features 
+in a characteristic way. This Companion develops a continuous description of 
+cross-covariance in RDCC, deriving how the relaxation scale influences correlated 
+topology, persistence-lifetime coupling, and the observational signatures in 
+weak-lensing surveys. The resulting framework provides a distinctive probe of the 
+RDCC gravitational field through correlated topological structure.
+\end{abstract}
+% ---------------------------------------------------------
+\section{Introduction}
+
+Persistence diagrams encode the birth and death of topological features in 
+weak-lensing convergence fields. While ensemble variance measures the spread of 
+topological features across realizations, the cross-covariance quantifies how 
+topological structures co-vary between different realizations, smoothing scales, or 
+redshift slices.
+
+In the standard cosmological model, cross-covariance reflects the nonlinear matter 
+distribution and the projection of large-scale structure. In RDCC, the 
+gravitational potential evolves differently. The relaxation mechanism suppresses 
+the decay of small-scale modes and enhances the coherence of large-scale modes. 
+This modifies the correlation structure of topological features in a scale-dependent 
+manner, producing a distinctive signature in cross-covariance analyses.
+% ---------------------------------------------------------
+\section{Cross-Covariance of Persistence Diagrams}
+
+Given two ensembles of persistence diagrams $\{D_{i}\}$ and $\{E_{i}\}$ with 
+Fréchet means $D^{*}$ and $E^{*}$, the cross-covariance is defined as
+
+\begin{equation}
+    \mathrm{Cov}(D,E)
+    = \frac{1}{N}
+      \sum_{i=1}^{N}
+      W_{p}(D_{i}, D^{*})
+      W_{p}(E_{i}, E^{*}),
+\end{equation}
+
+where $W_{p}$ is the $p$-Wasserstein distance.
+
+This covariance measures the degree of correlated topological structure.
+% ---------------------------------------------------------
+\section{RDCC Modification of Persistence Diagrams}
+
+In RDCC, the convergence evolves as
+\begin{equation}
+    \kappa_{\mathrm{RDCC}}(\ell)
+    = \kappa(\ell)
+      \left[
+        1 - \chi_{\kappa}
+        \left(\frac{\ell}{\ell_{\mathrm{rel}}}\right)^{\alpha}
+      \right].
+\end{equation}
+
+This modifies the birth and death thresholds of topological features:
+
+\begin{align}
+    b_{\mathrm{RDCC}} &= b \left[ 1 - \chi_{b} (\ell/\ell_{\mathrm{rel}})^{\alpha} \right], \\
+    d_{\mathrm{RDCC}} &= d \left[ 1 - \chi_{d} (\ell/\ell_{\mathrm{rel}})^{\alpha} \right].
+\end{align}
+
+The RDCC ensembles become
+\begin{equation}
+    \{ D_{i,\mathrm{RDCC}} \}, \quad
+    \{ E_{i,\mathrm{RDCC}} \}.
+\end{equation}
+% ---------------------------------------------------------
+\section{Cross-Covariance in RDCC}
+
+The RDCC cross-covariance is
+
+\begin{equation}
+    \mathrm{Cov}_{\mathrm{RDCC}}(D,E)
+    = \frac{1}{N}
+      \sum_{i=1}^{N}
+      W_{p}(D_{i,\mathrm{RDCC}}, D^{*}_{\mathrm{RDCC}})
+      W_{p}(E_{i,\mathrm{RDCC}}, E^{*}_{\mathrm{RDCC}}).
+\end{equation}
+
+To first order in the relaxation parameter,
+
+\begin{equation}
+    \mathrm{Cov}_{\mathrm{RDCC}}(D,E)
+    = \mathrm{Cov}(D,E)
+      \left[
+        1 - \chi_{\mathrm{Cov}}
+        \left(\frac{\ell}{\ell_{\mathrm{rel}}}\right)^{\alpha}
+      \right].
+\end{equation}
+
+This modification reflects the relaxation-driven change in correlated topology.
+% ---------------------------------------------------------
+\section{Correlated Topological Signatures of RDCC}
+
+The relaxation mechanism enhances the coherence of large-scale modes. Cross-
+covariance therefore exhibits:
+
+\begin{itemize}
+    \item enhanced correlation of large-scale topological features,
+    \item suppressed correlation of small-scale features,
+    \item a characteristic turnover near $\ell_{\mathrm{rel}}$,
+    \item modified redshift evolution of topological coupling,
+    \item altered cross-scale persistence-lifetime correlations.
+\end{itemize}
+
+These signatures provide a direct probe of the RDCC gravitational field through 
+correlated topological structure.
+% ---------------------------------------------------------
+\section{Conclusion}
+
+The cross-covariance of persistence diagrams in the Relaxation-Driven Cyclic 
+Cosmology reflects the scale-dependent evolution of the gravitational potential and 
+the nonlinear matter distribution. The relaxation mechanism modifies the 
+correlation structure of topological features in a scale-dependent manner, 
+producing distinctive signatures in weak-lensing surveys. These effects provide a 
+direct observational window into the relaxation scale and the temporal structure of 
+the RDCC gravitational field. The present Companion establishes the theoretical 
+foundation for future studies of correlated topology, nonlinear structure, and the 
+interplay between light and gravity in RDCC.
+
+\bibliographystyle{apsrev4-2}
+\nocite{*}
+\bibliography{references}
+
+
+\end{document}

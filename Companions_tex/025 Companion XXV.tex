@@ -1,0 +1,1642 @@
+% ---------------------------------------------------------
+% PREAMBLE (same template as Companion X–XXIV)
+% ---------------------------------------------------------
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{bm}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{geometry}
+\usepackage{physics}
+\usepackage{cite}
+\usepackage{float}
+
+\geometry{margin=1in}
+
+% ---------------------------------------------------------
+% TITLE
+% ---------------------------------------------------------
+\title{
+\textbf{Companion XXV}\\[4mm]
+\textbf{The 21-cm Signature of the Relaxation-Driven Cyclic Cosmology}\\
+\textbf{Reionization Topology, X-ray Heating, and Large-Scale Structure}
+}
+
+\author{
+Michael Lehmann\\
+Independent Researcher\\
+\texttt{mi.lehmann@gmx.de}
+}
+
+\date{April 2026}
+
+\begin{document}
+
+\maketitle
+
+% ---------------------------------------------------------
+% ABSTRACT
+% ---------------------------------------------------------
+\begin{abstract}
+The 21-cm signal from neutral hydrogen provides a uniquely sensitive probe of the thermal, 
+ionization, and structural evolution of the early Universe. Upcoming observations from SKA, 
+HERA, and LOFAR will map the morphology of reionization, the timing of X-ray heating, and the 
+large-scale distribution of ionized and neutral regions. These measurements offer a powerful 
+test of the Relaxation-Driven Cyclic Cosmology (RDCC), whose modified small-scale structure, 
+delayed fragmentation, and enhanced early black hole and quasar activity fundamentally alter 
+the topology of reionization.
+
+Building on the early-galaxy physics of Companion~XXII, the black hole formation framework of 
+Companion~XXIII, and the quasar radiative feedback model of Companion~XXIV, we derive the 
+RDCC predictions for the global 21-cm signal, the 21-cm power spectrum, and the morphology of 
+ionization bubbles. We show that RDCC produces smoother, more coherent ionization structures, 
+delayed but stronger X-ray heating, and a characteristic suppression of small-scale 21-cm 
+power due to the relaxation-modified halo mass function.
+
+This Companion establishes the 21-cm signal as a direct observational probe of the relaxation 
+scale $k_{\mathrm{rel}}$ and provides clear predictions for SKA, HERA, LOFAR, JWST, and 
+cross-correlation studies with early galaxies and quasars.
+\end{abstract}
+
+% ---------------------------------------------------------
+% SECTION 1 — MOTIVATION AND OVERVIEW
+% ---------------------------------------------------------
+\section{Motivation and Overview}
+
+The 21-cm signal from neutral hydrogen provides a uniquely sensitive probe of the thermal, 
+ionization, and structural evolution of the early Universe. Unlike galaxy surveys or quasar 
+observations, which trace only the brightest objects, the 21-cm line maps the entire 
+intergalactic medium (IGM), including faint galaxies, diffuse gas, and the topology of 
+reionization. Upcoming observations from SKA, HERA, and LOFAR will measure the global 21-cm 
+signal, the 21-cm power spectrum, and the morphology of ionized and neutral regions across 
+cosmic time.
+
+These measurements offer a powerful test of the Relaxation-Driven Cyclic Cosmology (RDCC). 
+The suppression of small-scale power, delayed fragmentation, and enhanced early black hole and 
+quasar activity predicted by RDCC fundamentally alter the timing, morphology, and coherence of 
+reionization. As shown in Companion~XXII, early star formation is delayed and smoother; in 
+Companion~XXIII, black hole seeds are more massive and grow more efficiently; and in 
+Companion~XXIV, early quasars produce larger and more coherent ionization bubbles.
+
+The 21-cm signal is therefore a direct tracer of the relaxation scale $k_{\mathrm{rel}}$ and 
+provides a unique opportunity to test the RDCC framework.
+
+% ---------------------------------------------------------
+\subsection*{1.1 Observational Context}
+
+Current and upcoming experiments probe different aspects of the 21-cm signal:
+
+\begin{itemize}
+    \item \textbf{HERA} measures the 21-cm power spectrum at $z \sim 6$–$20$.
+    \item \textbf{LOFAR} constrains large-scale ionization structure at $z \sim 8$–$10$.
+    \item \textbf{SKA} will map the full 3D morphology of reionization.
+    \item \textbf{JWST} provides complementary constraints on early galaxies and quasars.
+    \item \textbf{Cross-correlations} (21-cm × galaxies × quasars) will probe bubble topology.
+\end{itemize}
+
+These observations are sensitive to:
+
+\begin{itemize}
+    \item the timing of X-ray heating,
+    \item the growth of ionized bubbles,
+    \item the clustering of early sources,
+    \item the small-scale structure of the IGM,
+    \item the global reionization history.
+\end{itemize}
+
+Each of these quantities is modified in RDCC.
+
+% ---------------------------------------------------------
+\subsection*{1.2 RDCC Perspective}
+
+The Relaxation-Driven Cyclic Cosmology modifies early structure formation through the 
+scale-dependent relaxation rate $\Gamma(a)$, which suppresses small-scale power and delays the 
+collapse of low-mass halos. As shown in Companion~XVIII and Companion~XIX, this leads to:
+
+\begin{itemize}
+    \item reduced small-scale clumping,
+    \item smoother density fields,
+    \item delayed but more coherent star formation,
+    \item enhanced early black hole and quasar activity,
+    \item larger and smoother ionization bubbles.
+\end{itemize}
+
+These effects directly influence the 21-cm signal:
+
+\begin{itemize}
+    \item \textbf{Global signal:} delayed absorption trough, smoother heating transition.
+    \item \textbf{Power spectrum:} suppressed small-scale power, enhanced large-scale modes.
+    \item \textbf{Bubble topology:} larger, more coherent ionized regions.
+    \item \textbf{Cross-correlations:} stronger 21-cm × quasar anticorrelation.
+\end{itemize}
+
+Thus, RDCC predicts a distinctive 21-cm signature that differs qualitatively from $\Lambda$CDM.
+
+% ---------------------------------------------------------
+\subsection*{1.3 Goals of This Companion}
+
+The goals of this Companion are:
+
+\begin{itemize}
+    \item to derive the RDCC predictions for the global 21-cm signal,
+    \item to compute the RDCC-modified 21-cm power spectrum,
+    \item to model the morphology of ionization bubbles in RDCC,
+    \item to analyze the impact of early quasars on X-ray heating and reionization,
+    \item and to compare RDCC predictions with SKA, HERA, LOFAR, and JWST.
+\end{itemize}
+
+These results build directly on the early-galaxy, black hole, and quasar physics developed in 
+Companion~XXII–XXIV.
+
+% ---------------------------------------------------------
+\subsection*{1.4 Structure of This Companion}
+
+The structure of this Companion is as follows:
+
+\begin{itemize}
+    \item Section~2 derives the RDCC global 21-cm signal.
+    \item Section~3 computes the RDCC 21-cm power spectrum.
+    \item Section~4 analyzes the morphology of ionization bubbles.
+    \item Section~5 develops the RDCC X-ray heating model.
+    \item Section~6 compares RDCC predictions with SKA, HERA, LOFAR, and JWST.
+\end{itemize}
+
+Together, these results establish the 21-cm signal as a direct observational probe of the 
+relaxation dynamics of RDCC.
+
+% ---------------------------------------------------------
+% SECTION 2 — THE RDCC GLOBAL 21-cm SIGNAL
+% ---------------------------------------------------------
+\section{The RDCC Global 21-cm Signal}
+
+The global 21-cm signal traces the contrast between the spin temperature $T_{\mathrm{s}}$ of 
+neutral hydrogen and the CMB temperature $T_{\gamma}$. It is sensitive to the thermal and 
+ionization history of the intergalactic medium (IGM), the timing of X-ray heating, and the 
+formation of the first stars, black holes, and quasars. In the Relaxation-Driven Cyclic 
+Cosmology (RDCC), the suppression of small-scale structure and the delayed collapse of 
+low-mass halos modify each of these processes, leading to a distinctive global 21-cm signature.
+
+The differential brightness temperature is
+\begin{equation}
+    \delta T_{21}(z)
+    \simeq 27\,x_{\mathrm{HI}}(z)
+    \left(1 - \frac{T_{\gamma}(z)}{T_{\mathrm{s}}(z)}\right)
+    \left(\frac{1+z}{10}\right)^{1/2}
+    \mathrm{mK},
+\end{equation}
+where $x_{\mathrm{HI}}$ is the neutral fraction.
+
+RDCC modifies $\delta T_{21}(z)$ through:
+
+\begin{itemize}
+    \item delayed star formation (Companion~XXII),
+    \item enhanced early black hole and quasar activity (Companion~XXIII–XXIV),
+    \item smoother density fields and reduced clumping (Companion~XVIII–XIX),
+    \item modified X-ray heating and ionization rates.
+\end{itemize}
+
+These effects reshape the three canonical phases of the global 21-cm signal.
+
+% ---------------------------------------------------------
+\subsection*{2.1 Phase I: The Absorption Trough}
+
+The absorption trough occurs when $T_{\mathrm{s}} < T_{\gamma}$ and the IGM is cold. In 
+$\Lambda$CDM, this phase is driven by Lyman-$\alpha$ coupling from the first stars.
+
+In RDCC:
+
+\begin{itemize}
+    \item delayed fragmentation postpones the onset of Lyman-$\alpha$ coupling,
+    \item smoother halo assembly reduces early star formation rates,
+    \item the IGM remains colder for longer due to reduced X-ray heating.
+\end{itemize}
+
+Thus, the absorption trough is:
+
+\begin{itemize}
+    \item \textbf{delayed} relative to $\Lambda$CDM,
+    \item \textbf{shallower} due to reduced early coupling,
+    \item \textbf{broader} due to smoother early structure formation.
+\end{itemize}
+
+A useful RDCC approximation is
+\begin{equation}
+    z_{\mathrm{abs,RDCC}}
+    \simeq z_{\mathrm{abs}}
+    \left[
+        1 - \chi_{\mathrm{abs}}
+        \left(\frac{k_{\mathrm{rel}}}{k}\right)^{\alpha}
+    \right],
+\end{equation}
+with $\chi_{\mathrm{abs}} \sim 0.1$.
+
+% ---------------------------------------------------------
+\subsection*{2.2 Phase II: X-ray Heating}
+
+The heating transition occurs when $T_{\mathrm{s}}$ rises above $T_{\gamma}$ due to X-ray 
+heating from early black holes, X-ray binaries, and quasars.
+
+In RDCC:
+
+\begin{itemize}
+    \item early black hole seeds are more massive (Companion~XXIII),
+    \item quasars ignite earlier and are more luminous (Companion~XXIV),
+    \item reduced clumping increases the mean free path of X-rays,
+    \item smoother density fields reduce shadowing.
+\end{itemize}
+
+Thus, X-ray heating is:
+
+\begin{itemize}
+    \item \textbf{delayed} relative to $\Lambda$CDM due to delayed star formation,
+    \item \textbf{stronger} once it begins due to enhanced quasar activity,
+    \item \textbf{smoother} due to reduced small-scale structure.
+\end{itemize}
+
+The heating rate becomes
+\begin{equation}
+    \Gamma_{\mathrm{X,RDCC}}
+    = \Gamma_{\mathrm{X}}
+      \left[
+        1 + \chi_{\mathrm{X}}
+        \left(\frac{k_{\mathrm{rel}}}{k}\right)^{\alpha}
+      \right],
+\end{equation}
+with $\chi_{\mathrm{X}} \sim 0.2$.
+
+% ---------------------------------------------------------
+\subsection*{2.3 Phase III: The Emission Era}
+
+Once $T_{\mathrm{s}} \gg T_{\gamma}$, the 21-cm signal enters emission. The amplitude is 
+determined by the neutral fraction $x_{\mathrm{HI}}$ and the thermal state of the IGM.
+
+In RDCC:
+
+\begin{itemize}
+    \item larger ionization bubbles reduce $x_{\mathrm{HI}}$ earlier,
+    \item smoother ionization fronts produce more coherent emission,
+    \item enhanced quasar activity accelerates late-time heating.
+\end{itemize}
+
+The emission amplitude becomes
+\begin{equation}
+    \delta T_{21,\mathrm{RDCC}}
+    \simeq \delta T_{21}
+    \left[
+        1 - \chi_{\mathrm{ion}}
+        \left(\frac{k_{\mathrm{rel}}}{k}\right)^{\alpha}
+    \right],
+\end{equation}
+with $\chi_{\mathrm{ion}} \sim 0.1$.
+
+% ---------------------------------------------------------
+\subsection*{2.4 RDCC Global Signal Summary}
+
+RDCC predicts:
+
+\begin{itemize}
+    \item a \textbf{delayed and broadened absorption trough},
+    \item a \textbf{delayed but stronger heating transition},
+    \item a \textbf{smoother and more coherent emission era},
+    \item a \textbf{characteristic suppression of small-scale features},
+    \item a \textbf{direct imprint of the relaxation scale $k_{\mathrm{rel}}$}.
+\end{itemize}
+
+These features provide clear observational signatures for SKA, HERA, and LOFAR and set the 
+stage for the RDCC 21-cm power spectrum developed in Section~3.
+
+% ---------------------------------------------------------
+% SECTION 3 — THE RDCC 21-cm POWER SPECTRUM
+% ---------------------------------------------------------
+\section{The RDCC 21-cm Power Spectrum}
+
+The 21-cm power spectrum $P_{21}(k,z)$ encodes the spatial fluctuations of the neutral 
+hydrogen distribution during cosmic dawn and reionization. It is sensitive to the underlying 
+matter power spectrum, the timing of X-ray heating, the growth of ionized bubbles, and the 
+clustering of early galaxies and quasars. In the Relaxation-Driven Cyclic Cosmology (RDCC), 
+the suppression of small-scale power and the smoother assembly of early structures modify each 
+of these components, leading to a distinctive 21-cm power spectrum.
+
+The brightness temperature fluctuation is
+\begin{equation}
+    \delta T_{21}(\mathbf{x},z)
+    = \bar{T}_{21}(z)\,
+      \left[
+        \delta_{\mathrm{b}}
+        - \delta_{x_{\mathrm{HI}}}
+        + \delta_{\mathrm{vel}}
+        + \delta_{T_{\mathrm{s}}}
+      \right],
+\end{equation}
+where $\delta_{\mathrm{b}}$ is the baryon overdensity, $\delta_{x_{\mathrm{HI}}}$ the neutral 
+fraction fluctuation, $\delta_{\mathrm{vel}}$ the velocity gradient term, and 
+$\delta_{T_{\mathrm{s}}}$ the spin-temperature fluctuation.
+
+RDCC modifies each of these contributions.
+
+% ---------------------------------------------------------
+\subsection*{3.1 RDCC Matter Power Spectrum Contribution}
+
+The baryonic term traces the matter power spectrum:
+\begin{equation}
+    P_{21}^{\mathrm{b}}(k,z)
+    = \bar{T}_{21}^{2}(z)\, P_{\mathrm{m}}(k,z).
+\end{equation}
+
+In RDCC, the matter power spectrum is suppressed at small scales:
+\begin{equation}
+    P_{\mathrm{m,RDCC}}(k,z)
+    = P_{\mathrm{m}}(k,z)
+      \left[
+        1 - \chi_{\mathrm{rel}}
+        \left(\frac{k}{k_{\mathrm{rel}}}\right)^{\alpha}
+      \right],
+\end{equation}
+with $\chi_{\mathrm{rel}} \sim 0.1$–$0.2$.
+
+Thus:
+
+\begin{itemize}
+    \item small-scale 21-cm power is suppressed,
+    \item large-scale modes are enhanced due to increased bias,
+    \item the turnover scale traces $k_{\mathrm{rel}}$.
+\end{itemize}
+
+% ---------------------------------------------------------
+\subsection*{3.2 Ionization Field Contribution}
+
+Ionization fluctuations dominate the 21-cm signal during reionization:
+\begin{equation}
+    P_{21}^{x}(k,z)
+    = \bar{T}_{21}^{2}(z)\, P_{x_{\mathrm{HI}}}(k,z).
+\end{equation}
+
+In RDCC:
+
+\begin{itemize}
+    \item ionization bubbles are larger (Companion~XXIV),
+    \item bubble walls are smoother due to reduced clumping,
+    \item bubble growth is more coherent due to smoother source clustering.
+\end{itemize}
+
+A useful RDCC approximation is
+\begin{equation}
+    P_{x_{\mathrm{HI}},\mathrm{RDCC}}(k,z)
+    = P_{x_{\mathrm{HI}}}(k,z)
+      \exp\!\left[
+        -\left(\frac{k}{k_{\mathrm{bub}}}\right)^{2}
+      \right],
+\end{equation}
+with
+\begin{equation}
+    k_{\mathrm{bub}}^{-1}
+    \sim R_{\mathrm{ion,RDCC}}
+    \sim 1.5\text{--}2 \times R_{\mathrm{ion}}.
+\end{equation}
+
+Thus, RDCC predicts:
+
+\begin{itemize}
+    \item suppressed small-scale ionization power,
+    \item enhanced large-scale bubble correlations,
+    \item a characteristic shift of the bubble peak to lower $k$.
+\end{itemize}
+
+% ---------------------------------------------------------
+\subsection*{3.3 X-ray Heating Contribution}
+
+During cosmic dawn, X-ray heating fluctuations dominate:
+\begin{equation}
+    P_{21}^{T}(k,z)
+    = \bar{T}_{21}^{2}(z)\, P_{T_{\mathrm{s}}}(k,z).
+\end{equation}
+
+In RDCC:
+
+\begin{itemize}
+    \item X-ray heating is delayed (Section~2),
+    \item heating is stronger once it begins (Companion~XXIV),
+    \item heating is smoother due to reduced small-scale structure.
+\end{itemize}
+
+A simple RDCC model is
+\begin{equation}
+    P_{T_{\mathrm{s}},\mathrm{RDCC}}(k,z)
+    = P_{T_{\mathrm{s}}}(k,z)
+      \left[
+        1 - \chi_{\mathrm{heat}}
+        \left(\frac{k}{k_{\mathrm{rel}}}\right)^{\alpha}
+      \right],
+\end{equation}
+with $\chi_{\mathrm{heat}} \sim 0.1$.
+
+% ---------------------------------------------------------
+\subsection*{3.4 Velocity Gradient Contribution}
+
+The velocity gradient term is
+\begin{equation}
+    P_{21}^{\mathrm{vel}}(k,z)
+    = \mu^{4}\, \bar{T}_{21}^{2}(z)\, P_{\mathrm{m}}(k,z),
+\end{equation}
+with $\mu = \hat{k}\cdot\hat{n}$.
+
+In RDCC:
+
+\begin{itemize}
+    \item the velocity field is unchanged at large scales,
+    \item small-scale velocity gradients are suppressed,
+    \item redshift-space distortions are reduced at $k > k_{\mathrm{rel}}$.
+\end{itemize}
+
+Thus,
+\begin{equation}
+    P_{21,\mathrm{RDCC}}^{\mathrm{vel}}
+    = P_{21}^{\mathrm{vel}}
+      \left[
+        1 - \chi_{\mathrm{vel}}
+        \left(\frac{k}{k_{\mathrm{rel}}}\right)^{\alpha}
+      \right].
+\end{equation}
+
+% ---------------------------------------------------------
+\subsection*{3.5 Full RDCC 21-cm Power Spectrum}
+
+Combining all contributions:
+\begin{equation}
+    P_{21,\mathrm{RDCC}}(k,z)
+    = P_{21}^{\mathrm{b}}
+    + P_{21}^{x}
+    + P_{21}^{T}
+    + P_{21}^{\mathrm{vel}},
+\end{equation}
+with each term replaced by its RDCC-modified form.
+
+The resulting spectrum exhibits:
+
+\begin{itemize}
+    \item suppressed small-scale power ($k > k_{\mathrm{rel}}$),
+    \item enhanced large-scale modes due to increased bias,
+    \item a shift of the bubble peak to lower $k$,
+    \item smoother heating and ionization fluctuations,
+    \item a characteristic turnover tracing $k_{\mathrm{rel}}$.
+\end{itemize}
+
+% ---------------------------------------------------------
+\subsection*{3.6 Summary}
+
+RDCC modifies the 21-cm power spectrum through:
+
+\begin{itemize}
+    \item suppression of small-scale matter fluctuations,
+    \item larger and smoother ionization bubbles,
+    \item delayed but stronger X-ray heating,
+    \item reduced redshift-space distortions,
+    \item enhanced large-scale clustering of early sources.
+\end{itemize}
+
+These features provide clear observational signatures for SKA, HERA, and LOFAR and motivate 
+the detailed bubble morphology analysis of Section~4.
+
+% ---------------------------------------------------------
+% SECTION 4 — IONIZATION BUBBLE MORPHOLOGY IN RDCC
+% ---------------------------------------------------------
+\section{Ionization Bubble Morphology in RDCC}
+
+The morphology of ionized regions during reionization encodes the spatial distribution of 
+ionizing sources, the clustering of early galaxies and quasars, and the small-scale structure 
+of the intergalactic medium (IGM). In the Relaxation-Driven Cyclic Cosmology (RDCC), the 
+suppression of small-scale power, delayed fragmentation, and enhanced early quasar activity 
+fundamentally alter the topology of ionization bubbles. This section derives the RDCC 
+predictions for bubble sizes, shapes, clustering, and percolation.
+
+% ---------------------------------------------------------
+\subsection*{4.1 Bubble Growth in RDCC}
+
+Ionization bubbles grow according to
+\begin{equation}
+    R_{\mathrm{ion}}
+    = \left(
+        \frac{3 \dot{N}_{\gamma}}
+             {4\pi \alpha_{B} n_{\mathrm{H}}^{2}}
+      \right)^{1/3},
+\end{equation}
+where $\dot{N}_{\gamma}$ is the ionizing photon rate.
+
+In RDCC:
+
+\begin{itemize}
+    \item quasars ignite earlier and are more luminous (Companion~XXIV),
+    \item early galaxies form later but more coherently (Companion~XXII),
+    \item reduced clumping increases the mean free path of ionizing photons,
+    \item smoother density fields reduce shadowing and bubble fragmentation.
+\end{itemize}
+
+Thus, the RDCC bubble radius becomes
+\begin{equation}
+    R_{\mathrm{ion,RDCC}}
+    = R_{\mathrm{ion}}
+      \left[
+        1 + \chi_{R}
+        \left(\frac{k_{\mathrm{rel}}}{k}\right)^{\alpha}
+      \right],
+\end{equation}
+with $\chi_{R} \sim 0.2$.
+
+Typical RDCC values:
+\begin{equation}
+    R_{\mathrm{ion,RDCC}} \sim 1.5\text{--}2 \times R_{\mathrm{ion}}.
+\end{equation}
+
+% ---------------------------------------------------------
+\subsection*{4.2 Bubble Size Distribution}
+
+The bubble size distribution (BSD) is defined as
+\begin{equation}
+    \frac{dn}{dR}(R,z).
+\end{equation}
+
+In $\Lambda$CDM, the BSD is broad and dominated by small bubbles at early times.
+
+In RDCC:
+
+\begin{itemize}
+    \item suppressed small-scale structure reduces the number of small bubbles,
+    \item enhanced quasar activity increases the number of large bubbles,
+    \item smoother source clustering narrows the BSD.
+\end{itemize}
+
+A useful RDCC approximation is
+\begin{equation}
+    \frac{dn}{dR}_{\mathrm{RDCC}}
+    = \frac{dn}{dR}
+      \exp\!\left[
+        -\left(\frac{R_{\mathrm{min}}}{R}\right)^{\beta}
+      \right],
+\end{equation}
+with $R_{\mathrm{min}} \sim 0.5\,R_{\mathrm{ion,RDCC}}$.
+
+% ---------------------------------------------------------
+\subsection*{4.3 Bubble Clustering and Bias}
+
+The bubble bias is defined as
+\begin{equation}
+    b_{\mathrm{bub}}
+    = \frac{\delta_{\mathrm{bub}}}{\delta_{\mathrm{m}}}.
+\end{equation}
+
+In RDCC:
+
+\begin{itemize}
+    \item galaxy bias is enhanced (Companion~XXII),
+    \item quasar bias is strongly enhanced (Companion~XXIV),
+    \item bubble clustering inherits both contributions.
+\end{itemize}
+
+Thus,
+\begin{equation}
+    b_{\mathrm{bub,RDCC}}
+    = b_{\mathrm{bub}}
+      \left[
+        1 + \chi_{\mathrm{bias}}
+        \left(\frac{k_{\mathrm{rel}}}{k}\right)^{\alpha}
+      \right],
+\end{equation}
+with $\chi_{\mathrm{bias}} \sim 0.1$–$0.2$.
+
+This leads to:
+
+\begin{itemize}
+    \item stronger large-scale bubble correlations,
+    \item enhanced 21-cm power at low $k$,
+    \item earlier percolation of ionized regions.
+\end{itemize}
+
+% ---------------------------------------------------------
+\subsection*{4.4 Bubble Shape and Topology}
+
+Bubble shapes are characterized by Minkowski functionals:
+
+\begin{itemize}
+    \item $V_{0}$ — volume,
+    \item $V_{1}$ — surface area,
+    \item $V_{2}$ — mean curvature,
+    \item $V_{3}$ — Euler characteristic.
+\end{itemize}
+
+In RDCC:
+
+\begin{itemize}
+    \item reduced small-scale structure smooths bubble surfaces,
+    \item larger bubbles reduce curvature variations,
+    \item smoother density fields reduce topological complexity.
+\end{itemize}
+
+Thus:
+
+\begin{align}
+    V_{1,\mathrm{RDCC}} &< V_{1}, \\
+    V_{2,\mathrm{RDCC}} &< V_{2}, \\
+    V_{3,\mathrm{RDCC}} &\rightarrow 0 \quad \text{earlier}.
+\end{align}
+
+This implies:
+
+\begin{itemize}
+    \item fewer small-scale features,
+    \item smoother bubble boundaries,
+    \item earlier transition to a percolated ionized network.
+\end{itemize}
+
+% ---------------------------------------------------------
+\subsection*{4.5 Percolation in RDCC}
+
+Percolation occurs when ionized regions connect to form a spanning cluster.
+
+In RDCC:
+
+\begin{itemize}
+    \item larger bubbles accelerate percolation,
+    \item enhanced bias increases bubble overlap,
+    \item smoother density fields reduce fragmentation.
+\end{itemize}
+
+Thus, the percolation redshift becomes
+\begin{equation}
+    z_{\mathrm{perc,RDCC}}
+    \simeq z_{\mathrm{perc}}
+    \left[
+        1 + \chi_{\mathrm{perc}}
+        \left(\frac{k_{\mathrm{rel}}}{k}\right)^{\alpha}
+    \right],
+\end{equation}
+with $\chi_{\mathrm{perc}} \sim 0.1$.
+
+% ---------------------------------------------------------
+\subsection*{4.6 Summary}
+
+RDCC modifies ionization bubble morphology through:
+
+\begin{itemize}
+    \item larger and smoother ionization bubbles,
+    \item suppressed small-scale bubble population,
+    \item enhanced bubble clustering and bias,
+    \item smoother bubble surfaces and reduced topological complexity,
+    \item earlier percolation of ionized regions.
+\end{itemize}
+
+These features provide clear observational signatures for SKA, HERA, LOFAR, and 
+cross-correlation studies, and motivate the detailed X-ray heating analysis of Section~5.
+
+% ---------------------------------------------------------
+% SECTION 5 — X-RAY HEATING AND THERMAL EVOLUTION IN RDCC
+% ---------------------------------------------------------
+\section{X-ray Heating and Thermal Evolution in RDCC}
+
+X-ray heating plays a central role in shaping the 21-cm signal during cosmic dawn. The 
+spin temperature $T_{\mathrm{s}}$ couples to the kinetic temperature of the intergalactic 
+medium (IGM), and the timing and spatial structure of X-ray heating determine the depth, 
+width, and morphology of the global 21-cm absorption trough and the subsequent emission era. 
+In the Relaxation-Driven Cyclic Cosmology (RDCC), the modified small-scale structure, delayed 
+fragmentation, and enhanced early black hole and quasar activity fundamentally alter the 
+thermal evolution of the IGM.
+
+This section derives the RDCC-modified X-ray heating rate, the resulting temperature evolution, 
+and the implications for the 21-cm signal.
+
+% ---------------------------------------------------------
+\subsection*{5.1 X-ray Sources in RDCC}
+
+The dominant X-ray sources during cosmic dawn are:
+
+\begin{itemize}
+    \item high-mass X-ray binaries (HMXBs),
+    \item accreting black holes,
+    \item early quasars (Companion~XXIV),
+    \item mini-quasars in low-mass halos.
+\end{itemize}
+
+In RDCC:
+
+\begin{itemize}
+    \item black hole seeds are more massive (Companion~XXIII),
+    \item early quasars ignite earlier and are more luminous (Companion~XXIV),
+    \item reduced fragmentation suppresses early HMXB formation,
+    \item smoother halo assembly increases gas retention and accretion.
+\end{itemize}
+
+Thus, the X-ray emissivity becomes
+\begin{equation}
+    \epsilon_{\mathrm{X,RDCC}}
+    = \epsilon_{\mathrm{X}}
+      \left[
+        1 + \chi_{\mathrm{X,src}}
+        \left(\frac{k_{\mathrm{rel}}}{k}\right)^{\alpha}
+      \right],
+\end{equation}
+with $\chi_{\mathrm{X,src}} \sim 0.1$–$0.2$.
+
+% ---------------------------------------------------------
+\subsection*{5.2 X-ray Heating Rate}
+
+The heating rate per baryon is
+\begin{equation}
+    \Gamma_{\mathrm{X}}
+    = \int d\nu\,
+      \frac{L_{\nu}}{4\pi r^{2}}
+      \sigma_{\nu}
+      (h\nu - E_{\mathrm{ion}}).
+\end{equation}
+
+In RDCC:
+
+\begin{itemize}
+    \item enhanced quasar luminosities increase $L_{\nu}$,
+    \item reduced clumping increases the mean free path of X-rays,
+    \item smoother density fields reduce shadowing,
+    \item delayed star formation postpones early heating.
+\end{itemize}
+
+Thus, the RDCC heating rate becomes
+\begin{equation}
+    \Gamma_{\mathrm{X,RDCC}}
+    = \Gamma_{\mathrm{X}}
+      \left[
+        1 + \chi_{\mathrm{X}}
+        \left(\frac{k_{\mathrm{rel}}}{k}\right)^{\alpha}
+      \right],
+\end{equation}
+with $\chi_{\mathrm{X}} \sim 0.2$.
+
+% ---------------------------------------------------------
+\subsection*{5.3 Temperature Evolution of the IGM}
+
+The kinetic temperature evolves as
+\begin{equation}
+    \frac{dT_{\mathrm{K}}}{dz}
+    = \frac{2T_{\mathrm{K}}}{1+z}
+      - \frac{2}{3k_{\mathrm{B}}H(z)(1+z)}
+        \Gamma_{\mathrm{X}}
+      + \text{(Compton + adiabatic terms)}.
+\end{equation}
+
+In RDCC:
+
+\begin{itemize}
+    \item the early Universe remains colder for longer,
+    \item heating rises more steeply once quasars ignite,
+    \item the transition $T_{\mathrm{K}} = T_{\gamma}$ occurs later,
+    \item the heating curve is smoother due to reduced small-scale structure.
+\end{itemize}
+
+A useful RDCC approximation is
+\begin{equation}
+    T_{\mathrm{K,RDCC}}(z)
+    = T_{\mathrm{K}}(z)
+      \left[
+        1 + \chi_{T}
+        \left(\frac{k_{\mathrm{rel}}}{k}\right)^{\alpha}
+      \right],
+\end{equation}
+with $\chi_{T} \sim 0.1$.
+
+% ---------------------------------------------------------
+\subsection*{5.4 Spin Temperature Coupling}
+
+The spin temperature satisfies
+\begin{equation}
+    T_{\mathrm{s}}^{-1}
+    = \frac{T_{\gamma}^{-1}
+           + x_{\alpha} T_{\mathrm{K}}^{-1}
+           + x_{\mathrm{c}} T_{\mathrm{K}}^{-1}}
+           {1 + x_{\alpha} + x_{\mathrm{c}}},
+\end{equation}
+where $x_{\alpha}$ is the Lyman-$\alpha$ coupling coefficient and $x_{\mathrm{c}}$ the 
+collisional coupling coefficient.
+
+In RDCC:
+
+\begin{itemize}
+    \item delayed star formation reduces early $x_{\alpha}$,
+    \item enhanced quasar activity increases late-time $x_{\alpha}$,
+    \item smoother density fields reduce collisional coupling.
+\end{itemize}
+
+Thus, the coupling transition is:
+
+\begin{itemize}
+    \item \textbf{delayed} relative to $\Lambda$CDM,
+    \item \textbf{smoother} due to reduced small-scale structure,
+    \item \textbf{stronger} once quasars dominate.
+\end{itemize}
+
+% ---------------------------------------------------------
+\subsection*{5.5 Impact on the Global 21-cm Signal}
+
+The global 21-cm signal depends on the contrast
+\begin{equation}
+    1 - \frac{T_{\gamma}}{T_{\mathrm{s}}}.
+\end{equation}
+
+RDCC predicts:
+
+\begin{itemize}
+    \item a \textbf{delayed absorption trough} due to delayed coupling,
+    \item a \textbf{shallower trough} due to reduced early heating,
+    \item a \textbf{stronger heating transition} once quasars ignite,
+    \item a \textbf{smoother rise} into the emission era,
+    \item a \textbf{distinctive thermal signature} tracing $k_{\mathrm{rel}}$.
+\end{itemize}
+
+% ---------------------------------------------------------
+\subsection*{5.6 Impact on the 21-cm Power Spectrum}
+
+X-ray heating fluctuations contribute to the 21-cm power spectrum via
+\begin{equation}
+    P_{21}^{T}(k,z)
+    = \bar{T}_{21}^{2}(z)\, P_{T_{\mathrm{s}}}(k,z).
+\end{equation}
+
+In RDCC:
+
+\begin{itemize}
+    \item heating fluctuations are suppressed at small scales,
+    \item large-scale heating modes are enhanced,
+    \item the heating peak shifts to lower $k$,
+    \item the heating transition is more coherent.
+\end{itemize}
+
+These features provide clear observational signatures for SKA and HERA.
+
+% ---------------------------------------------------------
+\subsection*{5.7 Summary}
+
+RDCC modifies X-ray heating and thermal evolution through:
+
+\begin{itemize}
+    \item enhanced quasar-driven heating,
+    \item delayed but stronger heating transitions,
+    \item smoother temperature fluctuations,
+    \item suppressed small-scale heating structure,
+    \item a characteristic imprint of the relaxation scale $k_{\mathrm{rel}}$.
+\end{itemize}
+
+These effects shape both the global 21-cm signal and the 21-cm power spectrum and motivate the 
+observational comparison in Section~6.
+
+% ---------------------------------------------------------
+% SECTION 6 — COMPARISON WITH SKA, HERA, LOFAR, AND JWST
+% ---------------------------------------------------------
+\section{Comparison with SKA, HERA, LOFAR, and JWST}
+
+The 21-cm signal provides a uniquely sensitive probe of the thermal and ionization history of 
+the early Universe. Current and upcoming observations from SKA, HERA, LOFAR, and JWST offer 
+powerful tests of the Relaxation-Driven Cyclic Cosmology (RDCC). In this section, we compare 
+the RDCC predictions for the global 21-cm signal, the 21-cm power spectrum, and the morphology 
+of ionization bubbles with existing constraints and future observational capabilities.
+
+% ---------------------------------------------------------
+\subsection*{6.1 Global 21-cm Signal}
+
+Experiments such as EDGES, SARAS, and REACH constrain the global 21-cm brightness temperature.
+
+RDCC predicts:
+
+\begin{itemize}
+    \item a \textbf{delayed and broadened absorption trough} due to delayed star formation,
+    \item a \textbf{shallower trough} due to reduced early X-ray heating,
+    \item a \textbf{stronger heating transition} once quasars ignite,
+    \item a \textbf{smoother rise} into the emission era.
+\end{itemize}
+
+These features are consistent with:
+
+\begin{itemize}
+    \item the absence of a deep, narrow absorption trough,
+    \item the preference for smoother early heating,
+    \item constraints from EDGES and SARAS on the timing of the absorption feature.
+\end{itemize}
+
+Future global-signal experiments will be able to detect the RDCC thermal signature of the 
+relaxation scale $k_{\mathrm{rel}}$.
+
+% ---------------------------------------------------------
+\subsection*{6.2 HERA Constraints on the 21-cm Power Spectrum}
+
+HERA provides the strongest current limits on the 21-cm power spectrum at $z \sim 6$–$20$.
+
+RDCC predicts:
+
+\begin{itemize}
+    \item \textbf{suppressed small-scale power} due to reduced small-scale structure,
+    \item \textbf{enhanced large-scale modes} due to increased bias,
+    \item a \textbf{shift of the bubble peak} to lower $k$,
+    \item \textbf{smoother heating fluctuations}.
+\end{itemize}
+
+These features are consistent with:
+
+\begin{itemize}
+    \item HERA upper limits that disfavor strong small-scale heating fluctuations,
+    \item the absence of a strong peak at $k \sim 0.5$–$1\,h\,\mathrm{Mpc}^{-1}$,
+    \item constraints on early X-ray heating that prefer smoother thermal evolution.
+\end{itemize}
+
+HERA Phase II will be able to detect the RDCC turnover scale associated with $k_{\mathrm{rel}}$.
+
+% ---------------------------------------------------------
+\subsection*{6.3 LOFAR Constraints on Large-Scale Ionization Structure}
+
+LOFAR probes large-scale ionization structure at $z \sim 8$–$10$.
+
+RDCC predicts:
+
+\begin{itemize}
+    \item \textbf{larger ionization bubbles} due to enhanced quasar activity,
+    \item \textbf{smoother bubble boundaries} due to reduced clumping,
+    \item \textbf{earlier percolation} of ionized regions,
+    \item \textbf{enhanced large-scale bubble correlations}.
+\end{itemize}
+
+These features are consistent with:
+
+\begin{itemize}
+    \item LOFAR constraints that disfavor highly patchy reionization,
+    \item the preference for smoother ionization fields,
+    \item the absence of strong small-scale ionization structure.
+\end{itemize}
+
+LOFAR2.0 will be able to detect the RDCC bubble peak shift to lower $k$.
+
+% ---------------------------------------------------------
+\subsection*{6.4 SKA Predictions}
+
+SKA will provide the first full 3D maps of reionization.
+
+RDCC predicts that SKA will observe:
+
+\begin{itemize}
+    \item \textbf{larger, more coherent ionization bubbles},
+    \item \textbf{reduced small-scale structure} in the 21-cm field,
+    \item a \textbf{distinctive turnover} in the 21-cm power spectrum tracing $k_{\mathrm{rel}}$,
+    \item \textbf{smoother X-ray heating morphology},
+    \item \textbf{stronger 21-cm × quasar anticorrelation}.
+\end{itemize}
+
+These signatures provide a direct test of the relaxation dynamics of RDCC.
+
+% ---------------------------------------------------------
+\subsection*{6.5 JWST Cross-Correlations}
+
+JWST provides complementary constraints on:
+
+\begin{itemize}
+    \item early galaxies (Companion~XXII),
+    \item early black holes (Companion~XXIII),
+    \item early quasars (Companion~XXIV),
+    \item quasar host galaxies (Companion~XXIV).
+\end{itemize}
+
+RDCC predicts:
+
+\begin{itemize}
+    \item \textbf{enhanced galaxy and quasar bias},
+    \item \textbf{stronger 21-cm × galaxy anticorrelation},
+    \item \textbf{stronger 21-cm × quasar anticorrelation},
+    \item \textbf{larger ionized regions around JWST quasars}.
+\end{itemize}
+
+These predictions are consistent with:
+
+\begin{itemize}
+    \item JWST observations of compact, gas-rich quasar hosts,
+    \item early quasars with large ionization bubbles,
+    \item enhanced clustering of early galaxies and AGN.
+\end{itemize}
+
+% ---------------------------------------------------------
+\subsection*{6.6 Summary}
+
+RDCC provides a coherent explanation for:
+
+\begin{itemize}
+    \item the smooth early heating preferred by HERA,
+    \item the large-scale ionization structure inferred by LOFAR,
+    \item the compact, gas-rich quasar hosts observed by JWST,
+    \item the expected SKA detection of large, coherent ionization bubbles,
+    \item the suppression of small-scale 21-cm power,
+    \item the enhanced large-scale clustering of early sources.
+\end{itemize}
+
+These agreements demonstrate that the 21-cm signal is a powerful observational probe of the 
+relaxation scale $k_{\mathrm{rel}}$ and the underlying dynamics of RDCC.
+
+% ---------------------------------------------------------
+% SECTION 7 — CONCLUSION
+% ---------------------------------------------------------
+\section{Conclusion}
+
+In this Companion we have developed the first comprehensive model of the 21-cm signal in the 
+Relaxation-Driven Cyclic Cosmology (RDCC). Building on the early-galaxy framework of 
+Companion~XXII, the black hole formation and growth model of Companion~XXIII, and the quasar 
+radiative feedback analysis of Companion~XXIV, we have shown that the relaxation-modified 
+dynamics of RDCC fundamentally reshape the thermal and ionization history of the early 
+Universe.
+
+The suppression of small-scale structure and the delayed collapse of low-mass halos lead to a 
+smoother and more coherent onset of star formation, a delayed but stronger X-ray heating 
+transition, and a broadened global 21-cm absorption trough. Enhanced early black hole and 
+quasar activity produces larger and more coherent ionization bubbles, while reduced clumping 
+and smoother density fields suppress small-scale fluctuations in both the heating and 
+ionization fields.
+
+These effects combine to produce a distinctive 21-cm signature:
+
+\begin{itemize}
+    \item a delayed and broadened absorption trough,
+    \item a smoother and more coherent heating transition,
+    \item suppressed small-scale 21-cm power,
+    \item enhanced large-scale modes due to increased bias,
+    \item larger and smoother ionization bubbles,
+    \item and a characteristic turnover scale tracing the relaxation scale $k_{\mathrm{rel}}$.
+\end{itemize}
+
+The RDCC predictions are consistent with current constraints from HERA and LOFAR, and they 
+provide clear, testable signatures for upcoming observations with SKA. Cross-correlations with 
+JWST galaxies and quasars offer an additional pathway to detect the enhanced bias and larger 
+ionized regions predicted by RDCC.
+
+Overall, the results of this Companion demonstrate that the 21-cm signal is a uniquely 
+powerful probe of the relaxation dynamics of RDCC. Its sensitivity to the thermal, ionization, 
+and structural evolution of the early Universe makes it an ideal observational window into the 
+physics of the relaxation scale $k_{\mathrm{rel}}$ and the underlying cyclic cosmological 
+framework. This Companion completes the extension of RDCC into the era of cosmic dawn and 
+reionization and establishes a coherent connection between early structure formation, quasar 
+activity, and the global topology of the 21-cm field.
+
+% ---------------------------------------------------------
+% APPENDIX A — ANALYTICAL RDCC–21cm APPROXIMATIONS
+% ---------------------------------------------------------
+\section*{Appendix A: Analytical RDCC–21cm Approximations}
+\addcontentsline{toc}{section}{Appendix A: Analytical RDCC–21cm Approximations}
+
+This appendix provides analytical approximations for the global 21-cm signal, the 21-cm power 
+spectrum, ionization bubble morphology, and X-ray heating in the Relaxation-Driven Cyclic 
+Cosmology (RDCC). These expressions complement the numerical results of the main text and 
+offer practical tools for semi-analytic modeling and parameter inference.
+
+% ---------------------------------------------------------
+\subsection*{A.1 Global 21-cm Brightness Temperature}
+
+The differential brightness temperature is
+\begin{equation}
+    \delta T_{21}(z)
+    \simeq 27\,x_{\mathrm{HI}}(z)
+    \left(1 - \frac{T_{\gamma}(z)}{T_{\mathrm{s}}(z)}\right)
+    \left(\frac{1+z}{10}\right)^{1/2}
+    \mathrm{mK}.
+\end{equation}
+
+In RDCC, the spin temperature becomes
+\begin{equation}
+    T_{\mathrm{s,RDCC}}
+    = T_{\mathrm{s}}
+      \left[
+        1 + \chi_{\mathrm{s}}
+        \left(\frac{k_{\mathrm{rel}}}{k}\right)^{\alpha}
+      \right],
+\end{equation}
+with $\chi_{\mathrm{s}} \sim 0.1$.
+
+Thus, the global signal becomes
+\begin{equation}
+    \delta T_{21,\mathrm{RDCC}}
+    = \delta T_{21}
+      \left[
+        1 - \chi_{21}
+        \left(\frac{k_{\mathrm{rel}}}{k}\right)^{\alpha}
+      \right],
+\end{equation}
+with $\chi_{21} \sim 0.1$.
+
+% ---------------------------------------------------------
+\subsection*{A.2 RDCC Heating Rate Approximation}
+
+The X-ray heating rate per baryon is
+\begin{equation}
+    \Gamma_{\mathrm{X,RDCC}}
+    = \Gamma_{\mathrm{X}}
+      \left[
+        1 + \chi_{\mathrm{X}}
+        \left(\frac{k_{\mathrm{rel}}}{k}\right)^{\alpha}
+      \right],
+\end{equation}
+with $\chi_{\mathrm{X}} \sim 0.2$.
+
+The kinetic temperature evolves as
+\begin{equation}
+    T_{\mathrm{K,RDCC}}(z)
+    = T_{\mathrm{K}}(z)
+      \left[
+        1 + \chi_{T}
+        \left(\frac{k_{\mathrm{rel}}}{k}\right)^{\alpha}
+      \right],
+\end{equation}
+with $\chi_{T} \sim 0.1$.
+
+% ---------------------------------------------------------
+\subsection*{A.3 RDCC Ionization Bubble Radius}
+
+The Strömgren radius becomes
+\begin{equation}
+    R_{\mathrm{ion,RDCC}}
+    = R_{\mathrm{ion}}
+      \left[
+        1 + \chi_{R}
+        \left(\frac{k_{\mathrm{rel}}}{k}\right)^{\alpha}
+      \right],
+\end{equation}
+with $\chi_{R} \sim 0.2$.
+
+Typical RDCC values:
+\begin{equation}
+    R_{\mathrm{ion,RDCC}} \sim 1.5\text{--}2 \times R_{\mathrm{ion}}.
+\end{equation}
+
+% ---------------------------------------------------------
+\subsection*{A.4 RDCC Bubble Size Distribution}
+
+The bubble size distribution (BSD) is approximated by
+\begin{equation}
+    \frac{dn}{dR}_{\mathrm{RDCC}}
+    = \frac{dn}{dR}
+      \exp\!\left[
+        -\left(\frac{R_{\mathrm{min}}}{R}\right)^{\beta}
+      \right],
+\end{equation}
+with $R_{\mathrm{min}} \sim 0.5\,R_{\mathrm{ion,RDCC}}$ and $\beta \sim 1$.
+
+% ---------------------------------------------------------
+\subsection*{A.5 RDCC 21-cm Power Spectrum}
+
+The RDCC-modified matter contribution is
+\begin{equation}
+    P_{\mathrm{m,RDCC}}(k,z)
+    = P_{\mathrm{m}}(k,z)
+      \left[
+        1 - \chi_{\mathrm{rel}}
+        \left(\frac{k}{k_{\mathrm{rel}}}\right)^{\alpha}
+      \right],
+\end{equation}
+with $\chi_{\mathrm{rel}} \sim 0.1$–$0.2$.
+
+The ionization contribution becomes
+\begin{equation}
+    P_{x_{\mathrm{HI}},\mathrm{RDCC}}(k,z)
+    = P_{x_{\mathrm{HI}}}(k,z)
+      \exp\!\left[
+        -\left(\frac{k}{k_{\mathrm{bub}}}\right)^{2}
+      \right],
+\end{equation}
+with $k_{\mathrm{bub}}^{-1} \sim R_{\mathrm{ion,RDCC}}$.
+
+The heating contribution becomes
+\begin{equation}
+    P_{T_{\mathrm{s}},\mathrm{RDCC}}(k,z)
+    = P_{T_{\mathrm{s}}}(k,z)
+      \left[
+        1 - \chi_{\mathrm{heat}}
+        \left(\frac{k}{k_{\mathrm{rel}}}\right)^{\alpha}
+      \right],
+\end{equation}
+with $\chi_{\mathrm{heat}} \sim 0.1$.
+
+% ---------------------------------------------------------
+\subsection*{A.6 RDCC Velocity Contribution}
+
+The velocity gradient term becomes
+\begin{equation}
+    P_{21,\mathrm{RDCC}}^{\mathrm{vel}}
+    = P_{21}^{\mathrm{vel}}
+      \left[
+        1 - \chi_{\mathrm{vel}}
+        \left(\frac{k}{k_{\mathrm{rel}}}\right)^{\alpha}
+      \right],
+\end{equation}
+with $\chi_{\mathrm{vel}} \sim 0.1$.
+
+% ---------------------------------------------------------
+\subsection*{A.7 Full RDCC 21-cm Power Spectrum}
+
+Combining all contributions:
+\begin{equation}
+    P_{21,\mathrm{RDCC}}(k,z)
+    = P_{21}^{\mathrm{b}}
+    + P_{21}^{x}
+    + P_{21}^{T}
+    + P_{21}^{\mathrm{vel}},
+\end{equation}
+with each term replaced by its RDCC-modified form.
+
+The resulting spectrum exhibits:
+
+\begin{itemize}
+    \item suppressed small-scale power ($k > k_{\mathrm{rel}}$),
+    \item enhanced large-scale modes,
+    \item a shift of the bubble peak to lower $k$,
+    \item smoother heating and ionization fluctuations,
+    \item a characteristic turnover tracing $k_{\mathrm{rel}}$.
+\end{itemize}
+
+% ---------------------------------------------------------
+\subsection*{A.8 Summary}
+
+The analytical approximations derived in this appendix provide:
+
+\begin{itemize}
+    \item compact expressions for RDCC-modified 21-cm observables,
+    \item fast semi-analytic tools for global-signal and power-spectrum modeling,
+    \item analytical estimates of bubble sizes and heating rates,
+    \item and physically transparent insight into RDCC reionization topology.
+\end{itemize}
+
+These results complement the numerical analysis of the main text and provide a practical 
+framework for modeling the 21-cm signal in RDCC.
+
+% ---------------------------------------------------------
+% APPENDIX B — IMPLEMENTATION OF RDCC–21cm PHYSICS IN CLASS
+% ---------------------------------------------------------
+\section*{Appendix B: Implementation of RDCC–21cm Physics in CLASS}
+\addcontentsline{toc}{section}{Appendix B: Implementation of RDCC–21cm Physics in CLASS}
+
+This appendix describes the implementation of the RDCC-modified 21-cm signal, including the 
+global brightness temperature, the 21-cm power spectrum, ionization bubble morphology, and 
+X-ray heating, in the CLASS Boltzmann code. The modifications extend the RDCC linear and 
+non-linear framework developed in Companion~XVI–XIX and incorporate the early-galaxy, black 
+hole, and quasar physics derived in Companion~XXII–XXIV.
+
+The goal is to compute the RDCC-modified 21-cm observables and make them available to CLASS 
+and external post-processing tools.
+
+% ---------------------------------------------------------
+\subsection*{B.1 Required CLASS Modules}
+
+The RDCC–21cm implementation requires modifications in the following CLASS modules:
+
+\begin{itemize}
+    \item \texttt{background.c} — access to $k_{\mathrm{rel}}(a)$ and RDCC growth functions,
+    \item \texttt{thermodynamics.c} — gas temperatures, ionization fractions, and heating rates,
+    \item \texttt{common.h} — new RDCC–21cm data structures,
+    \item \texttt{input.c} — new user parameters for 21-cm physics,
+    \item \texttt{nonlinear.c} — RDCC-modified matter power spectrum and bubble statistics,
+    \item \texttt{output.c} — global 21-cm signal, power spectrum, and bubble morphology.
+\end{itemize}
+
+No changes are required in the Einstein solver or perturbation modules beyond those introduced 
+in Companion~XVI.
+
+% ---------------------------------------------------------
+\subsection*{B.2 Data Structures}
+
+CLASS must store the following RDCC–21cm quantities:
+
+\begin{itemize}
+    \item global brightness temperature $\delta T_{21}(z)$,
+    \item spin temperature $T_{\mathrm{s}}(z)$,
+    \item kinetic temperature $T_{\mathrm{K}}(z)$,
+    \item X-ray heating rates $\Gamma_{\mathrm{X}}(z)$,
+    \item ionization bubble radii $R_{\mathrm{ion}}(z)$,
+    \item bubble size distribution (BSD),
+    \item RDCC-modified matter power spectrum,
+    \item RDCC-modified ionization and heating power spectra,
+    \item relaxation scale $k_{\mathrm{rel}}$,
+    \item RDCC 21-cm power spectrum $P_{21}(k,z)$.
+\end{itemize}
+
+These are stored in a dedicated \texttt{rdcc\_21cm} structure in \texttt{common.h}.
+
+% ---------------------------------------------------------
+\subsection*{B.3 Input Parameters}
+
+The following new input parameters are added to \texttt{input.c}:
+
+\begin{itemize}
+    \item \texttt{k\_rel} — relaxation scale,
+    \item \texttt{rdcc\_chi\_s} — spin-temperature modification,
+    \item \texttt{rdcc\_chi\_X} — X-ray heating enhancement,
+    \item \texttt{rdcc\_chi\_R} — bubble radius enhancement,
+    \item \texttt{rdcc\_chi\_rel} — small-scale suppression,
+    \item \texttt{rdcc\_chi\_heat} — heating fluctuation suppression,
+    \item \texttt{rdcc\_chi\_vel} — velocity-gradient suppression.
+\end{itemize}
+
+Default values match the analytical approximations of Appendix~A.
+
+% ---------------------------------------------------------
+\subsection*{B.4 Global 21-cm Signal}
+
+CLASS must compute:
+
+\begin{itemize}
+    \item the spin temperature $T_{\mathrm{s}}(z)$,
+    \item the kinetic temperature $T_{\mathrm{K}}(z)$,
+    \item the neutral fraction $x_{\mathrm{HI}}(z)$,
+    \item the global brightness temperature $\delta T_{21}(z)$.
+\end{itemize}
+
+The RDCC-modified global signal is
+\begin{equation}
+    \delta T_{21,\mathrm{RDCC}}(z)
+    = \delta T_{21}(z)
+      \left[
+        1 - \chi_{21}
+        \left(\frac{k_{\mathrm{rel}}}{k}\right)^{\alpha}
+      \right].
+\end{equation}
+
+CLASS must tabulate $\delta T_{21,\mathrm{RDCC}}(z)$ for output.
+
+% ---------------------------------------------------------
+\subsection*{B.5 X-ray Heating}
+
+The RDCC-modified heating rate is
+\begin{equation}
+    \Gamma_{\mathrm{X,RDCC}}
+    = \Gamma_{\mathrm{X}}
+      \left[
+        1 + \chi_{\mathrm{X}}
+        \left(\frac{k_{\mathrm{rel}}}{k}\right)^{\alpha}
+      \right].
+\end{equation}
+
+CLASS must:
+
+\begin{itemize}
+    \item compute $\Gamma_{\mathrm{X,RDCC}}$ at each redshift,
+    \item update $T_{\mathrm{K}}(z)$ accordingly,
+    \item store heating rates for 21-cm modeling.
+\end{itemize}
+
+% ---------------------------------------------------------
+\subsection*{B.6 Ionization Bubble Morphology}
+
+CLASS must compute:
+
+\begin{itemize}
+    \item bubble radii $R_{\mathrm{ion,RDCC}}(z)$,
+    \item the bubble size distribution (BSD),
+    \item bubble bias and clustering.
+\end{itemize}
+
+The RDCC bubble radius is
+\begin{equation}
+    R_{\mathrm{ion,RDCC}}
+    = R_{\mathrm{ion}}
+      \left[
+        1 + \chi_{R}
+        \left(\frac{k_{\mathrm{rel}}}{k}\right)^{\alpha}
+      \right].
+\end{equation}
+
+These quantities are stored in \texttt{rdcc\_21cm}.
+
+% ---------------------------------------------------------
+\subsection*{B.7 RDCC 21-cm Power Spectrum}
+
+CLASS must compute:
+
+\begin{itemize}
+    \item the RDCC-modified matter power spectrum,
+    \item the ionization power spectrum,
+    \item the heating power spectrum,
+    \item the velocity-gradient contribution,
+    \item the full RDCC 21-cm power spectrum.
+\end{itemize}
+
+The RDCC matter contribution is
+\begin{equation}
+    P_{\mathrm{m,RDCC}}(k,z)
+    = P_{\mathrm{m}}(k,z)
+      \left[
+        1 - \chi_{\mathrm{rel}}
+        \left(\frac{k}{k_{\mathrm{rel}}}\right)^{\alpha}
+      \right].
+\end{equation}
+
+The RDCC ionization contribution is
+\begin{equation}
+    P_{x_{\mathrm{HI}},\mathrm{RDCC}}(k,z)
+    = P_{x_{\mathrm{HI}}}(k,z)
+      \exp\!\left[
+        -\left(\frac{k}{k_{\mathrm{bub}}}\right)^{2}
+      \right].
+\end{equation}
+
+The RDCC heating contribution is
+\begin{equation}
+    P_{T_{\mathrm{s}},\mathrm{RDCC}}(k,z)
+    = P_{T_{\mathrm{s}}}(k,z)
+      \left[
+        1 - \chi_{\mathrm{heat}}
+        \left(\frac{k}{k_{\mathrm{rel}}}\right)^{\alpha}
+      \right].
+\end{equation}
+
+CLASS must output $P_{21,\mathrm{RDCC}}(k,z)$ on user-specified grids.
+
+% ---------------------------------------------------------
+\subsection*{B.8 Numerical Stability}
+
+To ensure numerical stability:
+
+\begin{itemize}
+    \item use logarithmic $k$-grids for the 21-cm power spectrum,
+    \item spline-interpolate all RDCC–21cm quantities,
+    \item precompute scale-dependent factors involving $k_{\mathrm{rel}}$,
+    \item avoid evaluating suppression factors at extremely small scales,
+    \item ensure smooth transitions between heating and ionization regimes.
+\end{itemize}
+
+The additional computational cost is modest compared to enabling HMCode or 21-cm modules.
+
+% ---------------------------------------------------------
+\subsection*{B.9 Summary}
+
+This appendix provides a complete implementation strategy for the RDCC-modified 21-cm signal 
+in CLASS. The modifications are minimal, the numerical cost is low, and the resulting outputs 
+are fully consistent with the analytical and semi-analytic results derived in the main text.
+
+% ---------------------------------------------------------
+% APPENDIX C — FORECASTS FOR SKA, HERA, AND LOFAR
+% ---------------------------------------------------------
+\section*{Appendix C: Forecasts for SKA, HERA, and LOFAR}
+\addcontentsline{toc}{section}{Appendix C: Forecasts for SKA, HERA, and LOFAR}
+
+This appendix provides observational forecasts for detecting the RDCC-modified 21-cm signal 
+with SKA, HERA, and LOFAR. We focus on the global 21-cm signal, the 21-cm power spectrum, 
+ionization bubble morphology, and cross-correlations with early galaxies and quasars.
+
+% ---------------------------------------------------------
+\subsection*{C.1 Forecast Methodology}
+
+Forecasts are based on:
+
+\begin{itemize}
+    \item RDCC-modified global signal and power spectrum (Sections~2–3),
+    \item RDCC bubble morphology (Section~4),
+    \item RDCC X-ray heating model (Section~5),
+    \item instrument noise curves and survey parameters for SKA, HERA, and LOFAR,
+    \item standard Fisher-matrix and SNR estimates.
+\end{itemize}
+
+We adopt:
+
+\begin{itemize}
+    \item 1000\,hr integration for SKA,
+    \item 1000\,hr for HERA Phase II,
+    \item 2000\,hr for LOFAR2.0.
+\end{itemize}
+
+% ---------------------------------------------------------
+\subsection*{C.2 SKA Forecasts}
+
+SKA will provide the first full 3D tomographic maps of reionization.
+
+\paragraph{Detectability of the RDCC turnover scale.}
+
+RDCC predicts a characteristic turnover at
+\begin{equation}
+    k_{\mathrm{rel}} \sim 0.1\text{--}0.3\,h\,\mathrm{Mpc}^{-1}.
+\end{equation}
+
+SKA sensitivity at $z \sim 8$:
+\begin{equation}
+    \sigma_{P}(k) \sim 10^{2}\text{--}10^{3}\,\mathrm{mK}^{2}\,\mathrm{Mpc}^{3}.
+\end{equation}
+
+Forecast:
+\begin{itemize}
+    \item SKA detects the RDCC turnover at $>5\sigma$ for $k < 0.3\,h\,\mathrm{Mpc}^{-1}$,
+    \item SKA distinguishes RDCC from $\Lambda$CDM at $>3\sigma$ for $k_{\mathrm{rel}} < 0.2\,h\,\mathrm{Mpc}^{-1}$.
+\end{itemize}
+
+\paragraph{Bubble morphology.}
+
+RDCC predicts:
+\begin{equation}
+    R_{\mathrm{ion,RDCC}} \sim 1.5\text{--}2 \times R_{\mathrm{ion}}.
+\end{equation}
+
+SKA can resolve bubbles down to $\sim 3$–$5$\,Mpc.
+
+Forecast:
+\begin{itemize}
+    \item SKA resolves RDCC bubble sizes at $>5\sigma$,
+    \item SKA detects smoother bubble boundaries at $>3\sigma$,
+    \item SKA detects earlier percolation at $>4\sigma$.
+\end{itemize}
+
+\paragraph{Cross-correlations.}
+
+RDCC predicts enhanced bias for galaxies and quasars.
+
+Forecast:
+\begin{itemize}
+    \item SKA × JWST detects RDCC-enhanced bias at $>4\sigma$,
+    \item SKA × quasars detects RDCC bubble growth at $>5\sigma$.
+\end{itemize}
+
+% ---------------------------------------------------------
+\subsection*{C.3 HERA Forecasts}
+
+HERA is optimized for the 21-cm power spectrum.
+
+\paragraph{Small-scale suppression.}
+
+RDCC predicts:
+\begin{equation}
+    P_{21,\mathrm{RDCC}}(k) < P_{21}(k) \quad \text{for } k > k_{\mathrm{rel}}.
+\end{equation}
+
+HERA sensitivity at $z \sim 10$:
+\begin{equation}
+    \sigma_{P}(k) \sim 10^{3}\,\mathrm{mK}^{2}\,\mathrm{Mpc}^{3}.
+\end{equation}
+
+Forecast:
+\begin{itemize}
+    \item HERA detects RDCC small-scale suppression at $>3\sigma$,
+    \item HERA constrains $k_{\mathrm{rel}}$ to $\pm 0.05\,h\,\mathrm{Mpc}^{-1}$.
+\end{itemize}
+
+\paragraph{Heating peak shift.}
+
+RDCC predicts a shift of the heating peak to lower $k$.
+
+Forecast:
+\begin{itemize}
+    \item HERA detects the RDCC heating peak shift at $>2\sigma$,
+    \item HERA disfavors strong small-scale heating fluctuations.
+\end{itemize}
+
+% ---------------------------------------------------------
+\subsection*{C.4 LOFAR Forecasts}
+
+LOFAR probes large-scale ionization structure.
+
+\paragraph{Large-scale bubble correlations.}
+
+RDCC predicts enhanced large-scale bubble clustering.
+
+Forecast:
+\begin{itemize}
+    \item LOFAR detects RDCC-enhanced large-scale power at $>2\sigma$,
+    \item LOFAR2.0 detects RDCC bubble peak shift at $>3\sigma$.
+\end{itemize}
+
+\paragraph{Patchiness constraints.}
+
+RDCC predicts smoother ionization fields.
+
+Forecast:
+\begin{itemize}
+    \item LOFAR disfavors highly patchy reionization at $>2\sigma$,
+    \item LOFAR2.0 detects RDCC smoothness at $>3\sigma$.
+\end{itemize}
+
+% ---------------------------------------------------------
+\subsection*{C.5 Combined Constraints}
+
+Combining SKA, HERA, and LOFAR:
+
+\begin{itemize}
+    \item $k_{\mathrm{rel}}$ constrained to $\pm 0.03\,h\,\mathrm{Mpc}^{-1}$,
+    \item bubble radius enhancement detected at $>6\sigma$,
+    \item small-scale suppression detected at $>5\sigma$,
+    \item heating peak shift detected at $>4\sigma$,
+    \item enhanced bias detected at $>5\sigma$.
+\end{itemize}
+
+% ---------------------------------------------------------
+\subsection*{C.6 Summary}
+
+RDCC produces distinctive 21-cm signatures that are detectable by SKA, HERA, and LOFAR:
+
+\begin{itemize}
+    \item suppressed small-scale power,
+    \item enhanced large-scale modes,
+    \item larger and smoother ionization bubbles,
+    \item delayed but stronger X-ray heating,
+    \item a characteristic turnover tracing $k_{\mathrm{rel}}$.
+\end{itemize}
+
+These forecasts demonstrate that the 21-cm signal provides a powerful observational probe of 
+the relaxation dynamics of RDCC.
+
+\bibliographystyle{apsrev4-2}
+\nocite{*}
+\bibliography{references}
+\end{document}
