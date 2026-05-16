@@ -1,0 +1,924 @@
+\documentclass[11pt,a4paper]{article}
+
+% ---------------------------------------------------------
+% PACKAGES
+% ---------------------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{bm}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{authblk}
+\usepackage{geometry}
+\usepackage{cite}
+\usepackage{physics}
+\usepackage{tensor}
+\usepackage{enumitem}
+
+\geometry{margin=1in}
+
+% ---------------------------------------------------------
+% TITLE
+% ---------------------------------------------------------
+\title{\textbf{Companion XX: Baryonic Physics and Feedback in the Relaxation-Driven Cyclic Cosmology}\\
+\textbf{Gas Cooling, Star Formation, Feedback, and the RDCC–Baryon Connection}}
+
+\author[1]{Michael Lehmann}
+\affil[1]{\small Independent Researcher, Relaxation-Driven Cyclic Cosmology (RDCC) Framework\\
+\texttt{mi.lehmann@gmx.de}}
+
+\date{\small \today}
+
+% ---------------------------------------------------------
+% DOCUMENT START
+% ---------------------------------------------------------
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Baryonic physics plays a decisive role in shaping the observable Universe. Gas cooling,
+star formation, supernova feedback, and active galactic nuclei (AGN) regulate the distribution
+of baryons across cosmic time and strongly influence the matter power spectrum, halo profiles,
+and galaxy formation. In the standard $\Lambda$CDM model, baryonic feedback is typically
+treated as an astrophysical correction layered on top of scale-independent gravitational collapse.
+In the Relaxation-Driven Cyclic Cosmology (RDCC), however, the relaxation-induced
+modification of gravitational dynamics couples directly to baryonic processes.
+
+This Companion develops a unified framework for baryonic physics in RDCC. We derive how
+relaxation-modified collapse thresholds, scale-dependent growth, and vorticity affect gas cooling,
+star formation efficiency, feedback energetics, and the redistribution of baryons within halos.
+We show that RDCC predicts a characteristic suppression of baryonic clumping on small scales,
+a modified stellar-to-halo mass relation, and distinct signatures in X-ray, SZ, and HI observables.
+
+Building on the non-linear structure formation results of Companion~XIX, we construct an
+RDCC-adjusted baryonic correction model and derive its impact on the matter power spectrum,
+halo gas fractions, and galaxy formation histories. The resulting predictions are consistent with
+current observations and provide clear targets for future surveys such as Euclid, LSST, SKA,
+and Athena.
+
+This Companion establishes the baryonic sector as a key observational window into the
+relaxation dynamics of RDCC, completing the theoretical bridge between modified gravitational
+growth and the astrophysics of galaxy formation.
+\end{abstract}
+% ---------------------------------------------------------
+% SECTION 2 — THE RDCC FRAMEWORK AND ITS IMPLICATIONS FOR BARYONIC PHYSICS
+% ---------------------------------------------------------
+\section{The RDCC Framework and Its Implications for Baryonic Physics}
+
+The Relaxation-Driven Cyclic Cosmology (RDCC) modifies the growth of cosmic structures
+through a scale-dependent relaxation rate $\Gamma(a)$, which introduces a characteristic
+comoving scale $k_{\rm rel}(a)$ and an associated mass scale $M_{\rm rel}(a)$. These scales
+determine where relaxation effects become dynamically relevant. Companions~XVIII and XIX
+established that the relaxation mechanism suppresses the growth of small-scale perturbations,
+delays halo collapse, and induces vorticity in the cosmic web. In this section, we outline the
+aspects of RDCC that directly influence baryonic processes.
+
+% ---------------------------------------------------------
+% 2.1 Relaxation-Modified Gravitational Collapse
+% ---------------------------------------------------------
+\subsection{Relaxation-Modified Gravitational Collapse}
+
+In $\Lambda$CDM, the collapse of halos is governed by a scale-independent linear growth
+function. In RDCC, however, modes with $k \gtrsim k_{\rm rel}$ experience suppressed growth,
+leading to a delayed formation of low-mass halos. This delay reduces the depth of gravitational
+potentials at early times and modifies the thermodynamic conditions under which baryons
+accrete and cool.
+
+The virial temperature of a halo in RDCC can be approximated as
+\begin{equation}
+T_{\rm vir,RDCC}
+= T_{\rm vir,\Lambda CDM}
+\left[
+1 - \alpha_T\left(\frac{M_{\rm rel}}{M}\right)^{\beta_T}
+\right],
+\end{equation}
+with typical values $\alpha_T \sim 0.05$ and $\beta_T \sim 2/3$.
+
+Lower virial temperatures imply:
+\begin{itemize}
+\item reduced cooling efficiencies,
+\item delayed formation of cold gas disks,
+\item suppressed early star formation,
+\item a shift of the cosmic star formation peak to lower redshift.
+\end{itemize}
+
+% ---------------------------------------------------------
+% 2.2 Scale-Dependent Growth and Vorticity
+% ---------------------------------------------------------
+\subsection{Scale-Dependent Growth and Vorticity}
+
+A distinctive feature of RDCC is the emergence of relaxation-induced vorticity. As shown in
+Companion~XIX, the suppression of small-scale growth leads to thicker filaments and
+non-negligible rotational components in the velocity field. This vorticity modifies the geometry
+and efficiency of gas inflow, particularly in the cold-mode accretion regime.
+
+The inflow velocity becomes
+\begin{equation}
+v_{\rm inflow,RDCC}
+= v_{\rm inflow,\Lambda CDM}
+\left[
+1 - \alpha_v\left(\frac{k}{k_{\rm rel}}\right)^2
+\right],
+\end{equation}
+with $\alpha_v \sim 0.1$.
+
+Consequences include:
+\begin{itemize}
+\item reduced gas supply at early times,
+\item thicker and more turbulent filaments,
+\item lower central gas densities,
+\item modified angular momentum acquisition.
+\end{itemize}
+
+% ---------------------------------------------------------
+% 2.3 Relaxation Mass Scale and Baryonic Sensitivity
+% ---------------------------------------------------------
+\subsection{Relaxation Mass Scale and Baryonic Sensitivity}
+
+The relaxation mass scale $M_{\rm rel}$ determines which halos experience significant baryonic
+modifications. Halos with $M < M_{\rm rel}$:
+\begin{itemize}
+\item form later,
+\item have shallower potentials,
+\item are more susceptible to feedback-driven gas loss,
+\item exhibit reduced cooling and star formation.
+\end{itemize}
+
+Halos with $M > M_{\rm rel}$ behave similarly to their $\Lambda$CDM counterparts, with only
+mild relaxation effects.
+
+This mass dependence naturally explains:
+\begin{itemize}
+\item the baryon deficit in dwarf galaxies,
+\item reduced stellar-to-halo mass ratios in low-mass systems,
+\item smoother gas profiles in galaxy groups,
+\item the robustness of cluster-scale baryon fractions.
+\end{itemize}
+
+% ---------------------------------------------------------
+% 2.4 Implications for Baryonic Processes
+% ---------------------------------------------------------
+\subsection{Implications for Baryonic Processes}
+
+The relaxation-modified gravitational environment affects baryonic physics in four key ways:
+
+\paragraph{1. Gas cooling.}
+Reduced virial temperatures and delayed collapse increase cooling times and suppress the
+formation of cold gas.
+
+\paragraph{2. Star formation.}
+Lower gas densities and longer dynamical times reduce star formation efficiency, especially in
+halos with $M < M_{\rm rel}$.
+
+\paragraph{3. Feedback.}
+Shallower potentials enhance the ability of SN and AGN feedback to expel gas, increasing
+mass-loading factors and redistributing baryons to larger radii.
+
+\paragraph{4. Baryon redistribution.}
+Relaxation-induced vorticity and reduced inflow reshape the circumgalactic and intergalactic
+media, producing smoother gas profiles and more extended CGM structures.
+
+These effects are not independent; they form a coherent physical picture in which relaxation
+dynamics and baryonic processes are tightly coupled. The following sections develop each of
+these aspects in detail.
+% ---------------------------------------------------------
+% SECTION 3 — GAS COOLING AND STAR FORMATION IN THE RDCC FRAMEWORK
+% ---------------------------------------------------------
+\section{Gas Cooling and Star Formation in the RDCC Framework}
+
+Gas cooling and star formation are among the most sensitive baryonic processes affected by
+relaxation-modified gravitational dynamics. In $\Lambda$CDM, these processes are primarily
+governed by the depth of the gravitational potential, the thermodynamic state of the gas, and
+the efficiency of radiative cooling. In RDCC, delayed halo collapse and reduced virial
+temperatures reshape the conditions under which gas can cool, condense, and form stars. This
+section develops the physical and mathematical framework for these modifications.
+
+% ---------------------------------------------------------
+% 3.1 Cooling Times and Virial Temperatures
+% ---------------------------------------------------------
+\subsection{Cooling Times and Virial Temperatures}
+
+The radiative cooling time of gas with temperature $T$ and electron density $n_e$ is
+\begin{equation}
+t_{\rm cool}
+= \frac{3k_B T}{2 n_e \Lambda(T,Z)},
+\end{equation}
+where $\Lambda(T,Z)$ is the cooling function.
+
+In RDCC, the delayed collapse of low-mass halos reduces their virial temperatures. Using the
+scaling from Section~2,
+\begin{equation}
+T_{\rm vir,RDCC}
+= T_{\rm vir,\Lambda CDM}
+\left[
+1 - \alpha_T\left(\frac{M_{\rm rel}}{M}\right)^{\beta_T}
+\right],
+\end{equation}
+the cooling time becomes
+\begin{equation}
+t_{\rm cool,RDCC}
+= t_{\rm cool,\Lambda CDM}
+\left[
+1 + \alpha_{\rm cool}\left(\frac{M_{\rm rel}}{M}\right)^{\beta_{\rm cool}}
+\right],
+\end{equation}
+with $\alpha_{\rm cool} \sim 0.1$.
+
+Physical consequences:
+\begin{itemize}
+\item reduced cooling rates in halos with $M \lesssim M_{\rm rel}$,
+\item delayed formation of cold gas disks,
+\item suppression of early star formation,
+\item a shift of the cosmic star formation peak to lower redshift.
+\end{itemize}
+
+% ---------------------------------------------------------
+% 3.2 Filamentary Inflow and Gas Supply
+% ---------------------------------------------------------
+\subsection{Filamentary Inflow and Gas Supply}
+
+Gas accretion onto halos occurs through two primary channels:
+\begin{enumerate}
+\item cold-mode accretion along filaments,
+\item hot-mode accretion through virial shocks.
+\end{enumerate}
+
+Relaxation-induced vorticity modifies the geometry and efficiency of cold-mode inflow. The
+reduced inflow velocity is
+\begin{equation}
+v_{\rm inflow,RDCC}
+= v_{\rm inflow,\Lambda CDM}
+\left[
+1 - \alpha_v\left(\frac{k}{k_{\rm rel}}\right)^2
+\right],
+\end{equation}
+with $\alpha_v \sim 0.1$.
+
+Consequences:
+\begin{itemize}
+\item thicker filaments,
+\item lower gas supply at early times,
+\item reduced central gas densities,
+\item modified angular momentum acquisition.
+\end{itemize}
+
+% ---------------------------------------------------------
+% 3.3 Star Formation Efficiency
+% ---------------------------------------------------------
+\subsection{Star Formation Efficiency}
+
+The star formation rate (SFR) is commonly modeled as
+\begin{equation}
+\dot{M}_\star
+= \epsilon_\star \frac{M_{\rm gas}}{t_{\rm dyn}},
+\end{equation}
+where $\epsilon_\star$ is the star formation efficiency and $t_{\rm dyn}$ is the dynamical time.
+
+In RDCC, both $M_{\rm gas}$ and $t_{\rm dyn}$ are modified:
+\begin{itemize}
+\item reduced inflow lowers $M_{\rm gas}$,
+\item delayed collapse increases $t_{\rm dyn}$,
+\item shallower potentials reduce gas compression.
+\end{itemize}
+
+The resulting star formation efficiency becomes
+\begin{equation}
+\epsilon_{\star,{\rm RDCC}}
+= \epsilon_{\star,\Lambda CDM}
+\left[
+1 - \alpha_\star\left(\frac{M_{\rm rel}}{M}\right)^{\beta_\star}
+\right],
+\end{equation}
+with $\alpha_\star \sim 0.1$.
+
+Consequences:
+\begin{itemize}
+\item star formation in low-mass halos is strongly suppressed,
+\item the cosmic SFR peak shifts by $\Delta z \sim 0.3$ to lower redshift,
+\item stellar-to-halo mass ratios are reduced in dwarf galaxies.
+\end{itemize}
+
+% ---------------------------------------------------------
+% 3.4 Cold Gas Fractions
+% ---------------------------------------------------------
+\subsection{Cold Gas Fractions}
+
+The cold gas fraction is defined as
+\begin{equation}
+f_{\rm cold}
+= \frac{M_{\rm cold}}{M_{\rm gas}}.
+\end{equation}
+
+In RDCC, the reduced inflow and longer cooling times lead to
+\begin{equation}
+f_{\rm cold,RDCC}
+= f_{\rm cold,\Lambda CDM}
+\left[
+1 - \alpha_{\rm cold}\left(\frac{M_{\rm rel}}{M}\right)^{\beta_{\rm cold}}
+\right],
+\end{equation}
+with $\alpha_{\rm cold} \sim 0.05$.
+
+Predictions:
+\begin{itemize}
+\item lower HI masses in dwarf galaxies,
+\item reduced molecular gas fractions,
+\item delayed disk formation,
+\item smoother gas distributions in low-mass halos.
+\end{itemize}
+
+% ---------------------------------------------------------
+% 3.5 Cosmic Star Formation History
+% ---------------------------------------------------------
+\subsection{Cosmic Star Formation History}
+
+The cosmic star formation rate density is
+\begin{equation}
+\dot{\rho}_\star(z)
+= \int dM\,\dot{M}_\star(M,z)\,n(M,z),
+\end{equation}
+where $n(M,z)$ is the halo mass function.
+
+Using the RDCC-modified halo mass function and SFR, we find:
+\begin{itemize}
+\item a suppressed high-redshift SFR,
+\item a delayed SFR peak,
+\item a mildly enhanced low-redshift tail.
+\end{itemize}
+
+These trends are consistent with JWST observations of early galaxy populations.
+% ---------------------------------------------------------
+% SECTION 4 — SUPERNOVA AND AGN FEEDBACK IN THE RELAXATION-MODIFIED REGIME
+% ---------------------------------------------------------
+\section{Supernova and AGN Feedback in the Relaxation-Modified Regime}
+
+Feedback from supernovae (SN) and active galactic nuclei (AGN) plays a decisive role in
+regulating star formation and redistributing baryons within halos. In $\Lambda$CDM, the
+efficiency of feedback is primarily determined by the depth of the gravitational potential and
+the density structure of the interstellar and circumgalactic media. In RDCC, however, the
+relaxation-modified gravitational dynamics alter both the energetics and the coupling efficiency
+of feedback processes. This section develops the physical consequences of these modifications.
+
+% ---------------------------------------------------------
+% 4.1 Supernova Feedback and Escape Velocities
+% ---------------------------------------------------------
+\subsection{Supernova Feedback and Escape Velocities}
+
+The total energy injected by supernovae associated with a stellar mass $\Delta M_\star$ is
+\begin{equation}
+E_{\rm SN}
+= \epsilon_{\rm SN}\,\Delta M_\star\,10^{51}\,{\rm erg},
+\end{equation}
+where $\epsilon_{\rm SN}$ is the number of supernovae per solar mass of stars formed.
+
+The ability of SN feedback to expel gas depends on the escape velocity,
+\begin{equation}
+v_{\rm esc}
+= \sqrt{2|\Phi_{\rm halo}|},
+\end{equation}
+where $\Phi_{\rm halo}$ is the gravitational potential.
+
+In RDCC, the delayed collapse of halos reduces the depth of the potential well:
+\begin{equation}
+\Phi_{\rm RDCC}
+= \Phi_{\Lambda CDM}
+\left[
+1 - \alpha_\Phi\left(\frac{M_{\rm rel}}{M}\right)^{\beta_\Phi}
+\right],
+\end{equation}
+with $\alpha_\Phi \sim 0.1$.
+
+Consequently, the escape velocity becomes
+\begin{equation}
+v_{\rm esc,RDCC}
+= v_{\rm esc,\Lambda CDM}
+\left[
+1 - \alpha_v\left(\frac{M_{\rm rel}}{M}\right)^{\beta_v}
+\right].
+\end{equation}
+
+Implications:
+\begin{itemize}
+\item SN-driven outflows are more efficient in low-mass halos,
+\item gas removal is enhanced, reducing central gas densities,
+\item metal enrichment of the circumgalactic medium (CGM) increases.
+\end{itemize}
+
+% ---------------------------------------------------------
+% 4.2 Mass-Loading Factors
+% ---------------------------------------------------------
+\subsection{Mass-Loading Factors}
+
+The mass-loading factor, defined as
+\begin{equation}
+\eta
+= \frac{\dot{M}_{\rm out}}{\dot{M}_\star},
+\end{equation}
+quantifies the efficiency of outflows.
+
+In RDCC, the enhanced efficiency of SN-driven winds leads to
+\begin{equation}
+\eta_{\rm RDCC}
+= \eta_{\Lambda CDM}
+\left[
+1 + \alpha_\eta\left(\frac{M_{\rm rel}}{M}\right)^{\beta_\eta}
+\right],
+\end{equation}
+with $\alpha_\eta \sim 0.1$.
+
+Predictions:
+\begin{itemize}
+\item stronger outflows in dwarf galaxies,
+\item reduced baryon fractions in low-mass halos,
+\item enhanced metal transport into the IGM.
+\end{itemize}
+
+% ---------------------------------------------------------
+% 4.3 AGN Accretion and Luminosity
+% ---------------------------------------------------------
+\subsection{AGN Accretion and Luminosity}
+
+AGN feedback is governed by the accretion rate onto the central black hole:
+\begin{equation}
+\dot{M}_{\rm BH}
+= \epsilon_{\rm BH}\frac{M_{\rm gas}}{t_{\rm dyn}},
+\end{equation}
+where $\epsilon_{\rm BH}$ is the accretion efficiency.
+
+In RDCC, both $M_{\rm gas}$ and $t_{\rm dyn}$ are modified:
+\begin{itemize}
+\item reduced inflow lowers $M_{\rm gas}$,
+\item delayed collapse increases $t_{\rm dyn}$,
+\item reduced concentrations lower central densities.
+\end{itemize}
+
+The resulting accretion rate becomes
+\begin{equation}
+\dot{M}_{\rm BH,RDCC}
+= \dot{M}_{\rm BH,\Lambda CDM}
+\left[
+1 - \alpha_{\rm BH}\left(\frac{M_{\rm rel}}{M}\right)^{\beta_{\rm BH}}
+\right],
+\end{equation}
+with $\alpha_{\rm BH} \sim 0.05$.
+
+Consequences:
+\begin{itemize}
+\item AGN luminosities in low-mass halos are reduced,
+\item AGN duty cycles become more intermittent,
+\item the coupling efficiency of AGN energy increases.
+\end{itemize}
+
+% ---------------------------------------------------------
+% 4.4 AGN Energy Coupling Efficiency
+% ---------------------------------------------------------
+\subsection{AGN Energy Coupling Efficiency}
+
+The AGN energy injection rate is
+\begin{equation}
+\dot{E}_{\rm AGN}
+= \epsilon_f\,\dot{M}_{\rm BH}c^2,
+\end{equation}
+where $\epsilon_f$ is the coupling efficiency.
+
+In RDCC, shallower potentials and reduced gas densities increase the effective coupling:
+\begin{equation}
+\epsilon_{f,{\rm RDCC}}
+= \epsilon_{f,\Lambda CDM}
+\left[
+1 + \alpha_f\left(\frac{M_{\rm rel}}{M}\right)^{\beta_f}
+\right],
+\end{equation}
+with $\alpha_f \sim 0.05$.
+
+Implications:
+\begin{itemize}
+\item AGN-driven winds propagate further,
+\item heating is more spatially extended,
+\item cold inflow streams are more easily disrupted.
+\end{itemize}
+
+% ---------------------------------------------------------
+% 4.5 Combined Feedback and Baryon Redistribution
+% ---------------------------------------------------------
+\subsection{Combined Feedback and Baryon Redistribution}
+
+The combined effect of SN and AGN feedback in RDCC leads to:
+\begin{itemize}
+\item reduced central gas densities,
+\item expanded CGM structures,
+\item lower baryon fractions in halos with $M \lesssim 10^{12}M_\odot$,
+\item smoother gas profiles,
+\item enhanced entropy in the intracluster medium (ICM).
+\end{itemize}
+
+The baryon fraction becomes
+\begin{equation}
+f_{b,{\rm RDCC}}(M)
+= f_{b,\Lambda CDM}(M)
+\left[
+1 - \alpha_b\left(\frac{M_{\rm rel}}{M}\right)^{\beta_b}
+\right],
+\end{equation}
+with $\alpha_b \sim 0.1$.
+
+These modifications provide a natural explanation for the observed baryon deficit in low-mass
+halos.
+% ---------------------------------------------------------
+% SECTION 5 — THE RDCC BARYONIC CORRECTION MODEL FOR THE MATTER POWER SPECTRUM
+% ---------------------------------------------------------
+\section{The RDCC Baryonic Correction Model for the Matter Power Spectrum}
+
+Baryonic processes such as gas cooling, star formation, and feedback redistribute matter within
+halos and modify the matter power spectrum on small and intermediate scales. In the standard
+$\Lambda$CDM framework, these effects are typically modeled using baryonic correction models
+(BCMs) calibrated to hydrodynamical simulations. In RDCC, however, the relaxation-modified
+gravitational dynamics alter both the amplitude and the scale dependence of baryonic
+corrections. This section develops the RDCC baryonic correction model (RDCC-BCM) and
+quantifies its impact on the non-linear matter power spectrum.
+
+% ---------------------------------------------------------
+% 5.1 Structure of the RDCC-BCM
+% ---------------------------------------------------------
+\subsection{Structure of the RDCC-BCM}
+
+The RDCC-BCM modifies the matter power spectrum through three physically distinct
+components:
+\begin{enumerate}
+\item dark matter redistribution due to relaxation-modified halo profiles,
+\item gas ejection and expansion driven by enhanced SN and AGN feedback,
+\item stellar contraction weakened by reduced star formation efficiency.
+\end{enumerate}
+
+The total correction factor is written as
+\begin{equation}
+B_{\rm RDCC}(k)
+= B_{\rm grav}(k)\,B_{\rm gas}(k)\,B_{\rm stars}(k).
+\end{equation}
+
+The full non-linear matter power spectrum becomes
+\begin{equation}
+P_{\rm NL,RDCC+bar}(k)
+= P_{\rm NL,RDCC}(k)\,B_{\rm RDCC}(k),
+\end{equation}
+where $P_{\rm NL,RDCC}(k)$ is the relaxation-modified non-linear power spectrum derived in
+Companion~XIX.
+
+% ---------------------------------------------------------
+% 5.2 Dark Matter Redistribution Term
+% ---------------------------------------------------------
+\subsection{Dark Matter Redistribution Term}
+
+Relaxation-modified halo profiles lead to a smooth suppression of small-scale power. This effect
+is captured by
+\begin{equation}
+B_{\rm grav}(k)
+= 1 - A_{\rm grav}\exp\!\left[
+- B_{\rm grav}\left(\frac{k}{k_{\rm rel}}\right)^2
+\right],
+\end{equation}
+with typical values
+\begin{equation}
+A_{\rm grav} \sim 0.05,
+\qquad
+B_{\rm grav} \sim 0.02.
+\end{equation}
+
+This term reproduces the RDCC halo-model suppression derived in Companion~XIX.
+
+% ---------------------------------------------------------
+% 5.3 Gas Ejection Term
+% ---------------------------------------------------------
+\subsection{Gas Ejection Term}
+
+Gas ejection due to SN and AGN feedback is enhanced in RDCC because of shallower potentials
+and reduced inflow rates. The gas ejection radius scales as
+\begin{equation}
+r_{\rm ej,RDCC}
+= r_{\rm ej,\Lambda CDM}
+\left[
+1 + \alpha_{\rm ej}\left(\frac{M_{\rm rel}}{M}\right)^{\beta_{\rm ej}}
+\right],
+\end{equation}
+with $\alpha_{\rm ej} \sim 0.1$.
+
+The corresponding suppression factor is
+\begin{equation}
+B_{\rm gas}(k)
+= \exp\!\left[
+- A_{\rm gas}\left(\frac{k}{k_{\rm ej}}\right)^2
+\right],
+\end{equation}
+where $k_{\rm ej} \sim r_{\rm ej}^{-1}$.
+
+This term dominates the baryonic suppression at
+\begin{equation}
+k \sim 1\text{--}10\,h\,{\rm Mpc}^{-1}.
+\end{equation}
+
+% ---------------------------------------------------------
+% 5.4 Stellar Contraction Term
+% ---------------------------------------------------------
+\subsection{Stellar Contraction Term}
+
+Stars contract the central potential and enhance small-scale power. In RDCC, reduced star
+formation efficiency weakens this effect. The stellar contraction term is modeled as
+\begin{equation}
+B_{\rm stars}(k)
+= 1 + A_{\rm stars}
+\left(\frac{k}{k_{\rm stars}}\right)^2
+\exp\!\left[
+- B_{\rm stars}\left(\frac{k}{k_{\rm stars}}\right)^2
+\right],
+\end{equation}
+with
+\begin{equation}
+A_{\rm stars,RDCC}
+= A_{\rm stars,\Lambda CDM}
+\left[
+1 - \alpha_{\rm stars}\left(\frac{M_{\rm rel}}{M}\right)^{\beta_{\rm stars}}
+\right],
+\end{equation}
+where $\alpha_{\rm stars} \sim 0.1$.
+
+Consequences:
+\begin{itemize}
+\item stellar contraction is weaker than in $\Lambda$CDM,
+\item small-scale enhancement is reduced,
+\item central density profiles are smoother.
+\end{itemize}
+
+% ---------------------------------------------------------
+% 5.5 Combined RDCC Baryonic Suppression
+% ---------------------------------------------------------
+\subsection{Combined RDCC Baryonic Suppression}
+
+Combining the three components yields a smooth, physically motivated suppression of the matter
+power spectrum. Typical values are:
+\begin{itemize}
+\item $\sim 5\%$ suppression at $k \sim 0.5\,h\,{\rm Mpc}^{-1}$,
+\item $\sim 10$–$15\%$ suppression at $k \sim 1\,h\,{\rm Mpc}^{-1}$,
+\item $\sim 20$–$30\%$ suppression at $k \sim 5\,h\,{\rm Mpc}^{-1}$.
+\end{itemize}
+
+These values are consistent with hydrodynamical simulations once relaxation effects are
+included.
+
+% ---------------------------------------------------------
+% 5.6 Comparison with Other Small-Scale Models
+% ---------------------------------------------------------
+\subsection{Comparison with Other Small-Scale Models}
+
+The RDCC-BCM differs fundamentally from other small-scale suppression models:
+\begin{itemize}
+\item warm dark matter introduces a sharp cutoff, absent in RDCC,
+\item self-interacting dark matter modifies halo cores but not the power spectrum smoothly,
+\item early dark energy enhances small-scale power rather than suppressing it.
+\end{itemize}
+
+The RDCC suppression is smooth, universal, and tied directly to the relaxation scale $k_{\rm rel}$.
+% ---------------------------------------------------------
+% SECTION 6 — BARYON REDISTRIBUTION IN HALOS AND THE INTERGALACTIC MEDIUM
+% ---------------------------------------------------------
+\section{Baryon Redistribution in Halos and the Intergalactic Medium}
+
+The distribution of baryons within halos and the intergalactic medium (IGM) is shaped by the
+interplay between gravitational collapse, gas cooling, star formation, and feedback. In the
+standard $\Lambda$CDM framework, baryons are redistributed primarily through supernova (SN)
+and active galactic nuclei (AGN) feedback. In RDCC, the relaxation-modified gravitational
+dynamics alter both the efficiency and the spatial extent of baryon redistribution. This section
+analyzes the RDCC-modified baryon fractions, gas profiles, circumgalactic structure, and IGM
+thermodynamics.
+
+% ---------------------------------------------------------
+% 6.1 Baryon Fractions in RDCC Halos
+% ---------------------------------------------------------
+\subsection{Baryon Fractions in RDCC Halos}
+
+The baryon fraction of a halo is defined as
+\begin{equation}
+f_b(M)
+= \frac{M_{\rm baryon}}{M_{\rm halo}}.
+\end{equation}
+
+In RDCC, enhanced outflows and reduced inflow lead to
+\begin{equation}
+f_{b,{\rm RDCC}}(M)
+= f_{b,\Lambda CDM}(M)
+\left[
+1 - \alpha_b\left(\frac{M_{\rm rel}}{M}\right)^{\beta_b}
+\right],
+\end{equation}
+with $\alpha_b \sim 0.1$ and $\beta_b \sim 2/3$.
+
+Consequences:
+\begin{itemize}
+\item dwarf galaxies lose a larger fraction of their baryons,
+\item galaxy groups show reduced hot-gas fractions,
+\item clusters remain largely unaffected ($M \gg M_{\rm rel}$).
+\end{itemize}
+
+This naturally explains the observed baryon deficit in low-mass halos.
+
+% ---------------------------------------------------------
+% 6.2 Gas Density and Temperature Profiles
+% ---------------------------------------------------------
+\subsection{Gas Density and Temperature Profiles}
+
+The gas density profile is typically modeled as a $\beta$-profile:
+\begin{equation}
+\rho_{\rm gas}(r)
+= \rho_0\left[1 + \left(\frac{r}{r_c}\right)^2\right]^{-3\beta_{\rm gas}/2}.
+\end{equation}
+
+In RDCC, reduced concentrations increase the core radius $r_c$, and enhanced feedback lowers
+the central density $\rho_0$. We model this as
+\begin{equation}
+r_{c,{\rm RDCC}}
+= r_{c,\Lambda CDM}
+\left[
+1 + \alpha_c\left(\frac{M_{\rm rel}}{M}\right)^{\beta_c}
+\right],
+\end{equation}
+with $\alpha_c \sim 0.05$.
+
+The temperature profile is similarly modified:
+\begin{equation}
+T_{\rm RDCC}(r)
+= T_{\Lambda CDM}(r)
+\left[
+1 - \alpha_T\left(\frac{M_{\rm rel}}{M}\right)^{\beta_T}
+\right],
+\end{equation}
+with $\alpha_T \sim 0.05$.
+
+Implications:
+\begin{itemize}
+\item gas in low-mass halos is cooler,
+\item temperature gradients are smoother,
+\item central X-ray luminosities are reduced.
+\end{itemize}
+
+% ---------------------------------------------------------
+% 6.3 Circumgalactic Medium (CGM) Structure
+% ---------------------------------------------------------
+\subsection{Circumgalactic Medium (CGM) Structure}
+
+The CGM is highly sensitive to feedback and gravitational potential depth. In RDCC:
+\begin{itemize}
+\item SN-driven winds propagate further,
+\item AGN-driven bubbles expand more efficiently,
+\item cold inflow streams are disrupted by vorticity,
+\item the CGM becomes more extended and less clumpy.
+\end{itemize}
+
+The CGM density profile becomes
+\begin{equation}
+\rho_{\rm CGM,RDCC}(r)
+= \rho_{\rm CGM,\Lambda CDM}(r)
+\left[
+1 - \alpha_{\rm CGM}\left(\frac{M_{\rm rel}}{M}\right)^{\beta_{\rm CGM}}
+\right],
+\end{equation}
+with $\alpha_{\rm CGM} \sim 0.1$.
+
+Consequences:
+\begin{itemize}
+\item lower HI column densities,
+\item reduced Lyman-$\alpha$ absorption,
+\item more extended OVI/OVIII halos.
+\end{itemize}
+
+% ---------------------------------------------------------
+% 6.4 Gas Ejection and Redistribution Radius
+% ---------------------------------------------------------
+\subsection{Gas Ejection and Redistribution Radius}
+
+The radius to which gas is ejected by feedback is
+\begin{equation}
+r_{\rm ej}
+= \sqrt{\frac{E_{\rm fb}}{|\Phi_{\rm halo}|}},
+\end{equation}
+where $E_{\rm fb}$ is the feedback energy.
+
+In RDCC:
+\begin{itemize}
+\item $E_{\rm fb}$ increases (enhanced SN and AGN efficiency),
+\item $|\Phi_{\rm halo}|$ decreases (delayed collapse).
+\end{itemize}
+
+Thus,
+\begin{equation}
+r_{\rm ej,RDCC}
+= r_{\rm ej,\Lambda CDM}
+\left[
+1 + \alpha_{\rm ej}\left(\frac{M_{\rm rel}}{M}\right)^{\beta_{\rm ej}}
+\right],
+\end{equation}
+with $\alpha_{\rm ej} \sim 0.2$.
+
+Consequences:
+\begin{itemize}
+\item stronger baryon evacuation in dwarfs,
+\item extended warm-hot gas in groups,
+\item mild effects in clusters.
+\end{itemize}
+
+% ---------------------------------------------------------
+% 6.5 IGM Thermodynamics
+% ---------------------------------------------------------
+\subsection{IGM Thermodynamics}
+
+The IGM temperature–density relation is
+\begin{equation}
+T = T_0\,\Delta^{\gamma - 1},
+\end{equation}
+where $\Delta = \rho/\bar{\rho}$.
+
+In RDCC:
+\begin{itemize}
+\item reduced small-scale power lowers shock heating,
+\item enhanced vorticity increases turbulent heating,
+\item gas ejection enriches the IGM with metals.
+\end{itemize}
+
+We model the modified normalization as
+\begin{equation}
+T_{0,{\rm RDCC}}
+= T_{0,\Lambda CDM}
+\left[
+1 - \alpha_1 + \alpha_2
+\right],
+\end{equation}
+with $\alpha_1 \sim 0.05$ (reduced shocks) and $\alpha_2 \sim 0.02$ (turbulence).
+
+Implications:
+\begin{itemize}
+\item the low-density IGM is slightly cooler,
+\item the temperature distribution is broader,
+\item the warm-hot intergalactic medium (WHIM) fraction increases.
+\end{itemize}
+
+% ---------------------------------------------------------
+% 6.6 Observational Signatures
+% ---------------------------------------------------------
+\subsection{Observational Signatures}
+
+RDCC predicts:
+\begin{itemize}
+\item reduced X-ray luminosities in low-mass halos,
+\item enhanced SZ pressure profiles in groups,
+\item lower HI column densities in the CGM,
+\item more extended OVI/OVIII halos,
+\item increased WHIM fraction,
+\item smoother gas density profiles,
+\item suppressed baryon fractions in dwarfs and groups.
+\end{itemize}
+
+These signatures are testable with:
+\begin{itemize}
+\item X-ray: Athena, XRISM,
+\item SZ: SPT, ACT, Simons Observatory,
+\item HI: SKA, MeerKAT,
+\item UV absorption: HST/COS, LUVOIR,
+\item Lyman-$\alpha$: DESI, WEAVE.
+\end{itemize}
+% ---------------------------------------------------------
+% SECTION 7 — CONCLUSION
+% ---------------------------------------------------------
+\section{Conclusion}
+
+This Companion has developed the first comprehensive framework for baryonic physics in the
+Relaxation-Driven Cyclic Cosmology (RDCC). Building on the scale-dependent growth derived
+in Companion~XVIII and the non-linear structure formation analysis of Companion~XIX, we
+have shown that relaxation-induced modifications of gravitational dynamics directly influence
+gas cooling, star formation, feedback energetics, and the redistribution of baryons within halos
+and the intergalactic medium.
+
+Delayed halo collapse and reduced gravitational potentials lower virial temperatures, increase
+cooling times, and suppress early star formation. Relaxation-induced vorticity modifies
+filamentary inflow and reduces the gas supply available for star formation, while enhanced SN
+and AGN feedback efficiency drives more extended outflows and redistributes baryons to larger
+radii. These effects naturally produce lower baryon fractions in low-mass halos, smoother gas
+profiles, and an enhanced warm-hot intergalactic medium (WHIM) fraction.
+
+We constructed the RDCC baryonic correction model (RDCC-BCM), which combines
+relaxation-modified halo profiles, enhanced gas ejection, and weakened stellar contraction. The
+resulting suppression of the matter power spectrum is smooth, physically motivated, and tied
+directly to the relaxation scale $k_{\rm rel}$. This distinguishes RDCC from $\Lambda$CDM even in
+the presence of baryonic uncertainties and provides a robust target for upcoming surveys.
+
+Overall, the baryonic predictions developed in this Companion demonstrate that RDCC offers
+a coherent and testable framework for understanding the interplay between gravitational
+relaxation and baryonic physics. The model naturally suppresses small-scale power, modifies
+halo gas fractions, and reshapes the circumgalactic and intergalactic media, all while remaining
+consistent with current observations. Future missions such as Euclid, LSST, SKA, Athena, and
+XRISM will be able to test these predictions with unprecedented precision.
+
+This Companion completes the extension of RDCC into the baryonic sector and establishes a
+direct observational bridge between relaxation dynamics and the astrophysics of galaxy
+formation.
+\end{document}

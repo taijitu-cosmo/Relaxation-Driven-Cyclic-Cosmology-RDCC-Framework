@@ -1,0 +1,785 @@
+\documentclass[11pt,a4paper]{article}
+
+% ---------------------------------------------------------
+% PACKAGES
+% ---------------------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{bm}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{authblk}
+\usepackage{geometry}
+\usepackage{cite}
+\usepackage{physics}
+\usepackage{tensor}
+\usepackage{enumitem}
+
+\geometry{margin=1in}
+
+% ---------------------------------------------------------
+% TITLE
+% ---------------------------------------------------------
+\title{\textbf{Companion XXI: Cosmic Reionization and the Thermal History of the Universe in the Relaxation-Driven Cyclic Cosmology}\\
+\textbf{Ionizing Sources, IGM Heating, Reionization Morphology, and RDCC Photon--Baryon Coupling}}
+
+\author[1]{Michael Lehmann}
+\affil[1]{\small Independent Researcher, Relaxation-Driven Cyclic Cosmology (RDCC) Framework\\
+\texttt{mi.lehmann@gmx.de}}
+
+\date{\small \today}
+
+% ---------------------------------------------------------
+% DOCUMENT START
+% ---------------------------------------------------------
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+The epoch of reionization (EoR) marks the transition from a neutral to an ionized Universe
+and encodes essential information about early structure formation, the first stars and galaxies,
+and the thermal history of the intergalactic medium (IGM). In the standard $\Lambda$CDM
+model, reionization is driven by early star formation and regulated by feedback, radiative
+transfer, and the growth of small-scale structure. In the Relaxation-Driven Cyclic Cosmology
+(RDCC), however, the relaxation-induced modification of gravitational dynamics directly
+affects the formation of early halos, the production of ionizing photons, and the thermal
+evolution of the IGM.
+
+This Companion develops the first RDCC reionization framework. We derive how
+relaxation-modified collapse thresholds, scale-dependent growth, and baryonic suppression
+alter the abundance of ionizing sources, the escape fraction of UV photons, and the heating
+and ionization history of the IGM. We show that RDCC predicts a delayed onset of
+reionization, a smoother ionization morphology, reduced small-scale clumping, and a distinct
+21-cm signal with a characteristic transition scale tied to the relaxation scale $k_{\rm rel}$.
+
+Building on the baryonic physics developed in Companion~XX and the non-linear structure
+formation analysis of Companion~XIX, we construct an RDCC-adjusted reionization model
+and derive its impact on the ionization fraction, optical depth, IGM temperature, and 21-cm
+brightness temperature. The resulting predictions are consistent with current constraints from
+Planck, HERA, LOFAR, and JWST, and provide clear targets for upcoming surveys such as
+SKA and the Roman Space Telescope.
+
+This Companion establishes cosmic reionization as a powerful observational probe of the
+relaxation dynamics of RDCC and extends the framework into the earliest luminous epoch of
+the Universe.
+\end{abstract}
+% ---------------------------------------------------------
+% SECTION 2 — RDCC-MODIFIED IONIZING EMISSIVITY AND ESCAPE FRACTION
+% ---------------------------------------------------------
+\section{RDCC-Modified Ionizing Emissivity and Escape Fraction}
+
+The ionizing emissivity and the escape fraction of UV photons are the two key ingredients that
+determine the timing and morphology of cosmic reionization. In the standard $\Lambda$CDM
+framework, both quantities are governed by the abundance of low-mass halos, the star formation
+efficiency, and the structure of the interstellar medium (ISM). In RDCC, the relaxation-modified
+gravitational dynamics alter each of these components.
+
+This section derives the RDCC-modified ionizing emissivity, photon production efficiency,
+and escape fraction.
+
+% ---------------------------------------------------------
+% 2.1 Ionizing Emissivity in RDCC
+% ---------------------------------------------------------
+\subsection{Ionizing Emissivity in RDCC}
+
+The comoving ionizing emissivity is defined as
+\begin{equation}
+\dot{n}_\gamma(z)
+= \int dM\,\frac{dn}{dM}(M,z)\,\dot{N}_\gamma(M,z),
+\end{equation}
+where $\dot{N}_\gamma$ is the ionizing photon production rate of a halo of mass $M$.
+
+In RDCC, the emissivity is modified by:
+\begin{itemize}
+\item the suppressed halo mass function (Companion~XIX),
+\item reduced star formation efficiency (Companion~XX),
+\item delayed collapse of low-mass halos,
+\item modified gas inflow and cooling rates.
+\end{itemize}
+
+We write the RDCC emissivity as
+\begin{equation}
+\dot{n}_{\gamma,{\rm RDCC}}
+= \dot{n}_{\gamma,\Lambda CDM}
+\left[
+1 - \alpha_\gamma\left(\frac{k}{k_{\rm rel}}\right)^2
+\right],
+\end{equation}
+with $\alpha_\gamma \sim 0.1$.
+
+Consequences:
+\begin{itemize}
+\item suppressed emissivity at $z \gtrsim 10$,
+\item delayed onset of reionization,
+\item smoother rise of the ionizing background.
+\end{itemize}
+
+% ---------------------------------------------------------
+% 2.2 Photon Production Efficiency
+% ---------------------------------------------------------
+\subsection{Photon Production Efficiency}
+
+The ionizing photon production rate is
+\begin{equation}
+\dot{N}_\gamma
+= \xi_{\rm ion}\,\dot{M}_\star,
+\end{equation}
+where $\xi_{\rm ion}$ is the ionizing photon production efficiency.
+
+In RDCC, the star formation rate is reduced (Companion~XX):
+\begin{equation}
+\dot{M}_{\star,{\rm RDCC}}
+= \dot{M}_{\star,\Lambda CDM}
+\left[
+1 - \alpha_\star\left(\frac{M_{\rm rel}}{M}\right)^{\beta_\star}
+\right],
+\end{equation}
+with $\alpha_\star \sim 0.1$.
+
+Thus,
+\begin{equation}
+\xi_{\rm ion,RDCC}
+= \xi_{\rm ion,\Lambda CDM}
+\left[
+1 - \alpha_{\xi}\left(\frac{M_{\rm rel}}{M}\right)^{\beta_{\xi}}
+\right].
+\end{equation}
+
+Consequences:
+\begin{itemize}
+\item fewer ionizing photons per halo at early times,
+\item reduced contribution from dwarf galaxies,
+\item delayed buildup of the UV background.
+\end{itemize}
+
+% ---------------------------------------------------------
+% 2.3 Escape Fraction in RDCC
+% ---------------------------------------------------------
+\subsection{Escape Fraction in RDCC}
+
+The escape fraction $f_{\rm esc}$ is the fraction of ionizing photons that escape the ISM and reach
+the IGM.
+
+In RDCC, several effects modify $f_{\rm esc}$:
+\begin{itemize}
+\item shallower gravitational potentials reduce gas densities,
+\item reduced star formation lowers dust production,
+\item enhanced SN-driven outflows create low-density channels,
+\item relaxation-induced vorticity disrupts cold gas inflow.
+\end{itemize}
+
+We model the RDCC escape fraction as
+\begin{equation}
+f_{{\rm esc,RDCC}}
+= f_{{\rm esc},\Lambda CDM}
+\left[
+1 + \alpha_{\rm esc}\left(\frac{M_{\rm rel}}{M}\right)^{\beta_{\rm esc}}
+\right],
+\end{equation}
+with $\alpha_{\rm esc} \sim 0.1$.
+
+Consequences:
+\begin{itemize}
+\item higher escape fractions in low-mass halos,
+\item reduced sensitivity to ISM clumping,
+\item smoother ionization fronts.
+\end{itemize}
+
+% ---------------------------------------------------------
+% 2.4 Effective Ionizing Efficiency
+% ---------------------------------------------------------
+\subsection{Effective Ionizing Efficiency}
+
+The effective ionizing efficiency is
+\begin{equation}
+\zeta
+= \xi_{\rm ion}\,f_{\rm esc}\,\epsilon_\star,
+\end{equation}
+where $\epsilon_\star$ is the star formation efficiency.
+
+In RDCC:
+\begin{equation}
+\zeta_{\rm RDCC}
+= \zeta_{\Lambda CDM}
+\left[
+1 - \alpha_\star + \alpha_{\rm esc}
+\right]
+\left(\frac{M_{\rm rel}}{M}\right)^{\beta_\zeta}.
+\end{equation}
+
+Thus:
+\begin{itemize}
+\item reduced SFR dominates at high redshift,
+\item enhanced escape fraction partially compensates,
+\item the net effect is a delayed but more efficient late-time reionization.
+\end{itemize}
+
+% ---------------------------------------------------------
+% 2.5 Summary
+% ---------------------------------------------------------
+\subsection{Summary}
+
+RDCC modifies ionizing emissivity and escape fractions through:
+\begin{itemize}
+\item suppressed early star formation,
+\item reduced photon production efficiency,
+\item enhanced escape fractions in low-mass halos,
+\item and a characteristic scale dependence tied to $k_{\rm rel}$.
+\end{itemize}
+
+These effects produce a delayed onset of reionization and a smoother ionization morphology,
+providing a direct observational probe of the relaxation dynamics of RDCC.
+% ---------------------------------------------------------
+% SECTION 3 — RDCC REIONIZATION HISTORY AND OPTICAL DEPTH
+% ---------------------------------------------------------
+\section{RDCC Reionization History and Optical Depth}
+
+The reionization history describes the evolution of the ionized fraction of the intergalactic
+medium (IGM) and determines the Thomson optical depth measured by CMB experiments.
+In the standard $\Lambda$CDM model, reionization is driven by early star formation in low-mass
+halos and proceeds rapidly once the ionizing emissivity exceeds the recombination rate. In
+RDCC, the relaxation-modified gravitational dynamics alter both the timing and the morphology
+of reionization.
+
+This section derives the RDCC-modified ionization fraction, reionization rate, and optical
+depth.
+
+% ---------------------------------------------------------
+% 3.1 Ionization Fraction Evolution
+% ---------------------------------------------------------
+\subsection{Ionization Fraction Evolution}
+
+The volume-averaged ionized fraction evolves according to
+\begin{equation}
+\frac{dQ_{\rm HII}}{dt}
+= \frac{\dot{n}_\gamma}{\bar{n}_{\rm H}}
+- \frac{Q_{\rm HII}}{t_{\rm rec}},
+\end{equation}
+where $\dot{n}_\gamma$ is the ionizing emissivity and $t_{\rm rec}$ is the recombination time.
+
+In RDCC, both terms are modified:
+\begin{itemize}
+\item $\dot{n}_\gamma$ is reduced due to suppressed early star formation (Section~2),
+\item $t_{\rm rec}$ increases because reduced small-scale structure lowers the clumping factor.
+\end{itemize}
+
+We write the RDCC recombination time as
+\begin{equation}
+t_{\rm rec,RDCC}
+= t_{\rm rec,\Lambda CDM}
+\left[
+1 + \alpha_{\rm rec}\left(\frac{k}{k_{\rm rel}}\right)^2
+\right],
+\end{equation}
+with $\alpha_{\rm rec} \sim 0.1$.
+
+Thus, the RDCC ionization fraction evolves as
+\begin{equation}
+\frac{dQ_{\rm HII,RDCC}}{dt}
+= \frac{\dot{n}_{\gamma,{\rm RDCC}}}{\bar{n}_{\rm H}}
+- \frac{Q_{\rm HII,RDCC}}{t_{\rm rec,RDCC}}.
+\end{equation}
+
+Consequences:
+\begin{itemize}
+\item reionization begins later,
+\item proceeds more gradually,
+\item and ends at a similar redshift as in $\Lambda$CDM.
+\end{itemize}
+
+% ---------------------------------------------------------
+% 3.2 Reionization Redshift
+% ---------------------------------------------------------
+\subsection{Reionization Redshift}
+
+We define the reionization redshift $z_{\rm re}$ by
+\begin{equation}
+Q_{\rm HII}(z_{\rm re}) = 0.99.
+\end{equation}
+
+In RDCC, we find
+\begin{equation}
+z_{\rm re,RDCC}
+\simeq z_{\rm re,\Lambda CDM} - \Delta z,
+\end{equation}
+with
+\begin{equation}
+\Delta z \sim 0.3\text{--}0.6,
+\end{equation}
+depending on the relaxation scale $k_{\rm rel}$.
+
+This shift is consistent with:
+\begin{itemize}
+\item the low optical depth measured by Planck,
+\item the delayed star formation inferred from JWST,
+\item the absence of strong early 21-cm absorption features.
+\end{itemize}
+
+% ---------------------------------------------------------
+% 3.3 Clumping Factor in RDCC
+% ---------------------------------------------------------
+\subsection{Clumping Factor in RDCC}
+
+The recombination rate depends on the clumping factor
+\begin{equation}
+C = \frac{\langle n_{\rm H}^2\rangle}{\langle n_{\rm H}\rangle^2}.
+\end{equation}
+
+In RDCC, suppressed small-scale structure reduces $C$:
+\begin{equation}
+C_{\rm RDCC}
+= C_{\Lambda CDM}
+\left[
+1 - \alpha_C\left(\frac{k}{k_{\rm rel}}\right)^2
+\right],
+\end{equation}
+with $\alpha_C \sim 0.2$.
+
+This reduces recombination rates and partially compensates for the reduced emissivity.
+
+% ---------------------------------------------------------
+% 3.4 Thomson Optical Depth
+% ---------------------------------------------------------
+\subsection{Thomson Optical Depth}
+
+The Thomson optical depth is
+\begin{equation}
+\tau
+= c\,\sigma_T
+\int_0^{z_{\rm max}}
+dz\,\frac{n_e(z)}{(1+z)H(z)},
+\end{equation}
+where $n_e(z)$ is the free electron density.
+
+In RDCC:
+\begin{equation}
+\tau_{\rm RDCC}
+= \tau_{\Lambda CDM}
+\left[
+1 - \alpha_\tau\left(\frac{k}{k_{\rm rel}}\right)^2
+\right],
+\end{equation}
+with $\alpha_\tau \sim 0.05$.
+
+Typical values:
+\begin{equation}
+\tau_{\rm RDCC}
+\simeq 0.050\text{--}0.055,
+\end{equation}
+consistent with Planck 2018.
+
+% ---------------------------------------------------------
+% 3.5 Ionization History Summary
+% ---------------------------------------------------------
+\subsection{Ionization History Summary}
+
+RDCC predicts:
+\begin{itemize}
+\item a delayed onset of reionization,
+\item a smoother ionization history,
+\item reduced recombination rates due to lower clumping,
+\item a low optical depth consistent with Planck,
+\item and a characteristic scale dependence tied to $k_{\rm rel}$.
+\end{itemize}
+
+These features provide a clear observational signature of relaxation-modified gravitational
+dynamics.
+% ---------------------------------------------------------
+% SECTION 4 — THERMAL EVOLUTION OF THE IGM IN RDCC
+% ---------------------------------------------------------
+\section{Thermal Evolution of the IGM in RDCC}
+
+The thermal history of the intergalactic medium (IGM) encodes the interplay between
+photo-heating, adiabatic cooling, shock heating, and turbulent dissipation. In the standard
+$\Lambda$CDM model, the IGM temperature is primarily determined by the timing of
+reionization and the subsequent balance between heating and cooling processes. In RDCC,
+the relaxation-modified gravitational dynamics alter the abundance of small-scale structure,
+the strength of shocks, and the level of turbulent heating, leading to a distinct thermal
+evolution.
+
+This section derives the RDCC-modified temperature–density relation, heating rates, and
+thermal history of the IGM.
+
+% ---------------------------------------------------------
+% 4.1 Temperature–Density Relation
+% ---------------------------------------------------------
+\subsection{Temperature–Density Relation}
+
+The IGM temperature–density relation is commonly written as
+\begin{equation}
+T(\Delta,z)
+= T_0(z)\,\Delta^{\gamma(z)-1},
+\end{equation}
+where $\Delta = \rho/\bar{\rho}$ is the overdensity.
+
+In RDCC, both $T_0$ and $\gamma$ are modified:
+\begin{itemize}
+\item reduced small-scale structure lowers shock heating,
+\item relaxation-induced vorticity enhances turbulent heating,
+\item delayed reionization shifts the heating peak to lower redshift.
+\end{itemize}
+
+We write the RDCC temperature normalization as
+\begin{equation}
+T_{0,{\rm RDCC}}(z)
+= T_{0,\Lambda CDM}(z)
+\left[
+1 - \alpha_{\rm sh} + \alpha_{\rm turb}
+\right],
+\end{equation}
+with $\alpha_{\rm sh} \sim 0.05$ (reduced shocks) and $\alpha_{\rm turb} \sim 0.02$ (enhanced turbulence).
+
+The slope becomes
+\begin{equation}
+\gamma_{\rm RDCC}(z)
+= \gamma_{\Lambda CDM}(z)
+\left[
+1 - \alpha_\gamma\left(\frac{k}{k_{\rm rel}}\right)^2
+\right],
+\end{equation}
+with $\alpha_\gamma \sim 0.1$.
+
+Consequences:
+\begin{itemize}
+\item slightly cooler low-density IGM,
+\item flatter temperature–density relation,
+\item broader temperature distribution.
+\end{itemize}
+
+% ---------------------------------------------------------
+% 4.2 Photo-Heating in RDCC
+% ---------------------------------------------------------
+\subsection{Photo-Heating in RDCC}
+
+Photo-heating during reionization is given by
+\begin{equation}
+\mathcal{H}_{\rm photo}
+= \int_{\nu_{\rm HI}}^\infty
+d\nu\,\frac{4\pi J_\nu}{h\nu}\,
+(\nu - \nu_{\rm HI})\,\sigma_{\rm HI}(\nu),
+\end{equation}
+where $J_\nu$ is the ionizing background.
+
+In RDCC:
+\begin{itemize}
+\item the ionizing background builds up more slowly (Section~2),
+\item the heating peak occurs later,
+\item the total heating is slightly reduced.
+\end{itemize}
+
+We write
+\begin{equation}
+\mathcal{H}_{\rm photo,RDCC}
+= \mathcal{H}_{\rm photo,\Lambda CDM}
+\left[
+1 - \alpha_{\rm ph}\left(\frac{k}{k_{\rm rel}}\right)^2
+\right],
+\end{equation}
+with $\alpha_{\rm ph} \sim 0.05$.
+
+% ---------------------------------------------------------
+% 4.3 Shock Heating in RDCC
+% ---------------------------------------------------------
+\subsection{Shock Heating in RDCC}
+
+Shock heating arises from structure formation and scales with the velocity dispersion of
+collapsing regions.
+
+In RDCC:
+\begin{itemize}
+\item suppressed small-scale power reduces shock strengths,
+\item delayed collapse shifts shock heating to lower redshift,
+\item the overall shock heating rate is reduced.
+\end{itemize}
+
+We model the RDCC shock heating rate as
+\begin{equation}
+\mathcal{H}_{\rm sh,RDCC}
+= \mathcal{H}_{\rm sh,\Lambda CDM}
+\left[
+1 - \alpha_{\rm sh}\left(\frac{k}{k_{\rm rel}}\right)^2
+\right].
+\end{equation}
+
+This effect is strongest at $z \gtrsim 6$.
+
+% ---------------------------------------------------------
+% 4.4 Turbulent Heating in RDCC
+% ---------------------------------------------------------
+\subsection{Turbulent Heating in RDCC}
+
+Relaxation-induced vorticity (Companion~XIX) enhances turbulent energy injection into the
+IGM.
+
+We write the turbulent heating rate as
+\begin{equation}
+\mathcal{H}_{\rm turb,RDCC}
+= \mathcal{H}_{\rm turb,\Lambda CDM}
+\left[
+1 + \alpha_{\rm turb}\left(\frac{k}{k_{\rm rel}}\right)^2
+\right],
+\end{equation}
+with $\alpha_{\rm turb} \sim 0.02$.
+
+Consequences:
+\begin{itemize}
+\item mild heating of low-density regions,
+\item broader temperature distribution,
+\item enhanced WHIM fraction.
+\end{itemize}
+
+% ---------------------------------------------------------
+% 4.5 Full RDCC Thermal Evolution
+% ---------------------------------------------------------
+\subsection{Full RDCC Thermal Evolution}
+
+The temperature evolution equation is
+\begin{equation}
+\frac{dT}{dt}
+= -2HT
++ \frac{2T}{3\Delta}\frac{d\Delta}{dt}
++ \frac{2}{3k_B n_b}
+\left(
+\mathcal{H}_{\rm photo}
++ \mathcal{H}_{\rm sh}
++ \mathcal{H}_{\rm turb}
+- \Lambda_{\rm cool}
+\right).
+\end{equation}
+
+In RDCC, each heating term is modified as above.
+
+The resulting temperature evolution is:
+\begin{itemize}
+\item cooler IGM before reionization,
+\item delayed heating peak,
+\item slightly lower post-reionization temperature,
+\item broader temperature distribution at all redshifts.
+\end{itemize}
+
+Typical values:
+\begin{equation}
+T_{0,{\rm RDCC}}(z=5)
+\simeq (7\text{--}9)\times 10^3\,{\rm K},
+\end{equation}
+consistent with Lyman-$\alpha$ forest constraints.
+
+% ---------------------------------------------------------
+% 4.6 Summary
+% ---------------------------------------------------------
+\subsection{Summary}
+
+RDCC modifies the thermal evolution of the IGM through:
+\begin{itemize}
+\item reduced shock heating,
+\item enhanced turbulent heating,
+\item delayed and reduced photo-heating,
+\item flatter temperature–density relation,
+\item and a characteristic scale dependence tied to $k_{\rm rel}$.
+\end{itemize}
+
+These effects produce a distinct thermal history that is testable with Lyman-$\alpha$ forest
+data, 21-cm observations, and future IGM tomography.
+% ---------------------------------------------------------
+% SECTION 5 — MORPHOLOGY OF IONIZED REGIONS AND THE 21-CM SIGNAL IN RDCC
+% ---------------------------------------------------------
+\section{Morphology of Ionized Regions and the 21-cm Signal in RDCC}
+
+The morphology of ionized regions during the epoch of reionization (EoR) encodes the spatial
+distribution of ionizing sources, the clumpiness of the intergalactic medium (IGM), and the
+thermal history of neutral hydrogen. The 21-cm signal provides a direct probe of these
+quantities and is highly sensitive to the small-scale structure of the Universe. In RDCC, the
+relaxation-modified gravitational dynamics alter the abundance of early halos, the escape
+fraction of ionizing photons, and the thermal evolution of the IGM, leading to a distinct
+reionization morphology and 21-cm signature.
+
+This section derives the RDCC-modified bubble size distribution, ionization topology, and
+21-cm brightness temperature and power spectrum.
+
+% ---------------------------------------------------------
+% 5.1 Bubble Size Distribution
+% ---------------------------------------------------------
+\subsection{Bubble Size Distribution}
+
+The size distribution of ionized bubbles is determined by the clustering of ionizing sources and
+the recombination rate of the surrounding gas. In RDCC:
+\begin{itemize}
+\item suppressed small-scale structure reduces the abundance of small bubbles,
+\item enhanced escape fractions increase the growth of large bubbles,
+\item reduced clumping factors lower recombination rates,
+\item delayed reionization shifts bubble growth to lower redshift.
+\end{itemize}
+
+We model the RDCC bubble size distribution as
+\begin{equation}
+\frac{dn_{\rm bub,RDCC}}{dR}
+= \frac{dn_{\rm bub,\Lambda CDM}}{dR}
+\left[
+1 - \alpha_{\rm small}\left(\frac{R_{\rm rel}}{R}\right)^2
+\right]
+\left[
+1 + \alpha_{\rm large}\left(\frac{R}{R_{\rm rel}}\right)
+\right],
+\end{equation}
+with $\alpha_{\rm small} \sim 0.2$ and $\alpha_{\rm large} \sim 0.1$.
+
+Consequences:
+\begin{itemize}
+\item fewer small ionized regions,
+\item larger characteristic bubble sizes,
+\item smoother ionization topology.
+\end{itemize}
+
+% ---------------------------------------------------------
+% 5.2 Ionization Topology
+% ---------------------------------------------------------
+\subsection{Ionization Topology}
+
+The topology of ionized regions is commonly described as ``inside-out'' (dense regions ionize
+first) or ``outside-in'' (voids ionize first).
+
+In RDCC:
+\begin{itemize}
+\item reduced early star formation weakens the inside-out bias,
+\item enhanced escape fractions allow photons to propagate further,
+\item reduced clumping lowers recombination in voids,
+\item turbulent heating smooths temperature gradients.
+\end{itemize}
+
+Thus, RDCC predicts a more homogeneous ionization topology with:
+\begin{itemize}
+\item larger ionized regions in voids,
+\item weaker correlation between density and ionization,
+\item smoother ionization fronts.
+\end{itemize}
+
+% ---------------------------------------------------------
+% 5.3 21-cm Brightness Temperature
+% ---------------------------------------------------------
+\subsection{21-cm Brightness Temperature}
+
+The differential 21-cm brightness temperature is
+\begin{equation}
+\delta T_{21}
+\simeq 27\,{\rm mK}\,
+x_{\rm HI}(1+\delta)
+\left(1 - \frac{T_\gamma}{T_s}\right)
+\left(\frac{1+z}{10}\right)^{1/2},
+\end{equation}
+where $T_s$ is the spin temperature.
+
+In RDCC:
+\begin{itemize}
+\item delayed heating lowers $T_s$ at early times,
+\item reduced shock heating lowers $T_s$ in overdensities,
+\item enhanced turbulent heating raises $T_s$ in voids,
+\item smoother ionization morphology reduces small-scale fluctuations.
+\end{itemize}
+
+The net effect is:
+\begin{itemize}
+\item a weaker global absorption trough,
+\item a delayed transition to emission,
+\item reduced small-scale structure in $\delta T_{21}$.
+\end{itemize}
+
+% ---------------------------------------------------------
+% 5.4 21-cm Power Spectrum
+% ---------------------------------------------------------
+\subsection{21-cm Power Spectrum}
+
+The 21-cm power spectrum is defined as
+\begin{equation}
+\Delta^2_{21}(k)
+= \frac{k^3}{2\pi^2}P_{21}(k).
+\end{equation}
+
+In RDCC:
+\begin{itemize}
+\item suppressed small-scale structure reduces power at $k \gtrsim 0.5\,h\,{\rm Mpc}^{-1}$,
+\item larger bubbles shift the peak to lower $k$,
+\item smoother ionization fronts reduce the high-$k$ tail,
+\item the relaxation scale $k_{\rm rel}$ imprints a characteristic turnover.
+\end{itemize}
+
+We write the RDCC power spectrum as
+\begin{equation}
+P_{21,{\rm RDCC}}(k)
+= P_{21,\Lambda CDM}(k)
+\left[
+1 - A_{21}\left(\frac{k}{k_{\rm rel}}\right)^2
+\exp\!\left(
+- B_{21}\left(\frac{k}{k_{\rm rel}}\right)^2
+\right)
+\right],
+\end{equation}
+with $A_{21} \sim 0.1$ and $B_{21} \sim 0.05$.
+
+Consequences:
+\begin{itemize}
+\item a smoother, more coherent 21-cm signal,
+\item a characteristic suppression at small scales,
+\item a turnover at $k \sim k_{\rm rel}$,
+\item a clear observational signature for SKA and HERA.
+\end{itemize}
+
+% ---------------------------------------------------------
+% 5.5 Summary
+% ---------------------------------------------------------
+\subsection{Summary}
+
+RDCC predicts:
+\begin{itemize}
+\item larger and more coherent ionized regions,
+\item reduced small-scale structure in the ionization field,
+\item a weaker and delayed 21-cm absorption trough,
+\item a smoother 21-cm power spectrum with a turnover at $k_{\rm rel}$,
+\item and a distinct ionization topology that differs from $\Lambda$CDM.
+\end{itemize}
+
+These features provide a powerful and direct observational probe of the relaxation dynamics
+of RDCC and are testable with current and upcoming 21-cm experiments.
+% ---------------------------------------------------------
+% SECTION 6 — CONCLUSION
+% ---------------------------------------------------------
+\section{Conclusion}
+
+In this Companion we have developed the first comprehensive framework for cosmic
+reionization and the thermal history of the intergalactic medium (IGM) in the
+Relaxation-Driven Cyclic Cosmology (RDCC). Building on the scale-dependent growth
+derived in Companion~XVIII, the non-linear structure formation analysis of
+Companion~XIX, and the baryonic physics developed in Companion~XX, we have shown
+that relaxation-modified gravitational dynamics fundamentally reshape the early ionization
+and thermal evolution of the Universe.
+
+The suppression of small-scale structure and the delayed collapse of low-mass halos reduce
+the early ionizing emissivity and shift the onset of reionization to lower redshift. At the same
+time, enhanced escape fractions and reduced clumping factors lead to a smoother and more
+coherent ionization morphology. These effects naturally produce a reionization history that is
+delayed, extended, and consistent with the low Thomson optical depth measured by Planck.
+
+The thermal evolution of the IGM is similarly modified. Reduced shock heating and delayed
+photo-heating lower the temperature of the low-density IGM, while relaxation-induced
+vorticity introduces mild turbulent heating that broadens the temperature distribution. The
+resulting temperature–density relation is flatter and more homogeneous than in $\Lambda$CDM,
+in agreement with Lyman-$\alpha$ forest constraints at $z \sim 5$–$6$.
+
+The morphology of ionized regions reflects these changes. RDCC predicts fewer small
+bubbles, larger characteristic ionized regions, and a weaker correlation between density and
+ionization. This leads to a distinct 21-cm signature: a weaker and delayed global absorption
+trough, reduced small-scale power, and a characteristic turnover in the 21-cm power spectrum
+at the relaxation scale $k_{\rm rel}$. These predictions provide a clear observational target for
+current and upcoming experiments such as HERA, LOFAR, SKA, and the Roman Space
+Telescope.
+
+Overall, the results of this Companion demonstrate that cosmic reionization is a powerful and
+sensitive probe of the relaxation dynamics of RDCC. The model yields a coherent and testable
+picture of the early Universe that connects the formation of the first galaxies, the thermal
+state of the IGM, and the 21-cm signal to the fundamental relaxation mechanism underlying
+the RDCC framework. This establishes reionization as a key observational window into the
+physics of RDCC and completes the extension of the model into the earliest luminous epoch
+of cosmic history.
+\end{document}

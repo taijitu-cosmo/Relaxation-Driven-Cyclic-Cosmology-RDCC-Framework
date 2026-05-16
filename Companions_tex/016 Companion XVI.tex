@@ -1,0 +1,615 @@
+\documentclass[11pt,a4paper]{article}
+
+% ---------------------------------------------------------
+% PACKAGES
+% ---------------------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{bm}
+\usepackage{graphicx}
+\usepackage{physics}
+\usepackage{tensor}
+\usepackage{enumitem}
+
+% Geometry + Title-Pakete
+\usepackage{geometry}
+\usepackage{authblk}
+\usepackage{cite}
+
+% Hyperref – sollte möglichst spät geladen werden
+\usepackage[unicode=true, pdfencoding=auto]{hyperref}
+
+\geometry{margin=1in}
+
+% ---------------------------------------------------------
+% TITLE
+% ---------------------------------------------------------
+\title{\textbf{Companion XVI: The RDCC Boltzmann Code}\\
+\textbf{Background Evolution, Perturbations, and Numerical Framework}\\
+\textbf{A Unified Formalism for Scalar, Tensor, and Sectoral Dynamics}}
+
+\author[1]{Michael Lehmann}
+\affil[1]{\small Independent Researcher, Relaxation-Driven Cyclic Cosmology (RDCC) Framework\\
+\texttt{mi.lehmann@gmx.de}}
+
+\date{\small \today}
+
+% ---------------------------------------------------------
+% DOCUMENT START
+% ---------------------------------------------------------
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+The Relaxation-Driven Cyclic Cosmology (RDCC) provides a unified framework in which the thermodynamic relaxation mechanism introduced in Companion~X governs the evolution of the early Universe. This mechanism generates sectoral temperature asymmetry, shapes the neutrino and dark matter sectors (Companion~XIII), suppresses primordial black hole formation (Companion~XIV), and modifies the gravitational-wave spectrum (Companion~XV). To connect these predictions with cosmological observations, a complete Boltzmann framework is required.
+
+This Companion develops the RDCC Boltzmann Code: a consistent set of background and perturbation equations incorporating relaxation-induced modifications, sectoral temperature asymmetry, and the bipartite global state. We derive the modified Friedmann equations, the relaxation-corrected evolution of scalar, vector, and tensor perturbations, and the full sector-coupled Boltzmann hierarchy. The resulting formalism generalizes standard cosmological perturbation theory by including relaxation terms, sectoral coupling coefficients, modified sound speeds, and tensor damping.
+
+We provide a blueprint for numerical implementation, including a CLASS-compatible structure, initial conditions, and parameter dependencies. The RDCC Boltzmann Code forms the computational backbone of the RDCC framework and enables the computation of CMB anisotropies, matter power spectra, growth rates, neutrino free-streaming, and the stochastic gravitational-wave background. This Companion establishes the foundation for future RDCC analyses, including small-scale structure, non-Gaussianities, magnetic fields, and global parameter fits.
+\end{abstract}
+% ---------------------------------------------------------
+% SECTION 2 — BACKGROUND EVOLUTION IN RDCC (MODERNIZED)
+% ---------------------------------------------------------
+\section{Background Evolution in RDCC}
+
+The background evolution of the Relaxation-Driven Cyclic Cosmology (RDCC) differs from standard cosmology due to the presence of the universal relaxation mechanism and the bipartite sectoral structure. In this section we derive the modified Friedmann equations, the sectoral entropy-flow relations, and the temperature evolution in both sectors. These relations form the backbone of the RDCC Boltzmann framework.
+
+% ---------------------------------------------------------
+% 2.1 Bipartite Sectoral Structure
+% ---------------------------------------------------------
+\subsection{Bipartite Sectoral Structure}
+
+RDCC contains two CPT-conjugate sectors, denoted A (visible) and B (mirror), each with its own temperature, entropy, and energy density:
+\begin{equation}
+T_A \neq T_B, \qquad s_A \neq s_B, \qquad \rho_A \neq \rho_B.
+\end{equation}
+
+As shown in Companion~X, the relaxation mechanism drives a persistent temperature asymmetry,
+\begin{equation}
+\frac{T_B}{T_A} \approx 0.5,
+\end{equation}
+which remains stable throughout the early Universe.
+
+The total energy density is the sum of the two sectors,
+\begin{equation}
+\rho_{\rm tot} = \rho_A + \rho_B,
+\end{equation}
+and similarly for pressure and entropy.
+
+This bipartite structure is the foundation of the RDCC Boltzmann Code.
+
+% ---------------------------------------------------------
+% 2.2 Modified Friedmann Equations
+% ---------------------------------------------------------
+\subsection{Modified Friedmann Equations}
+
+The Friedmann equations retain their standard form,
+\begin{equation}
+H^2 = \frac{8\pi G}{3}\,\rho_{\rm tot},
+\end{equation}
+\begin{equation}
+\dot{H} = -4\pi G\,(\rho_{\rm tot} + p_{\rm tot}),
+\end{equation}
+but the evolution of $\rho_A$ and $\rho_B$ is modified by relaxation-induced energy flow.
+
+% ---------------------------------------------------------
+% 2.3 Relaxation-Induced Energy Exchange
+% ---------------------------------------------------------
+\subsection{Relaxation-Induced Energy Exchange}
+
+The relaxation mechanism mediates a bidirectional but asymmetric energy exchange between the two sectors. The continuity equations become
+\begin{align}
+\dot{\rho}_A + 3H(\rho_A + p_A) &= -\Gamma(\rho_A - \rho_B), \\
+\dot{\rho}_B + 3H(\rho_B + p_B) &= +\Gamma(\rho_A - \rho_B),
+\end{align}
+where the relaxation rate satisfies
+\begin{equation}
+\Gamma(a) = \alpha(a)\,H(a),
+\end{equation}
+with $\alpha(a)$ a slowly varying dimensionless coefficient.
+
+Total energy is conserved:
+\begin{equation}
+\dot{\rho}_{\rm tot} + 3H(\rho_{\rm tot} + p_{\rm tot}) = 0.
+\end{equation}
+
+This structure ensures that the relaxation mechanism redistributes energy between sectors without violating global conservation.
+
+% ---------------------------------------------------------
+% 2.4 Sectoral Temperature Evolution
+% ---------------------------------------------------------
+\subsection{Sectoral Temperature Evolution}
+
+Entropy densities satisfy
+\begin{equation}
+s_i = \frac{\rho_i + p_i}{T_i},
+\end{equation}
+and their evolution is modified by relaxation:
+\begin{align}
+\dot{s}_A + 3H s_A &= -\frac{\Gamma}{T_A}(\rho_A - \rho_B), \\
+\dot{s}_B + 3H s_B &= +\frac{\Gamma}{T_B}(\rho_A - \rho_B).
+\end{align}
+
+Using $s_i \propto g_{*s,i} T_i^3$ and assuming slowly varying $g_{*s,i}$, the temperature evolution becomes
+\begin{align}
+\frac{\dot{T}_A}{T_A} &= -H + \frac{\Gamma}{3(\rho_A + p_A)}(\rho_A - \rho_B), \\
+\frac{\dot{T}_B}{T_B} &= -H - \frac{\Gamma}{3(\rho_B + p_B)}(\rho_A - \rho_B).
+\end{align}
+
+These equations ensure that the temperature ratio $T_B/T_A$ remains stable during the relaxation-dominated epoch.
+
+% ---------------------------------------------------------
+% 2.5 Effective Equation of State
+% ---------------------------------------------------------
+\subsection{Effective Equation of State}
+
+Relaxation modifies the effective equation of state of each sector. Defining
+\begin{equation}
+w_i = \frac{p_i}{\rho_i},
+\end{equation}
+the effective equation of state becomes
+\begin{equation}
+w_i^{\rm eff} = w_i \mp \frac{\Gamma}{3H}\left(1 - \frac{\rho_j}{\rho_i}\right),
+\end{equation}
+with the upper sign for sector A and the lower sign for sector B.
+
+This modification affects:
+
+- sound speeds,  
+- horizon scales,  
+- growth of perturbations,  
+- neutrino free-streaming,  
+- tensor damping (via Companion XV).
+
+% ---------------------------------------------------------
+% 2.6 Summary of Background Evolution
+% ---------------------------------------------------------
+\subsection{Summary of Background Evolution}
+
+The background evolution of RDCC is governed by:
+
+\begin{itemize}
+\item standard Friedmann equations with total energy density $\rho_A + \rho_B$,
+\item relaxation-modified continuity equations for each sector,
+\item sectoral temperature evolution with stable asymmetry,
+\item effective equations of state modified by relaxation,
+\item the relaxation coefficient $\alpha(a)$ controlling all deviations from $\Lambda$CDM.
+\end{itemize}
+
+These relations define the background quantities required for the RDCC Boltzmann hierarchy, including $H(a)$, $T_A(a)$, $T_B(a)$, $w_i(a)$, $c_{s,i}(a)$, and $\alpha(a)$.
+
+In the next section, we derive the scalar, vector, and tensor perturbation equations that form the core of the RDCC Boltzmann Code.
+% ---------------------------------------------------------
+% SECTION 3 — LINEAR PERTURBATIONS IN RDCC (MODERNIZED)
+% ---------------------------------------------------------
+\section{Linear Perturbations in RDCC}
+
+To compute cosmological observables such as CMB anisotropies, matter power spectra, and tensor transfer functions, we require the evolution of linear perturbations around the RDCC background. In this section we derive the scalar, vector, and tensor perturbation equations, including the modifications introduced by the relaxation mechanism and the bipartite sectoral structure.
+
+We work in conformal Newtonian gauge,
+\begin{equation}
+ds^2 = a^2(\tau)\left[-(1+2\Psi)d\tau^2 + (1-2\Phi)\delta_{ij}dx^i dx^j\right],
+\end{equation}
+where $\Psi$ and $\Phi$ are the scalar potentials. Vector and tensor perturbations are treated separately below.
+
+% ---------------------------------------------------------
+% 3.1 Sectoral Perturbation Variables
+% ---------------------------------------------------------
+\subsection{Sectoral Perturbation Variables}
+
+Each sector $i \in \{A,B\}$ contains its own density contrast, velocity divergence, and anisotropic stress:
+\begin{equation}
+\delta_i = \frac{\delta\rho_i}{\rho_i}, \qquad
+\theta_i = ik_j v^j_i, \qquad
+\sigma_i.
+\end{equation}
+
+The relaxation mechanism introduces a coupling between the perturbations of the two sectors. To first order, the relaxation-induced energy exchange modifies the continuity and Euler equations.
+
+% ---------------------------------------------------------
+% 3.2 Scalar Perturbations
+% ---------------------------------------------------------
+\subsection{Scalar Perturbations}
+
+The perturbed continuity equations become
+\begin{align}
+\dot{\delta}_A + (1+w_A)(\theta_A - 3\dot{\Phi})
++ 3H(c_{s,A}^2 - w_A)\delta_A
+&= -\Gamma(\delta_A - \delta_B)
+- \frac{\Gamma}{\rho_A}(\rho_A - \rho_B)(\Psi - \Phi), \\
+\dot{\delta}_B + (1+w_B)(\theta_B - 3\dot{\Phi})
++ 3H(c_{s,B}^2 - w_B)\delta_B
+&= +\Gamma(\delta_A - \delta_B)
++ \frac{\Gamma}{\rho_B}(\rho_A - \rho_B)(\Psi - \Phi).
+\end{align}
+
+The Euler equations become
+\begin{align}
+\dot{\theta}_A + H(1 - 3c_{s,A}^2)\theta_A
+- \frac{k^2 c_{s,A}^2}{1+w_A}\delta_A + k^2\Psi
+&= -\Gamma(\theta_A - \theta_B), \\
+\dot{\theta}_B + H(1 - 3c_{s,B}^2)\theta_B
+- \frac{k^2 c_{s,B}^2}{1+w_B}\delta_B + k^2\Psi
+&= +\Gamma(\theta_A - \theta_B).
+\end{align}
+
+The relaxation terms act as a friction-like coupling between the two sectors, driving their perturbations toward partial equilibration.
+
+% ---------------------------------------------------------
+% 3.3 Modified Einstein Equations
+% ---------------------------------------------------------
+\subsection{Modified Einstein Equations}
+
+The Einstein equations retain their standard form but with total energy density, pressure, and anisotropic stress given by
+\begin{equation}
+\delta\rho_{\rm tot} = \delta\rho_A + \delta\rho_B, \qquad
+\delta p_{\rm tot} = \delta p_A + \delta p_B, \qquad
+\sigma_{\rm tot} = \sigma_A + \sigma_B.
+\end{equation}
+
+The Poisson equation becomes
+\begin{equation}
+k^2\Phi + 3H(\dot{\Phi} + H\Psi)
+= 4\pi G a^2\,\delta\rho_{\rm tot}.
+\end{equation}
+
+The anisotropic stress relation becomes
+\begin{equation}
+k^2(\Phi - \Psi)
+= 12\pi G a^2 (\rho_{\rm tot} + p_{\rm tot})\,\sigma_{\rm tot}.
+\end{equation}
+
+Relaxation modifies $\sigma_{\rm tot}$ indirectly through the sectoral evolution of $\sigma_A$ and $\sigma_B$.
+
+% ---------------------------------------------------------
+% 3.4 Vector Perturbations
+% ---------------------------------------------------------
+\subsection{Vector Perturbations}
+
+Vector modes decay in standard cosmology but can be sourced by relaxation-induced momentum exchange. The vector perturbation equation becomes
+\begin{equation}
+\dot{V}_i + 2H V_i = 8\pi G a^2 (\rho_{\rm tot} + p_{\rm tot})\,\Pi_i,
+\end{equation}
+where $\Pi_i$ is the vector anisotropic stress.
+
+Relaxation introduces a sectoral coupling:
+\begin{align}
+\Pi^{(A)}_i &\propto -\Gamma(V^{(A)}_i - V^{(B)}_i), \\
+\Pi^{(B)}_i &\propto +\Gamma(V^{(A)}_i - V^{(B)}_i).
+\end{align}
+
+This provides a new source of vector modes absent in standard cosmology.
+
+% ---------------------------------------------------------
+% 3.5 Tensor Perturbations
+% ---------------------------------------------------------
+\subsection{Tensor Perturbations}
+
+Tensor modes satisfy the relaxation-modified equation derived in Companion~XV:
+\begin{equation}
+\ddot{h}_k + (3H + \Gamma)\dot{h}_k + \frac{k^2}{a^2}h_k = 0.
+\end{equation}
+
+This modification affects:
+
+\begin{itemize}
+\item the tensor transfer function,
+\item the stochastic gravitational-wave background,
+\item the CMB B-mode spectrum,
+\item the neutrino anisotropic stress contribution.
+\end{itemize}
+
+% ---------------------------------------------------------
+% 3.6 Summary of Perturbation Modifications
+% ---------------------------------------------------------
+\subsection{Summary of Perturbation Modifications}
+
+The relaxation mechanism introduces three key modifications:
+
+\begin{itemize}
+\item \textbf{Energy exchange between sectors:} Coupling terms in the continuity and Euler equations.
+\item \textbf{Momentum exchange:} Relaxation-induced friction between sectoral velocities.
+\item \textbf{Tensor damping:} Additional friction term in the tensor-mode equation.
+\end{itemize}
+
+These modifications propagate into the Boltzmann hierarchy for photons, neutrinos, baryons, and dark matter, which we develop in the next section.
+% ---------------------------------------------------------
+% SECTION 6 — OBSERVABLES AND OUTPUTS
+% ---------------------------------------------------------
+\section{Observables and Outputs}
+
+The RDCC Boltzmann Code provides a complete set of cosmological observables derived from
+the background evolution, linear perturbations, and Boltzmann hierarchy.
+
+% ---------------------------------------------------------
+% 6.1 CMB Temperature and Polarization Spectra
+% ---------------------------------------------------------
+\subsection{CMB Temperature and Polarization Spectra}
+
+The code computes the full set of CMB anisotropy spectra:
+\begin{equation}
+C_\ell^{TT},\quad C_\ell^{TE},\quad C_\ell^{EE},\quad C_\ell^{BB}.
+\end{equation}
+
+Relaxation affects these spectra through:
+
+\begin{itemize}
+\item modified neutrino anisotropic stress,
+\item sectoral contributions to $\Delta N_{\rm eff}$,
+\item altered tensor transfer functions,
+\item modified early-time sound horizon due to sectoral temperature asymmetry.
+\end{itemize}
+
+% ---------------------------------------------------------
+% 6.2 Matter Power Spectrum
+% ---------------------------------------------------------
+\subsection{Matter Power Spectrum}
+
+The matter power spectrum is computed as
+\begin{equation}
+P(k) = |\delta_m(k,\tau_0)|^2.
+\end{equation}
+
+Relaxation modifies $P(k)$ through:
+
+\begin{itemize}
+\item altered growth rate during radiation domination,
+\item sectoral coupling between dark matter in sectors A and B,
+\item modified sound speeds and effective equations of state,
+\item suppression or enhancement of small-scale power depending on $\alpha(a)$.
+\end{itemize}
+
+% ---------------------------------------------------------
+% 6.3 Growth Rate and fσ8
+% ---------------------------------------------------------
+\subsection{Growth Rate and \texorpdfstring{\(f\sigma_8\)}{f sigma 8}}
+
+The growth rate is defined as
+\begin{equation}
+f(a) = \frac{d\ln D(a)}{d\ln a},
+\end{equation}
+and the RDCC Boltzmann Code computes
+\begin{equation}
+f\sigma_8(z),
+\end{equation}
+which is directly comparable to redshift-space distortion measurements.
+
+% ---------------------------------------------------------
+% 6.4 Sectoral Contribution to ΔN_eff
+% ---------------------------------------------------------
+\subsection{Sectoral Contribution to \texorpdfstring{\(\Delta N_{\rm eff}\)}{Delta N eff}}
+
+The colder sector contributes to the radiation energy density as
+\begin{equation}
+\Delta N_{\rm eff} =
+\frac{8}{7}\left(\frac{11}{4}\right)^{4/3}
+\frac{\rho_{B,\nu}}{\rho_{\gamma}},
+\end{equation}
+where $\rho_{B,\nu}$ is the neutrino energy density in sector B.
+
+Relaxation modifies $\Delta N_{\rm eff}$ through:
+
+\begin{itemize}
+\item sectoral temperature asymmetry,
+\item modified neutrino free-streaming,
+\item altered anisotropic stress.
+\end{itemize}
+
+% ---------------------------------------------------------
+% 6.5 Tensor Transfer Functions and SGWB
+% ---------------------------------------------------------
+\subsection{Tensor Transfer Functions and SGWB}
+
+The tensor transfer function is computed by evolving
+\begin{equation}
+\ddot{h} + (3H + \Gamma)\dot{h} + \frac{k^2}{a^2}h = 0.
+\end{equation}
+
+The stochastic gravitational-wave background (SGWB) is then
+\begin{equation}
+\Omega_{\rm GW}(k) =
+\frac{1}{12}\left(\frac{k}{a_0H_0}\right)^2
+\mathcal{P}_h(k)\,T_h^2(k),
+\end{equation}
+where $T_h(k)$ includes relaxation-induced suppression.
+
+The RDCC Boltzmann Code outputs:
+
+\begin{itemize}
+\item tensor transfer functions $T_h(k)$,
+\item the full SGWB spectrum $\Omega_{\rm GW}(f)$,
+\item sectoral tensor contributions.
+\end{itemize}
+
+% ---------------------------------------------------------
+% 6.6 Photon and Neutrino Multipoles
+% ---------------------------------------------------------
+\subsection{Photon and Neutrino Multipoles}
+
+The code outputs the full multipole hierarchy for photons and neutrinos in both sectors:
+\begin{equation}
+\Psi_{\ell,\gamma,A}(k,\tau),\quad
+\Psi_{\ell,\gamma,B}(k,\tau),\quad
+\Psi_{\ell,\nu,A}(k,\tau),\quad
+\Psi_{\ell,\nu,B}(k,\tau).
+\end{equation}
+
+These are essential for:
+
+\begin{itemize}
+\item computing CMB anisotropies,
+\item evaluating neutrino free-streaming effects,
+\item analyzing sectoral anisotropic stress.
+\end{itemize}
+
+% ---------------------------------------------------------
+% 6.7 Derived Quantities
+% ---------------------------------------------------------
+\subsection{Derived Quantities}
+
+The code also computes:
+
+\begin{itemize}
+\item sound
+\item sound horizon $r_s$,
+\item diffusion damping scale $r_d$,
+\item baryon acoustic oscillation (BAO) scale,
+\item horizon-entry scales for each sector,
+\item relaxation horizon $k_{\rm rel}$,
+\item effective sound speeds $c_{s,i}$,
+\item sectoral entropy ratios.
+\end{itemize}
+
+These quantities are used in later Companions to study magnetic fields, small-scale structure,
+cosmic coincidences, and non-Gaussianities.
+
+% ---------------------------------------------------------
+% 6.8 Summary
+% ---------------------------------------------------------
+\subsection{Summary}
+
+The RDCC Boltzmann Code provides a complete set of cosmological observables, including:
+
+\begin{itemize}
+\item CMB temperature and polarization spectra,
+\item matter power spectrum and growth rate,
+\item sectoral contributions to $\Delta N_{\rm eff}$,
+\item tensor transfer functions and the SGWB,
+\item photon and neutrino multipoles,
+\item derived cosmological scales.
+\end{itemize}
+
+These outputs allow RDCC to be tested against current and future cosmological data.
+
+% ---------------------------------------------------------
+% SECTION 7 — CONCLUSION
+% ---------------------------------------------------------
+\section{Conclusion}
+
+In this Companion we have developed the RDCC Boltzmann Code, establishing the computational
+infrastructure required to connect the Relaxation-Driven Cyclic Cosmology (RDCC) with observational
+cosmology. Building on the universal relaxation mechanism introduced in Companion~X and the
+sectoral physics developed in Companions XIII–XV, we derived the modified background evolution,
+the relaxation-corrected perturbation equations, and the full sector-coupled Boltzmann hierarchy.
+
+The key achievement of this Companion is the generalization of the standard Boltzmann formalism
+to a bipartite cosmology with relaxation-induced energy and momentum exchange. The resulting
+hierarchy incorporates sectoral temperature asymmetry, modified sound speeds, relaxation-driven
+friction terms, and tensor damping. These modifications propagate into the CMB anisotropies,
+matter power spectrum, growth rate, neutrino free-streaming, and the stochastic gravitational-wave
+background.
+
+The numerical implementation strategy outlined here ensures compatibility with existing Boltzmann
+codes such as CLASS, enabling efficient computation of transfer functions, multipole hierarchies,
+and derived cosmological quantities. This modular structure prepares the ground for future extensions,
+including non-linear evolution, small-scale structure, and magnetogenesis.
+
+With the RDCC Boltzmann Code in place, the framework is now ready for the next phase of development.
+Future Companions will apply this computational backbone to address outstanding cosmological questions,
+including the origin of cosmic magnetic fields, the small-scale structure tensions, cosmic coincidences,
+non-Gaussianities, and global parameter fits.
+
+% ---------------------------------------------------------
+% APPENDIX A — TECHNICAL DERIVATIONS
+% ---------------------------------------------------------
+\appendix
+\section*{Appendix A: Technical Derivations for the RDCC Boltzmann Code}
+
+\subsection*{A.1 Derivation of the Relaxation-Modified Continuity Equations}
+
+Starting from the sectoral energy-momentum conservation equations,
+\begin{equation}
+\nabla_\mu T^{\mu\nu}_i = Q^\nu_i,
+\end{equation}
+with $Q^\nu_A = -Q^\nu_B$, the relaxation mechanism is encoded in the temporal component,
+\begin{equation}
+Q^0_A = -Q^0_B = -\Gamma(\rho_A - \rho_B).
+\end{equation}
+
+Using the FLRW background and $T^{00} = \rho_i$, we obtain
+\begin{equation}
+\dot{\rho}_i + 3H(\rho_i + p_i) = Q^0_i.
+\end{equation}
+
+This yields the relaxation-modified continuity equations used in Section 2.
+
+\subsection*{A.2 Temperature Evolution from Entropy Flow}
+
+The entropy density satisfies
+\begin{equation}
+s_i = \frac{\rho_i + p_i}{T_i}.
+\end{equation}
+
+Differentiating and using the continuity equation gives
+\begin{equation}
+\dot{s}_i + 3Hs_i = -\frac{Q^0_i}{T_i}.
+\end{equation}
+
+Substituting $Q^0_i$ yields the temperature evolution equations used in Section 2.
+
+\subsection*{A.3 Linearization of Relaxation Terms}
+
+For perturbations, we expand
+\begin{equation}
+\rho_i = \rho_i(1+\delta_i), \qquad p_i = p_i + \delta p_i,
+\end{equation}
+and linearize the relaxation term:
+\begin{equation}
+\Gamma(\rho_A - \rho_B)
+\rightarrow
+\Gamma(\rho_A - \rho_B)
++ \Gamma(\rho_A\delta_A - \rho_B\delta_B).
+\end{equation}
+
+This yields the coupling terms in the scalar perturbation equations.
+
+\subsection*{A.4 Tensor Hierarchy and Relaxation Damping}
+
+The tensor perturbation equation,
+\begin{equation}
+\ddot{h} + (3H + \Gamma)\dot{h} + \frac{k^2}{a^2}h = 0,
+\end{equation}
+is derived by projecting the Einstein equations onto the transverse-traceless subspace.
+
+Relaxation modifies the anisotropic stress contribution and the damping term.
+
+% ---------------------------------------------------------
+% APPENDIX B — NUMERICAL STABILITY
+% ---------------------------------------------------------
+\section*{Appendix B: Numerical Stability and Stiffness Analysis}
+
+\subsection*{B.1 Origin of Stiffness}
+
+Stiffness arises when
+\begin{equation}
+\Gamma \gg H,
+\end{equation}
+which occurs for modes entering the horizon during the relaxation-dominated epoch.
+
+The perturbation equations contain terms of the form
+\begin{equation}
+\dot{X}_i \sim -\Gamma(X_i - X_j),
+\end{equation}
+introducing short timescales
+\begin{equation}
+\tau_{\rm rel} \sim \Gamma^{-1}.
+\end{equation}
+
+\subsection*{B.2 Implicit and Semi-Implicit Integration}
+
+To ensure numerical stability, we recommend:
+
+\begin{itemize}
+\item implicit integration for the highest multipoles,
+\item semi-implicit integration for intermediate multipoles,
+\item explicit integration for low multipoles.
+\end{itemize}
+
+\subsection*{B.3 Closure Relation with Relaxation}
+
+Relaxation modifies the asymptotic behavior of the hierarchy, requiring the closure relation used in Section 4.
+
+\end{document}

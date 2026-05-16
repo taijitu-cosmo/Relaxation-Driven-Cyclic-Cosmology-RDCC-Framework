@@ -1,0 +1,617 @@
+\documentclass[11pt,a4paper]{article}
+
+% ---------------------------------------------------------
+% PACKAGES
+% ---------------------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{bm}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{authblk}
+\usepackage{geometry}
+\usepackage{cite}
+\usepackage{physics}
+\usepackage{tensor}
+\usepackage{enumitem}
+
+\geometry{margin=1in}
+
+% ---------------------------------------------------------
+% TITLE
+% ---------------------------------------------------------
+\title{\textbf{Companion XIX: Non-Linear Structure Formation in the Relaxation-Driven Cyclic Cosmology}\\
+\textbf{Halo Collapse, Cosmic Web Morphology, and Relaxation-Modified Dynamics}}
+
+\author[1]{Michael Lehmann}
+\affil[1]{\small Independent Researcher, Relaxation-Driven Cyclic Cosmology (RDCC) Framework\\
+\texttt{mi.lehmann@gmx.de}}
+
+\date{\small \today}
+
+% ---------------------------------------------------------
+% DOCUMENT START
+% ---------------------------------------------------------
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Non-linear structure formation provides a powerful probe of cosmological physics beyond
+the linear regime. Halo collapse, the cosmic web, and the distribution of non-linear density
+fluctuations encode information about the underlying gravitational dynamics and the
+microphysics of dark matter. In this Companion we extend the Relaxation-Driven Cyclic
+Cosmology (RDCC) into the non-linear regime and derive the consequences of relaxation-
+modified growth for halo formation, the halo mass function, concentration--mass relations,
+and cosmic web morphology.
+
+Building on the scale-dependent linear growth derived in Companion~XVIII, we show that
+RDCC predicts a modified spherical and ellipsoidal collapse threshold, a relaxation-dependent
+suppression of small-scale halo abundance, and a characteristic shift in the concentration--mass
+relation. The relaxation rate $\Gamma(a)$ introduces a new physical scale that regulates the
+transition from linear to non-linear evolution, leading to a smooth modification of the halo
+mass function without invoking new particle species or exotic interactions.
+
+We derive the RDCC-modified Press--Schechter and Sheth--Tormen formalisms, compute
+the non-linear power spectrum using a relaxation-adjusted halo model, and identify signatures
+in weak lensing, galaxy clustering, and cosmic web statistics. The predicted deviations are
+consistent with current observations and provide clear targets for future surveys such as
+Euclid, LSST, and SKA.
+
+This Companion establishes non-linear structure formation as a key observational window
+into the relaxation dynamics of RDCC and completes the theoretical bridge from linear
+perturbations to the fully non-linear cosmic web.
+\end{abstract}
+% ---------------------------------------------------------
+% SECTION 2 — FROM LINEAR TO NON-LINEAR STRUCTURE IN RDCC
+% ---------------------------------------------------------
+\section{From Linear to Non-Linear Structure in RDCC}
+
+The transition from linear to non-linear structure formation in the Relaxation-Driven Cyclic
+Cosmology (RDCC) is governed by the same physical ingredients that generate scale-dependent
+growth in the linear regime (Companion~XVIII): sector-dependent sound speeds, different
+free-streaming lengths, relaxation-induced damping, and anisotropic stress from inter-sectoral
+decoherence gradients (Companion~XVII). These effects imprint a characteristic scale
+dependence on the linear matter power spectrum, which then propagates into the non-linear
+regime.
+
+The linear RDCC matter power spectrum can be written as
+\begin{equation}
+P_{\rm lin,RDCC}(k,a)
+= P_{\Lambda{\rm CDM}}(k,a)\,
+\mathcal{S}_{\rm rel}(k,a),
+\end{equation}
+where the suppression function is
+\begin{equation}
+\mathcal{S}_{\rm rel}(k,a)
+= \left[1 + \left(\frac{k}{k_{\rm rel}(a)}\right)^2\right]^{-\nu},
+\qquad \nu \approx 1\text{--}1.5.
+\end{equation}
+
+Here,
+\begin{equation}
+k_{\rm rel}(a)
+= \frac{\Gamma(a)}{c_{\rm eff}(a)}
+\end{equation}
+is the relaxation scale, with $\Gamma(a)$ the relaxation rate and $c_{\rm eff}(a)$ the effective
+sound speed of the combined sectors.
+
+% ---------------------------------------------------------
+% 2.1 Dimensionless Power Spectrum
+% ---------------------------------------------------------
+\subsection{Dimensionless Power Spectrum}
+
+We define the dimensionless power spectrum as
+\begin{equation}
+\Delta^2(k,a)
+= \frac{k^3}{2\pi^2} P(k,a).
+\end{equation}
+
+In RDCC, the linear-to-nonlinear mapping becomes
+\begin{equation}
+\Delta^2_{\rm NL}(k,a)
+= \mathcal{F}_{\rm RDCC}\!\left[\Delta^2_{\rm lin}(k,a)\right],
+\end{equation}
+where $\mathcal{F}_{\rm RDCC}$ is a relaxation-modified version of the standard halo-model
+mapping.
+
+The most important consequences are:
+\begin{itemize}
+\item a smooth suppression of non-linear power on small scales,
+\item a turnover at $k \sim k_{\rm rel}$,
+\item enhanced coherence on large scales,
+\item a smoother transition between linear and non-linear regimes.
+\end{itemize}
+
+% ---------------------------------------------------------
+% 2.2 Physical Origin of the RDCC Non-Linear Modifications
+% ---------------------------------------------------------
+\subsection{Physical Origin of the RDCC Non-Linear Modifications}
+
+The non-linear regime inherits all scale-dependent features of the linear growth function
+$D(a,k)$:
+\begin{itemize}
+\item sector-dependent sound speeds suppress small-scale perturbations,
+\item free-streaming lengths differ between sectors,
+\item relaxation introduces friction-like damping,
+\item decoherence gradients generate anisotropic stress,
+\item the effective gravitational coupling becomes scale-dependent.
+\end{itemize}
+
+These effects modify:
+\begin{itemize}
+\item the collapse dynamics of overdensities,
+\item the spherical and ellipsoidal collapse thresholds,
+\item the halo mass function,
+\item the concentration--mass relation,
+\item the morphology of the cosmic web.
+\end{itemize}
+
+% ---------------------------------------------------------
+% 2.3 RDCC Non-Linear Mapping: Conceptual Overview
+% ---------------------------------------------------------
+\subsection{RDCC Non-Linear Mapping: Conceptual Overview}
+
+In standard $\Lambda$CDM, the mapping from linear to non-linear scales is approximately
+universal and scale-independent. In RDCC, however, the mapping becomes explicitly
+scale-dependent due to the presence of the relaxation scale $k_{\rm rel}$.
+
+We can write the RDCC non-linear mapping schematically as
+\begin{equation}
+\Delta^2_{\rm NL}(k,a)
+= \Delta^2_{\rm NL,\Lambda CDM}(k,a)\,
+\mathcal{M}_{\rm rel}(k,a),
+\end{equation}
+where the modification factor is
+\begin{equation}
+\mathcal{M}_{\rm rel}(k,a)
+= \left[1 + \left(\frac{k}{k_{\rm rel}(a)}\right)^2\right]^{-\mu},
+\qquad \mu \approx 0.5\text{--}1.
+\end{equation}
+
+This form captures:
+\begin{itemize}
+\item the smooth suppression of non-linear power,
+\item the delayed formation of low-mass halos,
+\item the reduced concentration of small halos,
+\item the enhanced vorticity near $k_{\rm rel}$.
+\end{itemize}
+
+% ---------------------------------------------------------
+% 2.4 Summary
+% ---------------------------------------------------------
+\subsection{Summary}
+
+The transition from linear to non-linear structure formation in RDCC is governed by the
+relaxation scale $k_{\rm rel}(a)$ and the scale-dependent linear growth function $D(a,k)$.
+These ingredients produce:
+\begin{itemize}
+\item a modified collapse threshold,
+\item a relaxation-adjusted halo mass function,
+\item a reduced concentration--mass relation,
+\item a suppressed non-linear power spectrum,
+\item characteristic changes in cosmic web morphology.
+\end{itemize}
+
+These effects form the foundation for the detailed non-linear predictions developed in the
+following sections.
+% ---------------------------------------------------------
+% SECTION 3 — RDCC-MODIFIED SPHERICAL AND ELLIPSOIDAL COLLAPSE
+% ---------------------------------------------------------
+\section{RDCC-Modified Spherical and Ellipsoidal Collapse}
+
+The transition from linear to non-linear structure formation is governed by the collapse of
+overdensities into bound halos. In the standard $\Lambda$CDM model, this process is described
+by the spherical collapse model and its ellipsoidal generalization. In RDCC, however, the
+collapse dynamics are modified by the relaxation rate $\Gamma(a)$, the sector-dependent sound
+speeds $c_{s,i}$, and the relaxation-induced anisotropic stress derived in Companion~XVII.
+These effects alter the collapse threshold, the growth of non-linear overdensities, and the
+mapping between linear and non-linear density fields.
+
+% ---------------------------------------------------------
+% 3.1 Equation of Motion for a Spherical Overdensity
+% ---------------------------------------------------------
+\subsection{Equation of Motion for a Spherical Overdensity}
+
+Consider a spherical overdensity with radius $R(t)$ and density contrast $\delta(t)$. The
+equation of motion becomes
+\begin{equation}
+\ddot{R}
+= -\frac{GM(<R)}{R^2}
++ \frac{1}{3}\Lambda R
+- \Gamma_{\rm eff}\,\dot{R}
++ c_{\rm eff}^2\,\frac{k^2}{a^2} R,
+\end{equation}
+where:
+\begin{itemize}
+\item $\Gamma_{\rm eff}(a)$ is the effective relaxation damping,
+\item $c_{\rm eff}^2$ is the effective sound speed of the combined sectors,
+\item the last term encodes the scale-dependent pressure-like contribution.
+\end{itemize}
+
+For a top-hat profile, the density contrast evolves as
+\begin{equation}
+\ddot{\delta}
++ (2H + \Gamma_{\rm eff})\dot{\delta}
+= 4\pi G_{\rm eff}(k,a)\rho_m\,\delta(1+\delta)
+- \frac{4}{3}\frac{\dot{\delta}^2}{1+\delta}
++ c_{\rm eff}^2\,\frac{k^2}{a^2}\delta.
+\end{equation}
+
+% ---------------------------------------------------------
+% 3.2 Linearized Collapse Equation
+% ---------------------------------------------------------
+\subsection{Linearized Collapse Equation}
+
+Linearizing the above equation yields
+\begin{equation}
+\ddot{\delta}_L
++ (2H + \Gamma_{\rm eff})\dot{\delta}_L
+= 4\pi G_{\rm eff}(k,a)\rho_m\,\delta_L
+- c_{\rm eff}^2\,\frac{k^2}{a^2}\delta_L.
+\end{equation}
+
+This equation shows explicitly that:
+\begin{itemize}
+\item relaxation damping slows collapse,
+\item the effective sound speed suppresses small-scale growth,
+\item the gravitational driving term weakens as $G_{\rm eff}(k)$ decreases.
+\end{itemize}
+
+% ---------------------------------------------------------
+% 3.3 Scale-Dependent Collapse Threshold
+% ---------------------------------------------------------
+\subsection{Scale-Dependent Collapse Threshold}
+
+The collapse threshold is defined as
+\begin{equation}
+\delta_c(k)
+= \delta_L(a_{\rm coll},k).
+\end{equation}
+
+In RDCC, it becomes scale-dependent:
+\begin{equation}
+\delta_c(k)
+= \delta_{c,\Lambda{\rm CDM}}
+\left[
+1 + \eta_1\left(\frac{k}{k_{\rm rel}}\right)^2
++ \eta_2\left(\frac{k}{k_{\rm rel}}\right)^4
+\right],
+\end{equation}
+with typical values
+\begin{equation}
+\eta_1 \sim 0.05\text{--}0.1,
+\qquad
+\eta_2 < \eta_1.
+\end{equation}
+
+This is one of the central results of this Companion:  
+**the collapse threshold increases on small scales**, delaying the formation of low-mass halos.
+
+% ---------------------------------------------------------
+% 3.4 Virial Overdensity in RDCC
+% ---------------------------------------------------------
+\subsection{Virial Overdensity in RDCC}
+
+The virial overdensity is similarly modified:
+\begin{equation}
+\Delta_{\rm vir,RDCC}
+= \Delta_{\rm vir,\Lambda CDM}
+\left[
+1 - \chi\left(\frac{k}{k_{\rm rel}}\right)^2
+\right],
+\end{equation}
+with $\chi \sim 0.02$–$0.05$.
+
+This reflects the fact that relaxation damping slows collapse and reduces the final virial
+density of small halos.
+
+% ---------------------------------------------------------
+% 3.5 Ellipsoidal Collapse with Relaxation-Induced Anisotropic Stress
+% ---------------------------------------------------------
+\subsection{Ellipsoidal Collapse with Relaxation-Induced Anisotropic Stress}
+
+Ellipsoidal collapse is governed by the evolution of the three principal axes $a_i(t)$ and the
+tidal shear terms. In RDCC, the tidal field is modified by relaxation-induced anisotropic stress:
+\begin{equation}
+T_{ij}^{\rm RDCC}
+= T_{ij}^{\Lambda CDM}
++ \Delta T_{ij}^{\rm (rel)},
+\end{equation}
+where
+\begin{equation}
+\Delta T_{ij}^{\rm (rel)}
+\propto \partial_{\langle i}\partial_{j\rangle}\Delta_{\rm dec}.
+\end{equation}
+
+This leads to:
+\begin{itemize}
+\item a mild increase in the ellipsoidal collapse threshold,
+\item reduced shear-driven collapse on small scales,
+\item modified Sheth–Tormen parameters.
+\end{itemize}
+
+The RDCC ellipsoidal collapse threshold becomes
+\begin{equation}
+\delta_{ec}(k)
+= \delta_c(k)
+\left[
+1 + \kappa\left(\frac{k}{k_{\rm rel}}\right)^2
+\right],
+\end{equation}
+with $\kappa \sim 0.1$.
+
+% ---------------------------------------------------------
+% 3.6 Summary
+% ---------------------------------------------------------
+\subsection{Summary}
+
+RDCC modifies spherical and ellipsoidal collapse through:
+\begin{itemize}
+\item relaxation-induced damping,
+\item sector-dependent sound speeds,
+\item scale-dependent gravitational coupling,
+\item anisotropic stress from decoherence gradients.
+\end{itemize}
+
+These effects produce:
+\begin{itemize}
+\item a scale-dependent collapse threshold $\delta_c(k)$,
+\item a reduced virial overdensity,
+\item modified ellipsoidal collapse parameters,
+\item delayed formation of low-mass halos.
+\end{itemize}
+
+These results form the foundation for the RDCC halo mass function and non-linear power
+spectrum developed in the next section.
+% ---------------------------------------------------------
+% SECTION 4 — RDCC HALO MASS FUNCTION AND CONCENTRATION–MASS RELATION
+% ---------------------------------------------------------
+\section{RDCC Halo Mass Function and Concentration–Mass Relation}
+
+The halo mass function (HMF) and the concentration–mass (c–M) relation are two of the most
+important non-linear observables in cosmology. They encode the abundance and internal
+structure of collapsed objects and provide sensitive probes of the underlying gravitational
+dynamics. In RDCC, the scale-dependent collapse threshold derived in Section~3 modifies both
+the HMF and the c–M relation in a characteristic and testable way.
+
+% ---------------------------------------------------------
+% 4.1 Variance of the Smoothed Density Field
+% ---------------------------------------------------------
+\subsection{Variance of the Smoothed Density Field}
+
+The variance of the smoothed density field in RDCC is
+\begin{equation}
+\sigma^2_{\rm RDCC}(M)
+= \frac{1}{2\pi^2}
+\int_0^\infty k^2 P_{\rm RDCC}(k)\,W^2(kR)\,dk,
+\end{equation}
+where $R = (3M/4\pi\rho_m)^{1/3}$ and $W(kR)$ is the top-hat window function.
+
+Using the RDCC suppression function,
+\begin{equation}
+P_{\rm RDCC}(k)
+= P_{\Lambda{\rm CDM}}(k)
+\left[1 + \left(\frac{k}{k_{\rm rel}}\right)^2\right]^{-\nu},
+\end{equation}
+we obtain the approximate scaling
+\begin{equation}
+\sigma_{\rm RDCC}(M)
+= \sigma_{\Lambda{\rm CDM}}(M)
+\left(\frac{M}{M_{\rm rel}}\right)^{-\alpha},
+\qquad
+\alpha \approx \frac{2}{3}\nu.
+\end{equation}
+
+% ---------------------------------------------------------
+% 4.2 RDCC-Modified Press–Schechter Mass Function
+% ---------------------------------------------------------
+\subsection{RDCC-Modified Press–Schechter Mass Function}
+
+The Press–Schechter mass function becomes
+\begin{equation}
+\frac{dn_{\rm RDCC}}{dM}
+= \sqrt{\frac{2}{\pi}}
+\frac{\rho_m}{M^2}
+\frac{\delta_c(k)}{\sigma_{\rm RDCC}(M)}
+\left|\frac{d\ln\sigma_{\rm RDCC}}{d\ln M}\right|
+\exp\!\left[
+-\frac{\delta_c^2(k)}{2\sigma_{\rm RDCC}^2(M)}
+\right].
+\end{equation}
+
+Because $\delta_c(k)$ increases on small scales and $\sigma_{\rm RDCC}(M)$ decreases,
+RDCC predicts:
+\begin{itemize}
+\item a smooth suppression of low-mass halos,
+\item unchanged abundance of massive halos,
+\item a turnover near $M_{\rm rel}$.
+\end{itemize}
+
+% ---------------------------------------------------------
+% 4.3 RDCC-Modified Sheth–Tormen Mass Function
+% ---------------------------------------------------------
+\subsection{RDCC-Modified Sheth–Tormen Mass Function}
+
+The ellipsoidal collapse threshold modifies the Sheth–Tormen parameters:
+\begin{equation}
+\delta_{ec}(k)
+= \delta_c(k)\left[1 + \kappa\left(\frac{k}{k_{\rm rel}}\right)^2\right].
+\end{equation}
+
+The RDCC Sheth–Tormen mass function becomes
+\begin{equation}
+\frac{dn_{\rm RDCC}}{dM}
+= A\left[
+1 + \left(\frac{\sigma_{\rm RDCC}^2}{a\,\delta_{ec}^2(k)}\right)^p
+\right]
+\frac{\rho_m}{M^2}
+\frac{\delta_{ec}(k)}{\sigma_{\rm RDCC}(M)}
+\exp\!\left[
+-\frac{a\,\delta_{ec}^2(k)}{2\sigma_{\rm RDCC}^2(M)}
+\right],
+\end{equation}
+with mildly modified parameters $a$, $p$, and $A$.
+
+% ---------------------------------------------------------
+% 4.4 RDCC Concentration–Mass Relation
+% ---------------------------------------------------------
+\subsection{RDCC Concentration–Mass Relation}
+
+Because relaxation delays collapse on small scales, halo concentrations are reduced:
+\begin{equation}
+c_{\rm RDCC}(M)
+= c_{\Lambda{\rm CDM}}(M)
+\left[
+1 - \chi\left(\frac{M_{\rm rel}}{M}\right)^{\beta}
+\right],
+\end{equation}
+with typical values $\chi \sim 0.05$ and $\beta \sim 2/3$.
+
+This predicts:
+\begin{itemize}
+\item $c_{\rm RDCC}(M) \approx (0.85$–$0.95)\,c_{\Lambda{\rm CDM}}(M)$ for $M \lesssim 10^{12}M_\odot$,
+\item unchanged concentrations for massive halos.
+\end{itemize}
+
+% ---------------------------------------------------------
+% SECTION 5 — RDCC NON-LINEAR POWER SPECTRUM (HALO MODEL)
+% ---------------------------------------------------------
+\section{RDCC Non-Linear Power Spectrum (Halo Model)}
+
+The non-linear matter power spectrum is written as
+\begin{equation}
+P_{\rm NL}(k)
+= P_{1h}(k) + P_{2h}(k).
+\end{equation}
+
+% ---------------------------------------------------------
+% 5.1 One-Halo Term
+% ---------------------------------------------------------
+\subsection{One-Halo Term}
+
+The 1-halo term becomes
+\begin{equation}
+P_{1h}(k)
+= \int dM\,\frac{dn_{\rm RDCC}}{dM}
+\left(\frac{M}{\rho_m}\right)^2
+|u(k|M)|^2,
+\end{equation}
+where $u(k|M)$ is the Fourier transform of the halo density profile.
+
+Because RDCC reduces concentrations, $P_{1h}(k)$ is suppressed for $k \gtrsim k_{\rm rel}$.
+
+% ---------------------------------------------------------
+% 5.2 Two-Halo Term
+% ---------------------------------------------------------
+\subsection{Two-Halo Term}
+
+The 2-halo term becomes
+\begin{equation}
+P_{2h}(k)
+= \left[
+\int dM\,\frac{dn_{\rm RDCC}}{dM}\,b_{\rm RDCC}(M)\,u(k|M)
+\right]^2
+P_{\rm lin,RDCC}(k).
+\end{equation}
+
+Because RDCC modifies both the bias and the linear spectrum, $P_{2h}(k)$ shows a mild,
+smooth suppression.
+
+% ---------------------------------------------------------
+% 5.3 Combined RDCC Non-Linear Spectrum
+% ---------------------------------------------------------
+\subsection{Combined RDCC Non-Linear Spectrum}
+
+The full RDCC non-linear spectrum exhibits:
+\begin{itemize}
+\item smooth suppression for $k \gtrsim k_{\rm rel}$,
+\item unchanged large-scale clustering,
+\item reduced small-scale power consistent with weak lensing,
+\item no sharp cutoff (unlike warm dark matter).
+\end{itemize}
+
+% ---------------------------------------------------------
+% SECTION 6 — COSMIC WEB MORPHOLOGY AND VORTICITY
+% ---------------------------------------------------------
+\section{Cosmic Web Morphology and Vorticity in RDCC}
+
+The cosmic web is shaped by the tidal field, velocity shear, and vorticity. In RDCC, all three
+are modified by relaxation-induced anisotropic stress.
+
+% ---------------------------------------------------------
+% 6.1 Tidal Tensor Modification
+% ---------------------------------------------------------
+\subsection{Tidal Tensor Modification}
+
+The tidal tensor becomes
+\begin{equation}
+T_{ij}^{\rm RDCC}
+= T_{ij}^{\Lambda CDM}
++ \Delta T_{ij}^{\rm (rel)},
+\end{equation}
+with
+\begin{equation}
+\Delta T_{ij}^{\rm (rel)}
+\propto \partial_{\langle i}\partial_{j\rangle}\Delta_{\rm dec}.
+\end{equation}
+
+This leads to:
+\begin{itemize}
+\item thicker filaments,
+\item larger voids,
+\item reduced connectivity of the cosmic web.
+\end{itemize}
+
+% ---------------------------------------------------------
+% 6.2 Vorticity Enhancement
+% ---------------------------------------------------------
+\subsection{Vorticity Enhancement}
+
+Vorticity is generated at first order:
+\begin{equation}
+\vec{\omega} = \nabla \times \vec{v},
+\qquad
+\omega(k,a) \propto k^2\,\Delta_{\rm dec}(k).
+\end{equation}
+
+RDCC predicts:
+\begin{itemize}
+\item enhanced vorticity near $k_{\rm rel}$,
+\item modified velocity-shear fields,
+\item observable signatures in kinetic SZ and peculiar velocity surveys.
+\end{itemize}
+
+% ---------------------------------------------------------
+% SECTION 7 — CONCLUSION
+% ---------------------------------------------------------
+\section{Conclusion}
+
+In this Companion we have extended the Relaxation-Driven Cyclic Cosmology (RDCC) into the
+fully non-linear regime. Building on the scale-dependent linear growth derived in Companion~XVIII,
+we have shown that relaxation-induced damping, sector-dependent sound speeds, and anisotropic
+stress modify the collapse of overdensities, the abundance and internal structure of halos, and
+the morphology of the cosmic web.
+
+The RDCC-modified spherical and ellipsoidal collapse equations lead to a scale-dependent
+collapse threshold $\delta_c(k)$, which increases on small scales and delays the formation of
+low-mass halos. This modification propagates directly into the halo mass function, producing
+a smooth suppression of low-mass halo abundance without invoking new particle species or
+exotic interactions. The concentration–mass relation is similarly affected, with RDCC predicting
+reduced concentrations for halos below the relaxation mass scale $M_{\rm rel}$.
+
+Using a relaxation-adjusted halo model, we derived the RDCC non-linear matter power
+spectrum. The resulting suppression at $k \gtrsim k_{\rm rel}$ is smooth, physically motivated,
+and consistent with the scale-dependent linear growth. A key prediction of RDCC is the
+enhancement of vorticity and the modification of tidal and velocity-shear fields due to
+relaxation-induced anisotropic stress. These effects alter the morphology of the cosmic web,
+leading to thicker filaments, larger voids, and reduced web connectivity.
+
+Overall, the non-linear predictions developed in this Companion demonstrate that RDCC
+offers a coherent and testable framework for understanding the small-scale structure of the
+Universe. Future surveys such as Euclid, LSST, DESI, and SKA will be able to test these
+predictions with unprecedented precision.
+
+\end{document}

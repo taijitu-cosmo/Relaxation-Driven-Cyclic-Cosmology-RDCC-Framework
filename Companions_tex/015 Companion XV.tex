@@ -1,0 +1,443 @@
+\documentclass[11pt,a4paper]{article}
+
+% ---------------------------------------------------------
+% PACKAGES
+% ---------------------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{bm}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{authblk}
+\usepackage{geometry}
+\usepackage{cite}
+\usepackage{physics}
+\usepackage{tensor}
+\usepackage{enumitem}
+
+\geometry{margin=1in}
+
+% ---------------------------------------------------------
+% TITLE
+% ---------------------------------------------------------
+\title{\textbf{Companion XV: The Early-Universe Gravitational-Wave Spectrum in the Relaxation-Driven Cyclic Cosmology (RDCC)}\\
+\textbf{Relaxation-Induced Tensor Damping, Sectoral Asymmetry, and CPT-Sector GW Signatures}}
+
+\author[1]{Michael Lehmann}
+\affil[1]{\small Independent Researcher, Relaxation-Driven Cyclic Cosmology (RDCC) Framework\\
+\texttt{mi.lehmann@gmx.de}}
+
+\date{\small \today}
+
+% ---------------------------------------------------------
+% DOCUMENT START
+% ---------------------------------------------------------
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+The early-Universe gravitational-wave (GW) spectrum provides a uniquely sensitive probe of the microphysical processes that shaped the primordial plasma. In the Relaxation-Driven Cyclic Cosmology (RDCC), the universal relaxation mechanism introduced in Companion~X modifies the evolution of tensor perturbations during the earliest stages of cosmic history. The relaxation rate $\Gamma(a) = \alpha(a) H(a)$ introduces an additional damping term in the tensor-mode equation of motion, suppressing the amplitude of primordial gravitational waves on scales that re-entered the horizon during the relaxation-dominated epoch.
+
+Combined with the sectoral temperature asymmetry between the two CPT-conjugate sectors, this leads to a characteristic sectoral GW asymmetry and a relaxation-imprinted suppression feature in the stochastic gravitational-wave background (SGWB). The colder CPT sector experiences weaker damping and produces a distinct tensor spectrum, while the visible sector exhibits a relaxation-induced suppression at high frequencies.
+
+In this Companion we derive the relaxation-corrected tensor-mode evolution, compute the resulting GW transfer function, and obtain the full early-Universe GW spectrum in RDCC. We incorporate the modernized sectoral thermodynamics from Companion~XIII, the CPT-sector PBH interpretation from Companion~XIV, and the tensor-modulation structure from Companion~II. The results establish the SGWB as a central observational probe of the relaxation-driven dynamics that define the RDCC framework.
+\end{abstract}
+% ---------------------------------------------------------
+% SECTION 1 — MOTIVATION (MODERNIZED)
+% ---------------------------------------------------------
+\section{Motivation}
+
+The stochastic gravitational-wave background (SGWB) generated in the early Universe is a uniquely sensitive probe of high-energy physics. In standard cosmology, the SGWB is determined by the primordial tensor spectrum and its subsequent evolution through radiation and matter domination. The resulting spectrum is smooth, nearly scale-invariant, and free of dynamical features except for small steps associated with changes in the relativistic degrees of freedom.
+
+In the Relaxation-Driven Cyclic Cosmology (RDCC), the situation is fundamentally different. The universal relaxation mechanism introduced in Companion~X modifies the evolution of super-horizon tensor modes during the earliest stages of cosmic history. When the relaxation rate satisfies
+\begin{equation}
+\Gamma(a) = \alpha(a) H(a) \gtrsim H(a),
+\end{equation}
+tensor modes experience an additional damping term that suppresses their amplitude before horizon re-entry. This effect leaves a characteristic imprint on the SGWB: a smooth, power-law suppression at frequencies corresponding to modes that re-entered during the relaxation-dominated epoch.
+
+A second key ingredient is the sectoral temperature asymmetry between the two CPT-conjugate sectors. As shown in Companion~X, the temperature ratio
+\begin{equation}
+\frac{T_B}{T_A} \approx 0.5
+\end{equation}
+implies different relaxation histories, horizon masses, and damping scales in the two sectors. Tensor modes in the colder CPT sector experience weaker damping, leading to a sectoral GW asymmetry.
+
+This Companion develops the early-Universe gravitational-wave sector of RDCC, incorporating the modernized sectoral thermodynamics from Companion~XIII, the CPT-sector PBH interpretation from Companion~XIV, and the tensor-modulation structure from Companion~II. The SGWB emerges as a central observational probe of the relaxation-driven dynamics that define the RDCC framework.
+
+% ---------------------------------------------------------
+% SECTION 2 — TENSOR MODES IN STANDARD COSMOLOGY (MODERNIZED)
+% ---------------------------------------------------------
+\section{Tensor Modes in Standard Cosmology}
+
+In standard cosmology, primordial tensor perturbations obey the equation
+\begin{equation}
+\ddot{h}_k + 3H \dot{h}_k + \frac{k^2}{a^2} h_k = 0,
+\end{equation}
+with two distinct regimes:
+
+\begin{itemize}
+\item \textbf{Super-horizon ($k < aH$):} Tensor modes freeze out with constant amplitude.
+\item \textbf{Sub-horizon ($k > aH$):} Tensor modes oscillate with frequency $k/a$ and decay as $a^{-1}$ due to Hubble friction.
+\end{itemize}
+
+The primordial tensor spectrum is parameterized as
+\begin{equation}
+\mathcal{P}_h(k) = A_t \left(\frac{k}{k_*}\right)^{n_t},
+\end{equation}
+and the present-day GW energy density is
+\begin{equation}
+\Omega_{\rm GW}(k) = \frac{1}{12} \left(\frac{k}{a_0 H_0}\right)^2 \mathcal{P}_h(k) T^2(k),
+\end{equation}
+where $T(k)$ is the transfer function.
+
+Crucially, standard cosmology contains no additional damping beyond Hubble friction. The SGWB is therefore smooth and featureless, making it exceptionally sensitive to any new early-Universe physics.
+
+% ---------------------------------------------------------
+% SECTION 3 — TENSOR MODES IN RDCC: RELAXATION-INDUCED DAMPING
+% ---------------------------------------------------------
+\section{Tensor Modes in RDCC: Relaxation-Induced Damping}
+
+In RDCC, the universal relaxation mechanism modifies the tensor-mode equation by introducing an additional damping term. The evolution equation becomes
+\begin{equation}
+\ddot{h}_k + \left(3H + \Gamma(a)\right)\dot{h}_k + \frac{k^2}{a^2} h_k = 0,
+\end{equation}
+with
+\begin{equation}
+\Gamma(a) = \alpha(a) H(a),
+\end{equation}
+where $\alpha(a)$ is the relaxation coefficient derived in Companion~X.
+
+\subsection{Super-Horizon Evolution}
+
+For $k < aH$, the equation reduces to
+\begin{equation}
+\ddot{h}_k + (3 + \alpha) H \dot{h}_k \approx 0.
+\end{equation}
+During radiation domination ($H \propto a^{-2}$), the solution is
+\begin{equation}
+h_k(a) \propto a^{-\alpha/2}.
+\end{equation}
+
+Thus, super-horizon tensor modes are suppressed by
+\begin{equation}
+S(a) = \left(\frac{a}{a_{\rm in}}\right)^{-\alpha/2},
+\end{equation}
+where $a_{\rm in}$ marks the onset of the relaxation-dominated epoch.
+
+\subsection{Sub-Horizon Evolution}
+
+After horizon re-entry ($k > aH$), the equation becomes
+\begin{equation}
+\ddot{h}_k + (3H + \Gamma)\dot{h}_k + \frac{k^2}{a^2} h_k = 0.
+\end{equation}
+The amplitude decays as
+\begin{equation}
+h_k(a) \propto a^{-1} \exp\left[-\frac{1}{2}\int_{a_{\rm re}}^{a} \alpha(a') \frac{da'}{a'}\right].
+\end{equation}
+
+\subsection{Connection to Tensor Modulation (Companion II)}
+
+Companion~II shows that the same inter-sectoral relaxation dynamics induce a modulation of the tensor sector, producing log-periodic features in the primordial tensor spectrum. The relaxation-induced damping derived here is the \emph{late-time} manifestation of the same mechanism. Both effects originate from the bipartite CPT structure and the \(\alpha\)-controlled inter-sectoral coupling.
+
+\subsection{Sectoral Asymmetry}
+
+Because the CPT-conjugate sector is colder,
+\begin{equation}
+\alpha_B(a) < \alpha_A(a),
+\end{equation}
+tensor modes in sector B experience weaker damping:
+\begin{equation}
+h_k^{(B)} > h_k^{(A)}.
+\end{equation}
+
+This sectoral GW asymmetry parallels the sectoral PBH asymmetry derived in Companion~XIV and is a direct consequence of the RDCC relaxation dynamics.
+
+In the next section, we compute the relaxation-corrected transfer function and derive the full SGWB spectrum.
+% ---------------------------------------------------------
+% SECTION 4 — RELAXATION-CORRECTED TRANSFER FUNCTION
+% ---------------------------------------------------------
+\section{Relaxation-Corrected Transfer Function}
+
+The transfer function $T(k)$ encodes the evolution of tensor modes from their primordial generation to the present day. In standard cosmology, $T(k)$ is determined by horizon re-entry, changes in the relativistic degrees of freedom, and the transition from radiation to matter domination. In the Relaxation-Driven Cyclic Cosmology (RDCC), the universal relaxation mechanism introduces an additional suppression factor that modifies the transfer function on scales that re-entered the horizon during the relaxation-dominated epoch.
+
+\subsection{Definition}
+
+The present-day tensor power spectrum is
+\begin{equation}
+\mathcal{P}_h(k, a_0) = \mathcal{P}_h(k, a_{\rm prim})\, T^2(k),
+\end{equation}
+where $\mathcal{P}_h(k, a_{\rm prim})$ is the primordial tensor spectrum and $T(k)$ encodes all subsequent evolution.
+
+In RDCC, the transfer function factorizes as
+\begin{equation}
+T(k) = T_{\rm std}(k)\, T_{\rm rel}(k),
+\end{equation}
+where $T_{\rm std}(k)$ is the standard transfer function and $T_{\rm rel}(k)$ captures the relaxation-induced suppression.
+
+\subsection{Relaxation-Induced Suppression}
+
+From the tensor-mode evolution derived in Section~3, the amplitude of a tensor mode is suppressed by two effects:
+
+\begin{itemize}
+\item \textbf{Super-horizon suppression} by the factor $S(a)$,
+\item \textbf{Enhanced sub-horizon damping} due to the additional friction term $\Gamma(a)$.
+\end{itemize}
+
+The combined suppression factor is
+\begin{equation}
+T_{\rm rel}(k) = S(a_{\rm re}) \exp\left[-\frac{1}{2}\int_{a_{\rm re}}^{a_{\rm end}} \alpha(a)\,\frac{da}{a}\right],
+\end{equation}
+where $a_{\rm re}$ is the scale factor at horizon re-entry and $a_{\rm end}$ marks the end of the relaxation-dominated epoch.
+
+Using $\Gamma(a) = \alpha(a) H(a)$, the integral simplifies to
+\begin{equation}
+T_{\rm rel}(k) \simeq S(a_{\rm re}) \left(\frac{a_{\rm re}}{a_{\rm end}}\right)^{\alpha/2},
+\end{equation}
+if $\alpha(a)$ varies slowly.
+
+\subsection{Scale Dependence}
+
+Relaxation affects only modes that re-entered the horizon while $\Gamma(a) \ge H(a)$. Defining the characteristic scale $k_{\rm rel}$ by
+\begin{equation}
+k_{\rm rel} = a_{\rm rel} H(a_{\rm rel}),
+\end{equation}
+where $a_{\rm rel}$ satisfies $\Gamma(a_{\rm rel}) = H(a_{\rm rel})$, we obtain:
+
+\begin{itemize}
+\item $k \ll k_{\rm rel}$: Modes re-enter after relaxation ends. No suppression: $T_{\rm rel}(k) \approx 1$.
+\item $k \gg k_{\rm rel}$: Modes re-enter during relaxation. Strong suppression: $T_{\rm rel}(k) \propto k^{-\alpha/2}$.
+\end{itemize}
+
+Thus, the relaxation mechanism introduces a power-law suppression feature in the SGWB spectrum at high frequencies.
+
+\subsection{Sectoral Asymmetry}
+
+Because the two CPT-conjugate sectors have different temperatures,
+\begin{equation}
+\alpha_B(a) < \alpha_A(a),
+\end{equation}
+their relaxation histories differ. The colder CPT sector experiences weaker damping:
+\begin{equation}
+T_{\rm rel}^{(B)}(k) > T_{\rm rel}^{(A)}(k).
+\end{equation}
+
+This sectoral GW asymmetry parallels the sectoral PBH asymmetry derived in Companion~XIV and is a direct consequence of the RDCC relaxation dynamics.
+
+\subsection{Resulting Transfer Function}
+
+Combining the standard and relaxation-induced contributions yields
+\begin{equation}
+T(k) = T_{\rm std}(k)\, S(a_{\rm re}) \exp\left[-\frac{1}{2}\int_{a_{\rm re}}^{a_{\rm end}} \alpha(a)\,\frac{da}{a}\right].
+\end{equation}
+
+This transfer function forms the basis for computing the full stochastic gravitational-wave background in RDCC.
+
+% ---------------------------------------------------------
+% SECTION 5 — FULL RDCC SGWB SPECTRUM
+% ---------------------------------------------------------
+\section{The Early-Universe GW Spectrum in RDCC}
+
+With the relaxation-corrected transfer function derived in Section~4, we now compute the full stochastic gravitational-wave background (SGWB) in the Relaxation-Driven Cyclic Cosmology (RDCC). The resulting spectrum exhibits a characteristic suppression feature at high frequencies, reflecting the damping of tensor modes during the relaxation-dominated epoch.
+
+\subsection{General Expression}
+
+The present-day GW energy density per logarithmic interval in wavenumber is
+\begin{equation}
+\Omega_{\rm GW}(k) = \frac{1}{12}\left(\frac{k}{a_0 H_0}\right)^2 \mathcal{P}_h(k)\, T^2(k),
+\end{equation}
+with
+\begin{equation}
+T(k) = T_{\rm std}(k)\, T_{\rm rel}(k).
+\end{equation}
+
+The primordial spectrum is parameterized as
+\begin{equation}
+\mathcal{P}_h(k) = A_t \left(\frac{k}{k_*}\right)^{n_t}.
+\end{equation}
+
+\subsection{Relaxation-Induced Suppression Feature}
+
+Using the relaxation-corrected transfer function, the GW spectrum becomes
+\begin{equation}
+\Omega_{\rm GW}(k) = \Omega_{\rm std}(k)\, T_{\rm rel}^2(k),
+\end{equation}
+with
+\begin{equation}
+T_{\rm rel}(k) \approx
+\begin{cases}
+1, & k \ll k_{\rm rel}, \\
+\left(\frac{k}{k_{\rm rel}}\right)^{-\alpha/2}, & k \gg k_{\rm rel}.
+\end{cases}
+\end{equation}
+
+Thus, the relaxation mechanism introduces a power-law suppression at high frequencies:
+\begin{equation}
+\Omega_{\rm GW}(k) \propto k^{n_t - \alpha}.
+\end{equation}
+
+\subsection{Frequency Range of the Suppression Feature}
+
+The characteristic frequency associated with $k_{\rm rel}$ is
+\begin{equation}
+f_{\rm rel} = \frac{k_{\rm rel}}{2\pi a_0}.
+\end{equation}
+
+For typical RDCC parameters, the relaxation-dominated epoch occurs at temperatures
+\begin{equation}
+T \sim 10^7 - 10^{10}\,{\rm GeV},
+\end{equation}
+corresponding to frequencies
+\begin{equation}
+f_{\rm rel} \sim 10^{-3} - 10^{2}\,{\rm Hz}.
+\end{equation}
+
+This range overlaps with the sensitivity windows of LISA, DECIGO, and BBO.
+
+\subsection{Sectoral GW Asymmetry}
+
+Because $\alpha_B < \alpha_A$, the colder CPT sector has a shallower suppression slope:
+\begin{equation}
+\Omega_{\rm GW}^{(B)}(k) > \Omega_{\rm GW}^{(A)}(k)
+\end{equation}
+for $k \gg k_{\rm rel}$.
+
+\subsection{Full RDCC GW Spectrum}
+
+Combining all contributions, the RDCC GW spectrum takes the form
+\begin{equation}
+\Omega_{\rm GW}(k) =
+\frac{1}{12}
+\left(\frac{k}{a_0 H_0}\right)^2
+A_t
+\left(\frac{k}{k_*}\right)^{n_t}
+T_{\rm std}^2(k)
+T_{\rm rel}^2(k),
+\end{equation}
+with
+\begin{equation}
+T_{\rm rel}(k) \approx
+\begin{cases}
+1, & k \ll k_{\rm rel}, \\
+\left(\frac{k}{k_{\rm rel}}\right)^{-\alpha/2}, & k \gg k_{\rm rel}.
+\end{cases}
+\end{equation}
+
+This spectrum exhibits a smooth, nearly scale-invariant low-frequency regime and a relaxation-induced suppression at high frequencies. The location and slope of the suppression feature provide direct information about the relaxation dynamics and the temperature asymmetry between the two sectors.
+% ---------------------------------------------------------
+% SECTION 6 — OBSERVATIONAL PREDICTIONS (MODERNIZED)
+% ---------------------------------------------------------
+\section{Observational Predictions}
+
+The relaxation-corrected gravitational-wave (GW) spectrum derived in Section~5 leads to a set of concrete and testable predictions. These predictions arise from the interplay between relaxation-induced tensor damping, the sectoral temperature asymmetry, and the frequency dependence of horizon re-entry. Together, they provide a powerful observational handle on the relaxation-driven dynamics that define the RDCC framework.
+
+\subsection{Prediction 1: High-Frequency Suppression Feature}
+
+The universal relaxation mechanism introduces a characteristic suppression feature in the stochastic gravitational-wave background (SGWB) at frequencies
+\begin{equation}
+f \gtrsim f_{\rm rel} \sim 10^{-3} - 10^{2}\,{\rm Hz}.
+\end{equation}
+Modes that re-entered the horizon during the relaxation-dominated epoch experience a power-law suppression,
+\begin{equation}
+\Omega_{\rm GW}(f) \propto f^{\,n_t - \alpha},
+\end{equation}
+with $\alpha$ the relaxation coefficient. This feature is absent in standard cosmology and provides a direct probe of relaxation-driven early-Universe physics.
+
+\subsection{Prediction 2: Observable Break Scale}
+
+The break frequency $f_{\rm rel}$ marks the transition between the unsuppressed and suppressed regimes. For typical RDCC parameters, $f_{\rm rel}$ lies within the sensitivity windows of LISA, DECIGO, and BBO. A detection of a spectral break at this frequency would provide strong evidence for the relaxation mechanism.
+
+\subsection{Prediction 3: Modified Spectral Slope}
+
+Above the break scale, the GW spectrum exhibits a modified slope,
+\begin{equation}
+\frac{d\ln \Omega_{\rm GW}}{d\ln f} = n_t - \alpha,
+\end{equation}
+where $\alpha = \mathcal{O}(0.1 - 1)$ during the relaxation epoch. This leads to a significant deviation from the nearly scale-invariant spectrum predicted by standard cosmology.
+
+\subsection{Prediction 4: Sectoral GW Asymmetry}
+
+Because the two CPT-conjugate sectors have different temperatures,
+\begin{equation}
+\alpha_B < \alpha_A,
+\end{equation}
+their relaxation histories differ. This implies a sectoral asymmetry in the GW spectrum,
+\begin{equation}
+\Omega_{\rm GW}^{(B)}(f) > \Omega_{\rm GW}^{(A)}(f)
+\end{equation}
+for $f \gtrsim f_{\rm rel}$. While only the visible-sector spectrum is directly observable, the mirror-sector spectrum affects the global energy budget and provides an internal consistency check of the RDCC framework.
+
+\subsection{Prediction 5: Consistency with PBH Constraints}
+
+The relaxation-induced suppression of tensor modes is consistent with the suppression of primordial black hole (PBH) formation derived in Companion~XIV. Both effects originate from the same relaxation dynamics and occur at similar energy scales. A joint analysis of PBH constraints and GW observations can therefore test the internal coherence of RDCC.
+
+\subsection{Prediction 6: Distinguishability from Other New-Physics Scenarios}
+
+The relaxation-induced suppression feature differs qualitatively from other mechanisms that modify the SGWB, such as:
+\begin{itemize}
+\item changes in relativistic degrees of freedom ($g_*$),
+\item phase transitions,
+\item cosmic strings,
+\item reheating effects.
+\end{itemize}
+These scenarios typically produce sharp features, bumps, or oscillations, whereas RDCC predicts a smooth power-law suppression with a well-defined break scale. This distinct spectral shape allows the relaxation mechanism to be distinguished from other early-Universe physics.
+
+\subsection{Prediction 7: Direct Testability with Future Detectors}
+
+The predicted suppression feature lies in the frequency range accessible to upcoming space-based interferometers. In particular:
+\begin{itemize}
+\item LISA can probe the low-frequency edge of the suppression feature,
+\item DECIGO and BBO can probe the full suppression regime,
+\item high-frequency detectors (MHz–GHz) can test the extreme tail of the spectrum.
+\end{itemize}
+A detection of the predicted spectral break and modified slope would provide strong evidence for the relaxation mechanism and the bipartite structure of the early Universe.
+
+% ---------------------------------------------------------
+% SECTION 7 — CONCLUSION (MODERNIZED)
+% ---------------------------------------------------------
+\section{Conclusion}
+
+In this Companion we have developed the gravitational-wave (GW) sector of the Relaxation-Driven Cyclic Cosmology (RDCC), incorporating the modernized relaxation dynamics from Companion~X, the sectoral thermodynamics from Companion~XIII, the CPT-sector PBH interpretation from Companion~XIV, and the tensor-modulation structure from Companion~II.
+
+The key result is that the relaxation mechanism introduces a characteristic suppression feature in the GW spectrum at frequencies corresponding to modes that re-entered the horizon during the relaxation-dominated epoch. This suppression arises from two effects: the relaxation-induced damping of super-horizon tensor modes and the enhanced friction term affecting sub-horizon evolution. The resulting spectrum exhibits a smooth power-law suppression above a well-defined break scale, providing a clear observational signature of relaxation-driven early-Universe physics.
+
+A second important result is the sectoral GW asymmetry. Because the two CPT-conjugate sectors have different temperatures, their relaxation histories differ, leading to distinct GW spectra. This sectoral asymmetry parallels the sectoral PBH asymmetry developed in Companion~XIV and provides an internal consistency check of the RDCC framework.
+
+With the development of the GW sector, RDCC now provides a coherent and internally consistent description of scalar, tensor, and PBH-related early-Universe physics. The SGWB emerges as a central observational probe of the relaxation-driven dynamics that define the RDCC cosmology.
+
+% ---------------------------------------------------------
+% REFERENCES
+% ---------------------------------------------------------
+\begin{thebibliography}{99}
+
+\bibitem{Maggiore2000}
+M.~Maggiore, Phys.\ Rept.\ \textbf{331}, 283 (2000).
+
+\bibitem{CapriniFigueroa2018}
+C.~Caprini and D.~G.~Figueroa, Class.\ Quant.\ Grav.\ \textbf{35}, 163001 (2018).
+
+\bibitem{BoyleBuonanno2005}
+L.~Boyle and A.~Buonanno, Phys.\ Rev.\ D \textbf{71}, 024027 (2005).
+
+\bibitem{LIGO2017}
+LIGO Collaboration, arXiv:1702.00786 (2017).
+
+\bibitem{Seto2001}
+N.~Seto, S.~Kawamura, and T.~Nakamura, Phys.\ Rev.\ Lett.\ \textbf{87}, 221103 (2001).
+
+\bibitem{CrowderCornish2005}
+J.~Crowder and N.~J.~Cornish, Phys.\ Rev.\ D \textbf{72}, 083005 (2005).
+
+\bibitem{Planck2020}
+Planck Collaboration, Astron.\ Astrophys.\ \textbf{641}, A6 (2020).
+
+\bibitem{CarrKuhnel2021}
+B.~Carr and F.~Kühnel, Rev.\ Mod.\ Phys.\ \textbf{93}, 015004 (2021).
+
+\bibitem{Sasaki2018}
+M.~Sasaki, T.~Suyama, T.~Tanaka, and S.~Yokoyama, Class.\ Quant.\ Grav.\ \textbf{35}, 063001 (2018).
+
+\end{thebibliography}
+
+\end{document}
