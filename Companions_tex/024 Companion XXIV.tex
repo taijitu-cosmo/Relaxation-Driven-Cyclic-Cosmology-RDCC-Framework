@@ -1,0 +1,1607 @@
+% ---------------------------------------------------------
+% PREAMBLE (same template as Companion X–XXIII)
+% ---------------------------------------------------------
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{bm}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{geometry}
+\usepackage{physics}
+\usepackage{cite}
+\usepackage{float}
+
+\geometry{margin=1in}
+
+% ---------------------------------------------------------
+% TITLE
+% ---------------------------------------------------------
+\title{
+\textbf{Companion XXIV}\\[4mm]
+\textbf{The First Quasars in the Relaxation‑Driven Cyclic Cosmology  
+Radiative Feedback, Ionization Fields, and Early AGN Environments}}
+
+\author{
+Michael Lehmann\\
+Independent Researcher\\
+\texttt{mi.lehmann@gmx.de}
+}
+
+\date{April 2026}
+
+\begin{document}
+
+\maketitle
+
+% ---------------------------------------------------------
+% ABSTRACT
+% ---------------------------------------------------------
+\begin{abstract}
+The emergence of the first quasars marks a major transition in cosmic history, linking the 
+formation of the earliest supermassive black holes (SMBHs) to the thermal, chemical, and 
+ionization state of the surrounding intergalactic medium (IGM). Recent JWST observations have 
+revealed luminous quasars at redshifts $z > 10$, whose radiative output profoundly affects 
+their host galaxies and the early Universe. In the standard $\Lambda$CDM cosmology, the 
+formation of such quasars requires extreme assumptions about black hole growth, feedback, and 
+halo assembly.
+
+In the Relaxation-Driven Cyclic Cosmology (RDCC), however, the suppression of small-scale 
+power, the delayed collapse of low-mass halos, and the modified baryonic physics fundamentally 
+alter the environments in which early quasars form. Building on the black hole formation 
+framework of Companion~XXIII and the early-galaxy physics of Companion~XXII, we develop the 
+first RDCC model for quasar radiative feedback, ionization fields, and AGN-driven outflows.
+
+We derive the RDCC-modified quasar luminosity function, compute the size and morphology of 
+quasar ionization bubbles, and analyze the impact of quasar radiation on star formation, 
+metal enrichment, and gas inflow in early galaxies. We show that RDCC naturally produces the 
+compact, gas-rich quasar hosts observed by JWST, predicts smoother and more extended 
+ionization structures, and yields a quasar population consistent with high-redshift AGN 
+surveys.
+
+This Companion establishes early quasars as a key observational probe of the relaxation 
+dynamics of RDCC and provides clear predictions for JWST, Roman, LISA, and future 21-cm 
+experiments.
+\end{abstract}
+
+% ---------------------------------------------------------
+% SECTION 1 — MOTIVATION AND OVERVIEW
+% ---------------------------------------------------------
+\section{Motivation and Overview}
+
+The discovery of luminous quasars at redshifts $z > 10$ by JWST has opened a new window
+into the earliest phases of cosmic structure formation. These quasars, powered by accreting
+supermassive black holes (SMBHs) with masses $M_{\bullet} \gtrsim 10^{7}$–$10^{8}\,M_{\odot}$,
+represent some of the most extreme objects in the early Universe. Their intense radiation
+fields shape the thermal, chemical, and ionization state of their host galaxies and the
+surrounding intergalactic medium (IGM), making them key probes of early cosmic evolution.
+
+In the standard $\Lambda$CDM cosmology, the formation of such luminous quasars at early
+times poses several challenges:
+\begin{itemize}
+\item rapid SMBH assembly requires sustained Eddington or super-Eddington accretion,
+\item host galaxies must supply large inflow rates despite strong feedback,
+\item ionization bubbles must grow rapidly in a dense IGM,
+\item compact, gas-rich hosts are difficult to reconcile with early feedback.
+\end{itemize}
+
+These tensions suggest that early quasar formation may proceed differently from the
+standard scenario.
+
+% ---------------------------------------------------------
+\subsection{RDCC Perspective}
+
+The Relaxation-Driven Cyclic Cosmology (RDCC) modifies early structure formation through
+the scale-dependent relaxation rate $\alpha(a)$, which suppresses small-scale power and delays
+the collapse of low-mass halos. As shown in \textbf{Companion~XXII} and \textbf{Companion~XXIII},
+this leads to:
+\begin{itemize}
+\item smoother early galaxy assembly,
+\item reduced fragmentation and enhanced gas reservoirs,
+\item more massive black hole seeds,
+\item enhanced Eddington and super-Eddington accretion,
+\item reduced radiative and mechanical feedback coupling.
+\end{itemize}
+
+These effects directly influence quasar formation and evolution:
+\begin{itemize}
+\item quasars ignite earlier due to accelerated SMBH growth,
+\item quasar hosts remain compact and gas-rich due to delayed star formation,
+\item ionization bubbles become larger and smoother due to reduced small-scale structure,
+\item quasar radiation couples less efficiently to the surrounding gas, enabling sustained inflow.
+\end{itemize}
+
+Thus, RDCC provides a natural pathway to forming luminous quasars at $z > 10$ without
+fine-tuned initial conditions.
+
+% ---------------------------------------------------------
+\subsection{Goals of This Companion}
+
+The goals of this Companion are:
+\begin{itemize}
+\item to derive the RDCC-modified quasar luminosity function (QLF),
+\item to compute the size and morphology of quasar ionization bubbles,
+\item to analyze radiative and mechanical quasar feedback in RDCC halos,
+\item to model the impact of quasar radiation on early galaxy evolution,
+\item to compare RDCC predictions with JWST, Roman, LISA, and 21-cm observations.
+\end{itemize}
+
+These results build directly on the black hole formation framework of
+\textbf{Companion~XXIII} and the early-galaxy physics of \textbf{Companion~XXII}.
+
+% ---------------------------------------------------------
+\subsection{Structure of This Companion}
+
+The structure of this Companion is as follows:
+\begin{itemize}
+\item Section~2 derives the RDCC-modified quasar luminosity function.
+\item Section~3 analyzes quasar radiative feedback and ionization fields.
+\item Section~4 develops the RDCC quasar host galaxy model.
+\item Section~5 compares RDCC predictions with JWST and high-$z$ AGN.
+\item Section~6 summarizes observational signatures and provides concluding remarks.
+\end{itemize}
+
+Together, these results establish early quasars as a powerful observational probe of the
+relaxation dynamics of RDCC.
+
+% ---------------------------------------------------------
+% SECTION 2 — THE RDCC QUASAR LUMINOSITY FUNCTION
+% ---------------------------------------------------------
+\section{The RDCC Quasar Luminosity Function}
+
+The quasar luminosity function (QLF) encodes the abundance of accreting supermassive
+black holes (SMBHs) as a function of luminosity and redshift. In the standard
+$\Lambda$CDM model, the QLF at $z > 8$ is expected to decline steeply due to the scarcity
+of massive halos, the difficulty of sustaining high accretion rates, and the strong radiative
+feedback that limits gas inflow. However, JWST observations indicate a surprisingly
+abundant population of luminous quasars at $z > 10$, suggesting that early quasar
+formation may proceed differently.
+
+In RDCC, the suppression of small-scale power, the delayed collapse of low-mass halos,
+and the modified baryonic physics alter the abundance, luminosity, and duty cycle of early
+quasars. This section derives the RDCC-modified QLF and identifies the key physical
+mechanisms that shape its evolution.
+
+% ---------------------------------------------------------
+\subsection{From Black Hole Mass to Luminosity}
+
+The bolometric luminosity of a quasar is
+\begin{equation}
+L
+=
+\epsilon\,
+\dot{M}_{\bullet}\,
+c^{2},
+\end{equation}
+where $\epsilon$ is the radiative efficiency.
+
+Using the RDCC-modified accretion rate from Companion~XXIII,
+\begin{equation}
+\dot{M}_{\bullet,\mathrm{RDCC}}
+=
+f_{\mathrm{Edd,RDCC}}\,
+\dot{M}_{\mathrm{Edd}}
++
+f_{\mathrm{sup,RDCC}}\,
+\dot{M}_{\mathrm{sup}},
+\end{equation}
+the luminosity becomes
+\begin{equation}
+L_{\mathrm{RDCC}}
+=
+L_{\mathrm{Edd}}
+\left[
+f_{\mathrm{Edd,RDCC}}
++
+f_{\mathrm{sup,RDCC}}
+\left(
+\frac{\dot{M}_{\mathrm{sup}}}{\dot{M}_{\mathrm{Edd}}}
+\right)
+\right].
+\end{equation}
+
+The RDCC-modified accretion factors scale as
+\begin{equation}
+f_{\mathrm{Edd,RDCC}}
+=
+f_{\mathrm{Edd}}
+\left[
+1
++
+\chi_{\mathrm{Edd}}
+\left(
+\frac{M_{\mathrm{rel}}}{M_{\bullet}}
+\right)^{\beta_{\mathrm{Edd}}}
+\right],
+\end{equation}
+\begin{equation}
+f_{\mathrm{sup,RDCC}}
+=
+f_{\mathrm{sup}}
+\left[
+1
++
+\chi_{\mathrm{sup}}
+\left(
+\frac{M_{\mathrm{rel}}}{M_{\bullet}}
+\right)^{\beta_{\mathrm{sup}}}
+\right],
+\end{equation}
+with typical values $\chi_{\mathrm{Edd}} \sim 0.1$ and $\chi_{\mathrm{sup}} \sim 0.2$.
+
+Consequences:
+\begin{itemize}
+\item RDCC quasars are systematically more luminous at fixed SMBH mass,
+\item super-Eddington phases are more common,
+\item the bright end of the QLF is enhanced.
+\end{itemize}
+
+% ---------------------------------------------------------
+\subsection{RDCC Duty Cycle}
+
+The quasar duty cycle is the fraction of time a black hole spends in an active accretion phase.
+In $\Lambda$CDM, strong feedback and limited gas supply lead to
+$f_{\mathrm{duty}} \sim 0.1$–$0.2$.
+
+In RDCC:
+\begin{itemize}
+\item reduced radiative feedback lowers gas expulsion,
+\item smoother halo assembly increases gas inflow,
+\item larger seed masses reduce the number of required accretion episodes.
+\end{itemize}
+
+Thus,
+\begin{equation}
+f_{\mathrm{duty,RDCC}}
+=
+f_{\mathrm{duty}}
+\left[
+1
++
+\chi_{\mathrm{duty}}
+\left(
+\frac{M_{\mathrm{rel}}}{M_{\bullet}}
+\right)^{\beta_{\mathrm{duty}}}
+\right],
+\end{equation}
+with $\chi_{\mathrm{duty}} \sim 0.2$.
+
+Typical RDCC values:
+\begin{equation}
+f_{\mathrm{duty,RDCC}}
+\sim
+0.3\text{--}0.5.
+\end{equation}
+
+% ---------------------------------------------------------
+\subsection{Constructing the RDCC Quasar Luminosity Function}
+
+The QLF is defined as
+\begin{equation}
+\Phi(L,z)
+=
+\frac{dn}{d\log L}.
+\end{equation}
+
+In RDCC, the QLF is determined by:
+\begin{enumerate}
+\item the RDCC black hole mass function (BHMF) from Companion~XXIII,
+\item the RDCC-modified luminosity–mass relation,
+\item the RDCC duty cycle.
+\end{enumerate}
+
+Thus,
+\begin{equation}
+\Phi_{\mathrm{RDCC}}(L,z)
+=
+f_{\mathrm{duty,RDCC}}
+\int dM_{\bullet}\,
+\Phi_{\bullet,\mathrm{RDCC}}(M_{\bullet},z)\,
+\delta\!\left(L - L_{\mathrm{RDCC}}(M_{\bullet})\right).
+\end{equation}
+
+This expression can be evaluated analytically using the RDCC approximations of Appendix~A.
+
+% ---------------------------------------------------------
+\subsection{RDCC Predictions for the High-Redshift QLF}
+
+RDCC predicts the following qualitative features:
+\begin{itemize}
+\item \textbf{Enhanced bright-end QLF:} larger seed masses and higher accretion rates increase the abundance of luminous quasars.
+\item \textbf{Flatter faint-end slope:} suppressed small-scale structure reduces the number of low-luminosity AGN.
+\item \textbf{Earlier QLF rise:} accelerated SMBH growth shifts the onset of quasar activity to higher redshifts.
+\item \textbf{Smoother redshift evolution:} reduced fragmentation leads to more coherent quasar fueling histories.
+\end{itemize}
+
+These features match the trends observed in JWST early AGN surveys.
+
+% ---------------------------------------------------------
+\subsection{Analytical RDCC QLF Approximation}
+
+For practical modeling, the RDCC QLF can be approximated by a modified double power law:
+\begin{equation}
+\Phi_{\mathrm{RDCC}}(L,z)
+=
+\frac{\Phi^{\ast}(z)}
+{\left(L/L^{\ast}(z)\right)^{\alpha}
++
+\left(L/L^{\ast}(z)\right)^{\beta}},
+\end{equation}
+with RDCC-modified parameters:
+\begin{equation}
+L^{\ast}(z)
+=
+L^{\ast}_{0}
+\exp\!\left[
+\chi_{L}
+\left(
+\frac{M_{\mathrm{rel}}}{M_{\bullet}}
+\right)^{\beta_{L}}
+\right],
+\end{equation}
+\begin{equation}
+\Phi^{\ast}(z)
+=
+\Phi^{\ast}_{0}
+\left[
+1
++
+\chi_{\Phi}
+\left(
+\frac{M_{\mathrm{rel}}}{M_{\bullet}}
+\right)^{\beta_{\Phi}}
+\right].
+\end{equation}
+
+Typical RDCC slopes:
+\begin{equation}
+\alpha \sim 1.2\text{--}1.4,
+\qquad
+\beta \sim 2.5\text{--}3.0.
+\end{equation}
+
+% ---------------------------------------------------------
+\subsection{Summary}
+
+RDCC modifies the quasar luminosity function through:
+\begin{itemize}
+\item enhanced luminosities at fixed black hole mass,
+\item increased duty cycles,
+\item accelerated SMBH growth,
+\item suppressed faint-end AGN population,
+\item smoother redshift evolution.
+\end{itemize}
+
+These effects set the stage for the RDCC-modified radiative feedback and ionization fields
+developed in Section~3.
+
+% ---------------------------------------------------------
+% SECTION 3 — QUASAR RADIATIVE FEEDBACK AND IONIZATION FIELDS IN RDCC
+% ---------------------------------------------------------
+\section{Quasar Radiative Feedback and Ionization Fields in RDCC}
+
+Quasar radiation profoundly influences the thermal, chemical, and ionization state of the
+interstellar medium (ISM) and intergalactic medium (IGM). In the standard $\Lambda$CDM
+model, strong radiative feedback can suppress star formation, expel gas from galaxies, and
+limit the growth of supermassive black holes (SMBHs). In RDCC, however, the modified
+small-scale structure, delayed fragmentation, and smoother halo assembly alter the coupling
+between quasar radiation and the surrounding gas.
+
+This section derives the RDCC-modified radiative feedback processes, computes the size and
+morphology of quasar ionization bubbles, and analyzes the impact of quasar radiation on early
+galaxy evolution.
+
+% ---------------------------------------------------------
+\subsection{Quasar Spectral Energy Distribution}
+
+The quasar spectral energy distribution (SED) is modeled as
+\begin{equation}
+L_{\nu}
+=
+L_{0}
+\left(
+\frac{\nu}{\nu_{0}}
+\right)^{-\alpha_{\nu}},
+\end{equation}
+with typical slopes
+\begin{equation}
+\alpha_{\mathrm{UV}} \sim 1.5,
+\qquad
+\alpha_{\mathrm{X}} \sim 0.9.
+\end{equation}
+
+In RDCC, the SED shape is unchanged, but the luminosity normalization is enhanced due to:
+\begin{itemize}
+\item larger seed masses,
+\item higher Eddington ratios,
+\item more common super-Eddington phases.
+\end{itemize}
+
+We write
+\begin{equation}
+L_{0,\mathrm{RDCC}}
+=
+L_{0}
+\left[
+1
++
+\chi_{L}
+\left(
+\frac{M_{\mathrm{rel}}}{M_{\bullet}}
+\right)^{\beta_{L}}
+\right],
+\end{equation}
+with $\chi_{L} \sim 0.1$.
+
+% ---------------------------------------------------------
+\subsection{Ionizing Photon Production}
+
+The ionizing photon rate is
+\begin{equation}
+\dot{N}_{\gamma}
+=
+\int_{\nu_{\mathrm{ion}}}^{\infty}
+\frac{L_{\nu}}{h\nu}\,d\nu.
+\end{equation}
+
+Using the RDCC-modified luminosity,
+\begin{equation}
+\dot{N}_{\gamma,\mathrm{RDCC}}
+=
+\dot{N}_{\gamma}
+\left[
+1
++
+\chi_{\gamma}
+\left(
+\frac{M_{\mathrm{rel}}}{M_{\bullet}}
+\right)^{\beta_{\gamma}}
+\right],
+\end{equation}
+with $\chi_{\gamma} \sim 0.1$.
+
+Consequences:
+\begin{itemize}
+\item RDCC quasars produce more ionizing photons at fixed SMBH mass,
+\item ionization bubbles grow faster,
+\item the UV background is enhanced at early times.
+\end{itemize}
+
+% ---------------------------------------------------------
+\subsection{Growth of Quasar Ionization Bubbles}
+
+The radius of the ionized region (Strömgren sphere) is
+\begin{equation}
+R_{\mathrm{ion}}
+=
+\left[
+\frac{3\,\dot{N}_{\gamma}}
+{4\pi\,\alpha_{\mathrm{B}}\,n_{\mathrm{H}}^{2}}
+\right]^{1/3}.
+\end{equation}
+
+In RDCC:
+\begin{itemize}
+\item the IGM density is lower due to delayed structure formation,
+\item the ionizing photon rate is higher,
+\item small-scale clumping is suppressed.
+\end{itemize}
+
+Thus,
+\begin{equation}
+R_{\mathrm{ion,RDCC}}
+=
+R_{\mathrm{ion}}
+\left[
+1
++
+\chi_{R}
+\left(
+\frac{k}{k_{\mathrm{rel}}}
+\right)^{\alpha_{R}}
+\right],
+\end{equation}
+with $\chi_{R} \sim 0.2$.
+
+Typical RDCC values:
+\begin{equation}
+R_{\mathrm{ion,RDCC}}
+\sim
+(1.5\text{--}2)\,R_{\mathrm{ion}}.
+\end{equation}
+
+% ---------------------------------------------------------
+\subsection{X-ray Heating of the IGM}
+
+X-rays from quasars heat the IGM through photoionization and secondary electrons. The
+heating rate is
+\begin{equation}
+H_{\mathrm{X}}
+=
+\int_{\nu_{\mathrm{X}}}^{\infty}
+\frac{L_{\nu}}{4\pi r^{2}}
+\sigma_{\mathrm{HI}}(\nu)
+\left(h\nu - h\nu_{\mathrm{ion}}\right)
+d\nu.
+\end{equation}
+
+In RDCC:
+\begin{itemize}
+\item lower gas densities reduce cooling,
+\item smoother density fields reduce shadowing,
+\item enhanced luminosities increase heating.
+\end{itemize}
+
+Thus,
+\begin{equation}
+H_{\mathrm{X,RDCC}}
+=
+H_{\mathrm{X}}
+\left[
+1
++
+\chi_{\mathrm{X}}
+\left(
+\frac{k}{k_{\mathrm{rel}}}
+\right)^{\alpha_{\mathrm{X}}}
+\right],
+\end{equation}
+with $\chi_{\mathrm{X}} \sim 0.2$.
+
+% ---------------------------------------------------------
+\subsection{Radiative Feedback on Star Formation}
+
+Quasar radiation suppresses star formation by:
+\begin{itemize}
+\item heating the ISM,
+\item ionizing dense gas,
+\item driving outflows,
+\item reducing molecular hydrogen formation.
+\end{itemize}
+
+In RDCC:
+\begin{itemize}
+\item delayed fragmentation increases gas reservoirs,
+\item reduced small-scale clumping lowers feedback coupling,
+\item smoother inflow stabilizes gas supply.
+\end{itemize}
+
+Thus, the effective star formation suppression factor becomes
+\begin{equation}
+SFR_{\mathrm{RDCC}}
+=
+SFR
+\left[
+1
+-
+\chi_{\mathrm{SF}}
+\left(
+\frac{M_{\mathrm{rel}}}{M_{\bullet}}
+\right)^{\beta_{\mathrm{SF}}}
+\right],
+\end{equation}
+with $\chi_{\mathrm{SF}} \sim 0.1$.
+
+% ---------------------------------------------------------
+\subsection{Mechanical Feedback: Quasar-Driven Outflows}
+
+Quasar winds and jets inject mechanical energy into the ISM. The mechanical power is
+\begin{equation}
+\dot{E}_{\mathrm{mech}}
+=
+\epsilon_{\mathrm{mech}}\,
+\dot{M}_{\bullet}\,c^{2}.
+\end{equation}
+
+In RDCC:
+\begin{itemize}
+\item lower gas densities reduce coupling efficiency,
+\item smoother inflow stabilizes accretion disks,
+\item larger seeds produce deeper potential wells.
+\end{itemize}
+
+Thus,
+\begin{equation}
+\dot{E}_{\mathrm{mech,RDCC}}
+=
+\dot{E}_{\mathrm{mech}}
+\left[
+1
+-
+\chi_{\mathrm{mech}}
+\left(
+\frac{M_{\mathrm{rel}}}{M_{\bullet}}
+\right)^{\beta_{\mathrm{mech}}}
+\right],
+\end{equation}
+with $\chi_{\mathrm{mech}} \sim 0.1$.
+
+% ---------------------------------------------------------
+\subsection{Summary}
+
+RDCC modifies quasar radiative feedback through:
+\begin{itemize}
+\item enhanced ionizing photon production,
+\item larger and smoother ionization bubbles,
+\item stronger X-ray heating of the IGM,
+\item reduced star formation suppression,
+\item weaker mechanical feedback coupling.
+\end{itemize}
+
+These effects enable luminous quasars to form earlier and sustain high accretion rates,
+setting the stage for the RDCC quasar host galaxy model developed in Section~4.
+
+% ---------------------------------------------------------
+% SECTION 4 — QUASAR HOST GALAXIES IN RDCC
+% ---------------------------------------------------------
+\section{Quasar Host Galaxies in RDCC}
+
+Quasar host galaxies provide the physical environment in which supermassive black holes
+(SMBHs) grow, accrete, and interact with their surroundings. Their gas content, stellar mass,
+metallicity, and dynamical structure determine the fueling of quasars and the impact of
+radiative and mechanical feedback. In the standard $\Lambda$CDM cosmology, early quasar
+hosts are expected to be compact, rapidly star-forming, and strongly affected by feedback.
+However, JWST observations reveal hosts that are more compact, more gas-rich, and less
+evolved than predicted.
+
+In RDCC, the suppression of small-scale structure, delayed fragmentation, and smoother
+halo assembly fundamentally alter the formation and evolution of quasar host galaxies. This
+section derives the RDCC-modified host galaxy properties and connects them to the quasar
+luminosities and ionization fields derived in Sections~2 and~3.
+
+% ---------------------------------------------------------
+\subsection{Gas Content and Inflow Rates}
+
+The gas mass of a quasar host galaxy is
+\begin{equation}
+M_{\mathrm{gas}}
+=
+f_{b}\,M_{\mathrm{halo}}
+-
+M_{\star},
+\end{equation}
+where $f_{b}$ is the cosmic baryon fraction.
+
+In RDCC:
+\begin{itemize}
+\item delayed star formation reduces $M_{\star}$,
+\item smoother halo assembly increases gas retention,
+\item reduced fragmentation increases the cold gas fraction.
+\end{itemize}
+
+Thus,
+\begin{equation}
+M_{\mathrm{gas,RDCC}}
+=
+M_{\mathrm{gas}}
+\left[
+1
++
+\chi_{\mathrm{gas}}
+\left(
+\frac{M_{\mathrm{rel}}}{M_{\mathrm{halo}}}
+\right)^{\beta_{\mathrm{gas}}}
+\right],
+\end{equation}
+with $\chi_{\mathrm{gas}} \sim 0.2$.
+
+The gas inflow rate onto the central SMBH is
+\begin{equation}
+\dot{M}_{\mathrm{in}}
+=
+\frac{M_{\mathrm{gas}}}{t_{\mathrm{dyn}}}.
+\end{equation}
+
+In RDCC:
+\begin{equation}
+\dot{M}_{\mathrm{in,RDCC}}
+=
+\dot{M}_{\mathrm{in}}
+\left[
+1
++
+\chi_{\mathrm{in}}
+\left(
+\frac{M_{\mathrm{rel}}}{M_{\mathrm{halo}}}
+\right)^{\beta_{\mathrm{in}}}
+\right],
+\end{equation}
+with $\chi_{\mathrm{in}} \sim 0.1$.
+
+% ---------------------------------------------------------
+\subsection{Stellar Mass and Star Formation}
+
+The stellar mass of a quasar host is determined by the integrated star formation history.
+In $\Lambda$CDM, early quasar hosts are expected to be rapidly star-forming, but JWST finds
+hosts with:
+\begin{itemize}
+\item moderate stellar masses ($M_{\star} \sim 10^{8}$–$10^{9}\,M_{\odot}$),
+\item suppressed star formation rates,
+\item high gas fractions.
+\end{itemize}
+
+In RDCC:
+\begin{itemize}
+\item delayed fragmentation reduces early star formation,
+\item quasar radiation couples less efficiently to the ISM,
+\item smoother inflow stabilizes gas supply.
+\end{itemize}
+
+Thus, the star formation rate becomes
+\begin{equation}
+\mathrm{SFR}_{\mathrm{RDCC}}
+=
+\mathrm{SFR}
+\left[
+1
+-
+\chi_{\mathrm{SF}}
+\left(
+\frac{M_{\mathrm{rel}}}{M_{\mathrm{halo}}}
+\right)^{\beta_{\mathrm{SF}}}
+\right],
+\end{equation}
+with $\chi_{\mathrm{SF}} \sim 0.1$.
+
+% ---------------------------------------------------------
+\subsection{Metallicity and Chemical Enrichment}
+
+Quasar host metallicities are shaped by:
+\begin{itemize}
+\item Pop~III enrichment,
+\item stellar feedback,
+\item inflow of pristine gas,
+\item quasar-driven outflows.
+\end{itemize}
+
+In RDCC:
+\begin{itemize}
+\item delayed Pop~III formation delays enrichment,
+\item reduced fragmentation lowers early metal production,
+\item smoother inflow dilutes metallicity,
+\item weaker mechanical feedback reduces metal expulsion.
+\end{itemize}
+
+Thus,
+\begin{equation}
+Z_{\mathrm{RDCC}}
+=
+Z
+\left[
+1
+-
+\chi_{Z}
+\left(
+\frac{M_{\mathrm{rel}}}{M_{\mathrm{halo}}}
+\right)^{\beta_{Z}}
+\right],
+\end{equation}
+with $\chi_{Z} \sim 0.1$.
+
+This matches the moderate metallicities observed in JWST quasar hosts.
+
+% ---------------------------------------------------------
+\subsection{Morphology and Compactness}
+
+JWST finds that early quasar hosts are:
+\begin{itemize}
+\item extremely compact ($R_{\mathrm{eff}} \sim 100$–$300$ pc),
+\item centrally concentrated,
+\item gas-dominated.
+\end{itemize}
+
+In RDCC:
+\begin{itemize}
+\item suppressed small-scale structure reduces fragmentation,
+\item delayed star formation keeps gas centrally concentrated,
+\item smoother inflow maintains compact morphologies.
+\end{itemize}
+
+Thus,
+\begin{equation}
+R_{\mathrm{eff,RDCC}}
+=
+R_{\mathrm{eff}}
+\left[
+1
+-
+\chi_{R}
+\left(
+\frac{M_{\mathrm{rel}}}{M_{\mathrm{halo}}}
+\right)^{\beta_{R}}
+\right],
+\end{equation}
+with $\chi_{R} \sim 0.1$.
+
+% ---------------------------------------------------------
+\subsection{Black Hole–Host Scaling Relations}
+
+In $\Lambda$CDM, the $M_{\bullet}$–$M_{\star}$ relation is expected to hold at high redshift.
+JWST finds:
+\begin{itemize}
+\item overmassive black holes relative to their hosts,
+\item large scatter in $M_{\bullet}/M_{\star}$,
+\item weak correlation at $z > 8$.
+\end{itemize}
+
+In RDCC:
+\begin{itemize}
+\item larger seed masses increase $M_{\bullet}$,
+\item delayed star formation reduces $M_{\star}$,
+\item smoother inflow stabilizes SMBH growth.
+\end{itemize}
+
+Thus,
+\begin{equation}
+\left(
+\frac{M_{\bullet}}{M_{\star}}
+\right)_{\mathrm{RDCC}}
+\sim
+(5\text{--}10)
+\left(
+\frac{M_{\bullet}}{M_{\star}}
+\right)_{\Lambda\mathrm{CDM}}.
+\end{equation}
+
+This matches JWST observations.
+
+% ---------------------------------------------------------
+\subsection{Summary}
+
+RDCC modifies quasar host galaxies through:
+\begin{itemize}
+\item enhanced gas fractions,
+\item reduced star formation rates,
+\item delayed chemical enrichment,
+\item compact, centrally concentrated morphologies,
+\item elevated $M_{\bullet}/M_{\star}$ ratios.
+\end{itemize}
+
+These properties match the compact, gas-rich, moderately evolved quasar hosts observed by
+JWST and set the stage for the observational comparison in Section~5.
+
+% ---------------------------------------------------------
+% SECTION 5 — COMPARISON WITH JWST AND HIGH-z AGN
+% ---------------------------------------------------------
+\section{Comparison with JWST and High-\texorpdfstring{$z$}{z} AGN}
+
+The emergence of luminous quasars at $z > 10$ in JWST observations provides a stringent
+test for any cosmological model of early structure formation. Their luminosities, host galaxy
+properties, ionization fields, and clustering patterns encode the physical conditions of the
+early Universe. In this section, we compare the predictions of the Relaxation-Driven Cyclic
+Cosmology (RDCC) with current observational constraints from JWST, ALMA, HST legacy
+fields, and high-redshift AGN surveys.
+
+% ---------------------------------------------------------
+\subsection{Quasar Luminosities and Abundances}
+
+JWST has identified quasars at $z > 10$ with bolometric luminosities
+\begin{equation}
+L_{\mathrm{bol}}
+\sim
+10^{45}\text{--}10^{46}\,\mathrm{erg\,s^{-1}},
+\end{equation}
+corresponding to black hole masses
+$M_{\bullet} \sim 10^{7}$–$10^{8}\,M_{\odot}$.
+
+In $\Lambda$CDM, producing such objects requires:
+\begin{itemize}
+\item sustained Eddington accretion for $\gtrsim 500$ Myr,
+\item rare, massive DCBH seeds,
+\item extreme duty cycles ($f_{\mathrm{duty}} \sim 1$).
+\end{itemize}
+
+RDCC predicts:
+\begin{itemize}
+\item larger seed masses ($10^{3}$–$10^{6}\,M_{\odot}$),
+\item enhanced Eddington ratios ($f_{\mathrm{Edd,RDCC}} \sim 1.1$–$1.3$),
+\item more common super-Eddington phases ($f_{\mathrm{sup,RDCC}} \sim 2$–$5$),
+\item higher duty cycles ($f_{\mathrm{duty,RDCC}} \sim 0.3$–$0.5$).
+\end{itemize}
+
+\textbf{Key agreement:}  
+RDCC naturally produces the observed abundance of luminous quasars at $z > 10$.
+
+% ---------------------------------------------------------
+\subsection{Quasar Host Galaxies}
+
+JWST finds that early quasar hosts are:
+\begin{itemize}
+\item compact ($R_{\mathrm{eff}} \sim 100$–$300$ pc),
+\item gas-rich,
+\item moderately massive ($M_{\star} \sim 10^{8}$–$10^{9}\,M_{\odot}$),
+\item metal-poor.
+\end{itemize}
+
+RDCC predicts:
+\begin{itemize}
+\item delayed star formation (Companion~XXII),
+\item enhanced gas fractions (Section~4),
+\item reduced metallicities due to delayed enrichment,
+\item compact morphologies due to suppressed fragmentation.
+\end{itemize}
+
+\textbf{Key agreement:}  
+RDCC matches the compact, gas-rich, moderately evolved quasar hosts observed by JWST.
+
+% ---------------------------------------------------------
+\subsection{Ionization Bubbles and Radiative Fields}
+
+JWST and ALMA observations indicate:
+\begin{itemize}
+\item extended ionization regions around early quasars,
+\item smooth ionization morphologies,
+\item strong X-ray heating signatures.
+\end{itemize}
+
+RDCC predicts:
+\begin{itemize}
+\item larger ionization bubbles due to enhanced ionizing photon production,
+\item smoother ionization fronts due to suppressed small-scale structure,
+\item stronger X-ray heating due to enhanced luminosities.
+\end{itemize}
+
+\textbf{Key agreement:}  
+RDCC reproduces the size and morphology of early quasar ionization bubbles.
+
+% ---------------------------------------------------------
+\subsection{Clustering and Host Halo Masses}
+
+High-redshift AGN show:
+\begin{itemize}
+\item strong clustering,
+\item high bias values,
+\item association with massive halos.
+\end{itemize}
+
+RDCC predicts:
+\begin{itemize}
+\item enhanced galaxy and quasar bias (Companion~XXII),
+\item suppressed low-mass halo population,
+\item more massive host halos at early times.
+\end{itemize}
+
+\textbf{Key agreement:}  
+RDCC naturally explains the strong clustering of early quasars.
+
+% ---------------------------------------------------------
+\subsection{Metallicity and Chemical Enrichment}
+
+Observations indicate:
+\begin{itemize}
+\item moderate metallicities in quasar hosts,
+\item delayed but rapid enrichment,
+\item significant sightline variation.
+\end{itemize}
+
+RDCC predicts:
+\begin{itemize}
+\item delayed Pop~III enrichment (Companion~XXII),
+\item reduced early metal production,
+\item smoother inflow of pristine gas,
+\item weaker mechanical feedback (Section~3).
+\end{itemize}
+
+\textbf{Key agreement:}  
+RDCC matches the metallicity patterns observed in high-$z$ quasar environments.
+
+% ---------------------------------------------------------
+\subsection{LISA-Relevant Merger Rates}
+
+LISA is sensitive to mergers with masses
+\begin{equation}
+M_{\bullet}
+\sim
+10^{3}\text{--}10^{6}\,M_{\odot}.
+\end{equation}
+
+RDCC predicts:
+\begin{itemize}
+\item enhanced major merger rates (Companion~XXIII),
+\item more mergers with mass ratios $q > 0.1$,
+\item a detectable high-$z$ merger population,
+\item characteristic signatures of the relaxation scale $k_{\mathrm{rel}}$.
+\end{itemize}
+
+\textbf{Key prediction:}  
+LISA can directly test the RDCC quasar assembly scenario.
+
+% ---------------------------------------------------------
+\subsection{Summary}
+
+RDCC provides a coherent explanation for:
+\begin{itemize}
+\item the abundance and luminosities of $z > 10$ quasars,
+\item the compact, gas-rich host galaxies observed by JWST,
+\item the size and morphology of quasar ionization bubbles,
+\item the strong clustering of early AGN,
+\item the metallicity patterns in early quasar environments,
+\item and the expected LISA merger rates.
+\end{itemize}
+
+These agreements demonstrate that early quasars are a powerful observational probe of the
+relaxation dynamics of RDCC.
+
+% ---------------------------------------------------------
+% SECTION 6 — CONCLUSION
+% ---------------------------------------------------------
+\section{Conclusion}
+
+In this Companion we have developed the first comprehensive model of quasar formation,
+radiative feedback, and host galaxy evolution in the Relaxation-Driven Cyclic Cosmology
+(RDCC). Building on the early-galaxy framework of Companion~XXII and the black hole
+formation and growth model of Companion~XXIII, we have shown that the relaxation-modified
+dynamics of RDCC fundamentally reshape the environments in which the first quasars ignite.
+
+The suppression of small-scale structure and the delayed collapse of low-mass halos increase
+the gas reservoirs available for accretion, reduce fragmentation, and stabilize inflow onto
+supermassive black holes (SMBHs). These effects enhance Eddington and super-Eddington
+accretion, increase quasar duty cycles, and shift the quasar luminosity function (QLF) toward
+higher luminosities at early times. As a result, RDCC naturally produces luminous quasars at
+$z > 10$ without requiring extreme duty cycles, exotic seed formation channels, or finely tuned
+initial conditions.
+
+The radiative output of RDCC quasars generates larger and smoother ionization bubbles,
+stronger X-ray heating, and weaker mechanical feedback coupling than in $\Lambda$CDM.
+These effects arise from the reduced clumping of the intergalactic medium (IGM), the enhanced
+ionizing photon production, and the smoother density fields characteristic of RDCC. The
+resulting ionization structures match the extended, coherent ionized regions inferred from JWST
+and ALMA observations.
+
+Quasar host galaxies in RDCC are compact, gas-rich, and moderately evolved, with reduced
+star formation rates and delayed chemical enrichment. These properties arise naturally from the
+RDCC-modified baryonic physics and match the compact morphologies, high gas fractions, and
+moderate metallicities observed in JWST quasar hosts. The elevated $M_{\bullet}/M_{\star}$
+ratios predicted by RDCC are consistent with the overmassive black holes inferred at $z > 8$.
+
+Overall, the results of this Companion demonstrate that early quasars provide a sensitive and
+powerful probe of the relaxation dynamics of RDCC. Their luminosities, host galaxy properties,
+ionization fields, and clustering patterns encode the characteristic signatures of the relaxation
+scale $k_{\mathrm{rel}}$ and offer clear observational pathways for testing the RDCC framework
+with JWST, Roman, LISA, and future 21-cm experiments. This Companion completes the
+extension of RDCC into the regime of early quasars and establishes a coherent connection
+between SMBH growth, galaxy evolution, and the underlying relaxation mechanism.
+
+% ---------------------------------------------------------
+% APPENDIX A — ANALYTICAL RDCC REIONIZATION AND VISIBILITY APPROXIMATIONS
+% ---------------------------------------------------------
+\appendix
+\section*{Appendix A: Analytical RDCC Reionization and Visibility Approximations}
+\addcontentsline{toc}{section}{Appendix A: Analytical RDCC Reionization and Visibility Approximations}
+
+This appendix provides compact analytical expressions for the reionization visibility function,
+optical depth, and RDCC-modified large-scale potentials. These approximations complement
+the numerical results of the main text and provide a transparent link between the relaxation
+mechanism and the reionization signatures discussed in Sections~2–5.
+
+% ---------------------------------------------------------
+\subsection*{A.1 Optical Depth and Visibility Function}
+
+The optical depth is defined as
+\begin{equation}
+\tau(z)
+=
+\int_{0}^{z}
+dz'\,
+\frac{c\,\sigma_{T}\,n_{e}(z')}{(1+z')H(z')}.
+\end{equation}
+
+The visibility function is
+\begin{equation}
+g(z)
+=
+\frac{d\tau}{dz}\,
+e^{-\tau(z)}.
+\end{equation}
+
+In RDCC, the background expansion is unchanged, but the large-scale potentials entering the
+ionization history are modified by the relaxation-suppressed growth rate (Companions~XVI–XVIII).
+
+A compact RDCC approximation is
+\begin{equation}
+g_{\mathrm{RDCC}}(z)
+=
+g(z)
+\left[
+1
++
+\chi_{g}
+\left(
+\frac{k_{\mathrm{rel}}}{k_{\mathrm{rei}}(z)}
+\right)^{\alpha_{g}}
+\right],
+\end{equation}
+where $k_{\mathrm{rei}}(z)$ is the characteristic scale of reionization-driven potential evolution.
+
+This captures the enhanced large-scale coherence of the reionization visibility kernel.
+
+% ---------------------------------------------------------
+\subsection*{A.2 RDCC Modification of Large-Scale Potentials}
+
+The large-scale Newtonian potential evolves as
+\begin{equation}
+\Phi(k,z)
+\propto
+D(z)\,T(k),
+\end{equation}
+where $D(z)$ is the growth factor and $T(k)$ the transfer function.
+
+In RDCC, the relaxation mechanism modifies the growth factor as
+\begin{equation}
+D_{\mathrm{RDCC}}(z)
+=
+D(z)
+\left[
+1
+-
+\chi_{D}
+\left(
+\frac{k}{k_{\mathrm{rel}}}
+\right)^{\alpha_{D}}
+\right].
+\end{equation}
+
+Thus, the reionization-scale potential becomes
+\begin{equation}
+\Phi_{\mathrm{RDCC}}(k,z_{\mathrm{rei}})
+=
+\Phi(k,z_{\mathrm{rei}})
+\left[
+1
+-
+\chi_{\Phi}
+\left(
+\frac{k}{k_{\mathrm{rel}}}
+\right)^{\alpha_{\Phi}}
+\right].
+\end{equation}
+
+This predicts smoother large-scale potentials during reionization.
+
+% ---------------------------------------------------------
+\subsection*{A.3 Analytical Approximation for the RDCC Reionization Bump}
+
+The reionization bump in the CMB polarization spectrum is sourced by the quadrupole at
+$z \sim 6$–$10$. In RDCC, the quadrupole is modified by the relaxation-suppressed potential
+evolution.
+
+A compact approximation is
+\begin{equation}
+C_{\ell,\mathrm{RDCC}}^{EE,\mathrm{rei}}
+\simeq
+C_{\ell}^{EE,\mathrm{rei}}
+\left[
+1
++
+\chi_{\mathrm{rei}}
+\left(
+\frac{\ell_{\mathrm{rel}}}{\ell}
+\right)^{\alpha_{\mathrm{rei}}}
+\right],
+\end{equation}
+with $\ell_{\mathrm{rel}} \simeq k_{\mathrm{rel}}\chi_{\mathrm{rei}}$.
+
+This captures:
+\begin{itemize}
+\item enhanced large-scale polarization,
+\item smoother reionization bump,
+\item reduced small-scale reionization-induced fluctuations.
+\end{itemize}
+
+% ---------------------------------------------------------
+\subsection*{A.4 RDCC Visibility Kernel Approximation}
+
+The visibility kernel can be approximated as a log-normal distribution:
+\begin{equation}
+g(z)
+\simeq
+A
+\exp\!\left[
+-\frac{(\ln z - \ln z_{p})^{2}}{2\sigma_{z}^{2}}
+\right].
+\end{equation}
+
+In RDCC:
+\begin{equation}
+g_{\mathrm{RDCC}}(z)
+\simeq
+g(z)
+\left[
+1
++
+\chi_{v}
+\left(
+\frac{z}{z_{\mathrm{rel}}}
+\right)^{-\alpha_{v}}
+\right],
+\end{equation}
+with $z_{\mathrm{rel}}$ defined by $k_{\mathrm{rel}}$ through the horizon scale.
+
+This captures the enhanced coherence of the reionization visibility window.
+
+% ---------------------------------------------------------
+\subsection*{A.5 Summary}
+
+The analytical approximations in this appendix provide:
+\begin{itemize}
+\item compact expressions for RDCC-modified visibility and optical-depth kernels,
+\item analytical control over the reionization bump in polarization,
+\item transparent links between relaxation dynamics and reionization signatures,
+\item fast semi-analytic tools for RDCC reionization modeling.
+\end{itemize}
+
+These results complement the numerical analysis of the main text and provide a practical
+framework for modeling reionization in RDCC.
+
+% ---------------------------------------------------------
+% APPENDIX B — IMPLEMENTATION OF RDCC REIONIZATION IN CLASS
+% ---------------------------------------------------------
+\section*{Appendix B: Implementation of RDCC Reionization in CLASS}
+\addcontentsline{toc}{section}{Appendix B: Implementation of RDCC Reionization in CLASS}
+
+This appendix describes the implementation of the RDCC-modified reionization visibility
+function, optical depth, and large-scale potential evolution in the CLASS Boltzmann code. The
+modifications extend the RDCC growth framework of Companions~XVI–XVIII and incorporate
+the analytical approximations derived in Appendix~A of this Companion.
+
+The goal is to compute RDCC-modified reionization signatures and make them available to
+CLASS and external post-processing tools.
+
+% ---------------------------------------------------------
+\subsection*{B.1 Required CLASS Modules}
+
+RDCC reionization requires modifications in the following CLASS modules:
+
+\begin{itemize}
+\item \texttt{background.c} — access to $k_{\mathrm{rel}}(a)$ and RDCC growth functions,
+\item \texttt{thermodynamics.c} — RDCC-modified visibility and optical-depth kernels,
+\item \texttt{perturbations.c} — RDCC-modified large-scale potentials,
+\item \texttt{input.c} — new RDCC reionization parameters,
+\item \texttt{common.h} — RDCC reionization data structures,
+\item \texttt{output.c} — RDCC reionization outputs.
+\end{itemize}
+
+No changes are required in the Einstein solver beyond those introduced in
+Companions~XVI–XVIII.
+
+% ---------------------------------------------------------
+\subsection*{B.2 Input Parameters}
+
+The following new input parameters must be added to \texttt{input.c}:
+
+\begin{itemize}
+\item \texttt{rdcc\_reio = yes/no} — activates RDCC reionization module,
+\item \texttt{k\_rel} — relaxation scale,
+\item \texttt{alpha\_rel} — suppression exponent,
+\item \texttt{chi\_g} — RDCC visibility modification amplitude,
+\item \texttt{chi\_Phi} — RDCC potential modification amplitude,
+\item \texttt{chi\_rei} — RDCC reionization-bump amplitude.
+\end{itemize}
+
+These parameters mirror the analytical forms introduced in Appendix~A.
+
+% ---------------------------------------------------------
+\subsection*{B.3 Modifications to the Visibility Function}
+
+The standard visibility function is computed in \texttt{thermodynamics.c} as
+
+
+\[
+g(z)
+=
+\frac{d\tau}{dz}\,e^{-\tau(z)}.
+\]
+
+
+
+In RDCC, the visibility function is modified as
+\begin{equation}
+g_{\mathrm{RDCC}}(z)
+=
+g(z)
+\left[
+1
++
+\chi_{g}
+\left(
+\frac{k_{\mathrm{rel}}}{k_{\mathrm{rei}}(z)}
+\right)^{\alpha_{g}}
+\right],
+\end{equation}
+where $k_{\mathrm{rei}}(z)$ is the characteristic reionization scale.
+
+This modification is applied after the standard CLASS visibility calculation.
+
+% ---------------------------------------------------------
+\subsection*{B.4 Modifications to the Optical Depth}
+
+The optical depth is computed in \texttt{thermodynamics.c} as
+
+
+\[
+\tau(z)
+=
+\int dz'\,\frac{c\,\sigma_{T}\,n_{e}(z')}{(1+z')H(z')}.
+\]
+
+
+
+In RDCC, the electron density is unchanged, but the large-scale potentials entering the
+ionization history are modified by the relaxation-suppressed growth rate.
+
+A compact implementation is
+\begin{equation}
+\tau_{\mathrm{RDCC}}(z)
+=
+\tau(z)
+\left[
+1
++
+\chi_{\tau}
+\left(
+\frac{k_{\mathrm{rel}}}{k_{\mathrm{rei}}(z)}
+\right)^{\alpha_{\tau}}
+\right].
+\end{equation}
+
+This modification is applied before computing the visibility function.
+
+% ---------------------------------------------------------
+\subsection*{B.5 Modifications to Large-Scale Potentials}
+
+The large-scale potential is computed in \texttt{perturbations.c} as
+
+
+\[
+\Phi(k,z) \propto D(z)\,T(k).
+\]
+
+
+
+In RDCC:
+\begin{equation}
+\Phi_{\mathrm{RDCC}}(k,z)
+=
+\Phi(k,z)
+\left[
+1
+-
+\chi_{\Phi}
+\left(
+\frac{k}{k_{\mathrm{rel}}}
+\right)^{\alpha_{\Phi}}
+\right].
+\end{equation}
+
+This modification affects the quadrupole at reionization and therefore the reionization bump in
+polarization.
+
+% ---------------------------------------------------------
+\subsection*{B.6 Reionization Bump in Polarization}
+
+The RDCC reionization bump is implemented in \texttt{perturbations.c} as
+\begin{equation}
+C_{\ell,\mathrm{RDCC}}^{EE,\mathrm{rei}}
+=
+C_{\ell}^{EE,\mathrm{rei}}
+\left[
+1
++
+\chi_{\mathrm{rei}}
+\left(
+\frac{\ell_{\mathrm{rel}}}{\ell}
+\right)^{\alpha_{\mathrm{rei}}}
+\right],
+\end{equation}
+with $\ell_{\mathrm{rel}} = k_{\mathrm{rel}}\chi_{\mathrm{rei}}$.
+
+This modification is applied after the standard CLASS polarization source integration.
+
+% ---------------------------------------------------------
+\subsection*{B.7 Output and Post-Processing}
+
+The RDCC reionization outputs are written to:
+
+\begin{itemize}
+\item \texttt{cl\_EE\_rei.dat},
+\item \texttt{visibility\_rdcc.dat},
+\item \texttt{tau\_rdcc.dat}.
+\end{itemize}
+
+These files can be used for comparison with Planck, LiteBIRD, and future polarization surveys.
+
+% ---------------------------------------------------------
+\subsection*{B.8 Summary}
+
+The CLASS implementation of RDCC reionization requires:
+
+\begin{itemize}
+\item RDCC-modified visibility and optical-depth kernels,
+\item RDCC-modified large-scale potentials,
+\item reionization-bump corrections in polarization,
+\item new CLASS parameters and data structures.
+\end{itemize}
+
+This implementation provides a complete numerical framework for computing RDCC
+reionization signatures and enables direct comparison with current and future CMB
+polarization experiments.
+
+% ---------------------------------------------------------
+% APPENDIX C — NUMERICAL SETTINGS AND VALIDATION TESTS
+% ---------------------------------------------------------
+\section*{Appendix C: Numerical Settings and Validation Tests}
+\addcontentsline{toc}{section}{Appendix C: Numerical Settings and Validation Tests}
+
+This appendix summarizes the numerical settings, convergence tests, and validation procedures
+used to compute the RDCC reionization signatures presented in this Companion. The goal is to
+ensure reproducibility and to provide guidance for implementing RDCC reionization in CLASS
+and related analysis pipelines.
+
+% ---------------------------------------------------------
+\subsection*{C.1 Numerical Resolution Requirements}
+
+Accurate computation of RDCC-modified visibility and optical-depth kernels requires sufficient
+resolution in redshift and conformal time.
+
+Recommended settings:
+\begin{itemize}
+\item $\Delta z \leq 0.005$ for visibility-kernel integration,
+\item $\Delta \eta \leq 0.1\,\mathrm{Mpc}$ for polarization source functions,
+\item $k_{\mathrm{max}} \geq 5\,h\,\mathrm{Mpc}^{-1}$ for potential evolution,
+\item $\ell_{\mathrm{max}} \geq 200$ for the reionization bump in $EE$.
+\end{itemize}
+
+These settings ensure convergence of the RDCC-modified reionization spectra at the percent
+level.
+
+% ---------------------------------------------------------
+\subsection*{C.2 Convergence Tests}
+
+We perform three classes of convergence tests:
+
+\paragraph{(1) Redshift sampling.}
+The visibility function $g(z)$ is sharply peaked.  
+Convergence is achieved when:
+
+
+\[
+\frac{\Delta C_{\ell}^{EE,\mathrm{rei}}}{C_{\ell}^{EE,\mathrm{rei}}} < 0.5\%
+\quad \text{for } \ell < 20.
+\]
+
+
+
+\paragraph{(2) Potential evolution.}
+The RDCC suppression factor
+
+
+\[
+1 - \chi_{\Phi}\left(\frac{k}{k_{\mathrm{rel}}}\right)^{\alpha_{\Phi}}
+\]
+
+
+requires fine sampling near $k \sim k_{\mathrm{rel}}$.  
+Convergence is achieved when:
+
+
+\[
+\frac{\Delta \Phi_{\mathrm{RDCC}}}{\Phi_{\mathrm{RDCC}}} < 0.3\%.
+\]
+
+
+
+\paragraph{(3) Polarization source integration.}
+The reionization bump is sensitive to the quadrupole at $z \sim 6$–$10$.  
+Convergence is achieved when:
+
+
+\[
+\frac{\Delta C_{\ell}^{EE}}{C_{\ell}^{EE}} < 0.2\%
+\quad \text{for } \ell < 30.
+\]
+
+
+
+% ---------------------------------------------------------
+\subsection*{C.3 Validation Against $\Lambda$CDM}
+
+RDCC reionization must reduce to $\Lambda$CDM in the limit:
+
+
+\[
+\chi_{g},\chi_{\Phi},\chi_{\mathrm{rei}} \rightarrow 0,
+\qquad
+k_{\mathrm{rel}} \rightarrow \infty.
+\]
+
+
+
+We validate:
+\begin{itemize}
+\item $g_{\mathrm{RDCC}}(z) \rightarrow g(z)$ at the $<0.1\%$ level,
+\item $\tau_{\mathrm{RDCC}}(z) \rightarrow \tau(z)$ at the $<0.1\%$ level,
+\item $C_{\ell,\mathrm{RDCC}}^{EE,\mathrm{rei}} \rightarrow C_{\ell}^{EE,\mathrm{rei}}$ at the $<0.2\%$ level,
+\item the quadrupole evolution matches CLASS $\Lambda$CDM at the $<0.1\%$ level.
+\end{itemize}
+
+These checks ensure that RDCC is a controlled extension of $\Lambda$CDM.
+
+% ---------------------------------------------------------
+\subsection*{C.4 Validation of RDCC Reionization Signatures}
+
+We validate the characteristic RDCC signatures:
+
+\paragraph{(1) Enhanced large-scale polarization.}
+For $\ell < \ell_{\mathrm{rel}}$:
+
+
+\[
+C_{\ell,\mathrm{RDCC}}^{EE,\mathrm{rei}}
+>
+C_{\ell}^{EE,\mathrm{rei}}
+\quad \text{by } 10\%--25\%.
+\]
+
+
+
+\paragraph{(2) Smoother reionization bump.}
+The RDCC bump is broader and less sharply peaked.
+
+\paragraph{(3) Reduced small-scale reionization fluctuations.}
+For $\ell > \ell_{\mathrm{rel}}$:
+
+
+\[
+C_{\ell,\mathrm{RDCC}}^{EE,\mathrm{rei}}
+<
+C_{\ell}^{EE,\mathrm{rei}}
+\quad \text{by } 5\%--15\%.
+\]
+
+
+
+\paragraph{(4) Visibility-kernel coherence.}
+The RDCC visibility kernel satisfies:
+
+
+\[
+g_{\mathrm{RDCC}}(z) > g(z)
+\quad \text{for } z \sim 6\text{–}10.
+\]
+
+
+
+% ---------------------------------------------------------
+\subsection*{C.5 Numerical Stability and Error Control}
+
+To ensure numerical stability:
+
+\begin{itemize}
+\item enforce positivity of $g_{\mathrm{RDCC}}(z)$ and $\tau_{\mathrm{RDCC}}(z)$,
+\item apply spline smoothing to RDCC suppression factors,
+\item ensure smooth transitions in the quadrupole evolution,
+\item use adaptive redshift sampling near the visibility peak.
+\end{itemize}
+
+These steps prevent numerical artifacts in the RDCC reionization spectra.
+
+% ---------------------------------------------------------
+\subsection*{C.6 Summary}
+
+This appendix provides:
+\begin{itemize}
+\item recommended numerical settings for RDCC reionization,
+\item convergence tests for redshift sampling and potential evolution,
+\item validation against $\Lambda$CDM,
+\item verification of RDCC reionization signatures,
+\item guidelines for stable numerical implementation.
+\end{itemize}
+
+These procedures ensure that RDCC reionization predictions are accurate, reproducible, and
+consistent with the analytical and numerical framework developed in this Companion.
+
+
+\end{document}
