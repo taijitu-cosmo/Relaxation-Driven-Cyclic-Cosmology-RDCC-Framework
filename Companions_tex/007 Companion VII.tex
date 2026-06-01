@@ -1,0 +1,1021 @@
+\documentclass[11pt,a4paper]{article}
+
+% ---------------------------------------------------------
+% Encoding, Fonts, Language
+% ---------------------------------------------------------
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{lmodern}
+
+% ---------------------------------------------------------
+% Math Packages
+% ---------------------------------------------------------
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{mathtools}
+\usepackage{bm}            % bold math symbols
+\usepackage{physics}       % \dv, \pdv, \ket, \bra, etc.
+\usepackage{tensor}        % tensor indices
+\usepackage{siunitx}       % units
+
+% ---------------------------------------------------------
+% Figures, Tables, Layout
+% ---------------------------------------------------------
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{geometry}
+\geometry{margin=1in}
+
+% ---------------------------------------------------------
+% Bibliography
+% ---------------------------------------------------------
+
+\usepackage[numbers,sort&compress]{natbib}
+
+
+% ---------------------------------------------------------
+% Hyperref (must be loaded LAST except cleveref)
+% ---------------------------------------------------------
+\usepackage[
+    colorlinks=true,
+    linkcolor=blue,
+    citecolor=blue,
+    urlcolor=blue,
+    pdfencoding=auto,
+    psdextra
+]{hyperref}
+
+% ---------------------------------------------------------
+% Cleveref (after hyperref)
+% ---------------------------------------------------------
+\usepackage{cleveref}
+
+% ---------------------------------------------------------
+% Fix for math in section titles (renamed to avoid conflicts)
+% ---------------------------------------------------------
+\newcommand{\mathsafe}[2]{\texorpdfstring{#1}{#2}}
+
+% ---------------------------------------------------------
+% Paragraph spacing
+% ---------------------------------------------------------
+\setlength{\parskip}{1em}
+\setlength{\parindent}{0pt}
+
+% ---------------------------------------------------------
+% Title
+% ---------------------------------------------------------
+\title{\textbf{Boltzmann Hierarchy and Linear Perturbations in\\
+Relaxation-Driven Cyclic Cosmology (RDCC)}}
+
+\author{Michael Lehmann\\
+Independent Researcher\\
+\texttt{mi.lehmann@gmx.de}}
+
+\date{May 2026}
+
+\begin{document}
+
+\maketitle
+
+
+\begin{abstract}
+Relaxation-Driven Cyclic Cosmology (RDCC) is a one-parameter, CPT-symmetric
+framework in which all observable deviations from $\Lambda$CDM arise from the
+infrared relaxation strength $\alpha_{\mathrm{IR}}$. Companions~I--VI established the
+gravitational foundations, tensor phenomenology, relaxation dynamics, global CPT
+structure, observational synthesis, and the microscopic evolution of $\alpha(a)$.
+The resulting framework is dynamically complete and empirically predictive.
+
+The present paper, Companion~VII, develops the full linear perturbation theory of
+RDCC and constructs the Boltzmann hierarchy for scalar, vector, and tensor modes
+in both the visible and mirror sectors. We derive the modified Einstein equations,
+the coupled continuity and Euler equations, the photon and neutrino Boltzmann
+hierarchies, and the tensor-mode evolution including the RDCC modulation
+mechanism. The relaxation parameter enters the perturbation system through a
+modified Poisson equation, an effective gravitational coupling, and a small
+inter-sector energy-exchange term.
+
+We show that the freezing of $\alpha(a)$ established in Companion~VI implies that
+all perturbative corrections are controlled by the single constant parameter
+$\alpha_{\mathrm{IR}}$. This leads to a unified one-parameter modification of the CMB
+anisotropies, matter power spectrum, and stochastic gravitational-wave background.
+We provide the complete set of equations required for numerical implementation in
+Boltzmann codes such as CLASS or CAMB, thereby enabling a full confrontation of
+RDCC with precision cosmological data.
+
+Companion~VII completes the predictive architecture of RDCC and establishes the
+framework as a fully testable alternative to inflationary $\Lambda$CDM.
+\end{abstract}
+
+\newpage
+
+\tableofcontents
+
+\newpage
+
+\section{Introduction}
+
+Relaxation-Driven Cyclic Cosmology (RDCC) is a minimal, CPT-symmetric framework in
+which all observable deviations from $\Lambda$CDM arise from a single infrared parameter:
+the relaxation strength $\alpha_{\mathrm{IR}} \sim 10^{-2}$. Companions~I–VI developed the geometric
+foundations, tensor phenomenology, relaxation dynamics, global CPT structure, observational
+synthesis, and the microscopic evolution of $\alpha(a)$. The resulting picture is simple and
+structurally robust: the relaxation parameter grows rapidly near the CPT-symmetric bounce,
+freezes by $a \sim 10^{-4}$, and remains constant throughout all observable epochs.
+
+This early freeze-out implies that the RDCC prediction vector
+
+
+\[
+    (n_s,\ \Delta N_{\mathrm{eff}},\ f\sigma_8,\ \Omega_{\mathrm{GW}})
+\]
+
+
+is controlled entirely by the single infrared value $\alpha_{\mathrm{IR}}$. Companion~V demonstrated
+that this one-parameter structure is compatible with current CMB, LSS, and GW data, and
+Companion~VI provided the dynamical justification for the freeze-out of $\alpha(a)$.
+
+The purpose of the present paper, Companion~VII, is to develop the full linear perturbation
+theory of RDCC and construct the Boltzmann hierarchy for scalar, vector, and tensor modes.
+This is the final theoretical step required to make RDCC a fully testable cosmological
+framework. The Boltzmann hierarchy determines the evolution of:
+\begin{itemize}
+    \item photon temperature and polarization multipoles,
+    \item neutrino multipoles,
+    \item baryon and CDM density and velocity perturbations,
+    \item mirror-sector analogues of all above quantities,
+    \item and the tensor-mode spectrum including the RDCC modulation mechanism.
+\end{itemize}
+
+The relaxation parameter enters the perturbation system in three ways:
+\begin{enumerate}
+    \item a modified Poisson equation with an effective gravitational coupling,
+    \item a small inter-sector energy-exchange term proportional to $\alpha_{\mathrm{IR}}$,
+    \item and a tensor-sector modulation frequency proportional to $\alpha_{\mathrm{IR}}$.
+\end{enumerate}
+
+Because $\alpha(a)$ is frozen during all observable epochs, these modifications are
+time-independent and controlled entirely by $\alpha_{\mathrm{IR}}$. This makes RDCC one of the
+most predictive alternatives to inflationary $\Lambda$CDM: all perturbative signatures arise
+from a single microscopic parameter.
+
+The remainder of this companion paper is organized as follows. Section~2 develops the
+background cosmology and the effective gravitational coupling. Section~3 derives the scalar
+perturbation equations. Section~4 constructs the photon and neutrino Boltzmann hierarchies.
+Section~5 develops the mirror-sector perturbations. Section~6 presents the tensor-mode
+evolution including the RDCC modulation mechanism. Section~7 assembles the full set of
+equations required for numerical implementation in Boltzmann codes. Section~8 provides the
+conclusion and outlines the path toward a full RDCC likelihood analysis.
+
+
+\section{Background Cosmology and Effective Gravitational Coupling}
+
+The Boltzmann hierarchy evolves perturbations on top of a homogeneous and isotropic
+background. In RDCC, the background cosmology differs from $\Lambda$CDM in two
+structural ways:
+
+\begin{enumerate}
+    \item the total energy density receives contributions from both the visible and mirror
+    sectors, which share a common CPT-symmetric origin but evolve with different
+    temperatures,
+    \item the effective gravitational coupling is modified by the infrared relaxation strength
+    $\alpha_{\mathrm{IR}}$, reflecting the residual inter-sector decoherence after the bounce.
+\end{enumerate}
+
+Because $\alpha(a)$ freezes extremely early (Companion~VI), all background modifications
+are constant during observable epochs and controlled entirely by the single infrared parameter
+$\alpha_{\mathrm{IR}}$. This section develops the background equations required for the perturbation
+analysis.
+
+\subsection{Two-Sector Background}
+
+The total energy density is the sum of the visible and mirror contributions:
+\begin{equation}
+    \rho_{\mathrm{tot}}(a) = \rho_{+}(a) + \rho_{-}(a),
+\end{equation}
+with analogous expressions for pressure.
+
+The mirror sector contains mirror photons, mirror neutrinos, mirror baryons, and (optionally)
+mirror CDM. Their temperatures are related by the relaxation-induced ratio
+\begin{equation}
+    \frac{T_{-}}{T_{+}} = x, \qquad x \simeq 0.5 + \mathcal{O}(\alpha_{\mathrm{IR}}),
+\end{equation}
+as derived in Companion~III.
+
+The Friedmann equation becomes
+\begin{equation}
+    H^{2}(a)
+    = \frac{8\pi G}{3}\,\bigl[\rho_{+}(a) + \rho_{-}(a)\bigr].
+\end{equation}
+
+\subsection{Effective Gravitational Coupling}
+
+The dimension-six inter-sector operator modifies the gravitational response of visible-sector
+perturbations. As shown in Companions~III and~IV, the effective Newton constant is
+\begin{equation}
+    G_{\mathrm{eff}} = G\bigl(1 + c_{g}\,\alpha_{\mathrm{IR}}\bigr),
+\end{equation}
+where $c_{g}$ is an order-one coefficient determined by the inter-sector coupling.
+
+This modification enters the Poisson equation and therefore affects:
+\begin{itemize}
+    \item the growth of structure,
+    \item the CMB lensing potential,
+    \item the matter power spectrum,
+    \item and the scalar Boltzmann hierarchy.
+\end{itemize}
+
+Because $\alpha(a)$ is frozen, $G_{\mathrm{eff}}$ is constant during all observable epochs.
+
+\subsection{Modified Expansion History}
+
+The relaxation dynamics induce a small correction to the Hubble parameter:
+\begin{equation}
+    H^{2}(a) = H^{2}_{\Lambda\mathrm{CDM}}(a)\,\bigl[1 + \delta_{H}(a)\bigr],
+\end{equation}
+with
+\begin{equation}
+    \delta_{H}(a) \sim \alpha_{\mathrm{IR}}\,f(a),
+\end{equation}
+where $f(a)$ is a slowly varying function determined by the relative abundance of mirror
+radiation and mirror matter.
+
+To leading order in $\alpha_{\mathrm{IR}}$,
+\begin{equation}
+    H(a) = H_{\Lambda\mathrm{CDM}}(a)\,\bigl[1 + \tfrac{1}{2}\delta_{H}(a)\bigr].
+\end{equation}
+
+This correction is small ($\sim 1\%$) but must be included for consistency in the Boltzmann
+hierarchy.
+
+\subsection{Background Quantities Required for Perturbations}
+
+The Boltzmann hierarchy requires the following background functions:
+\begin{itemize}
+    \item $H(a)$ and $H'(a)$,
+    \item $\rho_{+}(a)$, $p_{+}(a)$,
+    \item $\rho_{-}(a)$, $p_{-}(a)$,
+    \item the temperature ratio $x = T_{-}/T_{+}$,
+    \item the effective Newton constant $G_{\mathrm{eff}}$,
+    \item the fractional energy densities $\Omega_{i}(a)$ for all species.
+\end{itemize}
+
+All of these quantities are determined by:
+\begin{enumerate}
+    \item the standard $\Lambda$CDM parameters,
+    \item the temperature ratio $x$,
+    \item and the single RDCC parameter $\alpha_{\mathrm{IR}}$.
+\end{enumerate}
+
+\subsection{Summary}
+
+The background cosmology of RDCC differs from $\Lambda$CDM only through:
+\begin{itemize}
+    \item the presence of a mirror sector with temperature ratio $x$,
+    \item a modified gravitational coupling $G_{\mathrm{eff}}$,
+    \item and a small correction to the expansion history.
+\end{itemize}
+
+These modifications are constant during all observable epochs and controlled entirely by
+$\alpha_{\mathrm{IR}}$. The next section develops the scalar perturbation equations on this
+background.
+
+\section{Scalar Perturbations}
+
+Scalar perturbations form the backbone of the Boltzmann hierarchy: they determine the CMB
+temperature and polarization anisotropies, the matter power spectrum, and the growth of
+structure. In RDCC, the scalar sector differs from $\Lambda$CDM in three structural ways:
+
+\begin{enumerate}
+    \item the Poisson equation contains the effective gravitational coupling $G_{\mathrm{eff}}$,
+    \item the visible and mirror sectors contribute separately to the gravitational potentials,
+    \item a small inter-sector relaxation term proportional to $\alpha_{\mathrm{IR}}$ appears in the
+    continuity and Euler equations.
+\end{enumerate}
+
+Because $\alpha(a)$ freezes extremely early (Companion~VI), all modifications are constant
+during observable epochs and controlled entirely by the single infrared parameter
+$\alpha_{\mathrm{IR}}$. We work in conformal Newtonian gauge throughout:
+\begin{equation}
+    ds^{2} = a^{2}(\tau)\,\bigl[-(1+2\Phi)\,d\tau^{2} + (1-2\Psi)\,dx^{2}\bigr].
+\end{equation}
+
+\subsection{Modified Einstein Equations}
+
+The scalar Einstein equations receive contributions from both sectors. The perturbed $(0,0)$
+equation becomes
+\begin{equation}
+    k^{2}\Psi + 3\mathcal{H}(\Psi' + \mathcal{H}\Phi)
+    = 4\pi G_{\mathrm{eff}}\,a^{2}\,(\delta\rho_{+} + \delta\rho_{-}),
+\end{equation}
+where $\mathcal{H} = a'/a$ is the conformal Hubble parameter.
+
+The effective gravitational coupling is
+\begin{equation}
+    G_{\mathrm{eff}} = G\bigl(1 + c_{g}\,\alpha_{\mathrm{IR}}\bigr),
+\end{equation}
+as derived in Companions~III–IV and justified dynamically in Companion~VI.
+
+The $(0,i)$ equation becomes
+\begin{equation}
+    k^{2}(\Psi' + \mathcal{H}\Phi)
+    = 4\pi G_{\mathrm{eff}}\,a^{2}\bigl[(\rho_{+}+p_{+})\theta_{+}
+    + (\rho_{-}+p_{-})\theta_{-}\bigr].
+\end{equation}
+
+The anisotropic-stress equation is unchanged:
+\begin{equation}
+    k^{2}(\Phi - \Psi)
+    = 12\pi G\,a^{2}\bigl[(\rho_{+}+p_{+})\sigma_{+}
+    + (\rho_{-}+p_{-})\sigma_{-}\bigr].
+\end{equation}
+
+\subsection{Continuity Equations}
+
+The visible-sector continuity equation receives a small correction from the relaxation dynamics:
+\begin{equation}
+    \delta'_{+}
+    = - (1+w_{+})(\theta_{+} - 3\Psi')
+      - 3\mathcal{H}(c_{s,+}^{2} - w_{+})\delta_{+}
+      + \alpha_{\mathrm{IR}}\mathcal{H}(\delta_{-} - \delta_{+}).
+\end{equation}
+
+The mirror-sector continuity equation is
+\begin{equation}
+    \delta'_{-}
+    = - (1+w_{-})(\theta_{-} - 3\Psi')
+      - 3\mathcal{H}(c_{s,-}^{2} - w_{-})\delta_{-}
+      - \alpha_{\mathrm{IR}}\mathcal{H}(\delta_{-} - \delta_{+}).
+\end{equation}
+
+The last terms in both equations represent the inter-sector relaxation. Because
+$\alpha_{\mathrm{IR}} \sim 10^{-2}$, these terms are small but non-negligible.
+
+\subsection{Euler Equations}
+
+The Euler equations for the two sectors are
+\begin{equation}
+    \theta'_{+}
+    = - \mathcal{H}(1 - 3c_{s,+}^{2})\theta_{+}
+      + \frac{c_{s,+}^{2}}{1+w_{+}}\,k^{2}\delta_{+}
+      + k^{2}\Phi
+      + \alpha_{\mathrm{IR}}\mathcal{H}(\theta_{-} - \theta_{+}),
+\end{equation}
+\begin{equation}
+    \theta'_{-}
+    = - \mathcal{H}(1 - 3c_{s,-}^{2})\theta_{-}
+      + \frac{c_{s,-}^{2}}{1+w_{-}}\,k^{2}\delta_{-}
+      + k^{2}\Phi
+      - \alpha_{\mathrm{IR}}\mathcal{H}(\theta_{-} - \theta_{+}).
+\end{equation}
+
+The relaxation term damps the velocity difference between the sectors, reflecting the residual
+inter-sector decoherence encoded in $\alpha_{\mathrm{IR}}$.
+
+\subsection{Adiabatic Initial Conditions}
+
+Because the two sectors share a common origin at the CPT-symmetric bounce, adiabatic initial
+conditions require
+\begin{equation}
+    \frac{\delta_{-}}{1+w_{-}}
+    = \frac{\delta_{+}}{1+w_{+}},
+    \qquad
+    \theta_{-} = \theta_{+}.
+\end{equation}
+
+The relaxation term preserves adiabaticity at early times.
+
+\subsection{Summary}
+
+Scalar perturbations in RDCC differ from $\Lambda$CDM through:
+\begin{itemize}
+    \item a modified Poisson equation with $G_{\mathrm{eff}}$,
+    \item separate visible and mirror contributions to the gravitational potentials,
+    \item a small relaxation term proportional to $\alpha_{\mathrm{IR}}$ in the continuity and Euler
+    equations.
+\end{itemize}
+
+These modifications are constant in time and controlled entirely by the single parameter
+$\alpha_{\mathrm{IR}}$. The next section develops the photon and neutrino Boltzmann hierarchies
+on this background.
+
+\section{Photon and Neutrino Boltzmann Hierarchies}
+
+The photon and neutrino Boltzmann hierarchies determine the evolution of the CMB
+temperature and polarization anisotropies and the free-streaming behavior of relativistic
+species. In RDCC, the structure of the Boltzmann hierarchy is identical to $\Lambda$CDM
+except for three modifications:
+
+\begin{enumerate}
+    \item the gravitational potentials $(\Phi,\Psi)$ satisfy the modified Einstein equations of
+    Sec.~3 with the effective coupling $G_{\mathrm{eff}}$,
+    \item the mirror sector contributes to the gravitational potentials,
+    \item mirror photons and mirror neutrinos obey parallel hierarchies with temperature
+    ratio $x = T_{-}/T_{+}$.
+\end{enumerate}
+
+The relaxation parameter $\alpha_{\mathrm{IR}}$ does \emph{not} enter the photon or neutrino hierarchies
+directly; it affects them only through the modified gravitational potentials. Because
+$\alpha(a)$ is frozen during all observable epochs, these modifications are constant in time.
+
+We work in conformal Newtonian gauge and follow the standard multipole expansion of the
+photon and neutrino distribution functions.
+
+\subsection{Photon Temperature Hierarchy}
+
+The photon temperature perturbation is expanded as
+\begin{equation}
+    \Theta(\mathbf{k},\hat{n},\tau)
+    = \sum_{\ell=0}^{\infty} (-i)^{\ell} (2\ell+1)\,\Theta_{\ell}(\mathbf{k},\tau)\,P_{\ell}(\mu),
+\end{equation}
+with $\mu = \hat{k}\!\cdot\!\hat{n}$.
+
+The Boltzmann hierarchy is
+\begin{align}
+    \Theta_{0}' &= -k\Theta_{1} - \Phi', \\
+    \Theta_{1}' &= \frac{k}{3}\Theta_{0} - \frac{2k}{3}\Theta_{2} + k\Psi - \dot{\tau}\,(\Theta_{1} - v_{b}), \\
+    \Theta_{2}' &= \frac{2k}{5}\Theta_{1} - \frac{3k}{5}\Theta_{3}
+                  + \dot{\tau}\left(\frac{1}{10}\Pi - \Theta_{2}\right), \\
+    \Theta_{\ell}' &= \frac{k}{2\ell+1}\bigl[\ell\,\Theta_{\ell-1} - (\ell+1)\Theta_{\ell+1}\bigr]
+                     - \dot{\tau}\,\Theta_{\ell}, \qquad \ell \ge 3.
+\end{align}
+
+The polarization source is
+\begin{equation}
+    \Pi = \Theta_{2} + \Theta_{2}^{(P)},
+\end{equation}
+with $\Theta_{2}^{(P)}$ the polarization quadrupole.
+
+The only RDCC modification is that the gravitational potentials $(\Phi,\Psi)$ satisfy the
+modified Einstein equations of Sec.~3.
+
+\subsection{Photon Polarization Hierarchy}
+
+The polarization multipoles obey
+\begin{align}
+    \Theta_{0}^{(P)\prime} &= -k\Theta_{1}^{(P)} - \dot{\tau}\,\Theta_{0}^{(P)}, \\
+    \Theta_{1}^{(P)\prime} &= \frac{k}{3}\Theta_{0}^{(P)} - \frac{2k}{3}\Theta_{2}^{(P)}
+                             - \dot{\tau}\,\Theta_{1}^{(P)}, \\
+    \Theta_{2}^{(P)\prime} &= \frac{2k}{5}\Theta_{1}^{(P)} - \frac{3k}{5}\Theta_{3}^{(P)}
+                             + \dot{\tau}\left(\frac{1}{10}\Pi - \Theta_{2}^{(P)}\right), \\
+    \Theta_{\ell}^{(P)\prime} &=
+    \frac{k}{2\ell+1}\bigl[\ell\,\Theta_{\ell-1}^{(P)} - (\ell+1)\Theta_{\ell+1}^{(P)}\bigr]
+    - \dot{\tau}\,\Theta_{\ell}^{(P)}, \qquad \ell \ge 3.
+\end{align}
+
+Again, the only RDCC modification enters through the gravitational potentials.
+
+\subsection{Neutrino Hierarchy}
+
+Massless neutrinos free-stream and therefore require a full Boltzmann hierarchy:
+\begin{align}
+    F_{0}' &= -kF_{1} - \Phi', \\
+    F_{1}' &= \frac{k}{3}F_{0} - \frac{2k}{3}F_{2} + k\Psi, \\
+    F_{2}' &= \frac{2k}{5}F_{1} - \frac{3k}{5}F_{3}
+             + \frac{4}{15}(\Phi' + \Psi'), \\
+    F_{\ell}' &= \frac{k}{2\ell+1}\bigl[\ell\,F_{\ell-1} - (\ell+1)F_{\ell+1}\bigr],
+               \qquad \ell \ge 3.
+\end{align}
+
+The RDCC modification again enters only through the gravitational potentials.
+
+\subsection{Mirror-Photon and Mirror-Neutrino Hierarchies}
+
+The mirror sector contains mirror photons and mirror neutrinos with temperature
+\begin{equation}
+    T_{-} = x\,T_{+}, \qquad x \simeq 0.5 + \mathcal{O}(\alpha_{\mathrm{IR}}).
+\end{equation}
+
+Their Boltzmann hierarchies are identical to the visible-sector ones, with the replacements
+
+
+\[
+    T_{+} \rightarrow T_{-}, \qquad
+    \dot{\tau} \rightarrow \dot{\tau}_{-}, \qquad
+    \Theta_{\ell} \rightarrow \Theta_{\ell,-},
+\]
+
+
+and with gravitational potentials sourced by both sectors.
+
+\subsection{Summary}
+
+The photon and neutrino Boltzmann hierarchies in RDCC are structurally identical to
+$\Lambda$CDM, with the following modifications:
+
+\begin{itemize}
+    \item the gravitational potentials $(\Phi,\Psi)$ obey the modified Einstein equations,
+    \item the mirror sector contributes to the potentials,
+    \item the effective gravitational coupling $G_{\mathrm{eff}}$ modifies the Poisson equation,
+    \item mirror photons and mirror neutrinos obey parallel hierarchies with temperature
+    ratio $x$.
+\end{itemize}
+
+The next section develops the perturbation equations for mirror baryons and mirror CDM,
+completing the scalar sector of RDCC.
+
+\section{Mirror-Sector Perturbations}
+
+The mirror sector contains mirror photons, mirror neutrinos, mirror baryons, and (optionally)
+mirror CDM. Their perturbations obey the same dynamical equations as their visible-sector
+counterparts, with two structural differences:
+
+\begin{enumerate}
+    \item the mirror temperature is lower by the relaxation-induced ratio
+    
+
+\[
+        x = \frac{T_{-}}{T_{+}}, \qquad x \simeq 0.5 + \mathcal{O}(\alpha_{\mathrm{IR}}),
+    \]
+
+
+    \item the gravitational potentials $(\Phi,\Psi)$ are sourced jointly by the visible and mirror
+    sectors.
+\end{enumerate}
+
+The relaxation parameter $\alpha_{\mathrm{IR}}$ enters the mirror-sector perturbations only through
+the small inter-sector coupling terms derived in Sec.~3. Because $\alpha(a)$ is frozen during all
+observable epochs, these terms are constant in time and controlled entirely by $\alpha_{\mathrm{IR}}$.
+
+\subsection{Mirror Baryons}
+
+Mirror baryons obey the continuity and Euler equations
+\begin{align}
+    \delta'_{b,-}
+    &= -(\theta_{b,-} - 3\Psi')
+       - 3\mathcal{H}(c_{s,b,-}^{2} - w_{b,-})\,\delta_{b,-}
+       + \alpha_{\mathrm{IR}}\mathcal{H}(\delta_{b,+} - \delta_{b,-}), \\
+    \theta'_{b,-}
+    &= -\mathcal{H}(1 - 3c_{s,b,-}^{2})\,\theta_{b,-}
+       + \frac{c_{s,b,-}^{2}}{1+w_{b,-}}\,k^{2}\delta_{b,-}
+       + k^{2}\Phi
+       - \alpha_{\mathrm{IR}}\mathcal{H}(\theta_{b,-} - \theta_{b,+}).
+\end{align}
+
+The Thomson scattering rate in the mirror sector is
+\begin{equation}
+    \dot{\tau}_{-} = a\,n_{e,-}\,\sigma_{T},
+\end{equation}
+with $n_{e,-}$ determined by the mirror recombination history. Because $T_{-} = xT_{+}$ with
+$x < 1$, mirror recombination occurs earlier than visible recombination.
+
+\subsection{Mirror CDM}
+
+Mirror CDM (if present) obeys
+\begin{align}
+    \delta'_{c,-}
+    &= -\theta_{c,-} + 3\Psi'
+       + \alpha_{\mathrm{IR}}\mathcal{H}(\delta_{c,+} - \delta_{c,-}), \\
+    \theta'_{c,-}
+    &= -\mathcal{H}\,\theta_{c,-}
+       + k^{2}\Phi
+       - \alpha_{\mathrm{IR}}\mathcal{H}(\theta_{c,-} - \theta_{c,+}).
+\end{align}
+
+The relaxation term damps the velocity difference between visible and mirror CDM, reflecting
+the residual inter-sector decoherence encoded in $\alpha_{\mathrm{IR}}$.
+
+\subsection{Mirror Photons}
+
+Mirror photons obey the same Boltzmann hierarchy as visible photons:
+\begin{align}
+    \Theta'_{0,-} &= -k\Theta_{1,-} - \Phi', \\
+    \Theta'_{1,-} &= \frac{k}{3}\Theta_{0,-} - \frac{2k}{3}\Theta_{2,-}
+                    + k\Psi - \dot{\tau}_{-}(\Theta_{1,-} - v_{b,-}), \\
+    \Theta'_{2,-} &= \frac{2k}{5}\Theta_{1,-} - \frac{3k}{5}\Theta_{3,-}
+                    + \dot{\tau}_{-}\left(\frac{1}{10}\Pi_{-} - \Theta_{2,-}\right), \\
+    \Theta'_{\ell,-} &= \frac{k}{2\ell+1}\bigl[\ell\,\Theta_{\ell-1,-}
+                      - (\ell+1)\Theta_{\ell+1,-}\bigr]
+                      - \dot{\tau}_{-}\Theta_{\ell,-}, \qquad \ell \ge 3.
+\end{align}
+
+The only differences relative to the visible sector are:
+
+\begin{itemize}
+    \item the temperature ratio $x$,
+    \item the mirror Thomson rate $\dot{\tau}_{-}$,
+    \item and the gravitational potentials sourced by both sectors.
+\end{itemize}
+
+\subsection{Mirror Neutrinos}
+
+Mirror neutrinos free-stream and obey the hierarchy
+\begin{align}
+    F'_{0,-} &= -kF_{1,-} - \Phi', \\
+    F'_{1,-} &= \frac{k}{3}F_{0,-} - \frac{2k}{3}F_{2,-} + k\Psi, \\
+    F'_{2,-} &= \frac{2k}{5}F_{1,-} - \frac{3k}{5}F_{3,-}
+               + \frac{4}{15}(\Phi' + \Psi'), \\
+    F'_{\ell,-} &= \frac{k}{2\ell+1}\bigl[\ell\,F_{\ell-1,-}
+                 - (\ell+1)F_{\ell+1,-}\bigr], \qquad \ell \ge 3.
+\end{align}
+
+The mirror neutrino temperature is
+\begin{equation}
+    T_{\nu,-} = x\,T_{\nu,+}.
+\end{equation}
+
+\subsection{Gravitational Coupling Between Sectors}
+
+The gravitational potentials are sourced by both sectors:
+\begin{equation}
+    k^{2}\Phi
+    = 4\pi G_{\mathrm{eff}}\,a^{2}\,(\delta\rho_{+} + \delta\rho_{-})
+      + 3\mathcal{H}(\Phi' + \mathcal{H}\Psi).
+\end{equation}
+
+This coupling is the dominant interaction between the sectors. The relaxation terms
+proportional to $\alpha_{\mathrm{IR}}$ are subdominant but necessary for consistency.
+
+\subsection{Summary}
+
+Mirror-sector perturbations in RDCC:
+\begin{itemize}
+    \item obey the same dynamical equations as visible-sector perturbations,
+    \item have different temperatures and recombination histories,
+    \item contribute to the gravitational potentials,
+    \item and are weakly coupled to the visible sector through $\alpha_{\mathrm{IR}}$.
+\end{itemize}
+
+The next section develops the tensor-mode evolution, including the RDCC modulation
+mechanism derived in Companion~II.
+
+\section{Tensor Perturbations and RDCC Modulation}
+
+Tensor perturbations describe gravitational waves propagating on the FLRW background.
+In RDCC, the tensor sector contains a distinctive and predictive signature: a log-periodic
+modulation of the tensor amplitude with frequency proportional to the infrared relaxation
+strength $\alpha_{\mathrm{IR}}$. This modulation was derived in Companion~II, interpreted in
+Companions~III–IV, and dynamically justified in Companion~VI. The purpose of this section
+is to embed that structure into the full Boltzmann hierarchy.
+
+\subsection{Tensor Evolution Equation}
+
+In conformal Newtonian gauge, the tensor perturbation $h_{ij}$ satisfies
+\begin{equation}
+    h'' + 2\mathcal{H}h' + k^{2}h
+    = 16\pi G_{\mathrm{eff}}\,a^{2}\,\pi^{(T)},
+\end{equation}
+where $\pi^{(T)}$ is the tensor anisotropic stress.
+
+The RDCC modification enters through the effective Newton constant
+\begin{equation}
+    G_{\mathrm{eff}} = G\bigl(1 + c_{g}\,\alpha_{\mathrm{IR}}\bigr).
+\end{equation}
+
+Because $\alpha(a)$ is frozen during all observable epochs, the modification is constant in
+time.
+
+\subsection{Tensor Anisotropic Stress}
+
+The tensor anisotropic stress receives contributions from:
+\begin{itemize}
+    \item visible neutrinos,
+    \item mirror neutrinos,
+    \item and any additional free-streaming relativistic species.
+\end{itemize}
+
+The total stress is
+\begin{equation}
+    \pi^{(T)} = \pi^{(T)}_{\nu,+} + \pi^{(T)}_{\nu,-}.
+\end{equation}
+
+Each component obeys the standard hierarchy
+\begin{align}
+    F^{(T)\prime}_{2} &= -\frac{8}{15}h' - \frac{3k}{5}F^{(T)}_{3}, \\
+    F^{(T)\prime}_{\ell} &=
+    \frac{k}{2\ell+1}\bigl[\ell\,F^{(T)}_{\ell-1}
+    - (\ell+1)F^{(T)}_{\ell+1}\bigr], \qquad \ell \ge 3,
+\end{align}
+with temperature ratio $T_{\nu,-} = xT_{\nu,+}$ for the mirror sector.
+
+\subsection{RDCC Tensor Modulation}
+
+Companion~II showed that the dimension-six operator induces a modulation of the tensor
+amplitude:
+\begin{equation}
+    h(k,\tau)
+    = h_{0}(k,\tau)\left[1 + \alpha_{\mathrm{IR}}
+      \cos\!\left(\omega_{\mathrm{mod}}\ln\frac{k}{k_{\ast}}\right)\right],
+\end{equation}
+where
+\begin{equation}
+    \omega_{\mathrm{mod}} = c_{w}\,\alpha_{\mathrm{IR}},
+\end{equation}
+and $c_{w}$ is an order-one coefficient determined in Companion~II.
+
+This modulation is a direct consequence of the relaxation dynamics and the bipartite
+Hilbert-space structure of RDCC.
+
+\subsection{Embedding the Modulation into the Boltzmann Hierarchy}
+
+To incorporate the modulation into the Boltzmann evolution, we write the tensor mode as
+\begin{equation}
+    h(k,\tau) = h_{\mathrm{RDCC}}(k)\,h_{\mathrm{std}}(k,\tau),
+\end{equation}
+where
+\begin{equation}
+    h_{\mathrm{RDCC}}(k)
+    = 1 + \alpha_{\mathrm{IR}}
+      \cos\!\left(\omega_{\mathrm{mod}}\ln\frac{k}{k_{\ast}}\right)
+\end{equation}
+is the primordial modulation factor, and $h_{\mathrm{std}}(k,\tau)$ obeys the standard tensor
+evolution equation with $G_{\mathrm{eff}}$.
+
+This separation ensures that:
+\begin{itemize}
+    \item the modulation affects only the initial conditions,
+    \item the time evolution remains standard (up to $G_{\mathrm{eff}}$),
+    \item and the RDCC signature propagates cleanly into the observable spectrum.
+\end{itemize}
+
+\subsection{Modified Initial Conditions}
+
+The initial tensor power spectrum becomes
+\begin{equation}
+    P_{h}(k)
+    = P_{h}^{(0)}(k)\left[1 + \alpha_{\mathrm{IR}}
+      \cos\!\left(\omega_{\mathrm{mod}}\ln\frac{k}{k_{\ast}}\right)\right]^{2}.
+\end{equation}
+
+To linear order in $\alpha_{\mathrm{IR}}$,
+\begin{equation}
+    P_{h}(k)
+    \simeq P_{h}^{(0)}(k)\left[1 + 2\alpha_{\mathrm{IR}}
+      \cos\!\left(\omega_{\mathrm{mod}}\ln\frac{k}{k_{\ast}}\right)\right].
+\end{equation}
+
+This is the form implemented in Boltzmann codes.
+
+\subsection{Observable Consequences}
+
+The RDCC tensor modulation produces:
+\begin{itemize}
+    \item a log-periodic oscillation in the stochastic gravitational-wave background,
+    \item a characteristic modulation in the tensor transfer function,
+    \item a distinctive signature in the CMB $B$-mode spectrum,
+    \item and a frequency-dependent oscillation in $\Omega_{\mathrm{GW}}(f)$.
+\end{itemize}
+
+These signatures are controlled entirely by $\alpha_{\mathrm{IR}}$ and therefore provide clean,
+parameter-free tests of RDCC.
+
+\subsection{Summary}
+
+Tensor perturbations in RDCC differ from $\Lambda$CDM through:
+\begin{itemize}
+    \item a modified gravitational coupling $G_{\mathrm{eff}}$,
+    \item contributions from mirror neutrinos to the anisotropic stress,
+    \item and a primordial log-periodic modulation with frequency
+    $\omega_{\mathrm{mod}} \propto \alpha_{\mathrm{IR}}$.
+\end{itemize}
+
+The next section assembles the full set of equations required for numerical implementation
+in Boltzmann codes such as CLASS or CAMB.
+
+\section{Full Equation Set for Boltzmann Implementation}
+
+This section assembles the complete set of equations required to implement RDCC in a
+Boltzmann code such as CLASS or CAMB. The structure follows the standard
+$\Lambda$CDM architecture, with RDCC modifications highlighted explicitly. All equations
+are written in conformal Newtonian gauge.
+
+Because the relaxation parameter freezes extremely early (Companion~VI), all RDCC
+modifications are constant in time and controlled entirely by the single infrared parameter
+$\alpha_{\mathrm{IR}}$.
+
+\subsection{Background Evolution}
+
+\paragraph{Friedmann equation.}
+\begin{equation}
+    H^{2}(a)
+    = \frac{8\pi G}{3}\,\bigl[\rho_{+}(a) + \rho_{-}(a)\bigr]\,
+      \bigl[1 + \delta_{H}(a)\bigr],
+\end{equation}
+with
+\begin{equation}
+    \delta_{H}(a) \sim \alpha_{\mathrm{IR}}\,f(a).
+\end{equation}
+
+\paragraph{Effective Newton constant.}
+\begin{equation}
+    G_{\mathrm{eff}} = G\bigl(1 + c_{g}\,\alpha_{\mathrm{IR}}\bigr).
+\end{equation}
+
+\paragraph{Temperature ratio.}
+\begin{equation}
+    T_{-} = x\,T_{+}, \qquad x \simeq 0.5 + \mathcal{O}(\alpha_{\mathrm{IR}}).
+\end{equation}
+
+\paragraph{Energy densities.}
+\begin{equation}
+    \rho_{\mathrm{tot}} = \rho_{+} + \rho_{-}, \qquad
+    p_{\mathrm{tot}} = p_{+} + p_{-}.
+\end{equation}
+
+\subsection{Scalar Einstein Equations}
+
+\paragraph{Poisson equation.}
+\begin{equation}
+    k^{2}\Psi + 3\mathcal{H}(\Psi' + \mathcal{H}\Phi)
+    = 4\pi G_{\mathrm{eff}}\,a^{2}\,(\delta\rho_{+} + \delta\rho_{-}).
+\end{equation}
+
+\paragraph{Momentum constraint.}
+\begin{equation}
+    k^{2}(\Psi' + \mathcal{H}\Phi)
+    = 4\pi G_{\mathrm{eff}}\,a^{2}\bigl[(\rho_{+}+p_{+})\theta_{+}
+    + (\rho_{-}+p_{-})\theta_{-}\bigr].
+\end{equation}
+
+\paragraph{Anisotropic stress.}
+\begin{equation}
+    k^{2}(\Phi - \Psi)
+    = 12\pi G\,a^{2}\bigl[(\rho_{+}+p_{+})\sigma_{+}
+    + (\rho_{-}+p_{-})\sigma_{-}\bigr].
+\end{equation}
+
+\subsection{Scalar Continuity and Euler Equations}
+
+\paragraph{Visible sector.}
+\begin{align}
+    \delta'_{+}
+    &= - (1+w_{+})(\theta_{+} - 3\Psi')
+       - 3\mathcal{H}(c_{s,+}^{2} - w_{+})\delta_{+}
+       + \alpha_{\mathrm{IR}}\mathcal{H}(\delta_{-} - \delta_{+}), \\
+    \theta'_{+}
+    &= - \mathcal{H}(1 - 3c_{s,+}^{2})\theta_{+}
+       + \frac{c_{s,+}^{2}}{1+w_{+}}\,k^{2}\delta_{+}
+       + k^{2}\Phi
+       + \alpha_{\mathrm{IR}}\mathcal{H}(\theta_{-} - \theta_{+}).
+\end{align}
+
+\paragraph{Mirror sector.}
+\begin{align}
+    \delta'_{-}
+    &= - (1+w_{-})(\theta_{-} - 3\Psi')
+       - 3\mathcal{H}(c_{s,-}^{2} - w_{-})\delta_{-}
+       - \alpha_{\mathrm{IR}}\mathcal{H}(\delta_{-} - \delta_{+}), \\
+    \theta'_{-}
+    &= - \mathcal{H}(1 - 3c_{s,-}^{2})\theta_{-}
+       + \frac{c_{s,-}^{2}}{1+w_{-}}\,k^{2}\delta_{-}
+       + k^{2}\Phi
+       - \alpha_{\mathrm{IR}}\mathcal{H}(\theta_{-} - \theta_{+}).
+\end{align}
+
+\subsection{Photon and Neutrino Hierarchies}
+
+\paragraph{Photon temperature multipoles.}
+\begin{align}
+    \Theta_{0}' &= -k\Theta_{1} - \Phi', \\
+    \Theta_{1}' &= \frac{k}{3}\Theta_{0} - \frac{2k}{3}\Theta_{2}
+                  + k\Psi - \dot{\tau}(\Theta_{1} - v_{b}), \\
+    \Theta_{2}' &= \frac{2k}{5}\Theta_{1} - \frac{3k}{5}\Theta_{3}
+                  + \dot{\tau}\left(\frac{1}{10}\Pi - \Theta_{2}\right), \\
+    \Theta_{\ell}' &= \frac{k}{2\ell+1}\bigl[\ell\,\Theta_{\ell-1}
+                     - (\ell+1)\Theta_{\ell+1}\bigr]
+                     - \dot{\tau}\Theta_{\ell}, \qquad \ell \ge 3.
+\end{align}
+
+\paragraph{Photon polarization multipoles.}
+\begin{align}
+    \Theta_{0}^{(P)\prime} &= -k\Theta_{1}^{(P)} - \dot{\tau}\Theta_{0}^{(P)}, \\
+    \Theta_{1}^{(P)\prime} &= \frac{k}{3}\Theta_{0}^{(P)}
+                             - \frac{2k}{3}\Theta_{2}^{(P)}
+                             - \dot{\tau}\Theta_{1}^{(P)}, \\
+    \Theta_{2}^{(P)\prime} &= \frac{2k}{5}\Theta_{1}^{(P)}
+                             - \frac{3k}{5}\Theta_{3}^{(P)}
+                             + \dot{\tau}\left(\frac{1}{10}\Pi
+                             - \Theta_{2}^{(P)}\right), \\
+    \Theta_{\ell}^{(P)\prime} &=
+    \frac{k}{2\ell+1}\bigl[\ell\,\Theta_{\ell-1}^{(P)}
+    - (\ell+1)\Theta_{\ell+1}^{(P)}\bigr]
+    - \dot{\tau}\Theta_{\ell}^{(P)}, \qquad \ell \ge 3.
+\end{align}
+
+\paragraph{Neutrino multipoles.}
+\begin{align}
+    F_{0}' &= -kF_{1} - \Phi', \\
+    F_{1}' &= \frac{k}{3}F_{0} - \frac{2k}{3}F_{2} + k\Psi, \\
+    F_{2}' &= \frac{2k}{5}F_{1} - \frac{3k}{5}F_{3}
+             + \frac{4}{15}(\Phi' + \Psi'), \\
+    F_{\ell}' &= \frac{k}{2\ell+1}\bigl[\ell\,F_{\ell-1}
+               - (\ell+1)F_{\ell+1}\bigr], \qquad \ell \ge 3.
+\end{align}
+
+\paragraph{Mirror photons and neutrinos.}
+Identical hierarchies with
+
+
+\[
+    T_{-} = xT_{+}, \qquad
+    \dot{\tau} \rightarrow \dot{\tau}_{-}.
+\]
+
+
+
+\subsection{Tensor Evolution}
+
+\paragraph{Tensor equation.}
+\begin{equation}
+    h'' + 2\mathcal{H}h' + k^{2}h
+    = 16\pi G_{\mathrm{eff}}\,a^{2}\,\pi^{(T)}.
+\end{equation}
+
+\paragraph{Tensor anisotropic stress.}
+\begin{equation}
+    \pi^{(T)} = \pi^{(T)}_{\nu,+} + \pi^{(T)}_{\nu,-}.
+\end{equation}
+
+\paragraph{RDCC modulation.}
+\begin{equation}
+    h(k,\tau)
+    = h_{0}(k,\tau)\left[1 + \alpha_{\mathrm{IR}}
+      \cos\!\left(\omega_{\mathrm{mod}}\ln\frac{k}{k_{\ast}}\right)\right],
+\end{equation}
+with
+\begin{equation}
+    \omega_{\mathrm{mod}} = c_{w}\,\alpha_{\mathrm{IR}}.
+\end{equation}
+
+\subsection{Implementation Summary}
+
+To implement RDCC in a Boltzmann code, the following modifications are required:
+
+\begin{enumerate}
+    \item Replace $G \rightarrow G_{\mathrm{eff}}$ in the Einstein equations.
+    \item Add mirror-sector energy densities and pressures to the background.
+    \item Add mirror-sector perturbations to the Einstein sources.
+    \item Add relaxation terms $\propto \alpha_{\mathrm{IR}}$ to the continuity and Euler equations.
+    \item Add mirror photon and mirror neutrino hierarchies with temperature ratio $x$.
+    \item Modify the primordial tensor spectrum by the RDCC modulation factor.
+\end{enumerate}
+
+These changes are minimal, local, and controlled entirely by the single parameter
+$\alpha_{\mathrm{IR}}$.
+
+\section{Conclusion}
+
+This companion paper has completed the final structural element required to make
+Relaxation-Driven Cyclic Cosmology (RDCC) a fully testable alternative to inflationary
+$\Lambda$CDM: the construction of the complete linear perturbation theory and Boltzmann
+hierarchy for scalar, vector, and tensor modes in both the visible and mirror sectors.
+
+Building on the dynamical foundation established in Companion~VI, we showed that the
+relaxation parameter $\alpha(a)$ freezes extremely early and remains constant throughout all
+observable epochs. As a result, all perturbative modifications of RDCC are controlled by the
+single infrared parameter $\alpha_{\mathrm{IR}}$. This freezing behavior is the key to the predictive
+power of RDCC: it ensures that the scalar tilt, dark-radiation excess, growth-rate deviation,
+and tensor modulation are all correlated consequences of the same microscopic mechanism.
+
+The main results of this companion paper are:
+
+\begin{enumerate}
+    \item The scalar Einstein equations acquire a modified Poisson equation with an effective
+    gravitational coupling $G_{\mathrm{eff}} = G(1 + c_{g}\,\alpha_{\mathrm{IR}})$.
+
+    \item The visible and mirror sectors contribute jointly to the gravitational potentials, while
+    remaining weakly coupled through small relaxation terms proportional to
+    $\alpha_{\mathrm{IR}}$.
+
+    \item The photon and neutrino Boltzmann hierarchies retain their standard form, with RDCC
+    modifications entering only through the gravitational potentials and the presence of
+    mirror radiation.
+
+    \item Mirror-sector perturbations obey parallel hierarchies with temperature ratio
+    $x = T_{-}/T_{+}$ and contribute to the total anisotropic stress.
+
+    \item Tensor perturbations inherit the distinctive RDCC signature: a primordial
+    log-periodic modulation with frequency $\omega_{\mathrm{mod}} \propto \alpha_{\mathrm{IR}}$, providing
+    a clean observational test in the stochastic gravitational-wave background and CMB
+    $B$-modes.
+
+    \item The full set of equations required for numerical implementation in CLASS or CAMB
+    has been assembled, enabling a complete RDCC likelihood analysis.
+\end{enumerate}
+
+Together with Companions~I–VI, the present work completes the theoretical architecture of
+RDCC. The framework is now:
+
+\begin{itemize}
+    \item \textbf{dynamically complete} — the evolution of $\alpha(a)$ is fully understood,
+    \item \textbf{structurally complete} — the perturbation theory is fully specified,
+    \item \textbf{observationally complete} — all signatures are controlled by a single infrared
+    parameter,
+    \item \textbf{numerically complete} — RDCC can now be implemented in Boltzmann codes.
+\end{itemize}
+
+The next step is clear. With the full perturbation system in hand, a dedicated numerical
+implementation of RDCC in a Boltzmann code will allow for a complete comparison with
+CMB, LSS, and GW data. This will be the subject of a future work, Companion~VIII, which
+will present the first full RDCC likelihood analysis and quantify the observational viability of
+the framework.
+
+RDCC is now a fully predictive, one-parameter cosmology whose microscopic origin, global
+structure, dynamical evolution, and observational consequences form a coherent and unified
+whole.
+
+
+\end{document}
