@@ -1,0 +1,760 @@
+\documentclass[11pt,a4paper]{article}
+
+% ========================================================
+% BASIC PACKAGES
+% ========================================================
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[a4paper,margin=2.5cm]{geometry}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{cite}
+\usepackage{bm}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    citecolor=blue,
+    urlcolor=blue,
+    pdfauthor={Michael Lehmann},
+    pdftitle={Companion XI: Dark Energy as Emergent Relaxation Dynamics in RDCC}
+}
+
+% ========================================================
+% RDCC MACROS (embedded — no macros.tex needed)
+% ========================================================
+
+% Hilbert spaces
+\newcommand{\Hplus}{\mathcal{H}_{+}}
+\newcommand{\Hminus}{\mathcal{H}_{-}}
+\newcommand{\Hglobal}{\mathcal{H}_{+}\!\otimes\!\mathcal{H}_{-}}
+
+% Density matrices
+\newcommand{\rglobal}{\rho_{\mathrm{global}}}
+\newcommand{\rplus}{\rho_{+}}
+\newcommand{\rminus}{\rho_{-}}
+\newcommand{\rpm}{\rho_{+-}}
+\newcommand{\rmp}{\rho_{-+}}
+
+% Stress tensors
+\newcommand{\Tplus}{T^{(+)}_{\mu\nu}}
+\newcommand{\Tminus}{T^{(-)}_{\mu\nu}}
+\newcommand{\Tplusup}{T^{(+)\mu\nu}}
+\newcommand{\Tminusup}{T^{(-)\mu\nu}}
+
+% Interaction
+\newcommand{\Lint}{\mathcal{L}_{\mathrm{int}}}
+\newcommand{\LintDef}{\mathcal{L}_{\mathrm{int}} = \frac{1}{M^{2}}\, T^{(+)}_{\mu\nu} T^{(-)\mu\nu}}
+\newcommand{\Hint}{H_{\mathrm{int}}}
+
+% Cosmological quantities
+\newcommand{\Ha}{H(a)}
+\newcommand{\Ht}{H(t)}
+\newcommand{\Hnow}{H_{0}}
+
+% Relaxation dynamics
+\newcommand{\GammaR}{\Gamma}
+\newcommand{\alphaR}{\alpha}
+\newcommand{\RelaxEq}{\dot{\alpha} = -\Gamma \alpha}
+
+% Misc
+\newcommand{\dd}{\mathrm{d}}
+\newcommand{\Trm}{\mathrm{Tr}}
+
+% ========================================================
+% TITLE
+% ========================================================
+\title{%
+  \textbf{Companion XI}\\[8pt]
+  {\Large Dark Energy as Emergent Relaxation Dynamics in}\\[4pt]
+  {\Large Relaxation-Driven Cyclic Cosmology (RDCC)}
+}
+
+\author{Michael Lehmann\\
+Independent Researcher\\
+\texttt{mi.lehmann@gmx.de}}
+
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+% ========================================================
+% ABSTRACT
+% ========================================================
+\begin{abstract}
+In the standard $\Lambda$CDM model, cosmic acceleration is attributed to a dark-energy component or a cosmological constant.
+In the Relaxation-Driven Cyclic Cosmology (RDCC) framework, acceleration arises instead as an emergent phenomenon of inter-sector relaxation on the bipartite Hilbert space $\Hglobal$.
+Building on the microscopic master equation derived in Companion~X, we show that the relaxation rate $\GammaR(a) \propto \Ha$ naturally induces an effective acceleration term in the coarse-grained Friedmann dynamics.
+
+The freeze-out of the RDCC relaxation parameter $\alphaR(a)$ at late times produces an asymptotic expansion regime that mimics dark energy without introducing a new fundamental energy component.
+We derive the modified Friedmann equation implied by the RDCC relaxation dynamics, identify the conditions under which the effective acceleration matches observations, and show that the ``Why now?'' problem is resolved as a structural consequence of the Hubble-scale memory time.
+
+This Companion provides the first RDCC-consistent reinterpretation of dark energy as a dynamical, emergent effect of bipartite decoherence rather than a fundamental energy density.
+\end{abstract}
+
+% ========================================================
+% SECTION 1 — INTRODUCTION
+% ========================================================
+
+\section{Introduction}
+
+The accelerated expansion of the Universe is one of the central empirical
+discoveries of modern cosmology. In the standard $\Lambda$CDM framework, this
+acceleration is attributed to a dark-energy component with equation of state
+$w \simeq -1$, often modeled as a cosmological constant. While
+phenomenologically successful, this interpretation raises several conceptual
+challenges: the fine-tuning of $\Lambda$, the ``Why now?'' coincidence problem,
+and the absence of a microscopic explanation for the origin of dark energy.
+
+Relaxation-Driven Cyclic Cosmology (RDCC) offers a structurally different
+perspective. RDCC describes the Universe as a globally CPT-symmetric quantum
+state defined on the bipartite Hilbert space $\Hglobal$, with classical
+spacetime emerging only after sectoral projection. A central dynamical
+ingredient of RDCC is the inter-sector relaxation process governed by the
+dimension-six interaction
+
+
+\[
+\LintDef,
+\]
+
+
+which induces decoherence between the two sectors. Companion~X established that
+the corresponding relaxation rate satisfies
+
+
+\[
+\GammaR(a) \propto \Ha,
+\]
+
+
+as a structural consequence of stress-tensor correlators evaluated over a
+Hubble-scale memory time.
+
+This proportionality suggests that cosmic acceleration may arise not from a new
+energy component, but from the relaxation dynamics themselves. As the Universe
+expands and $\Ha$ decreases, the relaxation rate weakens and the coherence
+parameter $\alphaR(a)$ approaches a constant value. The freeze-out of
+$\alphaR(a)$ modifies the coarse-grained Friedmann dynamics and can generate an
+effective acceleration term that mimics dark energy without introducing a
+fundamental cosmological constant.
+
+The purpose of this Companion is to develop this mechanism systematically. We
+derive the modified Friedmann equation implied by RDCC relaxation, identify the
+conditions under which the resulting expansion reproduces the observed
+late-time acceleration, and show that the ``Why now?'' problem is resolved as a
+structural consequence of the Hubble-scale memory time inherent in the
+relaxation process. This establishes a unified interpretation of dark energy as
+emergent relaxation dynamics within the RDCC framework.
+
+
+
+% ========================================================
+% SECTION 2 — RDCC RELAXATION DYNAMICS
+% ========================================================
+
+\section{RDCC Relaxation Dynamics}
+
+The RDCC framework is built on the observation that the global state of the
+Universe lives on the bipartite Hilbert space $\Hglobal$, with the two sectors
+related by global CPT symmetry. Classical spacetime and causal structure emerge
+only after projection onto one sector, while the global state remains fully
+quantum and CPT-symmetric.
+
+A central dynamical ingredient of RDCC is the decay of inter-sector coherence.
+The off-diagonal components of the global density matrix,
+
+
+\[
+\rpm, \qquad \rmp,
+\]
+
+
+encode the degree of correlation between the sectors. Their decay is governed by
+the relaxation equation
+
+
+\[
+\RelaxEq,
+\]
+
+
+where $\alphaR(a)$ quantifies the remaining coherence and $\GammaR(a)$ is the
+relaxation rate.
+
+Companion~VI introduced this equation phenomenologically and showed that it
+implies a multiplicative evolution of $\alphaR(a)$ with a natural late-time
+freeze-out once $\GammaR(a)$ becomes small compared to the expansion rate.
+
+Companion~X provided the microscopic foundation for this behaviour. Starting
+from the dimension-six interaction $\LintDef$, a Born--Markov master equation
+was derived for $\rglobal$ in an expanding FRW background. The resulting
+Lindblad evolution yields the universal scaling
+
+
+\[
+\GammaR(a) \propto \Ha,
+\]
+
+
+as a consequence of relativistic stress-tensor correlators evaluated over a
+Hubble-scale memory window.
+
+This proportionality ties the relaxation dynamics directly to the expansion
+rate. As the Universe expands and $\Ha$ decreases, the relaxation rate weakens
+proportionally, eventually causing $\alphaR(a)$ to freeze out. This freeze-out
+marks the transition to a regime in which inter-sector decoherence becomes
+ineffective and the emergent classical spacetime structure stabilizes.
+
+In the remainder of this Companion, we investigate how this relaxation process
+modifies the coarse-grained Friedmann equations and how the freeze-out of
+$\alphaR(a)$ can generate an effective acceleration term that mimics dark energy
+without introducing a new fundamental energy component.
+
+% ========================================================
+% SECTION 3 — COARSE-GRAINED FRIEDMANN DYNAMICS
+% ========================================================
+
+\section{Coarse-Grained Friedmann Dynamics}
+
+To determine how relaxation affects cosmic expansion, we derive the
+coarse-grained Friedmann dynamics implied by the RDCC relaxation process. The
+key observation is that inter-sector decoherence modifies the effective
+stress-energy content of the emergent classical spacetime. Rather than
+introducing a new energy component, the relaxation dynamics alter the relation
+between the expansion rate and the effective energy density.
+
+\subsection{Effective Energy Balance}
+
+In standard FRW cosmology, the expansion rate satisfies
+\begin{equation}
+H^{2}(a) = \frac{8\pi G}{3}\,\rho(a),
+\end{equation}
+where $\rho(a)$ is the total matter–radiation energy density. In RDCC, the
+effective energy density relevant for the emergent classical spacetime is
+modified by the relaxation dynamics. We therefore define
+\begin{equation}
+H^{2}(a) = \frac{8\pi G}{3}\,\rho_{\mathrm{eff}}(a),
+\end{equation}
+where $\rho_{\mathrm{eff}}(a)$ incorporates the influence of the coherence
+parameter $\alphaR(a)$.
+
+\subsection{Relaxation-Induced Correction}
+
+Companion~X established the universal scaling
+
+
+\[
+\GammaR(a) \propto \Ha,
+\]
+
+
+and the coherence evolution
+
+
+\[
+\dot{\alphaR}(a) = -\GammaR(a)\,\alphaR(a).
+\]
+
+
+As the Universe expands and $\Ha$ decreases, the relaxation rate weakens and
+$\alphaR(a)$ approaches a constant value, marking the freeze-out of inter-sector
+decoherence.
+
+Tracing over the opposite sector suppresses the off-diagonal components of
+$\rglobal$, effectively reducing the contribution of inter-sector correlations to
+the emergent stress-energy tensor. This yields a correction of the form
+\begin{equation}
+\rho_{\mathrm{eff}}(a)
+    = \rho(a) + \Delta\rho_{\mathrm{rel}}(a),
+\end{equation}
+where $\Delta\rho_{\mathrm{rel}}(a)$ encodes the relaxation-induced modification.
+
+\subsection{Form of the Relaxation Correction}
+
+The structure of the Lindblad kernel derived in Companion~X implies
+\begin{equation}
+\Delta\rho_{\mathrm{rel}}(a)
+    \propto \alphaR(a)\,\GammaR(a).
+\end{equation}
+Using $\GammaR(a) \propto \Ha$, we obtain the scaling
+\begin{equation}
+\Delta\rho_{\mathrm{rel}}(a)
+    \propto \alphaR(a)\,\Ha.
+\end{equation}
+This term acts as an effective acceleration source in the coarse-grained
+Friedmann equation. Crucially, it does not correspond to a new fundamental
+energy density; it arises from the dynamical suppression of inter-sector
+coherence.
+
+In the next section, we show that this relaxation-induced correction can mimic
+the observational effects of dark energy and naturally produces an asymptotic
+expansion regime once $\alphaR(a)$ freezes out.
+
+
+
+% ========================================================
+% SECTION 4 — EMERGENT DARK-ENERGY BEHAVIOUR
+% ========================================================
+
+\section{Emergent Dark-Energy Behaviour}
+
+The relaxation-induced correction $\Delta\rho_{\mathrm{rel}}(a)$ modifies the
+coarse-grained Friedmann dynamics in a way that can mimic the observational
+effects of dark energy. We now analyse the conditions under which the RDCC
+relaxation term behaves like an effective dark-energy component and drives
+accelerated expansion.
+
+\subsection{Effective Dark-Energy Component}
+
+We rewrite the coarse-grained Friedmann equation as
+\begin{equation}
+H^{2}(a)
+    = \frac{8\pi G}{3}\,\big[\rho(a) + \rho_{\mathrm{DE}}(a)\big],
+\end{equation}
+where we identify
+\begin{equation}
+\rho_{\mathrm{DE}}(a)
+    = \Delta\rho_{\mathrm{rel}}(a)
+    \propto \alphaR(a)\,\Ha.
+\end{equation}
+The effective dark-energy density is therefore not a fundamental fluid but a
+dynamical quantity tied to the relaxation of inter-sector coherence.
+
+To characterise its behaviour, we introduce an effective equation-of-state
+parameter $w_{\mathrm{DE}}(a)$ via the continuity equation
+\begin{equation}
+\frac{\dd\rho_{\mathrm{DE}}}{\dd a}
+    = -\frac{3}{a}\,\big[1 + w_{\mathrm{DE}}(a)\big]\rho_{\mathrm{DE}}(a).
+\end{equation}
+
+\subsection{Acceleration Condition}
+
+Cosmic acceleration occurs when
+\begin{equation}
+\frac{\ddot{a}}{a}
+    = -\frac{4\pi G}{3}\,\big[\rho_{\mathrm{tot}}(a)
+        + 3p_{\mathrm{tot}}(a)\big] > 0.
+\end{equation}
+In the presence of an effective dark-energy component, this requires
+
+
+\[
+w_{\mathrm{DE}}(a) < -\frac{1}{3}.
+\]
+
+
+
+The relaxation-induced term
+
+
+\[
+\rho_{\mathrm{DE}}(a) \propto \alphaR(a)\,\Ha
+\]
+
+
+inherits its time dependence from both the expansion rate and the evolution of
+$\alphaR(a)$. During epochs in which $\GammaR(a)$ is large, $\alphaR(a)$ evolves
+significantly and $\rho_{\mathrm{DE}}(a)$ tracks the expansion. As $\Ha$
+decreases and the relaxation rate weakens, $\alphaR(a)$ approaches a constant
+value and $\rho_{\mathrm{DE}}(a)$ enters an asymptotic regime.
+
+\subsection{Asymptotic Regime and Dark-Energy Mimicry}
+
+In the late-time regime where $\alphaR(a)$ has frozen out, we approximate
+
+
+\[
+\alphaR(a) \simeq \alpha_{0} = \mathrm{const}.
+\]
+
+
+The effective dark-energy density then scales as
+
+
+\[
+\rho_{\mathrm{DE}}(a) \propto \Ha.
+\]
+
+
+In a regime where the expansion rate varies slowly, this behaviour mimics an
+approximately constant dark-energy density with $w_{\mathrm{DE}} \simeq -1$,
+reproducing the key phenomenological feature of $\Lambda$CDM without introducing
+a fundamental cosmological constant.
+
+The emergent dark-energy behaviour in RDCC is therefore a consequence of the
+interplay between inter-sector relaxation, the Hubble-scale memory time, and the
+freeze-out of $\alphaR(a)$.
+
+% ========================================================
+% SECTION 5 — THE "WHY NOW?" PROBLEM IN RDCC
+% ========================================================
+
+\section{The ``Why now?'' Problem in RDCC}
+
+A longstanding challenge in dark-energy cosmology is the ``Why now?'' problem:
+why does the onset of cosmic acceleration occur precisely when matter and
+dark-energy densities are of comparable magnitude? In $\Lambda$CDM this
+coincidence appears accidental, as the cosmological constant is time-independent
+while matter redshifts as $a^{-3}$.
+
+In RDCC, the timing of acceleration is not a coincidence but a structural
+consequence of the relaxation dynamics. The key observation is the universal
+scaling
+
+
+\[
+\GammaR(a) \propto \Ha,
+\]
+
+
+which implies that the ratio of relaxation and expansion timescales is
+approximately constant:
+
+
+\[
+\frac{\GammaR(a)}{\Ha} = \mathrm{const}.
+\]
+
+
+
+\subsection{Crossing of Relaxation and Expansion Timescales}
+
+The coherence parameter evolves according to
+
+
+\[
+\dot{\alphaR}(a) = -\GammaR(a)\,\alphaR(a).
+\]
+
+
+As long as $\GammaR(a)$ is large compared to the rate of change of $\Ha$, the
+relaxation process is efficient and $\alphaR(a)$ evolves significantly. As the
+Universe expands and $\Ha$ decreases, the relaxation rate weakens
+proportionally, eventually leading to a regime in which
+
+
+\[
+\GammaR(a) \ll \Ha.
+\]
+
+
+In this regime, relaxation becomes ineffective and $\alphaR(a)$ freezes out.
+
+The onset of freeze-out therefore occurs when the relaxation and expansion
+timescales cross:
+
+
+\[
+\GammaR(a_{\mathrm{fr}}) \simeq \Ha_{\mathrm{fr}}.
+\]
+
+
+This crossing is not fine-tuned; it follows directly from the proportionality
+$\GammaR(a) \propto \Ha$.
+
+\subsection{Natural Timing of Acceleration}
+
+The effective dark-energy density scales as
+
+
+\[
+\rho_{\mathrm{DE}}(a) \propto \alphaR(a)\,\Ha.
+\]
+
+
+Before freeze-out, $\alphaR(a)$ evolves rapidly and $\rho_{\mathrm{DE}}(a)$
+tracks the expansion rate. After freeze-out, $\alphaR(a)$ becomes approximately
+constant and $\rho_{\mathrm{DE}}(a)$ enters an asymptotic regime that can mimic
+a cosmological constant.
+
+The onset of acceleration therefore coincides with the freeze-out of
+$\alphaR(a)$:
+
+
+\[
+a_{\mathrm{acc}} \simeq a_{\mathrm{fr}}.
+\]
+
+
+This provides a natural explanation for the timing of cosmic acceleration: it
+occurs precisely when the relaxation dynamics become inefficient.
+
+\subsection{Resolution of the Coincidence Problem}
+
+In RDCC, the ``Why now?'' problem is resolved without introducing a new energy
+component or fine-tuning parameters. The coincidence between the onset of
+acceleration and the present epoch arises because both are governed by the same
+dynamical mechanism:
+
+
+\[
+\text{Acceleration begins when relaxation freezes out.}
+\]
+
+
+This structural relation replaces the coincidence with a dynamical explanation
+rooted in the Hubble-scale memory time of the relaxation kernel.
+
+
+
+% ========================================================
+% SECTION 6 — PREDICTIONS AND OBSERVATIONAL SIGNATURES
+% ========================================================
+
+\section{Predictions and Observational Signatures}
+
+Interpreting dark energy as emergent relaxation dynamics leads to several
+distinctive observational signatures. While the effective late-time behaviour of
+the RDCC relaxation term can mimic a cosmological constant, the underlying
+dynamics differ from $\Lambda$CDM in ways that may be testable.
+
+\subsection{Deviation from a Constant Equation of State}
+
+In $\Lambda$CDM, the dark-energy equation of state is strictly constant,
+$w_{\Lambda} = -1$. In RDCC, the effective dark-energy density
+
+
+\[
+\rho_{\mathrm{DE}}(a) \propto \alphaR(a)\,\Ha
+\]
+
+
+implies a dynamical equation-of-state parameter
+
+
+\[
+w_{\mathrm{DE}}(a)
+    = -1 + \frac{\dd\ln H}{\dd\ln a}.
+\]
+
+
+During the freeze-out of $\alphaR(a)$, small deviations from $w = -1$ may occur.
+These deviations are expected to be mild but could be detectable with
+high-precision late-time cosmological probes.
+
+\subsection{Late-Time Transition in the Expansion Rate}
+
+The freeze-out of $\alphaR(a)$ induces a transition in the effective expansion
+dynamics. Before freeze-out, the relaxation term tracks the Hubble rate; after
+freeze-out, it approaches an asymptotic regime. This leads to a characteristic
+feature:
+
+
+\[
+\frac{\dd H}{\dd a}
+\quad\text{changes slope near}\quad a \simeq a_{\mathrm{fr}}.
+\]
+
+
+Such a transition could manifest as a mild redshift-dependent deviation from the
+$\Lambda$CDM expansion history, potentially observable in:
+\begin{itemize}
+    \item baryon acoustic oscillations (BAO),
+    \item Type~Ia supernovae,
+    \item redshift-drift measurements,
+    \item standard-siren observations.
+\end{itemize}
+
+\subsection{Tensor-Sector Implications}
+
+The relaxation dynamics are tied to the same inter-sector structure that
+generates log-periodic modulation in the primordial tensor spectrum, as
+discussed in Companions~II–V. If the effective dark-energy behaviour arises from
+the freeze-out of $\alphaR(a)$, then the timing of this freeze-out may correlate
+with the amplitude or phase of tensor-sector modulation.
+
+This yields a potential cross-correlation signature:
+
+
+\[
+\text{Late-time acceleration} \;\Longleftrightarrow\;
+\text{specific tensor-modulation phase}.
+\]
+
+
+
+\subsection{Absence of a True Cosmological Constant}
+
+A key observational consequence of RDCC is the absence of a fundamental
+cosmological constant. Instead, the effective dark-energy density arises
+dynamically from the relaxation process. This implies that
+
+
+\[
+\lim_{a\to\infty} \rho_{\mathrm{DE}}(a)
+\quad\text{need not be strictly constant.}
+\]
+
+
+Future measurements of the late-time expansion rate, especially those sensitive
+to the asymptotic behaviour of $H(a)$, may therefore distinguish RDCC from
+models with a true cosmological constant.
+
+\subsection{Summary of Observational Signatures}
+
+The RDCC interpretation of dark energy predicts:
+\begin{itemize}
+    \item mild deviations from $w = -1$ during the freeze-out of $\alphaR(a)$,
+    \item a characteristic transition in the slope of $H(a)$ near $a_{\mathrm{fr}}$,
+    \item possible correlations between late-time acceleration and tensor-sector modulation,
+    \item absence of a strictly constant asymptotic dark-energy density.
+\end{itemize}
+These signatures provide potential avenues for testing RDCC and distinguishing
+emergent relaxation dynamics from a fundamental cosmological constant.
+
+% ========================================================
+% SECTION 7 — DISCUSSION AND OUTLOOK
+% ========================================================
+
+\section{Discussion and Outlook}
+
+We have developed a reinterpretation of dark energy within the
+Relaxation-Driven Cyclic Cosmology framework. Building on the microscopic
+relaxation dynamics derived in Companion~X, we have shown that the suppression
+of inter-sector coherence induces an effective modification of the
+coarse-grained Friedmann equations. This modification behaves like a dynamical
+dark-energy component, even though no new fundamental energy density is
+introduced.
+
+The key structural result is the universal scaling
+
+
+\[
+\GammaR(a) \propto \Ha,
+\]
+
+
+which ties the relaxation dynamics directly to the expansion rate. As the
+Universe expands and $\Ha$ decreases, the relaxation becomes inefficient and
+$\alphaR(a)$ freezes out. This freeze-out naturally produces an asymptotic
+expansion regime that can mimic a cosmological constant, providing a structural
+explanation for late-time acceleration.
+
+A particularly noteworthy consequence is the resolution of the ``Why now?''
+problem. In RDCC, the onset of acceleration coincides with the freeze-out of
+$\alphaR(a)$, which occurs when the relaxation and expansion timescales cross.
+This timing is not fine-tuned but follows directly from the proportionality
+$\GammaR(a) \propto \Ha$ and the Hubble-scale memory time of the relaxation
+kernel.
+
+The emergent dark-energy behaviour predicted by RDCC leads to several potential
+observational signatures, including mild deviations from $w = -1$, a
+characteristic transition in the slope of $H(a)$ near the freeze-out epoch, and
+possible correlations with tensor-sector modulation. These signatures provide
+avenues for distinguishing RDCC from $\Lambda$CDM and other dynamical
+dark-energy models.
+
+
+
+% ========================================================
+% FUTURE DIRECTIONS
+% ========================================================
+
+\section*{Future Directions}
+\addcontentsline{toc}{section}{Future Directions}
+
+The results presented here open several directions for further development:
+
+\begin{itemize}
+    \item \textbf{Modified perturbation theory.}
+    A full treatment of scalar, vector, and tensor perturbations in the presence
+    of relaxation-induced corrections may reveal additional observational
+    signatures.
+
+    \item \textbf{Non-Markovian effects.}
+    The derivation in Companion~X relies on the Born--Markov approximation.
+    Including non-Markovian corrections may refine the effective dark-energy
+    behaviour, especially near the freeze-out epoch.
+
+    \item \textbf{Numerical implementation.}
+    Incorporating the relaxation correction $\Delta\rho_{\mathrm{rel}}(a)$ into a
+    Boltzmann code would allow for global parameter scans and quantitative
+    comparison with cosmological data.
+
+    \item \textbf{Information-theoretic interpretation.}
+    The connection between decoherence, emergent spacetime, and effective
+    acceleration suggests a deeper information-theoretic structure underlying
+    cosmic expansion.
+\end{itemize}
+
+RDCC provides a unified and structurally motivated reinterpretation of dark
+energy as emergent relaxation dynamics. This perspective integrates cosmic
+acceleration into the same framework that governs inter-sector decoherence,
+tensor-sector modulation, and the emergence of classical spacetime.
+
+
+
+% ========================================================
+% REFERENCES
+% ========================================================
+
+\begin{thebibliography}{99}
+
+\bibitem{Planck2018}
+Planck Collaboration,
+\textit{Planck 2018 results. VI. Cosmological parameters} (2018).
+
+\bibitem{Riess1998}
+A.~G.~Riess et al.,
+\textit{Observational evidence from supernovae for an accelerating universe}
+(1998).
+
+\bibitem{Perlmutter1999}
+S.~Perlmutter et al.,
+\textit{Measurements of $\Omega$ and $\Lambda$ from high-redshift supernovae}
+(1999).
+
+\bibitem{WeinbergCC}
+S.~Weinberg,
+\textit{The cosmological constant problem}.
+
+\bibitem{CopelandSamiTsujikawa}
+E.~J.~Copeland, M.~Sami, S.~Tsujikawa,
+\textit{Dynamics of dark energy}.
+
+\bibitem{BreuerPetruccione}
+H.-P.~Breuer, F.~Petruccione,
+\textit{The Theory of Open Quantum Systems}.
+
+\bibitem{Lindblad}
+G.~Lindblad,
+\textit{On the generators of quantum dynamical semigroups}.
+
+\bibitem{CalzettaHu}
+E.~Calzetta, B.~L.~Hu,
+\textit{Nonequilibrium Quantum Field Theory}.
+
+\bibitem{Ford}
+L.~H.~Ford,
+\textit{Stress tensor fluctuations and passive quantum gravity}.
+
+\bibitem{HuVerdaguer}
+B.~L.~Hu, E.~Verdaguer,
+\textit{Stochastic gravity: Theory and applications}.
+
+\bibitem{Flagship}
+M.~Lehmann,
+\textit{RDCC Flagship Paper}.
+
+\bibitem{CompanionVI}
+M.~Lehmann,
+\textit{Companion VI: Relaxation Dynamics in RDCC}.
+
+\bibitem{CompanionX}
+M.~Lehmann,
+\textit{Companion X: Microscopic Derivation of the RDCC Relaxation Rate}.
+
+\bibitem{CompanionsIItoV}
+M.~Lehmann,
+\textit{Companions II–V: Tensor-Sector Modulation in RDCC}.
+\end{thebibliography}
+
+\end{document}
+
+
+\end{document}
