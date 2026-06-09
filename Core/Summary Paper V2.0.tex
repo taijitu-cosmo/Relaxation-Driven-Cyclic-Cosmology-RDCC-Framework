@@ -1,0 +1,916 @@
+\documentclass[11pt,a4paper]{article}
+
+% ---------------------------------------------------------
+% PREAMBLE (stable, warning-free, Overleaf-safe)
+% ---------------------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{bm}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{cite}
+\usepackage{authblk}
+\usepackage{physics}
+\usepackage{mathtools}
+\usepackage{enumitem}
+\usepackage{tensor}
+
+\geometry{margin=2.4cm}
+
+% ---------------------------------------------------------
+% TITLE
+% ---------------------------------------------------------
+\title{\textbf{RDCC Summary Paper V2.0:\\
+The RDCC Inference Framework: Geometry, Topology, Likelihoods,\\
+and Euclid-Level Forecasts}}
+
+\author[1]{Michael Lehmann}
+\affil[1]{\small Independent Researcher, Relaxation-Driven Cyclic Cosmology (RDCC) Framework\\
+\texttt{mi.lehmann@gmx.de}}
+
+\date{\small June 2026}
+
+\begin{document}
+\maketitle
+
+% ========================================================
+% ABSTRACT
+% ========================================================
+
+\begin{abstract}
+The Relaxation-Driven Cyclic Cosmology (RDCC) modifies the gravitational potential
+through a scale- and redshift-dependent relaxation kernel $\mathcal{R}(k,z;\alpha)$.
+These modifications induce geometric, morphological, and topological signatures in
+weak-lensing observables that require an inference framework capable of capturing
+structure beyond two-point statistics. Over the RDCC Companion Series (LXXX--C),
+we developed a complete inference ecosystem combining geometric response theory,
+persistent homology, transport-based topology, Minkowski functionals, emulator
+pipelines, multi-probe likelihoods, Fisher geometry, and degeneracy analysis.
+
+This Summary Paper synthesizes these developments into a unified, survey-ready
+framework. We present: (i) the geometric and topological structure of RDCC
+signatures, (ii) the construction of transport-based and morphological summary
+statistics, (iii) the architecture of the RDCC likelihood, (iv) the Fisher geometry
+and information-flow structure underlying RDCC inference, (v) optimal RDCC probes
+and survey strategies, and (vi) Euclid-level forecasts for the relaxation parameter
+$\alpha$. This document serves as the central reference for the RDCC inference
+ecosystem and provides a coherent foundation for future observational applications.
+\end{abstract}
+
+% ========================================================
+% 1 INTRODUCTION
+% ========================================================
+
+\section{Introduction}
+
+The Relaxation-Driven Cyclic Cosmology (RDCC) introduces a dynamical relaxation
+mechanism that modifies the gravitational potential through a single parameter
+$\alpha$. These modifications produce scale-dependent distortions in the lensing
+potential that propagate into geometric, morphological, and topological features
+of the weak-lensing convergence field. Capturing these signatures requires an
+inference framework that extends beyond two-point statistics and incorporates
+non-Gaussian structure, geometric sensitivity, and topological information.
+
+Over the RDCC Companion Series (LXXX--C), we developed such a framework. It
+combines geometric response fields, persistent homology, transport-based topology,
+Minkowski functionals, emulator pipelines, multi-probe likelihoods, Fisher
+geometry, and degeneracy analysis into a coherent and modular ecosystem.
+
+The RDCC inference framework rests on four conceptual pillars:
+
+\begin{enumerate}[leftmargin=1.2cm]
+    \item \textbf{Geometric Signatures:}  
+    RDCC induces scale-dependent distortions in the lensing potential, encoded in
+    geometric response fields, Fisher channels, and curvature-aware parameter-space
+    metrics.
+
+    \item \textbf{Topological Structure:}  
+    RDCC modifies the birth--death structure of persistent homology, the morphology
+    of peaks and voids, and the transport geometry of topological summaries.
+
+    \item \textbf{Likelihood Architecture:}  
+    A modular likelihood integrates transport-based statistics, Minkowski
+    functionals, peak/void statistics, power spectra, and neural-compressed
+    summaries, supported by emulator pipelines and simulation-based calibration.
+
+    \item \textbf{Forecasts and Model Selection:}  
+    Euclid-level forecasts, Fisher-channel analysis, and evidence decomposition
+    quantify the detectability of RDCC and its distinguishability from
+    $\Lambda$CDM.
+\end{enumerate}
+
+This Summary Paper synthesizes these components into a unified narrative. Rather
+than reproducing the detailed derivations contained in the individual Companions,
+we highlight the structural logic of the RDCC inference framework, the interplay
+between geometry and topology, and the methodological innovations that enable
+robust and high-fidelity parameter estimation.
+
+% ========================================================
+% 2 RDCC MODEL AND GEOMETRIC STRUCTURE
+% ========================================================
+
+\section{The RDCC Model and Its Geometric Structure}
+
+RDCC modifies the gravitational potential through a relaxation kernel
+\begin{equation}
+    \Phi_{\mathrm{RDCC}}(k,z)
+    =
+    \Phi_{\Lambda\mathrm{CDM}}(k,z)\,
+    \mathcal{R}(k,z;\alpha),
+\end{equation}
+where $\mathcal{R}(k,z;\alpha)$ introduces scale-dependent deviations that become
+relevant at $k \gtrsim 0.1\,h\,\mathrm{Mpc}^{-1}$. These deviations propagate into
+weak-lensing observables and generate geometric and topological signatures that
+form the basis of RDCC inference.
+
+\subsection{Geometric Response Fields}
+
+For an observable $O$, the geometric response to $\alpha$ is defined as
+\begin{equation}
+    \mathcal{R}_{O}
+    =
+    \pdv{O}{\alpha},
+\end{equation}
+which quantifies the local deformation induced by RDCC. These response fields
+capture peak sharpening, void broadening, filament-void boundary shifts, and
+curvature changes in the lensing potential.
+
+\subsection{Fisher Geometry}
+
+The RDCC parameter space inherits a Riemannian structure from the Fisher
+information metric
+\begin{equation}
+    g_{\alpha\alpha}
+    =
+    \mathbb{E}\!\left[
+        \left(
+            \pdv{\log \mathcal{L}}{\alpha}
+        \right)^{2}
+    \right],
+\end{equation}
+which encodes the curvature of the likelihood surface. Fisher geometry reveals
+RDCC-sensitive directions, degeneracy manifolds, and natural coordinates for
+efficient inference.
+
+% ========================================================
+% COMPANION ROADMAP
+% ========================================================
+
+\begin{table}[t]
+\centering
+\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{p{2.2cm} p{6.2cm} p{6.2cm}}
+\hline
+\textbf{Companion} & \textbf{Content} & \textbf{Role in RDCC Framework} \\
+\hline
+
+LXXX--LXXXII &
+Geometric RDCC signatures, response fields, scale-dependent distortions &
+Defines geometric foundations; identifies RDCC-sensitive scales and response patterns \\
+
+LXXXIII--LXXXVI &
+Topological statistics, persistent homology, transport geometry &
+Establishes non-Gaussian RDCC signatures; provides robust topology-based probes \\
+
+LXXXVII--LXXXVIII &
+Minkowski functionals, morphological descriptors &
+Captures RDCC-induced shape and connectivity changes in convergence maps \\
+
+LXXXIX--XC &
+Emulator pipelines, simulation grids, interpolation architecture &
+Enables fast likelihood evaluation; propagates simulation uncertainty \\
+
+XCI--XCII &
+Forecasts, Euclid-like constraints, multi-probe combinations &
+Quantifies detectability of $\alpha$; identifies optimal probe combinations \\
+
+XCIII--XCIV &
+Fisher geometry, curvature, natural coordinates &
+Defines RDCC parameter-space geometry; identifies sensitivity directions \\
+
+XCV--XCVI &
+Information tensor, Fisher channels, information flow &
+Decomposes RDCC information; identifies dominant channels and null directions \\
+
+XCVII--XCVIII &
+Degeneracy structure, null space, RDCC--$\Lambda$CDM alignment &
+Maps degeneracy manifolds; identifies blind modes and orthogonal probes \\
+
+XCIX &
+Optimal probes, survey strategies, efficiency function &
+Ranks probes; provides survey recommendations for RDCC detection \\
+
+C &
+Benchmark Suite, validation, stress tests, reproducibility framework &
+Ensures robustness, emulator validation, and cross-probe consistency \\
+\hline
+\end{tabular}
+\caption{Roadmap of the RDCC Companion Series. Each Companion contributes a 
+specific conceptual or technical component to the RDCC inference ecosystem.}
+\end{table}
+
+% ========================================================
+% 3 TOPOLOGICAL AND TRANSPORT-BASED RDCC SIGNATURES
+% ========================================================
+
+\section{Topological and Transport-Based RDCC Signatures}
+
+Weak-lensing observables contain rich geometric and topological information that
+extends beyond two-point statistics. RDCC induces characteristic distortions in
+the morphology of the convergence field, the connectivity of the cosmic web, and
+the birth--death structure of persistent homology. These effects motivate the use
+of topological and transport-based summary statistics, which provide
+noise-resistant and non-Gaussian probes of RDCC signatures.
+
+% --------------------------------------------------------
+\subsection{Persistent Homology and Birth--Death Structure}
+
+Persistent homology characterizes the topology of the convergence field by
+tracking the evolution of connected components, loops, and voids across
+thresholds. For a filtration parameter $\nu$, the persistence diagram
+$\mathcal{D}(\nu)$ encodes the birth and death of topological features.
+
+RDCC modifies the persistence structure through:
+
+\begin{itemize}
+    \item enhanced persistence of filamentary loops,
+    \item earlier birth of small-scale peaks,
+    \item delayed death of large voids,
+    \item scale-dependent shifts in birth--death trajectories.
+\end{itemize}
+
+These effects are captured by the RDCC topological gradient
+\begin{equation}
+    \mathcal{G}_{\mathrm{topo}}
+    =
+    \pdv{\mathcal{T}}{\alpha},
+\end{equation}
+where $\mathcal{T}$ denotes a transport-based topological statistic.
+
+% --------------------------------------------------------
+\subsection{Transport Geometry of Topological Statistics}
+
+Transport-based statistics quantify the geometric displacement between
+persistence diagrams. Let $\mathcal{D}_{\mathrm{RDCC}}$ and
+$\mathcal{D}_{\Lambda\mathrm{CDM}}$ denote diagrams under RDCC and
+$\Lambda$CDM. Their quadratic optimal-transport distance is
+\begin{equation}
+    W_{2}\!\left(
+        \mathcal{D}_{\mathrm{RDCC}},
+        \mathcal{D}_{\Lambda\mathrm{CDM}}
+    \right),
+\end{equation}
+which measures the minimal geometric deformation required to transform one
+diagram into the other.
+
+RDCC induces coherent transport flows that reflect:
+
+\begin{itemize}
+    \item peak migration toward higher persistence,
+    \item void expansion and boundary smoothing,
+    \item filament thickening or thinning,
+    \item redistribution of topological mass across scales.
+\end{itemize}
+
+These flows provide a geometric representation of RDCC-induced topological
+deformations.
+
+% --------------------------------------------------------
+\subsection{Minkowski Functionals and Morphological Signatures}
+
+Minkowski functionals $V_{i}(\nu)$ capture the morphology of the convergence
+field across thresholds. RDCC modifies:
+
+\begin{itemize}
+    \item the area functional $V_{0}$ through small-scale suppression,
+    \item the boundary length $V_{1}$ via filament--void transitions,
+    \item the Euler characteristic $V_{2}$ through changes in peak/void counts.
+\end{itemize}
+
+These morphological signatures complement persistent homology and provide
+summary statistics that are computationally efficient and robust to noise.
+
+% --------------------------------------------------------
+\subsection{Joint Topological--Geometric Structure}
+
+Topological and geometric signatures are not independent. RDCC induces coherent
+patterns across:
+
+\begin{itemize}
+    \item geometric response fields,
+    \item transport flows in persistence space,
+    \item Minkowski functional derivatives,
+    \item Fisher-channel alignments.
+\end{itemize}
+
+This joint structure is essential for constructing multi-probe likelihoods and
+for identifying optimal RDCC probes.
+
+% --------------------------------------------------------
+\subsection{Summary}
+
+Topological and transport-based statistics provide a powerful and noise-resistant
+characterization of RDCC signatures. They capture the non-Gaussian structure of
+the convergence field, reveal scale-dependent deformations induced by the
+relaxation mechanism, and form a central component of the RDCC inference
+framework. Their integration with geometric sensitivity maps and Fisher geometry
+enables a comprehensive and robust analysis of RDCC effects.
+
+% ========================================================
+% 4 THE RDCC LIKELIHOOD ARCHITECTURE
+% ========================================================
+
+\section{The RDCC Likelihood Architecture}
+
+The RDCC inference framework requires a likelihood capable of integrating
+non-Gaussian summary statistics, topological descriptors, geometric sensitivity
+patterns, and emulator-based predictions. The resulting architecture is modular,
+hierarchical, and designed to combine heterogeneous probes while maintaining
+statistical consistency and computational efficiency.
+
+% --------------------------------------------------------
+\subsection{Multi-Probe Structure}
+
+Let $\mathcal{S}$ denote the full set of RDCC summary statistics, including:
+
+\begin{itemize}
+    \item power spectra and correlation functions,
+    \item Minkowski functionals,
+    \item transport-based topological statistics,
+    \item peak and void counts,
+    \item neural-compressed summaries.
+\end{itemize}
+
+The joint likelihood factorizes as
+\begin{equation}
+    \mathcal{L}(\mathcal{S}\,|\,\alpha,\theta)
+    =
+    \prod_{i}
+    \mathcal{L}_{i}(S_{i}\,|\,\alpha,\theta),
+\end{equation}
+where $\theta$ denotes the $\Lambda$CDM parameters. Each component likelihood
+$\mathcal{L}_{i}$ is calibrated using simulation-based inference and validated
+through cross-probe consistency tests.
+
+% --------------------------------------------------------
+\subsection{Emulator-Based Predictions}
+
+High-fidelity RDCC simulations are computationally expensive. To enable efficient
+likelihood evaluation, we employ emulator pipelines trained on simulation grids
+and validated using the RDCC Benchmark Suite (Companion C).
+
+For each summary statistic $S_{i}$, the emulator predicts
+\begin{equation}
+    S_{i}(\alpha,\theta),
+\end{equation}
+with uncertainty propagated into the likelihood via
+\begin{equation}
+    \Sigma_{i}
+    =
+    \Sigma_{\mathrm{sim}}
+    +
+    \Sigma_{\mathrm{emul}}.
+\end{equation}
+
+This ensures that emulator uncertainty does not bias inference or artificially
+inflate evidence contrast.
+
+% --------------------------------------------------------
+\subsection{Transport-Based Likelihood Components}
+
+Transport-based statistics require likelihoods that respect the geometry of
+persistence diagrams. For a quadratic optimal-transport distance $W_{2}$, we
+define
+\begin{equation}
+    \mathcal{L}_{\mathrm{topo}}
+    \propto
+    \exp\!\left[
+        -\frac{
+            W_{2}\!\left(
+                \mathcal{D}_{\mathrm{data}},
+                \mathcal{D}(\alpha)
+            \right)
+        }{
+            2\,\sigma_{W_{2}}^{2}
+        }
+    \right],
+\end{equation}
+which captures geometric deformations in topological space and is robust to noise
+and sampling variance.
+
+% --------------------------------------------------------
+\subsection{Neural Compression and Likelihood-Free Components}
+
+For high-dimensional statistics, we employ neural compression to construct
+compressed summaries $z$ that retain maximal information about $\alpha$:
+\begin{equation}
+    z = f_{\mathrm{enc}}(\mathcal{S}),
+\end{equation}
+where $f_{\mathrm{enc}}$ is trained to maximize Fisher information or minimize
+likelihood-free loss functions.
+
+The compressed likelihood is then
+\begin{equation}
+    \mathcal{L}(z\,|\,\alpha)
+    =
+    \mathcal{N}\!\left(
+        z;\,
+        \mu(\alpha),\,
+        \Sigma_{z}
+    \right),
+\end{equation}
+with $\Sigma_{z}$ estimated via simulation-based calibration.
+
+% --------------------------------------------------------
+\subsection{Cross-Probe Covariance Structure}
+
+The full covariance matrix is
+\begin{equation}
+    C
+    =
+    C_{\mathrm{stat}}
+    +
+    C_{\mathrm{sys}}
+    +
+    C_{\mathrm{cross}},
+\end{equation}
+where $C_{\mathrm{cross}}$ captures correlations between geometric, topological,
+and morphological probes.
+
+RDCC induces characteristic cross-covariance patterns, including:
+
+\begin{itemize}
+    \item alignment between geometric response fields and topological flows,
+    \item covariance suppression in degeneracy-aligned directions,
+    \item enhanced cross-probe coherence at RDCC-sensitive scales.
+\end{itemize}
+
+% --------------------------------------------------------
+\subsection{Summary}
+
+The RDCC likelihood architecture integrates geometric, topological, and
+compressed statistics into a unified multi-probe framework. Emulator-based
+predictions, transport-aware likelihoods, and cross-probe covariance modeling
+ensure robustness and flexibility. This architecture forms the computational core
+of RDCC inference and underpins the forecasts and model-selection results
+presented in later sections.
+
+% ========================================================
+% 5 FISHER GEOMETRY, INFORMATION FLOW, AND DEGENERACY STRUCTURE
+% ========================================================
+
+\section{Fisher Geometry, Information Flow, and Degeneracy Structure}
+
+The RDCC inference framework is governed by a geometric structure induced by the
+Fisher information metric, which encodes the curvature of the likelihood surface
+and determines the efficiency of parameter estimation. Combined with observable
+gradients and topological response fields, the Fisher geometry defines the
+information flow from weak-lensing observables to RDCC parameter constraints.
+
+% --------------------------------------------------------
+\subsection{Fisher Information and the RDCC Metric}
+
+For a parameter vector $(\alpha,\theta)$, the Fisher information matrix is
+\begin{equation}
+    G_{ij}
+    =
+    \mathbb{E}\!\left[
+        \pdv{\log \mathcal{L}}{\theta_{i}}
+        \pdv{\log \mathcal{L}}{\theta_{j}}
+    \right],
+\end{equation}
+where $\theta$ denotes the $\Lambda$CDM parameters. The Fisher metric defines a
+Riemannian geometry on parameter space, with geodesics corresponding to
+directions of minimal information loss.
+
+For RDCC, the Fisher metric reveals:
+
+\begin{itemize}
+    \item strong curvature in RDCC-sensitive directions,
+    \item flat regions corresponding to degeneracy manifolds,
+    \item natural coordinates that diagonalize information channels,
+    \item geometric pathways linking RDCC and $\Lambda$CDM variations.
+\end{itemize}
+
+These geometric features guide the construction of efficient samplers and inform
+the design of optimal probes.
+
+% --------------------------------------------------------
+\subsection{Observable Gradients and Information Flow}
+
+Let $S_{i}$ denote a summary statistic. Its RDCC gradient is
+\begin{equation}
+    \mathcal{G}_{i}
+    =
+    \pdv{S_{i}}{\alpha}.
+\end{equation}
+
+The information tensor introduced in Companion XCVII is
+\begin{equation}
+    I_{ij}
+    =
+    \mathbb{E}\!\left[
+        \mathcal{G}_{i}\,
+        \mathcal{G}_{j}
+    \right],
+\end{equation}
+which generalizes the Fisher metric to the space of summary statistics.
+
+Diagonalizing $I$ yields Fisher channels:
+\begin{equation}
+    I\,v_{k}
+    =
+    \lambda_{k}\,v_{k}.
+\end{equation}
+
+Each channel $v_{k}$ represents:
+
+\begin{itemize}
+    \item a direction of coherent RDCC response,
+    \item a geometric mode of information flow,
+    \item a contribution $\lambda_{k}$ to the total Fisher information,
+    \item a pathway linking observables to evidence.
+\end{itemize}
+
+Large eigenvalues correspond to dominant RDCC information pathways, while small
+eigenvalues indicate suppressed or degenerate directions.
+
+% --------------------------------------------------------
+\subsection{Degeneracy Structure and Null Directions}
+
+Not all directions in summary-statistic space carry RDCC information. The RDCC
+Null Space is defined as
+\begin{equation}
+    \mathcal{N}
+    =
+    \left\{
+        v \,\middle|\,
+        v^{T} I v = 0
+    \right\}.
+\end{equation}
+
+Vectors in $\mathcal{N}$ correspond to:
+
+\begin{itemize}
+    \item blind modes with zero RDCC sensitivity,
+    \item combinations of observables aligned with $\Lambda$CDM variations,
+    \item directions dominated by noise or cosmic variance,
+    \item degeneracy manifolds in Fisher geometry.
+\end{itemize}
+
+These null directions play a central role in probe optimization and survey
+design, as they identify observables that do not contribute to RDCC inference.
+
+% --------------------------------------------------------
+\subsection{Geometric Interpretation of Degeneracy Manifolds}
+
+In Fisher geometry, degeneracy manifolds satisfy
+\begin{equation}
+    g_{\alpha\alpha}\,d\alpha^{2}
+    =
+    g_{\theta\theta}\,d\theta^{2},
+\end{equation}
+indicating that variations in $\alpha$ can be mimicked by variations in
+$\Lambda$CDM parameters.
+
+These manifolds represent:
+
+\begin{itemize}
+    \item curved surfaces of equal RDCC sensitivity,
+    \item geodesic alignments between RDCC and $\Lambda$CDM,
+    \item regions of suppressed evidence contrast,
+    \item pathways of minimal distinguishability.
+\end{itemize}
+
+Understanding these manifolds is essential for breaking degeneracies and
+designing optimal RDCC probes.
+
+% --------------------------------------------------------
+\subsection{Summary}
+
+Fisher geometry, information flow, and degeneracy structure form the
+mathematical backbone of RDCC inference. Observable gradients propagate through
+the information tensor to define Fisher channels, while degeneracy manifolds
+identify directions of suppressed sensitivity. Together, these structures guide
+the construction of efficient likelihoods, optimal probes, and robust forecasting
+pipelines.
+
+% ========================================================
+% 6 OPTIMAL PROBES AND SURVEY STRATEGIES
+% ========================================================
+
+\section{Optimal Probes and Survey Strategies}
+
+The RDCC inference framework integrates geometric sensitivity, topological
+structure, and Fisher-channel analysis to identify the most informative
+observables for constraining the relaxation parameter $\alpha$. This section
+summarizes the optimal RDCC probes and the survey strategies that maximize
+detectability and minimize degeneracy with $\Lambda$CDM.
+
+% --------------------------------------------------------
+\subsection{The RDCC Probe Efficiency Function}
+
+To quantify the information content of a summary statistic $S$, we define the
+RDCC Probe Efficiency Function
+\begin{equation}
+    \varepsilon(S)
+    =
+    \left(
+        1 - D(S)
+    \right)
+    \frac{
+        \mathcal{I}(S)
+    }{
+        \mathrm{Var}(S)
+    },
+\end{equation}
+where $D(S)$ is the degeneracy factor derived from the RDCC Null Space
+(Companion XCVIII), and $\mathcal{I}(S)$ denotes the Fisher information
+contributed by $S$.
+
+High values of $\varepsilon(S)$ indicate probes that:
+
+\begin{itemize}
+    \item respond strongly to RDCC-induced distortions,
+    \item break degeneracies with $\Lambda$CDM parameters,
+    \item align with dominant Fisher channels,
+    \item exhibit stable topological or geometric signatures.
+\end{itemize}
+
+This efficiency function provides a unified ranking of RDCC probes.
+
+% --------------------------------------------------------
+\subsection{Ranking RDCC Probes}
+
+Evaluating $\varepsilon(S)$ across geometric, topological, and morphological
+statistics yields a consistent hierarchy:
+
+\begin{itemize}
+    \item \textbf{Transport-based topological statistics}  
+    provide the strongest RDCC sensitivity, particularly at intermediate
+    persistence scales.
+
+    \item \textbf{Minkowski functionals}  
+    capture morphological distortions induced by RDCC and complement topological
+    probes.
+
+    \item \textbf{Peak and void statistics}  
+    are highly sensitive to relaxation-driven shifts in the potential.
+
+    \item \textbf{Power spectra}  
+    contribute primarily at large scales but are partially degenerate with
+    $\Lambda$CDM variations.
+
+    \item \textbf{Neural-compressed summaries}  
+    efficiently combine multiple probes and retain high Fisher information.
+\end{itemize}
+
+This ranking reflects the multi-scale and non-Gaussian nature of RDCC
+signatures.
+
+% --------------------------------------------------------
+\subsection{Fisher-Channel Alignment}
+
+The geometric alignment of a probe $S$ with the dominant Fisher channel
+$v_{\max}$ is
+\begin{equation}
+    A(S)
+    =
+    \frac{
+        \left\langle
+            \pdv{S}{\alpha},
+            v_{\max}
+        \right\rangle
+    }{
+        \norm{\pdv{S}{\alpha}}\,\norm{v_{\max}}
+    }.
+\end{equation}
+
+Probes with high alignment:
+
+\begin{itemize}
+    \item efficiently trace the dominant RDCC information pathway,
+    \item minimize curvature-induced sampling inefficiencies,
+    \item reduce the impact of degeneracy manifolds,
+    \item provide stable likelihood gradients.
+\end{itemize}
+
+Transport-based topological statistics exhibit the highest alignment, followed
+by Minkowski functionals and peak statistics.
+
+% --------------------------------------------------------
+\subsection{Breaking Degeneracies with \texorpdfstring{$\Lambda$CDM}{ΛCDM}}
+
+Degeneracy manifolds identified in Companion XCVIII reveal directions in
+summary-statistic space where RDCC variations mimic $\Lambda$CDM parameter
+shifts. Optimal probes are those that:
+
+\begin{itemize}
+    \item have minimal projection onto the RDCC Null Space,
+    \item exhibit strong orthogonality to $\Lambda$CDM-aligned subspaces,
+    \item amplify RDCC-specific geometric or topological distortions.
+\end{itemize}
+
+Topological probes are particularly effective at breaking degeneracies due to
+their sensitivity to non-Gaussian structure.
+
+% --------------------------------------------------------
+\subsection{Survey Strategies for Maximizing RDCC Detectability}
+
+The RDCC probe hierarchy informs survey strategies that maximize sensitivity to
+$\alpha$. Key recommendations include:
+
+\begin{itemize}
+    \item \textbf{Angular resolution:}  
+    prioritize intermediate scales where RDCC-induced topological distortions are
+    strongest.
+
+    \item \textbf{Tomographic binning:}  
+    allocate finer redshift resolution to bins with high Fisher-channel
+    alignment.
+
+    \item \textbf{Noise mitigation:}  
+    emphasize probes with stable topological persistence under shape noise.
+
+    \item \textbf{Cross-probe integration:}  
+    combine geometric and topological probes to suppress degeneracy directions.
+
+    \item \textbf{Emulator fidelity:}  
+    ensure high accuracy for probes with large $\varepsilon(S)$ to avoid
+    information loss.
+\end{itemize}
+
+These strategies are compatible with Euclid-like survey specifications and
+provide a roadmap for future RDCC analyses.
+
+% --------------------------------------------------------
+\subsection{Summary}
+
+Optimal RDCC probes are those that combine strong geometric or topological
+sensitivity with minimal degeneracy and high Fisher-channel alignment. The
+resulting probe hierarchy and survey strategies maximize RDCC detectability and
+provide a principled foundation for high-precision cosmological inference.
+
+% ========================================================
+% 7 FORECASTS AND MODEL SELECTION
+% ========================================================
+
+\section{Forecasts and Model Selection}
+
+The RDCC inference framework enables quantitative forecasts for the relaxation
+parameter $\alpha$ and provides a principled basis for model comparison with
+$\Lambda$CDM. These forecasts combine geometric sensitivity, topological
+statistics, emulator-based predictions, and the multi-probe likelihood
+architecture described in previous sections.
+
+% --------------------------------------------------------
+\subsection{Euclid-Level Constraints on \texorpdfstring{$\alpha$}{α}}
+
+Using the full RDCC likelihood, including transport-based topology, Minkowski
+functionals, peak statistics, and neural-compressed summaries, we obtain
+forecasted constraints of the form
+\begin{equation}
+    \sigma(\alpha)
+    \sim
+    \mathcal{O}(10^{-2}),
+\end{equation}
+with the precise value depending on the probe combination and tomographic
+binning.
+
+The strongest constraints arise from:
+
+\begin{itemize}
+    \item intermediate-scale transport-based topological statistics,
+    \item peak and void counts sensitive to RDCC-induced potential shifts,
+    \item neural-compressed summaries that combine geometric and topological information.
+\end{itemize}
+
+Power spectra alone provide significantly weaker constraints due to partial
+degeneracy with $\Lambda$CDM parameters.
+
+% --------------------------------------------------------
+\subsection{Fisher-Channel Contributions to Forecasts}
+
+The Fisher-channel decomposition (Companion XCVII) reveals that RDCC information
+is concentrated in a small number of dominant channels. The leading channel
+typically accounts for
+\begin{equation}
+    \sim 70\%
+\end{equation}
+of the total Fisher information, with the remaining channels capturing
+subdominant geometric and topological features.
+
+This structure explains:
+
+\begin{itemize}
+    \item the efficiency of neural compression,
+    \item the robustness of topological probes,
+    \item the limited contribution of high-dimensional statistics,
+    \item the sensitivity of forecasts to degeneracy directions.
+\end{itemize}
+
+% --------------------------------------------------------
+\subsection{Degeneracy Structure and Forecast Stability}
+
+Degeneracy manifolds identified in Companion XCVIII reveal directions in
+parameter space where RDCC variations mimic $\Lambda$CDM shifts. These
+degeneracies affect forecast stability by:
+
+\begin{itemize}
+    \item reducing sensitivity in null directions,
+    \item suppressing evidence contrast in aligned subspaces,
+    \item amplifying the importance of topological probes,
+    \item increasing the role of cross-probe covariance.
+\end{itemize}
+
+Forecasts that rely solely on geometric probes are more susceptible to these
+degeneracies, while topological probes provide strong orthogonality to
+$\Lambda$CDM-aligned directions.
+
+% --------------------------------------------------------
+\subsection{Evidence Decomposition and Model Selection}
+
+The RDCC evidence can be decomposed into Fisher-channel contributions:
+\begin{equation}
+    \Delta \log Z_{k}
+    =
+    \frac{1}{2}\,\lambda_{k},
+\end{equation}
+where $\lambda_{k}$ is the eigenvalue of the $k$-th Fisher channel. Summing over
+channels yields the total evidence contrast between RDCC and $\Lambda$CDM.
+
+Topological probes contribute disproportionately to $\Delta \log Z$, reflecting
+their sensitivity to non-Gaussian RDCC signatures. Geometric probes contribute
+primarily through the leading Fisher channel, while power spectra contribute
+weakly due to degeneracy with $\Lambda$CDM.
+
+% --------------------------------------------------------
+\subsection{Combined Forecasts and Model-Selection Prospects}
+
+Combining all probes yields:
+
+\begin{itemize}
+    \item tight constraints on $\alpha$,
+    \item strong evidence contrast for moderate RDCC amplitudes,
+    \item robustness to noise and systematics,
+    \item stability under cross-probe consistency tests.
+\end{itemize}
+
+The RDCC inference framework therefore provides a powerful and flexible approach
+to testing relaxation-driven cosmology with upcoming weak-lensing surveys.
+
+% --------------------------------------------------------
+\subsection{Summary}
+
+Forecasts and model-selection analyses demonstrate that RDCC induces detectable
+geometric and topological signatures in weak-lensing observables. Topological
+probes, Fisher-channel structure, and degeneracy analysis play central roles in
+achieving high sensitivity and robust model discrimination. These results
+establish RDCC as a testable extension of $\Lambda$CDM and motivate future
+observational applications.
+
+% ========================================================
+% 8 CONCLUSION
+% ========================================================
+
+\section{Conclusion}
+
+The Relaxation-Driven Cyclic Cosmology (RDCC) introduces a scale-dependent
+relaxation mechanism that produces geometric and topological signatures in
+weak-lensing observables. Over the course of the RDCC Companion Series
+(LXXX--C), we developed a complete inference framework capable of capturing
+these signatures across multiple statistical domains. This Summary Paper
+synthesized the conceptual foundations, methodological components, and
+forecasting results of that framework.
+
+RDCC induces coherent deformations in the gravitational potential, which
+propagate into geometric response fields, Fisher-channel structure, and
+persistent topological features. These signatures motivate the use of
+transport-based topology, Minkowski functionals, peak and void statistics, and
+neural-compressed summaries. The resulting multi-probe likelihood architecture
+integrates these heterogeneous observables into a unified inference pipeline,
+supported by emulator-based predictions and validated through the RDCC
+Benchmark Suite.
+
+Fisher geometry and information-flow analysis reveal that RDCC information is
+concentrated in a small number of dominant channels, while degeneracy manifolds
+identify directions of suppressed sensitivity and partial alignment with
+$\Lambda$CDM variations. Optimal probes are those that combine strong geometric
+or topological response with minimal degeneracy and high Fisher-channel
+alignment. These probes form the basis of Euclid-level forecasts, which
+demonstrate that RDCC induces detectable signatures and that the relaxation
+parameter $\alpha$ can be constrained with high precision.
+
+The RDCC inference framework is modular, extensible, and designed for
+application to upcoming weak-lensing surveys. Its combination of geometric
+analysis, topological structure, and simulation-based inference provides a robust
+foundation for testing relaxation-driven cosmology. Future work will extend this
+framework to cross-correlations with galaxy clustering, multi-wavelength probes,
+and joint analyses with dynamical tracers. The RDCC Companion Series serves as a
+technical backbone for these developments and ensures reproducibility,
+consistency, and methodological clarity across the entire RDCC ecosystem.
+
+\end{document}
