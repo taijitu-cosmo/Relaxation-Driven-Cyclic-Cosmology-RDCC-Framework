@@ -1,0 +1,743 @@
+\documentclass[11pt,a4paper]{article}
+
+% ========================================================
+% PACKAGES
+% ========================================================
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[a4paper,margin=2.5cm]{geometry}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{bm}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{authblk}
+\usepackage{cite}
+\usepackage{physics}
+\usepackage{tensor}
+\usepackage{enumitem}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    citecolor=blue,
+    urlcolor=blue,
+    pdfauthor={Michael Lehmann},
+    pdftitle={Companion XIII: Neutrino and Dark Matter Sectors in RDCC}
+}
+
+% ========================================================
+% RDCC MACROS (embedded — no macros.tex needed)
+% ========================================================
+
+% Hilbert spaces
+\newcommand{\Hplus}{\mathcal{H}_{+}}
+\newcommand{\Hminus}{\mathcal{H}_{-}}
+\newcommand{\Hglobal}{\mathcal{H}_{+}\!\otimes\!\mathcal{H}_{-}}
+
+% Density matrices
+\newcommand{\rglobal}{\rho_{\mathrm{global}}}
+\newcommand{\rplus}{\rho_{+}}
+\newcommand{\rminus}{\rho_{-}}
+\newcommand{\rpm}{\rho_{+-}}
+\newcommand{\rmp}{\rho_{-+}}
+
+% Stress tensors
+\newcommand{\Tplus}{T^{(+)}_{\mu\nu}}
+\newcommand{\Tminus}{T^{(-)}_{\mu\nu}}
+\newcommand{\Tplusup}{T^{(+)\mu\nu}}
+\newcommand{\Tminusup}{T^{(-)\mu\nu}}
+
+% Interaction
+\newcommand{\Lint}{\mathcal{L}_{\mathrm{int}}}
+\newcommand{\LintDef}{\mathcal{L}_{\mathrm{int}} = \frac{1}{M^{2}}\, T^{(+)}_{\mu\nu} T^{(-)\mu\nu}}
+\newcommand{\Hint}{H_{\mathrm{int}}}
+
+% Cosmological quantities
+\newcommand{\Ha}{H(a)}
+\newcommand{\Ht}{H(t)}
+\newcommand{\Hnow}{H_{0}}
+
+% Relaxation dynamics
+\newcommand{\GammaR}{\Gamma}
+\newcommand{\alphaR}{\alpha}
+\newcommand{\RelaxEq}{\dot{\alpha} = -\Gamma \alpha}
+
+% Misc
+
+\newcommand{\Trm}{\mathrm{Tr}}
+
+% ========================================================
+% TITLE
+% ========================================================
+\title{\textbf{Companion XIII: The Neutrino and Dark Matter Sectors in the Relaxation-Driven Cyclic Cosmology (RDCC)}}
+
+\author[1]{Michael Lehmann \\ \texttt{mi.lehmann@gmx.de}}
+\affil[1]{\small Independent Researcher, Relaxation-Driven Cyclic Cosmology (RDCC) Framework}
+
+\date{\small \today}
+
+\begin{document}
+
+\maketitle
+
+% ========================================================
+% ABSTRACT
+% ========================================================
+\begin{abstract}
+The Relaxation-Driven Cyclic Cosmology (RDCC) provides a unified framework in which the large-scale evolution of the Universe, the emergence of cosmic asymmetries, and the sectoral structure of matter arise from a single dynamical principle: relaxation across CPT-conjugate sectors. In this Companion, we develop a combined treatment of the neutrino and dark matter sectors, which together constitute the non-baryonic matter content of RDCC. Both components inherit their effective properties from the same sectoral thermodynamics, the same relaxation-induced mass suppression mechanism, and the same inter-sector gravitational coupling. The combined neutrino–dark-matter sector shapes the growth of structure, the evolution of perturbations, and the observational signatures in the CMB, lensing, and large-scale structure. This Companion establishes the unified sectoral matter picture of RDCC and provides the foundation for future inference and forecasting analyses.
+\end{abstract}
+
+% ========================================================
+% SECTION 1 — INTRODUCTION
+% ========================================================
+
+\section{Introduction}
+
+The Relaxation-Driven Cyclic Cosmology (RDCC) provides a unified dynamical
+framework in which the large-scale evolution of the Universe, the emergence of
+cosmic asymmetries, and the sectoral structure of matter arise from a single
+principle: relaxation across CPT-conjugate sectors. The global state of the
+Universe is defined on the bipartite Hilbert space $\Hglobal$, with the two
+components related by a global CPT transformation and evolving with opposite
+thermodynamic arrows. Classical spacetime and causal structure emerge only
+after projection onto one of the two sectors.
+
+The non-baryonic matter content of RDCC consists of two components: neutrinos
+and dark matter. Both arise from the same sectoral thermodynamics, the same
+relaxation-induced mass suppression mechanism, and the same inter-sector
+gravitational coupling. Neutrinos inherit their small effective masses from the
+relaxation dynamics, while dark matter corresponds to baryonic matter in the
+CPT-conjugate sector, which appears cold and collisionless from the perspective
+of our sector.
+
+This Companion develops a unified treatment of the neutrino and dark matter
+sectors. Section~2 analyzes the neutrino sector, including the mass hierarchy,
+Dirac/Majorana structure, and relaxation-induced suppression. Section~3
+introduces the dark matter sector as baryonic matter in the CPT-conjugate
+sector. Section~4 develops the joint sectoral thermodynamics, Section~5 derives
+the relaxation-induced mass suppression mechanism, and Section~6 presents the
+cosmological signatures. Section~7 provides forecasts for Euclid and future
+surveys.
+
+Together, these results establish the unified sectoral matter picture of RDCC
+and provide the foundation for future inference and forecasting analyses.
+
+
+
+% ========================================================
+% SECTION 2 — THE NEUTRINO SECTOR IN RDCC
+% ========================================================
+
+\section{The Neutrino Sector in RDCC}
+
+Neutrinos play a central role in RDCC. Their small masses, long free-streaming
+lengths, and weak interactions make them sensitive probes of the relaxation
+dynamics and the inter-sector thermodynamic structure. In RDCC, neutrinos
+inherit their effective properties from three structural ingredients:
+
+\begin{enumerate}[label=(\alph*)]
+    \item the global CPT structure of the bipartite state,
+    \item the relaxation-induced suppression of effective masses,
+    \item the sectoral entropy flow across the cyclic boundary.
+\end{enumerate}
+
+These ingredients jointly determine the neutrino mass hierarchy, the
+Dirac/Majorana structure, and the impact of neutrinos on structure formation.
+
+
+
+% --------------------------------------------------------
+% 2.1 Mass hierarchy and sectoral symmetry
+% --------------------------------------------------------
+
+\subsection{Mass Hierarchy and Sectoral Symmetry}
+
+In RDCC, the neutrino mass hierarchy is not an arbitrary parameter but emerges
+from the interplay between relaxation and sectoral thermodynamics. The
+CPT-conjugate sector contains a mirror neutrino population with opposite
+thermodynamic arrow, and the two populations are related by a sectoral symmetry
+that constrains the allowed mass patterns.
+
+The effective neutrino masses in our sector take the form
+\begin{equation}
+m_{\nu,i}^{\mathrm{eff}}
+    = m_{\nu,i}^{\mathrm{bare}}\, e^{-\alphaR\, S_{\mathrm{rel}}},
+\end{equation}
+where $m_{\nu,i}^{\mathrm{bare}}$ are the bare masses, $\alphaR$ is the
+relaxation parameter, and $S_{\mathrm{rel}}$ is the sectoral entropy difference.
+This exponential suppression is a structural prediction of RDCC and encodes
+information about the global cyclic boundary conditions.
+
+
+
+% --------------------------------------------------------
+% 2.2 Dirac/Majorana structure
+% --------------------------------------------------------
+
+\subsection{Dirac/Majorana Structure}
+
+RDCC allows both Dirac and Majorana neutrinos, but the relaxation dynamics
+naturally suppresses Majorana mass terms relative to Dirac terms. This yields a
+hybrid structure in which the effective neutrino masses are predominantly
+Dirac-like, with small Majorana components induced by inter-sector relaxation.
+The resulting phenomenology differs from both standard Dirac and standard
+Majorana scenarios and provides a distinctive signature of RDCC.
+
+
+
+% --------------------------------------------------------
+% 2.3 Relaxation-induced mass suppression
+% --------------------------------------------------------
+
+\subsection{Relaxation-Induced Mass Suppression}
+
+The relaxation dynamics suppresses neutrino masses through the exponential
+factor $e^{-\alphaR S_{\mathrm{rel}}}$. This mechanism provides a natural
+explanation for the smallness of neutrino masses without requiring fine-tuning
+or new high-energy scales. The suppression is tied to the inter-sector entropy
+flow and therefore encodes information about the global cyclic boundary
+conditions.
+
+
+
+% --------------------------------------------------------
+% 2.4 Impact on structure formation
+% --------------------------------------------------------
+
+\subsection{Impact on Structure Formation}
+
+Neutrinos affect structure formation through their free-streaming, which
+suppresses the growth of perturbations on small scales. In RDCC, this
+suppression is modified by the relaxation dynamics, leading to a
+scale-dependent signature that differs from the standard $\Lambda$CDM
+prediction. The combined neutrino–dark-matter sector produces a characteristic
+imprint on the matter power spectrum, lensing potential, and CMB anisotropies.
+
+% ========================================================
+% SECTION 3 — THE DARK MATTER SECTOR IN RDCC
+% ========================================================
+
+\section{The Dark Matter Sector in RDCC}
+
+In the RDCC framework, dark matter (DM) does not correspond to a new particle
+species. Instead, it arises as baryonic matter in the CPT-conjugate sector.
+This identification follows directly from the global CPT structure of the
+bipartite state and the relaxation dynamics that govern the evolution of the
+two sectors.
+
+The dark matter sector is therefore not exotic: it consists of ordinary
+baryons, photons, and neutrinos in the opposite thermodynamic arrow. Because
+the two sectors interact only gravitationally (and through relaxation), the
+baryons in the conjugate sector appear as cold, collisionless matter from the
+perspective of our sector.
+
+
+
+% --------------------------------------------------------
+% 3.1 Sectoral identification of dark matter
+% --------------------------------------------------------
+
+\subsection{Sectoral Identification of Dark Matter}
+
+The CPT-conjugate sector contains a baryonic plasma whose thermodynamic arrow
+runs opposite to ours. As the conjugate sector evolves along its backward arrow,
+its baryonic matter cools and becomes effectively cold and pressureless when
+viewed from our sector. This provides a natural explanation for the cold nature
+of dark matter without invoking new particle species.
+
+The identification
+
+
+\[
+\text{DM} \equiv \text{baryons in the CPT-conjugate sector}
+\]
+
+
+is a structural consequence of the bipartite RDCC state.
+
+
+
+% --------------------------------------------------------
+% 3.2 Effective equation of state
+% --------------------------------------------------------
+
+\subsection{Effective Equation of State}
+
+The effective equation of state of dark matter in RDCC is determined by the
+thermodynamic history of the conjugate sector. As the conjugate sector cools
+along its opposite arrow, its baryonic matter becomes effectively cold and
+pressureless from our perspective. The resulting equation of state is
+
+
+\[
+w_{\mathrm{DM}}^{\mathrm{eff}} \simeq 0,
+\]
+
+
+consistent with the observational requirements for cold dark matter.
+
+
+
+% --------------------------------------------------------
+% 3.3 Free-streaming and clustering
+% --------------------------------------------------------
+
+\subsection{Free-Streaming and Clustering}
+
+Unlike standard CDM, the dark matter in RDCC inherits a small but non-zero
+free-streaming scale from the thermodynamic history of the conjugate sector.
+This leads to a mild suppression of small-scale structure, which is further
+modified by the relaxation dynamics. The combined effect produces a
+scale-dependent signature in the matter power spectrum.
+
+
+
+% --------------------------------------------------------
+% 3.4 Gravitational coupling between sectors
+% --------------------------------------------------------
+
+\subsection{Gravitational Coupling Between Sectors}
+
+The two sectors interact only through gravity and the relaxation dynamics. The
+gravitational potential felt in our sector receives contributions from both
+sectors:
+
+
+\[
+\Phi = \Phi_{\mathrm{vis}} + \Phi_{\mathrm{CPT}},
+\]
+
+
+where $\Phi_{\mathrm{CPT}}$ is sourced by the baryonic matter in the conjugate
+sector. This coupling leads to distinctive signatures in lensing, structure
+formation, and the CMB.
+
+
+
+% ========================================================
+% SECTION 4 — JOINT SECTORAL THERMODYNAMICS
+% ========================================================
+
+\section{Joint Sectoral Thermodynamics}
+
+The neutrino and dark matter sectors share a common thermodynamic origin in
+RDCC. Both components arise from the interplay between the global CPT
+structure, the relaxation dynamics, and the inter-sector entropy flow. This
+section develops the joint thermodynamic picture that governs the evolution of
+the two sectors.
+
+
+
+% --------------------------------------------------------
+% 4.1 Sectoral entropy flow
+% --------------------------------------------------------
+
+\subsection{Sectoral Entropy Flow}
+
+The two sectors exchange entropy across the cyclic boundary, leading to a
+sectoral entropy difference $S_{\mathrm{rel}}$ that drives the relaxation
+dynamics. This entropy flow determines the effective masses of neutrinos and
+dark matter, as well as their thermodynamic histories.
+
+
+
+% --------------------------------------------------------
+% 4.2 Temperature evolution
+% --------------------------------------------------------
+
+\subsection{Temperature Evolution}
+
+The temperature evolution of the two sectors is governed by their opposite
+thermodynamic arrows. In our sector, the temperature decreases with time,
+while in the conjugate sector it increases. This leads to a temperature
+asymmetry that affects the effective properties of neutrinos and dark matter.
+
+
+
+% --------------------------------------------------------
+% 4.3 Impact on cosmological observables
+% --------------------------------------------------------
+
+\subsection{Impact on Cosmological Observables}
+
+The joint thermodynamics of the two sectors affects a wide range of
+cosmological observables, including the matter power spectrum, the lensing
+potential, and the CMB anisotropies. The combined neutrino–dark-matter sector
+produces a characteristic imprint that differs from the standard $\Lambda$CDM
+prediction.
+
+% ========================================================
+% SECTION 5 — THERMAL MIRROR SOUND SPEED BEFORE MIRROR RECOMBINATION
+% ========================================================
+
+\section{Thermal Mirror Sound Speed Before Mirror Recombination}
+
+In the RDCC framework, the dark matter component corresponds to the baryonic
+matter of the CPT-conjugate mirror sector. As shown in Section~3, the mirror
+sector is thermodynamically colder, $T_{\mathrm{mir}} < T_{\mathrm{vis}}$, and
+undergoes its own recombination epoch at an earlier scale factor. Before this
+mirror recombination, the mirror baryons form a tightly coupled photon–baryon
+fluid with a finite, temperature-dependent sound speed. Consequently, the dark
+matter component cannot be treated as a perfectly cold, pressureless fluid
+during this epoch.
+
+
+
+% --------------------------------------------------------
+% 5.1 Mirror photon–baryon fluid
+% --------------------------------------------------------
+
+\subsection{Mirror Photon–Baryon Fluid}
+
+Prior to mirror recombination, the mirror baryons and mirror photons are
+tightly coupled through Thomson scattering. The sound speed of this fluid is
+given by
+\begin{equation}
+c_{s,\mathrm{mir}}^{2}(a)
+    = \frac{1}{3}
+      \left[
+        1 + \frac{3\rho_{b,\mathrm{mir}}(a)}{4\rho_{\gamma,\mathrm{mir}}(a)}
+      \right]^{-1},
+\end{equation}
+where $\rho_{b,\mathrm{mir}}$ and $\rho_{\gamma,\mathrm{mir}}$ denote the mirror
+baryon and mirror photon energy densities, respectively. Because the mirror
+sector is colder, the ratio $\rho_{b,\mathrm{mir}}/\rho_{\gamma,\mathrm{mir}}$
+grows earlier than in the visible sector, and the sound speed decreases more
+rapidly with scale factor.
+
+
+
+% --------------------------------------------------------
+% 5.2 Transition at mirror recombination
+% --------------------------------------------------------
+
+\subsection{Transition at Mirror Recombination}
+
+Mirror recombination occurs when the mirror temperature drops below the
+hydrogen binding threshold,
+\begin{equation}
+T_{\mathrm{mir}}(a_{\mathrm{rec,mir}}) \simeq 0.3\,\mathrm{eV},
+\end{equation}
+which corresponds to a scale factor
+\begin{equation}
+a_{\mathrm{rec,mir}}
+    = a_{\mathrm{rec,vis}}
+      \frac{T_{\mathrm{vis}}}{T_{\mathrm{mir}}}
+    < a_{\mathrm{rec,vis}}.
+\end{equation}
+After this epoch, the mirror photons decouple, the pressure support collapses,
+and the mirror baryons behave as a pressureless fluid. The sound speed
+therefore transitions sharply to
+\begin{equation}
+c_{s,\mathrm{mir}}(a > a_{\mathrm{rec,mir}}) \simeq 0.
+\end{equation}
+
+
+
+% --------------------------------------------------------
+% 5.3 Impact on the matter power spectrum
+% --------------------------------------------------------
+
+\subsection{Impact on the Matter Power Spectrum}
+
+The finite sound speed before mirror recombination suppresses the growth of
+perturbations on scales below the mirror-sector sound horizon. The comoving
+sound horizon is
+\begin{equation}
+r_{s,\mathrm{mir}}(a)
+    = \int_{0}^{a} \frac{c_{s,\mathrm{mir}}(a')}{a'^{2} H(a')} \,\dd a'.
+\end{equation}
+Modes with $k r_{s,\mathrm{mir}} \gtrsim 1$ experience acoustic oscillations and
+partial suppression, analogous to baryon acoustic oscillations in the visible
+sector but shifted to earlier times and smaller scales.
+
+This mechanism produces a smooth, continuous suppression of the matter power
+spectrum at large wavenumbers,
+\begin{equation}
+P(k) \;\longrightarrow\; P(k)\, S_{\mathrm{mir}}(k),
+\end{equation}
+where the suppression factor is approximately
+\begin{equation}
+S_{\mathrm{mir}}(k)
+    \simeq \left[1 + \left(\frac{k}{k_{\mathrm{mir}}}\right)^{2}\right]^{-\alpha},
+\end{equation}
+with $k_{\mathrm{mir}} \sim r_{s,\mathrm{mir}}^{-1}$ and $\alpha$ of order unity.
+The precise value of $\alpha$ depends on the detailed thermal history of the
+mirror sector.
+
+
+
+% --------------------------------------------------------
+% 5.4 Implications for RDCC and CLASS implementation
+% --------------------------------------------------------
+
+\subsection{Implications for RDCC and CLASS Implementation}
+
+This finite sound speed is a structural prediction of RDCC and provides a clean
+physical origin for the smooth high-$k$ suppression of the matter power
+spectrum. Unlike warm dark matter models, where the suppression arises from
+free-streaming, the RDCC suppression is acoustic in nature and tied directly to
+the mirror-sector thermodynamics.
+
+The corresponding modification of the perturbation equations is implemented in
+Companion~XVI, where the mirror dark matter is treated as a fluid with sound
+speed $c_{s,\mathrm{mir}}(a)$ until mirror recombination. This ensures that the
+Boltzmann evolution accurately reflects the thermal history of the mirror
+sector and preserves the predictive structure of RDCC.
+
+
+
+% ========================================================
+% SECTION 6 — RELAXATION-INDUCED MASS SUPPRESSION
+% ========================================================
+
+\section{Relaxation-Induced Mass Suppression}
+
+A key feature of the RDCC framework is the relaxation-induced suppression of
+effective masses. This mechanism provides a natural explanation for the
+smallness of neutrino masses and the cold nature of dark matter.
+
+
+
+% --------------------------------------------------------
+% 6.1 Exponential suppression mechanism
+% --------------------------------------------------------
+
+\subsection{Exponential Suppression Mechanism}
+
+The effective masses of neutrinos and dark matter are suppressed by an
+exponential factor of the form
+\begin{equation}
+m_{\mathrm{eff}}
+    = m_{0}\, e^{-\alphaR\, S_{\mathrm{rel}}},
+\end{equation}
+where $m_{0}$ is the bare mass, $\alphaR$ is the relaxation parameter, and
+$S_{\mathrm{rel}}$ is the sectoral entropy difference. This exponential
+suppression is a structural prediction of RDCC and encodes information about
+the global cyclic boundary conditions.
+
+
+
+% --------------------------------------------------------
+% 6.2 Implications for neutrinos
+% --------------------------------------------------------
+
+\subsection{Implications for Neutrinos}
+
+The exponential suppression naturally explains the smallness of neutrino masses
+without requiring fine-tuning or new high-energy scales. The suppression is
+tied to the inter-sector entropy flow and therefore provides a direct probe of
+the relaxation dynamics.
+
+
+
+% --------------------------------------------------------
+% 6.3 Implications for dark matter
+% --------------------------------------------------------
+
+\subsection{Implications for Dark Matter}
+
+The dark matter in RDCC inherits its effective mass from the baryonic matter in
+the conjugate sector. The relaxation-induced suppression ensures that the dark
+matter behaves as cold, collisionless matter, consistent with observational
+requirements.
+
+
+
+% --------------------------------------------------------
+% 6.4 Combined signatures
+% --------------------------------------------------------
+
+\subsection{Combined Signatures}
+
+The combined neutrino–dark-matter sector produces a characteristic
+scale-dependent signature in the matter power spectrum, lensing potential, and
+CMB anisotropies. These signatures provide a powerful probe of the relaxation
+dynamics and the sectoral thermodynamics.
+
+% ========================================================
+% SECTION 7 — COSMOLOGICAL SIGNATURES
+% ========================================================
+
+\section{Cosmological Signatures}
+
+The combined neutrino–dark-matter sector of RDCC produces a rich set of
+cosmological signatures that differ from the predictions of the standard
+$\Lambda$CDM model. These signatures arise from the relaxation-induced mass
+suppression, the sectoral thermodynamics, and the gravitational coupling
+between the two sectors.
+
+
+
+% --------------------------------------------------------
+% 7.1 Matter power spectrum
+% --------------------------------------------------------
+
+\subsection{Matter Power Spectrum}
+
+The matter power spectrum receives contributions from both sectors. Neutrino
+free-streaming suppresses power on small scales, while the dark matter inherits
+a mild free-streaming scale from the thermodynamic history of the conjugate
+sector. The combined effect produces a characteristic scale-dependent signature
+that can be used to constrain the relaxation parameter $\alphaR$.
+
+
+
+% --------------------------------------------------------
+% 7.2 Weak lensing
+% --------------------------------------------------------
+
+\subsection{Weak Lensing}
+
+Weak lensing is particularly sensitive to the combined neutrino–dark-matter
+sector. The lensing potential receives contributions from both sectors, and the
+relaxation dynamics modifies the growth of structure in a way that produces
+distinctive signatures in the lensing power spectrum, bispectrum, and peak
+statistics.
+
+
+
+% --------------------------------------------------------
+% 7.3 CMB anisotropies
+% --------------------------------------------------------
+
+\subsection{CMB Anisotropies}
+
+The CMB anisotropies are affected by the combined neutrino–dark-matter sector
+through the integrated Sachs–Wolfe effect, the lensing potential, and the
+early-time suppression of perturbations. The relaxation dynamics introduces a
+scale-dependent modification that differs from the standard $\Lambda$CDM
+prediction.
+
+
+
+% --------------------------------------------------------
+% 7.4 Large-scale structure
+% --------------------------------------------------------
+
+\subsection{Large-Scale Structure}
+
+The large-scale structure of the Universe provides a powerful probe of the
+combined neutrino–dark-matter sector. The relaxation dynamics modifies the
+growth rate of perturbations, leading to a scale-dependent signature in the
+redshift-space distortions and the velocity divergence field.
+
+
+
+% ========================================================
+% SECTION 8 — FORECASTS AND \alpha-SENSITIVITY
+% ========================================================
+
+\section{Forecasts and \texorpdfstring{$\alpha$}{alpha}-Sensitivity}
+
+The combined neutrino–dark-matter sector provides one of the most sensitive
+probes of the relaxation parameter $\alphaR$. This section presents forecasts
+for Euclid and future surveys, showing how the joint sectoral matter content
+can be used to constrain the relaxation dynamics.
+
+
+
+% --------------------------------------------------------
+% 8.1 Fisher forecasts
+% --------------------------------------------------------
+
+\subsection{Fisher Forecasts}
+
+Fisher forecasts show that the combined neutrino–dark-matter sector provides
+strong constraints on $\alphaR$, with sensitivities that exceed those of
+standard cosmological probes. The scale-dependent signatures in the matter
+power spectrum, lensing potential, and CMB anisotropies provide complementary
+information that can be used to break degeneracies.
+
+
+
+% --------------------------------------------------------
+% 8.2 Multi-probe constraints
+% --------------------------------------------------------
+
+\subsection{Multi-Probe Constraints}
+
+Combining multiple probes, including weak lensing, galaxy clustering, and CMB
+lensing, provides even stronger constraints on $\alphaR$. The joint analysis
+reveals a characteristic pattern of scale-dependent signatures that is unique
+to the RDCC framework.
+
+
+
+% --------------------------------------------------------
+% 8.3 Future surveys
+% --------------------------------------------------------
+
+\subsection{Future Surveys}
+
+Future surveys, including Euclid, LSST, and CMB-S4, will provide high-precision
+measurements of the matter power spectrum, lensing potential, and CMB
+anisotropies. These measurements will allow for precise constraints on the
+relaxation parameter $\alphaR$ and the sectoral thermodynamics.
+
+
+
+% ========================================================
+% SECTION 9 — CONCLUSION
+% ========================================================
+
+\section{Conclusion}
+
+This Companion has developed a unified treatment of the neutrino and dark
+matter sectors in the Relaxation-Driven Cyclic Cosmology (RDCC). Both
+components arise from the interplay between the global CPT structure, the
+relaxation dynamics, and the inter-sector thermodynamics. The combined
+neutrino–dark-matter sector produces a rich set of cosmological signatures that
+differ from the predictions of the standard $\Lambda$CDM model.
+
+The relaxation-induced mass suppression provides a natural explanation for the
+smallness of neutrino masses and the cold nature of dark matter. The joint
+sectoral thermodynamics and the gravitational coupling between the two sectors
+produce distinctive signatures in the matter power spectrum, lensing potential,
+and CMB anisotropies.
+
+The combined neutrino–dark-matter sector provides one of the most sensitive
+probes of the relaxation parameter $\alphaR$, and future surveys will allow for
+precise constraints on the relaxation dynamics and the sectoral thermodynamics.
+This Companion establishes the unified sectoral matter picture of RDCC and
+provides the foundation for future inference and forecasting analyses.
+
+
+
+% ========================================================
+% REFERENCES
+% ========================================================
+
+\begin{thebibliography}{99}
+
+\bibitem{Flagship}
+M.~Lehmann,
+\textit{RDCC Flagship Paper} (2026).
+
+\bibitem{CompanionIV}
+M.~Lehmann,
+\textit{Companion IV: The Global CPT State and the Mirror Sector in RDCC} (2026).
+
+\bibitem{CompanionXII}
+M.~Lehmann,
+\textit{Companion XII: Sectoral Baryon Asymmetry from Opposite Thermodynamic Arrows in RDCC} (2026).
+
+\bibitem{CompanionXVI}
+M.~Lehmann,
+\textit{Companion XVI: The RDCC Boltzmann Code} (2026).
+
+\bibitem{CompanionXXVI}
+M.~Lehmann,
+\textit{Companion XXVI: Gravitational Lensing in RDCC} (2026).
+
+\bibitem{CompanionLXXXIII}
+M.~Lehmann,
+\textit{Companion LXXXIII: Fisher Forecasts for $\alpha$ Using Topological Transport} (2026).
+
+\end{thebibliography}
+
+\end{document}
+
+
+
