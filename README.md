@@ -11,23 +11,9 @@ RDCC is a complete, open-source theoretical and numerical framework with only on
 - `/Companions_tex/` → All LaTeX source files of the Companions
 - `/Speculative/` → Conceptual and non-predictive extensions
 
-### Quick Start – Core Papers
-
-**PDF versions:**
-- [Flagship Paper](/Core/Relaxation-Driven%20Cyclic%20Cosmology%20RDCC%20Flagship%20Paper.pdf)
-- [Numerical Fits & MCMC](/Core/RDCC%20Numerical%20Fits%20and%20Observational%20Constraints%20(Living%20Document).pdf)
-- [Summary Paper](/Core/SUMMARY%20PAPER.pdf)
-- [RDCC & Euclid Interface Paper](/Core/RDCC_Euclid_Interface_Paper.pdf)
-
-**LaTeX source (.tex):**
-- [Flagship Paper (v48).tex](/Core/RDCC_Flagship_Paper_v48.tex)
-- [Summary Paper (v48).tex](/Core/SUMMARY_PAPER_v48.tex)
-- [Euclid Interface Paper (v48).tex](/Core/Euclid_Interface_Paper_v48.tex)
-- [Numerical Fits Paper (v48).tex](/Core/Numerical_Fits_Paper_v48.tex)
-
 ### Archival Version on Zenodo
 
-The complete RDCC ecosystem is permanently archived on Zenodo:
+The complete RDCC ecosystem is permanently archived on Zenodo (DOI):
 
 - [RDCC Full Framework on Zenodo] https://zenodo.org/records/20582358
 
@@ -39,4 +25,4 @@ This entire repository is licensed under **CC0 1.0 Universal** (Public Domain). 
 **Author:** Michael Lehmann  
 **Goal:** Make the complete RDCC framework openly accessible to the scientific community, AIs and search engines.
 
-If you have questions or would like to collaborate: simply open an Issue or contact me.
+If you have questions or would like to collaborate: simply open an Issue or contact me @mi.lehmann@gmx.de
