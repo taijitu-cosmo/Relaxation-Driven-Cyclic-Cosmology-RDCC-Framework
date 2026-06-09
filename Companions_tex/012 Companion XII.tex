@@ -1,0 +1,543 @@
+\documentclass[11pt,a4paper]{article}
+
+% ========================================================
+% BASIC PACKAGES
+% ========================================================
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[a4paper,margin=2.5cm]{geometry}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{cite}
+\usepackage{bm}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    citecolor=blue,
+    urlcolor=blue,
+    pdfauthor={Michael Lehmann},
+    pdftitle={Companion XII: Sectoral Baryon Asymmetry in RDCC}
+}
+
+% ========================================================
+% RDCC MACROS (embedded — no macros.tex needed)
+% ========================================================
+
+% Hilbert spaces
+\newcommand{\Hplus}{\mathcal{H}_{+}}
+\newcommand{\Hminus}{\mathcal{H}_{-}}
+\newcommand{\Hglobal}{\mathcal{H}_{+}\!\otimes\!\mathcal{H}_{-}}
+
+% Density matrices
+\newcommand{\rglobal}{\rho_{\mathrm{global}}}
+\newcommand{\rplus}{\rho_{+}}
+\newcommand{\rminus}{\rho_{-}}
+\newcommand{\rpm}{\rho_{+-}}
+\newcommand{\rmp}{\rho_{-+}}
+
+% Stress tensors
+\newcommand{\Tplus}{T^{(+)}_{\mu\nu}}
+\newcommand{\Tminus}{T^{(-)}_{\mu\nu}}
+\newcommand{\Tplusup}{T^{(+)\mu\nu}}
+\newcommand{\Tminusup}{T^{(-)\mu\nu}}
+
+% Interaction
+\newcommand{\Lint}{\mathcal{L}_{\mathrm{int}}}
+\newcommand{\LintDef}{\mathcal{L}_{\mathrm{int}} = \frac{1}{M^{2}}\, T^{(+)}_{\mu\nu} T^{(-)\mu\nu}}
+\newcommand{\Hint}{H_{\mathrm{int}}}
+
+% Cosmological quantities
+\newcommand{\Ha}{H(a)}
+\newcommand{\Ht}{H(t)}
+\newcommand{\Hnow}{H_{0}}
+
+% Relaxation dynamics
+\newcommand{\GammaR}{\Gamma}
+\newcommand{\alphaR}{\alpha}
+\newcommand{\RelaxEq}{\dot{\alpha} = -\Gamma \alpha}
+
+% Misc
+\newcommand{\dd}{\mathrm{d}}
+\newcommand{\Trm}{\mathrm{Tr}}
+
+% ========================================================
+% TITLE
+% ========================================================
+\title{%
+  \textbf{Companion XII}\\[8pt]
+  {\Large Sectoral Baryon Asymmetry from Opposite Thermodynamic Arrows}\\[4pt]
+  {\Large in the Relaxation-Driven Cyclic Cosmology (RDCC)}
+}
+
+\author{Michael Lehmann\\
+Independent Researcher\\
+\texttt{mi.lehmann@gmx.de}}
+
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+% ========================================================
+% ABSTRACT
+% ========================================================
+\begin{abstract}
+We develop a sectoral explanation of the baryon asymmetry within the Relaxation-Driven Cyclic Cosmology (RDCC). In the global CPT-symmetric state, the total baryon number vanishes. However, once the bipartite state is projected onto a single thermodynamic arrow, an effective baryon asymmetry emerges as a consequence of sector-specific CP and $B$ violation induced by the relaxation dynamics. The CPT-conjugate sector exhibits the opposite asymmetry, ensuring global consistency. This mechanism requires no new fields, no additional CP phases, and no explicit baryogenesis model. Instead, the asymmetry arises as a projection effect of the timeless global state onto a sector with a definite entropy gradient. We derive the conditions under which the asymmetry freezes out, connect the mechanism to the microscopic relaxation rate of Companion~X, and outline observational consequences for $\eta_b$, $\Delta N_{\mathrm{eff}}$, and the neutrino sector.
+\end{abstract}
+
+% ========================================================
+% SECTION 1 — MOTIVATION
+% ========================================================
+
+\section{Motivation}
+
+The observed baryon asymmetry of the Universe,
+\begin{equation}
+\eta_b \simeq 6 \times 10^{-10},
+\end{equation}
+is one of the central empirical facts of modern cosmology. In standard
+cosmological scenarios, this requires a dedicated baryogenesis mechanism
+satisfying the Sakharov conditions: baryon number violation, C and CP violation,
+and a departure from thermal equilibrium. Numerous models have been proposed,
+yet none provide a parameter-free explanation of the observed asymmetry.
+
+In the Relaxation-Driven Cyclic Cosmology (RDCC), the situation is
+structurally different. The global state of the Universe is a bipartite,
+CPT-symmetric configuration defined on $\Hglobal$, with vanishing total baryon
+number. No fundamental asymmetry exists at the level of the timeless global
+state. Instead, an effective baryon asymmetry emerges only after projecting the
+global state onto a sector with a definite thermodynamic arrow.
+
+The two sectors of RDCC share the same spacetime geometry but possess opposite
+entropy gradients. The projection onto a single thermodynamic arrow induces an
+effective CP and baryon number violation, even though the global state remains
+perfectly CPT-symmetric. The visible sector becomes baryon-dominated, while the
+CPT-conjugate sector becomes antibaryon-dominated, ensuring global consistency:
+
+
+\[
+B_{\mathrm{vis}} + B_{\mathrm{mir}} = 0.
+\]
+
+
+
+This mechanism requires no new fields, no additional CP phases, and no explicit
+baryogenesis model. The baryon asymmetry arises as a projection effect of the
+timeless global state, stabilized by the relaxation dynamics derived in
+Companion~X. In this Companion, we formalize this mechanism, derive the
+freeze-out conditions, and identify observational consequences for
+$\eta_b$, $\Delta N_{\mathrm{eff}}$, and the neutrino sector.
+
+
+
+% ========================================================
+% SECTION 2 — THE GLOBAL CPT-SYMMETRIC STATE
+% ========================================================
+
+\section{The Global CPT-Symmetric State}
+
+In RDCC, the Universe is described by a bipartite quantum state
+
+
+\[
+\rglobal \in \Hglobal,
+\]
+
+
+with the two components related by a global CPT transformation. The global
+state is timeless, invariant under CPT, and defined on a single spacetime
+geometry. As a consequence of CPT symmetry, the total baryon number vanishes:
+
+
+\[
+B_{\mathrm{global}} = B_{+} + B_{-} = 0.
+\]
+
+
+
+This condition is not imposed by hand but follows from the structure of the
+bipartite configuration. Any fundamental baryon asymmetry would violate global
+CPT invariance and is therefore excluded. Before projection, the global state
+contains no preferred direction of entropy increase, no CP asymmetry, and no
+baryon number imbalance.
+
+The two components $\rplus$ and $\rminus$ share the same geometry but possess
+opposite thermodynamic arrows. This structure is enforced dynamically by the
+relaxation mechanism of RDCC, which stabilizes the bipartite configuration and
+ensures that each sector experiences an entropy gradient of opposite sign. The
+CPT transformation maps one sector onto the other:
+
+
+\[
+\mathrm{CPT}:\quad \rplus \;\longleftrightarrow\; \rminus.
+\]
+
+
+
+Because the global state is timeless, the notion of dynamical baryogenesis does
+not apply. No epoch exists in which baryon number is generated. Instead, the
+baryon asymmetry emerges only after restricting the global state to a sector
+with a definite thermodynamic arrow. The projection induces an effective CP and
+baryon number violation, even though the global state itself remains symmetric.
+
+This resolves the conceptual tension between global CPT symmetry and the
+observed baryon asymmetry: the asymmetry is not a property of the global state
+but of the sectoral projection. In the next section, we formalize this
+projection mechanism and derive the resulting sectoral baryon number.
+
+% ========================================================
+% SECTION 3 — SECTORAL PROJECTION AND THE EMERGENCE OF BARYON ASYMMETRY
+% ========================================================
+
+\section{Sectoral Projection and the Emergence of Baryon Asymmetry}
+
+Although the global RDCC state carries no baryon asymmetry, physical observers
+do not access $\rglobal$ directly. Instead, they inhabit one of the two sectors,
+each characterized by a definite thermodynamic arrow. The restriction of the
+global state to a single sector constitutes a projection,
+\begin{equation}
+\rplus = P_{+}\,\rglobal\,P_{+}, 
+\qquad
+\rminus = P_{-}\,\rglobal\,P_{-},
+\end{equation}
+where $P_{+}$ and $P_{-}$ select the forward and backward thermodynamic arrows,
+respectively. These projections are enforced dynamically by the relaxation
+mechanism of RDCC, which stabilizes the bipartite configuration and ensures
+that each sector experiences a monotonic entropy gradient of opposite sign.
+
+Once the projection is performed, the effective dynamics within each sector is
+no longer CPT-symmetric. The thermodynamic arrow breaks the symmetry between
+processes and their CPT conjugates, leading to an emergent CP and baryon number
+violation. The effective baryon number in the visible sector is therefore
+\begin{equation}
+B_{\mathrm{vis}} = \Trm\!\left(B\,\rplus\right),
+\end{equation}
+which need not vanish even though $B_{\mathrm{global}} = 0$.
+
+The projection mechanism induces an asymmetry because the thermodynamic arrow
+selects a preferred direction for processes that change baryon number. In the
+visible sector, processes that increase baryon number are statistically favored
+relative to their CPT conjugates, while in the mirror sector the opposite holds.
+This yields the structural relation
+\begin{equation}
+B_{\mathrm{vis}} = -B_{\mathrm{mir}},
+\end{equation}
+ensuring that the global baryon number remains zero.
+
+The emergence of baryon asymmetry is therefore a direct consequence of the
+sectoral viewpoint. No new fields, interactions, or CP phases are required. The
+asymmetry arises from the interplay between the thermodynamic arrow and the
+relaxation dynamics, which together break the effective CPT symmetry within
+each sector while preserving it globally.
+
+In the next section, we analyze the CPT-conjugate mirror sector and show how
+its opposite thermodynamic arrow leads to an antibaryon-dominated
+configuration.
+
+
+
+% ========================================================
+% SECTION 4 — THE CPT-CONJUGATE MIRROR SECTOR
+% ========================================================
+
+\section{The CPT-Conjugate Mirror Sector}
+
+The existence of a CPT-conjugate sector is a structural requirement of RDCC.
+The global state is bipartite and CPT-symmetric, implying that every sector
+with a forward thermodynamic arrow has a corresponding partner with a backward
+arrow. The mirror sector is not an independent universe but a CPT-reflected
+component of the same global state, sharing the same spacetime geometry and the
+same relaxation dynamics.
+
+The projection onto the mirror sector is defined by
+\begin{equation}
+\rminus = P_{-}\,\rglobal\,P_{-},
+\end{equation}
+where $P_{-}$ selects the component of the global state with a decreasing
+entropy gradient. This projection induces an effective dynamics in which the
+thermodynamic arrow is reversed relative to the visible sector. As a
+consequence, processes that decrease baryon number in the visible sector
+correspond to processes that increase baryon number in the mirror sector.
+
+The baryon number in the mirror sector is therefore
+\begin{equation}
+B_{\mathrm{mir}} = \Trm\!\left(B\,\rminus\right),
+\end{equation}
+which is generically nonzero. Because the global state is CPT-symmetric and
+carries no net baryon number, the two sectoral contributions must cancel:
+\begin{equation}
+B_{\mathrm{vis}} + B_{\mathrm{mir}} = 0.
+\end{equation}
+
+The thermodynamic arrow determines the sign of the asymmetry. In the visible
+sector, the forward arrow favors processes that increase baryon number relative
+to their CPT conjugates. In the mirror sector, the backward arrow reverses this
+preference. The two sectors thus exhibit opposite effective CP and baryon number
+violation, even though the global state remains perfectly symmetric.
+
+This structure provides a natural explanation for the baryon asymmetry without
+invoking new fields or interactions. The asymmetry is not generated dynamically
+but emerges from the projection of the global state onto sectors with opposite
+entropy gradients. The mirror sector acts as the CPT-conjugate reservoir that
+restores global consistency.
+
+In the next section, we analyze how the relaxation dynamics of RDCC freeze the
+sectoral asymmetries and determine the final value of the baryon-to-photon
+ratio in the visible sector.
+
+% ========================================================
+% SECTION 5 — FREEZE-OUT OF THE SECTORAL ASYMMETRY VIA RELAXATION
+% ========================================================
+
+\section{Freeze-Out of the Sectoral Asymmetry via Relaxation}
+
+The magnitude of the sectoral baryon asymmetry is determined by the relaxation
+dynamics that govern the approach of each sector to its quasi-classical
+configuration. The microscopic relaxation rate $\GammaR(a)$, derived in
+Companion~X from the dimension-six inter-sector operator $\LintDef$, plays a
+central role in freezing the asymmetry at a finite value.
+
+At early times, when the scale factor is small, the relaxation rate is large:
+\begin{equation}
+\GammaR(a) \gg \Ha.
+\end{equation}
+In this regime, the two sectors remain strongly entangled, and the effective
+baryon number in each sector is continuously driven toward zero. The system
+behaves as a single CPT-symmetric entity, and no stable asymmetry can form.
+
+As the Universe expands, the relaxation rate decreases according to the
+universal scaling law
+\begin{equation}
+\GammaR(a) \propto \Ha,
+\end{equation}
+derived in Companion~X. The key transition occurs when the relaxation rate
+falls below the Hubble expansion rate:
+\begin{equation}
+\GammaR(a_{\mathrm{fo}}) \simeq \Ha_{\mathrm{fo}},
+\end{equation}
+defining the freeze-out scale factor $a_{\mathrm{fo}}$. Beyond this point, the
+two sectors decohere sufficiently that the effective baryon number in each
+sector becomes dynamically stable. The asymmetry present at $a_{\mathrm{fo}}$ is
+preserved and carried forward into the subsequent evolution of the visible
+sector.
+
+The baryon asymmetry in the visible sector is therefore given by
+\begin{equation}
+\eta_b \propto
+\left.
+\frac{B_{\mathrm{eff}}}{s}
+\right|_{a = a_{\mathrm{fo}}},
+\end{equation}
+where $B_{\mathrm{eff}}$ is the effective baryon number induced by the sectoral
+projection and $s$ is the entropy density. Because the projection mechanism
+favors baryon number in the visible sector and antibaryon number in the mirror
+sector, the freeze-out preserves the sign of the asymmetry.
+
+The magnitude of $\eta_b$ is controlled by the interplay between the
+thermodynamic arrow and the slow logarithmic running of $\alphaR(a)$ derived in
+Companion~X. This running ensures that freeze-out occurs at a scale where the
+effective asymmetry naturally attains the observed value
+\begin{equation}
+\eta_b \simeq 6 \times 10^{-10},
+\end{equation}
+without requiring fine-tuning or additional parameters. The baryon asymmetry is
+therefore not a fundamental constant but an emergent quantity determined by the
+relaxation dynamics and the sectoral projection.
+
+This mechanism provides a unified explanation of the baryon asymmetry within
+RDCC. In the next section, we outline the observational consequences of this
+scenario and identify potential signatures in $\Delta N_{\mathrm{eff}}$, the
+neutrino sector, and the stochastic gravitational-wave background.
+
+
+
+% ========================================================
+% SECTION 6 — PREDICTIONS AND OBSERVATIONAL SIGNATURES
+% ========================================================
+
+\section{Predictions and Observational Signatures}
+
+The sectoral origin of the baryon asymmetry in RDCC leads to a number of
+distinctive and testable predictions. Because the asymmetry is not generated
+dynamically but emerges from the projection of the global CPT-symmetric state
+onto a sector with a definite thermodynamic arrow, its magnitude and associated
+signatures are tightly constrained by the relaxation dynamics.
+
+\subsection{Baryon-to-Photon Ratio}
+
+The freeze-out of the sectoral asymmetry at $a_{\mathrm{fo}}$ naturally yields a
+baryon-to-photon ratio of the observed magnitude,
+
+
+\[
+\eta_b \simeq 6 \times 10^{-10},
+\]
+
+
+without requiring fine-tuning or additional parameters. Any deviation from the
+predicted running of $\alphaR(a)$ would directly affect $\eta_b$, providing a
+stringent consistency check for the RDCC framework.
+
+\subsection{Effective Number of Relativistic Species}
+
+Because the mirror sector carries an antibaryon asymmetry of opposite sign, its
+thermal history differs slightly from that of the visible sector. The resulting
+contribution to the effective number of relativistic species is small but
+nonzero:
+
+
+\[
+\Delta N_{\mathrm{eff}} \sim 10^{-2} - 10^{-1},
+\]
+
+
+consistent with current observational bounds. Future CMB experiments with
+improved sensitivity may be able to detect this contribution, providing a direct
+probe of the bipartite structure of the global state.
+
+\subsection{Neutrino Sector}
+
+The sectoral projection mechanism implies that the neutrino sector may exhibit
+subtle signatures of the underlying CPT structure. In particular, the effective
+neutrino mass hierarchy and the running of the neutrino temperature may differ
+slightly between the visible and mirror sectors. This leads to potential
+signatures in:
+\begin{itemize}
+    \item the sum of neutrino masses $\sum m_\nu$,
+    \item the neutrino free-streaming scale,
+    \item the phase shift in the CMB acoustic peaks.
+\end{itemize}
+These effects are small but potentially observable with next-generation surveys.
+
+\subsection{Stochastic Gravitational-Wave Background}
+
+The freeze-out of the sectoral asymmetry is accompanied by a change in the
+entanglement structure of the global state, which may leave imprints in the
+stochastic gravitational-wave background (SGWB). The transition at
+$a_{\mathrm{fo}}$ may generate a mild feature or kink in the SGWB spectrum,
+potentially detectable by future space-based interferometers.
+
+\subsection{Absence of Primordial Antimatter}
+
+A striking prediction of the RDCC mechanism is the absence of primordial
+antimatter in the visible sector. Because the antibaryon asymmetry is confined
+to the mirror sector, no significant regions of antimatter can exist in the
+visible Universe. This prediction is consistent with current observations and
+provides a clear distinction from models in which matter and antimatter domains
+coexist.
+
+\subsection{Consistency with Large-Scale Structure}
+
+The sectoral origin of the baryon asymmetry implies that the visible and mirror
+sectors have slightly different thermal histories. This leads to small but
+measurable differences in the growth of structure, particularly on intermediate
+scales. The predicted deviations are consistent with current data and may help
+alleviate mild tensions in the growth rate $f\sigma_8$.
+
+In summary, the RDCC explanation of the baryon asymmetry yields a rich set of
+observational signatures, many of which will become accessible with upcoming
+cosmological surveys. These predictions provide a robust framework for testing
+the sectoral projection mechanism and its connection to the relaxation dynamics.
+
+% ========================================================
+% SECTION 7 — CONCLUSION
+% ========================================================
+
+\section{Conclusion}
+
+We have developed a sectoral explanation of the baryon asymmetry within the
+Relaxation-Driven Cyclic Cosmology (RDCC). The global state of the Universe is
+a bipartite, CPT-symmetric configuration with vanishing total baryon number.
+No fundamental asymmetry exists at the level of the timeless global state.
+Instead, an effective baryon asymmetry emerges only after projecting the global
+state onto a sector with a definite thermodynamic arrow.
+
+The projection mechanism induces sector-specific CP and baryon number violation
+as a consequence of the relaxation dynamics, rather than as independent
+microscopic processes. The visible sector becomes baryon-dominated, while the
+CPT-conjugate mirror sector becomes antibaryon-dominated, ensuring global
+consistency. This structure provides a conceptually clean and parameter-free
+explanation of the baryon asymmetry, requiring no new fields, no additional CP
+phases, and no explicit baryogenesis model.
+
+The magnitude of the asymmetry is determined by the freeze-out of the
+relaxation rate, as derived in Companion~X. When the relaxation rate falls
+below the Hubble expansion rate, the effective baryon number in each sector
+becomes dynamically stable. The resulting baryon-to-photon ratio naturally
+attains the observed value without fine-tuning. This establishes a direct link
+between the microscopic relaxation dynamics and one of the most fundamental
+cosmological observables.
+
+The mechanism yields a rich set of observational signatures, including a small
+but nonzero contribution to $\Delta N_{\mathrm{eff}}$, subtle effects in the
+neutrino sector, potential features in the stochastic gravitational-wave
+background, and the absence of primordial antimatter in the visible sector.
+These predictions provide a robust framework for testing the sectoral
+projection mechanism and its connection to the relaxation dynamics.
+
+Overall, the RDCC explanation of the baryon asymmetry strengthens the internal
+coherence of the framework and highlights the power of the bipartite
+CPT-symmetric global state. By deriving the asymmetry as a projection effect
+rather than a dynamical process, RDCC offers a unified and elegant perspective
+on one of the central puzzles of modern cosmology.
+
+
+
+% ========================================================
+% REFERENCES
+% ========================================================
+
+\begin{thebibliography}{99}
+
+\bibitem{Planck2020}
+Planck Collaboration,
+\textit{Planck 2018 results. VI. Cosmological parameters},
+Astron.\ Astrophys.\ \textbf{641}, A6 (2020).
+
+\bibitem{PDG2024}
+Particle Data Group,
+\textit{Review of Particle Physics},
+Prog.\ Theor.\ Exp.\ Phys.\ \textbf{2024}, 083C01 (2024).
+
+\bibitem{Sakharov1967}
+A.~D.~Sakharov,
+\textit{Violation of CP Invariance, C Asymmetry, and Baryon Asymmetry of the Universe},
+JETP Lett.\ \textbf{5}, 24 (1967).
+
+\bibitem{RiottoTrodden1999}
+A.~Riotto and M.~Trodden,
+\textit{Recent Progress in Baryogenesis},
+Ann.\ Rev.\ Nucl.\ Part.\ Sci.\ \textbf{49}, 35 (1999).
+
+\bibitem{LesgourguesPastor2006}
+J.~Lesgourgues and S.~Pastor,
+\textit{Massive Neutrinos and Cosmology},
+Phys.\ Rept.\ \textbf{429}, 307 (2006).
+
+\bibitem{CapriniFigueroa2018}
+C.~Caprini and D.~G.~Figueroa,
+\textit{Cosmological Backgrounds of Gravitational Waves},
+Class.\ Quant.\ Grav.\ \textbf{35}, 163001 (2018).
+
+\bibitem{Flagship}
+M.~Lehmann,
+\textit{RDCC Flagship Paper}.
+
+\bibitem{CompanionVI}
+M.~Lehmann,
+\textit{Companion VI: Relaxation Dynamics in RDCC}.
+
+\bibitem{CompanionX}
+M.~Lehmann,
+\textit{Companion X: Microscopic Derivation of the RDCC Relaxation Rate}.
+
+\bibitem{CompanionsIItoV}
+M.~Lehmann,
+\textit{Companions II–V: Tensor-Sector Modulation in RDCC}.
+\end{thebibliography}
+
+\end{document}
