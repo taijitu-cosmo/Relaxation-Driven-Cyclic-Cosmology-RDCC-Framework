@@ -20,16 +20,16 @@ RDCC is a complete, open-source theoretical and numerical framework with only on
 - [RDCC & Euclid Interface Paper](/Core/RDCC_Euclid_Interface_Paper.pdf)
 
 **LaTeX source (.tex):**
-- [Flagship Paper (v45).tex](/Core/RDCC_Flagship_Paper_v45.tex)
-- [Summary Paper (v45).tex](/Core/SUMMARY_PAPER_v45.tex)
-- [Euclid Interface Paper (v45).tex](/Core/Euclid_Interface_Paper_v45.tex)
-- [Numerical Fits Paper (v45).tex](/Core/Numerical_Fits_Paper_v45.tex)
+- [Flagship Paper (v48).tex](/Core/RDCC_Flagship_Paper_v48.tex)
+- [Summary Paper (v48).tex](/Core/SUMMARY_PAPER_v48.tex)
+- [Euclid Interface Paper (v48).tex](/Core/Euclid_Interface_Paper_v48.tex)
+- [Numerical Fits Paper (v48).tex](/Core/Numerical_Fits_Paper_v48.tex)
 
 ### Archival Version on Zenodo
 
 The complete RDCC ecosystem is permanently archived on Zenodo:
 
-- [RDCC Full Framework on Zenodo](https://zenodo.org/records/19880564)
+- [RDCC Full Framework on Zenodo] https://zenodo.org/records/20582358
 
 ### License
 This entire repository is licensed under **CC0 1.0 Universal** (Public Domain). Everyone is free to use, cite, modify and share the material.
