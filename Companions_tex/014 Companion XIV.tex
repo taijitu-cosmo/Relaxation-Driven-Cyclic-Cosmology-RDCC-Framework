@@ -1,0 +1,594 @@
+\documentclass[11pt,a4paper]{article}
+
+% ---------------------------------------------------------
+% PACKAGES
+% ---------------------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{bm}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{authblk}
+\usepackage{geometry}
+\usepackage{cite}
+\usepackage{physics}
+\usepackage{tensor}
+\usepackage{enumitem}
+
+\geometry{margin=1in}
+
+% ---------------------------------------------------------
+% TITLE
+% ---------------------------------------------------------
+\title{\textbf{Companion XIV: Primordial Black Holes as CPT-Sector Objects in the Relaxation-Driven Cyclic Cosmology (RDCC)}}
+
+\author[1]{Michael Lehmann}
+\affil[1]{\small Independent Researcher, Relaxation-Driven Cyclic Cosmology (RDCC) Framework\\
+\texttt{mi.lehmann@gmx.de}}
+
+\date{\small \today}
+
+% ---------------------------------------------------------
+% DOCUMENT START
+% ---------------------------------------------------------
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Primordial black holes (PBHs) provide a uniquely sensitive probe of early-Universe physics, constraining the thermal history, the growth of perturbations, and the collapse thresholds during radiation domination. In the Relaxation-Driven Cyclic Cosmology (RDCC), the bipartite CPT-symmetric global state, the sectoral temperature asymmetry, and the universal relaxation mechanism jointly reshape the conditions for PBH formation. In this Companion we develop a sectoral interpretation of PBHs within RDCC: PBHs arise predominantly in the CPT-conjugate (mirror) sector, where the lower temperature, modified relaxation history, and altered perturbation dynamics naturally enhance PBH formation. The visible sector, by contrast, exhibits a strong suppression of PBHs due to relaxation-induced damping and an elevated effective collapse threshold. We derive the CPT-sector PBH formation mechanism, compute the resulting mass function, and identify the observational signatures associated with this sectoral asymmetry. This Companion establishes PBHs as a natural and robust component of the CPT sector and provides a new observational window into the bipartite structure and relaxation-driven dynamics of RDCC.
+\end{abstract}
+
+% ========================================================
+% 1 INTRODUCTION
+% ========================================================
+
+\section{Introduction}
+
+Primordial black holes (PBHs) provide a uniquely sensitive probe of the earliest stages of cosmic
+evolution. Their formation depends on the thermal history, the growth of primordial
+perturbations, and the collapse thresholds during radiation domination. In standard cosmology,
+PBHs require either enhanced primordial fluctuations, non-Gaussian features, or exotic early-time
+dynamics to form in appreciable abundance.
+
+In the Relaxation-Driven Cyclic Cosmology (RDCC), the situation is fundamentally different.
+The bipartite CPT-symmetric global state, the sectoral temperature asymmetry, and the
+relaxation-induced modification of perturbation dynamics jointly reshape the conditions for PBH
+formation. The relaxation mechanism suppresses the growth of super-horizon perturbations in
+the visible sector, raising the effective collapse threshold and strongly inhibiting PBH formation.
+At the same time, the CPT-conjugate sector evolves with a lower temperature, reduced
+relaxation-induced damping, and a larger horizon mass at a given scale factor.
+
+These structural differences lead to a robust sectoral asymmetry: PBHs form naturally and
+efficiently in the CPT-conjugate sector, while their formation in the visible sector is exponentially
+suppressed. This interpretation arises directly from the bipartite global state and the universal
+relaxation mechanism introduced in Companion~X, and it is consistent with the sectoral
+thermodynamics developed in Companion~XIII.
+
+The goal of this Companion is to develop the PBH sector of RDCC in a unified and
+model-independent manner. Section~2 introduces PBHs as CPT-sector objects and explains the
+suppression mechanism in the visible sector. Section~3 derives the PBH formation mechanism in
+the CPT sector. Section~4 develops the modified collapse threshold and the resulting PBH mass
+function. Section~5 analyzes the thermodynamic and dynamical properties of CPT-sector PBHs.
+Section~6 presents the observational signatures, and Section~7 provides forecasts for future
+surveys.
+
+Together, these results establish PBHs as a natural and robust component of the CPT sector
+and provide a new observational window into the bipartite structure and relaxation-driven
+dynamics of RDCC.
+
+% ========================================================
+% 2 PBHs AS CPT-SECTOR OBJECTS
+% ========================================================
+
+\section{PBHs as CPT-Sector Objects}
+
+The Relaxation-Driven Cyclic Cosmology (RDCC) is built on a bipartite, CPT-symmetric global
+state in which two thermodynamically distinct sectors evolve on the same spacetime geometry.
+A visible-sector observer corresponds to a projection onto the sector with a forward
+thermodynamic arrow, while the CPT-conjugate sector evolves with decreasing entropy. The two
+sectors interact only through gravity and the relaxation dynamics.
+
+A key structural result of Companion~X is the persistent temperature asymmetry between the
+sectors,
+\begin{equation}
+\frac{T_{B}}{T_{A}} \simeq 0.5,
+\end{equation}
+which remains stable throughout the early Universe. This temperature asymmetry has direct
+implications for PBH formation, as both the collapse threshold and the horizon mass depend
+sensitively on the thermal history.
+
+PBH formation requires large density fluctuations to exceed a critical collapse threshold at
+horizon re-entry. In the visible sector, the relaxation-induced damping of super-horizon
+perturbations increases the effective collapse threshold, suppressing PBH formation. In the
+CPT-conjugate sector, the lower temperature and reduced relaxation-induced damping lower the
+collapse threshold and increase the horizon mass, enhancing PBH formation.
+
+These structural differences lead to three robust conclusions:
+
+\begin{enumerate}[label=(\alph*)]
+\item \textbf{PBHs are strongly suppressed in the visible sector.}  
+Relaxation-induced damping raises the effective collapse threshold, preventing overdensities
+from reaching the required amplitude for collapse.
+
+\item \textbf{PBHs form naturally in the CPT-conjugate sector.}  
+The colder temperature and reduced damping lower the collapse threshold and increase the
+horizon mass, making PBH formation efficient.
+
+\item \textbf{PBHs are inherently CPT-sector objects in RDCC.}  
+Their formation mechanism, abundance, and mass spectrum follow directly from the
+thermodynamic and relaxation properties of the CPT sector.
+\end{enumerate}
+
+This interpretation resolves several conceptual tensions. It explains the absence of PBHs in the
+visible sector without fine-tuning, provides a natural origin for PBHs in the RDCC framework,
+and connects PBH physics directly to the bipartite structure of the global state.
+
+In the next section, we derive the CPT-sector PBH formation mechanism and quantify the
+degree of suppression in the visible sector.
+
+% ========================================================
+% 3 CPT-SECTOR PBH FORMATION MECHANISM
+% ========================================================
+
+\section{CPT-Sector PBH Formation Mechanism}
+
+Primordial black holes (PBHs) form when large density fluctuations re-enter the horizon during
+radiation domination and exceed a critical collapse threshold. In standard cosmology, this
+threshold is typically of order
+\begin{equation}
+\delta_{\mathrm{std}} \sim 0.4 - 0.5,
+\end{equation}
+and PBH formation requires either enhanced primordial fluctuations or non-Gaussian features.
+
+In the Relaxation-Driven Cyclic Cosmology (RDCC), the early-Universe dynamics are modified
+by the universal relaxation mechanism introduced in Companion~X. The relaxation rate
+\(\Gamma(a) = \alpha(a) H(a)\) alters the growth of super-horizon perturbations and increases the
+effective collapse threshold in the visible sector. As a result, PBH formation in the visible sector
+is strongly suppressed.
+
+In the CPT-conjugate sector, the situation is fundamentally different. The lower temperature,
+reduced relaxation-induced damping, and altered perturbation dynamics naturally enhance PBH
+formation. Three structural ingredients govern the PBH formation mechanism in the CPT sector:
+
+\begin{enumerate}[label=(\alph*)]
+
+\item \textbf{Reduced relaxation-induced damping.}  
+The relaxation coefficient satisfies
+\begin{equation}
+\alpha_{B}(a) < \alpha_{A}(a),
+\end{equation}
+due to the lower temperature of sector~B. This reduces the damping of super-horizon
+perturbations and lowers the effective collapse threshold.
+
+\item \textbf{Larger horizon mass.}  
+The colder temperature implies a slower expansion rate and therefore a larger horizon mass
+at a given scale factor:
+\begin{equation}
+M_{H}^{(B)}(a) \simeq 4\, M_{H}^{(A)}(a).
+\end{equation}
+This shifts the PBH mass spectrum in sector~B toward higher masses.
+
+\item \textbf{Lower collapse threshold.}  
+The reduced pressure in the colder sector lowers the collapse threshold:
+\begin{equation}
+\delta_{c}^{(B)} < \delta_{c}^{(A)}.
+\end{equation}
+This exponentially enhances PBH formation in sector~B.
+\end{enumerate}
+
+Combining these effects yields a natural and robust PBH formation mechanism in the CPT
+sector. PBHs arise as a direct consequence of the bipartite global state and the relaxation
+dynamics, without requiring enhanced primordial fluctuations or exotic early-Universe physics.
+
+In contrast, the visible sector experiences a strong suppression of PBH formation due to the
+elevated collapse threshold and reduced horizon mass. This sectoral asymmetry is a distinctive
+and testable prediction of RDCC and forms the basis for the modified collapse threshold
+developed in Section~4.
+
+% ========================================================
+% 4 MODIFIED COLLAPSE THRESHOLD IN RDCC
+% ========================================================
+
+\section{Modified Collapse Threshold in RDCC}
+
+Primordial black holes form when large density fluctuations re-enter the horizon during
+radiation domination and exceed a critical collapse threshold. In standard cosmology, this
+threshold is of order
+\begin{equation}
+\delta_{\mathrm{std}} \sim 0.4 - 0.5,
+\end{equation}
+and PBH formation requires either enhanced primordial fluctuations or non-Gaussian features.
+
+In the Relaxation-Driven Cyclic Cosmology (RDCC), the early-Universe dynamics are modified
+by the universal relaxation mechanism introduced in Companion~X. The relaxation rate
+\(\Gamma(a) = \alpha(a) H(a)\) alters the growth of super-horizon perturbations and increases the
+effective collapse threshold in the visible sector. This modification arises from the additional
+damping term in the perturbation equation of motion.
+
+% --------------------------------------------------------
+% 4.1 Relaxation-Induced Damping
+% --------------------------------------------------------
+
+\subsection{Relaxation-Induced Damping}
+
+The evolution of super-horizon perturbations in RDCC follows the modified equation
+\begin{equation}
+\ddot{\delta} + (2H + \Gamma)\dot{\delta} - 2H^{2}\delta = 0,
+\end{equation}
+where the additional damping term \(\Gamma(a)\) arises from the inter-sector relaxation dynamics.
+Using the relation
+\begin{equation}
+\Gamma(a) = \alpha(a) H(a),
+\end{equation}
+the equation becomes
+\begin{equation}
+\ddot{\delta} + (2 + \alpha)H\dot{\delta} - 2H^{2}\delta = 0.
+\end{equation}
+
+In the relaxation-dominated regime, \(\Gamma \sim \alpha H\), the growth of \(\delta\) is suppressed by a
+factor that can be parametrized as an effective enhancement of the collapse threshold. Solving
+the equation yields the scaling
+\begin{equation}
+\delta(a) \propto a^{-\alpha/2},
+\end{equation}
+implying that the initial amplitude must be larger by a factor \(a^{\alpha/2}\) to reach the standard
+collapse threshold at horizon re-entry.
+
+% --------------------------------------------------------
+% 4.2 Relaxation-Corrected Collapse Threshold
+% --------------------------------------------------------
+
+\subsection{Relaxation-Corrected Collapse Threshold}
+
+This motivates the parametrization
+\begin{equation}
+\delta_{c}^{(A/B)}(a) = \delta_{\mathrm{std}}
+\left[ 1 + \beta\, \alpha_{A/B}(a) \right],
+\end{equation}
+where \(\beta = \mathcal{O}(1)\) captures the dependence on the perturbation profile. Because the
+CPT-conjugate sector is colder, the relaxation coefficient satisfies
+\begin{equation}
+\alpha_{B}(a) < \alpha_{A}(a),
+\end{equation}
+and therefore
+\begin{equation}
+\delta_{c}^{(B)} < \delta_{c}^{(A)}.
+\end{equation}
+
+% --------------------------------------------------------
+% 4.3 Exponential Sensitivity of PBH Formation
+% --------------------------------------------------------
+
+\subsection{Exponential Sensitivity of PBH Formation}
+
+PBH formation is exponentially sensitive to the collapse threshold. Writing the PBH mass
+fraction as
+\begin{equation}
+\beta_{\mathrm{PBH}}^{(A/B)}(M)
+\propto
+\exp\!\left[
+-\frac{\delta_{c}^{2\,(A/B)}}{2\sigma^{2}(M)}
+\right],
+\end{equation}
+makes clear that even a small relative change
+\begin{equation}
+\frac{\Delta \delta_{c}}{\delta_{c}}
+\sim
+\beta\, \alpha_{A/B}(a),
+\end{equation}
+induces an exponentially large difference in \(\beta_{\mathrm{PBH}}\).
+
+This is the origin of the strong sectoral PBH asymmetry in RDCC:
+\begin{equation}
+\beta_{\mathrm{PBH}}^{(B)} \gg \beta_{\mathrm{PBH}}^{(A)}.
+\end{equation}
+
+The visible sector is exponentially suppressed, while the CPT sector naturally forms PBHs.
+This sectoral asymmetry is a direct and testable prediction of the RDCC framework and forms
+the basis for the PBH mass spectrum developed in Section~5.
+
+% ========================================================
+% 5 THERMODYNAMICS AND DYNAMICS OF CPT-SECTOR PBHs
+% ========================================================
+
+\section{Thermodynamics and Dynamics of CPT-Sector PBHs}
+
+PBHs formed in the CPT-conjugate sector inherit the thermodynamic and dynamical properties
+of that sector. Because the CPT sector evolves with a lower temperature, reduced relaxation
+coefficient, and modified perturbation dynamics, the resulting PBHs differ systematically from
+those that would form in the visible sector. Three features are particularly important.
+
+% --------------------------------------------------------
+% 5.1 Temperature Dependence
+% --------------------------------------------------------
+
+\subsection{Temperature Dependence}
+
+The colder temperature of sector~B implies:
+
+\begin{itemize}
+\item a slower expansion rate,
+\item a larger horizon mass at a given scale factor,
+\item reduced pressure support,
+\item a lower collapse threshold.
+\end{itemize}
+
+These effects combine to enhance PBH formation relative to the visible sector. The larger
+horizon mass directly shifts the PBH mass spectrum toward higher masses, while the reduced
+pressure support lowers the threshold for collapse.
+
+% --------------------------------------------------------
+% 5.2 Relaxation History
+% --------------------------------------------------------
+
+\subsection{Relaxation History}
+
+The relaxation coefficient satisfies
+\begin{equation}
+\alpha_{B}(a) < \alpha_{A}(a),
+\end{equation}
+implying reduced damping of super-horizon perturbations in sector~B. This allows overdensities
+to grow more efficiently prior to horizon re-entry. The relaxation mechanism therefore plays a
+dual role:
+
+\begin{enumerate}[label=(\alph*)]
+\item it suppresses PBH formation in the visible sector by increasing the effective collapse threshold,
+\item it enhances PBH formation in the CPT sector by reducing damping and lowering the threshold.
+\end{enumerate}
+
+This sectoral asymmetry is a direct consequence of the bipartite global state and the universal
+relaxation dynamics.
+
+% --------------------------------------------------------
+% 5.3 Mass Spectrum and Abundance
+% --------------------------------------------------------
+
+\subsection{Mass Spectrum and Abundance}
+
+The PBH mass spectrum in sector~B is shifted toward higher masses due to the larger horizon
+mass:
+\begin{equation}
+M_{\mathrm{PBH}}^{(B)} \simeq 4\, M_{\mathrm{PBH}}^{(A)}.
+\end{equation}
+
+The abundance is exponentially enhanced:
+\begin{equation}
+\beta_{\mathrm{PBH}}^{(B)}
+\propto
+\exp\!\left[
+-\frac{\delta_{c}^{2\,(B)}}{2\sigma^{2}}
+\right],
+\qquad
+\delta_{c}^{(B)} < \delta_{c}^{(A)}.
+\end{equation}
+
+Together, these features establish PBHs as natural CPT-sector objects in RDCC, arising from
+the interplay between relaxation dynamics, sectoral thermodynamics, and the bipartite global
+state.
+
+% ========================================================
+% 6 OBSERVATIONAL SIGNATURES
+% ========================================================
+
+\section{Observational Signatures}
+
+The sectoral PBH asymmetry predicted by the Relaxation-Driven Cyclic Cosmology (RDCC)
+leads to a number of distinctive observational signatures. These signatures arise from the
+suppression of PBHs in the visible sector, the enhanced PBH abundance in the CPT-conjugate
+sector, and the shift of the PBH mass spectrum toward higher masses in sector~B. Together,
+they provide a powerful observational handle on the relaxation-driven dynamics that define the
+RDCC framework.
+
+% --------------------------------------------------------
+% 6.1 Suppressed PBH Abundance in the Visible Sector
+% --------------------------------------------------------
+
+\subsection{Suppressed PBH Abundance in the Visible Sector}
+
+The relaxation-induced enhancement of the collapse threshold in sector~A,
+\begin{equation}
+\delta_{c}^{(A)} = \delta_{\mathrm{std}} \left[ 1 + \beta\, \alpha_{A}(a) \right],
+\end{equation}
+leads to an exponential suppression of PBH formation. This prediction is consistent with
+microlensing, CMB, and SGWB constraints, all of which show no evidence for a significant PBH
+population in the visible sector.
+
+% --------------------------------------------------------
+% 6.2 Enhanced PBH Abundance in the CPT Sector
+% --------------------------------------------------------
+
+\subsection{Enhanced PBH Abundance in the CPT Sector}
+
+Because \(\alpha_{B}(a) < \alpha_{A}(a)\), the collapse threshold in sector~B is lower,
+\begin{equation}
+\delta_{c}^{(B)} < \delta_{c}^{(A)},
+\end{equation}
+leading to an exponentially larger PBH abundance. These PBHs are not directly observable, but
+their existence is a robust prediction of the bipartite global state and the relaxation dynamics.
+
+% --------------------------------------------------------
+% 6.3 Sectoral Mass Asymmetry
+% --------------------------------------------------------
+
+\subsection{Sectoral Mass Asymmetry}
+
+The colder temperature of sector~B implies a larger horizon mass at collapse,
+\begin{equation}
+M_{\mathrm{PBH}}^{(B)} \simeq 4\, M_{\mathrm{PBH}}^{(A)},
+\end{equation}
+leading to heavier PBHs in the CPT sector. This mass asymmetry is a direct consequence of the
+sectoral temperature ratio derived in Companion~X.
+
+% --------------------------------------------------------
+% 6.4 Connection to Tensor Modulation
+% --------------------------------------------------------
+
+\subsection{Connection to Tensor Modulation}
+
+The sectoral PBH asymmetry is part of a broader pattern of inter-sectoral imprints in RDCC.
+Companion~II shows that the same bipartite structure and relaxation dynamics induce a
+modulation of the tensor sector, affecting the primordial gravitational-wave background. Both
+effects—the CPT-sector PBH population and the tensor modulation—arise from the same
+underlying inter-sectoral coupling and the temperature asymmetry between the sectors. PBHs
+therefore provide a complementary probe of the physics that shapes the tensor sector in RDCC.
+
+% --------------------------------------------------------
+% 6.5 Gravitational-Wave Signatures
+% --------------------------------------------------------
+
+\subsection{Gravitational-Wave Signatures}
+
+PBHs contribute to the stochastic gravitational-wave background (SGWB) through mergers and
+collapse. The suppression in sector~A implies:
+\begin{itemize}
+\item a reduced merger rate,
+\item no PBH-induced SGWB in the visible sector,
+\item possible indirect signatures from sector~B.
+\end{itemize}
+
+These signatures complement the relaxation-induced tensor suppression developed in
+Companion~XV.
+
+% --------------------------------------------------------
+% 6.6 Microlensing Constraints
+% --------------------------------------------------------
+
+\subsection{Microlensing Constraints}
+
+The strong suppression of PBHs in sector~A implies that microlensing surveys should observe no
+significant PBH population—consistent with current data from EROS, OGLE, Subaru/HSC, and
+Roman forecasts.
+
+% --------------------------------------------------------
+% 6.7 Modified PBH Mass Spectrum
+% --------------------------------------------------------
+
+\subsection{Modified PBH Mass Spectrum}
+
+The relaxation-corrected mass function,
+\begin{equation}
+\beta_{\mathrm{PBH}}^{(A)}(M)
+\propto
+\exp\!\left[
+-\frac{\delta_{c}^{2\,(A)}}{2\sigma^{2}(M)}
+\right],
+\end{equation}
+predicts a suppressed and shifted mass spectrum in sector~A. The visible sector therefore
+exhibits neither a significant PBH abundance nor a broad mass distribution.
+
+% --------------------------------------------------------
+% 6.8 Consistency with RDCC Temperature Asymmetry
+% --------------------------------------------------------
+
+\subsection{Consistency with RDCC Temperature Asymmetry}
+
+The sectoral PBH asymmetry provides an independent test of the temperature ratio
+\begin{equation}
+\frac{T_{B}}{T_{A}} \simeq 0.5,
+\end{equation}
+derived in Companion~X. The PBH sector therefore offers a complementary observational probe
+of the same relaxation-driven thermodynamics that shape the neutrino and dark matter sectors.
+
+% ========================================================
+% 7 FORECASTS
+% ========================================================
+
+\section{Forecasts}
+
+The sectoral PBH asymmetry predicted by the Relaxation-Driven Cyclic Cosmology (RDCC)
+provides multiple observational avenues for testing the framework. Future surveys will be able
+to probe the PBH sector through gravitational waves, microlensing, and the matter power
+spectrum. These forecasts highlight the complementarity between PBH physics, tensor
+observables, and sectoral thermodynamics.
+
+% --------------------------------------------------------
+% 7.1 Gravitational-Wave Forecasts
+% --------------------------------------------------------
+
+\subsection{Gravitational-Wave Forecasts}
+
+Space-based interferometers such as LISA, DECIGO, and BBO will be sensitive to the stochastic
+gravitational-wave background (SGWB) generated by PBH mergers in the CPT sector. While
+these PBHs are not directly observable, their merger history may leave detectable imprints in
+the SGWB. The predicted signatures include:
+
+\begin{itemize}
+\item a sectoral enhancement of the high-frequency SGWB due to heavier PBHs in sector~B,
+\item a merger-driven contribution consistent with the relaxation-induced tensor suppression
+developed in Companion~XV,
+\item a characteristic frequency dependence linked to the horizon mass in the CPT sector.
+\end{itemize}
+
+These signatures provide an indirect but powerful probe of the CPT-sector PBH population.
+
+% --------------------------------------------------------
+% 7.2 Microlensing Forecasts
+% --------------------------------------------------------
+
+\subsection{Microlensing Forecasts}
+
+Microlensing surveys will continue to tighten constraints on PBHs in the visible sector. The
+RDCC prediction of strong suppression in sector~A is consistent with current data and will be
+further tested by future surveys such as Roman and LSST. The expected signatures are:
+
+\begin{itemize}
+\item no detectable PBH population in the visible sector,
+\item increasingly stringent upper bounds on the PBH mass fraction in sector~A,
+\item consistency with the relaxation-corrected collapse threshold derived in Section~4.
+\end{itemize}
+
+A null detection in microlensing is therefore a natural outcome of the RDCC framework.
+
+% --------------------------------------------------------
+% 7.3 Large-Scale-Structure Forecasts
+% --------------------------------------------------------
+
+\subsection{Large-Scale-Structure Forecasts}
+
+The absence of PBH-induced anomalies in the matter power spectrum provides an additional
+test of the RDCC PBH sector. Future surveys such as Euclid and CMB-S4 will be able to probe:
+
+\begin{itemize}
+\item small-scale suppression consistent with the relaxation-modified perturbation dynamics,
+\item the absence of PBH-induced isocurvature modes in the visible sector,
+\item consistency between the PBH sector and the sectoral temperature ratio \(T_{B}/T_{A} \simeq 0.5\).
+\end{itemize}
+
+These forecasts provide a cross-check between PBH physics, tensor observables, and the
+relaxation-driven thermodynamics that define the RDCC framework.
+
+% ========================================================
+% 8 CONCLUSION
+% ========================================================
+
+\section{Conclusion}
+
+In this Companion we have developed the primordial black hole (PBH) sector of the
+Relaxation-Driven Cyclic Cosmology (RDCC), introducing a sectoral interpretation in which
+PBHs arise naturally and predominantly in the CPT-conjugate sector. The colder temperature,
+reduced relaxation-induced damping, and modified perturbation dynamics in sector~B enhance
+PBH formation, while the visible sector experiences a strong suppression due to the elevated
+collapse threshold and reduced horizon mass.
+
+These effects arise directly from the bipartite CPT-symmetric global state and the universal
+relaxation mechanism introduced in Companion~X. The resulting sectoral PBH asymmetry is a
+robust and testable prediction of RDCC, linking PBH physics to the same relaxation-driven
+thermodynamics that shape the neutrino and dark matter sectors (Companion~XIII) and the
+tensor sector (Companion~XV).
+
+The PBH mass spectrum in the CPT sector is shifted toward higher masses, and the PBH
+abundance is exponentially enhanced relative to the visible sector. These features provide a
+distinctive observational target, with signatures in the stochastic gravitational-wave background,
+microlensing constraints, and the matter power spectrum. Future surveys such as LISA, DECIGO,
+BBO, Roman, LSST, Euclid, and CMB-S4 will be able to probe these predictions.
+
+With the development of the PBH sector, RDCC now offers a coherent and internally
+consistent description of early-Universe thermodynamics, perturbation dynamics, and sectoral
+structure. PBHs emerge as a natural and robust component of the CPT sector and a key probe
+of relaxation-driven cosmology.
+
+
+\end{document}
